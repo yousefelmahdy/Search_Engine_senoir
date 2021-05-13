@@ -66,7 +66,7 @@ public class Index implements Runnable  {
             }
         }
 
-        System.out.println(Word_score);
+        //System.out.println(Word_score);
 
     }
 

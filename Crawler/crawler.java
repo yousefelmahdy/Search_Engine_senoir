@@ -1,4 +1,5 @@
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -320,6 +321,8 @@ class crawler implements Runnable
         		synchronized(this.URLS_Queue) {	
         		fetched_URL=URLS_Queue.poll();
         		Connection conn = Jsoup.connect(fetched_URL);
+        		if(conn!=null)
+        		{
             	try {
 					 doc1 =  conn.get();
 					String result = doc1.body().text();
@@ -332,6 +335,14 @@ class crawler implements Runnable
 					else 
 						{
 						Compacted.add(result);
+						File f = new File("C:\\Users\\Lenovo ThinkPad\\Desktop\\URLs.txt");
+				        try {
+				            BufferedWriter bw = new BufferedWriter(new FileWriter(f, true));
+				            bw.append(fetched_URL+"\n");
+				            bw.close();
+				        } catch (IOException e) {
+				           // System.out.println(e.getMessage());
+				        }
 						//convert the document to .TXT file
 						FileWriter FW = new FileWriter(Current_size+".txt");
 						writer=new BufferedWriter(FW);
@@ -345,6 +356,7 @@ class crawler implements Runnable
 					//e.printStackTrace();
 				                       }
         		    }
+        		}
         
         if (doc1!=null)
         {
@@ -402,4 +414,5 @@ class crawler implements Runnable
         return ;
     }
 }
+
 

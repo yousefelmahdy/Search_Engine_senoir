@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.*;  
 
 public class Index {
 
@@ -63,15 +69,34 @@ public class Index {
 
         }
 
-        public void insert(String data, int Current_doc) throws IOException {
-           
-           // String html = data;
+        public void insertIntoDatabase(){
+            Database db = new Database();
+            for (String name : Detials.keySet()) {
+                String key = name.toString();
+                Vector<Help_data> value = Detials.get(name);
+                int TF,noOfDocument;
+                for (int i = 0; i < value.size(); i++) {
+                    TF=value.get(i).gettf();
+                    noOfDocument=value.get(i).getDoc_num();
+                    db.insertFreqs(key, noOfDocument, TF);
+                }
+                
+            }
 
-           // Document document = Jsoup.parse(html);
-           // Document doc = Jsoup.connect("https://www.wikipedia.org/").get();
-           Document document = Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
+        }
 
+        public void insert(Document d, int Current_doc) throws IOException {
+
+            // String html = data;
+
+            // Document document = Jsoup.parse(html);
+            // Document doc = Jsoup.connect("https://www.wikipedia.org/").get();
+            // Document document =
+            // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
+            Document document = d;
             String title = document.title();
+            
+
 
             for (String Html_tags : Init_Score.keySet()) {
                 int tf = 1;
@@ -80,8 +105,8 @@ public class Index {
                 Integer Current_score = Init_Score.get(Html_tags);
                 for (Element i : Current_words) {
                     String help = i.text();
-                
-                    help = help.replaceAll("[^0-9a-zA-Z]", " ");
+
+                    help = help.replaceAll("[^a-zA-Z]", " ");
                     help = help.toLowerCase();
                     String[] Sep_words = help.split(" ");
                     for (String word : Sep_words) {
@@ -94,11 +119,11 @@ public class Index {
                                 boolean check = false;
                                 int place = 0;
                                 vec = Detials.get(word);
-                                
+
                                 for (int k = 0; k < vec.size(); k++) {
                                     check = false;
                                     if (Current_doc + 1 == vec.get(k).getDoc_num()) {
-                                        tf+=vec.get(k).gettf();
+                                        tf += vec.get(k).gettf();
                                         check = true;
                                         place = k;
                                         break;
@@ -110,7 +135,7 @@ public class Index {
                                 } else {
                                     Help_data hh = new Help_data(tf, Current_doc + 1);
                                     vec.add(hh);
-                                    
+
                                     Detials.replace(word, vec);
                                 }
                             }
@@ -163,10 +188,10 @@ public class Index {
             put("h5", 10);
             put("h6", 5);
             put("em", 3);
-			put("b", 3);
-			put("i", 3);
-			put("u", 3);
-			put("a", 3);
+            put("b", 3);
+            put("i", 3);
+            put("u", 3);
+            put("a", 3);
             put("p", 2);
         }
     };
@@ -222,6 +247,112 @@ public class Index {
     // return Detials;
 
     // }
+    
+
+    static class Database{
+            String url = "jdbc:mysql://localhost:3306/project";
+            String username = "root";
+            String password = "1234";
+            Connection connection;
+
+            public Database(){
+                try {
+                    connection = DriverManager.getConnection(url, username, password);
+                    System.out.println("Connected to Database");
+                } catch (SQLException e) {
+                    System.out.println("Oops, Error!");
+                }
+            }
+        
+            public void insertURLs() {
+            try {
+                try {
+                    
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                FileReader fr = new FileReader("URLs.txt");
+                BufferedReader br = new BufferedReader(fr); // creates a buffering character input stream
+                StringBuffer sb = new StringBuffer(); // constructs a string buffer with no characters
+                String line;
+                int i = 1;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                    try {
+                        PreparedStatement stat = connection.prepareStatement("insert into URLs values (" + i + ",'" + line + "');");
+                        stat.executeUpdate();
+                        i++;
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    sb.append("\n");
+                }
+                fr.close();
+    
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        public void insertFreqs(String word,int noOfDocument,int TF){
+            
+                try {
+                    
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                    try {
+                        PreparedStatement stat = connection.prepareStatement("insert into Frequencies values ('"+word+"',"+noOfDocument+","+TF+");");
+                        stat.executeUpdate();
+                    
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+
+        }
+    
+        public void deleteURLs(){
+            try {
+            
+                PreparedStatement stat = connection.prepareStatement("delete from URLs ;");
+                stat.executeUpdate();
+                
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
+
+        public void deleteFrequencies(){
+            try {
+            
+                PreparedStatement stat = connection.prepareStatement("delete from Frequencies ;");
+                stat.executeUpdate();
+                
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
+        public void getSpecificURL(String word){
+            try {
+            
+                PreparedStatement stat=connection.prepareStatement("select URL from URLs inner join frequencies ON frequencies.noOfDocument = URLs.noOfDocument  and word = '"+word+"';");  
+                ResultSet rs=stat.executeQuery();
+                while(rs.next()){
+                    System.out.println(rs.getString("URL"));
+                 }                        
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
+
+
+        
+
+    }
+
+    
 
     public static void main(String[] args) throws IOException {
         // System.out.println("wodeion");
@@ -238,22 +369,34 @@ public class Index {
          */
 
         Indexer_test ob = new Indexer_test();
+        Database db = new Database();
 
-       /* for (int i = 0; i < Crawler_output.size(); i++) {
-            String data = Crawler_output.get(i);
-            Path fileName = Path.of("demo1.txt");
-            //String content = "hello world !!";
-            //Files.writeString(fileName, content);
+        /*
+         * for (int i = 0; i < Crawler_output.size(); i++) { String data =
+         * Crawler_output.get(i); Path fileName = Path.of("demo1.txt"); //String content
+         * = "hello world !!"; //Files.writeString(fileName, content);
+         * 
+         * String actual = Files.readString(fileName); //System.out.println(actual);
+         * ob.insert(data, i); // handling(data, i); }
+         */
 
-            String actual = Files.readString(fileName);
-            //System.out.println(actual);
-            ob.insert(data, i);
-            // handling(data, i);
-        }*/
+        for (int i = 0; i < 2; i++) {
 
+            // Document document =
+            // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
+            File input = new File(i + ".txt");
+            Document doc = Jsoup.parse(input, "UTF-8");
+            ob.insert(doc, i);
 
-        ob.insert("kk", 0);
-        ob.print();
+        }
+
+        //ob.print();
+        //db.insertURLs();
+        //ob.insertIntoDatabase();
+        //db.deleteURLs();
+        //db.getSpecificURL("youtube");
+        
+
 
     }
 }

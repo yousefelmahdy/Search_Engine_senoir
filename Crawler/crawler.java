@@ -335,7 +335,7 @@ class crawler implements Runnable
 					else 
 						{
 						Compacted.add(result);
-						File f = new File("C:\\Users\\Lenovo ThinkPad\\Desktop\\URLs.txt");
+						File f = new File("URLs.txt");
 				        try {
 				            BufferedWriter bw = new BufferedWriter(new FileWriter(f, true));
 				            bw.append(fetched_URL+"\n");

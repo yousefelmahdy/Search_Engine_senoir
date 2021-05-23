@@ -5,6 +5,9 @@ create table URLs
 (
 noOfDocument int(10),
 URL varchar(1000) not null,
+title varchar(1000) not null,
+description varchar(10000),
+
 primary key (noOfDocument)
 );
 

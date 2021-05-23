@@ -14,7 +14,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.*;  
+import java.sql.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.*;
 
 public class Index {
 
@@ -69,18 +74,18 @@ public class Index {
 
         }
 
-        public void insertIntoDatabase(){
+        public void insertIntoDatabase() {
             Database db = new Database();
             for (String name : Detials.keySet()) {
                 String key = name.toString();
                 Vector<Help_data> value = Detials.get(name);
-                int TF,noOfDocument;
+                int TF, noOfDocument;
                 for (int i = 0; i < value.size(); i++) {
-                    TF=value.get(i).gettf();
-                    noOfDocument=value.get(i).getDoc_num();
+                    TF = value.get(i).gettf();
+                    noOfDocument = value.get(i).getDoc_num();
                     db.insertFreqs(key, noOfDocument, TF);
                 }
-                
+
             }
 
         }
@@ -95,8 +100,7 @@ public class Index {
             // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
             Document document = d;
             String title = document.title();
-            
-
+            String description = document.select("meta[name=description]").get(0).attr("content");
 
             for (String Html_tags : Init_Score.keySet()) {
                 int tf = 1;
@@ -152,7 +156,10 @@ public class Index {
                     }
 
                 }
+
             }
+            Database db = new Database();
+            db.insertURLs(Current_doc + 1, title, description);
 
         }
 
@@ -247,112 +254,102 @@ public class Index {
     // return Detials;
 
     // }
-    
 
-    static class Database{
-            String url = "jdbc:mysql://localhost:3306/project";
-            String username = "root";
-            String password = "1234";
-            Connection connection;
+    static class Database {
+        String url = "jdbc:mysql://localhost:3306/project";
+        String username = "root";
+        String password = "1234";
+        Connection connection;
 
-            public Database(){
-                try {
-                    connection = DriverManager.getConnection(url, username, password);
-                    System.out.println("Connected to Database");
-                } catch (SQLException e) {
-                    System.out.println("Oops, Error!");
-                }
-            }
-        
-            public void insertURLs() {
+        public Database() {
             try {
+                connection = DriverManager.getConnection(url, username, password);
+                System.out.println("Connected to Database");
+            } catch (SQLException e) {
+                System.out.println("Oops, Error!");
+            }
+        }
+
+        public void insertURLs(int i, String title, String description) {
+
+            // FileReader fr = new FileReader("URLs.txt");
+            // BufferedReader br = new BufferedReader(fr); // creates a buffering character
+            // input stream
+            // StringBuffer sb = new StringBuffer(); // constructs a string buffer with no
+            // characters
+            // String line;
+            String line;
+            try (Stream<String> lines = Files.lines(Paths.get("URLs.txt"))) {
+                line = lines.skip(i-1).findFirst().get();
                 try {
-                    
+                    PreparedStatement stat = connection.prepareStatement("insert into URLs values (" + i + ",'" + line
+                            + "','" + title + "','" + description + "');");
+                    stat.executeUpdate();
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-                FileReader fr = new FileReader("URLs.txt");
-                BufferedReader br = new BufferedReader(fr); // creates a buffering character input stream
-                StringBuffer sb = new StringBuffer(); // constructs a string buffer with no characters
-                String line;
-                int i = 1;
-                while ((line = br.readLine()) != null) {
-                    sb.append(line);
-                    try {
-                        PreparedStatement stat = connection.prepareStatement("insert into URLs values (" + i + ",'" + line + "');");
-                        stat.executeUpdate();
-                        i++;
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
-                    sb.append("\n");
-                }
-                fr.close();
-    
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
-        }
-        public void insertFreqs(String word,int noOfDocument,int TF){
-            
-                try {
-                    
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-                    try {
-                        PreparedStatement stat = connection.prepareStatement("insert into Frequencies values ('"+word+"',"+noOfDocument+","+TF+");");
-                        stat.executeUpdate();
-                    
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
 
         }
-    
-        public void deleteURLs(){
+
+        public void insertFreqs(String word, int noOfDocument, int TF) {
+
             try {
-            
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            try {
+                PreparedStatement stat = connection.prepareStatement(
+                        "insert into Frequencies values ('" + word + "'," + noOfDocument + "," + TF + ");");
+                stat.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+        }
+
+        public void deleteURLs() {
+            try {
+
                 PreparedStatement stat = connection.prepareStatement("delete from URLs ;");
                 stat.executeUpdate();
-                
+
             } catch (Exception e) {
                 System.out.println(e);
             }
         }
 
-
-        public void deleteFrequencies(){
+        public void deleteFrequencies() {
             try {
-            
+
                 PreparedStatement stat = connection.prepareStatement("delete from Frequencies ;");
                 stat.executeUpdate();
-                
+
             } catch (Exception e) {
                 System.out.println(e);
             }
         }
 
-        public void getSpecificURL(String word){
+        public void getSpecificURL(String word) {
             try {
-            
-                PreparedStatement stat=connection.prepareStatement("select URL from URLs inner join frequencies ON frequencies.noOfDocument = URLs.noOfDocument  and word = '"+word+"';");  
-                ResultSet rs=stat.executeQuery();
-                while(rs.next()){
+
+                PreparedStatement stat = connection.prepareStatement(
+                        "select URL from URLs inner join frequencies ON frequencies.noOfDocument = URLs.noOfDocument  and word = '"
+                                + word + "';");
+                ResultSet rs = stat.executeQuery();
+                while (rs.next()) {
                     System.out.println(rs.getString("URL"));
-                 }                        
+                }
             } catch (Exception e) {
                 System.out.println(e);
             }
         }
-
-
-
-        
 
     }
-
-    
 
     public static void main(String[] args) throws IOException {
         // System.out.println("wodeion");
@@ -380,7 +377,7 @@ public class Index {
          * ob.insert(data, i); // handling(data, i); }
          */
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 4; i++) {
 
             // Document document =
             // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
@@ -390,14 +387,16 @@ public class Index {
 
         }
 
-        //ob.print();
-        //db.insertURLs();
-        //ob.insertIntoDatabase();
-        //db.deleteURLs();
-        //db.getSpecificURL("youtube");
-	///////////////////////////////
-        
+        ob.print();
+        ob.insertIntoDatabase();      // Inserts each word with its noOfDocument and TF
+        /*
+        Every URL is inserted in the Databse in ob.insert() by using db.insertURLs(noOfDocument, title, description);
+        */
 
+
+        
+        // db.deleteURLs();
+        // db.getSpecificURL("youtube");
 
     }
 }

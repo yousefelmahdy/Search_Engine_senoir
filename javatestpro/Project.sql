@@ -9,6 +9,9 @@ title varchar(1000) not null,
 description varchar(10000),
 
 primary key (noOfDocument)
+
+
+
 );
 
 

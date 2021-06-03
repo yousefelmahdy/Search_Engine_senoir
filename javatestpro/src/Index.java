@@ -116,7 +116,7 @@ public class Index {
                     for (String word : Sep_words) {
                         tf = 1;
                         // System.out.println(word);
-                        if (!word.equals("")) {
+                        if (!word.equals("") && !Stop_Words.containsKey(word) ) {
                             Vector<Help_data> vec = new Vector<Help_data>();
 
                             if (Detials.containsKey(word)) {
@@ -200,6 +200,141 @@ public class Index {
             put("u", 3);
             put("a", 3);
             put("p", 2);
+        }
+    };
+
+
+    public static final HashMap<String, Integer> Stop_Words = new HashMap<String, Integer>() {
+        {
+
+            put("i", 1);
+            put("me", 1);
+            put("my", 1);
+            put("myself", 1);
+            put("we", 1);
+            put("our", 1);
+            put("ours", 1);
+            put("ourselves", 1);
+            put("you", 1);
+            put("your", 1);
+            put("yours", 1);
+            put("yourself", 1);
+            put("yourselves", 1);
+            put("he", 1);
+            put("him", 1);
+            put("his", 1);
+            put("himself", 1);
+            put("she", 1);
+            put("her", 1);
+            put("herself", 1);
+            put("hers", 1);
+            put("it", 1);
+            put("its", 1);
+            put("itself", 1);
+            put("they", 1);
+            put("them", 1);
+            put("their", 1);
+            put("theirs", 1);
+            put("themselves", 1);
+            put("what", 1);
+            put("which", 1);
+            put("who", 1);
+            put("whom", 1);
+            put("this", 1);
+            put("that", 1);
+            put("these", 1);
+            put("those", 1);
+            put("am", 1);
+            put("is", 1);
+            put("are", 1);
+            put("was", 1);
+            put("were", 1);
+            put("be", 1);
+            put("been", 1);
+            put("being", 1);
+            put("have", 1);
+            put("has", 1);
+            put("had", 1);
+            put("having", 1);
+            put("do", 1);
+            put("does", 1);
+            put("did", 1);
+            put("doing", 1);
+            put("a", 1);
+            put("an", 1);
+            put("the", 1);
+            put("and", 1);
+            put("but", 1);
+            put("if", 1);
+            put("or", 1);
+            put("because", 1);
+            put("as", 1);
+            put("until", 1);
+            put("while", 1);
+            put("of", 1);
+            put("at", 1);
+            put("by", 1);
+            put("for", 1);
+            put("with", 1);
+            put("about", 1);
+            put("against", 1);
+            put("between", 1);
+            put("through", 1);
+            put("into", 1);
+            put("after", 1);
+            put("before", 1);
+            put("during", 1);
+            put("above", 1);
+            put("below", 1);
+            put("up", 1);
+            put("to", 1);
+            put("from", 1);
+            put("down", 1);
+            put("in", 1);
+            put("out", 1);
+            put("on", 1);
+            put("off", 1);
+            put("over", 1);
+            put("under", 1);
+            put("again", 1);
+            put("further", 1);
+            put("then", 1);
+            put("once", 1);
+            put("here", 1);
+            put("there", 1);
+            put("when", 1);
+            put("where", 1);
+            put("why", 1);
+            put("how", 1);
+            put("all", 1);
+            put("any", 1);
+            put("both", 1);
+            put("each", 1);
+            put("few", 1);
+            put("more", 1);
+            put("most", 1);
+            put("other", 1);
+            put("some", 1);
+            put("such", 1);
+            put("no", 1);
+            put("nor", 1);
+            put("not", 1);
+            put("only", 1);
+            put("own", 1);
+            put("same", 1);
+            put("so", 1);
+            put("than", 1);
+            put("too", 1);
+            put("very", 1);
+            put("can", 1);
+            put("will", 1);
+            put("just", 1);
+            put("don", 1);
+            put("should", 1);
+            put("also", 1);
+            put("now", 1);
+            put("s", 1);
+            put("t", 1);  
         }
     };
 
@@ -377,7 +512,7 @@ public class Index {
          * ob.insert(data, i); // handling(data, i); }
          */
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
 
             // Document document =
             // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();

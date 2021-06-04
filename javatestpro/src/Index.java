@@ -52,8 +52,9 @@ public class Index {
             return Doc_num;
         }
 
-        public void print() {
-            System.out.print( getDoc_num() + " " + gettf());
+        public void print(Database db,String name) {
+            System.out.print(gettf() + " " + getDoc_num());
+            db.insertFreqs(name, getDoc_num() ,gettf());
         }
 
     }
@@ -63,13 +64,13 @@ public class Index {
         public PorterStemmer stemmer = new PorterStemmer();
     
 
-        public void print() {
+        public void print(Database db) {
             for (String name : Detials.keySet()) {
                 String key = name.toString();
                 Vector<Help_data> value = Detials.get(name);
                 System.out.print(key + " ");
                 for (int i = 0; i < value.size(); i++) {
-                    value.get(i).print();
+                    value.get(i).print(db,key);
                     System.out.print("    ");
                 }
                 System.out.println();
@@ -117,40 +118,41 @@ public class Index {
                         word = stemmer.stem(word);
                        
                         if (!word.equals("") && !Stop_Words.containsKey(word) ) {
-                            Vector<Help_data> vec = new Vector<Help_data>();
+                            if(word.length()!=1){
+                                Vector<Help_data> vec = new Vector<Help_data>();
 
-                            if (Detials.containsKey(word)) {
-                                boolean check = false;
-                                int place = 0;
-                                vec = Detials.get(word);
+                                if (Detials.containsKey(word)) {
+                                    boolean check = false;
+                                    int place = 0;
+                                    vec = Detials.get(word);
 
-                                for (int k = 0; k < vec.size(); k++) {
-                                    check = false;
-                                    if (Current_doc + 1 == vec.get(k).getDoc_num()) {
-                                        tf += vec.get(k).gettf();
-                                        check = true;
-                                        place = k;
-                                        break;
+                                    for (int k = 0; k < vec.size(); k++) {
+                                        check = false;
+                                        if (Current_doc + 1 == vec.get(k).getDoc_num()) {
+                                            tf += vec.get(k).gettf();
+                                            check = true;
+                                            place = k;
+                                            break;
+                                        }
+                                    }
+                                    if (check) {
+                                        vec.get(place).settf(tf);
+
+                                    } else {
+                                        Help_data hh = new Help_data(tf, Current_doc + 1);
+                                        vec.add(hh);
+
+                                        Detials.replace(word, vec);
                                     }
                                 }
-                                if (check) {
-                                    vec.get(place).settf(tf);
 
-                                } else {
+                                else {
                                     Help_data hh = new Help_data(tf, Current_doc + 1);
                                     vec.add(hh);
+                                    Detials.put(word, vec);
 
-                                    Detials.replace(word, vec);
                                 }
                             }
-
-                            else {
-                                Help_data hh = new Help_data(tf, Current_doc + 1);
-                                vec.add(hh);
-                                Detials.put(word, vec);
-
-                            }
-
                         }
 
                     }
@@ -496,7 +498,7 @@ public class Index {
 
         
 
-        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < 4; i++) {
 
             File input = new File(i + ".txt");
             Document doc = Jsoup.parse(input, "UTF-8");
@@ -504,8 +506,8 @@ public class Index {
 
         }
 
-        ob.print();
-        ob.insertIntoDatabase();      // Inserts each word with its noOfDocument and TF
+        ob.print(db);
+        //ob.insertIntoDatabase();      // Inserts each word with its noOfDocument and TF
         /*
         Every URL is inserted in the Databse in ob.insert() by using db.insertURLs(noOfDocument, title, description);
         */

@@ -20,9 +20,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.*;
+import opennlp.tools.stemmer.PorterStemmer;
 
 public class Index {
 
+
+    /* used to be like vector of pair , setters & getters */ 
     static class Help_data {
         int TF;
         int Doc_num;
@@ -38,9 +41,8 @@ public class Index {
             return TF;
         }
 
-        /*
-         * public int gettotal_Score() { return total_score; }
-         */
+        // public int gettotal_Score() { return total_score; }
+         
 
         public void settf(int new_tf) {
             TF = new_tf;
@@ -51,13 +53,15 @@ public class Index {
         }
 
         public void print() {
-            System.out.print(gettf() + " " + getDoc_num());
+            System.out.print( getDoc_num() + " " + gettf());
         }
 
     }
 
     static class Indexer_test {
         HashMap<String, Vector<Help_data>> Detials = new HashMap<>();
+        public PorterStemmer stemmer = new PorterStemmer();
+    
 
         public void print() {
             for (String name : Detials.keySet()) {
@@ -89,19 +93,14 @@ public class Index {
             }
 
         }
-
+        /*  insert used to check stop words , steeming , Tf , etc............  */
         public void insert(Document d, int Current_doc) throws IOException {
-
-            // String html = data;
-
-            // Document document = Jsoup.parse(html);
-            // Document doc = Jsoup.connect("https://www.wikipedia.org/").get();
-            // Document document =
-            // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
+            
             Document document = d;
             String title = document.title();
-            String description = document.select("meta[name=description]").get(0).attr("content");
-
+            
+          //  String description = document.select("meta[name=description]").get(0).attr("content");
+            String description ="jhgfd";
             for (String Html_tags : Init_Score.keySet()) {
                 int tf = 1;
 
@@ -115,7 +114,8 @@ public class Index {
                     String[] Sep_words = help.split(" ");
                     for (String word : Sep_words) {
                         tf = 1;
-                        // System.out.println(word);
+                        word = stemmer.stem(word);
+                       
                         if (!word.equals("") && !Stop_Words.containsKey(word) ) {
                             Vector<Help_data> vec = new Vector<Help_data>();
 
@@ -159,7 +159,7 @@ public class Index {
 
             }
             Database db = new Database();
-            db.insertURLs(Current_doc + 1, title, description);
+            db.insertURLs(Current_doc ,title, description);
 
         }
 
@@ -173,7 +173,7 @@ public class Index {
      * public void run() { for(int i=begin;i<end;i++) {
      * handling(Indexer.Crawler_output.get(i),i); } }
      */
-
+        /* list used only in checks */
     public static List<String> Crawler_output = new ArrayList<String>() {
         {
             add("<html><head><title>im im yousef</title></head>" + "<body><p>elmahdy ahmed ahmed</p></body></html>");
@@ -184,6 +184,7 @@ public class Index {
         }
     };
 
+    /* tags to extract words from the document and their score */
     public static final HashMap<String, Integer> Init_Score = new HashMap<String, Integer>() {
         {
 
@@ -203,7 +204,7 @@ public class Index {
         }
     };
 
-
+    /* stop words */
     public static final HashMap<String, Integer> Stop_Words = new HashMap<String, Integer>() {
         {
 
@@ -415,8 +416,9 @@ public class Index {
             // String line;
             String line;
             try (Stream<String> lines = Files.lines(Paths.get("URLs.txt"))) {
-                line = lines.skip(i-1).findFirst().get();
+                line = lines.skip(i).findFirst().get();
                 try {
+                    i++;
                     PreparedStatement stat = connection.prepareStatement("insert into URLs values (" + i + ",'" + line
                             + "','" + title + "','" + description + "');");
                     stat.executeUpdate();
@@ -487,35 +489,15 @@ public class Index {
     }
 
     public static void main(String[] args) throws IOException {
-        // System.out.println("wodeion");
-        /*
-         * HashMap<String, Vector<Help_data>> collect = new HashMap<>(); HashMap<String,
-         * Vector<Help_data>> last = new HashMap<>(); for(int
-         * i=0;i<Crawler_output.size();i++) { String data =Crawler_output.get(i);
-         * collect = handling(data,i); for(int j=0;j<collect.size();j++) { String a =
-         * collect. if(last.containsKey(a)) {
-         * 
-         * }
-         * 
-         * } }
-         */
+       
 
         Indexer_test ob = new Indexer_test();
         Database db = new Database();
 
-        /*
-         * for (int i = 0; i < Crawler_output.size(); i++) { String data =
-         * Crawler_output.get(i); Path fileName = Path.of("demo1.txt"); //String content
-         * = "hello world !!"; //Files.writeString(fileName, content);
-         * 
-         * String actual = Files.readString(fileName); //System.out.println(actual);
-         * ob.insert(data, i); // handling(data, i); }
-         */
+        
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 17; i++) {
 
-            // Document document =
-            // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
             File input = new File(i + ".txt");
             Document doc = Jsoup.parse(input, "UTF-8");
             ob.insert(doc, i);

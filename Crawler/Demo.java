@@ -29,6 +29,18 @@ public class Demo
 		//URL_Set.add("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#");
 		 //URL_Set.add("https://www.youtube.com/watch?v=TCd8QIS-2KI");
 		//URL_Set.add("https://codinginflow.com/");
+
+
+		/* SEEDS */ 
+		/* 
+		https://www.bbc.com/news
+		https://time.com/
+		https://www.geeksforgeeks.org/
+		https://stackoverflow.com/
+		https://codeforces.com/
+		https://www.w3schools.com/
+		https://www.dailymotion.com/
+		*/
 		
 		
 		Scanner myObj = new Scanner(System.in);

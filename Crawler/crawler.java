@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,6 +7,12 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+=======
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 import java.net.URL;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -20,12 +27,18 @@ import org.jsoup.Connection;
 import java.net.MalformedURLException;
 import java.net.URLConnection;
 import java.sql.Date;
+<<<<<<< HEAD
 import java.io.FileWriter;   
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 class crawler implements Runnable
 {
 	//Data Members
 	//this Set to handle duplicates
+<<<<<<< HEAD
    FileWriter myWriter=null;
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
    public Set<String> URL_Set = new HashSet<String>();
     //this Queue to Get the URLs in it and visit them by logic FIFO
    public Queue<String>URLS_Queue=new  LinkedList<String>(); 
@@ -55,6 +68,7 @@ class crawler implements Runnable
     public void run() {
 
     	int d=0;
+<<<<<<< HEAD
     	System.out.printf("i am thread %d from first line of run\n",Thread.currentThread().getId());
     	while(Current_size<=5000)
     	{
@@ -65,6 +79,11 @@ class crawler implements Runnable
     	}
     	//for(int i =0; i < n;i++)
 			/*
+=======
+    	crawl();
+    	//for(int i =0; i < n;i++)
+			
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
         Date today = new Date(d); 
         Calendar cal = Calendar.getInstance(); 
         cal.setTime(today); 
@@ -114,7 +133,10 @@ class crawler implements Runnable
         	}
         	
         }
+<<<<<<< HEAD
         */
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
         
         
         
@@ -147,6 +169,7 @@ class crawler implements Runnable
   	{
 		int Last_Value;
   		//System.out.println(Url);
+<<<<<<< HEAD
         URL Link_Url=null;
          try 
           {
@@ -204,6 +227,57 @@ class crawler implements Runnable
                  //note that * is far from U by 12 indexes
           	    if(result.charAt(User_Ag+12)=='*')
           	    {
+=======
+          URL Link_Url=null;
+             try {
+          //create the URL from the string to get the host ;
+  		 Link_Url = new URL(Url);              
+  		         } catch (MalformedURLException e) {
+  			 System.out.println("There is an error happen while creating the URL \n" );}
+  		                                           
+          //get the host as the robot.txt is in the root..
+             if(Link_Url!=null)
+             {
+              String Link_Host= Link_Url.getHost();
+              String Link_Protocol=Link_Url.getProtocol();
+              String robot_URL= Link_Protocol+"://"+ Link_Host +"/robots.txt";
+              
+              //Connecting to the web page
+              Connection conn = Jsoup.connect(robot_URL);
+              //executing the get request
+              Document doc = null;
+  			try {
+  				doc =conn.get();
+  			    } catch (IOException e) {
+  				//e.printStackTrace();
+  			    }
+  			
+  	 if(doc!=null)   
+  	  {
+              //Retrieving the contents (body) of the web page
+              String result = doc.body().text();
+              //System.out.println(result);
+              //this Vector will have the URLs in robots.txt
+              Vector<String> V = new Vector<String>();
+              int index=0;
+              //get the index of the first char in the User-agent
+          	int User_Ag=result.indexOf("user-agent",0);
+          	if(User_Ag==-1)
+      		{
+      			User_Ag=result.indexOf("User-agent",0);
+      		}
+          	if(User_Ag==-1)
+          	{
+          	  User_Ag=result.indexOf("User-Agent",0);
+          	}
+              //check if something have returned  if not User_Ag will be -1
+          	while(User_Ag>=0)
+          	{
+          	  //make sure that the web site prevent all the crawlers if there is User-agent: *
+              //note that * is far from U by 12 indexes
+          	if(result.charAt(User_Ag+12)=='*')
+          	{
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
           	    Last_Value=User_Ag;
           		index=User_Ag;
           	   //get the  next User agent
@@ -254,6 +328,7 @@ class crawler implements Runnable
           	}	
   		 }
           	return V;
+<<<<<<< HEAD
             }
  	        
  
@@ -263,6 +338,13 @@ class crawler implements Runnable
          
         return null;
      }
+=======
+      }
+             return null;
+  }
+             return null;
+ }
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     
     
     
@@ -293,7 +375,10 @@ class crawler implements Runnable
     
 
     //To Calculate how often each page's content changes .(for Re-crawling)
+<<<<<<< HEAD
   	/*
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     public void ReCrawl(int idx)
     {
     	int counter = 0;
@@ -314,17 +399,27 @@ class crawler implements Runnable
     	}
     		
     	FileWriter myfile;
+<<<<<<< HEAD
     	BufferedWriter writer ;
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     	 for (String url : URL_Set)
     	 {
     		 if(all == true || domains.contains(GetDomain(url)) )
     		 { 
     			try {
+<<<<<<< HEAD
     				Connection conn = Jsoup.connect(url);
     				Document doc = conn.get();
     				FileWriter FW = new FileWriter(counter+".txt");
 					writer=new BufferedWriter(FW);
 					writer.write(doc.toString());
+=======
+				org.jsoup.nodes.Document doc =Jsoup.connect(url).get();
+				myfile = new FileWriter(counter +".txt");
+				myfile.write(doc.body().toString());
+				myfile.close();
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 			    } catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -334,6 +429,7 @@ class crawler implements Runnable
          }
     }
     
+<<<<<<< HEAD
    */
 
     
@@ -521,4 +617,116 @@ class crawler implements Runnable
     
     
    
+=======
+   
+
+    
+    public void crawl()
+    {   
+    	String fetched_URL;
+    	BufferedWriter writer=null;
+    	Document doc1 = null;
+        while(Current_size < 100) //Should be 5000 Later 
+        {
+        	if(!URLS_Queue.isEmpty())
+        	{
+        		//to prevent more than one thread from adding in the queue
+        		synchronized(this.URLS_Queue) {	
+        		fetched_URL=URLS_Queue.poll();
+        		Connection conn = Jsoup.connect(fetched_URL);
+        		if(conn!=null)
+        		{
+            	try {
+					 doc1 =  conn.get();
+					String result = doc1.body().text();
+					result = Compact(result);
+					if(Compacted.contains(result))
+						{
+						  System.out.println("\nThis link has the same content of another one \n" );
+						  continue;   // do not add it
+						}
+					else 
+						{
+						Compacted.add(result);
+						File f = new File("URLs.txt");
+				        try {
+				            BufferedWriter bw = new BufferedWriter(new FileWriter(f, true));
+				            bw.append(fetched_URL+"\n");
+				            bw.close();
+				        } catch (IOException e) {
+				           // System.out.println(e.getMessage());
+				        }
+						//convert the document to .TXT file
+						FileWriter FW = new FileWriter(Current_size+".txt");
+						writer=new BufferedWriter(FW);
+						Current_size++;
+						System.out.println(Current_size);
+						writer.write(doc1.toString());
+						}
+				    }
+				 catch (IOException e) {
+					 System.out.println("\nCan't fetch this URL\n" );
+					//e.printStackTrace();
+				                       }
+        		    }
+        		}
+        
+        if (doc1!=null)
+        {
+        //<a is the tag and hre_f the attribute_ that have the link 
+        org.jsoup.select.Elements links = doc1.select("a[href]"); 
+        for(Element Link :links )
+        {   boolean Exist = false;
+            String NewLink = Link.attr("abs:href");
+            Vector<String>Robot_txt1=Robot_Handling(Link.attr("abs:href"));
+            if(Robot_txt1!=null)
+             Exist=Search(Robot_txt1,Link.attr("abs:href"));
+             //Check that the file is a HTML file
+             URL url;
+             String type=null;
+			try {
+				 url = new URL(NewLink);
+				 URLConnection u;
+				try {
+					 u = url.openConnection();
+					  type = u.getHeaderField("Content-Type");
+					 System.out.println(type);
+				    } catch (IOException e) {
+					
+					//e.printStackTrace();
+				                            }
+			     } catch (MalformedURLException e) {
+				
+				//e.printStackTrace();
+			                                           }
+			
+			//check that the URL is not in the robots.txt and that it is a HTML file
+            if(!Exist&&type!=null&&(type.contentEquals("text/html; charset=utf-8")||type.contentEquals("text/html")))
+            {
+            	synchronized(this.URLS_Queue) {	
+            if(URL_Set.contains(NewLink) == false )
+            {
+            	URL_Set.add(NewLink); //add the set
+            	URLS_Queue.add(NewLink); //add to the queue
+            	System.out.println("\n New link is "+NewLink+", Current size is "+ Current_size +'\n' );	
+            }
+            else
+            	System.out.println("\n New link is "+NewLink+"thus link is already taken , Current size is still the same \n " );
+            		                            }	
+            }
+            	
+         
+            	
+          }
+        
+        }
+       }
+       else
+       break;
+        }
+        return ;
+    }
+}
+
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 

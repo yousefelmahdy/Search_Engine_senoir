@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,6 +27,7 @@ public class Demo
 		Queue<String>URLS_Queue=new  LinkedList<String>();
 		Set<String> URL_Set = new HashSet<String>();
 		 int Current_size=0;
+<<<<<<< HEAD
 		 
 		 System.out.print("hello");
 		URLS_Queue.add("https://www.w3schools.com/jsref/event_onkeypress.asp");
@@ -74,20 +78,52 @@ public class Demo
 	    
 	   
 		//URL_Set.add("https://codinginflow.com/");
+=======
+		//URLS_Queue.add("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#");
+		 URLS_Queue.add("https://www.youtube.com/watch?v=TCd8QIS-2KI");
+		//URLS_Queue.add("https://codinginflow.com/");
+		//URL_Set.add("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#");
+		 //URL_Set.add("https://www.youtube.com/watch?v=TCd8QIS-2KI");
+		//URL_Set.add("https://codinginflow.com/");
+
+
+		/* SEEDS */ 
+		/* 
+		https://www.bbc.com/news
+		https://time.com/
+		https://www.geeksforgeeks.org/
+		https://stackoverflow.com/
+		https://codeforces.com/
+		https://www.w3schools.com/
+		https://www.dailymotion.com/ 
+		*/
+		
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 		
 		Scanner myObj = new Scanner(System.in);
 		int n =myObj.nextInt();
 		crawler c = new crawler(URLS_Queue,URL_Set,Current_size,n);
+<<<<<<< HEAD
 		//(new Thread(c)).start();
 		
+=======
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 		Thread ths[] = new Thread[n];
 		for(int i =0; i < n;i++)
 			ths[i]=new Thread(c);
 		
 		for(int i =0; i < n;i++)
 			ths[i].start();
+<<<<<<< HEAD
 			
         
 		
     }
 }
+=======
+        
+		
+    }
+}
+
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c

@@ -20,9 +20,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.*;
+<<<<<<< HEAD
 
 public class Index {
 
+=======
+import opennlp.tools.stemmer.PorterStemmer;
+
+public class Index {
+
+
+    /* used to be like vector of pair , setters & getters */ 
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     static class Help_data {
         int TF;
         int Doc_num;
@@ -38,9 +47,14 @@ public class Index {
             return TF;
         }
 
+<<<<<<< HEAD
         /*
          * public int gettotal_Score() { return total_score; }
          */
+=======
+        // public int gettotal_Score() { return total_score; }
+         
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 
         public void settf(int new_tf) {
             TF = new_tf;
@@ -50,22 +64,39 @@ public class Index {
             return Doc_num;
         }
 
+<<<<<<< HEAD
         public void print() {
             System.out.print(gettf() + " " + getDoc_num());
+=======
+        public void print(Database db,String name) {
+            System.out.print(gettf() + " " + getDoc_num());
+            db.insertFreqs(name, getDoc_num() ,gettf());
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
         }
 
     }
 
     static class Indexer_test {
         HashMap<String, Vector<Help_data>> Detials = new HashMap<>();
+<<<<<<< HEAD
 
         public void print() {
+=======
+        public PorterStemmer stemmer = new PorterStemmer();
+    
+
+        public void print(Database db) {
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
             for (String name : Detials.keySet()) {
                 String key = name.toString();
                 Vector<Help_data> value = Detials.get(name);
                 System.out.print(key + " ");
                 for (int i = 0; i < value.size(); i++) {
+<<<<<<< HEAD
                     value.get(i).print();
+=======
+                    value.get(i).print(db,key);
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
                     System.out.print("    ");
                 }
                 System.out.println();
@@ -89,6 +120,7 @@ public class Index {
             }
 
         }
+<<<<<<< HEAD
 
         public void insert(Document d, int Current_doc) throws IOException {
 
@@ -102,6 +134,16 @@ public class Index {
             String title = document.title();
             String description = document.select("meta[name=description]").get(0).attr("content");
 
+=======
+        /*  insert used to check stop words , steeming , Tf , etc............  */
+        public void insert(Document d, int Current_doc) throws IOException {
+            
+            Document document = d;
+            String title = document.title();
+            
+          //  String description = document.select("meta[name=description]").get(0).attr("content");
+            String description ="jhgfd";
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
             for (String Html_tags : Init_Score.keySet()) {
                 int tf = 1;
 
@@ -115,6 +157,7 @@ public class Index {
                     String[] Sep_words = help.split(" ");
                     for (String word : Sep_words) {
                         tf = 1;
+<<<<<<< HEAD
                         // System.out.println(word);
                         if (!word.equals("")) {
                             Vector<Help_data> vec = new Vector<Help_data>();
@@ -151,6 +194,46 @@ public class Index {
 
                             }
 
+=======
+                        word = stemmer.stem(word);
+                       
+                        if (!word.equals("") && !Stop_Words.containsKey(word) ) {
+                            if(word.length()!=1){
+                                Vector<Help_data> vec = new Vector<Help_data>();
+
+                                if (Detials.containsKey(word)) {
+                                    boolean check = false;
+                                    int place = 0;
+                                    vec = Detials.get(word);
+
+                                    for (int k = 0; k < vec.size(); k++) {
+                                        check = false;
+                                        if (Current_doc + 1 == vec.get(k).getDoc_num()) {
+                                            tf += vec.get(k).gettf();
+                                            check = true;
+                                            place = k;
+                                            break;
+                                        }
+                                    }
+                                    if (check) {
+                                        vec.get(place).settf(tf);
+
+                                    } else {
+                                        Help_data hh = new Help_data(tf, Current_doc + 1);
+                                        vec.add(hh);
+
+                                        Detials.replace(word, vec);
+                                    }
+                                }
+
+                                else {
+                                    Help_data hh = new Help_data(tf, Current_doc + 1);
+                                    vec.add(hh);
+                                    Detials.put(word, vec);
+
+                                }
+                            }
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
                         }
 
                     }
@@ -159,7 +242,11 @@ public class Index {
 
             }
             Database db = new Database();
+<<<<<<< HEAD
             db.insertURLs(Current_doc + 1, title, description);
+=======
+            db.insertURLs(Current_doc ,title, description);
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 
         }
 
@@ -173,7 +260,11 @@ public class Index {
      * public void run() { for(int i=begin;i<end;i++) {
      * handling(Indexer.Crawler_output.get(i),i); } }
      */
+<<<<<<< HEAD
 
+=======
+        /* list used only in checks */
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     public static List<String> Crawler_output = new ArrayList<String>() {
         {
             add("<html><head><title>im im yousef</title></head>" + "<body><p>elmahdy ahmed ahmed</p></body></html>");
@@ -184,6 +275,10 @@ public class Index {
         }
     };
 
+<<<<<<< HEAD
+=======
+    /* tags to extract words from the document and their score */
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     public static final HashMap<String, Integer> Init_Score = new HashMap<String, Integer>() {
         {
 
@@ -203,6 +298,144 @@ public class Index {
         }
     };
 
+<<<<<<< HEAD
+=======
+    /* stop words */
+    public static final HashMap<String, Integer> Stop_Words = new HashMap<String, Integer>() {
+        {
+
+            put("i", 1);
+            put("me", 1);
+            put("my", 1);
+            put("myself", 1);
+            put("we", 1);
+            put("our", 1);
+            put("ours", 1);
+            put("ourselves", 1);
+            put("you", 1);
+            put("your", 1);
+            put("yours", 1);
+            put("yourself", 1);
+            put("yourselves", 1);
+            put("he", 1);
+            put("him", 1);
+            put("his", 1);
+            put("himself", 1);
+            put("she", 1);
+            put("her", 1);
+            put("herself", 1);
+            put("hers", 1);
+            put("it", 1);
+            put("its", 1);
+            put("itself", 1);
+            put("they", 1);
+            put("them", 1);
+            put("their", 1);
+            put("theirs", 1);
+            put("themselves", 1);
+            put("what", 1);
+            put("which", 1);
+            put("who", 1);
+            put("whom", 1);
+            put("this", 1);
+            put("that", 1);
+            put("these", 1);
+            put("those", 1);
+            put("am", 1);
+            put("is", 1);
+            put("are", 1);
+            put("was", 1);
+            put("were", 1);
+            put("be", 1);
+            put("been", 1);
+            put("being", 1);
+            put("have", 1);
+            put("has", 1);
+            put("had", 1);
+            put("having", 1);
+            put("do", 1);
+            put("does", 1);
+            put("did", 1);
+            put("doing", 1);
+            put("a", 1);
+            put("an", 1);
+            put("the", 1);
+            put("and", 1);
+            put("but", 1);
+            put("if", 1);
+            put("or", 1);
+            put("because", 1);
+            put("as", 1);
+            put("until", 1);
+            put("while", 1);
+            put("of", 1);
+            put("at", 1);
+            put("by", 1);
+            put("for", 1);
+            put("with", 1);
+            put("about", 1);
+            put("against", 1);
+            put("between", 1);
+            put("through", 1);
+            put("into", 1);
+            put("after", 1);
+            put("before", 1);
+            put("during", 1);
+            put("above", 1);
+            put("below", 1);
+            put("up", 1);
+            put("to", 1);
+            put("from", 1);
+            put("down", 1);
+            put("in", 1);
+            put("out", 1);
+            put("on", 1);
+            put("off", 1);
+            put("over", 1);
+            put("under", 1);
+            put("again", 1);
+            put("further", 1);
+            put("then", 1);
+            put("once", 1);
+            put("here", 1);
+            put("there", 1);
+            put("when", 1);
+            put("where", 1);
+            put("why", 1);
+            put("how", 1);
+            put("all", 1);
+            put("any", 1);
+            put("both", 1);
+            put("each", 1);
+            put("few", 1);
+            put("more", 1);
+            put("most", 1);
+            put("other", 1);
+            put("some", 1);
+            put("such", 1);
+            put("no", 1);
+            put("nor", 1);
+            put("not", 1);
+            put("only", 1);
+            put("own", 1);
+            put("same", 1);
+            put("so", 1);
+            put("than", 1);
+            put("too", 1);
+            put("very", 1);
+            put("can", 1);
+            put("will", 1);
+            put("just", 1);
+            put("don", 1);
+            put("should", 1);
+            put("also", 1);
+            put("now", 1);
+            put("s", 1);
+            put("t", 1);  
+        }
+    };
+
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
     // public static final HashMap<String, Vector<Help_data>> last = new
     // HashMap<String, Vector<Help_data>>() { };
 
@@ -280,8 +513,14 @@ public class Index {
             // String line;
             String line;
             try (Stream<String> lines = Files.lines(Paths.get("URLs.txt"))) {
+<<<<<<< HEAD
                 line = lines.skip(i-1).findFirst().get();
                 try {
+=======
+                line = lines.skip(i).findFirst().get();
+                try {
+                    i++;
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
                     PreparedStatement stat = connection.prepareStatement("insert into URLs values (" + i + ",'" + line
                             + "','" + title + "','" + description + "');");
                     stat.executeUpdate();
@@ -352,6 +591,7 @@ public class Index {
     }
 
     public static void main(String[] args) throws IOException {
+<<<<<<< HEAD
         // System.out.println("wodeion");
         /*
          * HashMap<String, Vector<Help_data>> collect = new HashMap<>(); HashMap<String,
@@ -364,10 +604,14 @@ public class Index {
          * 
          * } }
          */
+=======
+       
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
 
         Indexer_test ob = new Indexer_test();
         Database db = new Database();
 
+<<<<<<< HEAD
         /*
          * for (int i = 0; i < Crawler_output.size(); i++) { String data =
          * Crawler_output.get(i); Path fileName = Path.of("demo1.txt"); //String content
@@ -381,14 +625,25 @@ public class Index {
 
             // Document document =
             // Jsoup.connect("https://stackoverflow.com/questions/12526979/jsoup-get-all-links-from-a-page#").get();
+=======
+        
+
+        for (int i = 0; i < 4; i++) {
+
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
             File input = new File(i + ".txt");
             Document doc = Jsoup.parse(input, "UTF-8");
             ob.insert(doc, i);
 
         }
 
+<<<<<<< HEAD
         ob.print();
         ob.insertIntoDatabase();      // Inserts each word with its noOfDocument and TF
+=======
+        ob.print(db);
+        //ob.insertIntoDatabase();      // Inserts each word with its noOfDocument and TF
+>>>>>>> 0b543b6190cabf0b7776a311992cd3b3240f2c9c
         /*
         Every URL is inserted in the Databse in ob.insert() by using db.insertURLs(noOfDocument, title, description);
         */

@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Configuring high availability replication for a cluster - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can configure a passive replica of your entire GitHub Enterprise Server cluster in a different location, allowing your cluster to fail over to redundant nodes."> 
+  <meta name="keywords" content="Clustering,Enterprise,High availability,Infrastructure"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="hFoHOiNk-LJ1EWI8iyo1bRUBKloTZQW0BShM"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/enterprise-server@3.1/admin" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Enterprise</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise accounts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-your-github-enterprise-license" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your GitHub Enterprise license</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-billing-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing billing for your enterprise</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/system-overview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">System overview</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-the-github-enterprise-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About the GitHub Enterprise API</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/installation" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Installing</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance" class="pl-4 pr-5 py-2 color-text-primary">Setting up a GitHub Enterprise Server instance </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-aws" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on AWS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Azure</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-google-cloud-platform" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Google Cloud Platform</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-hyper-v" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Hyper-V</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-openstack-kvm" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on OpenStack KVM</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-vmware" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on VMware</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-xenserver" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on XenServer</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/setting-up-a-staging-instance" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up a staging instance</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/configuration" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Configuring GitHub Enterprise</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Configuring your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/about-enterprise-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-management-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the management console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-administrative-shell-ssh" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the administrative shell (SSH)</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-and-scheduling-maintenance-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling and scheduling maintenance mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-backups-on-your-appliance" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring backups</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/site-admin-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Site admin dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-private-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling private mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/managing-github-for-mobile-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing GitHub for mobile for your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring email for notifications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-rate-limits" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring rate limits</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring applications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/troubleshooting-ssl-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting SSL errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-time-synchronization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring time synchronization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/command-line-utilities" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Command-line utilities</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-github-pages-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Configuring GitHub Pages for your enterprise</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings" class="pl-4 pr-5 py-2 color-text-primary">Configuring network settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-the-ip-address-using-the-virtual-machine-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring the IP address using the virtual machine console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-dns-nameservers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring DNS nameservers</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-a-hostname" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a hostname</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/validating-your-domain-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Validating your domain settings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-tls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring TLS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/enabling-subdomain-isolation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling subdomain isolation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring an outbound web proxy server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-built-in-firewall-rules" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring built-in firewall rules</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/network-ports" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Network ports</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/using-github-enterprise-server-with-a-load-balancer" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using GitHub Enterprise Server with a load balancer</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-4 pr-5 py-2 color-text-primary">Managing connections between GitHub Enterprise Server and GitHub Enterprise Cloud </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/connecting-github-enterprise-server-to-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Connecting GitHub Enterprise Server to GitHub Enterprise Cloud</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-search-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified search between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-contributions-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified contributions between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-alerts-for-vulnerable-dependencies-on-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling alerts for vulnerable dependencies on GitHub Enterprise Server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Enabling automatic user license sync between GitHub Enterprise Server and GitHub Enterprise Cloud</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/authentication" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Authentication</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/user-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing users, organizations, and repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/policies" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting policies for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Monitoring, managing, and updating your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance" class="pl-4 pr-5 py-2 color-text-primary">Monitoring your appliance </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance/accessing-the-monitor-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the monitor dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance/recommended-alert-thresholds" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Recommended alert thresholds</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance/setting-up-external-monitoring" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up external monitoring</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance/configuring-collectd" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring collectd</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/monitoring-your-appliance/monitoring-using-snmp" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Monitoring using SNMP</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources" class="pl-4 pr-5 py-2 color-text-primary">Updating the virtual machine and physical resources </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/upgrade-requirements" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Upgrade requirements</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/upgrading-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Upgrading GitHub Enterprise Server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/enabling-automatic-update-checks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling automatic update checks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/increasing-storage-capacity" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Increasing storage capacity</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/increasing-cpu-or-memory-resources" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Increasing CPU or memory resources</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/updating-the-virtual-machine-and-physical-resources/migrating-from-github-enterprise-1110x-to-2123" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from GitHub Enterprise 11.10.x to 2.1.23</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering" class="pl-4 pr-5 py-2 color-text-primary">Configuring clustering </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/about-clustering" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About clustering</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/differences-between-clustering-and-high-availability-ha" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Differences between clustering and high availability (HA)</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/about-cluster-nodes" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About cluster nodes</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/cluster-network-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Cluster network configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/initializing-the-cluster" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Initializing the cluster</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/upgrading-a-cluster" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Upgrading a cluster</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/monitoring-cluster-nodes" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Monitoring cluster nodes</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/replacing-a-cluster-node" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Replacing a cluster node</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/evacuating-a-cluster-node" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Evacuating a cluster node</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring high availability replication for a cluster</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/initiating-a-failover-to-your-replica-cluster" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Initiating a failover to your replica cluster</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability" class="pl-4 pr-5 py-2 color-text-primary">Configuring high availability </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/about-high-availability-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About high availability configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/creating-a-high-availability-replica" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a high availability replica</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/initiating-a-failover-to-your-replica-appliance" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Initiating a failover to your replica appliance</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/recovering-a-high-availability-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Recovering a high availability configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/removing-a-high-availability-replica" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a high availability replica</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-high-availability/about-geo-replication" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About geo-replication</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Actions for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/packages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Packages for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-support" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with GitHub Support</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/advanced-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Advanced Security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/release-notes" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Release notes</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/all-releases" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Enterprise Server releases</a> <!-- some categories have maptopics with child articles -->  </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Enterprise 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Enterprise" href="/en/enterprise-server@3.1/admin" class="d-inline-block ">GitHub Enterprise</a><a title="category: Monitoring, managing, and updating your enterprise" href="/en/enterprise-server@3.1/admin/enterprise-management" class="d-inline-block ">Monitoring, managing, and updating your enterprise</a><a title="mapTopic: Configuring clustering" href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering" class="d-inline-block ">Configuring clustering</a><a title="article: Configuring high availability replication for a cluster" href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-inline-block color-text-tertiary">Configuring high availability replication for a cluster</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/enterprise-management/configuring-clustering/configuring-high-availability-replication-for-a-cluster" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Configuring high availability replication for a cluster</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can configure a passive replica of your entire GitHub Enterprise Server cluster in a different location, allowing your cluster to fail over to redundant nodes.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-high-availability-replication-for-clusters">About high availability replication for clusters</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#prerequisites">Prerequisites</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#hardware-and-software">Hardware and software</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#network">Network</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#creating-a-high-availability-replica-for-a-cluster">Creating a high availability replica for a cluster</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#assigning-active-nodes-to-the-primary-datacenter">Assigning active nodes to the primary datacenter</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#adding-passive-nodes-to-the-cluster-configuration-file">Adding passive nodes to the cluster configuration file</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#example-configuration">Example configuration</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#monitoring-replication-between-active-and-passive-cluster-nodes">Monitoring replication between active and passive cluster nodes</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#reconfiguring-high-availability-replication-after-a-failover">Reconfiguring high availability replication after a failover</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#provisioning-and-configuring-new-passive-nodes">Provisioning and configuring new passive nodes</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#disabling-high-availability-replication-for-a-cluster">Disabling high availability replication for a cluster</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-high-availability-replication-for-clusters"><a href="#about-high-availability-replication-for-clusters">About high availability replication for clusters</a></h3> 
+       <p>You can configure a cluster deployment of GitHub Enterprise Server for high availability, where an identical set of passive nodes sync with the nodes in your active cluster. If hardware or software failures affect the datacenter with your active cluster, you can manually fail over to the replica nodes and continue processing user requests, minimizing the impact of the outage.</p> 
+       <p>In high availability mode, each active node syncs regularly with a corresponding passive node. The passive node runs in standby and does not serve applications or process user requests.</p> 
+       <p>We recommend configuring high availability as a part of a comprehensive disaster recovery plan for GitHub Enterprise Server. We also recommend performing regular backups. For more information, see "<a href="/en/enterprise-server@3.1/admin/configuration/configuring-backups-on-your-appliance">Configuring backups on your appliance</a>."</p> 
+       <h3 id="prerequisites"><a href="#prerequisites">Prerequisites</a></h3> 
+       <h4 id="hardware-and-software"><a href="#hardware-and-software">Hardware and software</a></h4> 
+       <p>For each existing node in your active cluster, you'll need to provision a second virtual machine with identical hardware resources. For example, if your cluster has 11 nodes and each node has 12 vCPUs, 96 GB of RAM, and 750 GB of attached storage, you must provision 11 new virtual machines that each have 12 vCPUs, 96 GB of RAM, and 750 GB of attached storage.</p> 
+       <p>On each new virtual machine, install the same version of GitHub Enterprise Server that runs on the nodes in your active cluster. You don't need to upload a license or perform any additional configuration. For more information, see "<a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance">Setting up a GitHub Enterprise Server instance</a>."</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note</strong>: The nodes that you intend to use for high availability replication should be standalone GitHub Enterprise Server instances. Don't initialize the passive nodes as a second cluster.</p> 
+       </div> 
+       <h4 id="network"><a href="#network">Network</a></h4> 
+       <p>You must assign a static IP address to each new node that you provision, and you must configure a load balancer to accept connections and direct them to the nodes in your cluster's front-end tier.</p> 
+       <p>We don't recommend configuring a firewall between the network with your active cluster and the network with your passive cluster. The latency between the network with the active nodes and the network with the passive nodes must be less than 70 milliseconds. For more information about network connectivity between nodes in the passive cluster, see "<a href="/en/enterprise-server@3.1/admin/enterprise-management/cluster-network-configuration">Cluster network configuration</a>."</p> 
+       <h3 id="creating-a-high-availability-replica-for-a-cluster"><a href="#creating-a-high-availability-replica-for-a-cluster">Creating a high availability replica for a cluster</a></h3> 
+       <ul> 
+        <li><a href="#assigning-active-nodes-to-the-primary-datacenter">Assigning active nodes to the primary datacenter</a></li> 
+        <li><a href="#adding-passive-nodes-to-the-cluster-configuration-file">Adding passive nodes to the cluster configuration file</a></li> 
+        <li><a href="#example-configuration">Example configuration</a></li> 
+       </ul> 
+       <h4 id="assigning-active-nodes-to-the-primary-datacenter"><a href="#assigning-active-nodes-to-the-primary-datacenter">Assigning active nodes to the primary datacenter</a></h4> 
+       <p>Before you define a secondary datacenter for your passive nodes, ensure that you assign your active nodes to the primary datacenter.</p> 
+       <ol> 
+        <li> <p>SSH into any node in your cluster. For more information, see "<a href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh">Accessing the administrative shell (SSH)</a>."</p> </li> 
+        <li> <p>Open the cluster configuration file at <em>/data/user/common/cluster.conf</em> in a text editor. For example, you can use Vim.</p> <pre><code>sudo vim /data/user/common/cluster.conf
+</code></pre> </li> 
+        <li> <p>Note the name of your cluster's primary datacenter. The <code>[cluster]</code> section at the top of the cluster configuration file defines the primary datacenter's name, using the <code>primary-datacenter</code> key-value pair. By default, the primary datacenter for your cluster is named <code>default</code>.</p> <pre><code class="hljs language-shell">[cluster]
+  mysql-master = <em>HOSTNAME</em>
+  redis-master = <em>HOSTNAME</em>
+  <strong>primary-datacenter = default</strong></code></pre> 
+         <ul> 
+          <li>Optionally, change the name of the primary datacenter to something more descriptive or accurate by editing the value of <code>primary-datacenter</code>.</li> 
+         </ul> </li> 
+        <li> <p>The cluster configuration file lists each node under a <code>[cluster "<em>HOSTNAME</em>"]</code> heading. Under each node's heading, add a new key-value pair to assign the node to a datacenter. Use the same value as <code>primary-datacenter</code> from step 3 above. For example, if you want to use the default name (<code>default</code>), add the following key-value pair to the section for each node.</p> <pre><code>datacenter = default
+</code></pre> <p>When you're done, the section for each node in the cluster configuration file should look like the following example. The order of the key-value pairs doesn't matter.</p> <pre><code class="hljs language-shell">[cluster "<em>HOSTNAME</em>"]
+  <strong>datacenter = default</strong>
+  hostname = <em>HOSTNAME</em>
+  ipv4 = <em>IP ADDRESS</em>
+  ...
+...</code></pre> 
+         <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+          <p><strong>Note</strong>: If you changed the name of the primary datacenter in step 3, find the <code>consul-datacenter</code> key-value pair in the section for each node and change the value to the renamed primary datacenter. For example, if you named the primary datacenter <code>primary</code>, use the following key-value pair for each node.</p> 
+          <pre><code>consul-datacenter = primary
+</code></pre> 
+         </div> </li> 
+        <li> <p>Apply the new configuration. This command can take some time to finish, so we recommend running the command in a terminal multiplexer like <code>screen</code> or <code>tmux</code>.</p> <pre><code>ghe-cluster-config-apply
+</code></pre> </li> 
+        <li> <p>After the configuration run finishes, GitHub Enterprise Server displays the following message.</p> <pre><code class="hljs language-shell">Finished cluster configuration</code></pre> </li> 
+       </ol> 
+       <p>After GitHub Enterprise Server returns you to the prompt, you've finished assigning your nodes to the cluster's primary datacenter.</p> 
+       <h4 id="adding-passive-nodes-to-the-cluster-configuration-file"><a href="#adding-passive-nodes-to-the-cluster-configuration-file">Adding passive nodes to the cluster configuration file</a></h4> 
+       <p>To configure high availability, you must define a corresponding passive node for every active node in your cluster. The following instructions create a new cluster configuration that defines both active and passive nodes. You will:</p> 
+       <ul> 
+        <li>Create a copy of the active cluster configuration file.</li> 
+        <li>Edit the copy to define passive nodes that correspond to the active nodes, adding the IP addresses of the new virtual machines that you provisioned.</li> 
+        <li>Merge the modified copy of the cluster configuration back into your active configuration.</li> 
+        <li>Apply the new configuration to start replication.</li> 
+       </ul> 
+       <p>For an example configuration, see "<a href="#example-configuration">Example configuration</a>."</p> 
+       <ol> 
+        <li> <p>For each node in your cluster, provision a matching virtual machine with identical specifications, running the same version of GitHub Enterprise Server. Note the IPv4 address and hostname for each new cluster node. For more information, see "<a href="#prerequisites">Prerequisites</a>."</p> 
+         <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+          <p><strong>Note</strong>: If you're reconfiguring high availability after a failover, you can use the old nodes from the primary datacenter instead.</p> 
+         </div> </li> 
+        <li> <p>SSH into any node in your cluster. For more information, see "<a href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh">Accessing the administrative shell (SSH)</a>."</p> </li> 
+        <li> <p>Back up your existing cluster configuration.</p> <pre><code>cp /data/user/common/cluster.conf ~/$(date +%Y-%m-%d)-cluster.conf.backup
+</code></pre> </li> 
+        <li> <p>Create a copy of your existing cluster configuration file in a temporary location, like <em>/home/admin/cluster-passive.conf</em>. Delete unique key-value pairs for IP addresses (<code>ipv*</code>), UUIDs (<code>uuid</code>), and public keys for WireGuard (<code>wireguard-pubkey</code>).</p> <pre><code>grep -Ev "(?:|ipv|uuid|vpn|wireguard\-pubkey)" /data/user/common/cluster.conf &gt; ~/cluster-passive.conf
+</code></pre> </li> 
+        <li> <p>Remove the <code>[cluster]</code> section from the temporary cluster configuration file that you copied in the previous step.</p> <pre><code>git config -f ~/cluster-passive.conf --remove-section cluster
+</code></pre> </li> 
+        <li> <p>Decide on a name for the secondary datacenter where you provisioned your passive nodes, then update the temporary cluster configuration file with the new datacenter name. Replace <code>SECONDARY</code> with the name you choose.</p> <pre><code class="hljs language-shell">sed -i 's/datacenter = default/datacenter = <em>SECONDARY</em>/g' ~/cluster-passive.conf</code></pre> </li> 
+        <li> <p>Decide on a pattern for the passive nodes' hostnames.</p> 
+         <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+          <p><strong>Warning</strong>: Hostnames for passive nodes must be unique and differ from the hostname for the corresponding active node.</p> 
+         </div> </li> 
+        <li> <p>Open the temporary cluster configuration file from step 3 in a text editor. For example, you can use Vim.</p> <pre><code class="hljs language-shell">sudo vim ~/cluster-passive.conf</code></pre> </li> 
+        <li> <p>In each section within the temporary cluster configuration file, update the node's configuration. The cluster configuration file lists each node under a <code>[cluster "<em>HOSTNAME</em>"]</code> heading.</p> 
+         <ul> 
+          <li>Change the quoted hostname in the section heading and the value for <code>hostname</code> within the section to the passive node's hostname, per the pattern you chose in step 7 above.</li> 
+          <li>Add a new key named <code>ipv4</code>, and set the value to the passive node's static IPv4 address.</li> 
+          <li>Add a new key-value pair, <code>replica = enabled</code>.</li> 
+         </ul> <pre><code class="hljs language-shell">[cluster "<em>NEW PASSIVE NODE HOSTNAME</em>"]
+  ...
+  hostname = <em>NEW PASSIVE NODE HOSTNAME</em>
+  ipv4 = <em>NEW PASSIVE NODE IPV4 ADDRESS</em>
+  <strong>replica = enabled</strong>
+  ...
+...</code></pre> </li> 
+        <li> <p>Append the contents of the temporary cluster configuration file that you created in step 4 to the active configuration file.</p> <pre><code class="hljs language-shell">cat ~/cluster-passive.conf &gt;&gt; /data/user/common/cluster.conf</code></pre> </li> 
+        <li> <p>Designate the primary MySQL and Redis nodes in the secondary datacenter. Replace <code>REPLICA MYSQL PRIMARY HOSTNAME</code> and <code>REPLICA REDIS PRIMARY HOSTNAME</code> with the hostnames of the passives node that you provisioned to match your existing MySQL and Redis primaries.</p> <pre><code class="hljs language-shell">git config -f /data/user/common/cluster.conf cluster.mysql-master-replica <em>REPLICA MYSQL PRIMARY HOSTNAME</em>
+git config -f /data/user/common/cluster.conf cluster.redis-master-replica <em>REPLICA REDIS PRIMARY HOSTNAME</em></code></pre> </li> 
+        <li> <p>Enable MySQL to fail over automatically when you fail over to the passive replica nodes.</p> <pre><code class="hljs language-shell">git config -f /data/user/common/cluster.conf cluster.mysql-auto-failover true</code></pre> 
+         <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+          <p><strong>Warning</strong>: Review your cluster configuration file before proceeding.</p> 
+          <ul> 
+           <li>In the top-level <code>[cluster]</code> section, ensure that the values for <code>mysql-master-replica</code> and <code>redis-master-replica</code> are the correct hostnames for the passive nodes in the secondary datacenter that will serve as the MySQL and Redis primaries after a failover.</li> 
+           <li>In each section for an active node named <code>[cluster "<em>ACTIVE NODE HOSTNAME</em>"]</code>, double-check the following key-value pairs.
+            <ul> 
+             <li><code>datacenter</code> should match the value of <code>primary-datacenter</code> in the top-level <code>[cluster]</code> section.</li> 
+             <li><code>consul-datacenter</code> should match the value of <code>datacenter</code>, which should be the same as the value for <code>primary-datacenter</code> in the top-level <code>[cluster]</code> section.</li> 
+            </ul></li> 
+           <li>Ensure that for each active node, the configuration has <strong>one</strong> corresponding section for <strong>one</strong> passive node with the same roles. In each section for a passive node, double-check each key-value pair.
+            <ul> 
+             <li><code>datacenter</code> should match all other passive nodes.</li> 
+             <li><code>consul-datacenter</code> should match all other passive nodes.</li> 
+             <li><code>hostname</code> should match the hostname in the section heading.</li> 
+             <li><code>ipv4</code> should match the node's unique, static IPv4 address.</li> 
+             <li><code>replica</code> should be configured as <code>enabled</code>.</li> 
+            </ul></li> 
+           <li>Take the opportunity to remove sections for offline nodes that are no longer in use.</li> 
+          </ul> 
+          <p>To review an example configuration, see "<a href="#example-configuration">Example configuration</a>."</p> 
+         </div> </li> 
+        <li> <p>Initialize the new cluster configuration. This command can take some time to finish, so we recommend running the command in a terminal multiplexer like <code>screen</code> or <code>tmux</code>.</p> <pre><code class="hljs language-shell">ghe-cluster-config-init</code></pre> </li> 
+        <li> <p>After the initialization finishes, GitHub Enterprise Server displays the following message.</p> <pre><code class="hljs language-shell">Finished cluster initialization</code></pre> </li> 
+        <li> <p>Apply the new configuration. This command can take some time to finish, so we recommend running the command in a terminal multiplexer like <code>screen</code> or <code>tmux</code>.</p> <pre><code>ghe-cluster-config-apply
+</code></pre> </li> 
+        <li> <p>After the configuration run finishes, GitHub Enterprise Server displays the following message.</p> <pre><code class="hljs language-shell">Finished cluster configuration</code></pre> </li> 
+        <li> <p>Configure a load balancer that will accept connections from users if you fail over to the passive nodes. For more information, see "<a href="/en/enterprise-server@3.1/admin/enterprise-management/cluster-network-configuration#configuring-a-load-balancer">Cluster network configuration</a>."</p> </li> 
+       </ol> 
+       <p>You've finished configuring high availability replication for the nodes in your cluster. Each active node begins replicating configuration and data to its corresponding passive node, and you can direct traffic to the load balancer for the secondary datacenter in the event of a failure. For more information about failing over, see "<a href="/en/enterprise-server@3.1/admin/enterprise-management/initiating-a-failover-to-your-replica-cluster">Initiating a failover to your replica cluster</a>."</p> 
+       <h4 id="example-configuration"><a href="#example-configuration">Example configuration</a></h4> 
+       <p>The top-level <code>[cluster]</code> configuration should look like the following example.</p> 
+       <pre><code class="hljs language-shell">[cluster]
+  mysql-master = <em>HOSTNAME OF ACTIVE MYSQL MASTER</em>
+  redis-master = <em>HOSTNAME OF ACTIVE REDIS MASTER</em>
+  primary-datacenter = <em>PRIMARY DATACENTER NAME</em>
+  mysql-master-replica = <em>HOSTNAME OF PASSIVE MYSQL MASTER</em>
+  redis-master-replica = <em>HOSTNAME OF PASSIVE REDIS MASTER</em>
+  mysql-auto-failover = true
+...</code></pre> 
+       <p>The configuration for an active node in your cluster's storage tier should look like the following example.</p> 
+       <pre><code class="hljs language-shell">...
+[cluster "<em>UNIQUE ACTIVE NODE HOSTNAME</em>"]
+  datacenter = default
+  hostname = <em>UNIQUE ACTIVE NODE HOSTNAME</em>
+  ipv4 = <em>IPV4 ADDRESS</em>
+  consul-datacenter = default
+  consul-server = true
+  git-server = true
+  pages-server = true
+  mysql-server = true
+  elasticsearch-server = true
+  redis-server = true
+  memcache-server = true
+  metrics-server = true
+  storage-server = true
+  vpn = <em>IPV4 ADDRESS SET AUTOMATICALLY</em>
+  uuid = <em>UUID SET AUTOMATICALLY</em>
+  wireguard-pubkey = <em>PUBLIC KEY SET AUTOMATICALLY</em>
+...</code></pre> 
+       <p>The configuration for the corresponding passive node in the storage tier should look like the following example.</p> 
+       <ul> 
+        <li>Important differences from the corresponding active node are <strong>bold</strong>.</li> 
+        <li>GitHub Enterprise Server assigns values for <code>vpn</code>, <code>uuid</code>, and <code>wireguard-pubkey</code> automatically, so you shouldn't define the values for passive nodes that you will initialize.</li> 
+        <li>The server roles, defined by <code>*-server</code> keys, match the corresponding active node.</li> 
+       </ul> 
+       <pre><code class="hljs language-shell">...
+<strong>[cluster "<em>UNIQUE PASSIVE NODE HOSTNAME</em>"]</strong>
+  <strong>replica = enabled</strong>
+  <strong>ipv4 = <em>IPV4 ADDRESS OF NEW VM WITH IDENTICAL RESOURCES</em></strong>
+  <strong>datacenter = <em>SECONDARY DATACENTER NAME</em></strong>
+  <strong>hostname = <em>UNIQUE PASSIVE NODE HOSTNAME</em></strong>
+  <strong>consul-datacenter = <em>SECONDARY DATACENTER NAME</em></strong>
+  consul-server = true
+  git-server = true
+  pages-server = true
+  mysql-server = true
+  elasticsearch-server = true
+  redis-server = true
+  memcache-server = true
+  metrics-server = true
+  storage-server = true
+  <strong>vpn = <em>DO NOT DEFINE</em></strong>
+  <strong>uuid = <em>DO NOT DEFINE</em></strong>
+  <strong>wireguard-pubkey = <em>DO NOT DEFINE</em></strong>
+...</code></pre> 
+       <h3 id="monitoring-replication-between-active-and-passive-cluster-nodes"><a href="#monitoring-replication-between-active-and-passive-cluster-nodes">Monitoring replication between active and passive cluster nodes</a></h3> 
+       <p>Initial replication between the active and passive nodes in your cluster takes time. The amount of time depends on the amount of data to replicate and the activity levels for GitHub Enterprise Server.</p> 
+       <p>You can monitor the progress on any node in the cluster, using command-line tools available via the GitHub Enterprise Server administrative shell. For more information about the administrative shell, see "<a href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh">Accessing the administrative shell (SSH)</a>."</p> 
+       <ul> 
+        <li> <p>Monitor replication of databases:</p> <pre><code>/usr/local/share/enterprise/ghe-cluster-status-mysql
+</code></pre> </li> 
+        <li> <p>Monitor replication of repository and Gist data:</p> <pre><code>ghe-spokes status
+</code></pre> </li> 
+        <li> <p>Monitor replication of attachment and LFS data:</p> <pre><code>ghe-storage replication-status
+</code></pre> </li> 
+        <li> <p>Monitor replication of Pages data:</p> <pre><code>ghe-dpages replication-status
+</code></pre> </li> 
+       </ul> 
+       <p>You can use <code>ghe-cluster-status</code> to review the overall health of your cluster. For more information, see "<a href="/en/enterprise-server@3.1/admin/configuration/command-line-utilities#ghe-cluster-status">Command-line utilities</a>."</p> 
+       <h3 id="reconfiguring-high-availability-replication-after-a-failover"><a href="#reconfiguring-high-availability-replicatio

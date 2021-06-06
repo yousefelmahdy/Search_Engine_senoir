@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Creating a pre-receive hook script - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Use pre-receive hook scripts to create requirements for accepting or rejecting a push based on the contents."> 
+  <meta name="keywords" content="Enterprise,Policies,Pre-receive hooks"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="KBIeWeNr-OGt93vitKCkefQW_BEme-KwJyh0"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/enterprise-server@3.1/admin" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Enterprise</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise accounts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-your-github-enterprise-license" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your GitHub Enterprise license</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-billing-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing billing for your enterprise</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/system-overview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">System overview</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-the-github-enterprise-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About the GitHub Enterprise API</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/installation" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Installing</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance" class="pl-4 pr-5 py-2 color-text-primary">Setting up a GitHub Enterprise Server instance </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-aws" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on AWS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Azure</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-google-cloud-platform" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Google Cloud Platform</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-hyper-v" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Hyper-V</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-openstack-kvm" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on OpenStack KVM</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-vmware" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on VMware</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-xenserver" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on XenServer</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/setting-up-a-staging-instance" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up a staging instance</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/configuration" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Configuring GitHub Enterprise</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Configuring your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/about-enterprise-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-management-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the management console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-administrative-shell-ssh" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the administrative shell (SSH)</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-and-scheduling-maintenance-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling and scheduling maintenance mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-backups-on-your-appliance" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring backups</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/site-admin-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Site admin dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-private-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling private mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/managing-github-for-mobile-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing GitHub for mobile for your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring email for notifications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-rate-limits" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring rate limits</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring applications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/troubleshooting-ssl-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting SSL errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-time-synchronization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring time synchronization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/command-line-utilities" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Command-line utilities</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-github-pages-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Configuring GitHub Pages for your enterprise</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings" class="pl-4 pr-5 py-2 color-text-primary">Configuring network settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-the-ip-address-using-the-virtual-machine-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring the IP address using the virtual machine console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-dns-nameservers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring DNS nameservers</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-a-hostname" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a hostname</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/validating-your-domain-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Validating your domain settings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-tls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring TLS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/enabling-subdomain-isolation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling subdomain isolation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring an outbound web proxy server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-built-in-firewall-rules" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring built-in firewall rules</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/network-ports" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Network ports</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/using-github-enterprise-server-with-a-load-balancer" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using GitHub Enterprise Server with a load balancer</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-4 pr-5 py-2 color-text-primary">Managing connections between GitHub Enterprise Server and GitHub Enterprise Cloud </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/connecting-github-enterprise-server-to-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Connecting GitHub Enterprise Server to GitHub Enterprise Cloud</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-search-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified search between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-contributions-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified contributions between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-alerts-for-vulnerable-dependencies-on-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling alerts for vulnerable dependencies on GitHub Enterprise Server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Enabling automatic user license sync between GitHub Enterprise Server and GitHub Enterprise Cloud</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/authentication" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Authentication</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/user-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing users, organizations, and repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/policies" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting policies for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policies-for-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Enforcing policies for your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enforcing repository management policies in your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-advanced-security-in-your-enterprise" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Enforcing policies for Advanced Security in your enterprise</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks" class="pl-4 pr-5 py-2 color-text-primary">Enforcing policy with pre-receive hooks </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/about-pre-receive-hooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About pre-receive hooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-environment" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a pre-receive hook environment</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a pre-receive hook script</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/managing-pre-receive-hooks-on-the-github-enterprise-server-appliance" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing pre-receive hooks on the GitHub Enterprise Server appliance</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Monitoring, managing, and updating your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Actions for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/packages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Packages for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-support" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with GitHub Support</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/advanced-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Advanced Security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/release-notes" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Release notes</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/all-releases" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Enterprise Server releases</a> <!-- some categories have maptopics with child articles -->  </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Enterprise 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Enterprise" href="/en/enterprise-server@3.1/admin" class="d-inline-block ">GitHub Enterprise</a><a title="category: Setting policies for your enterprise" href="/en/enterprise-server@3.1/admin/policies" class="d-inline-block ">Setting policies for your enterprise</a><a title="mapTopic: Enforcing policy with pre-receive hooks" href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks" class="d-inline-block ">Enforcing policy with pre-receive hooks</a><a title="article: Creating a pre-receive hook script" href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-inline-block color-text-tertiary">Creating a pre-receive hook script</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/admin/policies/enforcing-policy-with-pre-receive-hooks/creating-a-pre-receive-hook-script" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Creating a pre-receive hook script</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Use pre-receive hook scripts to create requirements for accepting or rejecting a push based on the contents.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#writing-a-pre-receive-hook-script">Writing a pre-receive hook script</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#input-stdin">Input (<code>stdin</code>)</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#output-stdout">Output (<code>stdout</code>)</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#exit-status">Exit status</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#environment-variables">Environment variables</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#setting-permissions-and-pushing-a-pre-receive-hook-to-github-enterprise-server">Setting permissions and pushing a pre-receive hook to GitHub Enterprise Server</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#testing-pre-receive-scripts-locally">Testing pre-receive scripts locally</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#further-reading">Further reading</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>You can see examples of pre-receive hooks for GitHub Enterprise Server in the <a href="https://github.com/github/platform-samples/tree/master/pre-receive-hooks"><code>github/platform-samples</code> repository</a>.</p> 
+       <h3 id="writing-a-pre-receive-hook-script"><a href="#writing-a-pre-receive-hook-script">Writing a pre-receive hook script</a></h3> 
+       <p>A pre-receive hook script executes in a pre-receive hook environment on your GitHub Enterprise Server instance. When you create a pre-receive hook script, consider the available input, output, exit status, and environment variables.</p> 
+       <h4 id="input-stdin"><a href="#input-stdin">Input (<code>stdin</code>)</a></h4> 
+       <p>After a push occurs and before any refs are updated for the remote repository, the <code>git-receive-pack</code> process on your GitHub Enterprise Server instance invokes the pre-receive hook script. Standard input for the script, <code>stdin</code>, is a string containing a line for each ref to update. Each line contains the old object name for the ref, the new object name for the ref, and the full name of the ref.</p> 
+       <pre><code>&lt;old-value&gt; SP &lt;new-value&gt; SP &lt;ref-name&gt; LF
+</code></pre> 
+       <p>This string represents the following arguments.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Argument</th>
+          <th align="left">Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><code>&lt;old-value&gt;</code></td>
+          <td align="left">Old object name stored in the ref.<br> When you create a new ref, the value is 40 zeroes.</td>
+         </tr>
+         <tr>
+          <td align="left"><code>&lt;new-value&gt;</code></td>
+          <td align="left">New object name to be stored in the ref.<br> When you delete a ref, the value is 40 zeroes.</td>
+         </tr>
+         <tr>
+          <td align="left"><code>&lt;ref-name&gt;</code></td>
+          <td align="left">The full name of the ref.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>For more information about <code>git-receive-pack</code>, see "<a href="https://git-scm.com/docs/git-receive-pack">git-receive-pack</a>" in the Git documentation. For more information about refs, see "<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git References</a>" in <em>Pro Git</em>.</p> 
+       <h4 id="output-stdout"><a href="#output-stdout">Output (<code>stdout</code>)</a></h4> 
+       <p>The standard output for the script, <code>stdout</code>, is passed back to the client. Any <code>echo</code> statements will be visible to the user on the command line or in the user interface.</p> 
+       <h4 id="exit-status"><a href="#exit-status">Exit status</a></h4> 
+       <p>The exit status of a pre-receive script determines if the push will be accepted.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Exit-status value</th>
+          <th align="left">Action</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">0</td>
+          <td align="left">The push will be accepted.</td>
+         </tr>
+         <tr>
+          <td align="left">non-zero</td>
+          <td align="left">The push will be rejected.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="environment-variables"><a href="#environment-variables">Environment variables</a></h4> 
+       <p>In addition to the standard input for your pre-receive hook script, <code>stdin</code>, GitHub Enterprise Server makes the following variables available in the Bash environment for your script's execution. For more information about <code>stdin</code> for your pre-receive hook script, see "<a href="#input-stdin">Input (<code>stdin</code>)</a>."</p> 
+       <p>Different environment variables are available to your pre-receive hook script depending on what triggers the script to run.</p> 
+       <ul> 
+        <li><a href="#always-available">Always available</a></li> 
+        <li><a href="#available-for-pushes-from-the-web-interface-or-api">Available for pushes from the web interface or API</a></li> 
+        <li><a href="#available-for-pull-request-merges">Available for pull request merges</a></li> 
+        <li><a href="#available-for-pushes-using-ssh-authentication">Available for pushes using SSH authentication</a></li> 
+       </ul> 
+       <h5 id="always-available"><a href="#always-available">Always available</a></h5> 
+       <p>The following variables are always available in the pre-receive hook environment.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Variable</th>
+          <th align="left">Description</th>
+          <th align="left">Example value</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><pre>$GIT_DIR</pre></td>
+          <td align="left">Path to the remote repository on the instance</td>
+          <td align="left">/data/user/repositories/a/ab/<br>a1/b2/34/100001234/1234.git</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GIT_PUSH_OPTION_COUNT</pre></td>
+          <td align="left">The number of push options that were sent by the client with <code>--push-option</code>. For more information, see "<a href="https://git-scm.com/docs/git-push#Documentation/git-push.txt---push-optionltoptiongt">git-push</a>" in the Git documentation.</td>
+          <td align="left">1</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GIT_PUSH_OPTION_<em>N</em></pre></td>
+          <td align="left">Where <em>N</em> is an integer starting at 0, this variable contains the push option string that was sent by the client. The first option that was sent is stored in <code>GIT_PUSH_OPTION_0</code>, the second option that was sent is stored in <code>GIT_PUSH_OPTION_1</code>, and so on. For more information about push options, see "<a href="https://git-scm.com/docs/git-push#git-push---push-optionltoptiongt">git-push</a>" in the Git documentation.</td>
+          <td align="left">abcd</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GIT_USER_AGENT</pre></td>
+          <td align="left">User-agent string sent by the Git client that pushed the changes</td>
+          <td align="left">git/2.0.0</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_REPO_NAME</pre></td>
+          <td align="left">Name of the repository being updated in <em>NAME</em>/<em>OWNER</em> format</td>
+          <td align="left">octo-org/hello-enterprise</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_REPO_PUBLIC</pre></td>
+          <td align="left">Boolean representing whether the repository being updated is public</td>
+          <td align="left">
+           <ul>
+            <li>true: Repository's visibility is public</li>
+            <li>false: Repository's visibility is private or internal</li>
+           </ul></td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_USER_IP</pre></td>
+          <td align="left">IP address of client that initiated the push</td>
+          <td align="left">192.0.2.1</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_USER_LOGIN</pre></td>
+          <td align="left">Username for account that initiated the push</td>
+          <td align="left">octocat</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h5 id="available-for-pushes-from-the-web-interface-or-api"><a href="#available-for-pushes-from-the-web-interface-or-api">Available for pushes from the web interface or API</a></h5> 
+       <p>The <code>$GITHUB_VIA</code> variable is available in the pre-receive hook environment when the ref update that triggers the hook occurs via either the web interface or the API for GitHub Enterprise Server. The value describes the action that updated the ref.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Value</th>
+          <th align="left">Action</th>
+          <th align="left">More information</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><pre>auto-merge deployment api</pre></td>
+          <td align="left">Automatic merge of the base branch via a deployment created with the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/repos#create-a-deployment">Repositories</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>blob edit</pre></td>
+          <td align="left">Change to a file's contents in the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/managing-files-in-a-repository/editing-files-in-your-repository">Editing files in your repository</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>branch merge api</pre></td>
+          <td align="left">Merge of a branch via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/repos#merge-a-branch">Repositories</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>branches page delete button</pre></td>
+          <td align="left">Deletion of a branch in the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#deleting-a-branch">Creating and deleting branches within your repository</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>git refs create api</pre></td>
+          <td align="left">Creation of a ref via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/git#create-a-reference">Git database</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>git refs delete api</pre></td>
+          <td align="left">Deletion of a ref via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/git#delete-a-reference">Git database</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>git refs update api</pre></td>
+          <td align="left">Update of a ref via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/git#update-a-reference">Git database</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>git repo contents api</pre></td>
+          <td align="left">Change to a file's contents via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/repos#create-or-update-file-contents">Repositories</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>merge base into head</pre></td>
+          <td align="left">Update of the topic branch from the base branch when the base branch requires strict status checks (via <strong>Update branch</strong> in a pull request, for example)</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/administering-a-repository/about-protected-branches#require-status-checks-before-merging">About protected branches</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>pull request branch delete button</pre></td>
+          <td align="left">Deletion of a topic branch from a pull request in the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/administering-a-repository/deleting-and-restoring-branches-in-a-pull-request#deleting-a-branch-used-for-a-pull-request">Deleting and restoring branches in a pull request</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>pull request branch undo button</pre></td>
+          <td align="left">Restoration of a topic branch from a pull request in the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/administering-a-repository/deleting-and-restoring-branches-in-a-pull-request#restoring-a-deleted-branch">Deleting and restoring branches in a pull request</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>pull request merge api</pre></td>
+          <td align="left">Merge of a pull request via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/pulls#merge-a-pull-request">Pulls</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>pull request merge button</pre></td>
+          <td align="left">Merge of a pull request in the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/collaborating-with-issues-and-pull-requests/merging-a-pull-request#merging-a-pull-request-on-github">Merging a pull request</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>pull request revert button</pre></td>
+          <td align="left">Revert of a pull request</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/collaborating-with-issues-and-pull-requests/reverting-a-pull-request">Reverting a pull request</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>releases delete button</pre></td>
+          <td align="left">Deletion of a release</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/administering-a-repository/managing-releases-in-a-repository#deleting-a-release">Managing releases in a repository</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>stafftools branch restore</pre></td>
+          <td align="left">Restoration of a branch from the site admin dashboard</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/admin/configuration/site-admin-dashboard#repositories">Site admin dashboard</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>tag create api</pre></td>
+          <td align="left">Creation of a tag via the API</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/rest/reference/git#create-a-tag-object">Git database</a>" in the REST API documentation</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>slumlord (#<em>SHA</em>)</pre></td>
+          <td align="left">Commit via Subversion</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/importing-your-projects-to-github/support-for-subversion-clients#making-commits-to-subversion">Support for Subversion clients</a>"</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>web branch create</pre></td>
+          <td align="left">Creation of a branch via the web interface</td>
+          <td align="left">"<a href="/en/enterprise-server@3.1/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch">Creating and deleting branches within your repository</a>"</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h5 id="available-for-pull-request-merges"><a href="#available-for-pull-request-merges">Available for pull request merges</a></h5> 
+       <p>The following variables are available in the pre-receive hook environment when the push that triggers the hook is a push due to the merge of a pull request.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Variable</th>
+          <th align="left">Description</th>
+          <th align="left">Example value</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><pre>$GITHUB_PULL_REQUEST_AUTHOR_LOGIN</pre></td>
+          <td align="left">Username of account that authored the pull request</td>
+          <td align="left">octocat</td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_PULL_REQUEST_HEAD</pre></td>
+          <td align="left">The name of the pull request's topic branch, in the format <code>USERNAME:BRANCH</code></td>
+          <td align="left">
+           <nobr>
+            octocat:fix-bug
+           </nobr></td>
+         </tr>
+         <tr>
+          <td align="left"><pre>$GITHUB_PULL_REQUEST_BASE</pre></td>
+          <td align="left">The name of the pull request's base branch, in the format <code>USERNAME:BRANCH</code></td>
+          <td align="left">octocat:main</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h5 id="available-for-pushes-using-ssh-authentication"><a href="#available-for-pushes-using-ssh-authentication">Available for pushes using SSH authentication</a></h5> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Variable</th>
+          <th align="left">Description</th>
+          <th align="left">Example value</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><pre>$GITHUB_PUBLIC_KEY_FINGERPRINT</pre></td>
+          <td align="left">The public key fingerprint for the user who pushed the changes</td>
+          <td align="left">a1:b2:c3:d4:e5:f6:g7:h8:i9:j0:k1:l2:m3:n4:o5:p6</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="setting-permissions-and-pushing-a-pre-receive-hook-to-github-enterprise-server"><a href="#setting-permissions-and-pushing-a-pre-receive-hook-to-github-enterprise-server">Setting permissions and pushing a pre-receive hook to GitHub Enterprise Server</a></h3> 
+       <p>A pre-receive hook script is contained in a repository on your GitHub Enterprise Server instance. A site administrator must take into consideration the repository permissions and ensure that only the appropriate users have access.</p> 
+       <p>We recommend consolidating hooks to a single repository. If the consolidated hook repository is public, the <code>README.md</code> can be used to explain policy enforcements. Also, contributions can be accepted via pull requests. However, pre-receive hooks can only be added from the default branch. For a testing workflow, forks of the repository with configuration should be used.</p> 
+       <ol> 
+        <li> <p>For Mac users, ensure the scripts have execute permissions:</p> <pre><code class="hljs language-shell">$ sudo chmod +x <em>SCRIPT_FILE.sh</em></code></pre> <p>For Windows users, ensure the scripts have execute permissions:</p> <pre><code class="hljs language-shell">git update-index --chmod=+x <em>SCRIPT_FILE.sh</em></code></pre> </li> 
+        <li> <p>Commit and push to the designated repository for pre-receive hooks on your GitHub Enterprise Server instance.</p> <pre><code class="hljs language-shell">$ git commit -m "<em>YOUR COMMIT MESSAGE</em>"
+$ git push</code></pre> </li> 
+        <li> <p><a href="/en/enterprise-server@3.1/admin/guides/developer-workflow/managing-pre-receive-hooks-on-the-github-enterprise-server-appliance/#creating-pre-receive-hooks">Create the pre-receive hook</a> on the GitHub Enterprise Server instance.</p> </li> 
+       </ol> 
+       <h3 id="testing-pre-receive-scripts-locally"><a href="#testing-pre-receive-scripts-locally">Testing pre-receive scripts locally</a></h3> 
+       <p>You can test a pre-receive hook script locally before you create or update it on your GitHub Enterprise Server instance. One method is to create a local Docker environment to act as a remote repository that can execute the pre-receive hook.</p> 
+       <ol> 
+        <li> <p><a href="https://www.docker.com/">Ensure Docker is installed</a> locally.</p> </li> 
+        <li> <p>Create a file called <code>Dockerfile.dev</code> containing:</p> <pre><code class="hljs language-dockerfile"><span class="hljs-keyword">FROM</span> gliderlabs/alpine:<span class="hljs-number">3.3</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> \
+  apk add --no-cache git openssh bash &amp;&amp; \
+  ssh-keygen -A &amp;&amp; \
+  sed -i <span class="hljs-string">"s/#AuthorizedKeysFile/AuthorizedKeysFile/g"</span> /etc/ssh/sshd_config &amp;&amp; \
+  adduser git -D -G root -h /home/git -s /bin/bash &amp;&amp; \
+  passwd -d git &amp;&amp; \
+  su git -c <span class="hljs-string">"mkdir /home/git/.ssh &amp;&amp; \
+  ssh-keygen -t ed25519 -f /home/git/.ssh/id_ed25519 -P '' &amp;&amp; \
+  mv /home/git/.ssh/id_ed25519.pub /home/git/.ssh/authorized_keys &amp;&amp; \
+  mkdir /home/git/test.git &amp;&amp; \
+  git --bare init /home/git/test.git"</span></span>
+
+<span class="hljs-keyword">VOLUME</span><span class="bash"> [<span class="hljs-string">"/home/git/.ssh"</span>, <span class="hljs-string">"/home/git/test.git/hooks"</span>]</span>
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /home/git</span>
+
+<span class="hljs-keyword">CMD</span><span class="bash"> [<span class="hljs-string">"/usr/sbin/sshd"</span>, <span class="hljs-string">"-D"</span>]</span>
+</code></pre> </li> 
+        <li> <p>Create a test pre-receive script called <code>always_reject.sh</code>. This example script will reject all pushes, which is useful for locking a repository:</p> <pre><code>#!/usr/bin/env bash
+
+echo "error: rejecting all pushes"
+exit 1
+</code></pre> </li> 
+        <li> <p>Ensure the <code>always_reject.sh</code> scripts has execute permissions:</p> <pre><code class="hljs language-shell">$ chmod +x always_reject.sh</code></pre> </li> 
+        <li> <p>From the directory containing <code>Dockerfile.dev</code>, build an image:</p> <pre><code class="hljs language-shell">$ docker build -f Dockerfile.dev -t pre-receive.dev .
+&gt; Sending build context to Docker daemon 3.584 kB
+&gt; Step 1 : FROM gliderlabs/alpine:3.3
+&gt;  ---&gt; 8944964f99f4
+&gt; Step 2 : RUN apk add --no-cache git openssh bash &amp;&amp; ssh-keygen -A &amp;&amp; sed -i "s/#AuthorizedKeysFile/AuthorizedKeysFile/g"  /etc/ssh/sshd_config &amp;&amp; adduser git -D -G root -h /home/git -s /bin/bash &amp;&amp; passwd -d git &amp;&amp; su git -c "mkdir /home/git/.ssh &amp;&amp; ssh-keygen -t ed25519 -f /home/git/.ssh/id_ed25519 -P ' &amp;&amp; mv /home/git/.ssh/id_ed25519.pub /home/git/.ssh/authorized_keys &amp;&amp; mkdir /home/git/test.git &amp;&amp; git --bare init /home/git/test.git"
+&gt;  ---&gt; Running in e9d79ab3b92c
+&gt; fetch http://alpine.gliderlabs.com/alpine/v3.3/main/x86_64/APKINDEX.tar.gz
+&gt; fetch http://alpine.gliderlabs.com/alpine/v3.3/community/x86_64/APKINDEX.tar.gz
+....truncated output....
+&gt; OK: 34 MiB in 26 packages
+&gt; ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+&gt; Password for git changed by root
+&gt; Generating public/private ed25519 key pair.
+&gt; Your identification has been saved in /home/git/.ssh/id_ed25519.
+&gt; Your public key has been saved in /home/git/.ssh/id_ed25519.pub.
+....truncated output....
+&gt; Initialized empty Git repository in /home/git/test.git/
+&gt; Successfully built dd8610c24f82</code></pre> </li> 
+        <li> <p>Run a data container that contains a generated SSH key:</p> <pre><code class="hljs language-shell">$ docker run --name data pre-receive.dev /bin/true</code></pre> </li> 
+        <li> <p>Copy the test pre-receive hook <code>always_reject.sh</code> into the data container:</p> <pre><code class="hljs language-shell">$ docker cp always_reject.sh data:/home/git/test.git/hooks/pre-receive</code></pre> </li> 
+        <li> <p>Run an application container that runs <code>sshd</code> and executes the hook. Take note of the container id that is returned:</p> <pre><code class="hljs language-shell">$ docker run -d -p 52311:22 --volumes-from data pre-receive.dev
+&gt; 7f888bc700b8d23405dbcaf039e6c71d486793cad7d8ae4dd184f4a47000bc58</code></pre> </li> 
+        <li> <p>Copy the generated SSH key from the data container to the local machine:</p> <pre><code class="hljs language-shell">$ docker cp data:/home/git/.ssh/id_ed25519 .</code></pre> </li> 
+        <li> <p>Modify the remote of a test repository and push to the <code>test.git</code> repo within the Docker container. This example uses <code>git@github.com:octocat/Hello-World.git</code> but you can use any repository you want. This example assumes your local machine (127.0.0.1) is binding port 52311, but you can use a different IP address if docker is running on a remote machine.</p> <pre><code class="hljs language-shell">$ git clone git@github.com:octocat/Hello-World.git
+$ cd Hello-World
+$ git remote add test git@127.0.0.1:test.git
+$ GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 52311 -i ../id_ed25519" git push -u test main
+&gt; Warning: Permanently added '[192.168.99.100]:52311' (ECDSA) to the list of known hosts.
+&gt; Counting objects: 7, done.
+&gt; Delta compression using up to 4 threads.
+&gt; Compressing objects: 100% (3/3), done.
+&gt; Writing objects: 100% (7/7), 700 bytes | 0 bytes/s, done.
+&gt; Total 7 (delta 0), reused 7 (delta 0)
+&gt; remote: error: rejecting all pushes
+&gt; To git@192.168.99.100:test.git
+&gt;  ! [remote rejected] main -&gt; main (pre-receive hook declined)
+&gt; error: failed to push some refs to 'git@192.168.99.100:test.git'</code></pre> <p>Notice that the push was rejected after executing the pre-receive hook and echoing the output from the script.</p> </li> 
+       </ol> 
+       <h3 id="further-reading"><a href="#further-reading">Further reading</a></h3> 
+       <ul> 
+        <li>"<a href="https://git-scm.com/book/en/v2/Customizing-Git-An-Example-Git-Enforced-Policy">Customizing Git - An Example Git-Enforced Policy</a>" from the <em>Pro Git website</em></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-label" for="survey-yes"> 
+         <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-thumbsup" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.596 2.043c-1.301-.092-2.303.986-2.303 2.206v1.053c0 2.666-1.813 3.785-2.774 4.2a1.866 1.866 0 01-.523.131A1.75 1.75 0 005.25 8h-1.5A1.75 1.75 0 002 9.75v10.5c0 .967.784 1.75 1.75 1.75h1.5a1.75 1.75 0 001.742-1.58c.838.06 1.667.296 2.69.586l.602.17c1.464.406 3.213.824 5.544.824 2.188 0 3.693-.204 4.583-1.372.422-.554.65-1.255.816-2.05.148-.708.262-1.57.396-2.58l.051-.39c.319-2.386.328-4.18-.223-5.394-.293-.644-.743-1.125-1.355-1.431-.59-.296-1.284-.404-2.036-.404h-2.05l.056-.429c.025-.18.05-.372.076-.572.06-.483.117-1.006.117-1.438 0-1.245-.222-2.253-.92-2.941-.684-.675-1.668-.88-2.743-.956zM7 18.918c1.059.064 2.079.355 3.118.652l.568.16c1.406.39 3.006.77 5.142.77 2.277 0 3.004-.274 3.39-.781.216-.283.388-.718.54-1.448.136-.65.242-1.45.379-2.477l.05-.384c.32-2.4.253-3.795-.102-4.575-.16-.352-.375-.568-.66-.711-.305-.153-.74-.245-1.365-.245h-2.37c-.681 0-1.293-.57-1.211-1.328.026-.243.065-.537.105-.834l.07-.527c.06-.482.105-.921.105-1.25 0-1.125-.213-1.617-.473-1.873-.275-.27-.774-.455-1.795-.528-.351-.024-.698.274-.698.71v1.053c0 3.55-2.488 5.063-3.68 5.577-.372.16-.754.232-1.113.26v7.78zM3.75 20.5a.25.25 0 01-.25-.25V9.75a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25v10.5a.25.25 0 01-.25.25h-1.5z"></path>
+         </svg> </label> <input hidden id="survey-no" type="radio" name="survey-vote" value="No" aria-label="No"> <label class="btn x-radio-label" for="survey-no"> 
+         <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-thumbsdown" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.596 21.957c-1.301.092-2.303-.986-2.303-2.206v-1.053c0-2.666-1.813-3.785-2.774-4.2a1.864 1.864 0 00-.523-.13A1.75 1.75 0 015.25 16h-1.5A1.75 1.75 0 012 14.25V3.75C2 2.784 2.784 2 3.75 2h1.5a1.75 1.75 0 011.742 1.58c.838-.06 1.667-.296 2.69-.586l.602-.17C11.748 2.419 13.497 2 15.828 2c2.188 0 3.693.204 4.583 1.372.422.554.65 1.255.816 2.05.148.708.262 1.57.396 2.58l.051.39c.319 2.386.328 4.18-.223 5.394-.293.644-.743 1.125-1.355 1.431-.59.296-1.284.404-2.036.404h-2.05l.056.429c.025.18.05.372.076.572.06.483.117 1.006.117 1.438 0 1.245-.222 2.253-.92 2.942-.684.674-1.668.879-2.743.955zM7 5.082c1.059-.064 2.079-.355 3.118-.651.188-.054.377-.108.

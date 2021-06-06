@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en"> 
+ <head class="sans-serif"> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="baidu-site-verification" content="KeThzeyMOr"> 
+  <meta name="baidu-site-verification" content="code-NIlrS7gNhx"> 
+  <title>Cloudflare Blog: Deep Dive</title> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/themes/light.css"> 
+  <link rel="stylesheet" type="text/css" href="/assets/built/index.css?v=20d6e21a3c"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0.16/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0.16/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0.16/favicon-16x16.png"> 
+  <link rel="mask-icon" href="/favicon_package_v0.16/safari-pinned-tab.svg" color="#f78100"> 
+  <meta name="msapplication-TileColor" content="#da532c"> 
+  <meta name="theme-color" content="#ffffff"> 
+  <script type="text/javascript" src="/assets/built/index.js?v=20d6e21a3c"></script> 
+  <script src="/assets/js/check-for-tex.js" defer></script> 
+  <meta name="description" content="Collection of Cloudflare blog posts tagged 'Deep Dive'."> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+  <link rel="canonical" href="https://blog.cloudflare.com/tag/deep-dive/"> 
+  <meta name="referrer" content="no-referrer-when-downgrade"> 
+  <link rel="next" href="https://blog.cloudflare.com/tag/deep-dive/page/2/"> 
+  <meta property="og:site_name" content="The Cloudflare Blog"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:title" content="Cloudflare Blog: Deep Dive"> 
+  <meta property="og:description" content="Collection of Cloudflare blog posts tagged 'Deep Dive'."> 
+  <meta property="og:url" content="https://blog.cloudflare.com/tag/deep-dive/"> 
+  <meta property="og:image" content="https://blog.cloudflare.com/content/images/2020/10/Deep-Dive-1.png"> 
+  <meta property="article:publisher" content="https://www.facebook.com/cloudflare"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Cloudflare Blog: Deep Dive"> 
+  <meta name="twitter:description" content="Collection of Cloudflare blog posts tagged 'Deep Dive'."> 
+  <meta name="twitter:url" content="https://blog.cloudflare.com/tag/deep-dive/"> 
+  <meta name="twitter:image" content="https://blog.cloudflare.com/content/images/2020/10/Deep-Dive-1.png"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Series",
+    "publisher": {
+        "@type": "Organization",
+        "name": "The Cloudflare Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg",
+            "width": 109,
+            "height": 40.5
+        }
+    },
+    "url": "https://blog.cloudflare.com/tag/deep-dive/",
+    "image": "https://blog.cloudflare.com/content/images/2020/10/Deep-Dive-1.png",
+    "name": "Deep Dive",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.cloudflare.com/"
+    },
+    "description": "Collection of Cloudflare blog posts tagged &#x27;Deep Dive&#x27;."
+}
+    </script> 
+  <meta name="generator" content="Ghost 3.5"> 
+  <link rel="alternate" type="application/rss+xml" title="The Cloudflare Blog" href="https://blog.cloudflare.com/rss/"> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','cfDataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> <!-- Google Optimize --> 
+  <script src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script> 
+  <meta name="msvalidate.01" content="CF295E1604697F9CAD18B5A232E871F6"> 
+  <meta class="swiftype" name="language" data-type="string" content="en"> <!--<script src="/assets/js/index.js"></script>--> 
+  <script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async></script> 
+  <script>
+var trackRecruitingLink = function(role, url) {
+   ga('send', 'event', 'recruiting', 'jobscore-click', role, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script> 
+  <script type="text/javascript">
+	(function() {
+		var didInit = false;
+		function initMunchkin() {
+			if(didInit === false) {
+				didInit = true;
+				Munchkin.init('713-XSC-918');
+			}
+		}
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = '//munchkin.marketo.net/munchkin.js';
+		s.onreadystatechange = function() {
+			if (this.readyState == 'complete' || this.readyState == 'loaded') {
+				initMunchkin();
+			}
+		};
+		s.onload = initMunchkin;
+		document.getElementsByTagName('head')[0].appendChild(s);
+		})();
+</script> 
+  <script>
+var HTMLAttrToAdd = document.querySelector("html");
+HTMLAttrToAdd.setAttribute("lang", "en");
+</script> 
+  <style>
+    table {
+        background-color: transparent;
+    }
+    td {
+		padding: 5px 1em;
+    }
+    pre {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+</style> <!-- Cloudflare Web Analytics --> 
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;f446eacb44504e50864bad7c47ffa9e8&quot;}"></script> <!-- End Cloudflare Web Analytics --> 
+ </head> 
+ <body id="main-body" class="tag-template tag-deep-dive sans-serif"> 
+  <div class="site-wrapper"> 
+   <header class="flex flex-row flex-wrap justify-between items-end mw8 center mv3 pl3 pr2"> 
+    <div class="w-100 flex items-end justify-between justify-start-l"> 
+     <div class="w-100 tr"> <span class="dn di-l"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" class="f1 gray4 no-underline underline-hover">Contact Sales: </a> <a href="tel:+18889935273" class="f1 gray4 no-underline underline-hover">+1 (888) 274-3482</a> </span> <span class="f1 gray4 dn di-l">|</span> <a class="f1 gray4 no-underline language-picker js-language-picker"> <span class="language-picker__globe-icon"></span> Language <span class="language-picker__caret-icon">?</span> <span class="language-picker__caret-icon dn">?</span> </a> 
+      <div id="js-language-picker-dropdown" class="js-language-picker-dropdown dn"> 
+       <ul class="language-picker-dropdown"> 
+        <li><a href="/" class="gray4 no-underline">English</a></li> 
+        <li><a href="/de-de/" class="gray4 no-underline">Deutsch</a></li> 
+        <li><a href="/es-es/" class="gray4 no-underline">Español</a></li> 
+        <li><a href="/fr-fr/" class="gray4 no-underline">Français</a></li> 
+        <li><a href="/pt-br/" class="gray4 no-underline">Português</a></li> 
+        <li><a href="/it-it/" class="gray4 no-underline">Italiano</a></li> 
+        <li><a href="/ja-jp/" class="gray4 no-underline">???</a></li> 
+        <li><a href="/ru-ru/" class="gray4 no-underline">???????</a></li> 
+        <li><a href="/ko-kr/" class="gray4 no-underline">???</a></li> 
+        <li><a href="/zh-tw/" class="gray4 no-underline">????</a></li> 
+        <li><a href="/zh-cn/" class="gray4 no-underline">????</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="w-100 w-50-l flex items-end justify-between justify-start-l"> <a href="https://blog.cloudflare.com" class="header-logo mr4"> <img src="https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg" alt="The Cloudflare Blog" class="header-logo"> </a> 
+     <h2 class="mt0 mb1"> <a href="/" class="fw5 f5 gray3 no-underline"> <span class="dn di-l">The Cloudflare Blog</span> </a> </h2> 
+    </div> 
+    <div class="w-100 w-50-l dn db-l"> 
+     <div class="w-100 tr mkto-sub-message"> 
+      <p class="f2">Thanks for being here, come back soon. Get notified of new posts:</p> 
+     </div> 
+     <div class="w-100 tr"> 
+      <script src="//app-ab13.marketo.com/js/forms2/js/forms2.min.js"></script> 
+      <div class="marketo-form-container"> 
+       <form id="mktoForm_1653"></form> 
+      </div> 
+      <script>
+                MktoForms2.loadForm("//app-ab13.marketo.com", "713-XSC-918", 1653, function(form) {
+                    document.querySelectorAll('#mktoForm_1653 .mktoEmailField')[0].placeholder = "Email Address";
+
+                    form.onSuccess(function(vals, thanksURL){
+                        // Hide form and show success msg
+                        document.getElementById("mktoForm_1653").style.display = "none";
+                        document.getElementsByClassName("mkto-sub-message")[0].style.display = "none";
+
+                        document.getElementsByClassName("js-form-success-msg")[0].style.display = "block";
+                        return false;
+                    });
+                });
+            </script> 
+     </div> 
+     <div class="w-100 tr dn js-form-success-msg"> 
+      <p class="f2">Subscription confirmed. Thank you for subscribing!</p> 
+     </div> 
+    </div> 
+   </header> 
+   <nav id="nav" class="w-100 bb b--black-10 z-1"> 
+    <div id="desktop-nav-items-container" class="flex flex-row flex-wrap justify-between items-center mw8 center mv3 mv0-l"> 
+     <div class="nav-item nav-item-desktop ml3 mr2 dn db-l pv3" data-tag="product-news"> <a href="/tag/product-news/" class="no-underline gray1 f2 fw5 pv3">Product News</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="speed-and-reliability"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f2 fw5 pv3">Speed &amp; Reliability</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="security"> <a href="/tag/security/" class="no-underline gray1 f2 fw5 pv3">Security</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="serverless"> <a href="/tag/serverless/" class="no-underline gray1 f2 fw5 pv3">Serverless</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="zero-trust"> <a href="/tag/zero-trust/" class="no-underline gray1 f2 fw5 pv3">Zero Trust</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="developers"> <a href="/tag/developers/" class="no-underline gray1 f2 fw5 pv3">Developers</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="deep-dive"> <a href="/tag/deep-dive/" class="no-underline gray1 f2 fw5 pv3">Deep Dive</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop ml2 mr3 dn db-l pv3" data-tag="life-at-cloudflare"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f2 fw5 pv3">Life @Cloudflare</a> 
+     </div> <a href="/search/"><img src="/assets/images/magnifier.svg?v=20d6e21a3c" class="js-search-box-trigger mw2 pointer ph3 ph2-l"> </a> 
+     <img src="/assets/images/hamburger.svg?v=20d6e21a3c" class="w2 pointer js-mobile-nav-trigger ph3 db dn-l"> 
+    </div> 
+    <div class="js-mobile-nav-container dn"> 
+     <div class="flex flex-column flex-wrap bg-gray9 o-95 absolute w-100 ph3 z-1"> 
+      <div class="pv3 ph2"> <a href="/tag/product-news/" class="no-underline gray1 f4 fw7">Product News</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f4 fw7">Speed &amp; Reliability</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/security/" class="no-underline gray1 f4 fw7">Security</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/serverless/" class="no-underline gray1 f4 fw7">Serverless</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/zero-trust/" class="no-underline gray1 f4 fw7">Zero Trust</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/developers/" class="no-underline gray1 f4 fw7">Developers</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/deep-dive/" class="no-underline gray1 f4 fw7">Deep Dive</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f4 fw7">Life @Cloudflare</a> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+   <div class="flex flex-row flex-wrap mw8 center bb b--gray8 ph3"> 
+    <h1 class="site-title f7 fw4 mv4-l mv3">Deep Dive</h1> 
+   </div> 
+   <main id="site-main" class="flex flex-row flex-wrap mw8 center mt4-l"> 
+    <article class="w-100 flex flex-row flex-wrap mb4 items-center bb b--gray8 bn-l"> 
+     <div class="w-100 w-50-l ph3"> <a href="/branch-predictor/" class="f6 f7-l fw4 no-underline gray1"> <h2 class="fw5 mt2">Branch predictor: How many "if"s are too many? Including x86 and M1 benchmarks!</h2> </a> 
+      <p class="f3 fw5 gray5 my" localize datetime="2021-05-06T14:00:00+01:00"> May 06, 2021 2:00PM</p> 
+      <p class="f4 lh-copy fw3">Is it ok to have if clauses that will basically never be run? Surely, there must be some performance cost to that......</p> 
+      <p><a href="/branch-predictor/" class="no-underline gray1 f4 lh-copy fw3 underline-hover">Continue reading »</a> </p> 
+      <ul class="flex pl0"> 
+       <li class="list flex items-center mr3"> <a href="/author/marek-majkowski/" class="static-avatar pr1"> <img class="author-profile-image w2 h2 br-100 mr2" src="/content/images/2017/03/b5967d6c687939594adb6992723d0529.jpeg" alt="Marek Majkowski"> </a> 
+        <div class="author-name-tooltip"> <a href="/author/marek-majkowski/" class="fw5 f4 no-underline black">Marek Majkowski</a> 
+        </div> </li> 
+      </ul> 
+     </div> 
+     <div class="w-50-l ph3"> 
+      <img src="https://blog.cloudflare.com/content/images/2021/05/unnamed.png" class="dn di-l"> 
+     </div> 
+    </article> 
+    <article class="w-100 w-50-l mb4 ph3 bb b--gray8 bn-l"> <a href="/how-to-execute-an-object-file-part-2/" class="fw5 no-underline gray1"> <h2 class="fw5 mt2">How to execute an object file: Part 2</h2> </a> 
+     <p class="f3 fw5 gray5 my" localize datetime="2021-04-02T12:00:00+01:00">April 02, 2021 12:00PM </p> <a href="/tag/linux/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Linux</a> <a href="/tag/compiler/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Compiler</a> <a href="/tag/programming/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Programming</a> <a href="/tag/software/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Software</a> <a href="/tag/deep-dive/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Deep Dive</a> 
+     <p class="f3 lh-copy fw4 gray1">Continue learning how to import and execute code from an object file. This time we will investigate ELF relocations....</p> 
+     <ul class="flex pl0"> 
+      <li class="list flex items-center pr2"> <a href="/author/ignat/" class="static-avatar pr1"> <img class="author-profile-image w2 h2 br-100 mr2" src="/content/images/2018/02/AAEAAQAAAAAAAAepAAAAJGI3NzA4ZDQxLTE1NTYtNDNlNi05M2NjLTE4NDE3ZTE3OWEyZg.jpg" alt="Ignat Korchagin"> </a> 
+       <div class="author-name-tooltip"> <a href="/author/ignat" class="fw4 f3 no-underline black">Ignat Korchagin</a> 
+       </div> </li> 
+     </ul> 
+    </article> 
+    <article class="w-100 w-50-l mb4 ph3 bb b--gray8 bn-l"> <a href="/how-to-execute-an-object-file-part-1/" class="fw5 no-underline gray1"> <h2 class="fw5 mt2">How to execute an object file: Part 1</h2> </a> 
+     <p class="f3 fw5 gray5 my" localize datetime="2021-03-02T12:00:00Z">March 02, 2021 12:00PM </p> <a href="/tag/linux/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Linux</a> <a href="/tag/compiler/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Compiler</a> <a href="/tag/programming/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Programming</a> <a href="/tag/software/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Software</a> <a href="/tag/deep-dive/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Deep Dive</a> 
+     <p class="f3 lh-copy fw4 gray1">Ever wondered i

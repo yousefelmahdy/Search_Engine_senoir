@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en" dir="ltr"> 
+ <head> 
+  <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"> 
+  <meta name="google-signin-scope" content="profile email"> 
+  <meta property="og:site_name" content="Google Cloud"> 
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#039be5">
+  <meta charset="utf-8"> 
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="manifest" href="/_pwa/cloud/manifest.json" crossorigin="use-credentials"> 
+  <link rel="preconnect" href="//www.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin> 
+  <link rel="preconnect" href="//apis.google.com" crossorigin> 
+  <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons&amp;display=block">
+  <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vacc2a2a4a4394c7c42dc62dba69eb022d7680ce4a368d4b28c3e984cc9155a81/cloud/css/app.css">
+  <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vacc2a2a4a4394c7c42dc62dba69eb022d7680ce4a368d4b28c3e984cc9155a81/cloud/images/favicons/onecloud/favicon.ico"> 
+  <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vacc2a2a4a4394c7c42dc62dba69eb022d7680ce4a368d4b28c3e984cc9155a81/cloud/images/favicons/onecloud/super_cloud.png">
+  <link rel="canonical" href="https://cloud.google.com/devops/state-of-devops">
+  <link rel="search" type="application/opensearchdescription+xml" title="Google Cloud" href="https://cloud.google.com/s/opensearch.xml"> 
+  <title>DevOps Solutions &nbsp;|&nbsp; Google Cloud</title> 
+  <meta property="og:title" content="DevOps Solutions &nbsp;|&nbsp; Google Cloud">
+  <meta name="description" content="DevOps tools, practices, and research to help you get the agility, without compromising on quality or stability."> 
+  <meta property="og:description" content="DevOps tools, practices, and research to help you get the agility, without compromising on quality or stability.">
+  <meta property="og:url" content="https://cloud.google.com/devops/state-of-devops">
+  <meta property="og:image" content="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image"> 
+ </head> 
+ <body class="" template="page" theme="cloud-theme" type="marketing" layout="full" free-trial pending> <devsite-progress type="indeterminate" id="app-progress"></devsite-progress> 
+  <section class="devsite-wrapper">
+   <cloudx-track></cloudx-track> <cloudx-utils-init></cloudx-utils-init> <devsite-header keep-tabs-visible> 
+    <div class="devsite-header--inner nocontent"> 
+     <div class="devsite-top-logo-row-wrapper-wrapper"> 
+      <div class="devsite-top-logo-row-wrapper"> 
+       <div class="devsite-top-logo-row"> <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" visually-hidden aria-label="Open menu"> </button> 
+        <div class="devsite-product-name-wrapper"> <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/vacc2a2a4a4394c7c42dc62dba69eb022d7680ce4a368d4b28c3e984cc9155a81/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud"> </a> <span class="devsite-product-name"> 
+          <ul class="devsite-breadcrumb-list"> 
+           <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark"> </li> 
+          </ul> </span> 
+        </div> 
+        <div class="devsite-top-logo-row-middle"> 
+         <div class="devsite-header-upper-tabs"> 
+         </div> <devsite-search aria-expanded="false" aria-haspopup="listbox" enable-signin enable-search enable-suggestions enable-query-completion project-name="Google Cloud" tenant-name="Google Cloud" compact role="combobox"> 
+          <form class="devsite-search-form" action="https://cloud.google.com/s/results" method="GET"> 
+           <div class="devsite-search-container"> 
+            <div class="devsite-searchbox"> 
+             <input aria-activedescendant="" aria-autocomplete="list" aria-label="Search" aria-haspopup="false" aria-multiline="false" aria-label="Search box" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" role="combobox" type="text" value=""> 
+             <div class="devsite-search-image material-icons" aria-hidden="true"></div> 
+            </div> <button type="button" search-open class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search"></button> 
+           </div> 
+          </form> 
+          <button type="button" search-close class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search"></button> 
+         </devsite-search> 
+        </div> <devsite-language-selector> 
+         <devsite-select class="devsite-language-selector-menu"> 
+          <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"> English </option> <option value="de" lang="de" track-metadata-original-language="en" track-metadata-selected-language="de" track-name="changed" track-type="languageSelector"> Deutsch </option> <option value="es" lang="es" track-metadata-original-language="en" track-metadata-selected-language="es" track-name="changed" track-type="languageSelector"> Español </option> <option value="es_419" lang="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector"> Español – América Latina </option> <option value="fr" lang="fr" track-metadata-original-language="en" track-metadata-selected-language="fr" track-name="changed" track-type="languageSelector"> Français </option> <option value="it" lang="it" track-metadata-original-language="en" track-metadata-selected-language="it" track-name="changed" track-type="languageSelector"> Italiano </option> <option value="pt_br" lang="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector"> ?? – ?? </option> <option value="zh_tw" lang="zh_tw" track-metadata-original-language="en" track-metadata-selected-language="zh_tw" track-name="changed" track-type="languageSelector"> ?? – ?? </option> <option value="ja" lang="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"> ??? </option> <option value="ko" lang="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"> ??? </option> </select> 
+         </devsite-select> 
+        </devsite-language-selector> <devsite-user fp-auth id="devsite-user"></devsite-user> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="devsite-collapsible-section
+    
+      devsite-header-no-lower-tabs
+    "> 
+      <div class="devsite-header-background"> 
+      </div> 
+     </div> 
+    </div> 
+   </devsite-header> <devsite-book-nav scrollbars hidden> 
+    <nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu"> 
+     <div class="devsite-mobile-header"> <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation"> </button> 
+      <div class="devsite-product-name-wrapper"> <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/vacc2a2a4a4394c7c42dc62dba69eb022d7680ce4a368d4b28c3e984cc9155a81/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud"> </a> <span class="devsite-product-name"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark"> </li> 
+        </ul> </span> 
+      </div> 
+     </div> 
+     <div class="devsite-book-nav-wrapper"> 
+      <div class="devsite-mobile-nav-top"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item"> <a href="//console.cloud.google.com/" class="devsite-nav-title gc-analytics-event
+              
+              " track-name="console" track-metadata-eventdetail="nav" track-metadata-position="nav" track-type="globalNav" referrerpolicy="no-referrer-when-downgrade" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Console"> <span class="devsite-nav-text" tooltip> Console </span> </a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </devsite-book-nav> 
+   <section id="gc-wrapper"> 
+    <main role="main" class="devsite-main-content"> <devsite-toc class="devsite-nav" disabled></devsite-toc> <devsite-content> 
+      <article class="devsite-article">
+       <style>
+      /* hiding user avatar, sign-in and console link from primary nav */
+      .devsite-user-avatar,
+      .devsite-user-signin,
+      .devsite-search-form,
+      .devsite-header-link-label,
+      .devsite-user-avatar.gc-analytics-event,
+      .devsite-header-link.devsite-top-button.button.gc-analytics-event,
+      .devsite-doc-set-nav-row,
+      .cloud-gated-form__header .l-space-top-2 {
+        display: none;
+      }
+
+      .contact-form .cloud-body-text span {
+        display: block;
+      }
+      #cloud-site .cloud-gated-form__header h1 {
+        font-weight: 300;
+      }
+      </style> 
+       <div class="devsite-article-meta nocontent" role="navigation"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             "> <a href="https://cloud.google.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Google Cloud"> Home </a> </li> 
+        </ul> 
+       </div> <devsite-toc class="devsite-nav" devsite-toc-embedded disabled> 
+       </devsite-toc> 
+       <div class="devsite-article-body clearfix
+    devsite-no-page-title"> 
+        <article id="cloud-site"> 
+         <section class="cloud-section cloud-copy cloud-copy__grid"> 
+          <div class="cloud-grid--alternate cloud-copy__inner cloud-copy--two-column"> 
+           <div class="cloud-grid__col is-12 is-7__large"> 
+            <h3 class="cloud-headline3" id="2019-accelerate-state-of-devops-report" data-text="2019 Accelerate State of DevOps Report">2019 Accelerate State of DevOps Report</h3> 
+            <div class="cloud-section__spacer"> 
+             <p> This year’s report confirmed analyst reports that DevOps is crossing the chasm, with the proportion of elite performers almost tripling compared to last year. This is just one of the insights provided in the new 2019 Accelerate State of DevOps Report. In this report, you’ll also learn: </p> 
+            </div> 
+            <div class="is-hidden is-visible-mobile cloud-section--border l-pad-8 align-center"> <a href="#gated-form" class="cloud-button cloud-button--primary" track-type="button" track-name="I’m Ready To Download" track-metadata-eventdetail="#gated-form" track-metadata-modifier="primary" track-metadata-anchor_text="I’m Ready To Download" track-metadata-href="#gated-form"> I’m ready to download</a> 
+            </div> 
+            <div class="cloud-grid--alternate"> 
+             <div class="cloud-grid__col is-4 cloud-text-center"> 
+              <img src="/images/devops/dora.png" alt="Dora (Devops Research and Assistant)"> 
+             </div> 
+             <div class="cloud-grid__col is-8"> 
+              <div class="register-form-checklist"> 
+               <div class="cloud-checklist
+    
+     cloud-checklist--no-shadow
+    "> 
+                <ul class="cloud-checklist__wrapper cloud-checklist__wrapper--vertical"> 
+                 <li class="cloud-checklist__item cloud-body-text"> Insights on how to achieve elite performance in software development and delivery, so you can deliver more value to your customers and stakeholders </li> 
+                 <li class="cloud-checklist__item cloud-body-text"> Impact of industry and organization size on performance, and what it means for you </li> 
+                 <li class="cloud-checklist__item cloud-body-text"> Role of cloud computing in driving technology and organizational performance, with guidance on how to improve your use of the cloud </li> 
+                 <li class="cloud-checklist__item cloud-body-text"> Smart ways to improve productivity so you can see improvements in work/life balance and reductions in burnout </li> 
+                 <li class="cloud-checklist__item cloud-body-text"> How the highest performers scale DevOps to maximize success </li> 
+                </ul> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <p> </p> 
+           </div> 
+           <div class="cloud-grid__col cloud-copy__text is-12 is-5__large" id="gated-form"> 
+            <div class="contact-form cloud-gated-form"> 
+             <div class="gated-form-border"> <cloudx-form name="form" action="
+    https://us-central1-gweb-cloudx-marketo.cloudfunctions.net/marketo2_prod_submit_form_service
+  " isonpagethankyou> 
+               <cloudx-form-dynamic-content form-submitted-is="false"> 
+                <div class="formBody"> 
+                 <div class="cloud-text-center"> 
+                  <h3 class="cloud-headline3 gated-form-headline" id="fill-out-this-form-to-download-the-free-study" data-text="Fill out this form to download the FREE study">Fill out this form to download the FREE study</h3> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-text name="FirstName" type="text" placeholder="First Name" aria-label="First Name" max="200" required> 
+                  </cloudx-form-input-text> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content firstname-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content firstname-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This is required </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content firstname-errors-includes="maxLength"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is too long </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content firstname-errors-includes="regex"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is invalid </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-text name="LastName" type="text" placeholder="Last Name" aria-label="Last Name" max="200" required> 
+                  </cloudx-form-input-text> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content lastname-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content lastname-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This is required </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content lastname-errors-includes="maxLength"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is too long </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content lastname-errors-includes="regex"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is invalid </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-text name="Email" type="email" placeholder="Business Email" aria-label="Business Email" required> 
+                  </cloudx-form-input-text> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content email-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content email-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This is required </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content email-errors-includes="maxLength"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is too long </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content email-errors-includes="regex"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> Business email should be in this format: name@example.com </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-phonenumber name="Phone" usercountry="EG" placeholder="Business phone number" aria-label="Business phone number" required> 
+                  </cloudx-form-input-phonenumber> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content phone-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content phone-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This is required </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content phone-errors-includes="regex"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> Please enter a valid phone number </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-select name="Job_Role__c" aria-label="Job Role" required> 
+                   <option value="">Job Role</option> 
+                   <option value="Academic / Educator">Academic / Educator</option> 
+                   <option value="Business - Exec / VP">Business - Exec / VP</option> 
+                   <option value="Business - Professional">Business - Professional</option> 
+                   <option value="CEO / President / Founder">CEO / President / Founder</option> 
+                   <option value="Data Scientist / Data Engineer">Data Scientist / Data Engineer</option> 
+                   <option value="Industry Analyst">Industry Analyst</option> 
+                   <option value="IT - CIO / VP">IT - CIO / VP</option> 
+                   <option value="IT - Director / Manager">IT - Director / Manager</option> 
+                   <option value="IT - Engineer / Developer">IT - Engineer / Developer</option> 
+                   <option value="IT - Solution / System Architect">IT - Solution / System Architect</option> 
+                   <option value="IT - System Admin">IT - System Admin</option> 
+                   <option value="Security Professional">Security Professional</option> 
+                   <option value="Researcher">Researcher</option> 
+                   <option value="Other">Other</option> 
+                  </cloudx-form-input-select> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content job_role__c-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content job_role__c-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> Please make a selection </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-text name="Company" type="text" placeholder="Company Name" aria-label="Company Name" max="100" required> 
+                  </cloudx-form-input-text> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content company-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content company-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This is required </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content company-errors-includes="maxLength"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is too long </span> 
+                     </cloudx-form-dynamic-content> <cloudx-form-dynamic-content company-errors-includes="regex"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> This response is invalid </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> 
+                 <div class="cloudx-form-input__field"> <cloudx-form-input-select name="CountryCode" aria-label="Country" value="EG" required> 
+                   <option value="">Country</option> 
+                   <option value="AF">Afghanistan</option> 
+                   <option value="AL">Albania</option> 
+                   <option value="DZ">Algeria</option> 
+                   <option value="AS">American Samoa</option> 
+                   <option value="AD">Andorra</option> 
+                   <option value="AO">Angola</option> 
+                   <option value="AI">Anguilla</option> 
+                   <option value="AQ">Antarctica</option> 
+                   <option value="AG">Antigua and Barbuda</option> 
+                   <option value="AR">Argentina</option> 
+                   <option value="AM">Armenia</option> 
+                   <option value="AW">Aruba</option> 
+                   <option value="AC">Ascension Island</option> 
+                   <option value="AU">Australia</option> 
+                   <option value="AT">Austria</option> 
+                   <option value="AZ">Azerbaijan</option> 
+                   <option value="BS">Bahamas</option> 
+                   <option value="BH">Bahrain</option> 
+                   <option value="BD">Bangladesh</option> 
+                   <option value="BB">Barbados</option> 
+                   <option value="BY">Belarus</option> 
+                   <option value="BE">Belgium</option> 
+                   <option value="BZ">Belize</option> 
+                   <option value="BJ">Benin</option> 
+                   <option value="BM">Bermuda</option> 
+                   <option value="BT">Bhutan</option> 
+                   <option value="BO">Bolivia</option> 
+                   <option value="BA">Bosnia and Herzegovina</option> 
+                   <option value="BW">Botswana</option> 
+                   <option value="BV">Bouvet Island</option> 
+                   <option value="BR">Brazil</option> 
+                   <option value="IO">British Indian Ocean Territory</option> 
+                   <option value="VG">British Virgin Islands</option> 
+                   <option value="BN">Brunei</option> 
+                   <option value="BG">Bulgaria</option> 
+                   <option value="BF">Burkina Faso</option> 
+                   <option value="BI">Burundi</option> 
+                   <option value="KH">Cambodia</option> 
+                   <option value="CM">Cameroon</option> 
+                   <option value="CA">Canada</option> 
+                   <option value="CV">Cape Verde</option> 
+                   <option value="KY">Cayman Islands</option> 
+                   <option value="CF">Central African Republic</option> 
+                   <option value="TD">Chad</option> 
+                   <option value="CL">Chile</option> 
+                   <option value="CN">China</option> 
+                   <option value="CX">Christmas Island</option> 
+                   <option value="CC">Cocos [Keeling] Islands</option> 
+                   <option value="CO">Colombia</option> 
+                   <option value="KM">Comoros</option> 
+                   <option value="CD">Congo [DRC]</option> 
+                   <option value="CG">Congo [Republic]</option> 
+                   <option value="CK">Cook Islands</option> 
+                   <option value="CR">Costa Rica</option> 
+                   <option value="CI">Côte d’Ivoire</option> 
+                   <option value="HR">Croatia</option> 
+                   <option value="CW">Curaçao</option> 
+                   <option value="CY">Cyprus</option> 
+                   <option value="CZ">Czech Republic</option> 
+                   <option value="DK">Denmark</option> 
+                   <option value="DJ">Djibouti</option> 
+                   <option value="DM">Dominica</option> 
+                   <option value="DO">Dominican Republic</option> 
+                   <option value="EC">Ecuador</option> 
+                   <option value="EG">Egypt</option> 
+                   <option value="SV">El Salvador</option> 
+                   <option value="GQ">Equatorial Guinea</option> 
+                   <option value="ER">Eritrea</option> 
+                   <option value="EE">Estonia</option> 
+                   <option value="ET">Ethiopia</option> 
+                   <option value="FK">Falkland Islands [Islas Malvinas]</option> 
+                   <option value="FO">Faroe Islands</option> 
+                   <option value="FJ">Fiji</option> 
+                   <option value="FI">Finland</option> 
+                   <option value="FR">France</option> 
+                   <option value="GF">French Guiana</option> 
+                   <option value="PF">French Polynesia</option> 
+                   <option value="TF">French Southern Territories</option> 
+                   <option value="GA">Gabon</option> 
+                   <option value="GM">Gambia</option> 
+                   <option value="GE">Georgia</option> 
+                   <option value="DE">Germany</option> 
+                   <option value="GH">Ghana</option> 
+                   <option value="GI">Gibraltar</option> 
+                   <option value="GR">Greece</option> 
+                   <option value="GL">Greenland</option> 
+                   <option value="GD">Grenada</option> 
+                   <option value="GP">Guadeloupe</option> 
+                   <option value="GU">Guam</option> 
+                   <option value="GT">Guatemala</option> 
+                   <option value="GN">Guinea</option> 
+                   <option value="GW">Guinea-Bissau</option> 
+                   <option value="GY">Guyana</option> 
+                   <option value="HT">Haiti</option> 
+                   <option value="HM">Heard Island and McDonald Islands</option> 
+                   <option value="HN">Honduras</option> 
+                   <option value="HK">Hong Kong</option> 
+                   <option value="HU">Hungary</option> 
+                   <option value="IS">Iceland</option> 
+                   <option value="IN">India</option> 
+                   <option value="ID">Indonesia</option> 
+                   <option value="IQ">Iraq</option> 
+                   <option value="IE">Ireland</option> 
+                   <option value="IL">Israel</option> 
+                   <option value="IT">Italy</option> 
+                   <option value="JM">Jamaica</option> 
+                   <option value="JP">Japan</option> 
+                   <option value="JO">Jordan</option> 
+                   <option value="KZ">Kazakhstan</option> 
+                   <option value="KE">Kenya</option> 
+                   <option value="KI">Kiribati</option> 
+                   <option value="KW">Kuwait</option> 
+                   <option value="KG">Kyrgyzstan</option> 
+                   <option value="LA">Laos</option> 
+                   <option value="LV">Latvia</option> 
+                   <option value="LB">Lebanon</option> 
+                   <option value="LS">Lesotho</option> 
+                   <option value="LR">Liberia</option> 
+                   <option value="LY">Libya</option> 
+                   <option value="LI">Liechtenstein</option> 
+                   <option value="LT">Lithuania</option> 
+                   <option value="LU">Luxembourg</option> 
+                   <option value="MO">Macau</option> 
+                   <option value="MK">Macedonia [FYROM]</option> 
+                   <option value="MG">Madagascar</option> 
+                   <option value="MW">Malawi</option> 
+                   <option value="MY">Malaysia</option> 
+                   <option value="MV">Maldives</option> 
+                   <option value="ML">Mali</option> 
+                   <option value="MT">Malta</option> 
+                   <option value="MH">Marshall Islands</option> 
+                   <option value="MQ">Martinique</option> 
+                   <option value="MR">Mauritania</option> 
+                   <option value="MU">Mauritius</option> 
+                   <option value="YT">Mayotte</option> 
+                   <option value="MX">Mexico</option> 
+                   <option value="FM">Micronesia</option> 
+                   <option value="MD">Moldova</option> 
+                   <option value="MC">Monaco</option> 
+                   <option value="MN">Mongolia</option> 
+                   <option value="ME">Montenegro</option> 
+                   <option value="MS">Montserrat</option> 
+                   <option value="MA">Morocco</option> 
+                   <option value="MZ">Mozambique</option> 
+                   <option value="MM">Myanmar</option> 
+                   <option value="NA">Namibia</option> 
+                   <option value="NR">Nauru</option> 
+                   <option value="NP">Nepal</option> 
+                   <option value="NL">Netherlands</option> 
+                   <option value="AN">Netherlands Antilles</option> 
+                   <option value="NC">New Caledonia</option> 
+                   <option value="NZ">New Zealand</option> 
+                   <option value="NI">Nicaragua</option> 
+                   <option value="NE">Niger</option> 
+                   <option value="NG">Nigeria</option> 
+                   <option value="NU">Niue</option> 
+                   <option value="NF">Norfolk Island</option> 
+                   <option value="MP">Northern Mariana Islands</option> 
+                   <option value="NO">Norway</option> 
+                   <option value="OM">Oman</option> 
+                   <option value="PK">Pakistan</option> 
+                   <option value="PW">Palau</option> 
+                   <option value="PS">Palestine</option> 
+                   <option value="PA">Panama</option> 
+                   <option value="PG">Papua New Guinea</option> 
+                   <option value="PY">Paraguay</option> 
+                   <option value="PE">Peru</option> 
+                   <option value="PH">Philippines</option> 
+                   <option value="PN">Pitcairn Islands</option> 
+                   <option value="PL">Poland</option> 
+                   <option value="PT">Portugal</option> 
+                   <option value="PR">Puerto Rico</option> 
+                   <option value="QA">Qatar</option> 
+                   <option value="RE">Réunion</option> 
+                   <option value="RO">Romania</option> 
+                   <option value="RU">Russia</option> 
+                   <option value="RW">Rwanda</option> 
+                   <option value="BL">Saint Barthélemy</option> 
+                   <option value="SH">Saint Helena</option> 
+                   <option value="KN">Saint Kitts and Nevis</option> 
+                   <option value="LC">Saint Lucia</option> 
+                   <option value="MF">Saint Martin</option> 
+                   <option value="PM">Saint Pierre and Miquelon</option> 
+                   <option value="VC">Saint Vincent and the Grenadines</option> 
+                   <option value="WS">Samoa</option> 
+                   <option value="SM">San Marino</option> 
+                   <option value="ST">São Tomé and Príncipe</option> 
+                   <option value="SA">Saudi Arabia</option> 
+                   <option value="SN">Senegal</option> 
+                   <option value="RS">Serbia</option> 
+                   <option value="SC">Seychelles</option> 
+                   <option value="SL">Sierra Leone</option> 
+                   <option value="SG">Singapore</option> 
+                   <option value="SX">Sint Maarten</option> 
+                   <option value="SK">Slovakia</option> 
+                   <option value="SI">Slovenia</option> 
+                   <option value="SB">Solomon Islands</option> 
+                   <option value="SO">Somalia</option> 
+                   <option value="ZA">South Africa</option> 
+                   <option value="GS">South Georgia and the South Sandwich Islands</option> 
+                   <option value="KR">South Korea</option> 
+                   <option value="SS">South Sudan</option> 
+                   <option value="ES">Spain</option> 
+                   <option value="LK">Sri Lanka</option> 
+                   <option value="SR">Suriname</option> 
+                   <option value="SJ">Svalbard and Jan Mayen</option> 
+                   <option value="SZ">Swaziland</option> 
+                   <option value="SE">Sweden</option> 
+                   <option value="CH">Switzerland</option> 
+                   <option value="TW">Taiwan</option> 
+                   <option value="TJ">Tajikistan</option> 
+                   <option value="TZ">Tanzania</option> 
+                   <option value="TH">Thailand</option> 
+                   <option value="TL">Timor-Leste</option> 
+                   <option value="TG">Togo</option> 
+                   <option value="TK">Tokelau</option> 
+                   <option value="TO">Tonga</option> 
+                   <option value="TT">Trinidad and Tobago</option> 
+                   <option value="TN">Tunisia</option> 
+                   <option value="TR">Turkey</option> 
+                   <option value="TM">Turkmenistan</option> 
+                   <option value="TC">Turks and Caicos Islands</option> 
+                   <option value="TV">Tuvalu</option> 
+                   <option value="UM">U.S. Outlying Islands</option> 
+                   <option value="VI">U.S. Virgin Islands</option> 
+                   <option value="UG">Uganda</option> 
+                   <option value="UA">Ukraine</option> 
+                   <option value="AE">United Arab Emirates</option> 
+                   <option value="GB">United Kingdom</option> 
+                   <option value="US">United States</option> 
+                   <option value="UY">Uruguay</option> 
+                   <option value="UZ">Uzbekistan</option> 
+                   <option value="VU">Vanuatu</option> 
+                   <option value="VA">Vatican City</option> 
+                   <option value="VE">Venezuela</option> 
+                   <option value="VN">Vietnam</option> 
+                   <option value="WF">Wallis and Futuna</option> 
+                   <option value="EH">Western Sahara</option> 
+                   <option value="YE">Yemen</option> 
+                   <option value="ZM">Zambia</option> 
+                   <option value="ZW">Zimbabwe</option> 
+                  </cloudx-form-input-select> 
+                  <div class="cloudx-form-input__message-list"> <cloudx-form-dynamic-content countrycode-valid-is="false"> 
+                    <div> <cloudx-form-dynamic-content countrycode-errors-includes="required"> 
+                      <span class="cloudx-form-input__message cloudx-form-input__message--error"> Please make a selection </span> 
+                     </cloudx-form-dynamic-content> 
+                    </div> 
+                   </cloudx-form-dynamic-content> 
+                  </div> 
+                 </div> <!-- Opt In --> <cloudx-form-dynamic-content countrycode-value-excludes="[&quot;US&quot;,&quot;IN&quot;]"> 
+                  <div class="cloud-gated-form__field cloud-gated-form__email-options"> 
+                   <div> 
+                    <p class="gated-form-opt-in-text"> Sign me up to receive news, product updates, event information, and special offers about Google Cloud from Google. I understand my personal data will be processed in accordance with Google’s <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>. </p> <cloudx-form-input-radio-button name="Opt_In__c" type="radio" labelyes="Yes" labelno="No" required> 
+                    </cloudx-form-input-radio-button> 
+                   </div> 
+                  </div> 
+                 </cloudx-form-dynamic-content> 
+                 <div class="bottom submit l-space-top-4 cloud-text-center"> <cloudx-form-submit-button classname="cloud-button cloud-button--primary" disablewheninvalid>
+                    Download 
+                  </cloudx-form-submit-button> 
+                 </div> 
+                 <div class="cloud-gated-form__hidden"> <cloudx-form-input-hidden name="munchkinId" value="808-GJW-314"> 
+                  </cloudx-form-input-hidden> <cloudx-form-input-hidden name="formid" value="4039"> 
+                  </cloudx-form-input-hidden> <!-- Utm_Source__c --> <cloudx-form-input-utm name="Utm_Source__c" utmparamname="utm_source"> 
+                  </cloudx-form-input-utm> <!-- Utm_Campaign__c --> <cloudx-form-input-utm name="Utm_Campaign__c" utmparamname="utm_campaign"> 
+                  </cloudx-form-input-utm> <!-- Utm_Medium__c --> <cloudx-form-input-utm name="Utm_Medium__c" utmparamname="utm_medium"> 
+                  </cloudx-form-input-utm> <!-- Utm_Term__c --> <cloudx-form-input-utm name="Utm_Term__c" utmparamname="utm_term"> 
+                  </cloudx-form-input-utm> <!-- Utm_Content__c --> <cloudx-form-input-utm name="Utm_Content__c" utmparamname="utm_content"> 
+                  </cloudx-form-input-utm> <cloudx-form-dynamic-content countrycode-value-includes="['US','IN']"> 
+                   <cloudx-form-input-hidden name="Opt_In__c" value="Yes"> 
+                   </cloudx-form-input-hidden> 
+                  </cloudx-form-dynamic-content> <cloudx-form-input-hidden name="rsvp" value="True"> 
+                  </cloudx-form-input-hidden> <cloudx-form-input-hidden name="LeadSource" value="Content Marketing"></cloudx-form-input-hidden> <cloudx-form-input-hidden name="Lead_Source_Description__c" value="Content Marketing: 2019 State of DevOps Report"></cloudx-form-input-hidden> <cloudx-form-input-hidden name="Product_Family__c" value="Google Cloud Platform"></cloudx-form-input-hidden> <cloudx-form-input-hidden name="lpId" value=""></cloudx-form-input-hidden> 
+                 </div> 
+                </div> 
+               </cloudx-form-dynamic-content> 
+               <cloudx-form-dynamic-content form-submitted-is="true"> 
+                <header class="cloud-gated-form__header cloud-gated-form__header__thank-you"> <cloudx-form-dynamic-content form-optin-is="false"> 
+                  <div class="cloud-text-center"> 
+                   <div class="l-pad-bottom-3"> 
+                    <img src="/images/apigee/check-mark.png" srcset="https://cloud.google.com/images/apigee/check-mark_2x.png 2x" alt="Check mark"> 
+                   </div> 
+                   <h3 class="cloud-headline3" id="thanks-for-your-interest,-and-happy-reading." data-text="Thanks for your interest, and happy reading.">Thanks for your interest, and happy reading.</h3> 
+                   <p class="cloud-body-text"> <span class="cloud-section__spacer--xsmall"> Keep learning. Check out our <a class="cloud-link" href="/devops">DevOps capabilities</a>. </span> <span class="cloud-section__spacer"> <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" class="cloud-button cloud-button--primary" target="_blank" track-type="button" track-name="Download Report" track-metadata-eventdetail="
+      
+        https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
+      
+    " track-metadata-modifier="primary" track-metadata-anchor_text="Download Report" track-metadata-href="
+      
+        https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
+      
+    "> Download report</a> </span> </p> 
+                  </div> 
+                 </cloudx-form-dynamic-content> <cloudx-form-dynamic-content form-optin-is="true"> 
+                  <div class="cloud-text-center"> 
+                   <div class="l-pad-bottom-3"> 
+                    <img src="/images/apigee/check-mark.png" srcset="https://cloud.google.com/images/apigee/check-mark_2x.png 2x" alt="Check mark"> 
+                   </div> 
+                   <h3 class="cloud-headline3" id="thanks-for-your-interest,-and-happy-reading._1" data-text="Thanks for your interest, and happy reading.">Thanks for your interest, and happy reading.</h3> 
+                   <p class="cloud-body-text"> <span class="cloud-section__spacer--xsmall"> Keep learning. Check out our <a class="cloud-link" href="/devops">DevOps capabilities</a>. </span> <span class="cloud-section__spacer"> <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf" class="cloud-button cloud-button--primary" target="_blank" track-type="button" track-name="Download Report" track-metadata-eventdetail="
+      
+        https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
+      
+    " track-metadata-modifier="primary" track-metadata-anchor_text="Download Report" track-metadata-href="
+      
+        https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
+      
+    "> Download report</a> </span> </p> 
+                  </div> 
+                 </cloudx-form-dynamic-content> 
+                </header> 
+               </cloudx-form-dynamic-content> 
+              </cloudx-form> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+         <section class="cloud-section cloud-section--border"> 
+          <p class="cloud-footnotes">Download the report now to find out what 1,000 professionals said about the role of DevOps in their business, what sets top-performing DevOps teams apart, and how this gives them a competitive edge.</p> 
+         </section> 
+        </article> <devsite-hats-survey class="nocontent" hats-id="mwETRvWii0eU5NUYprb0Y9z5GVbc" listnr-id="83405"></devsite-hats-survey> 
+       </div> 
+      </article> 
+     </devsite-content> 
+    </main> <devsite-footer-promos class="devsite-footer"> 
+    </devsite-footer-promos> <devsite-footer-linkboxes class="devsite-footer"> 
+     <nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links"> 
+      <ul class="devsite-footer-linkboxes-list"> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Why Google</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/why-google-cloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/why-google-cloud/" track-metadata-position="footer" track-name="choosing google cloud" track-type="footer link" track-metadata-child_headline="why google"> Choosing Google Cloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/security/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-name="trust and security" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/security/" track-metadata-child_headline="why google" track-metadata-module="footer"> Trust and security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/open-cloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-name="open cloud" track-type="footer link" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/open-cloud/" track-metadata-child_headline="why google" track-metadata-module="footer"> Open cloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/multicloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-type="footer link" track-metadata-module="footer" track-metadata-position="footer" track-name="multicloud" track-metadata-eventdetail="cloud.google.com/multicloud/" track-metadata-child_headline="why google"> Multicloud </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/infrastructure/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-eventdetail="cloud.google.com/infrastructure/" track-metadata-child_headline="why google" track-metadata-module="footer" track-type="footer link" track-metadata-position="footer" track-name="global infrastructure"> Global infrastructure </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/sustainability/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/sustainability/" track-metadata-child_headline="why google" track-metadata-position="footer" track-type="footer link" track-name="sustainability"> Sustainability </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/customers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-eventdetail="cloud.google.com/customers/" track-metadata-child_headline="why google" track-type="footer link" track-metadata-position="footer" track-metadata-module="footer" track-name="customers and case studies"> Customers and case studies </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/analyst-reports/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-metadata-child_headline="why google" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/analyst-reports/" track-metadata-position="footer" track-name="analyst reports" track-type="footer link"> Analyst reports </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/whitepapers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-module="footer" track-metadata-child_headline="why google" track-name="whitepapers" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/whitepapers/"> Whitepapers </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Products and pricing</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/pricing/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-eventdetail="cloud.google.com/pricing/" track-type="footer link" track-metadata-module="footer" track-name="google cloud pricing" track-metadata-position="footer" track-metadata-child_headline="products and pricing"> Google Cloud pricing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//workspace.google.com/pricing.html" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-name="google workspace pricing" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="products and pricing" track-metadata-module="footer" target="_blank" track-metadata-eventdetail="workspace.google.com/pricing.html"> Google Workspace pricing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/maps-platform/pricing/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-module="footer" track-metadata-child_headline="products and pricing" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/maps-platform/pricing/" track-type="footer link" track-name="maps platform pricing"> Maps Platform pricing </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/products/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/products/" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="products and pricing" track-name="see all products"> See all products </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Solutions</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/application-modernization/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-position="footer" track-metadata-module="footer" track-type="footer link" track-metadata-child_headline="solutions" track-name="application modernization" track-metadata-eventdetail="cloud.google.com/solutions/application-modernization/"> Application modernization </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/ai/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-position="footer" track-type="footer link" track-name="artificial intelligence" track-metadata-child_headline="solutions" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/ai/"> Artificial Intelligence </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/business-application-platform/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-child_headline="solutions" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/business-application-platform/" track-type="footer link" track-metadata-position="footer" track-name="business application platform"> Business application platform </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/databases/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-type="footer link" track-name="databases" track-metadata-module="footer" track-metadata-position="footer" track-metadata-child_headline="solutions" track-metadata-eventdetail="cloud.google.com/solutions/databases"> Databases </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/infrastructure-modernization/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/infrastructure-modernization/" track-name="infrastructure modernization" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="solutions"> Infrastructure modernization </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://workspace.google.com/enterprise/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-module="footer" track-type="footer link" target="_blank" track-metadata-child_headline="solutions" track-metadata-position="footer" track-metadata-eventdetail="workspace.google.com/enterprise/" track-name="productivity and collaboration"> Productivity &amp; collaboration </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/security/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/solutions/security/" track-name="security" track-metadata-child_headline="solutions" track-type="footer link" track-metadata-module="footer"> Security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/smart-analytics/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-type="footer link" track-metadata-module="footer" track-name="smart analytics" track-metadata-eventdetail="cloud.google.com/solutions/smart-analytics/" track-metadata-child_headline="solutions" track-metadata-position="footer"> Smart analytics </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/devops/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-child_headline="solutions" track-metadata-module="footer" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/devops/" track-type="footer link" track-name="devops"> DevOps </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/#industry-solutions" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 10)" track-type="footer link" track-metadata-eventdetail="cloud.google.com/solutions/#industry-solutions" track-name="industries" track-metadata-child_headline="solutions" track-metadata-module="footer" track-metadata-position="footer"> Industries </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/#role-based-solutions-smb" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 11)" track-name="small business" track-metadata-module="footer" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/solutions/#role-based-solutions-smb" track-type="footer link" track-metadata-child_headline="solutions"> Small business </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/solutions/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 12)" track-metadata-module="footer" track-metadata-child_headline="solutions" track-type="footer link" track-name="see all solutions" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/solutions/"> See all solutions </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Resources</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-type="footer link" track-metadata-eventdetail="cloud.google.com/docs/" track-metadata-module="footer" track-metadata-position="footer" track-name="google cloud documentation" track-metadata-child_headline="resources"> Google Cloud documentation </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/gcp/getting-started/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-child_headline="resources" track-name="google cloud quickstarts" track-metadata-eventdetail="cloud.google.com/gcp/getting-started/" track-type="footer link" track-metadata-position="footer" track-metadata-module="footer"> Google Cloud quickstarts </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/marketplace/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-module="footer" track-type="footer link" track-metadata-position="footer" track-metadata-child_headline="resources" track-metadata-eventdetail="cloud.google.com/marketplace/" track-name="google cloud marketplace"> Google Cloud Marketplace </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//workspace.google.com/marketplace/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" target="_blank" track-metadata-module="footer" track-type="footer link" track-name="google workspace marketplace" track-metadata-child_headline="resources" track-metadata-eventdetail="workspace.google.com/marketplace/" track-metadata-position="footer"> Google Workspace Marketplace </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/support-hub/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-position="footer" track-metadata-module="footer" track-name="support" track-type="footer link" track-metadata-eventdetail="cloud.google.com/support-hub/" track-metadata-child_headline="resources"> Support </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/samples" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-position="footer" track-metadata-child_headline="resources" track-name="code samples" track-type="footer link" track-metadata-eventdetail="cloud.google.com/docs/samples" track-metadata-module="footer"> Code samples </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/docs/tutorials/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-eventdetail="cloud.google.com/docs/tutorials/" track-name="tutorials" track-metadata-module="footer" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="resources"> Tutorials </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/training/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-type="footer link" track-metadata-eventdetail="cloud.google.com/training/" track-metadata-child_headline="resources" track-name="training" track-metadata-module="footer" track-metadata-position="footer"> Training </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/certification" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 9)" track-metadata-eventdetail="cloud.google.com/certification" track-metadata-module="footer" track-name="certifications" track-type="footer link" track-metadata-child_headline="resources" track-metadata-position="footer"> Certifications </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//developers.google.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 10)" track-metadata-eventdetail="developers.google.com" track-metadata-child_headline="resources" track-type="footer link" track-metadata-module="footer" track-metadata-position="footer" target="_blank" track-name="google developers"> Google Developers </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/developers/startups/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 11)" track-metadata-position="footer" track-metadata-child_headline="resources" track-name="google cloud for startups" track-metadata-eventdetail="cloud.google.com/developers/startups/" track-type="footer link" track-metadata-module="footer"> Google Cloud for Startups </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//status.cloud.google.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 12)" track-metadata-module="footer" track-metadata-child_headline="resources" track-metadata-position="footer" track-name="system status" track-type="footer link" target="_blank" track-metadata-eventdetail="status.cloud.google.com"> System status </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/release-notes" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 13)" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/release-notes/" track-name="release notes" track-metadata-child_headline="resources" track-type="footer link" track-metadata-module="footer"> Release Notes </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Engage</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/contact/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-module="footer" track-metadata-child_headline="engage" track-type="footer link" track-metadata-eventdetail="cloud.google.com/contact/" track-name="contact sales" track-metadata-position="footer"> Contact sales </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//cloud.withgoogle.com/partners" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-position="footer" track-name="find a partner" track-metadata-child_headline="engage" track-type="footer link" target="_blank" track-metadata-eventdetail="cloud.withgoogle.com/partners" track-metadata-module="footer"> Find a Partner </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/partners/become-a-partner/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-eventdetail="cloud.google.com/partners/become-a-partner/" track-name="become a partner" track-metadata-module="footer" track-metadata-position="footer" track-metadata-child_headline="engage" track-type="footer link"> Become a Partner </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/blog/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-module="footer" track-metadata-child_headline="engage" track-type="footer link" track-metadata-eventdetail=

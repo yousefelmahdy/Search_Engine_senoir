@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-US"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+  <title>WordPress.org Login | WordPress.org English</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="robots" content="max-image-preview:large"> 
+  <link rel="dns-prefetch" href="//www.google.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="dns-prefetch" href="//www.googletagmanager.com"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P24PF4B');</script> 
+  <link rel="stylesheet" id="wp-block-library-css" href="https://login.wordpress.org/wp-includes/css/dist/block-library/style.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style> 
+  <link rel="stylesheet" id="wporg-normalize-css" href="https://login.wordpress.org/wp-content/themes/pub/wporg-login/stylesheets/normalize.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="dashicons-css" href="https://login.wordpress.org/wp-includes/css/dashicons.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="buttons-css" href="https://login.wordpress.org/wp-includes/css/buttons.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="forms-css" href="https://login.wordpress.org/wp-admin/css/forms.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="l10n-css" href="https://login.wordpress.org/wp-admin/css/l10n.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="login-css" href="https://login.wordpress.org/wp-admin/css/login.min.css?ver=5.8-alpha-51073" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wporg-login-css" href="https://login.wordpress.org/wp-content/themes/pub/wporg-login/stylesheets/login.css?ver=20210517" type="text/css" media="all"> 
+  <script type="text/javascript" id="wporg-registration-js-extra">
+/* <![CDATA[ */
+var wporg_registration = {"rest_url":"https:\/\/login.wordpress.org\/wp-json\/wporg\/v1"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://login.wordpress.org/wp-admin/load-scripts.php?c=0&amp;load%5Bchunk_0%5D=jquery-core,jquery-migrate&amp;ver=5.8-alpha-51073"></script> 
+  <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=reCaptcha_v3_init&amp;render=6LckXrgUAAAAANrzcMN7iy_WxvmMcseaaRW-YFts&amp;ver=3" id="recaptcha-api-v3-js"></script> 
+  <script type="text/javascript" id="recaptcha-api-v3-js-after">
+function reCaptcha_v3_init() {
+			grecaptcha.execute("6LckXrgUAAAAANrzcMN7iy_WxvmMcseaaRW-YFts", {action: "register" }
+			).then( function( token ) {
+				// Add the token to the "primary" form
+				var input = document.createElement( "input" ),
+					form = document.getElementsByTagName("form")[0];
+
+				input.setAttribute( "type", "hidden" );
+				input.setAttribute( "name", "_reCaptcha_v3_token" );
+				input.setAttribute( "value", token );
+
+				form.appendChild( input );
+
+				if ( form.dataset.submitReady ) {
+					form.submit();
+				} else {
+					form.dataset.submitReady = true;
+				}
+			});
+		}
+</script> 
+  <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?ver=2" id="recaptcha-api-js"></script> 
+  <script type="text/javascript" id="recaptcha-api-js-after">
+function onSubmit(token) {
+			var form = document.getElementById("registerform");
+
+			if ( form.dataset.submitReady ) {
+				form.submit();
+			} else {
+				// Still waiting on reCaptcha V3, disable the submit button.
+				form.dataset.submitReady = true;
+				document.getElementById("wp-submit").disabled = true;
+			}
+		}
+</script> 
+  <script type="text/javascript" src="https://login.wordpress.org/wp-content/themes/pub/wporg-login/js/registration.js?ver=20210517" id="wporg-registration-js"></script> 
+  <link rel="https://api.w.org/" href="https://login.wordpress.org/wp-json/">
+  <meta name="generator" content="WordPress 5.8-alpha-51073"> 
+  <meta name="robots" content="noindex,follow"> 
+  <link rel="canonical" href="https://login.wordpress.org/register"> <!-- Stream WordPress user activity plugin v3.6.2 --> 
+ </head> 
+ <body class="wp-core-ui login no-js route-register"> 
+  <script type="text/javascript">document.body.className = document.body.className.replace('no-js','js');</script> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <div id="login"> 
+   <h1><a href="https://wordpress.org/" tabindex="-1">Powered by WordPress</a></h1> 
+   <p class="intro">Create a WordPress.org account to start contributing to WordPress, get help in the support forums, or rate and review themes and plugins.</p> 
+   <form name="registerform" id="registerform" action="/register" method="post"> 
+    <p class="login-username"> <label for="user_login">Username</label> <input type="text" name="user_login" id="user_login" class="input " value="" size="20" maxlength="60"> <span class="small">Only lower case letters (a-z) and numbers (0-9) are allowed.</span> </p> 
+    <p class="login-email"> <label for="user_email">Email</label> <input type="email" name="user_email" id="user_email" class="input " value="" size="20" maxlength="100"> <span class="small">A link to set your password will be sent here.</span> </p> 
+    <p class="login-tos checkbox "> <label for="terms_of_service"> <input name="terms_of_service" type="checkbox" id="terms_of_service" value="1618205211" required> I have read and accept the <a href="https://wordpress.org/about/privacy/">Privacy Policy</a>. </label> </p> 
+    <p class="login-mailinglist checkbox"> <label for="user_mailinglist"> <input name="user_mailinglist" type="checkbox" id="user_mailinglist" value="true"> Subscribe to WordPress Announcements mailing list (a few messages a year) </label> </p> 
+    <p class="login-submit"> <input data-sitekey="6LehfRgUAAAAAJbxrvWRaQ_uFq2ZO7jRM3VLcbFr" data-callback="onSubmit" type="submit" name="wp-submit" id="wp-submit" class="g-recaptcha button button-primary button-large" value="Create Account"> </p> 
+   </form> 
+   <p id="nav"> <a href="/" title="Already have an account?">Already have an account?</a> &nbsp; • &nbsp; <a href="https://wordpress.org/">WordPress.org</a> </p> 
+  </div> 
+  <div class="language-switcher"> 
+   <form id="language-switcher" action="" method="GET"> <label for="language-switcher-locales"> <span aria-hidden="true" class="dashicons dashicons-translation"></span> <span class="screen-reader-text">Select the language:</span> </label> <select id="language-switcher-locales" name="locale"> <option value="fa_AF">(????? (?????????</option><option value="gax">Afaan Oromoo</option><option value="af">Afrikaans</option><option value="so_SO">Afsoomaali</option><option value="arg">Aragonés</option><option value="frp">Arpitan</option><option value="ast">Asturianu</option><option value="ibo">As?s? Igbo</option><option value="az_TR">Az?rbaycan Türkc?si</option><option value="az">Az?rbaycan dili</option><option value="id_ID">Bahasa Indonesia</option><option value="ms_MY">Bahasa Melayu</option><option value="jv_ID">Basa Jawa</option><option value="su_ID">Basa Sunda</option><option value="bs_BA">Bosanski</option><option value="bre">Brezhoneg</option><option value="ca">Català</option><option value="bal">Català (Balear)</option><option value="ceb">Cebuano</option><option value="sna">ChiShona</option><option value="pcd">Ch’ti</option><option value="co">Corsu</option><option value="me_ME">Crnogorski jezik</option><option value="cy">Cymraeg</option><option value="da_DK">Dansk</option><option value="de_DE">Deutsch</option><option value="de_CH">Deutsch (Schweiz)</option><option value="de_CH_informal">Deutsch (Schweiz, Du)</option><

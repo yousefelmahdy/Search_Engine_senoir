@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>About custom domains and GitHub Pages - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="GitHub Pages supports using custom domains, or changing the root of your site's URL from the default, like octocat.github.io, to any domain you own."> 
+  <meta name="keywords" content="Pages"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="kNj45T5s-kEoJViMzcauTXssoY9SAMKJW6jA"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/pages" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Pages</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/pages/getting-started-with-github-pages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting started with GitHub Pages</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/about-github-pages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub Pages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub Pages site</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/adding-a-theme-to-your-github-pages-site-with-the-theme-chooser" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding a theme to your GitHub Pages site with the theme chooser</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a publishing source for your GitHub Pages site</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changing the visibility of your GitHub Pages site</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a custom 404 page for your GitHub Pages site</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your GitHub Pages site with HTTPS</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/using-submodules-with-github-pages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using submodules with GitHub Pages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/getting-started-with-github-pages/unpublishing-a-github-pages-site" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Unpublishing a GitHub Pages site</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting up a GitHub Pages site with Jekyll</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub Pages and Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub Pages site with Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Testing your GitHub Pages site locally with Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding content to your GitHub Pages site using Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/setting-a-markdown-processor-for-your-github-pages-site-using-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting a Markdown processor for your GitHub Pages site using Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding a theme to your GitHub Pages site using Jekyll</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/about-jekyll-build-errors-for-github-pages-sites" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About Jekyll build errors for GitHub Pages sites</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/setting-up-a-github-pages-site-with-jekyll/troubleshooting-jekyll-build-errors-for-github-pages-sites" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting Jekyll build errors for GitHub Pages sites</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Configuring a custom domain for your GitHub Pages site</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About custom domains and GitHub Pages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing a custom domain for your GitHub Pages site</a> </li> 
+          <li class="sidebar-article "> <a href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting custom domains and GitHub Pages</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Pages 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Pages" href="/en/pages" class="d-inline-block ">GitHub Pages</a><a title="category: Configuring a custom domain for your GitHub Pages site" href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site" class="d-inline-block ">Configuring a custom domain for your GitHub Pages site</a><a title="article: About custom domains and GitHub Pages" href="/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="d-inline-block color-text-tertiary">About custom domains and GitHub Pages</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">About custom domains and GitHub Pages</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>GitHub Pages supports using custom domains, or changing the root of your site's URL from the default, like <code>octocat.github.io</code>, to any domain you own.</p>
+       </div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>GitHub Pages is available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see "<a href="/en/articles/github-s-products">GitHub's products</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#supported-custom-domains">Supported custom domains</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-a-subdomain-for-your-github-pages-site">Using a subdomain for your GitHub Pages site</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-an-apex-domain-for-your-github-pages-site">Using an apex domain for your GitHub Pages site</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#updating-custom-domains-when-your-github-pages-site-is-disabled">Updating custom domains when your GitHub Pages site is disabled</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#further-reading">Further reading</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="supported-custom-domains"><a href="#supported-custom-domains">Supported custom domains</a></h3> 
+       <p>GitHub Pages works with two types of domains: subdomains and apex domains. For a list of unsupported custom domains, see "<a href="/en/articles/troubleshooting-custom-domains-and-github-pages/#custom-domain-names-that-are-unsupported">Troubleshooting custom domains and GitHub Pages</a>."</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Supported custom domain type</th>
+          <th>Example</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>www</code> subdomain</td>
+          <td><code>www.example.com</code></td>
+         </tr>
+         <tr>
+          <td>Custom subdomain</td>
+          <td><code>blog.example.com</code></td>
+         </tr>
+         <tr>
+          <td>Apex domain</td>
+          <td><code>example.com</code></td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>You can set up either or both of apex and <code>www</code> subdomain configurations for your site. For more information on apex domains, see "<a href="#using-an-apex-domain-for-your-github-pages-site">Using an apex domain for your GitHub Pages site</a>."</p> 
+       <p>We recommend always using a <code>www</code> subdomain, even if you also use an apex domain. When you create a new site with an apex domain, we automatically attempt to secure the <code>www</code> subdomain for use when serving your site's content. If you configure a <code>www</code> subdomain, we automatically attempt to secure the associated apex domain. For more information, see "<a href="/en/articles/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site</a>."</p> 
+       <p>After you configure a custom domain for a user or organization site, the custom domain will replace the <code>&lt;user&gt;.github.io</code> or <code>&lt;organization&gt;.github.io</code> portion of the URL for any project sites owned by the account that do not have a custom domain configured. For example, if the custom domain for your user site is <code>www.octocat.com</code>, and you have a project site with no custom domain configured that is published from a repository called <code>octo-project</code>, the GitHub Pages site for that repository will be available at <code>www.octocat.com/octo-project</code>.</p> 
+       <h3 id="using-a-subdomain-for-your-github-pages-site"><a href="#using-a-subdomain-for-your-github-pages-site">Using a subdomain for your GitHub Pages site</a></h3> 
+       <p>A subdomain is the part of a URL before the root domain. You can configure your subdomain as <code>www</code> or as a distinct section of your site, like <code>blog.example.com</code>.</p> 
+       <p>Subdomains are configured with a <code>CNAME</code> record through your DNS provider. For more information, see "<a href="/en/articles/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">Managing a custom domain for your GitHub Pages site</a>."</p> 
+       <h4 id="www-subdomains"><a href="#www-subdomains"><code>www</code> subdomains</a></h4> 
+       <p>A <code>www</code> subdomain is the most commonly used type of subdomain. For example, <code>www.example.com</code> includes a <code>www</code> subdomain.</p> 
+       <p><code>www</code> subdomains are the most stable type of custom domain because <code>www</code> subdomains are not affected by changes to the IP addresses of GitHub's servers.</p> 
+       <h4 id="custom-subdomains"><a href="#custom-subdomains">Custom subdomains</a></h4> 
+       <p>A custom subdomain is a type of subdomain that doesn't use the standard <code>www</code> variant. Custom subdomains are mostly used when you want two distinct sections of your site. For example, you can create a site called <code>blog.example.com</code> and customize that section independently from <code>www.example.com</code>.</p> 
+       <h3 id="using-an-apex-domain-for-your-github-pages-site"><a href="#using-an-apex-domain-for-your-github-pages-site">Using an apex domain for your GitHub Pages site</a></h3> 
+       <p>An apex domain is a custom domain that does not contain a subdomain, such as <code>example.com</code>. Apex domains are also known as base, bare, naked, root apex, or zone apex domains.</p> 
+       <p>An apex domain is configured with an <code>A</code>, <code>ALIAS</code>, or <code>ANAME</code> record through your DNS provider. For more information, see "<a href="/en/articles/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Managing a custom domain for your GitHub Pages site</a>."</p> 
+       <p>If you are using an apex domain as your custom domain, we recommend also setting up a <code>www</code> subdomain. If you configure the correct records for each domain type through your DNS provider, GitHub Pages will automatically create redirects between the domains. For example, if you configure <code>www.example.com</code> as the custom domain for your site, and you have GitHub Pages DNS records set up for the apex and <code>www</code> domains, then <code>example.com</code> will redirect to <code>www.example.com</code>. Note that automatic redirects only apply to the <code>www</code> subdomain. Automatic redirects do not apply to any other subdomains, such as <code>blog</code>. For more information, see "<a href="/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site/#configuring-a-subdomain">Managing a custom domain for your GitHub Pages site</a>."</p> 
+       <h3 id="updating-custom-domains-when-your-github-pages-site-is-disabled"><a href="#updating-custom-domains-when-your-github-pages-site-is-disabled">Updating custom domains when your GitHub Pages site is disabled</a></h3> 
+       <p>If your GitHub Pages site is disabled but has a custom domain set up, you should immediately update or remove your DNS records with your DNS provider to avoid the risk of a domain takeover. Having a custom domain configured with your DNS provider while your site is disabled could result in someone else hosting a site on one of your subdomains. For more information, see "<a href="/en/articles/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site</a>." </p> 
+       <p>There are a coupl

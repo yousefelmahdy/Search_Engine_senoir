@@ -1,0 +1,378 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Groups | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/ee/user/group/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/ee/user/group/index.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/ee/user/group/index.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/ee/user/group/index.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 active" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <ul class="breadcrumbs"> 
+     <li class="breadcrumb"><a href="/11.11/ee/README.html">GitLab Documentation</a> </li>
+     <li class="breadcrumb"><a href="/11.11/ee/user/">User documentation</a> </li>
+     <li class="breadcrumb">Groups </li>
+    </ul> 
+    <div id="doc-nav" class="doc-nav"> <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> Groups </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li><a href="#use-cases" id="markdown-toc-use-cases">Use cases</a> </li>
+      <li><a href="#namespaces" id="markdown-toc-namespaces">Namespaces</a> </li>
+      <li><a href="#issues-and-merge-requests-within-a-group" id="markdown-toc-issues-and-merge-requests-within-a-group">Issues and merge requests within a group</a> </li>
+      <li><a href="#create-a-new-group" id="markdown-toc-create-a-new-group">Create a new group</a> </li>
+      <li><a href="#add-users-to-a-group" id="markdown-toc-add-users-to-a-group">Add users to a group</a> </li>
+      <li><a href="#request-access-to-a-group" id="markdown-toc-request-access-to-a-group">Request access to a group</a> </li>
+      <li> <a href="#add-projects-to-a-group" id="markdown-toc-add-projects-to-a-group">Add projects to a group</a> 
+       <ul> 
+        <li><a href="#default-project-creation-level" id="markdown-toc-default-project-creation-level">Default project creation level</a> </li>
+       </ul> </li>
+      <li><a href="#transfer-projects-into-groups" id="markdown-toc-transfer-projects-into-groups">Transfer projects into groups</a> </li>
+      <li><a href="#sharing-a-project-with-a-group" id="markdown-toc-sharing-a-project-with-a-group">Sharing a project with a group</a> </li>
+      <li><a href="#manage-group-memberships-via-ldap" id="markdown-toc-manage-group-memberships-via-ldap">Manage group memberships via LDAP</a> </li>
+      <li><a href="#epics-ultimate" id="markdown-toc-epics-ultimate">Epics <span class="badge-trigger ultimate"></span></a> </li>
+      <li><a href="#group-security-dashboard-ultimate" id="markdown-toc-group-security-dashboard-ultimate">Group Security Dashboard <span class="badge-trigger ultimate"></span></a> </li>
+      <li><a href="#insights-ultimate" id="markdown-toc-insights-ultimate">Insights <span class="badge-trigger ultimate"></span></a> </li>
+      <li><a href="#transferring-groups" id="markdown-toc-transferring-groups">Transferring groups</a> </li>
+      <li> <a href="#group-settings" id="markdown-toc-group-settings">Group settings</a> 
+       <ul> 
+        <li> <a href="#general-settings" id="markdown-toc-general-settings">General settings</a> 
+         <ul> 
+          <li><a href="#changing-a-groups-path" id="markdown-toc-changing-a-groups-path">Changing a group’s path</a> </li>
+          <li><a href="#enforce-2fa-to-group-members" id="markdown-toc-enforce-2fa-to-group-members">Enforce 2FA to group members</a> </li>
+          <li><a href="#share-with-group-lock" id="markdown-toc-share-with-group-lock">Share with group lock</a> </li>
+          <li><a href="#member-lock-starter" id="markdown-toc-member-lock-starter">Member Lock <span class="badge-trigger starter"></span></a> </li>
+          <li><a href="#group-file-templates-premium" id="markdown-toc-group-file-templates-premium">Group file templates <span class="badge-trigger premium"></span></a> </li>
+          <li><a href="#group-level-project-templates-premium" id="markdown-toc-group-level-project-templates-premium">Group-level project templates <span class="badge-trigger premium"></span></a> </li>
+         </ul> </li>
+        <li><a href="#advanced-settings" id="markdown-toc-advanced-settings">Advanced settings</a> </li>
+       </ul> </li>
+      <li><a href="#user-contribution-analysis-starter" id="markdown-toc-user-contribution-analysis-starter">User contribution analysis <span class="badge-trigger starter"></span></a> </li>
+      <li><a href="#issues-analytics-premium" id="markdown-toc-issues-analytics-premium">Issues analytics <span class="badge-trigger premium"></span></a> </li>
+      <li><a href="#dependency-proxy-premium" id="markdown-toc-dependency-proxy-premium">Dependency Proxy <span class="badge-trigger premium"></span></a> </li>
+     </ul> 
+     <h1 id="groups">Groups<a href="#groups" title="Permalink" class="anchor"></a> </h1> 
+     <p>With GitLab Groups you can assemble related projects together and grant members access to several projects at once. </p>
+     <p>Groups can also be nested in <a href="subgroups/index.html">subgroups</a>. </p>
+     <p>Find your groups by clicking <strong>Groups</strong> in the top navigation. </p>
+     <p><img src="img/groups.png" alt="GitLab Groups"> </p>
+     <blockquote> 
+      <p>The groups dropdown in the top navigation was [introduced][ce-36234] in <a href="https://about.gitlab.com/2018/07/22/gitlab-11-1-released/#groups-dropdown-in-navigation">GitLab 11.1</a>. </p>
+     </blockquote> 
+     <p>The Groups page displays all groups you are a member of, how many projects it holds, how many members it has, the group visibility, and, if you have enough permissions, a link to the group settings. By clicking the last button you can leave that group. </p>
+     <h2 id="use-cases">Use cases<a href="#use-cases" title="Permalink" class="anchor"></a> </h2> 
+     <p>You can create groups for numerous reasons. To name a few: </p>
+     <ul> 
+      <li>Organize related projects under the same <a href="#namespaces">namespace</a>, add members to that group and grant access to all their projects at once </li>
+      <li>Create a group, include members of your team, and make it easier to <code class="highlighter-rouge">@mention</code> all the team at once in issues and merge requests 
+       <ul> 
+        <li>Create a group for your company members, and create <a href="subgroups/index.html">subgroups</a> for each individual team. Let’s say you create a group called <code class="highlighter-rouge">company-team</code>, and among others, you created subgroups in this group for each individual team <code class="highlighter-rouge">backend-team</code>, <code class="highlighter-rouge">frontend-team</code>, and <code class="highlighter-rouge">production-team</code>: 
+         <ol> 
+          <li>When you start a new implementation from an issue, you add a comment: <em>”<code class="highlighter-rouge">@company-team</code>, let’s do it! <code class="highlighter-rouge">@company-team/backend-team</code> you’re good to go!”</em> </li>
+          <li>When your backend team needs help from frontend, they add a comment: <em>”<code class="highlighter-rouge">@company-team/frontend-team</code> could you help us here please?”</em> </li>
+          <li>When the frontend team completes their implementation, they comment: <em>”<code class="highlighter-rouge">@company-team/backend-team</code>, it’s done! Let’s ship it <code class="highlighter-rouge">@company-team/production-team</code>!”</em> </li>
+         </ol> </li>
+       </ul> </li>
+     </ul> 
+     <h2 id="namespaces">Namespaces<a href="#namespaces" title="Permalink" class="anchor"></a> </h2> 
+     <p>In GitLab, a namespace is a unique name to be used as a user name, a group name, or a subgroup name. </p>
+     <ul> 
+      <li><code class="highlighter-rouge">http://gitlab.example.com/username</code> </li>
+      <li><code class="highlighter-rouge">http://gitlab.example.com/groupname</code> </li>
+      <li><code class="highlighter-rouge">http://gitlab.example.com/groupname/subgroup_name</code> </li>
+     </ul> 
+     <p>For example, consider a user named Alex: </p>
+     <ol> 
+      <li>Alex creates an account on GitLab.com with the username <code class="highlighter-rouge">alex</code>; their profile will be accessed under <code class="highlighter-rouge">https://gitlab.example.com/alex</code> </li>
+      <li>Alex creates a group for their team with the group name <code class="highlighter-rouge">alex-team</code>; the group and its projects will be accessed under <code class="highlighter-rouge">https://gitlab.example.com/alex-team</code> </li>
+      <li>Alex creates a subgroup of <code class="highlighter-rouge">alex-team</code> with the subgroup name <code class="highlighter-rouge">marketing</code>; this subgroup and its projects will be accessed under <code class="highlighter-rouge">https://gitlab.example.com/alex-team/marketing</code> </li>
+     </ol> 
+     <p>By doing so: </p>
+     <ul> 
+      <li>Any team member mentions Alex with <code class="highlighter-rouge">@alex</code> </li>
+      <li>Alex mentions everyone from their team with <code class="highlighter-rouge">@alex-team</code> </li>
+      <li>Alex mentions only the marketing team with <code class="highlighter-rouge">@alex-team/marketing</code> </li>
+     </ul> 
+     <h2 id="issues-and-merge-requests-within-a-group">Issues and merge requests within a group<a href="#issues-and-merge-requests-within-a-group" title="Permalink" class="anchor"></a> </h2> 
+     <p>Issues and merge requests are part of projects. For a given group, view all the <a href="../project/issues/index.html#issues-list">issues</a> and <a href="../project/merge_requests/index.html#merge-requests-per-group">merge requests</a> across all the projects in that group, together in a single list view. </p>
+     <h2 id="create-a-new-group">Create a new group<a href="#create-a-new-group" title="Permalink" class="anchor"></a> </h2> 
+     <blockquote> 
+      <p>For a list of words that are not allowed to be used as group names see the <a href="../reserved_names.html">reserved names</a>. </p>
+     </blockquote> 
+     <p>You can create a group in GitLab from: </p>
+     <ol> 
+      <li> <p>The Groups page: from the top menu, click <strong>Groups</strong>, and click the green button <strong>New group</strong>: </p><p><img src="img/new_group_from_groups.png" alt="new group from groups page"> </p></li>
+      <li> <p>Elsewhere: expand the <code class="highlighter-rouge">plus</code> sign button on the top navbar and choose <strong>New group</strong>: </p><p><img src="img/new_group_from_other_pages.png" alt="new group from elsewhere"> </p></li>
+     </ol> 
+     <p>Add the following information: </p>
+     <p><img src="img/create_new_group_info.png" alt="new group info"> </p>
+     <ol> 
+      <li>The <strong>Group name</strong> will populate the URL automatically. Optionally, you can change it. This is the name that is displayed in the group views. The name can contain only: 
+       <ul> 
+        <li>Alphanumeric characters. </li>
+        <li>Underscores. </li>
+        <li>Dashes and dots. </li>
+        <li>Spaces. </li>
+       </ul> </li>
+      <li>The <strong>Group URL</strong>, which will be the namespace under which your projects will be hosted. The URL can contain only: 
+       <ul> 
+        <li>Alphanumeric characters. </li>
+        <li>Underscores. </li>
+        <li>Dashes and dots. It cannot start with dashes or end in dot. </li>
+       </ul> </li>
+      <li>Optionally, you can add a brief description to tell others what this group is about. </li>
+      <li>Optionally, choose an avatar for your group. </li>
+      <li>Choose the <a href="../../public_access/public_access.html">visibility level</a>. </li>
+     </ol> 
+     <h2 id="add-users-to-a-group">Add users to a group<a href="#add-users-to-a-group" title="Permalink" class="anchor"></a> </h2> 
+     <p>Add members to a group by navigating to the group’s dashboard, and clicking <strong>Members</strong>: </p>
+     <p><img src="img/add_new_members.png" alt="add members to group"> </p>
+     <p>Select the <a href="../permissions.html#permissions">permission level</a> and add the new member. You can also set the expiring date for that user, from which they will no longer have access to your group. </p>
+     <p>One of the benefits of putting multiple projects in one group is that you can give a user to access to all projects in the group with one action. </p>
+     <p>Consider we have a group with two projects: </p>
+     <ul> 
+      <li>On the <strong>Group Members</strong> page we can now add a new user to the group. </li>
+      <li>Now because this user is a <strong>Developer</strong> member of the group, he automatically gets <strong>Developer</strong> access to <strong>all projects</strong> within that group. </li>
+     </ul> 
+     <p>If necessary, you can increase the access level of an individual user for a specific project, by adding them again as a new member to the project with the new permission levels. </p>
+     <h2 id="request-access-to-a-group">Request access to a group<a href="#request-access-to-a-group" title="Permalink" class="anchor"></a> </h2> 
+     <p>As a group owner you can enable or disable non members to request access to your group. Go to the group settings and click on <strong>Allow users to request access</strong>. </p>
+     <p>As a user, you can request to be a member of a group. Go to the group you’d like to be a member of, and click the <strong>Request Access</strong> button on the right side of your screen. </p>
+     <p><img src="img/request_access_button.png" alt="Request access button"> </p>
+     <hr> 
+     <p>Group owners and maintainers will be notified of your request and will be able to approve or decline it on the members page. </p>
+     <p><img src="img/access_requests_management.png" alt="Manage access requests"> </p>
+     <hr> 
+     <p>If you change your mind before your request is approved, just click the <strong>Withdraw Access Request</strong> button. </p>
+     <p><img src="img/withdraw_access_request_button.png" alt="Withdraw access request button"> </p>
+     <h2 id="add-projects-to-a-group">Add projects to a group<a href="#add-projects-to-a-group" title="Permalink" class="anchor"></a> </h2> 
+     <p>There are two different ways to add a new project to a group: </p>
+     <ul> 
+      <li> <p>Select a group and then click on the <strong>New project</strong> button. </p><p><img src="img/create_new_project_from_group.png" alt="New project"> </p><p>You can then continue on <a href="../../gitlab-basics/create-project.html">creating a project</a>. </p></li>
+      <li> <p>While you are creating a project, select a group namespace you’ve already created from the dropdown menu. </p><p><img src="img/select_group_dropdown.png" alt="Select group"> </p></li>
+     </ul> 
+     <h3 id="default-project-creation-level">Default project creation level<a href="#default-project-creation-level" title="Permalink" class="anchor"></a> </h3> 
+     <blockquote> 
+      <p><a href="https://gitlab.com/gitlab-org/gitlab-ee/issues/2534">Introduced</a> in <a href="https://about.gitlab.com/pricing/">GitLab Premium</a> 10.5. Brought to <a href="https://about.gitlab.com/pricing/">GitLab Starter</a> in 10.7. <a href="https://gitlab.com/gitlab-org/gitlab-ce/merge_requests/25975">Moved</a> to <a href="https://about.gitlab.com/pricing/">GitLab Core</a> in 11.10. </p>
+     </blockquote> 
+     <p>Group owners or administrators can allow users with the Developer role to create projects under groups. </p>
+     <p>By default, <a href="../permissions.html#group-members-permissions">Developers and Maintainers</a> can create projects under a group, but this can be changed either within the group settings for a group, or be set globally by a GitLab administrator in the Admin area at <strong>Settings &gt; General &gt; Visibility and access controls</strong>. </p>
+     <p>Available settings are <code class="highlighter-rouge">No one</code>, <code class="highlighter-rouge">Maintainers</code>, or <code class="highlighter-rouge">Developers + Maintainers</code>. </p>
+     <h2 id="transfer-projects-into-groups">Transfer projects into groups<a href="#transfer-projects-into-groups" title="Permalink" class="anchor"></a> </h2> 
+     <p>Learn how to <a href="../project/settings/index.html#transferring-an-existing-project-into-another-namespace">transfer a project into a group</a>. </p>
+     <h2 id="sharing-a-project-with-a-group">Sharing a project with a group<a href="#sharing-a-project-with-a-group" title="Permalink" class="anchor"></a> </h2> 
+     <p>You can <a href="../project/members/share_project_with_groups.html">share your projects with a group</a> and give your group members access to the project all at once. </p>
+     <p>Alternatively, you can <a href="#share-with-group-lock">lock the sharing with group feature</a>. </p>
+     <h2 id="manage-group-memberships-via-ldap">Manage group memberships via LDAP<a href="#manage-group-memberships-via-ldap" title="Permalink" class="anchor"></a> </h2> 
+     <p>In GitLab Enterprise Edition it is possible to manage GitLab group memberships using LDAP groups. See <a href="../../integration/ldap.html">the GitLab Enterprise Edition documentation</a> for more information. </p>
+     <h2 id="epics-ultimate">Epics <span class="badge-trigger ultimate"></span><a href="#epics-ultimate" title="Permalink" class="anchor"></a> </h2> 
+     <blockquote> 
+      <p>Introduced in <a href="https://about.gitlab.com/pricing/">GitLab Ultimate</a> 10.2. </p>
+     </blockquote> 
+     <p>Epics let you manage your portfolio of projects more efficiently and with less effort by tracking groups of issues that share a theme, across projects and milestones. </p>
+     <p><a href="epics/index.html">Learn more about Epics.</a> </p>
+     <h2 id="group-security-dashboard-ultimate">Group Security Dashboard <span class="badge-trigger ultimate"></span><a href="#group-security-dashboard-ultimate" title="Permalink" class="anchor"></a> </h2> 
+     <p>Get an overview of the vulnerabilities of all the projects in a group and its subgroups. </p>
+     <p><a href="security_dashboard/index.html">Learn more about the Group Security Dashboard.</a> </p>
+     <h2 id="insights-ultimate">Insights <span class="badge-trigger ultimate"></span><a href="#insights-ultimate" title="Permalink" class="anchor"></a> </h2> 
+     <blockquote> 
+      <p>Introduced in <a href="https://about.gitlab.com/pricing/">GitLab Ultimate</a> 11.9 behind the <code class="highlighter-rouge">insights</code> feature flag. </p>
+     </blockquote> 
+     <p>Configure the Insights that matter for your groups or projects to explore data such as triage hygiene, issues created/closed per a given period, average time for merge requests to be merged and much more. </p>
+     <p><a href="insights/index.html">Learn more about Insights</a>. </p>
+     <h2 id="transferring-groups">Transferring groups<a href="#transferring-groups" title="Permalink" class="anchor"></a> </h2> 
+     <p>From GitLab 10.5, groups can be transferred in the following ways: </p>
+     <ul> 
+      <li>Top-level groups can be transferred to a group, converting them into subgroups. </li>
+      <li>Subgroups can be transferred to a new parent group. </li>
+      <li>Subgroups can be transferred out from a parent group, converting them into top-level groups. </li>
+     </ul> 
+     <p>When transferring groups, note: </p>
+     <ul> 
+      <li>Changing a group’s parent can have unintended side effects. See <a href="../project/index.html#redirects-when-changing-repository-paths">Redirects when changing repository paths</a>. </li>
+      <li>You can only transfer groups to groups you manage. </li>
+      <li>You will need to update your local repositories to point to the new location. </li>
+      <li>If the parent group’s visibility is lower than the group’s current visibility, visibility levels for subgroups and projects will be changed to match the new parent group’s visibility. </li>
+      <li>Only explicit group membership is transferred, not inherited membership. If the group’s owners have only inherited membership, this would leave the group without an owner. In this case, the user transferring the group becomes the group’s owner. </li>
+     </ul> 
+     <h2 id="group-settings">Group settings<a href="#group-settings" title="Permalink" class="anchor"></a> </h2> 
+     <p>Once you have created a group, you can manage its settings by navigating to the group’s dashboard, and clicking <strong>Settings</strong>. </p>
+     <p><img src="img/group_settings.png" alt="group settings"> </p>
+     <h3 id="general-settings">General settings<a href="#general-settings" title="Permalink" class="anchor"></a> </h3> 
+     <p>Besides giving you the option to edit any settings you’ve previously set when <a href="#create-a-new-group">creating the group</a>, you can also access further configurations for your group. </p>
+     <h4 id="changing-a-groups-path">Changing a group’s path<a href="#changing-a-groups-path" title="Permalink" class="anchor"></a> </h4> 
+     <p>Changing a group’s path can have unintended side effects. Read <a href="../project/index.html#redirects-when-changing-repository-paths">how redirects will behave</a> before proceeding. </p>
+     <p>If you are vacating the path so it can be claimed by another group or user, you may need to rename the group name as well since both names and paths must be unique. </p>
+     <p>To change your group path: </p>
+     <ol> 
+      <li>Navigate to your group’s <strong>Settings &gt; General</strong>. </li>
+      <li>Enter a new name under “Group path”. </li>
+      <li>Hit <strong>Save group</strong>. </li>
+     </ol> 
+     <div class="admonition-wrapper caution">
+      <div class="admonition alert alert-warning"> <i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><strong>Caution:</strong> It is currently not possible to rename a namespace if it contains a project with <a href="../project/container_registry.html">Container Registry</a> tags, because the project cannot be moved.
+      </div>
+     </div> 
+     <div class="admonition-wrapper tip">
+      <div class="admonition alert alert-success"> <i class="fa fa-pencil fa-fw" aria-hidden="true"></i><strong>TIP:</strong> If you want to retain ownership over the original namespace and protect the URL redirects, then instead of changing a group’s path or renaming a username, you can create a new group and transfer projects to it.
+      </div>
+     </div> 
+     <h4 id="enforce-2fa-to-group-members">Enforce 2FA to group members<a href="#enforce-2fa-to-group-members" title="Permalink" class="anchor"></a> </h4> 
+     <p>Add a security layer to your group by <a href="../../security/two_factor_authentication.html#enforcing-2fa-for-all-users-in-a-group">enforcing two-factor authentication (2FA)</a> to all group members. </p>
+     <h4 id="share-with-group-lock">Share with group lock<a href="#share-with-group-lock" title="Permalink" class="anchor"></a> </h4> 
+     <p>Prevent projects in a group from <a href="../project/members/share_project_with_groups.html">sharing a project with another group</a>. This allows for tighter control over project access. </p>
+     <p>For example, consider you have two distinct teams (Group A and Group B) working together in a project. To inherit the group membership, you share the project between the two groups A and B. <strong>Share with group lock</strong> prevents any project within the group from being shared with another group. By doing so, you guarantee only the right group members have access to those projects. </p>
+     <p>To enable this feature, navigate to the group settings page. Select <strong>Share with group lock</strong> and <strong>Save the group</strong>. </p>
+     <p><img src="img/share_with_group_lock.png" alt="Checkbox for share with group lock"> </p>
+     <h4 id="member-lock-starter">Member Lock <span class="badge-trigger starter"></span><a href="#member-lock-starter" title="Permalink" class="anchor"></a> </h4> 
+     <p>With Member lock, it is possible to lock membership in a project to the level of members in the group. </p>
+     <p>Member lock lets a group owner lock down any new project membership to all the projects within the group, allowing tighter control over project membership. </p>
+     <p>For instance, if you want to lock the group for an <a href="/11.11/ee/administration/audit_events.html">Audit Event</a>, you enable Member lock to guarantee that membership of a project cannot be modified during that audit. </p>
+     <p>To enable this feature: </p>
+     <ol> 
+      <li>Navigate to the group’s <strong>Settings &gt; General</strong> page. </li>
+      <li>Expand the <strong>Permissions, LFS, 2FA</strong> section and select <strong>Member lock</strong>. </li>
+      <li>Click the <strong>Save changes</strong> button. </li>
+     </ol> 
+     <p><img src="img/member_lock.png" alt="Checkbox for membership lock"> </p>
+     <p>This will disable the option for all users who previously had permissions to operate project memberships so no new users can be added. Furthermore, any request to add a new user to a project through API will not be possible. </p>
+     <h4 id="group-file-templates-premium">Group file templates <span class="badge-trigger premium"></span><a href="#group-file-templates-premium" title="Permalink" class="anchor"></a> </h4> 
+     <p>Group file templates allow you to share a set of templates for common file types with every project in a group. It is analogous to the <a href="/11.11/ee/user/admin_area/settings/instance_template_repository.html">instance template repository</a> feature, and the selected project should follow the same naming conventions as are documented on that page. </p>
+     <p>Only projects that are in the group may be chosen as the source of templates. This includes projects shared with the group, but <strong>excludes</strong> projects in subgroups or parent groups of the group being configured. </p>
+     <p>This feature may be configured for subgroups as well as parent groups. A project in a subgroup will have access to the templates for that subgroup, as well as any parent groups. </p>
+     <p><img src="img/group_file_template_dropdown.png" alt="Group file template dropdown"> </p>
+     <p>To enable this feature, navigate to the group settings page, expand the <strong>Templates</strong> section, choose a project to act as the template repository, and <strong>Save group</strong>. </p>
+     <p><img src="img/group_file_template_settings.png" alt="Group file template settings"> </p>
+     <h4 id="group-level-project-templates-premium">Group-level project templates <span class="badge-trigger premium"></span><a href="#group-level-project-templates-premium" title="Permalink" class="anchor"></a> </h4> 
+     <p>Define project templates at a group-level by setting a group as a template source. <a href="custom_project_templates.html">Learn more about group-level project templates</a>. </p>
+     <h3 id="advanced-settings">Advanced settings<a href="#advanced-settings" title="Permalink" class="anchor"></a> </h3> 
+     <ul> 
+      <li> <strong>Projects</strong>: view all projects within that group, add members to each project, access each project’s settings, and remove any project from the same screen. </li>
+      <li> <strong>Webhooks</strong>: configure <a href="../project/integrations/webhooks.html">webhooks</a> to your group. </li>
+      <li> <strong>Kubernetes cluster integration</strong>: connect your GitLab group with <a href="clusters/index.html">Kubernetes clusters</a>. </li>
+      <li> <strong>Audit Events</strong>: view <a href="/11.11/ee/administration/audit_events.html">Audit Events</a> for the group. <span class="badge-trigger starter-only"></span> </li>
+      <li> <strong>Pipelines quota</strong>: keep track of the <a href="../admin_area/settings/continuous_integration.html">pipeline quota</a> for the group. </li>
+     </ul> 
+     <h2 id="user-contribution-analysis-starter">User contribution analysis <span class="badge-trigger starter"></span><a href="#user-contribution-analysis-starter" title="Permalink" class="anchor"></a> </h2> 
+     <p>With <a href="contribution_analytics/index.html">GitLab Contribution Analytics</a> you have an overview of the contributions (pushes, merge requests, and issues) performed by your group members. </p>
+     <h2 id="issues-analytics-premium">Issues analytics <span class="badge-trigger premium"></span><a href="#issues-analytics-premium" title="Permalink" class="anchor"></a> </h2> 
+     <p>With <a href="issues_analytics/index.html">GitLab Issues Analytics</a>, in groups, you can see a bar chart of the number of issues created each month. </p>
+     <h2 id="dependency-proxy-premium">Dependency Proxy <span class="badge-trigger premium"></span><a href="#dependency-proxy-premium" title="Permalink" class="anchor"></a> </h2> 
+     <p>Use GitLab as a <a href="dependency_proxy/index.html">dependency proxy</a> for upstream Docker images. </p>
+    </div> 
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"

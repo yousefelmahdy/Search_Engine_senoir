@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-us" itemscope itemtype="http://schema.org/Article"> 
+ <head>
+  <script async src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script>
+  <script>window.redwood={"consentGroups":{"C0001":true,"C0002":true,"C0003":true,"C0004":true},"country":"EG","colo":"MRS","user":null,"locale":"en-US"}</script> 
+  <script type="text/javascript">
+      var OneTrust={"geolocationResponse":{"stateCode":"C","countryCode":"EG"}}
+    </script> 
+  <script>
+     const acceptedLocales = [
+      'en-au',
+      'en-ca',
+      'en-gb',
+      'en-in',
+      'en-us',
+      'de-de',
+      'es-es',
+      'es-la',
+      'fr-fr',
+      'it-it',
+      'ja-jp',
+      'ko-kr',
+      'pt-br',
+      'zh-tw',
+      'zh-cn',
+    ];
+    const orphanLocales = [
+      'ru-ru',
+      'sv-se',
+      'nl-nl',
+      'vi-vn',
+      'th-th',
+      'id-id',
+    ];
+    const ignoreList = [
+      'apps',
+      'docs',
+      'rate-limit-test',
+      'rss',
+    ]
+    function getPathFromLocale(locale, code, pathString) {
+      if ( locale === code || !acceptedLocales.includes(code) || acceptedLocales.includes(locale) || orphanLocales.includes(locale) ) {
+        return null;
+      } else {
+        return [code, locale ? locale : '', pathString].filter(part => part !== '').join('/');
+      }
+    };
+    if (localStorage.getItem('langPreference')) {
+      if (localStorage.getItem('langPreference').toLowerCase() != 'en-us') {
+          const langPreference = localStorage.getItem('langPreference').toLowerCase();
+          const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+          const currentLang = splitPath[0];
+          if (!acceptedLocales.includes(currentLang) && !orphanLocales.includes(currentLang) && !ignoreList.includes(splitPath[0])) {
+            splitPath.splice(0, 0, langPreference.toLowerCase());
+            const newUrl = 'https://' + window.location.hostname + '/' + splitPath.join('/') + '/' + window.location.search;
+            window.location.replace(newUrl);   
+          }
+        }
+    } else if (!window.navigator.userAgent.toLowerCase().includes('googlebot')) {
+        const requestedLang = window.navigator.language;
+        const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+        const maybeLocale = splitPath.shift();
+        const splitPathString = splitPath.join('/');
+
+        if (requestedLang && requestedLang.toLowerCase() != "en-us") {
+          const requestedLangCode = requestedLang
+            .toLowerCase()
+            .replace('_', '-');
+          const redirectPath = getPathFromLocale(maybeLocale, requestedLangCode, splitPathString);
+          if (redirectPath && !ignoreList.includes(maybeLocale)) {
+            window.location.replace('https://' + window.location.hostname + '/' + redirectPath + '/' + window.location.search);
+          }
+        }
+      }
+    </script> 
+  <meta charset="UTF-8"> 
+  <title>Athenian Project | Cloudflare</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="canonical" href="https://www.cloudflare.com/athenian/"> 
+  <meta itemprop="name" content="Athenian Project | Cloudflare"> 
+  <meta itemprop="description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta itemprop="image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Athenian Project | Cloudflare"> 
+  <meta name="twitter:description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <meta name="twitter:creator" content="@cloudflare"> 
+  <meta name="twitter:image" content="https://www.cloudflare.com/img/cf-twitter-card.png"> 
+  <meta property="og:title" content="Athenian Project | Cloudflare"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.cloudflare.com/athenian/"> 
+  <meta property="og:image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta property="og:description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta property="og:site_name" content="Cloudflare"> 
+  <meta class="swiftype" name="language" data-type="string" content="en-us"> 
+  <meta class="swiftype" name="title" data-type="string" content="Athenian Project"> 
+  <meta class="swiftype" name="description" data-type="string" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta class="swiftype" name="url" data-type="enum" content="https://www.cloudflare.com/athenian/"> 
+  <meta name="baidu-site-verification" content="N0CNJSCAk5"> 
+  <meta name="baidu-site-verification" content="Kj9FQ1BEWh"> 
+  <meta name="baidu-site-verification" content="OEDgbws38Y"> 
+  <meta name="baidu-site-verification" content="code-LHd7bZjChM"> 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png"> 
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196"> 
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> 
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> 
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> 
+  <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128"> 
+  <meta name="application-name" content="Cloudflare"> 
+  <meta name="msapplication-TileColor" content="#FFFFFF"> 
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png"> 
+  <meta name="msapplication-square70x70logo" content="/mstile-70x70.png"> 
+  <meta name="msapplication-square150x150logo" content="/mstile-150x150.png"> 
+  <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png"> 
+  <meta name="msapplication-square310x310logo" content="/mstile-310x310.png"> 
+  <noscript>
+   <style>.nojs-hide{display: none;}</style>
+  </noscript> 
+  <style>.async-hide {opacity: 0 !important}</style> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/application-ee0728fba2.min.css"> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/athenian/athenian-lp-19cab89ee5.min.css"> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/lp/landing-page-hero-blade-8987c11f28.min.css"> 
+  <script nonce="257c3075-2dca-45db-850f-3fa4a8623594">
+  window.CFJS = {
+    config: {
+      rumEnabled: true,
+      env: '/marketing-api',
+      availableLanguages: ''.split(','),
+      excludeMarketo: false,
+      marketoEnabled: true,
+      bizibleEnabled: true,
+      excludeHeapAnalytics: false,
+      asyncHide: false,
+      remarketingEnabled: false,
+      sentryDSN: 'https://bd9df81d859641f39ce626ce2a2cc90d@sentry.io/229513',
+      serverLang: "en-us",
+      isEnglish: true,
+      isLocalized: true,
+      intlTelInputUtils: '/js/chunk-d060ffec04635cca1500.js',
+      cookieDomain: "cloudflare.com",
+      techtargetEnabled: true,
+      googleOptimizeEnabled: true,
+      gtm: {
+        containerId: "GTM-PKQFGQB",
+        disabled: false,
+        uaCookieDomain: ".cloudflare.com",
+        uaCodeMarketing_29: "UA-10218544-29",
+        optimize: "GTM-N4JSZJ8",
+        uaCodeAdWords: "AW-819572718",
+        uaCodeAdWordsBI: "DC-8921596",
+        adWordsConversionCode: "AW-972248548",
+        adWordsConversionCodeForm: "AW-836330296",
+        adWordsConversionLabel: "caqvCO3e32EQ5KvNzwM",
+        adWordsConversionLabelForm: "-l5JCJnczYgBELjG5Y4D",
+      }
+    }
+  }
+</script> 
+  <script src="https://assets.www.cloudflare.com/js/runtime-6a16446847617098e330.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-232ffa51e57f882f0534.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-55ad6e1817237ece29a0.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-e06d79a8c06c0d46865a.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-27eef9fa207b28718df2.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-06380521ff19239efe05.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-cd8895b507ee9e702e17.js" nonce="257c3075-2dca-45db-850f-3fa4a8623594"></script> 
+  <script src="https://www.cloudflare.com/vendor/onetrust/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="e34df59b-4a48-4bf9-b2b5-7a4bb09cd231"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class="marketing-nojs "> 
+  <div class="athenian-lp-page"> 
+   <header class="athenian-lp-page-header"> 
+    <div class="athenian-lp-page-header__nav"> 
+     <img class="athenian-lp-page-header__logo athenian-lp-page-header__logo--light athenian-lp-page-header__logo--show" title="athenian logo white" alt="athenian logo white" src="/img/athenian/athenian-logo-white.svg"> 
+     <img class="athenian-lp-page-header__logo athenian-lp-page-header__logo--dark athenian-lp-page-header__logo--hide" title="athenian logo dark" alt="athenian logo dark" src="/img/athenian/athenian-logo-dark.svg"> 
+     <ul class="athenian-lp-page-header__list"> 
+      <li><a href="/athenian/guide/" class="athenian-lp-page-header__list-item athenian-lp-page-header__list-item--light">Guide</a></li> 
+      <li><a href="#about" class="athenian-lp-page-header__list-item athenian-lp-page-header__list-item--light js-athenian-scroll">About</a></li> 
+      <li><a href="#signup" class="athenian-lp-page-header__list-item athenian-lp-page-header__list-item--light js-athenian-scroll">Sign up</a></li> 
+     </ul> 
+     <div class="js-athenian-hamburger athenian-lp-page-header__hamburger athenian-lp-page-header__hamburger--light"> 
+      <div class="athenian-lp-page-header__hamburger-bar1"></div> 
+      <div class="athenian-lp-page-header__hamburger-bar2"></div> 
+      <div class="athenian-lp-page-header__hamburger-bar3"></div> 
+     </div> 
+    </div> 
+    <ul class="js-athenian-mobile-nav athenian-lp-page-header__mobile-nav"> 
+     <li class="athenian-lp-page-header__mobile-nav__item"> <a href="/athenian/guide/" class="athenian-lp-page-header__mobile-nav__link">Guide</a> </li> 
+     <li class="athenian-lp-page-header__mobile-nav__item"> <a href="#about" class="athenian-lp-page-header__mobile-nav__link js-athenian-scroll">About</a> </li> 
+     <li class="athenian-lp-page-header__mobile-nav__item"> <a href="#signup" class="athenian-lp-page-header__mobile-nav__link js-athenian-scroll">Sign up</a> </li> 
+    </ul> 
+   </header> 
+   <section class="tile athenian-lp-page-hero" id="hero"> 
+    <div class="tile__content tile__content--1200px"> 
+     <div id="js-nav-scroll"></div> 
+     <div class="grid grid--center athenian-lp-page-hero-content"> 
+      <div class="grid__item"> 
+       <h1 class="athenian-lp-page-h1 text--white text--center">Free security and performance for state and local election websites</h1> 
+       <div class="athenian-lp-page-hero-ctas"> 
+        <div class="js-athenian-video-play athenian-lp-page-hero-ctas__item js-video-modal-trigger" data-name="athenian-film"> 
+         <img class="athenian-lp-page-hero-ctas__item-icon" title="play full" alt="play full" src="/img/icons/white/play-full.svg" data-name="athenian-film"> 
+         <p class="text--white text--uppercase athenian-lp-page-text-label" data-name="athenian-film">Watch the film</p> 
+        </div> <a href="/athenian/guide/" class="athenian-lp-page-hero-ctas__item"> <img class="athenian-lp-page-hero-ctas__item-icon" title="information" alt="information" src="/img/icons/white/information.svg"> <p class="text--white text--uppercase athenian-lp-page-text-label">See the guide</p> </a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="tile tile--no-bottom-padding tile--no-top-padding tile--light-blue"> 
+    <div class="tile__content tile__content--1200px"> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item grid__item--always-7 text--center"> 
+       <img class="athenian-lp-page-carousel-icon js-athenian-carousel-prev" title="carousel prev" alt="carousel prev" src="/img/athenian/carousel-prev.svg"> 
+      </div> 
+      <div class="grid__item grid__item--always-85 grid__item--no-bottom-margin"> 
+       <p class="athenian-lp-page-text-label text--center text--uppercase">Some Athenian Project Participants Include</p> 
+       <div class="js-athenian-carousel athenian-lp-page-carousel owl-carousel owl-theme"> 
+        <div class="item text--center">
+         <img class="responsive-image" title="athenianprojectstateicon sanfrancisco" alt="athenianprojectstateicon sanfrancisco" src="/img/athenian/athenianprojectstateicon-sanfrancisco.svg">
+         <p class="text--center text--uppercase athenian-lp-page-text-label">San Francisco</p>
+        </div> 
+        <div class="item text--center">
+         <img class="responsive-image" title="athenianprojectstateicon rhodeisland" alt="athenianprojectstateicon rhodeisland" src="/img/athenian/athenianprojectstateicon-rhodeisland.svg">
+         <p class="text--center text--uppercase athenian-lp-page-text-label">Rhode Island</p>
+        </div> 
+        <div class="item text--center">
+         <img class="responsive-image" title="athenianprojectstateicon alabama" alt="athenianprojectstateicon alabama" src="/img/athenian/athenianprojectstateicon-alabama.svg">
+         <p class="text--center text--uppercase athenian-lp-page-text-label">Alabama</p>
+        </div> 
+        <div class="item text--center">
+         <img class="responsive-image" title="athenianprojectstateicon northcarolina" alt="athenianprojectstateicon northcarolina" src="/img/athenian/athenianprojectstateicon-northcarolina.svg">
+         <p class="text--center text--uppercase athenian-lp-page-text-label">North Carolina</p>
+        </div> 
+        <div class="item text--center">
+         <img class="responsive-image" title="athenianprojectstateicon hawaii" alt="athenianprojectstateicon hawaii" src="/img/athenian/athenianprojectstateicon-hawaii.svg">
+         <p class="text--center text--uppercase athenian-lp-page-text-label">Hawaii</p>
+        </div> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--always-7 text--center"> 
+       <img class="athenian-lp-page-carousel-icon js-athenian-carousel-next" title="carousel next" alt="carousel next" src="/img/athenian/carousel-next.svg"> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section id="about" class="tile"> 
+    <div class="tile__content tile__content--1200px"> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item"> 
+       <h2 class="athenian-lp-page-h3 athenian-lp-page-h3--mw-840px">We created Athenian Project to ensure that state and local governments have the highest level of protection and reliability for free, so that their constituents have access to election information and voter registration.</h2> 
+      </div> 
+      <div class="grid__item grid__item--half hide-desktop"> 
+       <img class="responsive-image responsive-image--500px-width image--center-tablet-mobile" title="safe and capitol" alt="safe and capitol" src="/img/athenian/safe-and-capitol.svg"> 
+      </div> 
+      <div class="grid__item grid__item--half"> 
+       <p class="athenian-lp-page-body-text">Cloudflare is on a mission to help build a better Internet. As one of the world’s largest networks, we believe it is our duty to help protect the most vulnerable voices and most critical institutions on the Internet.</p> 
+       <p class="athenian-lp-page-body-text">In September 2017, the U.S. Department of Homeland Security informed 21 states that their voter registration files or public election websites had been targeted for cyber attack. Among the many things state and local officials are responsible for in the election space are election websites. Just like every other Internet property, election websites need to be fast, they need to be reliable, and they need to be secure. Yet, scarce budgets too often prevent governments from getting the right resources to prevent attacks and stay online.</p> 
+      </div> 
+      <div class="grid__item grid__item--half hide-mobile hide-tablet"> 
+       <img class="responsive-image responsive-image--500px-width image--center-tablet-mobile" title="safe and capitol" alt="safe and capitol" src="/img/athenian/safe-and-capitol.svg"> 
+      </div> 
+      <div class="grid__item"> 
+       <p class="athenian-lp-page-h3 athenian-lp-page-h3--mw-700px">Athenian Project gives our Enterprise-level protection and performance for free.</p> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="tile tile--light-blue athenian-lp-page-curved-tile athenian-lp-page-curved-tile--first"> 
+    <div class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="grid__item"> 
+       <h2 class="athenian-lp-page-h2">Election websites serve a powerful role in democratic elections. Athenian Project is here to help.</h2> 
+      </div> 
+      <div class="grid__item"> 
+       <p class="athenian-lp-page-subtitle text--no-pad-no-margin-bottom">Election websites are often the targets of attacks and face vulnerabilities.</p> 
+       <p class="athenian-lp-page-subtitle text--no-pad-no-margin-top">Athenian Project protects against these vulnerabilities.</p> 
+      </div> 
+      <div class="grid__item"> 
+       <div class="athenian-lp-page-section-break"> 
+        <hr class="athenian-lp-page-section-break__hr"> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--third"> 
+       <img class="responsive-image responsive-image--150px-width image-block center-image--no-margin" title="voter data" alt="voter data" src="/img/athenian/voter-data.svg"> 
+       <p class="athenian-lp-page-h4">Protect Voter Data and Election Integrity</p> 
+       <p class="text--center athenian-lp-page-body-text text--darker-gray">Prevent attackers and nation-state actors from compromising the integrity of elections by stealing sensitive voter data.</p> 
+      </div> 
+      <div class="grid__item grid__item--third"> 
+       <img class="responsive-image responsive-image--150px-width image-block center-image--no-margin" title="stay online" alt="stay online" src="/img/athenian/stay-online.svg"> 
+       <p class="athenian-lp-page-h4 athenian-lp-page-h4--mw-250px">Stay Online During Peak Times</p> 
+       <p class="text--center athenian-lp-page-body-text text--darker-gray">Web traffic during election cycles can vary. Cloudflare keeps websites online and performant during peak times.</p> 
+      </div> 
+      <div class="grid__item grid__item--third"> 
+       <img class="responsive-image responsive-image--150px-width image-block center-image--no-margin" title="prevent defacement" alt="prevent defacement" src="/img/athenian/prevent-defacement.svg"> 
+       <p class="athenian-lp-page-h4 athenian-lp-page-h4--mw-250px">Prevent Website Defacement</p> 
+       <p class="text--center athenian-lp-page-body-text text--darker-gray">Website defacement can be the result of brute force login attacks. Cloudflare stops attacks of this nature, preventing the proliferation of inaccurate information.</p> 
+      </div> 
+      <div class="grid__item grid__item"> 
+       <img class="responsive-image responsive-image--150px-width image-block center-image--no-margin" title="learn how" alt="learn how" src="/img/athenian/learn-how.svg"> 
+       <p class="athenian-lp-page-h4">Learn how to protect your election website</p> 
+       <div class="button-container button-container--center"> <a href="/athenian/guide/" class="button button--night-sky">See the guide</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="tile tile--no-bottom-padding"> 
+    <div class="tile__content tile__content--1200px athenian-lp-page-quote-tile"> 
+     <div class="grid grid--reverse-desktop-only"> 
+      <div class="grid__item grid__item--70-100pct-tablet grid__item--no-bottom-margin"> 
+       <div class="athenian-lp-page-quote"> 
+        <img class="athenian-lp-page-quote__mark" title="quote" alt="quote" src="/img/athenian/quote.svg"> 
+        <p class="athenian-lp-page-quote__text">In this year’s historic Senate Special election, it was crucial that our website be able to handle spikes in traffic and remain online in the event of attack. It is very important to our state government and democracy as a whole that voters and the public be able to access registrar, election information, and election results. Cloudflare proved to be an excellent partner, helping us achieve this goal.</p> 
+        <div class="athenian-lp-page-quote__attribution"> 
+         <div> 
+          <p class="athenian-lp-page-quote__attribution__text athenian-lp-page-text-label text--darker-gray text--no-pad-no-margin-bottom text--letter-spacing">JIM PURCELL</p> 
+          <p class="athenian-lp-page-quote__attribution__text text--darker-gray text--no-pad-no-margin">Acting Secretary of Information</p> 
+          <p class="athenian-lp-page-quote__attribution__text text--darker-gray text--no-pad-no-margin-top">Technology for the State of Alabama</p> 
+         </div> 
+         <div class=""> 
+          <img class="athenian-lp-page-quote__attribution__img" title="bird" alt="bird" src="/img/athenian/bird.jpg"> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--30-100pct-tablet grid__item--no-bottom-margin athenian-lp-page-profile-image-container"> 
+       <img class="athenian-lp-page-profile-image" title="jim purcell" alt="jim purcell" src="/img/athenian/jim-purcell.png"> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="tile tile--blue" id="signup"> 
+    <div class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="grid__item grid__item--half"> 
+       <p class="athenian-lp-page-form__title">Sign up for Athenian Project</p> 
+       <p class="text--white athenian-lp-page-body-text athenian-lp-page-form__subtitle">Athenian Project is free and open to all U.S. state, county, or municipal government sites related to:</p> 
+       <ul class="text--white athenian-lp-page-body-text"> 
+        <li class="athenian-lp-page-list-item">The administration of elections, including the provision of information related to voting and polling places </li> 
+        <li class="athenian-lp-page-list-item"> Voter data, including voter registration or verification, or </li> 
+        <li class="athenian-lp-page-list-item"> The reporting of election results. </li> 
+       </ul> 
+      </div> 
+      <div class="grid__item grid__item--half"> 
+       <form class="marketing-form lp-form--padding signup-form alt-no-bottom-margin athenian-landing-page__form" novalidate autocomplete="off" accept-charset="UTF-8" data-success-msg="Someone from Cloudflare will be in touch with you shortly."> 
+        <div class="marketing-form-input "> 
+         <input class="marketing-form-input__field marketing-form-input__field--gray-bg" type="text" autocomplete="off" id="input-Company" name="Company"> <label class="marketing-form-input__label" for="input-Company"> <span class="marketing-form-input__label-content">Organization Name *</span> </label> <span class="marketing-form__messages"> <span class="error">Organization name required. Please enter a company name.</span> </span> 
+        </div> 
+        <div class="marketing-form-input marketing-form-input__z-index-zero"> 
+         <input class="marketing-form-input

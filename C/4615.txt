@@ -1,0 +1,2154 @@
+<!doctype html>
+<html class="html--no-js" lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <meta content="default-src 'self' https: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:; style-src 'self' 'unsafe-inline' https: http:; object-src https: http:; base-uri 'self'; connect-src 'self' https: http: wss: ws:; frame-src 'self' https: http:; img-src 'self' https: http: data:; manifest-src 'self'; media-src 'self' https: http:; worker-src 'self' https: http:;" http-equiv="Content-Security-Policy"> 
+  <script data-bl="j-no-m-no" data-blockingmode="auto" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" data-georegions="{'region':'US-06','cbid':'c2c1d015-6fa2-487d-aaf3-3a961d8a1984'}" id="Cookiebot" src="https://consent.cookiebot.com/uc.js"></script> 
+  <script>
+window.dataLayer = window.dataLayer || []
+</script> 
+  <script>document.documentElement.className = 'html--js'</script> 
+  <script async src="//cdn.bizible.com/scripts/bizible.js"></script> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37019925-1', 'auto', {allowLinker: true});
+ga('require', 'GTM-WC3ZR2P');
+</script> 
+  <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJXWQL');
+</script> 
+  <meta content="index, follow" name="robots"> 
+  <script data-cookieconsent="ignore">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+_st('install','Z4n7msKyctXXfJs66EKx','2.0.0');
+</script> 
+  <title>
+Source Code Management
+|
+GitLab
+</title> 
+  <meta content="Source code management enables coordination, sharing, and collaboration across an entire software development team. GitLab supports teams to rapidly collaborate and iterate on new features and deliver business value." name="description"> 
+  <meta content="Source code management enables coordination, sharing, and collaboration across an entire software development team. GitLab supports teams to rapidly collaborate and iterate on new features and deliver business value." name="twitter:description"> 
+  <meta content="Source code management enables coordination, sharing, and collaboration across an entire software development team. GitLab supports teams to rapidly collaborate and iterate on new features and deliver business value." property="og:description"> 
+  <meta content="GitLab" property="og:site_name"> 
+  <meta content="Source Code Management" property="og:title"> 
+  <meta content="https://gitlab.com/gitlab-com/www-gitlab-com/" property="og:repo"> 
+  <meta content="https://gitlab.com/" property="og:instance"> 
+  <meta content="gitlab-com/www-gitlab-com/" property="og:path"> 
+  <meta content="stages-devops-lifecycle/template.html.erb" property="og:relative_path"> 
+  <meta content="sites/uncategorized/" property="og:monorepo_site_path_fragment"> 
+  <meta content="article" property="og:type"> 
+  <meta content="https://about.gitlab.com/stages-devops-lifecycle/source-code-management/" property="og:url"> 
+  <meta content="https://about.gitlab.com/images/opengraph/gitlab-blog-cover.png" property="og:image"> 
+  <meta content="https://about.gitlab.com/images/opengraph/gitlab-blog-cover.png" name="twitter:image"> 
+  <meta content="summary_large_image" name="twitter:card"> 
+  <meta content="@GitLab" name="twitter:site"> 
+  <meta content="Source Code Management" name="twitter:title"> 
+  <meta content="@GitLab" name="twitter:creator"> 
+  <link href="/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"> 
+  <link href="/all-releases.xml" rel="alternate" title="All Releases" type="application/atom+xml"> 
+  <link href="/security-releases.xml" rel="alternate" title="Security Releases" type="application/atom+xml"> 
+  <link href="/releases.xml" rel="alternate" title="Major Releases" type="application/atom+xml"> 
+  <link href="/ico/favicon.ico" rel="shortcut icon"> 
+  <link href="/ico/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png"> 
+  <link href="/ico/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png"> 
+  <link href="/ico/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"> 
+  <link href="/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"> 
+  <link href="/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"> 
+  <link href="/ico/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"> 
+  <link href="/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"> 
+  <link href="/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"> 
+  <link href="/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"> 
+  <link href="/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"> 
+  <link href="/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"> 
+  <link href="/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"> 
+  <link href="/ico/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"> 
+  <link href="/ico/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"> 
+  <meta content="#554488" name="msapplication-TileColor"> 
+  <meta content="/ico/mstile-144x144.png" name="msapplication-TileImage"> 
+  <meta content="/ico/browserconfig.xml" name="msapplication-config"> 
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700" rel="stylesheet"> 
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/tiny-slider.css" rel="stylesheet"> 
+  <link href="/stylesheets/styles.css" rel="stylesheet">
+  <link href="/stylesheets/highlight.css" rel="stylesheet"> 
+  <link href="/stylesheets/features-v2.css" rel="stylesheet"> 
+  <link href="/stylesheets/release-posts.css" rel="stylesheet"> 
+  <link href="/stylesheets/product-page.css" rel="stylesheet"> 
+  <link href="/stylesheets/bl-modal.css" rel="stylesheet"> 
+  <link href="/stylesheets/video-carousel.css" rel="stylesheet"> 
+  <link href="/stylesheets/cta-promo.css" rel="stylesheet"> 
+  <link href="/stylesheets/slippers.css" rel="stylesheet"> 
+ </head> 
+ <body data-offset="90" data-spy="scroll" data-target=".qnav"> 
+  <noscript> <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-NJXWQL" style="display:none;visibility:hidden" width="0"></iframe> 
+  </noscript> 
+  <header class="navbar" id="main-nav" role="navigation"> 
+   <div class="navbar-left"> <a href="/" class="navbar-brand animated">
+     <svg height="36" viewbox="0 0 1231 342" xmlns="http://www.w3.org/2000/svg" class="nav-logo"> <g fill="none" fill-rule="evenodd"> 
+       <g fill="#8C929D" class="wordmark"> 
+        <path d="M764.367 94.13h-20.803l.066 154.74h84.155v-19.136h-63.352l-.066-135.603zM907.917 221.7c-5.2 5.434-13.946 10.87-25.766 10.87-15.838 0-22.22-7.797-22.22-17.957 0-15.354 10.637-22.678 33.332-22.678 4.255 0 11.11.472 14.655 1.18v28.586zm-21.51-93.787c-16.8 0-32.208 5.952-44.23 15.858l7.352 12.73c8.51-4.962 18.91-9.924 33.802-9.924 17.02 0 24.585 8.742 24.585 23.39v7.56c-3.31-.71-10.164-1.184-14.42-1.184-36.404 0-54.842 12.757-54.842 39.454 0 23.86 14.656 35.908 36.876 35.908 14.97 0 29.314-6.852 34.278-17.954l3.782 15.118h14.657v-79.14c0-25.04-10.874-41.815-41.84-41.815zM995.368 233.277c-7.802 0-14.657-.945-19.858-3.308v-71.58c7.093-5.908 15.84-10.16 26.95-10.16 20.092 0 27.893 14.174 27.893 37.09 0 32.6-12.53 47.957-34.985 47.957m8.742-105.364c-18.592 0-28.6 12.64-28.6 12.64V120.59l-.066-26.458H955.116l.066 150.957c10.164 4.25 24.11 6.613 39.24 6.613 38.768 0 57.442-24.804 57.442-67.564 0-33.783-17.26-56.227-47.754-56.227M538.238 110.904c18.438 0 30.258 6.142 38.06 12.285l8.938-15.477c-12.184-10.678-28.573-16.417-46.053-16.417-44.204 0-75.17 26.932-75.17 81.267 0 56.935 33.407 79.14 71.624 79.14 19.148 0 35.46-4.488 46.096-8.976l-.435-60.832V162.76h-56.734v19.135h36.167l.437 46.184c-4.727 2.362-13 4.252-24.11 4.252-30.73 0-51.297-19.32-51.297-60.006 0-41.34 21.275-61.422 52.478-61.422M684.534 94.13h-20.33l.066 25.988v89.771c0 25.04 10.874 41.814 41.84 41.814 4.28 0 8.465-.39 12.53-1.126v-18.245c-2.943.45-6.083.707-9.455.707-17.02 0-24.585-8.74-24.585-23.387v-61.895h34.04v-17.01H684.6l-.066-36.617zM612.62 248.87h20.33V130.747h-20.33v118.12zM612.62 114.448h20.33V94.13h-20.33v20.318z" /> 
+       </g> 
+       <path d="M185.398 341.13l68.013-209.322H117.39L185.4 341.13z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l-68.013-209.322h-95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M22.066 131.808l-20.67 63.61c-1.884 5.803.18 12.16 5.117 15.744L185.398 341.13 22.066 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M22.066 131.808h95.32L76.42 5.735c-2.107-6.487-11.284-6.487-13.39 0L22.065 131.808z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l68.013-209.322h95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M348.73 131.808l20.67 63.61c1.884 5.803-.18 12.16-5.117 15.744L185.398 341.13 348.73 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M348.73 131.808h-95.32L294.376 5.735c2.108-6.487 11.285-6.487 13.392 0l40.963 126.073z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+      </g> 
+     </svg> </a>
+    <div class="mobile-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+    </div> 
+   </div> 
+   <div class="navbar-right"> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="mobile-icons"> <button aria-label="Search" class="search-icon js-search-toggle" id="search-header" type="button"> <i class="fa fa-search"></i> </button> <button class="mobile-icon" id="mobile-icon"> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> </button> 
+   </div> 
+   <div class="display-none mobile-menu" id="mobile-menu"> <button class="exit-icon-container" id="exit-icon"> <img src="/images/icons/x.svg" class="exit-icon" alt="Gitlab x icon svg"> </button> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="search-box js-search-box"> <i class="fa fa-search search-box-icon"></i> 
+    <input class="search-input js-search st-header" placeholder="Search..."> <button aria-label="Close search" class="search-close js-search-toggle" type="button"> <i class="fa fa-times"></i> </button> 
+   </div> 
+  </header> 
+  <script src="/javascripts/mobile-menu.js"></script> 
+  <script src="/javascripts/libs/tweenmax.min.js"></script> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet"> 
+  <div class="blank-header"> 
+   <img src="/images/home/icons-pattern-left.svg" class="image-border image-border-left" alt="Gitlab hero border pattern left svg"> 
+   <img src="/images/home/icons-pattern-right.svg" class="image-border image-border-right" alt="Gitlab hero border pattern right svg"> 
+   <div class="header-content"> 
+    <h1>Source Code Management</h1> 
+    <p>Source code management enables coordination, sharing, and collaboration across an entire software development team. GitLab supports teams to rapidly collaborate and iterate on new features and deliver business value.</p> <a href="https://gitlab.com/users/sign_in" class="btn cta-btn orange">Try GitLab free</a> 
+   </div> 
+  </div> 
+  <div class="gitlab-content-container"> 
+   <div class="callout-box" style="margin-bottom: 60px;"> 
+    <h2>Source code management is where development teams start sharing and collaboration begins</h2> 
+    <p>Version control in GitLab helps your development team collaborate and maximize productivity, sparking faster delivery and increased visibility. With its Git-based repository, GitLab enables clear code reviews, asset version control, feedback loops, and powerful branching patterns to help your developers solve problems and ship value. Source code management is a critical part of the DevOps lifecycle, enabling teams to manage their work with a single source of truth.</p> 
+   </div> 
+   <h3 id="collaborate">Collaborate</h3> 
+   <table style="width:100%; border:0px"> 
+    <tbody>
+     <tr> 
+      <td style="width:50%"> 
+       <ul> 
+        <li>Review, comment, and improve code. </li> 
+        <li>Enable re-use and innersourcing.</li> 
+        <li>File locking prevents conflicts.</li> 
+        <li>Robust WebIDE accelerates development on any platform.</li> 
+       </ul></td> 
+      <td rowspan="4"><img src="/images/feature_page/screenshots/56-web-ide.png"></td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <h3 id="accelerate">Accelerate</h3> 
+   <table style="width:100%; border:0px"> 
+    <tbody>
+     <tr> 
+      <td style="width:50%"> 
+       <ul> 
+        <li>Git-based repository enables developers to work from a local copy.</li> 
+        <li>Branch code, make changes, and merge into the main branch.</li> 
+        <li>Built-in Continuous Integration (CI) and Continuous Delivery (CD) streamlines testing and delivery.</li> 
+       </ul></td> 
+      <td rowspan="4"><img src="/images/feature_page/screenshots/18-repo-graph.png"></td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <h3 id="compliant-and-secure">Compliant and Secure</h3> 
+   <table style="width:100%; border:0px"> 
+    <tbody>
+     <tr> 
+      <td style="width:50%"> 
+       <ul> 
+        <li>Review, track, and approve code changes with powerful merge requests.</li> 
+        <li>Automatically scan for code quality and security with every commit.</li> 
+        <li>Simplify auditing and compliance with granular access controls and reporting.</li> 
+       </ul></td> 
+      <td rowspan="4"><img src="/images/feature_page/screenshots/46-mr-approvals.png"></td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <div class="text-center" style="margin-top: 50px;"> 
+    <h3>Want to know where we're headed?</h3> 
+    <p><a href="/direction/create/source_code_management/">Learn about the future of source code management</a></p> 
+   </div> 
+   <div class="scm-video-wrapper u-margin-top-40"> 
+    <h2 class="text-center"> Featured videos </h2> 
+    <div class="video-slider"> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/1.jpg" data-video-link="https://www.youtube-nocookie.com/embed/f9zmxOfP7AQ" data-video-title="Support Numerous Assets in GitLab"> 
+      <img src="/images/video-carousels/scm_1/1.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Support Numerous Assets in GitLab</h4> 
+     </div> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/2.jpg" data-video-link="https://www.youtube-nocookie.com/embed/gULEzPybJu8" data-video-title="Enterprise Ready Authentication"> 
+      <img src="/images/video-carousels/scm_1/2.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Enterprise Ready Authentication</h4> 
+     </div> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/3.jpg" data-video-link="https://www.youtube-nocookie.com/embed/kNkUf1cScSc" data-video-title="Enterprise Ready Project Templates"> 
+      <img src="/images/video-carousels/scm_1/3.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Enterprise Ready Project Templates</h4> 
+     </div> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/4.jpg" data-video-link="https://www.youtube-nocookie.com/embed/l6K3Xn2MPJw" data-video-title="Control Changes to Product Development Assets in GitLab"> 
+      <img src="/images/video-carousels/scm_1/4.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Control Changes to Product Development Assets in GitLab</h4> 
+     </div> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/5.jpg" data-video-link="https://www.youtube-nocookie.com/embed/nRxCz4vMv5Q" data-video-title="Manage, Track and Maintain Access in GitLab"> 
+      <img src="/images/video-carousels/scm_1/5.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Manage, Track and Maintain Access in GitLab</h4> 
+     </div> 
+     <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="/images/video-carousels/scm_1/6.jpg" data-video-link="https://www.youtube-nocookie.com/embed/OFNUjvgm2_4" data-video-title="Foster Collaboration in GitLab"> 
+      <img src="/images/video-carousels/scm_1/6.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+      <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+      </div> 
+      <h4>Foster Collaboration in GitLab</h4> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="source-code-management-cta-promo"> 
+    <div class="row u-margin-top-sm"> 
+     <div class="col-md-12"> 
+      <div class="cta-promo-module"> 
+       <div class="cta-promo-content"> 
+        <h2>Try GitLab for free</h2> 
+        <p>Get unlimited access to all of GitLab's features for 30 days.</p> <a class="btn orange cta-btn margin-top10" href="/free-trial/">Get free trial</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/f9zmxOfP7AQ" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/gULEzPybJu8" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/kNkUf1cScSc" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/l6K3Xn2MPJw" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/nRxCz4vMv5Q" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube-nocookie.com/embed/OFNUjvgm2_4" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-container feature-gallery text-center"> 
+   <div class="container titles"> 
+    <h1>Features</h1> 
+    <div class="features-description features-description-separation"> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Jira Integration </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>To ensure that developers in GitLab and project managers in JIRA remain in tune, GitLab integrates with JIRA and provides the necessary tooling to fill that gap.</p> 
+       <p></p> <span> <a href="/solutions/jira/">Learn how integrate JIRA with GitLab</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Jira Development Panel Integration </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>View GitLab repository information and navigate to GitLab from the JIRA development panel.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/integration/jira/">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Git is fast </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Git is really fast. Performing a diff, viewing history, committing and merging changes, obtaining any revision and any form of branching is very quick.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/topics/git/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Git has smaller size requirements </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>A single repository in Git is typically a number of times smaller than the same repository in SVN.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/topics/git/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Based on Git, a distributed VCS </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Git, on which GitLab is built, is fully distributed. Every user has a complete copy of the repository, allowing for much faster access to history, easier branching and an overall better experience.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/topics/git/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Powerful branching </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>A branch in Git contains the entire history that precedes it. It’s also created or moved towards instantly and easily shared.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/topics/git/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Protected branches </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Granular permissions for branches you want to protect.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/protected_branches.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Commit graph and reporting tools </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>GitLab provides commit graphs and reporting tools about collaborators’ work.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/index.html#repository-graph">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Required Merge Request Approvals </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>When a project needs multiple sign-offs, you can require every merge request to be approved before merging. With Required Merge Request Approvals you can set the number of necessary approvals and predefine a list of specific approvers. In turn, guarantee the quality and the standards of your code.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/approvals/">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Multiple approvers in code review </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>In GitLab, to ensure strict code review, you can require a minimum number of users to approve of a merge request before it is able to be merged. You can undo an approval by removing it after the fact.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/approvals/rules.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Approval rules for code review </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Make sure the right people review merge requests with approval rules by specifying lists of eligible approvers, the minimum number of approvals for each, and which target branches they protect. This makes it easy to request review from different teams like Engineering, UX and Product.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/approvals/rules.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Repository pull mirroring </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Mirror a repository from a remote Git server to your local server, making it easy to keep local forks and replicas up to date.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Create new branches from issues </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>In GitLab, you can quickly create a new branch from an issue on the issue tracker. It will include the issue number and title automatically, making it easy to track which branch belongs to which issue.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-new-branch-from-an-issue">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Allow edits from upstream maintainers in a fork </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>When a user opens a merge request from a fork, they are given the option to allow upstream maintainers to collaborate with them on the source branch. This allows the maintainers of the upstream project to make small fixes or rebase branches before merging, reducing the back and forth of accepting community contributions.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/allow_collaboration.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Search files with fuzzy file finder </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>GitLab provides a way to search a file in your repository in one keystroke.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/file_finder.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Push rules </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Reject new code and commits that don’t comply with company policy.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/push_rules/push_rules.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Block secret file push </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Block important or secret files from being accidentally pushed to a live repository with push rules.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/push_rules/push_rules.html#prevent-pushing-secrets-to-the-repository">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Fast-forward merge with option to rebase </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>With this setting at the project level, you can ensure that no merge commits are created and all merges are fast-forwarded. When a fast-forward merge is not possible, the user is given the option to rebase.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/fast_forward_merge.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Squash and merge </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Combine commits into one so that main branch has a simpler to follow and revert history.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Remote repository push mirroring </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Mirror a repository from your local server to elsewhere. Push mirroring is supported via HTTP and SSH using password authentication, and using public-key authentication with SSH.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Reject unsigned commits </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>GitLab Premium allows you to enforce GPG signatures by rejecting unsigned commits.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/push_rules/push_rules.html#enabling-push-rules">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Verified Committer </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Verify that a push only contains commits by the same user performing the push.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/push_rules/push_rules.html#enabling-push-rules">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Xcode integration </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Open Xcode projects in Xcode directly from GitLab. Starting in Xcode 10, you can also sign in to GitLab in Xcode and access projects directly from the Xcode interface.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/index.html#clone-in-apple-xcode">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Cherry-picking changes </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Cherry-pick any commit in the UI by simply clicking the Cherry-Pick button in a merged merge request or a specific commit.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/cherry_pick_changes.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> GPG Signed Commits </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Sign commits and prove that a commit was performed by a certain user.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> X.509 Signed Commits and Tags </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Sign commits and prove that a commit was performed by a certain user.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/x509_signed_commits/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Restrict push and merge access to certain users </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Extend the base functionality of protected branches and choose which users can push or merge to a protected branch.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/protected_branches.html#restricting-push-and-merge-access-to-certain-users">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Protected tags </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Granular permissions for tags you want to protect.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/protected_tags.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Server Hooks </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Premium"> 
+          <div class="badge">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in GitLab SaaS Ultimate"> 
+          <div class="badge">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Leverage the power of Server Hooks and chain them together to fire off custom scripts when certain actions occur on the repository. If the commit is declined or an error occurs during the Git hook check, the error message of the hook will be present in GitLab’s UI. GitLab supports all types of hooks.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/administration/server_hooks.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Git LFS 2.0 support </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Manage large files such as audio, video and graphics files with the help of Git LFS. Git LFS 2.0 file locking support helps large teams work with binary assets and is integrated with our native file locking feature.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/topics/git/lfs/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Keep personal email private </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Use a noreply email address for your commits instead of your personal email address private.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/profile/#private-commit-email">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Download single repository files </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>When browsing through project repositories on GitLab, having direct access to single files is a relevant use case. A ‘Download’ button in the file viewer allows you to download individual files from the GitLab UI.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Instance file templates </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Premium"> 
+          <div class="badge">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in GitLab SaaS Ultimate"> 
+          <div class="badge">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Define custom <code>LICENSE</code>, <code>.gitignore</code>, <code>Dockerfile</code> and <code>.gitlab-ci.yml</code> templates for your GitLab instance to make consistency easier.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/admin_area/settings/instance_template_repository.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Group file templates </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Define custom <code>LICENSE</code>, <code>.gitignore</code>, <code>Dockerfile</code> and <code>.gitlab-ci.yml</code> templates for a Group to make consistency easier.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/group/#group-file-templates">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> AsciiDoc </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>AsciiDoc is a text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs. Preview AsciiDoc files directly in the repository browser.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/asciidoc.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> S/MIME Signed Commits </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Sign commits and prove that a commit was performed by a certain user.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/repository/x509_signed_commits/">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Optional Merge Request Approvals </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Code review is an essential practice of every successful project, and giving your approval once a merge request is in good shape is an important part of the review process, as it clearly communicates the ability to merge the change.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/merge_requests/approvals/rules.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Code Owners </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Assign Code Owners to files to indicate the team members responsible for code in your project using a <code>CODEOWNERS</code> file. Code owners are assigned automatically as merge request approvers, can be set as required and shown when viewing files. Sections allow each team to configure their own code owners configuration independently, allowing multiple teams to look after common parts of the codebase.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/code_owners.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Ease of migration from other providers </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>GitLab lets you easily migrate all repos, issues and merge request data from your previous provider.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/import/index.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Restrict SSH Keys </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Premium"> 
+          <div class="badge">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in GitLab SaaS Ultimate"> 
+          <div class="badge">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Control the technology and key length of SSH keys used to access GitLab</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/README.html#administrator-documentation">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Activity Stream </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>View a list of the latest commits, merges, comments, and team members on your project.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/profile/preferences.html#default-dashboard">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Built-in and custom project templates </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>When creating a new project, you can choose to kickstart your project from a predefined template that already has some working example code and CI preconfigured. In addition, you can define a custom project templates by assigning a group. Child projects of this group are available as templates when creating a new project.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/working_with_projects.html#project-templates">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Initialize README on project creation </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>A repository can be initialized with an example README when creating a new project. If this option is checked, a project repository is initialized with a default master branch which can be cloned right away.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/working_with_projects.html#create-a-project">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Repository languages on project overview </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>A code languages bar on the project overview shows all relevant languages the GitLab repository consists of, including relative quantity.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/user/project/">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> Git protocol v2 support </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Available in GitLab SaaS Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Free"> 
+          <div class="badge available">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Premium"> 
+          <div class="badge available">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Available in GitLab self-managed Ultimate"> 
+          <div class="badge available">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>Git’s wire protocol defines how clones, fetches and pushes are communicated between the client and server. Git protocol v2 improves performance of fetch commands and enables future protocol improvements.</p> 
+       <p></p> <span> <a href="https://docs.gitlab.com/ee/administration/git_protocol.html">Documentation</a> </span> 
+      </div> 
+     </div> 
+     <p></p> 
+    </div> 
+   </div> 
+   <div class="container titles"> 
+    <h1>Missing</h1> 
+    <div class="features-description features-description-separation"> 
+     <div class="col-sm-4 clearfix feature-container"> 
+      <div class="col-xs-12 feature-contents"> 
+       <h4> The best place for large open source projects </h4> 
+       <div class="badge-container"> 
+        <div class="badge-container-type">
+         SaaS
+        </div> 
+        <div class="top-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in SaaS Premium"> 
+          <div class="badge">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#gitlab-com" title="Not available in GitLab SaaS Ultimate"> 
+          <div class="badge">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+        <div class="badge-container-type">
+         Self-Managed
+        </div> 
+        <div class="bottom-row"> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Free"> 
+          <div class="badge">
+           FREE
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Premium"> 
+          <div class="badge">
+           PREMIUM
+          </div> </a> <a data-placement="top" data-toggle="tooltip" href="/pricing/#self-managed" title="Not available in GitLab self-managed Ultimate"> 
+          <div class="badge">
+           ULTIMATE
+          </div> </a> 
+        </div> 
+       </div> 
+       <p> </p>
+       <p>GitLab is meant to be the best place for any so

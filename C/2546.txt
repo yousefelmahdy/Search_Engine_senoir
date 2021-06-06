@@ -1,0 +1,456 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D"> 
+ <head> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <title>Find a GitHub Star near you | GitHub Stars</title>
+  <meta data-n-head="ssr" charset="utf-8">
+  <meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1">
+  <meta data-n-head="ssr" name="theme-color" content="#031a37">
+  <meta data-n-head="ssr" http-equiv="Content-Security-Policy" content=" default-src 'none'; script-src 'self' 'sha256-tempUn1btibnrWwQxEk37lMGV1Nf8FO/GXxNhLEsPdg=' 'sha256-Ct2aN9NXxGze5xG7pvz+Un0PHqod1Kw5OJFcQgM2sNA=' 'sha256-nRO4hv5vNEfqdcYBMTezfgjdwqSerOpaOUQ3H8OnfYo='; style-src 'self' 'sha256-Z2alVs/7Gap0WIMWuAnGMo8MuB7KbcZGuXAFle7wUdQ='; font-src 'self'; img-src 'self' https://*.githubusercontent.com https://res.cloudinary.com; connect-src 'self' https://github-stars-api.herokuapp.com/; form-action 'self'; media-src 'self'; frame-src 'none'; ">
+  <meta data-n-head="ssr" data-hid="description" name="description" content="Find and connect with the shining individuals from the GitHub Stars program.">
+  <meta data-n-head="ssr" property="twitter:card" content="summary_large_image">
+  <meta data-n-head="ssr" data-hid="og:type" name="og:type" content="website">
+  <meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Find a GitHub Star near you | GitHub Stars">
+  <meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://stars.github.com/profiles/">
+  <meta data-n-head="ssr" data-hid="og:description" name="og:description" content="Find and connect with the shining individuals from the GitHub Stars program.">
+  <meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://stars.github.com/card.jpg">
+  <base href="/">
+  <link data-n-head="ssr" rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link data-n-head="ssr" rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link data-n-head="ssr" rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="preload" href="/_nuxt/a05d17e.js" as="script">
+  <link rel="preload" href="/_nuxt/d9996c4.js" as="script">
+  <link rel="preload" href="/_nuxt/css/9b5c403.css" as="style">
+  <link rel="preload" href="/_nuxt/4cb2e92.js" as="script">
+  <link rel="preload" href="/_nuxt/css/aa5f263.css" as="style">
+  <link rel="preload" href="/_nuxt/7a729ed.js" as="script">
+  <link rel="preload" href="/_nuxt/css/1d6fc7b.css" as="style">
+  <link rel="preload" href="/_nuxt/43c4022.js" as="script">
+  <link rel="preload" href="/_nuxt/css/95ed36b.css" as="style">
+  <link rel="preload" href="/_nuxt/eba6bbb.js" as="script">
+  <link rel="stylesheet" href="/_nuxt/css/9b5c403.css">
+  <link rel="stylesheet" href="/_nuxt/css/aa5f263.css">
+  <link rel="stylesheet" href="/_nuxt/css/1d6fc7b.css">
+  <link rel="stylesheet" href="/_nuxt/css/95ed36b.css">
+  <link rel="preload" href="/_nuxt/static/1622960736/profiles/state.js" as="script">
+  <link rel="preload" href="/_nuxt/static/1622960736/profiles/payload.js" as="script">
+  <link rel="preload" href="/_nuxt/static/1622960736/manifest.js" as="script"> 
+ </head> 
+ <body> 
+  <div data-server-rendered="true" id="__nuxt">
+   <!---->
+   <div id="__layout">
+    <div class="layout layout--navy" data-v-75fc7729>
+     <!----> <!----> 
+     <header class="topbar topbar--navy" data-v-561944ad data-v-75fc7729>
+      <div class="topbar__content" data-v-561944ad>
+       <a href="/" aria-label="Homepage" class="nuxt-link-active" data-v-561944ad>
+        <svg width="106" height="32" viewbox="0 0 106 32" xmlns="http://www.w3.org/2000/svg" class="topbar__brand" data-v-561944ad>
+         <path d="M53.455 12.645h2.861c-.086-3.159-2.871-5.451-6.866-5.451-3.947 0-6.973 2.263-6.973 5.663 0 2.744 1.96 4.352 5.12 5.21l2.323.635c2.104.559 3.727 1.252 3.727 3.005 0 1.926-1.835 3.197-4.36 3.197-2.286 0-4.188-1.02-4.36-3.168h-2.978c.192 3.572 2.949 5.778 7.357 5.778 4.62 0 7.28-2.437 7.28-5.778 0-3.554-3.16-4.93-5.657-5.547l-1.92-.501c-1.538-.395-3.583-1.117-3.574-3.005 0-1.675 1.527-2.918 3.948-2.918 2.257 0 3.86 1.06 4.072 2.88zm13.062-.25H63.49V8.85h-2.87v3.544h-2.161v2.31h2.16v8.735c-.009 2.687 2.037 3.987 4.303 3.939.913-.01 1.527-.183 1.863-.308l-.518-2.379c-.192.039-.548.125-1.009.125-.931 0-1.767-.308-1.767-1.974v-8.137h3.026v-2.311zm7.198 15.119c2.44 0 3.813-1.242 4.36-2.35h.116v2.022h2.804v-9.822c0-4.305-3.38-5.162-5.724-5.162-2.67 0-5.128 1.078-6.089 3.775l2.7.616c.422-1.05 1.497-2.06 3.428-2.06 1.853 0 2.804.972 2.804 2.648v.067c0 1.05-1.076 1.03-3.726 1.339-2.795.327-5.657 1.06-5.657 4.42 0 2.908 2.18 4.507 4.984 4.507zm.625-2.311c-1.623 0-2.795-.732-2.795-2.158 0-1.54 1.364-2.09 3.025-2.31.932-.126 3.14-.376 3.554-.79v1.906c0 1.753-1.393 3.352-3.784 3.352zm10.21 1.983h2.87v-9.033c0-1.935 1.49-3.332 3.526-3.332.595 0 1.267.106 1.497.174V12.24a11.594 11.594 0 00-1.22-.068c-1.728 0-3.207.983-3.745 2.571h-.153v-2.35h-2.776v14.792zm21.162-11.18c-.595-2.302-2.391-3.804-5.58-3.804-3.332 0-5.695 1.762-5.695 4.382 0 2.1 1.268 3.495 4.034 4.112l2.497.549c1.421.317 2.084.953 2.084 1.877 0 1.146-1.22 2.042-3.102 2.042-1.72 0-2.824-.741-3.17-2.196l-2.775.424c.48 2.62 2.65 4.093 5.964 4.093 3.563 0 6.031-1.897 6.031-4.574 0-2.09-1.325-3.38-4.033-4.007l-2.344-.539C98 17.98 97.3 17.431 97.31 16.43c-.01-1.136 1.22-1.945 2.852-1.945 1.786 0 2.612.992 2.948 1.984l2.603-.462zM15.999 0C7.164 0 0 7.345 0 16.405c0 7.248 4.584 13.397 10.942 15.566.8.151 1.092-.356 1.092-.79 0-.39-.013-1.422-.021-2.79-4.45.99-5.39-2.2-5.39-2.2-.728-1.895-1.777-2.4-1.777-2.4-1.452-1.017.11-.997.11-.997 1.606.116 2.451 1.691 2.451 1.691 1.427 2.507 3.745 1.783 4.657 1.363.145-1.06.559-1.783 1.015-2.193-3.552-.413-7.288-1.821-7.288-8.108 0-1.79.624-3.256 1.647-4.402-.165-.415-.714-2.083.158-4.341 0 0 1.342-.441 4.399 1.682A14.97 14.97 0 0116 7.933c1.36.007 2.728.188 4.006.553 3.055-2.123 4.395-1.682 4.395-1.682.874 2.258.325 3.926.16 4.341 1.026 1.146 1.645 2.612 1.645 4.402 0 6.303-3.741 7.69-7.305 8.095.574.507 1.085 1.508 1.085 3.039 0 2.192-.02 3.962-.02 4.5 0 .438.29.949 1.1.789C27.42 29.796 32 23.65 32 16.405 32 7.345 24.836 0 15.999 0" fill="currentColor" fill-rule="evenodd"></path>
+        </svg></a> 
+       <div data-v-602930b2 data-v-561944ad>
+        <nav class="user-menu" data-v-602930b2>
+         <a href="" class="user-menu__login" data-v-602930b2>Sign in</a> <button aria-label="Open menu" class="user-menu__toggle" data-v-602930b2>
+          <div class="burger false" data-v-777d7614 data-v-602930b2>
+           <div class="burger__layer" data-v-777d7614></div> 
+           <div class="burger__layer" data-v-777d7614></div> 
+           <div class="burger__layer" data-v-777d7614></div>
+          </div></button>
+        </nav> <!----> <!---->
+       </div>
+      </div>
+     </header> 
+     <div class="layout__wrapper" data-v-75fc7729>
+      <nav theme="navy" class="navigation main-nav" data-v-25c71d5e data-v-75fc7729>
+       <ul class="navigation__list" data-v-25c71d5e>
+        <li class="navigation__item" data-v-25c71d5e><a href="/" class="nuxt-link-active" data-v-25c71d5e>Home</a></li> 
+        <li class="navigation__item" data-v-25c71d5e><a href="/program/" data-v-25c71d5e>Program</a></li> 
+        <li class="navigation__item" data-v-25c71d5e><a href="/profiles/" aria-current="page" class="nuxt-link-exact-active nuxt-link-active" data-v-25c71d5e>Stars</a></li> 
+        <li class="navigation__item" data-v-25c71d5e><a href="/nominate/" data-v-25c71d5e>Nominate</a></li>
+       </ul>
+      </nav> 
+      <section class="content" data-v-75fc7729>
+       <div class="stars" data-v-75fc7729>
+        <div class="stars__container">
+         <section class="stars section" data-v-a303b708 data-v-2dc312d4>
+          <div class="section__content" data-v-a303b708>
+           <h1 class="section__title" data-v-a303b708>Meet the Stars</h1> 
+           <section class="filters" data-v-04966eb6 data-v-2dc312d4>
+            <div class="select-wrapper filters__select" data-v-dd053db6 data-v-04966eb6>
+             <label id="label-country" for="country" aria-hidden="true" class="label" data-v-dd053db6> Country </label> 
+             <div class="select" data-v-dd053db6>
+              <select id="country" name="country" aria-labelledby="label-country" class="select__field select__field--disabled select__field--reversed" data-v-dd053db6><option selected disabled data-v-dd053db6> All Countries </option> <option value="All Countries" data-v-dd053db6> All Countries </option><option value="Belgium" data-v-dd053db6> Belgium </option><option value="Brazil" data-v-dd053db6> Brazil </option><option value="Canada" data-v-dd053db6> Canada </option><option value="China" data-v-dd053db6> China </option><option value="Colombia" data-v-dd053db6> Colombia </option><option value="Czechia" data-v-dd053db6> Czechia </option><option value="Estonia" data-v-dd053db6> Estonia </option><option value="Germany" data-v-dd053db6> Germany </option><option value="India" data-v-dd053db6> India </option><option value="Israel" data-v-dd053db6> Israel </option><option value="Japan" data-v-dd053db6> Japan </option><option value="Mozambique" data-v-dd053db6> Mozambique </option><option value="Netherlands" data-v-dd053db6> Netherlands </option><option value="Nigeria" data-v-dd053db6> Nigeria </option><option value="Peru" data-v-dd053db6> Peru </option><option value="Poland" data-v-dd053db6> Poland </option><option value="Portugal" data-v-dd053db6> Portugal </option><option value="Russia" data-v-dd053db6> Russia </option><option value="Singapore" data-v-dd053db6> Singapore </option><option value="South Korea" data-v-dd053db6> South Korea </option><option value="Spain" data-v-dd053db6> Spain </option><option value="Sweden" data-v-dd053db6> Sweden </option><option value="Ukraine" data-v-dd053db6> Ukraine </option><option value="United Arab Emirates" data-v-dd053db6> United Arab Emirates </option><option value="United Kingdom" data-v-dd053db6> United Kingdom </option><option value="United States" data-v-dd053db6> United States </option></select> <span class="select__bg" data-v-dd053db6></span> 
+              <svg width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="select__icon" data-v-dd053db6>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.78.22a.75.75 0 010 1.06L5.53 5.53a.75.75 0 01-1.06 0L.22 1.28A.75.75 0 011.28.22L5 3.94 8.72.22a.75.75 0 011.06 0z" fill="currentColor" data-v-dd053db6></path>
+              </svg>
+             </div>
+            </div> 
+            <div class="select-wrapper filters__select" data-v-dd053db6 data-v-04966eb6>
+             <label id="label-contributions" for="contributions" aria-hidden="true" class="label" data-v-dd053db6> Contributions </label> 
+             <div class="select" data-v-dd053db6>
+              <select id="contributions" name="contributions" aria-labelledby="label-contributions" class="select__field select__field--disabled select__field--reversed" data-v-dd053db6><option selected disabled data-v-dd053db6> All Contributions </option> <option value="All Contributions" data-v-dd053db6> All Contributions </option><option value="ARTICLE_PUBLICATION" data-v-dd053db6> Articles </option><option value="BLOGPOST" data-v-dd053db6> Blog posts </option><option value="EVENT_ORGANIZATION" data-v-dd053db6> Event organization </option><option value="FORUM" data-v-dd053db6> Forum </option><option value="HACKATHON" data-v-dd053db6> Hackathon </option><option value="OPEN_SOURCE_PROJECT" data-v-dd053db6> Open source </option><option value="OTHER" data-v-dd053db6> Other </option><option value="SPEAKING" data-v-dd053db6> Speaking </option><option value="VIDEO_PODCAST" data-v-dd053db6> Video/Podcast </option></select> <span class="select__bg" data-v-dd053db6></span> 
+              <svg width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="select__icon" data-v-dd053db6>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.78.22a.75.75 0 010 1.06L5.53 5.53a.75.75 0 01-1.06 0L.22 1.28A.75.75 0 011.28.22L5 3.94 8.72.22a.75.75 0 011.06 0z" fill="currentColor" data-v-dd053db6></path>
+              </svg>
+             </div>
+            </div>
+           </section> 
+           <section class="stars" data-v-4401deea data-v-2dc312d4>
+            <div class="stars__list" data-v-4401deea>
+             <a href="/profiles/ahmadawais/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/960133" alt="Ahmad Awais avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Ahmad Awais</h4> 
+               <p class="star__username" data-v-7d6e9872> ahmadawais <img data-src="/twemoji/1f1e8-1f1e6.svg" aria-label="Flag of Canada" alt="Canada" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/alphacentauri82/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/25756676" alt="Diana Rodriguez avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Diana Rodriguez</h4> 
+               <p class="star__username" data-v-7d6e9872> alphacentauri82 <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/amitshekhariitbhu/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/9877145" alt="Amit Shekhar avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Amit Shekhar</h4> 
+               <p class="star__username" data-v-7d6e9872> amitshekhariitbhu <img data-src="/twemoji/1f1ee-1f1f3.svg" aria-label="Flag of India" alt="India" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/anandchowdhary/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/2841780" alt="Anand Chowdhary avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Anand Chowdhary</h4> 
+               <p class="star__username" data-v-7d6e9872> AnandChowdhary <img data-src="/twemoji/1f1f3-1f1f1.svg" aria-label="Flag of Netherlands" alt="Netherlands" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/angiejones/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/15972783" alt="Angie Jones avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Angie Jones</h4> 
+               <p class="star__username" data-v-7d6e9872> angiejones <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/ba4bes/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://res.cloudinary.com/ba4bes/image/upload/v1613669723/profile_npq6hu.jpg" alt="Barbara Forbes avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Barbara Forbes</h4> 
+               <p class="star__username" data-v-7d6e9872> Ba4bes <img data-src="/twemoji/1f1f3-1f1f1.svg" aria-label="Flag of Netherlands" alt="Netherlands" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/bagder/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/177011" alt="Daniel Stenberg avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Daniel Stenberg</h4> 
+               <p class="star__username" data-v-7d6e9872> bagder <img data-src="/twemoji/1f1f8-1f1ea.svg" aria-label="Flag of Sweden" alt="Sweden" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/cassidoo/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/1454517" alt="Cassidy Williams avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Cassidy Williams</h4> 
+               <p class="star__username" data-v-7d6e9872> cassidoo <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/ceceliacreates/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/40367173" alt="Cecelia Martinez avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Cecelia Martinez</h4> 
+               <p class="star__username" data-v-7d6e9872> ceceliacreates <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/debs-obrien/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/13063165" alt="Debbie O'Brien avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Debbie O'Brien</h4> 
+               <p class="star__username" data-v-7d6e9872> debs-obrien <img data-src="/twemoji/1f1ea-1f1f8.svg" aria-label="Flag of Spain" alt="Spain" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/developerayo/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/20538832" alt="Shodipo Ayomide avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Shodipo Ayomide</h4> 
+               <p class="star__username" data-v-7d6e9872> Developerayo <img data-src="/twemoji/1f1f3-1f1ec.svg" aria-label="Flag of Nigeria" alt="Nigeria" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/driesvints/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/594614" alt="Dries Vints avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Dries Vints</h4> 
+               <p class="star__username" data-v-7d6e9872> driesvints <img data-src="/twemoji/1f1e7-1f1ea.svg" aria-label="Flag of Belgium" alt="Belgium" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/eddiejaoude/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/624760" alt="Eddie Jaoude avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Eddie Jaoude</h4> 
+               <p class="star__username" data-v-7d6e9872> eddiejaoude <img data-src="/twemoji/1f1ec-1f1e7.svg" aria-label="Flag of United Kingdom" alt="United Kingdom" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/end3r/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://res.cloudinary.com/end3r/image/upload/v1602578862/andrzej-mazur_k9irsk.png" alt="Andrzej Mazur avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Andrzej Mazur</h4> 
+               <p class="star__username" data-v-7d6e9872> end3r <img data-src="/twemoji/1f1f5-1f1f1.svg" aria-label="Flag of Poland" alt="Poland" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/erikaheidi/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/293241" alt="Erika Heidi avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Erika Heidi</h4> 
+               <p class="star__username" data-v-7d6e9872> erikaheidi <img data-src="/twemoji/1f1e7-1f1f7.svg" aria-label="Flag of Brazil" alt="Brazil" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/f213/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/1592663" alt="Fedor Borshev avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Fedor Borshev</h4> 
+               <p class="star__username" data-v-7d6e9872> f213 <img data-src="/twemoji/1f1f7-1f1fa.svg" aria-label="Flag of Russia" alt="Russia" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/feross/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/121766" alt="Feross Aboukhadijeh avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Feross Aboukhadijeh</h4> 
+               <p class="star__username" data-v-7d6e9872> feross <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/foosel/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/83657" alt="Gina Häußge avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Gina Häußge</h4> 
+               <p class="star__username" data-v-7d6e9872> foosel <img data-src="/twemoji/1f1e9-1f1ea.svg" aria-label="Flag of Germany" alt="Germany" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/geerlingguy/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/481677" alt="Jeff Geerling avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Jeff Geerling</h4> 
+               <p class="star__username" data-v-7d6e9872> geerlingguy <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/gep13/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/1271146" alt="Gary Ewan Park avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Gary Ewan Park</h4> 
+               <p class="star__username" data-v-7d6e9872> gep13 <img data-src="/twemoji/1f1ec-1f1e7.svg" aria-label="Flag of United Kingdom" alt="United Kingdom" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/isabelcosta/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/11148726" alt="Isabel Costa avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Isabel Costa</h4> 
+               <p class="star__username" data-v-7d6e9872> isabelcosta <img data-src="/twemoji/1f1f5-1f1f9.svg" aria-label="Flag of Portugal" alt="Portugal" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/ivandevp/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/9284690" alt="Ivan Medina avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Ivan Medina</h4> 
+               <p class="star__username" data-v-7d6e9872> ivandevp <img data-src="/twemoji/1f1f5-1f1ea.svg" aria-label="Flag of Peru" alt="Peru" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/jcastle/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/5223678" alt="Joseph Castle avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Joseph Castle</h4> 
+               <p class="star__username" data-v-7d6e9872> jcastle <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/jeromehardaway/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://res.cloudinary.com/jhardaway/image/upload/v1604602687/Jerome-17_giyuc9.jpg" alt="Jerome Hardaway avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Jerome Hardaway</h4> 
+               <p class="star__username" data-v-7d6e9872> jeromehardaway <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/jlleitschuh/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/1323708" alt="Jonathan Leitschuh avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Jonathan Leitschuh</h4> 
+               <p class="star__username" data-v-7d6e9872> jlleitschuh <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/jskeet/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="/jskeet.jpg" alt="Jon Skeet avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Jon Skeet</h4> 
+               <p class="star__username" data-v-7d6e9872> jskeet <img data-src="/twemoji/1f1ec-1f1e7.svg" aria-label="Flag of United Kingdom" alt="United Kingdom" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/julioarruda/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/5204009" alt="Julio Arruda avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Julio Arruda</h4> 
+               <p class="star__username" data-v-7d6e9872> julioarruda <img data-src="/twemoji/1f1e7-1f1f7.svg" aria-label="Flag of Brazil" alt="Brazil" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/kamranahmedse/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/4921183" alt="Kamran Ahmed avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Kamran Ahmed</h4> 
+               <p class="star__username" data-v-7d6e9872> kamranahmedse <img data-src="/twemoji/1f1e6-1f1ea.svg" aria-label="Flag of United Arab Emirates" alt="United Arab Emirates" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/lauragift21/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/17781315" alt="Gift Egwuenu avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Gift Egwuenu</h4> 
+               <p class="star__username" data-v-7d6e9872> lauragift21 <img data-src="/twemoji/1f1f3-1f1f1.svg" aria-label="Flag of Netherlands" alt="Netherlands" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/layla-p/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/15874598" alt="Layla Porter avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Layla Porter</h4> 
+               <p class="star__username" data-v-7d6e9872> Layla-P <img data-src="/twemoji/1f1ec-1f1e7.svg" aria-label="Flag of United Kingdom" alt="United Kingdom" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/lirantal/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/316371" alt="Liran Tal avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Liran Tal</h4> 
+               <p class="star__username" data-v-7d6e9872> lirantal <img data-src="/twemoji/1f1ee-1f1f1.svg" aria-label="Flag of Israel" alt="Israel" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/llminatoll/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/22927920" alt="Ai Minatogawa avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Ai Minatogawa</h4> 
+               <p class="star__username" data-v-7d6e9872> llminatoll <img data-src="/twemoji/1f1ef-1f1f5.svg" aria-label="Flag of Japan" alt="Japan" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/m0nica/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/6998954" alt="Monica Powell avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Monica Powell</h4> 
+               <p class="star__username" data-v-7d6e9872> m0nica <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/matz/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/30733" alt="Yukihiro &quot;Matz&quot; Matsumoto avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Yukihiro "Matz" Matsumoto</h4> 
+               <p class="star__username" data-v-7d6e9872> matz <img data-src="/twemoji/1f1ef-1f1f5.svg" aria-label="Flag of Japan" alt="Japan" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/mheap/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/59130" alt="Michael Heap avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Michael Heap</h4> 
+               <p class="star__username" data-v-7d6e9872> mheap <img data-src="/twemoji/1f1ec-1f1e7.svg" aria-label="Flag of United Kingdom" alt="United Kingdom" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/midudev/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/1561955" alt="Miguel Ángel Durán García avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Miguel Ángel Durán García</h4> 
+               <p class="star__username" data-v-7d6e9872> midudev <img data-src="/twemoji/1f1ea-1f1f8.svg" aria-label="Flag of Spain" alt="Spain" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/miyajan/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/945853" alt="Miyata Jumpei avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Miyata Jumpei</h4> 
+               <p class="star__username" data-v-7d6e9872> miyajan <img data-src="/twemoji/1f1ef-1f1f5.svg" aria-label="Flag of Japan" alt="Japan" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/nickcraver/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/454813" alt="Nick Craver avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Nick Craver</h4> 
+               <p class="star__username" data-v-7d6e9872> NickCraver <img data-src="/twemoji/1f1fa-1f1f8.svg" aria-label="Flag of United States" alt="United States" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/nikhita/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/16105680" alt="Nikhita Raghunath avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Nikhita Raghunath</h4> 
+               <p class="star__username" data-v-7d6e9872> nikhita <img data-src="/twemoji/1f1ee-1f1f3.svg" aria-label="Flag of India" alt="India" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/nishkarshraj/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/35298207" alt="Nishkarsh Raj avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Nishkarsh Raj</h4> 
+               <p class="star__username" data-v-7d6e9872> NishkarshRaj <img data-src="/twemoji/1f1ee-1f1f3.svg" aria-label="Flag of India" alt="India" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/omariosouto/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/13791385" alt="Mario Souto avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Mario Souto</h4> 
+               <p class="star__username" data-v-7d6e9872> omariosouto <img data-src="/twemoji/1f1e7-1f1f7.svg" aria-label="Flag of Brazil" alt="Brazil" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/outsideris/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/390146" alt="JeongHoon Byun avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>JeongHoon Byun</h4> 
+               <p class="star__username" data-v-7d6e9872> outsideris <img data-src="/twemoji/1f1f0-1f1f7.svg" aria-label="Flag of South Korea" alt="South Korea" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/ovilia/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/779050" alt="Wenli Zhang avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Wenli Zhang</h4> 
+               <p class="star__username" data-v-7d6e9872> ovilia <img data-src="/twemoji/1f1e8-1f1f3.svg" aria-label="Flag of China" alt="China" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/patriksvensson/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/357872" alt="Patrik Svensson avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Patrik Svensson</h4> 
+               <p class="star__username" data-v-7d6e9872> patriksvensson <img data-src="/twemoji/1f1f8-1f1ea.svg" aria-label="Flag of Sweden" alt="Sweden" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/potatoqualitee/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="/potatoqualitee.jpg" alt="Chrissy LeMaire avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Chrissy LeMaire</h4> 
+               <p class="star__username" data-v-7d6e9872> potatoqualitee <img data-src="/twemoji/1f1e9-1f1ea.svg" aria-label="Flag of Germany" alt="Germany" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/risenw/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/29900845" alt="Rising Odegua avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Rising Odegua</h4> 
+               <p class="star__username" data-v-7d6e9872> risenW <img data-src="/twemoji/1f1f3-1f1ec.svg" aria-label="Flag of Nigeria" alt="Nigeria" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/rosariopfernandes/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/16766726" alt="Rosário Pereira Fernandes avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Rosário Pereira Fernandes</h4> 
+               <p class="star__username" data-v-7d6e9872> rosariopfernandes <img data-src="/twemoji/1f1f2-1f1ff.svg" aria-label="Flag of Mozambique" alt="Mozambique" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/ruth-ikegah/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/62059002" alt="Ruth Ikegah avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Ruth Ikegah</h4> 
+               <p class="star__username" data-v-7d6e9872> Ruth-ikegah <img data-src="/twemoji/1f1f3-1f1ec.svg" aria-label="Flag of Nigeria" alt="Nigeria" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/samswag/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://res.cloudinary.com/sammeister/image/upload/v1601174604/rsz_samson_ijr3va.jpg" alt="Samson Goddy avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Samson Goddy</h4> 
+               <p class="star__username" data-v-7d6e9872> samswag <img data-src="/twemoji/1f1f3-1f1ec.svg" aria-label="Flag of Nigeria" alt="Nigeria" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/santoshyadavdev/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/11923975" alt="Santosh Yadav avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Santosh Yadav</h4> 
+               <p class="star__username" data-v-7d6e9872> santoshyadavdev <img data-src="/twemoji/1f1ee-1f1f3.svg" aria-label="Flag of India" alt="India" src="/placeholder.png" class="flag" data-v-0d7963c9 data-v-7d6e9872></p>
+              </div></a><a href="/profiles/serahrono/" class="star" data-v-7d6e9872 data-v-4401deea>
+              <div class="star__image" data-v-7d6e9872>
+               <img data-src="https://avatars0.githubusercontent.com/u/4550385" alt="Serah Njambi Rono avatar" aria-hidden="true" src="/placeholder.png" data-v-63fe4a1a data-v-7d6e9872>
+              </div> 
+              <div class="star__info" data-v-7d6e9872>
+               <h4 class="star__name" data-v-7d6e9872>Serah Njambi Rono</h4> 
+               <p class="star__username"

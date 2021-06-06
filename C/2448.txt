@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Managing deploy keys - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Learn different ways to manage SSH keys on your servers when you automate deployment scripts and which way is best for you."> 
+  <meta name="keywords" content="API"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/developers/overview/managing-deploy-keys"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/developers/overview/managing-deploy-keys"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/developers/overview/managing-deploy-keys"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/developers/overview/managing-deploy-keys"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/developers/overview/managing-deploy-keys"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/developers/overview/managing-deploy-keys"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="lF5qtIum-5nV4RDWbv8o2K0_139vNFA02bFY"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/developers" class="pl-4 pr-5 pb-1 f4 color-text-primary">Developers</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/about-githubs-apis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub's APIs</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/developers/overview/managing-deploy-keys" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing deploy keys</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/viewing-deployment-history" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing deployment history</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/using-ssh-agent-forwarding" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using SSH agent forwarding</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/replacing-github-services" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Replacing GitHub Services</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/github-developer-program" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">GitHub Developer Program</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/webhooks-and-events" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Webhooks and events</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/webhooks" class="pl-4 pr-5 py-2 color-text-primary">Webhooks </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/about-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/creating-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/configuring-your-server-to-receive-payloads" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring your server to receive payloads</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/testing-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Testing webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/securing-your-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Webhook events and payloads</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/events" class="pl-4 pr-5 py-2 color-text-primary">Events </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/github-event-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub event types</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Issue event types</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/apps" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Apps</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/getting-started-with-apps" class="pl-4 pr-5 py-2 color-text-primary">Getting started with apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/about-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/activating-optional-features-for-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activating optional features for apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Differences between GitHub Apps and OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating OAuth Apps to GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/setting-up-your-development-environment-to-create-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up your development environment to create a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Building GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/setting-permissions-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting permissions for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/authenticating-with-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authenticating with GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Identifying and authorizing users for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/rate-limits-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limits for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/refreshing-user-to-server-access-tokens" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Refreshing user-to-server access tokens</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-from-a-manifest" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App from a manifest</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-using-url-parameters" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App using URL parameters</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-custom-badge-for-your-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/installing-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/modifying-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Editing a GitHub App's permissions</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/making-a-github-app-public-or-private" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Making a GitHub App public or private</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/suspending-a-github-app-installation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Suspending a GitHub App installation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/transferring-ownership-of-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/deleting-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Building OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/authorizing-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authorizing OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scopes for OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-a-custom-badge-for-your-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/modifying-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/transferring-ownership-of-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-authorization-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting authorization request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting OAuth App access token request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/deleting-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting an OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/guides" class="pl-4 pr-5 py-2 color-text-primary">Guides </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the GitHub API in your app</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-content-attachments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using content attachments</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/creating-ci-tests-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating CI tests with the Checks API</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/github-marketplace" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Marketplace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Developers 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      color-text-link text-underline active"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/developers/overview/managing-deploy-keys" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/developers/overview/managing-deploy-keys" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/developers/overview/managing-deploy-keys" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/developers/overview/managing-deploy-keys" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/developers/overview/managing-deploy-keys" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/overview/managing-deploy-keys" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Developers" href="/en/developers" class="d-inline-block ">Developers</a><a title="category: Overview" href="/en/developers/overview" class="d-inline-block ">Overview</a><a title="article: Managing deploy keys" href="/en/developers/overview/managing-deploy-keys" class="d-inline-block color-text-tertiary">Managing deploy keys</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/overview/managing-deploy-keys" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/overview/managing-deploy-keys" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Managing deploy keys</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Learn different ways to manage SSH keys on your servers when you automate deployment scripts and which way is best for you.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#ssh-agent-forwarding">SSH agent forwarding</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#https-cloning-with-oauth-tokens">HTTPS cloning with OAuth tokens</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#deploy-keys">Deploy keys</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#server-to-server-tokens">Server-to-server tokens</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#machine-users">Machine users</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>You can manage SSH keys on your servers when automating deployment scripts using SSH agent forwarding, HTTPS with OAuth tokens, deploy keys, or machine users.</p> 
+       <h3 id="ssh-agent-forwarding"><a href="#ssh-agent-forwarding">SSH agent forwarding</a></h3> 
+       <p>In many cases, especially in the beginning of a project, SSH agent forwarding is the quickest and simplest method to use. Agent forwarding uses the same SSH keys that your local development computer uses.</p> 
+       <h5 id="pros"><a href="#pros">Pros</a></h5> 
+       <ul> 
+        <li>You do not have to generate or keep track of any new keys.</li> 
+        <li>There is no key management; users have the same permissions on the server that they do locally.</li> 
+        <li>No keys are stored on the server, so in case the server is compromised, you don't need to hunt down and remove the compromised keys.</li> 
+       </ul> 
+       <h5 id="cons"><a href="#cons">Cons</a></h5> 
+       <ul> 
+        <li>Users <strong>must</strong> SSH in to deploy; automated deploy processes can't be used.</li> 
+        <li>SSH agent forwarding can be troublesome to run for Windows users.</li> 
+       </ul> 
+       <h5 id="setup"><a href="#setup">Setup</a></h5> 
+       <ol> 
+        <li>Turn on agent forwarding locally. See <a href="/en/guides/using-ssh-agent-forwarding">our guide on SSH agent forwarding</a> for more information.</li> 
+        <li>Set your deploy scripts to use agent forwarding. For example, on a bash script, enabling agent forwarding would look something like this: <code>ssh -A serverA 'bash -s' &lt; deploy.sh</code></li> 
+       </ol> 
+       <h3 id="https-cloning-with-oauth-tokens"><a href="#https-cloning-with-oauth-tokens">HTTPS cloning with OAuth tokens</a></h3> 
+       <p>If you don't want to use SSH keys, you can use <a href="/en/articles/git-automation-with-oauth-tokens">HTTPS with OAuth tokens</a>.</p> 
+       <h5 id="pros-1"><a href="#pros-1">Pros</a></h5> 
+       <ul> 
+        <li>Anyone with access to the server can deploy the repository.</li> 
+        <li>Users don't have to change their local SSH settings.</li> 
+        <li>Multiple tokens (one for each user) are not needed; one token per server is enough.</li> 
+        <li>A token can be revoked at any time, turning it essentially into a one-use password.</li> 
+       </ul> 
+       <h5 id="cons-1"><a href="#cons-1">Cons</a></h5> 
+       <ul> 
+        <li>You must make sure that you configure your token with the correct access scopes.</li> 
+        <li>Tokens are essentially passwords, and must be protected the same way.</li> 
+       </ul> 
+       <h5 id="setup-1"><a href="#setup-1">Setup</a></h5> 
+       <p>See <a href="/en/articles/git-automation-with-oauth-tokens">our guide on Git automation with tokens</a>.</p> 
+       <h3 id="deploy-keys"><a href="#deploy-keys">Deploy keys</a></h3> 
+       <p>You can launch projects from a GitHub repository to your server by using a deploy key, which is an SSH key that grants access to a single repository. GitHub attaches the public part of the key directly to your repository instead of a personal user account, and the private part of the key remains on your server. For more information, see "<a href="/en/rest/guides/delivering-deployments">Delivering deployments</a>."</p> 
+       <p>Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "<a href="/en/articles/repository-permission-levels-for-an-organization">Repository permission levels for an organization</a>" and "<a href="/en/articles/permission-levels-for-a-user-account-repository">Permission levels for a user account repository</a>."</p> 
+       <h5 id="pros-2"><a href="#pros-2">Pros</a></h5> 
+       <ul> 
+        <li>Anyone with access to the repository and server has the ability to deploy the project.</li> 
+        <li>Users don't have to change their local SSH settings.</li> 
+        <li>Deploy keys are read-only by default, but you can give them write access when adding them to a repository.</li> 
+       </ul> 
+       <h5 id="cons-2"><a href="#cons-2">Cons</a></h5> 
+       <ul> 
+        <li>Deploy keys only grant access to a single repository. More complex projects may have many repositories to pull to the same server.</li> 
+        <li>Deploy keys are usually not protected by a passphrase, making the key easily accessible if the server is compromised.</li> 
+       </ul> 
+       <h5 id="setup-2"><a href="#setup-2">Setup</a></h5> 
+       <ol> 
+        <li><a href="/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#generating-a-new-ssh-key">Run the <code>ssh-keygen</code> procedure</a> on your server, and remember where you save the generated public/private rsa key pair.</li> 
+        <li>In the upper-right corner of any GitHub page, click your profile photo, then click <strong>Your profile</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/profile-page.png" alt="Navigation to profile"></span></li> 
+        <li>On your profile page, click <strong>Repositories</strong>, then click the name of your repository. <span class="procedural-image-wrapper"><img src="/assets/images/repos.png" alt="Repositories link"></span></li> 
+        <li>From your repository, click <strong>Settings</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/repo-settings.png" alt="Repository settings"></span></li> 
+        <li>In the sidebar, click <strong>Deploy Keys</strong>, then click <strong>Add deploy key</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/add-deploy-key.png" alt="Add Deploy Keys link"></span></li> 
+        <li>Provide a title, paste in your public key. <span class="procedural-image-wrapper"><img src="/assets/images/deploy-key.png" alt="Deploy Key page"></span></li> 
+        <li>Select <strong>Allow write access</strong> if you want this key to have write access to the repository. A deploy key with write access lets a deployment push to the repository.</li> 
+        <li>Click <strong>Add key</strong>.</li> 
+       </ol> 
+       <h5 id="using-multiple-repositories-on-one-server"><a href="#using-multiple-repositories-on-one-server">Using multiple repositories on one server</a></h5> 
+       <p>If you use multiple repositories on one server, you will need to generate a dedicated key pair for each one. You can't reuse a deploy key for multiple repositories.</p> 
+       <p>In the server's SSH configuration file (usually <code>~/.ssh/config</code>), add an alias entry for each repository. For example:</p> 
+       <pre><code class="hljs language-bash">Host github.com-repo-0
+        Hostname github.com
+        IdentityFile=/home/user/.ssh/repo-0_deploy_key
+
+Host github.com-repo-1
+        Hostname github.com
+        IdentityFile=/home/user/.ssh/repo-1_deploy_key
+</code></pre> 
+       <ul> 
+        <li><code>Host github.com-repo-0</code> - The repository's alias.</li> 
+        <li><code>Hostname github.com</code> - Configures the hostname to use with the alias.</li> 
+        <li><code>IdentityFile=/home/user/.ssh/repo-0_deploy_key</code> - Assigns a private key to the alias.</li> 
+       </ul> 
+       <p>You can then use the hostname's alias to interact with the repository using SSH, which will use the unique deploy key assigned to that alias. For example:</p> 
+       <pre><code class="hljs language-bash">$ git <span class="hljs-built_in">clone</span> git@github.com-repo-1:OWNER/repo-1.git
+</code></pre> 
+       <h3 id="server-to-server-tokens"><a href="#server-to-server-tokens">Server-to-server tokens</a></h3> 
+       <p>If your server needs to access repositories across one or more organizations, you can use a GitHub App to define the access you need, and then generate <em>tightly-scoped</em>, <em>server-to-server</em> tokens from that GitHub App. The server-to-server tokens can be scoped to single or multiple repositories, and can have fine-grained permissions. For example, you can generate a token with read-only access to a repository's contents. </p> 
+       <p>Since GitHub Apps are a first class actor on GitHub, the server-to-server tokens are decoupled from any GitHub user, which makes them comparable to "service tokens". Additionally, server-to-server tokens have dedicated rate limits that scale with the size of the organizations that they act upon. For more information, see <a href="/en/developers/apps/rate-limits-for-github-apps">Rate limits for Github Apps</a>.</p> 
+       <h5 id="pros-3"><a href="#pros-3">Pros</a></h5> 
+       <ul> 
+        <li>Tightly-scoped tokens with well-defined permission sets and expiration times (1 hour, or less if revoked manually using the API).</li> 
+        <li>Dedicated rate limits that grow with your organization.</li> 
+        <li>Decoupled from GitHub user identities, so they do not consume any licensed seats.</li> 
+        <li>Never granted a password, so cannot be directly signed in to.</li> 
+       </ul> 
+       <h5 id="cons-3"><a href="#cons-3">Cons</a></h5> 
+       <ul> 
+        <li>Additional setup is needed to create the GitHub App.</li> 
+        <li>Server-to-server tokens expire after 1 hour, and so need to be re-generated, typically on-demand using code.</li> 
+       </ul> 
+       <h5 id="setup-3"><a href="#setup-3">Setup</a></h5> 
+       <ol> 
+        <li>Determine if your GitHub App should be public or private. If your GitHub App will only act on repositories within your organization, you likely want it private.</li> 
+        <li>Determine the permissions your GitHub App requires, such as read-only access to repository contents.</li> 
+        <li>Create your GitHub App via your organization's settings page. For more information, see <a href="/en/developers/apps/creating-a-github-app">Creating a GitHub App</a>.</li> 
+        <li>Note your GitHub App <code>id</code>.</li> 
+        <li>Generate and download your GitHub App's private key, and store this safely. For more information, see <a href="/en/developers/apps/authenticating-with-github-apps#generating-a-private-key">Generating a private key</a>.</li> 
+        <li>Install your GitHub App on the repositories it needs to act upon, optionally you may install the GitHub App on all repositories in your organization.</li> 
+        <li>Identify the <code>installation_id</code> that represents the connection between your GitHub App and the organization repositories it can access. Each GitHub App and organization pair have at most a single <code>installation_id</code>. You can identify this <code>installation_id</code> via <a href="/en/rest/reference/apps#get-an-organization-installation-for-the-authenticated-app">Get an organization installation for the authenticated app</a>. This requires authenticating as a GitHub App using a JWT, for more information see <a href="/en/developers/apps/authenticating-with-github-apps#authenticating-as-a-github-app">Authenticating as a GitHub App</a>.</li> 
+        <li>Generate a server-to-server token using the corresponding REST API endpoint, <a href="/en/rest/reference/apps#create-an-installation-access-token-for-an-app">Create an installation access token for an app</a>. This requires authenticating as a GitHub App using a JWT, for more information see <a href="/en/developers/apps/authenticating-with-github-apps#authenticating-as-a-github-app">Authenticating as a GitHub App</a>, and <a href="/en/developers/apps/authenticating-with-github-apps#authenticating-as-an-installation">Authenticating as an installation</a>.</li> 
+        <li>Use this server-to-server token to interact with your repositories, either via the REST or GraphQL APIs, or via a Git client.</li> 
+       </ol> 
+       <h3 id="machine-users"><a href="#machine-users">Machine users</a></h3> 
+       <p>If your server needs to access multiple repositories, you can create a new GitHub account and attach an SSH key that will be used exclusively for automation. Since this GitHub account won't be used by a human, it's called a <em>machine user</em>. You can add the machine user as a <a href="/en/articles/inviting-collaborators-to-a-personal-repository">collaborator</a> on a personal repository (granting read and write access), as an <a href="/en/articles/adding-outside-collaborators-to-repositories-in-your-organization">outside collaborator</a> on an organization repository (granting read, write, or admin access), or to a <a href="/en/articles/adding-organization-members-to-a-team">team</a> with access to the repositories it needs to automate (granting the permissions of the team).</p> 
+       <div class="extended-markdown tip border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Tip:</strong> Our <a href="/en/articles/github-terms-of-service">terms of service</a> state:</p> 
+        <blockquote> 
+         <p><em>Accounts registered by "bots" or other automated methods are not permitted.</em></p> 
+        </blockquote> 
+        <p>This means that you cannot automate the creation of accounts. But if you want to create a single machine user for automating tasks such as deploy scripts in your project or organization, that is totally cool.</p> 
+       </div> 
+       <h5 id="pros-4"><a href="#pros-4">Pros</a></h5> 
+       <ul> 
+        <li>Anyone with access to the repository and server has the ability to deploy the project.</li> 
+        <li>No (human) users need to change their local SSH settings.</li> 
+        <li>Multiple keys are not needed; one per server is adequate.</li> 
+       </ul> 
+       <h5 id="cons-4"><a href="#cons

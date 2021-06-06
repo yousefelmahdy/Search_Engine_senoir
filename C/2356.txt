@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitHub Enterprise guides - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Learn how to increase developer productivity and code quality with GitHub Enterprise Server."> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/enterprise-server@3.1/admin/guides"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/enterprise-server@3.1/admin/guides"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/enterprise-server@3.1/admin/guides"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/enterprise-server@3.1/admin/guides"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/enterprise-server@3.1/admin/guides"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/enterprise-server@3.1/admin/guides"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="Vnq0Kcdk-Zb16OfLi58TIKR_-rhGPrZcJEn8"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/enterprise-server@3.1/admin" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Enterprise</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise accounts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-your-github-enterprise-license" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your GitHub Enterprise license</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-billing-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing billing for your enterprise</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/system-overview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">System overview</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-the-github-enterprise-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About the GitHub Enterprise API</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/installation" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Installing</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance" class="pl-4 pr-5 py-2 color-text-primary">Setting up a GitHub Enterprise Server instance </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-aws" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on AWS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Azure</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-google-cloud-platform" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Google Cloud Platform</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-hyper-v" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Hyper-V</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-openstack-kvm" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on OpenStack KVM</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-vmware" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on VMware</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-xenserver" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on XenServer</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/setting-up-a-staging-instance" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up a staging instance</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/configuration" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Configuring GitHub Enterprise</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Configuring your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/about-enterprise-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-management-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the management console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-administrative-shell-ssh" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the administrative shell (SSH)</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-and-scheduling-maintenance-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling and scheduling maintenance mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-backups-on-your-appliance" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring backups</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/site-admin-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Site admin dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-private-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling private mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/managing-github-for-mobile-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing GitHub for mobile for your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring email for notifications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-rate-limits" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring rate limits</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring applications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/troubleshooting-ssl-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting SSL errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-time-synchronization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring time synchronization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/command-line-utilities" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Command-line utilities</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-github-pages-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Configuring GitHub Pages for your enterprise</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings" class="pl-4 pr-5 py-2 color-text-primary">Configuring network settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-the-ip-address-using-the-virtual-machine-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring the IP address using the virtual machine console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-dns-nameservers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring DNS nameservers</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-a-hostname" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a hostname</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/validating-your-domain-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Validating your domain settings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-tls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring TLS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/enabling-subdomain-isolation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling subdomain isolation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring an outbound web proxy server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-built-in-firewall-rules" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring built-in firewall rules</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/network-ports" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Network ports</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/using-github-enterprise-server-with-a-load-balancer" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using GitHub Enterprise Server with a load balancer</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-4 pr-5 py-2 color-text-primary">Managing connections between GitHub Enterprise Server and GitHub Enterprise Cloud </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/connecting-github-enterprise-server-to-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Connecting GitHub Enterprise Server to GitHub Enterprise Cloud</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-search-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified search between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-contributions-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified contributions between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-alerts-for-vulnerable-dependencies-on-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling alerts for vulnerable dependencies on GitHub Enterprise Server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Enabling automatic user license sync between GitHub Enterprise Server and GitHub Enterprise Cloud</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/authentication" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Authentication</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/user-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing users, organizations, and repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/policies" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting policies for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Monitoring, managing, and updating your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Actions for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/packages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Packages for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-support" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with GitHub Support</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/advanced-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Advanced Security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active is-current-page standalone-category"> <a href="/en/enterprise-server@3.1/admin/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/release-notes" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Release notes</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/all-releases" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Enterprise Server releases</a> <!-- some categories have maptopics with child articles -->  </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full overflow-auto"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Enterprise 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle versions list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               Enterprise Server 3.1 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="versions-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline active" style="white-space: nowrap">Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">Enterprise Server 2.21</a> <a href="/en/github-ae@latest/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap">GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+            </div> 
+           </details> 
+          </div> 
+          <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+           <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+            <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+              <div class="d-flex flex-items-center flex-justify-between">
+                English 
+               <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+                <path d="M1,1l6.2,6L13,1"></path>
+               </svg> 
+              </div> </summary> 
+             <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/enterprise-server@3.1/admin/guides" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+             </div> 
+            </details> 
+           </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+           <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+            <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+            </div> 
+            <div id="search-results-container"></div> 
+            <div class="search-overlay-desktop"></div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div>
+    </header> 
+   </div> 
+   <div class="color-bg-tertiary"> 
+    <div class="container-xl px-3 px-md-6 pt-3 pb-2"> 
+     <header class="d-flex gutter mb-6"> 
+      <div class="col-12"> <span class="text-mono color-text-secondary text-uppercase">
+        <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+         <a title="product: GitHub Enterprise" href="/en/enterprise-server@3.1/admin" class="d-inline-block ">GitHub Enterprise</a><a title="article: Guides" href="/en/enterprise-server@3.1/admin/guides" class="d-inline-block color-text-tertiary">Guides</a>
+        </nav> </span> 
+       <h1 class="my-3 font-mktg">GitHub Enterprise guides</h1> 
+       <div class="lead-mktg color-text-secondary f4 description-text">
+        <p>Learn how to increase developer productivity and code quality with GitHub Enterprise Server.</p>
+       </div> 
+      </div> 
+     </header> <!-- Featured track --> 
+     <div class="mb-6 position-relative overflow-hidden mr-n3 ml-n3 px-3"> 
+      <ul class="list-style-none d-flex flex-nowrap overflow-x-scroll px-2 feature-track"> 
+       <li class="px-2 d-flex flex-shrink-0"> 
+        <div class="d-inline-block Box p-5 bg-gradient--blue-pink color-text-inverse"> 
+         <div class="circle color-text-inverse d-inline-flex" style="border: 2px white solid;">
+          <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-star-fill v-align-middle m-2" aria-hidden="true">
+           <path fill-rule="evenodd" d="M12.672.668a.75.75 0 00-1.345 0L8.27 6.865l-6.838.994a.75.75 0 00-.416 1.279l4.948 4.823-1.168 6.811a.75.75 0 001.088.791L12 18.347l6.117 3.216a.75.75 0 001.088-.79l-1.168-6.812 4.948-4.823a.75.75 0 00-.416-1.28l-6.838-.993L12.672.668z"></path>
+          </svg>
+         </div> 
+         <h3 class="font-mktg h3-mktg my-4">Deploy an instance</h3> 
+         <div class="lead-mktg color-text-inverse f5 my-4">
+          Install GitHub Enterprise Server on your platform of choice and configure SAML authentication.
+         </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-4 py-2 f5 no-underline text-bold" role="button" href="/en/enterprise-server@3.1/admin/overview/system-overview?learn=deploy_an_instance"> <span class="mr-2">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+           </svg></span> Start path </a> 
+        </div> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/overview/system-overview?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">1</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           Overview
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">System overview</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          GitHub Enterprise Server is your organization's private copy of GitHub contained within a virtual appliance, hosted on premises or in the cloud, that you configure and control.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/installation?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">2</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Installing</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          System administrators and operations and security specialists can install GitHub Enterprise Server.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/configuration/accessing-the-management-console?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">3</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Accessing the management console</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          You can use the Management Console to manage virtual appliance settings such as the domain, authentication, and SSL.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-a-hostname?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">4</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Configuring a hostname</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          We recommend setting a hostname for your appliance instead of using a hard-coded IP address.
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/authentication/using-saml?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">5</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           How-to guide
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Using SAML</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          SAML is an XML-based standard for authentication and authorization. GitHub Enterprise Server can act as a service provider (SP) with your internal SAML identity provider (IdP).
+         </div> </a> </li> 
+       <li class="px-2 d-flex flex-shrink-0"> <a href="/en/enterprise-server@3.1/admin/configuration/site-admin-dashboard?learn=deploy_an_instance" class="d-inline-block Box p-5 color-bg-primary color-border-primary no-underline"> 
+         <div class="d-flex flex-justify-between flex-items-center"> 
+          <div class="circle color-bg-primary color-text-link border-gradient--pink-blue-dark d-inline-flex"> <span class="m-2 f2 lh-condensed-ultra text-center text-bold step-circle-text" style="width: 24px; height: 24px;">6</span> 
+          </div> 
+          <div class="color-text-tertiary h6 text-uppercase">
+           Reference
+          </div> 
+         </div> <h3 class="font-mktg h3-mktg my-4 color-text-primary">Site admin dashboard</h3> 
+         <div class="lead-mktg color-text-secondary f5 my-4 truncate-overflow-8">
+          You can use the site admin dashboard to manage users, organizations, and repositories in your enterprise directly in GitHub Enterprise Server.
+         </div> </a> </li> 
+      </ul> 
+      <div class="position-absolute top-0 bottom-0 left-0 ml-3 pl-3 fade-background-left"></div> 
+      <div class="position-absolute top-0 bottom-0 right-0 mr-3 pr-3 fade-background-right"></div> 
+     </div> 
+     <div class="border-top py-6"> 
+      <h2 class="mb-3 font-mktg" id="learning-paths"><a href="#learning-paths">GitHub Enterprise learning paths</a></h2> 
+      <div class="lead-mktg color-text-secondary f4 description-text">
+       Learning paths are a collection of guides that help you master a particular subject.
+      </div> <!-- Learning tracks --> 
+      <div class="d-flex flex-wrap flex-items-start my-5 gutter"> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Upgrade your instance </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Test upgrades in staging, notify users of maintenance, and upgrade your instance for the latest features and security updates.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/enterprise-server@3.1/admin/enterprise-management/enabling-automatic-update-checks?learn=upgrade_your_instance"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/enterprise-management/enabling-automatic-update-checks?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling automatic update checks</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/installation/setting-up-a-staging-instance?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Setting up a staging instance</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/enterprise-management/upgrade-requirements?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Upgrade requirements</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/user-management/customizing-user-messages-for-your-enterprise?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Customizing user messages</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/configuration/enabling-and-scheduling-maintenance-mode?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling and scheduling maintenance mode</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/enterprise-management/upgrading-github-enterprise-server?learn=upgrade_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Upgrading GitHub Enterprise Server</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>2 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Increase the fault tolerance of your instance </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Back up your developers' code and configure high availability (HA) to ensure the reliability of GitHub Enterprise Server in your environment.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh?learn=increase_fault_tolerance"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh?learn=increase_fault_tolerance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">Accessing the administrative shell (SSH)</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/configuration/configuring-backups-on-your-appliance?learn=increase_fault_tolerance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring backups</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/enterprise-management/about-high-availability-configuration?learn=increase_fault_tolerance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">About high availability configuration</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/enterprise-management/creating-a-high-availability-replica?learn=increase_fault_tolerance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Creating a high availability replica</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/configuration/using-github-enterprise-server-with-a-load-balancer?learn=increase_fault_tolerance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Using GitHub Enterprise Server with a load balancer</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>1 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Improve the security of your instance </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Review network configuration and security features, and harden the instance running GitHub Enterprise Server to protect your enterprise's data.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/enterprise-server@3.1/admin/configuration/enabling-private-mode?learn=improve_security_of_your_instance"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/configuration/enabling-private-mode?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling private mode</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/guides/installation/configuring-tls?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring TLS</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/configuration/troubleshooting-ssl-errors?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Troubleshooting SSL errors</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/configuration/enabling-subdomain-isolation?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling subdomain isolation</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Accessing the administrative shell (SSH)</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/configuration/network-ports?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Network ports</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/configuration/configuring-built-in-firewall-rules?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">7</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring built-in firewall rules</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/user-management/best-practices-for-user-security?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">8</span> 
+           </div> <h5 class="flex-auto pr-2">Best practices for user security</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/user-management/promoting-or-demoting-a-site-administrator?learn=improve_security_of_your_instance"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">9</span> 
+           </div> <h5 class="flex-auto pr-2">Promoting or demoting a site administrator</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>5 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Configure GitHub Actions </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Allow your developers to create, automate, customize, and execute powerful software development workflows for your GitHub Enterprise Server instance with GitHub Actions.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/enterprise-server@3.1/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server?learn=configure_github_actions"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">Getting started with GitHub Actions</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/github-actions/enforcing-github-actions-policies-for-your-enterprise?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Enforcing GitHub Actions policies for your enterprise</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling automatic access to GitHub.com actions using GitHub Connect</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/github-actions/high-availability-for-github-actions?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">High availability for GitHub Actions</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Reference
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/github-actions/backing-up-and-restoring-github-enterprise-server-with-github-actions-enabled?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Backing up and restoring</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/github-actions/using-a-staging-environment?learn=configure_github_actions"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">6</span> 
+           </div> <h5 class="flex-auto pr-2">Using a staging environment</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>2 more guides</span> </a> 
+        </div> 
+       </div> 
+       <div class="my-3 px-4 col-12 col-md-6 learning-track"> 
+        <div class="Box js-show-more-container d-flex flex-column"> 
+         <div class="Box-header bg-gradient--blue-pink p-4 d-flex flex-1 flex-items-start flex-wrap"> 
+          <div class="d-flex flex-auto flex-items-start col-8 col-md-12 col-xl-8"> 
+           <div class="my-xl-0 mr-xl-3"> 
+            <h5 class="mb-3 color-text-inverse font-mktg h3-mktg "> Configure GitHub Advanced Security </h5> 
+            <p class="color-text-inverse truncate-overflow-3 learning-track--description">Improve the quality and security of your developers' code with GitHub Advanced Security.</p> 
+           </div> 
+          </div> <a class="d-inline-block border color-border-inverse color-text-inverse px-3 py-2 f5 no-underline text-bold no-wrap mt-3 mt-md-0" role="button" href="/en/enterprise-server@3.1/admin/advanced-security/about-licensing-for-github-advanced-security?learn=configure_github_advanced_security"> Start <span class="ml-2">
+            <svg version="1.1" width="20" height="20" viewbox="0 0 16 16" class="octicon octicon-arrow-right" aria-hidden="true">
+             <path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"></path>
+            </svg></span> </a> 
+         </div> 
+         <div> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/advanced-security/about-licensing-for-github-advanced-security?learn=configure_github_advanced_security"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">1</span> 
+           </div> <h5 class="flex-auto pr-2">About licensing for GitHub Advanced Security</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            Overview
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/advanced-security/enabling-github-advanced-security-for-your-enterprise?learn=configure_github_advanced_security"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">2</span> 
+           </div> <h5 class="flex-auto pr-2">Enabling GitHub Advanced Security</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/advanced-security/configuring-code-scanning-for-your-appliance?learn=configure_github_advanced_security"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">3</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring code scanning</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item " href="/en/enterprise-server@3.1/admin/advanced-security/configuring-secret-scanning-for-your-appliance?learn=configure_github_advanced_security"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">4</span> 
+           </div> <h5 class="flex-auto pr-2">Configuring secret scanning</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> <a class="Box-row d-flex flex-items-center color-text-primary no-underline js-show-more-item d-none" href="/en/enterprise-server@3.1/admin/policies/enforcing-policies-for-advanced-security-in-your-enterprise?learn=configure_github_advanced_security"> 
+           <div class="circle color-bg-tertiary d-inline-flex mr-4"> <span class="m-2 f3 lh-condensed-ultra text-center text-bold step-circle-text" style="min-width: 20px; height: 20px;">5</span> 
+           </div> <h5 class="flex-auto pr-2">Enforcing policies for Advanced Security in your enterprise</h5> 
+           <div class="color-text-tertiary h6 text-uppercase">
+            How-to guide
+           </div> </a> 
+         </div> <a class="Box-footer btn-link border-top-0 position-relative text-center text-bold color-text-link pt-1 pb-3 col-12 js-show-more-button"> 
+          <div class="position-absolute left-0 right-0 py-5 fade-background-bottom" style="; bottom: 50px;"></div> <span>1 more guides</span> </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="py-6 border-top color-border-primary"> 
+    <div class="container-xl px-3 px-md-6 pt-3 pb-2"> <!-- When learning tracks aren't present, only guides exist and this heading duplicates the article's title --> 
+     <h2 class="mb-3 font-mktg" id="all-guides"><a href="#all-guides">All GitHub Enterprise guides</a></h2> 
+     <form class="mt-2 mb-5 d-flex d-flex"> 
+      <div> <label for="type" class="text-uppercase f6 color-text-secondary d-block">Type</label> <select class="form-select js-filter-card-filter-dropdown f4 text-bold border-0 rounded-0 border-top box-shadow-none pl-0 js-filter-card-filter-dropdown" name="type" aria-label="guide types"> <option value="">All</option> <option value="overview">Overview</option> <option value="quick_start">Quickstart</option> <option value="tutorial">Tutorial</option> <option value="how_to">How-to guide</option> <option value="reference">Reference</option> </select> 
+      </div> 
+      <div class="mx-4"> <label for="topic" class="text-uppercase f6 color-text-secondary d-block">Topic</label> <select class="form-select js-filter-card-filter-dropdown f4 text-bold border-0 rounded-0 border-top box-shadow-none pl-0 js-filter-card-filter-dropdown" name="topics" aria-label="guide topics"> <option value="">All</option> <option value="2FA">2FA</option> <option value="Access management">Access management</option> <option value="Accounts">Accounts</option> <option value="Actions">Actions</option> <option value="Advanced Security">Advanced Security</option> <option value="API">API</option> <option value="Auditing">Auditing</option> <option value="Authentication">Authentication</option> <option value="Backups">Backups</option> <option value="CI">CI</option> <option value="Clustering">Clustering</option> <option value="Code scanning">Code scanning</option> <option value="Enterprise">Enterprise</option> <option value="Errors">Errors</option> <option value="Fundamentals">Fundamentals</option> <option value="Git">Git</option> <option value="GitHub Connect">GitHub Connect</option> <option value="GitHub search">GitHub search</option> <option value="High availability">High availability</option> <option value="Identity">Identity</option> <option value="Infrastructure">Infrastructure</option> <option value="LFS">LFS</option> <option value="Licensing">Licensing</option> <option value="Maintenance">Maintenance</option> <option value="Migration">Migration</option> <option value="Mobile">Mobile</option> <option value="Monitoring">Monitoring</option> <option value="Networking">Networking</option> <option value="Organizations">Organizations</option> <option value="Packages">Packages</option> <option value="Performance">Performance</option> <option value="Policies">Policies</option> <option value="Pre-receive hooks">Pre-receive hooks</option> <option value="Privacy">Privacy</option> <option value="Project management">Project management</option> <option value="Repositories">Repositories</option> <option value="Secret scanning">Secret scanning</option> <option value="Security">Security</option> <option value="SSH">SSH</option> <option value="SSO">SSO</option> <option value="Storage">Storage</option> <option value="Support">Support</option> <option value="Teams">Teams</option> <option value="Troubleshooting">Troubleshooting</option> <option value="Upgrades">Upgrades</option> <option value="User account">User account</option> <option value="Webhooks">Webhooks</option> </select> 
+      </div> 
+     </form> 
+     <div class="d-flex flex-wrap mr-0 mr-md-n6 mr-lg-n8"> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Accounts,Authentication,Enterprise,Identity"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/authentication/allowing-built-in-authentication-for-users-outside-your-identity-provider"> <h4 class="h4 color-text-primary mb-1">Allowing built-in authentication for users outside your identity provider</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can configure built-in authentication to authenticate users who don't have access to your identity provider that uses LDAP, SAML, or CAS.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Identity</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="overview" data-topics="Accounts,Authentication,Enterprise,Identity"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/authentication/changing-authentication-methods"> <h4 class="h4 color-text-primary mb-1">Changing authentication methods</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can change the way GitHub Enterprise Server authenticates with your existing accounts at any time.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Identity</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Accounts,Authentication,Enterprise,Identity,SSO"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/authentication/using-cas"> <h4 class="h4 color-text-primary mb-1">Using CAS</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">CAS is a single sign-on (SSO) protocol for multiple web applications. A CAS user account does not take up a user license until the user signs in.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Identity</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">SSO</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Accounts,Authentication,Enterprise,Identity"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/authentication/using-ldap"> <h4 class="h4 color-text-primary mb-1">Using LDAP</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">LDAP lets you authenticate GitHub Enterprise Server against your existing accounts and centrally manage repository access. LDAP is a popular application protocol for accessing and maintaining directory information services, and is one of the most common protocols used to integrate third-party software with large company user directories.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Identity</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Accounts,Authentication,Enterprise,Identity,SSO"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/authentication/using-saml"> <h4 class="h4 color-text-primary mb-1">Using SAML</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">SAML is an XML-based standard for authentication and authorization. GitHub Enterprise Server can act as a service provider (SP) with your internal SAML identity provider (IdP).</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Identity</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">SSO</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,SSH"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/accessing-the-administrative-shell-ssh"> <h4 class="h4 color-text-primary mb-1">Accessing the administrative shell (SSH)</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">SSH access allows you to run the GitHub Enterprise Server command line utilities to troubleshoot, run backups, and configure replication.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">SSH</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/accessing-the-management-console"> <h4 class="h4 color-text-primary mb-1">Accessing the management console</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can use the Management Console to manage virtual appliance settings such as the domain, authentication, and SSL.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-a-hostname"> <h4 class="h4 color-text-primary mb-1">Configuring a hostname</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">We recommend setting a hostname for your appliance instead of using a hard-coded IP address.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8  js-filter-card" data-type="how_to" data-topics="Backups,Enterprise,Fundamentals,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-backups-on-your-appliance"> <h4 class="h4 color-text-primary mb-1">Configuring backups on your appliance</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">As part of a disaster recovery plan, you can protect production data on your GitHub Enterprise Server instance by configuring automated backups.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Backups</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure,Networking"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-built-in-firewall-rules"> <h4 class="h4 color-text-primary mb-1">Configuring built-in firewall rules</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can view default firewall rules and customize rules for your GitHub Enterprise Server instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Advanced Security,Code scanning,Enterprise,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-code-scanning-for-your-appliance"> <h4 class="h4 color-text-primary mb-1">Configuring code scanning for your appliance</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can enable, configure and disable code scanning for your GitHub Enterprise Server instance. Code scanning allows users to scan code for vulnerabilities and errors.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Advanced Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Code scanning</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure,Networking"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-dns-nameservers"> <h4 class="h4 color-text-primary mb-1">Configuring DNS nameservers</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">GitHub Enterprise Server uses the dynamic host configuration protocol (DHCP) for DNS settings when DHCP leases provide nameservers. If nameservers are not provided by a dynamic host configuration protocol (DHCP) lease, or if you need to use specific DNS settings, you can specify the nameservers manually.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Infrastructure,Performance"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-rate-limits"> <h4 class="h4 color-text-primary mb-1">Configuring rate limits</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can set rate limits for GitHub Enterprise Server using the Management Console.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Performance</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Advanced Security,Enterprise,Secret scanning,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-secret-scanning-for-your-appliance"> <h4 class="h4 color-text-primary mb-1">Configuring secret scanning for your appliance</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can enable, configure, and disable secret scanning for your GitHub Enterprise Server instance. Secret scanning allows users to scan code for accidentally committed secrets.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Advanced Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Secret scanning</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure,Networking,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/configuring-tls"> <h4 class="h4 color-text-primary mb-1">Configuring TLS</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can configure Transport Layer Security (TLS) on your GitHub Enterprise Server instance so that you can use a certificate that is signed by a trusted certificate authority.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,GitHub Connect,Infrastructure,Networking"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/connecting-github-enterprise-server-to-github-enterprise-cloud"> <h4 class="h4 color-text-primary mb-1">Connecting GitHub Enterprise Server to GitHub Enterprise Cloud</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">After you enable GitHub Connect, you can share specific features and workflows between your GitHub Enterprise Server instance and GitHub Enterprise Cloud.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub Connect</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Maintenance,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-and-scheduling-maintenance-mode"> <h4 class="h4 color-text-primary mb-1">Enabling and scheduling maintenance mode</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Some standard maintenance procedures, such as upgrading your GitHub Enterprise Server instance or restoring backups, require the instance to be taken offline for normal use.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Maintenance</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,GitHub Connect,Licensing"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud"> <h4 class="h4 color-text-primary mb-1">Enabling automatic user license sync between GitHub Enterprise Server and GitHub Enterprise Cloud</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can connect your GitHub Enterprise Server instance to GitHub Enterprise Cloud and allow GitHub Enterprise Server to upload user license information to your enterprise account on GitHub.com.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub Connect</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Licensing</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Access management,Authentication,Enterprise,Fundamentals,Infrastructure,Networking,Privacy,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-private-mode"> <h4 class="h4 color-text-primary mb-1">Enabling private mode</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">In private mode, GitHub Enterprise Server requires every user to sign in to access the installation.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Access management</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Authentication</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Privacy</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure,Networking,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-subdomain-isolation"> <h4 class="h4 color-text-primary mb-1">Enabling subdomain isolation</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can set up subdomain isolation to securely separate user-supplied content from other portions of your GitHub Enterprise Server appliance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,GitHub Connect"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-unified-contributions-between-github-enterprise-server-and-githubcom"> <h4 class="h4 color-text-primary mb-1">Enabling unified contributions between GitHub Enterprise Server and GitHub.com</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">After enabling GitHub Connect, you can allow GitHub Enterprise Cloud members to highlight their work on GitHub Enterprise Server by sending the contribution counts to their GitHub.com profiles.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub Connect</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="" data-topics="Enterprise,GitHub Connect,GitHub search"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/enabling-unified-search-between-github-enterprise-server-and-githubcom"> <h4 class="h4 color-text-primary mb-1">Enabling unified search between GitHub Enterprise Server and GitHub.com</h4> 
+        <div class="h6 text-uppercase"></div> <p class="color-text-secondary my-3">After enabling GitHub Connect, you can allow search of GitHub.com from your GitHub Enterprise Server instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub Connect</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub search</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Mobile"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/managing-github-for-mobile-for-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Managing GitHub for mobile for your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can decide whether authenticated users can connect to your GitHub Enterprise Server instance with GitHub for mobile.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Mobile</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Enterprise,Infrastructure,Networking,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/network-ports"> <h4 class="h4 color-text-primary mb-1">Network ports</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">Open network ports selectively based on the network services you need to expose for administrators, end users, and email support.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Enterprise,Fundamentals"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/site-admin-dashboard"> <h4 class="h4 color-text-primary mb-1">Site admin dashboard</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">You can use the site admin dashboard to manage users, organizations, and repositories in your enterprise directly in GitHub Enterprise Server.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Errors,Infrastructure,Networking,Security,Troubleshooting"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/troubleshooting-ssl-errors"> <h4 class="h4 color-text-primary mb-1">Troubleshooting SSL errors</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">If you run into SSL issues with your appliance, you can take actions to resolve them.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Errors</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Troubleshooting</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,High availability,Infrastructure,Networking"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/configuration/using-github-enterprise-server-with-a-load-balancer"> <h4 class="h4 color-text-primary mb-1">Using GitHub Enterprise Server with a load balancer</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Use a load balancer in front of a single GitHub Enterprise Server appliance or a pair of appliances in a High Availability configuration.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Networking</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Enterprise,High availability,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/about-high-availability-configuration"> <h4 class="h4 color-text-primary mb-1">About high availability configuration</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">In a high availability configuration, a fully redundant secondary GitHub Enterprise Server appliance is kept in sync with the primary appliance through replication of all major datastores.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Fundamentals,Infrastructure,Monitoring,Performance"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/accessing-the-monitor-dashboard"> <h4 class="h4 color-text-primary mb-1">Accessing the monitor dashboard</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">GitHub Enterprise Server includes a web-based monitoring dashboard that displays historical data about your GitHub Enterprise Server appliance, such as CPU and storage usage, application and authentication response times, and general system health.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Fundamentals</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Monitoring</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Performance</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,High availability,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/creating-a-high-availability-replica"> <h4 class="h4 color-text-primary mb-1">Creating a high availability replica</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">In an active/passive configuration, the replica appliance is a redundant copy of the primary appliance. If the primary appliance fails, high availability mode allows the replica to act as the primary appliance, allowing minimal service disruption.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Clustering,Enterprise,High availability,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/differences-between-clustering-and-high-availability-ha"> <h4 class="h4 color-text-primary mb-1">Differences between clustering and high availability (HA)</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">GitHub Enterprise Server High Availability Configuration (HA) is a primary/secondary failover configuration that provides redundancy while Clustering provides redundancy and scalability by distributing read and write load across multiple nodes.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Clustering</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/enabling-automatic-update-checks"> <h4 class="h4 color-text-primary mb-1">Enabling automatic update checks</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can enable automatic update checks so that your GitHub Enterprise Server instance checks for and downloads the latest GitHub Enterprise Server release.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,High availability,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/initiating-a-failover-to-your-replica-appliance"> <h4 class="h4 color-text-primary mb-1">Initiating a failover to your replica appliance</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can failover to a GitHub Enterprise Server replica appliance using the command line for maintenance and testing, or if the primary appliance fails.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Enterprise,Infrastructure,Monitoring,Performance,Storage"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/recommended-alert-thresholds"> <h4 class="h4 color-text-primary mb-1">Recommended alert thresholds</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">You can configure an alert to notify you of system resource issues before they affect your GitHub Enterprise Server appliance's performance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Monitoring</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Performance</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Storage</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Infrastructure,Monitoring,Performance"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/setting-up-external-monitoring"> <h4 class="h4 color-text-primary mb-1">Setting up external monitoring</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can monitor basic system resources on your GitHub Enterprise Server appliance using either the SNMP or collectd statistics collection protocols.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Monitoring</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Performance</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Enterprise,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/upgrade-requirements"> <h4 class="h4 color-text-primary mb-1">Upgrade requirements</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">Before upgrading GitHub Enterprise Server, review these recommendations and requirements to plan your upgrade strategy.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-management/upgrading-github-enterprise-server"> <h4 class="h4 color-text-primary mb-1">Upgrading GitHub Enterprise Server</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Upgrade GitHub Enterprise Server to get the latest features and security updates.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Enterprise,Support"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/enterprise-support/about-github-enterprise-support"> <h4 class="h4 color-text-primary mb-1">About GitHub Enterprise Support</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">GitHub Support can help you troubleshoot issues that arise on GitHub Enterprise Server.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Support</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Actions,Enterprise"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/about-using-actions-in-your-enterprise"> <h4 class="h4 color-text-primary mb-1">About using actions in your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">GitHub Enterprise Server includes most GitHub-authored actions, and has options for enabling access to other actions from GitHub.com and GitHub Marketplace.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Actions,Enterprise"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/getting-started-with-github-actions-for-github-enterprise-server"> <h4 class="h4 color-text-primary mb-1">Getting started with GitHub Actions for GitHub Enterprise Server</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Learn about enabling and configuring GitHub Actions on GitHub Enterprise Server for the first time.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Actions,Enterprise,Policies"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/enforcing-github-actions-policies-for-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Enforcing GitHub Actions policies for your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Enterprise administrators can manage access to GitHub Actions in an enterprise.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Actions,Enterprise,GitHub Connect"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect"> <h4 class="h4 color-text-primary mb-1">Enabling automatic access to GitHub.com actions using GitHub Connect</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">To allow GitHub Actions in your enterprise to use actions from GitHub.com, you can connect your enterprise instance to GitHub Enterprise Cloud.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">GitHub Connect</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Actions,Enterprise,High availability,Infrastructure,Storage"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/high-availability-for-github-actions"> <h4 class="h4 color-text-primary mb-1">High availability for GitHub Actions</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">There are some special considerations for administering GitHub Actions in a high availability configuration.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">High availability</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Storage</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Actions,Backups,Enterprise,Infrastructure"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/backing-up-and-restoring-github-enterprise-server-with-github-actions-enabled"> <h4 class="h4 color-text-primary mb-1">Backing up and restoring GitHub Enterprise Server with GitHub Actions enabled</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">GitHub Actions data on your external storage provider is not included in regular GitHub Enterprise Server backups, and must be backed up separately.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Backups</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Actions,Enterprise,Infrastructure,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/github-actions/using-a-staging-environment"> <h4 class="h4 color-text-primary mb-1">Using a staging environment</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Learn about using GitHub Actions with GitHub Enterprise Server staging environments.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Actions</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Infrastructure</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Enterprise,Upgrades"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases"> <h4 class="h4 color-text-primary mb-1">About upgrades to new releases</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">You can benefit from new features and bug fixes for GitHub Enterprise Server by upgrading your enterprise to a newly released version.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Upgrades</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Packages"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/packages/configuring-package-ecosystem-support-for-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Configuring package ecosystem support for your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can configure GitHub Packages for your enterprise by globally enabling or disabling individual package ecosystems on your enterprise, including Docker, RubyGems, npm, Apache Maven, Gradle, or NuGet. Learn about other configuration requirements to support specific package ecosystems.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packages</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="quick_start" data-topics="Packages,Enterprise,Storage"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/packages/quickstart-for-configuring-your-minio-storage-bucket-for-github-packages"> <h4 class="h4 color-text-primary mb-1">Quickstart for configuring your MinIO storage bucket for GitHub Packages</h4> 
+        <div class="h6 text-uppercase">
+         Quickstart
+        </div> <p class="color-text-secondary my-3">Configure your custom MinIO storage bucket for use with GitHub Packages.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Packages</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Storage</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Enterprise,Policies,Pre-receive hooks"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/policies/about-pre-receive-hooks"> <h4 class="h4 color-text-primary mb-1">About pre-receive hooks</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3"><em>Pre-receive hooks</em> are scripts that run on the GitHub Enterprise Server appliance that you can use to implement quality checks.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Pre-receive hooks</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Policies,Pre-receive hooks"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/policies/creating-a-pre-receive-hook-environment"> <h4 class="h4 color-text-primary mb-1">Creating a pre-receive hook environment</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">To execute pre-receive hooks, use either the default pre-receive environment, or create a custom environment.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Pre-receive hooks</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Policies,Pre-receive hooks"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/policies/creating-a-pre-receive-hook-script"> <h4 class="h4 color-text-primary mb-1">Creating a pre-receive hook script</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Use pre-receive hook scripts to create requirements for accepting or rejecting a push based on the contents.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Pre-receive hooks</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Policies,Pre-receive hooks"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/policies/managing-pre-receive-hooks-on-the-github-enterprise-server-appliance"> <h4 class="h4 color-text-primary mb-1">Managing pre-receive hooks on the GitHub Enterprise Server appliance</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Configure how people will use pre-receive hooks within their GitHub Enterprise Server appliance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Pre-receive hooks</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="overview" data-topics="Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/about-migrations"> <h4 class="h4 color-text-primary mb-1">About migrations</h4> 
+        <div class="h6 text-uppercase">
+         Overview
+        </div> <p class="color-text-secondary my-3">A migration is the process of transferring data from a <em>source</em> location (either a GitHub.com organization or a GitHub Enterprise Server instance) to a <em>target</em> GitHub Enterprise Server instance. Migrations can be used to transfer your data when changing platforms or upgrading hardware on your instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="Auditing,Enterprise,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/audited-actions"> <h4 class="h4 color-text-primary mb-1">Audited actions</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">You can search the audit log for a wide variety of actions.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Auditing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Access management,Enterprise,Teams,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/adding-people-to-teams"> <h4 class="h4 color-text-primary mb-1">Adding people to teams</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Once a team has been created, organization admins can add users from your GitHub Enterprise Server instance to the team and determine which repositories they have access to.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Access management</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Teams</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Auditing,Enterprise,Security,SSH"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/auditing-ssh-keys"> <h4 class="h4 color-text-primary mb-1">Auditing SSH keys</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Site administrators can initiate an instance-wide audit of SSH keys.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Auditing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">SSH</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Auditing,Enterprise,Organizations,Security,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/auditing-users-across-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Auditing users across your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">The audit log dashboard shows site administrators the actions performed by all users and organizations across your enterprise within the past 90 days, including details such as who performed the action, what the action was, and when the action was performed.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Auditing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Organizations</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Git,Enterprise,LFS,Storage"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/configuring-git-large-file-storage-for-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Configuring Git Large File Storage for your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Git Large File Storage (Git LFS) is an open source extension to Git that allows you to work with large files the same way as other text files.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Git</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">LFS</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Storage</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Organizations,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/configuring-visibility-for-organization-membership"> <h4 class="h4 color-text-primary mb-1">Configuring visibility for organization membership</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can set visibility for new organization members across your enterprise to public or private. You can also prevent members from changing their visibility from the default.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Organizations</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="reference" data-topics="CI,Enterprise"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/continuous-integration-using-jenkins"> <h4 class="h4 color-text-primary mb-1">Continuous integration using Jenkins</h4> 
+        <div class="h6 text-uppercase">
+         Reference
+        </div> <p class="color-text-secondary my-3">You can automatically trigger build jobs on a Jenkins server when pushes are made to a repository in your GitHub Enterprise Server instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">CI</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Policies,Security,SSH"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/disabling-git-ssh-access-on-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Disabling Git SSH access on your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can prevent people from using Git over SSH for certain or all repositories on your enterprise.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">SSH</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Access management,Enterprise,Teams,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/creating-teams"> <h4 class="h4 color-text-primary mb-1">Creating teams</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Teams give organizations the ability to create groups of members and control access to repositories. Team members can be granted read, write, or admin permissions to specific repositories.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Access management</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Teams</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="API,Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/exporting-migration-data-from-githubcom"> <h4 class="h4 color-text-primary mb-1">Exporting migration data from GitHub.com</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can export migration data from an organization on GitHub.com by using the API to select repositories to migrate, then generating a migration archive that you can import into a GitHub Enterprise Server instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">API</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="API,Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/exporting-migration-data-from-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Exporting migration data from your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">To change platforms or move from a trial instance to a production instance, you can export migration data from a GitHub Enterprise Server instance by preparing the instance, locking the repositories, and generating a migration archive.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">API</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/importing-data-from-third-party-version-control-systems"> <h4 class="h4 color-text-primary mb-1">Importing data from third-party version control systems</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Using the git-import suite of tools, you can import from Subversion, Mercurial and Team Foundation Version Control to Git repositories on GitHub Enterprise Server.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Accounts,Enterprise,Licensing"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/managing-dormant-users"> <h4 class="h4 color-text-primary mb-1">Managing dormant users</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">A user account is considered to be dormant if it has not been active for at least a month. You may choose to suspend dormant users to free up user licenses.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Licensing</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Webhooks"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/managing-global-webhooks"> <h4 class="h4 color-text-primary mb-1">Managing global webhooks</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">Site administrators can view, add, edit, and delete global webhooks to track events for the enterprise.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Webhooks</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Project management"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/managing-projects-using-jira"> <h4 class="h4 color-text-primary mb-1">Managing projects using Jira</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can integrate Jira with GitHub Enterprise for project management.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Project management</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Access management,Accounts,Enterprise,Teams"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/removing-users-from-teams-and-organizations"> <h4 class="h4 color-text-primary mb-1">Removing users from teams and organizations</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">If a member of your organization no longer requires access to certain repositories, you can remove them from the team that allows that access. If a member of your organization no longer requires access to any repositories owned by the organization, you can remove them from the organization.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Access management</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Teams</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Migrating data to your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">After generating a migration archive, you can import the data to your target GitHub Enterprise Server instance. You'll be able to review changes for potential conflicts before permanently applying the changes to your target instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Privacy,Repositories,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/migrating-to-internal-repositories"> <h4 class="h4 color-text-primary mb-1">Migrating to internal repositories</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can migrate to internal repositories to unify the innersource experience for developers using both GitHub Enterprise Server and GitHub Enterprise Cloud.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Privacy</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Repositories</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Security</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Accounts,Auditing,Enterprise,Organizations,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/placing-a-legal-hold-on-a-user-or-organization"> <h4 class="h4 color-text-primary mb-1">Placing a legal hold on a user or organization</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can place a legal hold on a user or organization to ensure that repositories they own cannot be permanently removed from your enterprise.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Accounts</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Auditing</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Organizations</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Migration"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/preparing-to-migrate-data-to-your-enterprise"> <h4 class="h4 color-text-primary mb-1">Preparing to migrate data to your enterprise</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">After generating a migration archive, you can import the data to your target GitHub Enterprise Server instance. You'll be able to review changes for potential conflicts before permanently applying the changes to your target instance.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Migration</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Organizations,Policies"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/preventing-users-from-creating-organizations"> <h4 class="h4 color-text-primary mb-1">Preventing users from creating organizations</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can prevent users from creating organizations in your enterprise.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Organizations</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Policies</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="Enterprise,Repositories,User account"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/rebuilding-contributions-data"> <h4 class="h4 color-text-primary mb-1">Rebuilding contributions data</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You may need to rebuild contributions data to link existing commits to a user account.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Repositories</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">User account</span> 
+        </div> </a> 
+      </div> 
+      <div class="d-flex col-12 col-md-4 pr-0 pr-md-6 pr-lg-8 d-none js-filter-card" data-type="how_to" data-topics="2FA,Enterprise,Organizations,Policies,Security"> <a class="no-underline d-flex flex-column py-3 border-bottom" href="/en/enterprise-server@3.1/admin/user-management/requiring-two-factor-authentication-for-an-organization"> <h4 class="h4 color-text-primary mb-1">Requiring two-factor authentication for an organization</h4> 
+        <div class="h6 text-uppercase">
+         How-to guide
+        </div> <p class="color-text-secondary my-3">You can require organization members and outside collaborators to enable two-factor authentication for their personal accounts in an organization, making it harder for malicious actors to access an organization's repositories and settings.</p> 
+        <div> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">2FA</span> <span class="IssueLabel bg-gradient--pink-blue color-text-inverse mr-1">Enterprise</span> <span class="IssueLabel bg-gradient

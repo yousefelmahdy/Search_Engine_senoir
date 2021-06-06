@@ -1,0 +1,1112 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab Documentation | GitLab</title> 
+  <meta name="description" content="Learn how to use and administer GitLab, the most scalable Git-based fully integrated platform for software development."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/ee/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/ee/README.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/ee/README.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/ee/README.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 active" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <div id="doc-nav" class="doc-nav toc-no-breadcrumbs"> <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> GitLab Documentation </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a> </li>
+      <li><a href="#popular-documentation" id="markdown-toc-popular-documentation">Popular Documentation</a> </li>
+      <li> <a href="#the-entire-devops-lifecycle" id="markdown-toc-the-entire-devops-lifecycle">The entire DevOps Lifecycle</a> 
+       <ul> 
+        <li><a href="#manage" id="markdown-toc-manage">Manage</a> </li>
+        <li><a href="#plan" id="markdown-toc-plan">Plan</a> </li>
+        <li> <a href="#create" id="markdown-toc-create">Create</a> 
+         <ul> 
+          <li><a href="#projects-and-groups" id="markdown-toc-projects-and-groups">Projects and Groups</a> </li>
+          <li><a href="#repositories" id="markdown-toc-repositories">Repositories</a> </li>
+          <li><a href="#merge-requests" id="markdown-toc-merge-requests">Merge Requests</a> </li>
+          <li><a href="#integration-and-automation" id="markdown-toc-integration-and-automation">Integration and Automation</a> </li>
+         </ul> </li>
+        <li><a href="#verify" id="markdown-toc-verify">Verify</a> </li>
+        <li><a href="#package" id="markdown-toc-package">Package</a> </li>
+        <li><a href="#release" id="markdown-toc-release">Release</a> </li>
+        <li><a href="#configure" id="markdown-toc-configure">Configure</a> </li>
+        <li><a href="#monitor" id="markdown-toc-monitor">Monitor</a> </li>
+        <li><a href="#secure" id="markdown-toc-secure">Secure</a> </li>
+       </ul> </li>
+      <li> <a href="#subscribe-to-gitlab" id="markdown-toc-subscribe-to-gitlab">Subscribe to GitLab</a> 
+       <ul> 
+        <li><a href="#gitlab-self-managed" id="markdown-toc-gitlab-self-managed">GitLab self-managed</a> </li>
+        <li><a href="#gitlabcom" id="markdown-toc-gitlabcom">GitLab.com</a> </li>
+       </ul> </li>
+      <li> <a href="#new-to-git-and-gitlab" id="markdown-toc-new-to-git-and-gitlab">New to Git and GitLab?</a> 
+       <ul> 
+        <li><a href="#user-account" id="markdown-toc-user-account">User account</a> </li>
+        <li><a href="#git-and-gitlab" id="markdown-toc-git-and-gitlab">Git and GitLab</a> </li>
+       </ul> </li>
+      <li><a href="#coming-to-gitlab-from-another-platform" id="markdown-toc-coming-to-gitlab-from-another-platform">Coming to GitLab from another platform</a> </li>
+      <li><a href="#building-an-integration-with-gitlab" id="markdown-toc-building-an-integration-with-gitlab">Building an integration with GitLab</a> </li>
+      <li><a href="#contributing-to-gitlab" id="markdown-toc-contributing-to-gitlab">Contributing to GitLab</a> </li>
+     </ul> 
+     <div class="display-none"> <em>Visit <a href="/11.11/ee/">docs.gitlab.com</a> for optimized navigation, discoverability, and readability.</em> 
+     </div> 
+     <h1 id="gitlab-documentation">GitLab Documentation<a href="#gitlab-documentation" title="Permalink" class="anchor"></a> </h1> 
+     <p>Welcome to <a href="https://about.gitlab.com/">GitLab</a> Documentation. </p>
+     <p>Here you can access the complete documentation for GitLab, the single application for the <a href="#the-entire-devops-lifecycle">entire DevOps lifecycle</a>. </p>
+     <h2 id="overview">Overview<a href="#overview" title="Permalink" class="anchor"></a> </h2> 
+     <p>No matter how you use GitLab, we have documentation for you. </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Essential Documentation </th>
+        <th style="text-align:left">Essential Documentation </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/index.html"><strong>User Documentation</strong></a><br>Discover features and concepts for GitLab users. </td>
+        <td style="text-align:left"> <a href="administration/index.html"><strong>Administrator documentation</strong></a><br>Everything GitLab self-managed administrators need to know. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="#contributing-to-gitlab"><strong>Contributing to GitLab</strong></a><br>At GitLab, everyone can contribute! </td>
+        <td style="text-align:left"> <a href="#new-to-git-and-gitlab"><strong>New to Git and GitLab?</strong></a><br>We have resources to get you started. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="#building-an-integration-with-gitlab"><strong>Building an integration with GitLab?</strong></a><br>Consult our automation and integration documentation. </td>
+        <td style="text-align:left"> <a href="#coming-to-gitlab-from-another-platform"><strong>Coming to GitLab from another platform?</strong></a><br>Consult our handy guides. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="https://about.gitlab.com/install/"><strong>Install GitLab</strong></a><br>Installation options for different platforms. </td>
+        <td style="text-align:left"> <a href="#subscribe-to-gitlab"><strong>Subscribe to GitLab</strong></a><br>Get access to more features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="update/README.html"><strong>Update GitLab</strong></a><br>Update your GitLab self-managed instance to the latest version. </td>
+        <td style="text-align:left"> <a href="https://about.gitlab.com/releases/"><strong>GitLab Releases</strong></a><br>What’s new in GitLab. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <h2 id="popular-documentation">Popular Documentation<a href="#popular-documentation" title="Permalink" class="anchor"></a> </h2> 
+     <p>Have a look at some of our most popular documentation resources: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Popular Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="ci/yaml/README.html">Configuring <code class="highlighter-rouge">.gitlab-ci.yml</code></a> </td>
+        <td style="text-align:left">Complete syntax documentation for configuring your CI pipelines. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/examples/README.html">GitLab CI/CD examples</a> </td>
+        <td style="text-align:left">Get up to speed quickly with common CI/CD scenarios. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/container_registry.html">GitLab Container Registry</a> </td>
+        <td style="text-align:left">Host containers within GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/pages/index.html">GitLab Pages</a> </td>
+        <td style="text-align:left">Host static websites for your projects with GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/gitlab_com/index.html">GitLab.com settings</a> </td>
+        <td style="text-align:left">Settings for <a href="#gitlabcom">GitLab.com</a>. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/clusters/index.html">Kubernetes integration</a> </td>
+        <td style="text-align:left">Use GitLab with Kubernetes. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ssh/README.html">SSH authentication</a> </td>
+        <td style="text-align:left">Secure your network communications. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/docker/using_docker_images.html">Using Docker images</a> </td>
+        <td style="text-align:left">Build and test your applications with Docker. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <h2 id="the-entire-devops-lifecycle">The entire DevOps Lifecycle<a href="#the-entire-devops-lifecycle" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab is the first single application for software development, security, and operations that enables <a href="https://about.gitlab.com/concurrent-devops/">Concurrent DevOps</a>, making the software lifecycle faster and radically improving the speed of business. </p>
+     <p>GitLab provides solutions for <a href="https://about.gitlab.com/stages-devops-lifecycle/">all the stages of the DevOps lifecycle</a>: </p>
+     <p><img src="img/devops-stages.png" alt="DevOps Stages"> </p>
+     <p>GitLab is like a top-of-the-line kitchen for making software. As the executive chef, you decide what software you want serve. Using your recipe, GitLab handles all the prep work, cooking, and delivery, so you can turn around orders faster than ever. </p>
+     <p>The following sections provide links to documentation for each DevOps stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">DevOps Stage </th>
+        <th style="text-align:left">Documentation for </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="#manage">Manage</a> </td>
+        <td style="text-align:left">Statistics and analytics features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#plan">Plan</a> </td>
+        <td style="text-align:left">Project planning and management features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#create">Create</a> </td>
+        <td style="text-align:left">Source code and data creation and management features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#verify">Verify</a> </td>
+        <td style="text-align:left">Testing, code quality, and continuous integration features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#package">Package</a> </td>
+        <td style="text-align:left">Docker container registry. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#release">Release</a> </td>
+        <td style="text-align:left">Application release and delivery features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#configure">Configure</a> </td>
+        <td style="text-align:left">Application and infrastructure configuration tools. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#monitor">Monitor</a> </td>
+        <td style="text-align:left">Application monitoring and metrics features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#secure">Secure</a> </td>
+        <td style="text-align:left">Security capability features. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="manage">Manage<a href="#manage" title="Permalink" class="anchor"></a> </h3> 
+     <p>GitLab provides statistics and insight into ways you can maximize the value of GitLab in your organization. </p>
+     <p>The following documentation relates to the DevOps <strong>Manage</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Manage Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="administration/auth/README.html">Authentication and<br>Authorization</a> <span class="badge-trigger core-only"></span> </td>
+        <td style="text-align:left">Supported authentication and authorization providers. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/cycle_analytics.html">GitLab Cycle Analytics</a> </td>
+        <td style="text-align:left">Measure the time it takes to go from an <a href="https://about.gitlab.com/2016/08/05/continuous-integration-delivery-and-deployment-with-gitlab/#from-idea-to-production-with-gitlab">idea to production</a> for each project you have. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/instance_statistics/index.html">Instance Statistics</a> </td>
+        <td style="text-align:left">Discover statistics on how many GitLab features you use and user activity. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="plan">Plan<a href="#plan" title="Permalink" class="anchor"></a> </h3> 
+     <p>Whether you use Waterfall, Agile, or Conversational Development, GitLab streamlines your collaborative workflows. </p>
+     <p>Visualize, prioritize, coordinate, and track your progress your way with GitLab’s flexible project management tools. </p>
+     <p>The following documentation relates to the DevOps <strong>Plan</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Plan Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/milestones/burndown_charts.html">Burndown Charts</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Watch your project’s progress throughout a specific milestone. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/discussions/index.html">Discussions</a> </td>
+        <td style="text-align:left">Threads, comments, and resolvable discussions in issues, commits, and merge requests. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/issues/due_dates.html">Due Dates</a> </td>
+        <td style="text-align:left">Keep track of issue deadlines. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/group/epics/index.html">Epics</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Tracking groups of issues that share a theme. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/issues/index.html">Issues</a>, including <a href="user/project/issues/confidential_issues.html">confidential issues</a>,<br><a href="user/project/description_templates.html">issue and merge request templates</a>,<br>and <a href="user/project/issues/moving_issues.html">moving issues</a> </td>
+        <td style="text-align:left">Project issues, restricting access to issues, create templates for submitting new issues and merge requests, and moving issues between projects. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/labels.html">Labels</a> </td>
+        <td style="text-align:left">Categorize issues or merge requests with descriptive labels. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/milestones/index.html">Milestones</a> </td>
+        <td style="text-align:left">Set milestones for delivery of issues and merge requests, with optional due date. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/issue_board.html">Project Issue Board</a> </td>
+        <td style="text-align:left">Display issues on a Scrum or Kanban board. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/quick_actions.html">Quick Actions</a> </td>
+        <td style="text-align:left">Shortcuts for common actions on issues or merge requests, replacing the need to click buttons or use dropdowns in GitLab’s UI. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/issues/related_issues.html">Related Issues</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Create a relationship between issues. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/group/roadmap/index.html">Roadmap</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Visualize epic timelines. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/service_desk.html">Service Desk</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">A simple way to allow people to create issues in your GitLab instance without needing their own user account. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="workflow/time_tracking.html">Time Tracking</a> </td>
+        <td style="text-align:left">Track time spent on issues and merge requests. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="workflow/todos.html">Todos</a> </td>
+        <td style="text-align:left">Keep track of work requiring attention with a chronological list displayed on a simple dashboard. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="create">Create<a href="#create" title="Permalink" class="anchor"></a> </h3> 
+     <p>Consolidate source code into a single <a href="https://en.wikipedia.org/wiki/Distributed_version_control">distributed version control system</a> that’s easily managed and controlled without disrupting your workflow. </p>
+     <p>GitLab’s Git repositories come complete with branching tools and access controls, providing a scalable, single source of truth for collaborating on projects and code. </p>
+     <p>The following documentation relates to the DevOps <strong>Create</strong> stage: </p>
+     <h4 id="projects-and-groups">Projects and Groups<a href="#projects-and-groups" title="Permalink" class="anchor"></a> </h4> 
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Create Topics - Projects and Groups </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/search/advanced_global_search.html">Advanced global search</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Leverage Elasticsearch for faster, more advanced code search across your entire GitLab instance. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/search/advanced_search_syntax.html">Advanced syntax search</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Use advanced queries for more targeted search results. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/group/contribution_analytics/index.html">Contribution analytics</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">See detailed statistics of group contributors. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="gitlab-basics/create-project.html">Create</a> and <a href="gitlab-basics/fork-project.html">fork</a> projects, and<br><a href="user/project/settings/import_export.html">import and export projects<br>between instances</a> </td>
+        <td style="text-align:left">Create, duplicate, and move projects. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/file_lock.html">File locking</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Lock files to avoid merge conflicts. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/pages/index.html">GitLab Pages</a> </td>
+        <td style="text-align:left">Build, test, and deploy your static website with GitLab Pages. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/group/index.html">Groups</a> and <a href="user/group/subgroups/index.html">Subgroups</a> </td>
+        <td style="text-align:left">Organize your projects in groups. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/group/issues_analytics/index.html">Issues Analytics</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Check how many issues were created per month. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/index.html">Projects</a>, including <a href="public_access/public_access.html">project access</a><br>and <a href="user/project/settings/index.html">settings</a> </td>
+        <td style="text-align:left">Host source code, and control your project’s visibility and set configuration. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/search/index.html">Search through GitLab</a> </td>
+        <td style="text-align:left">Search for issues, merge requests, projects, groups, and todos. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/snippets.html">Snippets</a> </td>
+        <td style="text-align:left">Snippets allow you to create little bits of code. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/web_ide/index.html">Web IDE</a> </td>
+        <td style="text-align:left">Edit files within GitLab’s user interface. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/wiki/index.html">Wikis</a> </td>
+        <td style="text-align:left">Enhance your repository documentation with built-in wikis. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h4 id="repositories">Repositories<a href="#repositories" title="Permalink" class="anchor"></a> </h4> 
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Create Topics - Repositories </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/repository/branches/index.html">Branches</a> and the <a href="user/project/repository/branches/index.html#default-branch">default branch</a> </td>
+        <td style="text-align:left">How to use branches in GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/repository/index.html#commits">Commits</a> and <a href="user/project/repository/gpg_signed_commits/index.html">signing commits</a> </td>
+        <td style="text-align:left">Work with commits, and use GPG to sign your commits. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/repository/web_editor.html#create-a-new-branch">Create branches</a>, <a href="user/project/repository/web_editor.html#create-a-file">create</a><br>and <a href="user/project/repository/web_editor.html#upload-a-file">upload</a> files, and <a href="user/project/repository/web_editor.html#create-a-directory">create directories</a> </td>
+        <td style="text-align:left">Create branches, create and upload files, and create directories within GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/branches/index.html#delete-merged-branches">Delete merged branches</a> </td>
+        <td style="text-align:left">Bulk delete branches after their changes are merged. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/web_editor.html#template-dropdowns">File templates</a> </td>
+        <td style="text-align:left">File templates for common files. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/index.html#files">Files</a> </td>
+        <td style="text-align:left">Files management. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/index.html#jupyter-notebook-files">Jupyter Notebook files</a> </td>
+        <td style="text-align:left">GitLab’s support for <code class="highlighter-rouge">.ipynb</code> files. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/protected_branches.html">Protected branches</a> </td>
+        <td style="text-align:left">Use protected branches. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="push_rules/push_rules.html">Push rules</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Additional control over pushes to your projects. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/index.html">Repositories</a> </td>
+        <td style="text-align:left">Manage source code repositories in GitLab’s user interface. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="workflow/repository_mirroring.html">Repository mirroring</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Push to or pull from repositories outside of GitLab </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/repository/web_editor.html#tips">Start a merge request</a> </td>
+        <td style="text-align:left">Start merge request when committing via GitLab’s user interface. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h4 id="merge-requests">Merge Requests<a href="#merge-requests" title="Permalink" class="anchor"></a> </h4> 
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Create Topics - Merge Requests </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="user/project/merge_requests/index.html#checkout-merge-requests-locally">Checking out merge requests locally</a> </td>
+        <td style="text-align:left">Tips for working with merge requests locally. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/merge_requests/cherry_pick_changes.html">Cherry-picking</a> </td>
+        <td style="text-align:left">Use GitLab for cherry-picking changes. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/discussions/index.html#moving-a-single-discussion-to-a-new-issue">Merge request discussion resolution</a> </td>
+        <td style="text-align:left">Resolve discussions, move discussions in a merge request to an issue, and only allow merge requests to be merged if all discussions are resolved. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/merge_requests/index.html">Merge requests</a> </td>
+        <td style="text-align:left">Merge request management. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/merge_requests/work_in_progress_merge_requests.html">Work In Progress “WIP” merge requests</a> </td>
+        <td style="text-align:left">Prevent merges of work-in-progress merge requests. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h4 id="integration-and-automation">Integration and Automation<a href="#integration-and-automation" title="Permalink" class="anchor"></a> </h4> 
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Create Topics - Integration and Automation </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="api/README.html">GitLab API</a> </td>
+        <td style="text-align:left">Integrate GitLab via a simple and powerful API. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="integration/README.html">GitLab Integration</a> </td>
+        <td style="text-align:left">Integrate with multiple third-party services with GitLab to allow external issue trackers and external authentication. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/webhooks.html">GitLab Webhooks</a> </td>
+        <td style="text-align:left">Let GitLab notify you when new code has been pushed to your project. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="integration/jira_development_panel.html">JIRA Development Panel</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">See GitLab information in the JIRA Development Panel. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/project_services.html">Project Services</a> </td>
+        <td style="text-align:left">Integrate a project with external services, such as CI and chat. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="integration/trello_power_up.html">Trello Power-Up</a> </td>
+        <td style="text-align:left">Integrate with GitLab’s Trello Power-Up. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="verify">Verify<a href="#verify" title="Permalink" class="anchor"></a> </h3> 
+     <p>Spot errors sooner, improve security and shorten feedback cycles with built-in static code analysis, code testing, code quality, dependency checking, and Review Apps. Customize your approval workflow controls, automatically test the quality of your code, and spin up a staging environment for every code change. </p>
+     <p>GitLab Continuous Integration is the most popular next generation testing system that scales to run your tests faster. </p>
+     <p>The following documentation relates to the DevOps <strong>Verify</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Verify Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/merge_requests/code_quality.html">Code Quality reports</a> <span class="badge-trigger starter"></span> </td>
+        <td style="text-align:left">Analyze source code quality. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/README.html">GitLab CI/CD</a> </td>
+        <td style="text-align:left">Explore the features and capabilities of Continuous Integration with GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/junit_test_reports.html">JUnit test reports</a> </td>
+        <td style="text-align:left">Display JUnit test reports on merge requests. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="ci/multi_project_pipelines.html">Multi-project pipelines</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Visualize entire pipelines that span multiple projects, including all cross-project inter-dependencies. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/pipelines.html#visualizing-pipelines">Pipeline Graphs</a> </td>
+        <td style="text-align:left">Visualize builds. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/review_apps/index.html">Review Apps</a> </td>
+        <td style="text-align:left">Preview changes to your application right from a merge request. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="package">Package<a href="#package" title="Permalink" class="anchor"></a> </h3> 
+     <p>GitLab Container Registry gives you the enhanced security and access controls of custom Docker images without 3rd party add-ons. Easily upload and download images from GitLab CI/CD with full Git repository management integration. </p>
+     <p>The following documentation relates to the DevOps <strong>Package</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Package Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="user/project/container_registry.html">GitLab Container Registry</a> </td>
+        <td style="text-align:left">Learn how to use GitLab’s built-in Container Registry. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="administration/packages.html">GitLab Packages</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Use GitLab as an NPM registry or Maven repository. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="release">Release<a href="#release" title="Permalink" class="anchor"></a> </h3> 
+     <p>Spend less time configuring your tools, and more time creating. Whether you’re deploying to one server or thousands, build, test, and release your code confidently and securely with GitLab’s built-in Continuous Delivery and Deployment. </p>
+     <p>The following documentation relates to the DevOps <strong>Release</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Release Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="topics/autodevops/index.html#auto-deploy">Auto Deploy</a> </td>
+        <td style="text-align:left">Configure GitLab for the deployment of your application. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/canary_deployments.html">Canary Deployments</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Employ a popular CI strategy where a small portion of the fleet is updated to the new version first. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/deploy_boards.html">Deploy Boards</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">View the current health and status of each CI environment running on Kubernetes, displaying the status of the pods in the deployment. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/environments.html">Environments and deployments</a> </td>
+        <td style="text-align:left">With environments, you can control the continuous deployment of your software within GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="ci/variables/README.html#limiting-environment-scopes-of-environment-variables-premium">Environment-specific variables</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Limit scope of variables to specific environments. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/README.html">GitLab CI/CD</a> </td>
+        <td style="text-align:left">Explore the features and capabilities of Continuous Deployment and Delivery with GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/pages/index.html">GitLab Pages</a> </td>
+        <td style="text-align:left">Build, test, and deploy a static site directly from GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/runners/README.html#protected-runners">Protected Runners</a> </td>
+        <td style="text-align:left">Select Runners to only pick jobs for protected branches and tags. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/pipelines/schedules.html">Scheduled Pipelines</a> </td>
+        <td style="text-align:left">Execute pipelines on a schedule. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="configure">Configure<a href="#configure" title="Permalink" class="anchor"></a> </h3> 
+     <p>Automate your entire workflow from build to deploy and monitoring with GitLab Auto DevOps. Best practice templates get you started with minimal to zero configuration. Then customize everything from buildpacks to CI/CD. </p>
+     <p>The following documentation relates to the DevOps <strong>Configure</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Configure Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="topics/autodevops/index.html">Auto DevOps</a> </td>
+        <td style="text-align:left">Automatically employ a complete DevOps lifecycle. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/clusters/index.html#adding-and-creating-a-new-gke-cluster-via-gitlab">Easy creation of Kubernetes<br>clusters on GKE</a> </td>
+        <td style="text-align:left">Use Google Kubernetes Engine and GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/clusters/runbooks/index.html">Executable Runbooks</a> </td>
+        <td style="text-align:left">Documented procedures that explain how to carry out particular processes. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/chatops/README.html">GitLab ChatOps</a> </td>
+        <td style="text-align:left">Interact with CI/CD jobs through chat services. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/clusters/index.html#installing-applications">Installing Applications</a> </td>
+        <td style="text-align:left">Deploy Helm, Ingress, and Prometheus on Kubernetes. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/mattermost_slash_commands.html">Mattermost slash commands</a> </td>
+        <td style="text-align:left">Enable and use slash commands from within Mattermost. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/project/clusters/index.html#multiple-kubernetes-clusters-premium">Multiple Kubernetes Clusters</a> <span class="badge-trigger premium"></span> </td>
+        <td style="text-align:left">Associate more than one Kubernetes clusters to your project. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/variables/README.html#protected-environment-variables">Protected variables</a> </td>
+        <td style="text-align:left">Restrict variables to protected branches and tags. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/clusters/serverless/index.html">Serverless</a> </td>
+        <td style="text-align:left">Run serverless workloads on Kubernetes. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/slack_slash_commands.html">Slack slash commands</a> </td>
+        <td style="text-align:left">Enable and use slash commands from within Slack. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="monitor">Monitor<a href="#monitor" title="Permalink" class="anchor"></a> </h3> 
+     <p>Ensure your applications are always responsive and available. </p>
+     <p>GitLab collects and displays performance metrics for deployed applications so you can know in an instant how code changes impact your production environment. </p>
+     <p>The following documentation relates to the DevOps <strong>Monitor</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Monitor Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="administration/monitoring/performance/index.html">GitLab Performance Monitoring</a> <span class="badge-trigger core-only"></span> </td>
+        <td style="text-align:left">Use InfluxDB and Grafana to monitor the performance of your GitLab instance (will be eventually replaced by Prometheus). </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="administration/monitoring/prometheus/index.html">GitLab Prometheus</a> <span class="badge-trigger core-only"></span> </td>
+        <td style="text-align:left">Configure the bundled Prometheus to collect various metrics from your GitLab instance. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/admin_area/monitoring/health_check.html">Health check</a> </td>
+        <td style="text-align:left">GitLab provides liveness and readiness probes to indicate service health and reachability to required services. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/prometheus.html">Prometheus project integration</a> </td>
+        <td style="text-align:left">Configure the Prometheus integration per project and monitor your CI/CD environments. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/project/integrations/prometheus_library/index.html">Prometheus metrics</a> </td>
+        <td style="text-align:left">Let Prometheus collect metrics from various services, like Kubernetes, NGINX, NGINX ingress controller, HAProxy, and Amazon Cloud Watch. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="secure">Secure<a href="#secure" title="Permalink" class="anchor"></a> </h3> 
+     <p>Check your application for security vulnerabilities that may lead to unauthorized access, data leaks, and denial of services. GitLab will perform static and dynamic tests on the code of your application, looking for known flaws and report them in the merge request so you can fix them before merging. Security teams can use dashboards to get a high-level view on projects and groups, and start remediation processes when needed. </p>
+     <p>The following documentation relates to the DevOps <strong>Secure</strong> stage: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Secure Topics </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/container_scanning/index.html">Container Scanning</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Use Clair to scan docker images for known vulnerabilities. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/dependency_scanning/index.html">Dependency Scanning</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Analyze your dependencies for known vulnerabilities. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/dast/index.html">Dynamic Application Security Testing (DAST)</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Analyze running web applications for known vulnerabilities. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/security_dashboard/index.html">Group Security Dashboard</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">View vulnerabilities in all the projects in a group and its subgroups. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/license_management/index.html">License Management</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Search your project’s dependencies for their licenses. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/security_dashboard/index.html">Project Security Dashboard</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">View the latest security reports for your project. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="user/application_security/sast/index.html">Static Application Security Testing (SAST)</a> <span class="badge-trigger ultimate"></span> </td>
+        <td style="text-align:left">Analyze source code for known vulnerabilities. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <h2 id="subscribe-to-gitlab">Subscribe to GitLab<a href="#subscribe-to-gitlab" title="Permalink" class="anchor"></a> </h2> 
+     <p>There are two ways to use GitLab: </p>
+     <ul> 
+      <li> <a href="#gitlab-self-managed">GitLab self-managed</a>: Install, administer, and maintain your own GitLab instance. </li>
+      <li> <a href="#gitlabcom">GitLab.com</a>: GitLab’s SaaS offering. You don’t need to install anything to use GitLab.com, you only need to <a href="https://gitlab.com/users/sign_in">sign up</a> and start using GitLab straight away. </li>
+     </ul> 
+     <p>For more information on managing your subscription and <a href="https://customers.gitlab.com">Customers Portal</a> account, please see <a href="getting-started/subscription.html">Getting Started with Subscriptions</a>. </p>
+     <p>The following sections outline tiers and features within GitLab self-managed and GitLab.com. </p>
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="gitlab-self-managed">GitLab self-managed<a href="#gitlab-self-managed" title="Permalink" class="anchor"></a> </h3> 
+     <p>With GitLab self-managed, you deploy your own GitLab instance on-premises or on a cloud of your choice. GitLab self-managed is available for <a href="https://about.gitlab.com/pricing/#self-managed">free and with paid subscriptions</a> in the following tiers: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Tier </th>
+        <th style="text-align:left">Includes </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left">Core </td>
+        <td style="text-align:left">Core features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Starter </td>
+        <td style="text-align:left">Core and Starter features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Premium </td>
+        <td style="text-align:left">Core, Starter, and Premium features. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Ultimate </td>
+        <td style="text-align:left">Core, Starter, Premium, and Ultimate features. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <p>The following resources are available for more information on GitLab self-managed: </p>
+     <ul> 
+      <li> <a href="https://about.gitlab.com/pricing/self-managed/feature-comparison/">Feature comparison</a>, for information on what features are available at each tier. </li>
+      <li> <a href="https://about.gitlab.com/pricing/#self-managed">GitLab pricing page</a>, for subscription information and a free trial. </li>
+      <li>Our <a href="https://about.gitlab.com/handbook/marketing/product-marketing/">product marketing page</a>, for additional information including: 
+       <ul> 
+        <li>How <a href="https://about.gitlab.com/handbook/marketing/product-marketing/#tiers">different tiers are licensed</a>. </li>
+        <li>The different <a href="https://about.gitlab.com/handbook/marketing/product-marketing/#distributions">GitLab distributions</a>. </li>
+       </ul> </li>
+     </ul> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="gitlabcom">GitLab.com<a href="#gitlabcom" title="Permalink" class="anchor"></a> </h3> 
+     <p>GitLab.com is hosted, managed, and administered by GitLab, Inc., with <a href="https://about.gitlab.com/pricing/">free and paid subscriptions</a> for individuals and teams in the following tiers: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Tier </th>
+        <th style="text-align:left">Includes same features available in </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left">Free </td>
+        <td style="text-align:left"> <a href="#gitlab-self-managed">Core</a> self-managed tier. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Bronze </td>
+        <td style="text-align:left"> <a href="#gitlab-self-managed">Starter</a> self-managed tier. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Silver </td>
+        <td style="text-align:left"> <a href="#gitlab-self-managed">Premium</a> self-managed tier. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left">Gold </td>
+        <td style="text-align:left"> <a href="#gitlab-self-managed">Ultimate</a> self-managed tier. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <p>GitLab.com subscriptions grant access to the same features available in GitLab self-managed, <strong>except <a href="administration/index.html">administration</a> tools and settings</strong>. </p>
+     <p>GitLab.com allows you to apply your subscription to a group or your personal user. </p>
+     <p>When applied to a <strong>group</strong>, the group, all subgroups, and all projects under the selected group on GitLab.com will have the features of the associated plan. It is recommended to go with a group plan when managing projects and users of an organization. </p>
+     <p>When associated with a <strong>personal userspace</strong> instead, all projects will have features with the subscription applied, but as it is not a group, group features will not be available. </p>
+     <div class="admonition-wrapper tip">
+      <div class="admonition alert alert-success"> <i class="fa fa-pencil fa-fw" aria-hidden="true"></i><strong>Tip:</strong> To support the open source community and encourage the development of open source projects, GitLab grants access to <strong>Gold</strong> features for all GitLab.com <strong>public</strong> projects, regardless of the subscription.
+      </div>
+     </div> 
+     <p>The following resources are available for more information on GitLab.com: </p>
+     <ul> 
+      <li> <a href="https://about.gitlab.com/pricing/gitlab-com/feature-comparison/">Feature comparison</a>, for information on what features are available at each tier. </li>
+      <li> <a href="https://about.gitlab.com/pricing/">GitLab pricing page</a>, for subscription information and a free trial. </li>
+      <li>Our <a href="https://about.gitlab.com/handbook/marketing/product-marketing/">product marketing page</a>, for additional information including: 
+       <ul> 
+        <li>How <a href="https://about.gitlab.com/handbook/marketing/product-marketing/#tiers">different tiers are licensed</a>. </li>
+        <li>The different <a href="https://about.gitlab.com/handbook/marketing/product-marketing/#distributions">GitLab distributions</a>. </li>
+       </ul> </li>
+     </ul> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h2 id="new-to-git-and-gitlab">New to Git and GitLab?<a href="#new-to-git-and-gitlab" title="Permalink" class="anchor"></a> </h2> 
+     <p>Working with new systems can be daunting. </p>
+     <p>We have the following documentation to rapidly uplift your GitLab knowledge: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="gitlab-basics/README.html">GitLab basics guides</a> </td>
+        <td style="text-align:left">Start working on the command line and with GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"> <a href="workflow/README.html">GitLab Workflow</a> and <a href="https://about.gitlab.com/2016/10/25/gitlab-workflow-an-overview/">overview</a> </td>
+        <td style="text-align:left">Enhance your workflow with the best of GitLab Workflow. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="ci/quick_start/README.html">Get started with GitLab CI/CD</a> </td>
+        <td style="text-align:left">Quickly implement GitLab CI/CD. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="topics/autodevops/index.html">Auto DevOps</a> </td>
+        <td style="text-align:left">Learn more about GitLab’s Auto DevOps. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/markdown.html">GitLab Markdown</a> </td>
+        <td style="text-align:left">GitLab’s advanced formatting system (GitLab Flavored Markdown) </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="user-account">User account<a href="#user-account" title="Permalink" class="anchor"></a> </h3> 
+     <p>Learn more about GitLab account management: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="user/profile/index.html">User account</a> </td>
+        <td style="text-align:left">Manage your account. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="topics/authentication/index.html">Authentication</a> </td>
+        <td style="text-align:left">Account security with two-factor authentication, set up your ssh keys, and deploy keys for secure access to your projects. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/profile/index.html#profile-settings">Profile settings</a> </td>
+        <td style="text-align:left">Manage your profile settings, two factor authentication, and more. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="user/permissions.html">User permissions</a> </td>
+        <td style="text-align:left">Learn what each role in a project can do. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h3 id="git-and-gitlab">Git and GitLab<a href="#git-and-gitlab" title="Permalink" class="anchor"></a> </h3> 
+     <p>Learn more about using Git, and using Git with GitLab: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="topics/git/index.html">Git</a> </td>
+        <td style="text-align:left">Getting started with Git, branching strategies, Git LFS, and advanced use. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">Git cheatsheet</a> </td>
+        <td style="text-align:left">Download a PDF describing the most used Git operations. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="workflow/gitlab_flow.html">GitLab Flow</a> </td>
+        <td style="text-align:left">Explore the best of Git with the GitLab Flow strategy. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h2 id="coming-to-gitlab-from-another-platform">Coming to GitLab from another platform<a href="#coming-to-gitlab-from-another-platform" title="Permalink" class="anchor"></a> </h2> 
+     <p>If you are coming to GitLab from another platform, you’ll find the following information useful: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="user/project/import/index.html">Importing to GitLab</a> </td>
+        <td style="text-align:left">Import your projects from GitHub, Bitbucket, GitLab.com, FogBugz, and SVN into GitLab. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="workflow/importing/migrating_from_svn.html">Migrating from SVN</a> </td>
+        <td style="text-align:left">Convert a SVN repository to Git and GitLab. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h2 id="building-an-integration-with-gitlab">Building an integration with GitLab<a href="#building-an-integration-with-gitlab" title="Permalink" class="anchor"></a> </h2> 
+     <p>There are many ways to integrate with GitLab, including: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="api/README.html">GitLab API</a> </td>
+        <td style="text-align:left">Integrate GitLab via a simple and powerful API. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="#integration-and-automation">Integrations and automation</a> </td>
+        <td style="text-align:left">All GitLab integration and automation options. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+     <h2 id="contributing-to-gitlab">Contributing to GitLab<a href="#contributing-to-gitlab" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab Community Edition is <a href="https://gitlab.com/gitlab-org/gitlab-ce/">open source</a> and GitLab Enterprise Edition is <a href="https://gitlab.com/gitlab-org/gitlab-ee/">open-core</a>. </p>
+     <p>Learn how to contribute to GitLab with the following resources: </p>
+     <table> 
+      <thead> 
+       <tr> 
+        <th style="text-align:left">Topic </th>
+        <th style="text-align:left">Description </th>
+       </tr>
+      </thead>
+      <tbody> 
+       <tr> 
+        <td style="text-align:left"><a href="development/README.html">Development</a> </td>
+        <td style="text-align:left">How to contribute to GitLab development. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="legal/README.html">Legal</a> </td>
+        <td style="text-align:left">Contributor license agreements. </td>
+       </tr>
+       <tr> 
+        <td style="text-align:left"><a href="development/documentation/index.html">Writing documentation</a> </td>
+        <td style="text-align:left">How to contribute to GitLab Docs. </td>
+       </tr>
+      </tbody>
+     </table> 
+     <div align="right"> <a type="button" class="btn btn-default" href="#overview"> Back to Overview <i class="fa fa-angle-double-up" aria-hidden="true"></i> </a> 
+     </div> 
+    </div> 
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> REQUEST SUPPORT </a> </p>
+          </div> 
+         </div> 
+        </div> 
+        <div ro

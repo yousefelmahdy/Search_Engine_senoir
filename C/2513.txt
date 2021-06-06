@@ -1,0 +1,3998 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Issue event types - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="For the Issues Events API and Timeline API, learn about each event type, the triggering action on GitHub, and each event's unique properties."> 
+  <meta name="keywords" content="Events"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/developers/webhooks-and-events/events/issue-event-types"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/developers/webhooks-and-events/events/issue-event-types"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/developers/webhooks-and-events/events/issue-event-types"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/developers/webhooks-and-events/events/issue-event-types"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/developers/webhooks-and-events/events/issue-event-types"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/developers/webhooks-and-events/events/issue-event-types"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="AjU6XCPs-lEUzAxYRYnUiMU0WQZG9wTkAqyg"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/developers" class="pl-4 pr-5 pb-1 f4 color-text-primary">Developers</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/about-githubs-apis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub's APIs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/managing-deploy-keys" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing deploy keys</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/viewing-deployment-history" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing deployment history</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/using-ssh-agent-forwarding" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using SSH agent forwarding</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/replacing-github-services" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Replacing GitHub Services</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/github-developer-program" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">GitHub Developer Program</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/webhooks-and-events" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Webhooks and events</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/webhooks" class="pl-4 pr-5 py-2 color-text-primary">Webhooks </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/about-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/creating-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/configuring-your-server-to-receive-payloads" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring your server to receive payloads</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/testing-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Testing webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/securing-your-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Webhook events and payloads</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/developers/webhooks-and-events/events" class="pl-4 pr-5 py-2 color-text-primary">Events </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/github-event-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub event types</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Issue event types</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/apps" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Apps</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/getting-started-with-apps" class="pl-4 pr-5 py-2 color-text-primary">Getting started with apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/about-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/activating-optional-features-for-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activating optional features for apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Differences between GitHub Apps and OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating OAuth Apps to GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/setting-up-your-development-environment-to-create-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up your development environment to create a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Building GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/setting-permissions-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting permissions for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/authenticating-with-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authenticating with GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Identifying and authorizing users for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/rate-limits-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limits for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/refreshing-user-to-server-access-tokens" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Refreshing user-to-server access tokens</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-from-a-manifest" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App from a manifest</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-using-url-parameters" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App using URL parameters</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-custom-badge-for-your-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/installing-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/modifying-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Editing a GitHub App's permissions</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/making-a-github-app-public-or-private" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Making a GitHub App public or private</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/suspending-a-github-app-installation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Suspending a GitHub App installation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/transferring-ownership-of-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/deleting-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Building OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/authorizing-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authorizing OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scopes for OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-a-custom-badge-for-your-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/modifying-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/transferring-ownership-of-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-authorization-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting authorization request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting OAuth App access token request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/deleting-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting an OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/guides" class="pl-4 pr-5 py-2 color-text-primary">Guides </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the GitHub API in your app</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-content-attachments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using content attachments</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/creating-ci-tests-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating CI tests with the Checks API</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/github-marketplace" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Marketplace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Developers 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      color-text-link text-underline active"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Developers" href="/en/developers" class="d-inline-block ">Developers</a><a title="category: Webhooks and events" href="/en/developers/webhooks-and-events" class="d-inline-block ">Webhooks and events</a><a title="mapTopic: Events" href="/en/developers/webhooks-and-events/events" class="d-inline-block ">Events</a><a title="article: Issue event types" href="/en/developers/webhooks-and-events/events/issue-event-types" class="d-inline-block color-text-tertiary">Issue event types</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/webhooks-and-events/events/issue-event-types" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Issue event types</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>For the Issues Events API and Timeline API, learn about each event type, the triggering action on GitHub, and each event's unique properties.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#issue-event-object-common-properties">Issue event object common properties</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#added_to_project">added_to_project</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#assigned">assigned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#automatic_base_change_failed">automatic_base_change_failed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#automatic_base_change_succeeded">automatic_base_change_succeeded</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#base_ref_changed">base_ref_changed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#closed">closed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#commented">commented</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#committed">committed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#connected">connected</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#convert_to_draft">convert_to_draft</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#converted_note_to_issue">converted_note_to_issue</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#cross-referenced">cross-referenced</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#demilestoned">demilestoned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#deployed">deployed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#deployment_environment_changed">deployment_environment_changed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#disconnected">disconnected</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#head_ref_deleted">head_ref_deleted</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#head_ref_restored">head_ref_restored</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#labeled">labeled</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#locked">locked</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#mentioned">mentioned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#marked_as_duplicate">marked_as_duplicate</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#merged">merged</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#milestoned">milestoned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#moved_columns_in_project">moved_columns_in_project</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#pinned">pinned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#ready_for_review">ready_for_review</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#referenced">referenced</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#removed_from_project">removed_from_project</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#renamed">renamed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#reopened">reopened</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#review_dismissed">review_dismissed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#review_requested">review_requested</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#review_request_removed">review_request_removed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#reviewed">reviewed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#subscribed">subscribed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#transferred">transferred</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unassigned">unassigned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unlabeled">unlabeled</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unlocked">unlocked</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unmarked_as_duplicate">unmarked_as_duplicate</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unpinned">unpinned</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#unsubscribed">unsubscribed</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#user_blocked">user_blocked</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>Issue events are triggered by activity in issues and pull requests and are available in the <a href="/en/rest/reference/issues#events">Issue Events API</a> and the <a href="/en/rest/reference/issues#timeline">Timeline Events API</a>. Each event type specifies whether the event is available in the Issue Events or Timeline Events APIs.</p> 
+       <p>GitHub's REST API considers every pull request to be an issue, but not every issue is a pull request. For this reason, the Issue Events and Timeline Events endpoints may return both issues and pull requests in the response. Pull requests have a <code>pull_request</code> property in the <code>issue</code> object. Because pull requests are issues, issue and pull request numbers do not overlap in a repository. For example, if you open your first issue in a repository, the number will be 1. If you then open a pull request, the number will be 2. Each event type specifies if the event occurs in pull request, issues, or both.</p> 
+       <h3 id="issue-event-object-common-properties"><a href="#issue-event-object-common-properties">Issue event object common properties</a></h3> 
+       <p>Issue events all have the same object structure, except events that are only available in the Timeline Events API. Some events also include additional properties that provide more context about the event resources. Refer to the specific event to for details about any properties that differ from this object format.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="added_to_project"><a href="#added_to_project">added_to_project</a></h3> 
+       <p>The issue or pull request was added to a project board. You only see this event in responses when project boards have been <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> in the repository.</p> 
+       <h4 id="availability"><a href="#availability">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull request</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties"><a href="#event-object-properties">Event object properties</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Project card details are now shown in REST API responses for project-related issue and timeline events. This feature is now available for developers to preview. For details, see the <a href="https://developer.github.com/changes/2018-09-05-project-card-events">blog post</a>.</p> 
+        <p>To receive the <code>project_card</code> attribute, project boards must be <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> for a repository, and you must provide a custom <a href="/en/rest/overview/media-types">media type</a> in the <code>Accept</code> header:</p> 
+        <pre><code>application/vnd.github.starfox-preview+json
+</code></pre> 
+       </div> 
+       <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+        <p><strong>Warning:</strong> The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact <a href="https://support.github.com/contact">GitHub Support</a> or <a href="https://premium.githubsupport.com">GitHub Premium Support</a>.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>project_card</code></td>
+          <td><code>object</code></td>
+          <td>The project card object.</td>
+         </tr>
+         <tr>
+          <td><code>project_id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the project card.</td>
+         </tr>
+         <tr>
+          <td><code>project_url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the project card.</td>
+         </tr>
+         <tr>
+          <td><code>column_name</code></td>
+          <td><code>string</code></td>
+          <td>The name of the column the issue is in.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="assigned"><a href="#assigned">assigned</a></h3> 
+       <p>The issue or pull request was assigned to a user.</p> 
+       <h4 id="availability-1"><a href="#availability-1">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-1"><a href="#event-object-properties-1">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>assignee</code></td>
+          <td><code>object</code></td>
+          <td>The person unassigned from this issue.</td>
+         </tr>
+         <tr>
+          <td><code>assigner</code></td>
+          <td><code>object</code></td>
+          <td>The person who performed the unassignment for this issue.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="automatic_base_change_failed"><a href="#automatic_base_change_failed">automatic_base_change_failed</a></h3> 
+       <p>GitHub unsuccessfully attempted to automatically change the base branch of the pull request.</p> 
+       <h4 id="availability-2"><a href="#availability-2">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-2"><a href="#event-object-properties-2">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="automatic_base_change_succeeded"><a href="#automatic_base_change_succeeded">automatic_base_change_succeeded</a></h3> 
+       <p>GitHub successfully attempted to automatically change the base branch of the pull request.</p> 
+       <h4 id="availability-3"><a href="#availability-3">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-3"><a href="#event-object-properties-3">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="base_ref_changed"><a href="#base_ref_changed">base_ref_changed</a></h3> 
+       <p>The base reference branch of the pull request changed.</p> 
+       <h4 id="availability-4"><a href="#availability-4">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-4"><a href="#event-object-properties-4">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="closed"><a href="#closed">closed</a></h3> 
+       <p>The issue or pull request was closed. When the <code>commit_id</code> is present, it identifies the commit that closed the issue using "closes / fixes" syntax. For more information about the syntax, see "<a href="/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">Linking a pull request to an issue</a>".</p> 
+       <h4 id="availability-5"><a href="#availability-5">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-5"><a href="#event-object-properties-5">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="commented"><a href="#commented">commented</a></h3> 
+       <p>A comment was added to the issue or pull request.</p> 
+       <h4 id="availability-6"><a href="#availability-6">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-6"><a href="#event-object-properties-6">Event object properties</a></h4> 
+       <p>This events properties do not use the same structure as the <a href="#issue-event-object-common-properties">issue event object common properties</a>. The following properties are returned for this event.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the issue comment.</td>
+         </tr>
+         <tr>
+          <td><code>html_url</code></td>
+          <td><code>string</code></td>
+          <td>The HTML URL of the issue comment.</td>
+         </tr>
+         <tr>
+          <td><code>issue_url</code></td>
+          <td><code>string</code></td>
+          <td>The HTML URL of the issue.</td>
+         </tr>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>user</code></td>
+          <td><code>object</code></td>
+          <td>The person who commented on the issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the comment was added.</td>
+         </tr>
+         <tr>
+          <td><code>updated_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the comment was updated or created, if the comment is never updated.</td>
+         </tr>
+         <tr>
+          <td><code>author_association</code></td>
+          <td><code>string</code></td>
+          <td>The permissions the user has in the issue's repository. For example, the value would be <code>"OWNER"</code> if the owner of repository created a comment.</td>
+         </tr>
+         <tr>
+          <td><code>body</code></td>
+          <td><code>string</code></td>
+          <td>The comment body text.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>The event value is <code>"commented"</code>.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="committed"><a href="#committed">committed</a></h3> 
+       <p>A commit was added to the pull request's <code>HEAD</code> branch.</p> 
+       <h4 id="availability-7"><a href="#availability-7">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-7"><a href="#event-object-properties-7">Event object properties</a></h4> 
+       <p>This events properties do not use the same structure as the <a href="#issue-event-object-common-properties">issue event object common properties</a>. The following properties are returned for this event.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>sha</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit in the pull request.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the commit.</td>
+         </tr>
+         <tr>
+          <td><code>html_url</code></td>
+          <td><code>string</code></td>
+          <td>The HTML URL of the commit.</td>
+         </tr>
+         <tr>
+          <td><code>author</code></td>
+          <td><code>object</code></td>
+          <td>The person who authored the commit.</td>
+         </tr>
+         <tr>
+          <td><code>committer</code></td>
+          <td><code>object</code></td>
+          <td>The person who committed the commit on behalf of the author.</td>
+         </tr>
+         <tr>
+          <td><code>tree</code></td>
+          <td><code>object</code></td>
+          <td>The Git tree of the commit.</td>
+         </tr>
+         <tr>
+          <td><code>message</code></td>
+          <td><code>string</code></td>
+          <td>The commit message.</td>
+         </tr>
+         <tr>
+          <td><code>parents</code></td>
+          <td><code>array of objects</code></td>
+          <td>A list of parent commits.</td>
+         </tr>
+         <tr>
+          <td><code>verification</code></td>
+          <td><code>object</code></td>
+          <td>The result of verifying the commit's signature. For more information, see "<a href="/en/rest/reference/git#get-a-commit">Signature verification object</a>."</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>The event value is <code>"committed"</code>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="connected"><a href="#connected">connected</a></h3> 
+       <p>The issue or pull request was linked to another issue or pull request. For more information, see "<a href="/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue">Linking a pull request to an issue</a>".</p> 
+       <h4 id="availability-8"><a href="#availability-8">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-8"><a href="#event-object-properties-8">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="convert_to_draft"><a href="#convert_to_draft">convert_to_draft</a></h3> 
+       <p>The pull request was converted to draft mode.</p> 
+       <h4 id="availability-9"><a href="#availability-9">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-9"><a href="#event-object-properties-9">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="converted_note_to_issue"><a href="#converted_note_to_issue">converted_note_to_issue</a></h3> 
+       <p>The issue was created by converting a note in a project board to an issue. You only see this event in responses when project boards have been <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> in the repository.</p> 
+       <h4 id="availability-10"><a href="#availability-10">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-10"><a href="#event-object-properties-10">Event object properties</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Project card details are now shown in REST API responses for project-related issue and timeline events. This feature is now available for developers to preview. For details, see the <a href="https://developer.github.com/changes/2018-09-05-project-card-events">blog post</a>.</p> 
+        <p>To receive the <code>project_card</code> attribute, project boards must be <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> for a repository, and you must provide a custom <a href="/en/rest/overview/media-types">media type</a> in the <code>Accept</code> header:</p> 
+        <pre><code>application/vnd.github.starfox-preview+json
+</code></pre> 
+       </div> 
+       <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+        <p><strong>Warning:</strong> The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact <a href="https://support.github.com/contact">GitHub Support</a> or <a href="https://premium.githubsupport.com">GitHub Premium Support</a>.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>project_card</code></td>
+          <td><code>object</code></td>
+          <td>The project card object.</td>
+         </tr>
+         <tr>
+          <td><code>project_id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the project card.</td>
+         </tr>
+         <tr>
+          <td><code>project_url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the project card.</td>
+         </tr>
+         <tr>
+          <td><code>column_name</code></td>
+          <td><code>string</code></td>
+          <td>The name of the column the issue is in.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="cross-referenced"><a href="#cross-referenced">cross-referenced</a></h3> 
+       <p>The issue or pull request was referenced from another issue or pull request.</p> 
+       <h4 id="availability-11"><a href="#availability-11">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-11"><a href="#event-object-properties-11">Event object properties</a></h4> 
+       <p>This events properties do not use the same structure as the <a href="#issue-event-object-common-properties">issue event object common properties</a>. The following properties are returned for this event.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the cross-reference was added.</td>
+         </tr>
+         <tr>
+          <td><code>updated_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the cross-reference was updated or created, if the cross-reference is never updated.</td>
+         </tr>
+         <tr>
+          <td><code>source</code></td>
+          <td><code>object</code></td>
+          <td>The issue or pull request that added a cross-reference.</td>
+         </tr>
+         <tr>
+          <td><code>source[type]</code></td>
+          <td><code>string</code></td>
+          <td>This value will always be <code>"issue"</code> because pull requests are of type issue. Only cross-reference events triggered by issues or pull requests are returned in the Timeline Events API. To determine if the issue that triggered the event is a pull request, you can check if the <code>source[issue][pull_request</code> object exists.</td>
+         </tr>
+         <tr>
+          <td><code>source[issue]</code></td>
+          <td><code>object</code></td>
+          <td>The <code>issue</code> object that added the cross-reference.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>The event value is <code>"cross-referenced"</code>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="demilestoned"><a href="#demilestoned">demilestoned</a></h3> 
+       <p>The issue or pull request was removed from a milestone.</p> 
+       <h4 id="availability-12"><a href="#availability-12">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-12"><a href="#event-object-properties-12">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>milestone</code></td>
+          <td><code>object</code></td>
+          <td>The milestone object.</td>
+         </tr>
+         <tr>
+          <td><code>milestone[title]</code></td>
+          <td><code>string</code></td>
+          <td>The title of the milestone.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="deployed"><a href="#deployed">deployed</a></h3> 
+       <p>The pull request was deployed.</p> 
+       <h4 id="availability-13"><a href="#availability-13">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-13"><a href="#event-object-properties-13">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="deployment_environment_changed"><a href="#deployment_environment_changed">deployment_environment_changed</a></h3> 
+       <p>The pull request deployment environment was changed.</p> 
+       <h4 id="availability-14"><a href="#availability-14">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-14"><a href="#event-object-properties-14">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="disconnected"><a href="#disconnected">disconnected</a></h3> 
+       <p>The issue or pull request was unlinked from another issue or pull request. For more information, see "<a href="/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue">Linking a pull request to an issue</a>".</p> 
+       <h4 id="availability-15"><a href="#availability-15">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-15"><a href="#event-object-properties-15">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="head_ref_deleted"><a href="#head_ref_deleted">head_ref_deleted</a></h3> 
+       <p>The pull request's <code>HEAD</code> branch was deleted.</p> 
+       <h4 id="availability-16"><a href="#availability-16">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-16"><a href="#event-object-properties-16">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="head_ref_restored"><a href="#head_ref_restored">head_ref_restored</a></h3> 
+       <p>The pull request's <code>HEAD</code> branch was restored to the last known commit.</p> 
+       <h4 id="availability-17"><a href="#availability-17">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-17"><a href="#event-object-properties-17">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="labeled"><a href="#labeled">labeled</a></h3> 
+       <p>A label was added to the issue or pull request.</p> 
+       <h4 id="availability-18"><a href="#availability-18">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-18"><a href="#event-object-properties-18">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>label</code></td>
+          <td><code>object</code></td>
+          <td>The label removed from the issue</td>
+         </tr>
+         <tr>
+          <td><code>label[name]</code></td>
+          <td><code>string</code></td>
+          <td>The name of the label.</td>
+         </tr>
+         <tr>
+          <td><code>label[color]</code></td>
+          <td><code>string</code></td>
+          <td>The hex color code.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="locked"><a href="#locked">locked</a></h3> 
+       <p>The issue or pull request was locked.</p> 
+       <h4 id="availability-19"><a href="#availability-19">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-19"><a href="#event-object-properties-19">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>lock_reason</code></td>
+          <td><code>string</code></td>
+          <td>The reason an issue or pull request conversation was locked, if one was provided.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="mentioned"><a href="#mentioned">mentioned</a></h3> 
+       <p>The <code>actor</code> was <code>@mentioned</code> in an issue or pull request body.</p> 
+       <h4 id="availability-20"><a href="#availability-20">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-20"><a href="#event-object-properties-20">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="marked_as_duplicate"><a href="#marked_as_duplicate">marked_as_duplicate</a></h3> 
+       <p>A user with write permissions marked an issue as a duplicate of another issue, or a pull request as a duplicate of another pull request.</p> 
+       <h4 id="availability-21"><a href="#availability-21">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-21"><a href="#event-object-properties-21">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="merged"><a href="#merged">merged</a></h3> 
+       <p>The pull request was merged. The <code>commit_id</code> attribute is the SHA1 of the <code>HEAD</code> commit that was merged. The <code>commit_repository</code> is always the same as the main repository.</p> 
+       <h4 id="availability-22"><a href="#availability-22">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-22"><a href="#event-object-properties-22">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="milestoned"><a href="#milestoned">milestoned</a></h3> 
+       <p>The issue or pull request was added to a milestone.</p> 
+       <h4 id="availability-23"><a href="#availability-23">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-23"><a href="#event-object-properties-23">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>milestone</code></td>
+          <td><code>object</code></td>
+          <td>The milestone object.</td>
+         </tr>
+         <tr>
+          <td><code>milestone[title]</code></td>
+          <td><code>string</code></td>
+          <td>The title of the milestone.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="moved_columns_in_project"><a href="#moved_columns_in_project">moved_columns_in_project</a></h3> 
+       <p>The issue or pull request was moved between columns in a project board. You only see this event in responses when project boards have been <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> in the repository.</p> 
+       <h4 id="availability-24"><a href="#availability-24">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-24"><a href="#event-object-properties-24">Event object properties</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Project card details are now shown in REST API responses for project-related issue and timeline events. This feature is now available for developers to preview. For details, see the <a href="https://developer.github.com/changes/2018-09-05-project-card-events">blog post</a>.</p> 
+        <p>To receive the <code>project_card</code> attribute, project boards must be <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> for a repository, and you must provide a custom <a href="/en/rest/overview/media-types">media type</a> in the <code>Accept</code> header:</p> 
+        <pre><code>application/vnd.github.starfox-preview+json
+</code></pre> 
+       </div> 
+       <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+        <p><strong>Warning:</strong> The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact <a href="https://support.github.com/contact">GitHub Support</a> or <a href="https://premium.githubsupport.com">GitHub Premium Support</a>.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>project_card</code></td>
+          <td><code>object</code></td>
+          <td>The project card object.</td>
+         </tr>
+         <tr>
+          <td><code>project_id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the project card.</td>
+         </tr>
+         <tr>
+          <td><code>project_url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the project card.</td>
+         </tr>
+         <tr>
+          <td><code>column_name</code></td>
+          <td><code>string</code></td>
+          <td>The name of the column the issue is in.</td>
+         </tr>
+         <tr>
+          <td><code>previous_column_name</code></td>
+          <td><code>string</code></td>
+          <td>The name of the column the issue was moved from.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="pinned"><a href="#pinned">pinned</a></h3> 
+       <p>The issue was pinned.</p> 
+       <h4 id="availability-25"><a href="#availability-25">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-25"><a href="#event-object-properties-25">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="ready_for_review"><a href="#ready_for_review">ready_for_review</a></h3> 
+       <p>A pull request was created that is not in draft mode.</p> 
+       <h4 id="availability-26"><a href="#availability-26">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-26"><a href="#event-object-properties-26">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="referenced"><a href="#referenced">referenced</a></h3> 
+       <p>The issue was referenced from a commit message. The <code>commit_id</code> attribute is the commit SHA1 of where that happened and the commit_repository is where that commit was pushed.</p> 
+       <h4 id="availability-27"><a href="#availability-27">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-27"><a href="#event-object-properties-27">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="removed_from_project"><a href="#removed_from_project">removed_from_project</a></h3> 
+       <p>The issue or pull request was removed from a project board. You only see this event in responses when project boards have been <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> in the repository.</p> 
+       <h4 id="availability-28"><a href="#availability-28">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-28"><a href="#event-object-properties-28">Event object properties</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Project card details are now shown in REST API responses for project-related issue and timeline events. This feature is now available for developers to preview. For details, see the <a href="https://developer.github.com/changes/2018-09-05-project-card-events">blog post</a>.</p> 
+        <p>To receive the <code>project_card</code> attribute, project boards must be <a href="/en/articles/disabling-project-boards-in-a-repository">enabled</a> for a repository, and you must provide a custom <a href="/en/rest/overview/media-types">media type</a> in the <code>Accept</code> header:</p> 
+        <pre><code>application/vnd.github.starfox-preview+json
+</code></pre> 
+       </div> 
+       <div class="extended-markdown warning border rounded-1 mb-4 p-3 color-border-danger color-bg-danger f5"> 
+        <p><strong>Warning:</strong> The API may change without advance notice during the preview period. Preview features are not supported for production use. If you experience any issues, contact <a href="https://support.github.com/contact">GitHub Support</a> or <a href="https://premium.githubsupport.com">GitHub Premium Support</a>.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>project_card</code></td>
+          <td><code>object</code></td>
+          <td>The project card object.</td>
+         </tr>
+         <tr>
+          <td><code>project_id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the project card.</td>
+         </tr>
+         <tr>
+          <td><code>project_url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the project card.</td>
+         </tr>
+         <tr>
+          <td><code>column_name</code></td>
+          <td><code>string</code></td>
+          <td>The name of the column the issue is in.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="renamed"><a href="#renamed">renamed</a></h3> 
+       <p>The issue or pull request title was changed.</p> 
+       <h4 id="availability-29"><a href="#availability-29">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-29"><a href="#event-object-properties-29">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>rename</code></td>
+          <td><code>object</code></td>
+          <td>The name details.</td>
+         </tr>
+         <tr>
+          <td><code>rename[from]</code></td>
+          <td><code>string</code></td>
+          <td>The previous name.</td>
+         </tr>
+         <tr>
+          <td><code>rename[to]</code></td>
+          <td><code>string</code></td>
+          <td>The new name.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="reopened"><a href="#reopened">reopened</a></h3> 
+       <p>The issue or pull request was reopened.</p> 
+       <h4 id="availability-30"><a href="#availability-30">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-30"><a href="#event-object-properties-30">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="review_dismissed"><a href="#review_dismissed">review_dismissed</a></h3> 
+       <p>The pull request review was dismissed.</p> 
+       <h4 id="availability-31"><a href="#availability-31">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-31"><a href="#event-object-properties-31">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>dismissed_review</code></td>
+          <td><code>object</code></td>
+          <td>The information for the dismissed review.</td>
+         </tr>
+         <tr>
+          <td><code>dismissed_review[state]</code></td>
+          <td><code>string</code></td>
+          <td>The state the pull request was in when it was dismissed. Can be one of: <code>commented</code>, <code>approved</code>, or <code>changes_requested</code>.</td>
+         </tr>
+         <tr>
+          <td><code>dismissed_review[review_id]</code></td>
+          <td><code>string</code></td>
+          <td>The unique identifier of the pull request's review.</td>
+         </tr>
+         <tr>
+          <td><code>dismissed_review[dismissal_message]</code></td>
+          <td><code>string</code></td>
+          <td>The message the user included when dismissing the review.</td>
+         </tr>
+         <tr>
+          <td><code>dismissed_review[dismissal_commit_id]</code></td>
+          <td><code>string</code></td>
+          <td>The unique identifier of the commit that dismissed the review if one exists.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="review_requested"><a href="#review_requested">review_requested</a></h3> 
+       <p>A pull request review was requested.</p> 
+       <h4 id="availability-32"><a href="#availability-32">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-32"><a href="#event-object-properties-32">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>requested_reviewer</code></td>
+          <td><code>object</code></td>
+          <td>The person requested to review the pull request.</td>
+         </tr>
+         <tr>
+          <td><code>review_requester</code></td>
+          <td><code>object</code></td>
+          <td>The person who requested a review.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="review_request_removed"><a href="#review_request_removed">review_request_removed</a></h3> 
+       <p>A pull request review request was removed.</p> 
+       <h4 id="availability-33"><a href="#availability-33">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-33"><a href="#event-object-properties-33">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>requested_reviewer</code></td>
+          <td><code>object</code></td>
+          <td>The person requested to review the pull request.</td>
+         </tr>
+         <tr>
+          <td><code>review_requester</code></td>
+          <td><code>object</code></td>
+          <td>The person who requested a review.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="reviewed"><a href="#reviewed">reviewed</a></h3> 
+       <p>The pull request was reviewed.</p> 
+       <h4 id="availability-34"><a href="#availability-34">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-34"><a href="#event-object-properties-34">Event object properties</a></h4> 
+       <p>This events properties do not use the same structure as the <a href="#issue-event-object-common-properties">issue event object common properties</a>. The following properties are returned for this event.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>user</code></td>
+          <td><code>object</code></td>
+          <td>The person who commented on the issue.</td>
+         </tr>
+         <tr>
+          <td><code>body</code></td>
+          <td><code>string</code></td>
+          <td>The review summary text.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the latest commit in the pull request at the time of the review.</td>
+         </tr>
+         <tr>
+          <td><code>submitted_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the review was submitted.</td>
+         </tr>
+         <tr>
+          <td><code>state</code></td>
+          <td><code>string</code></td>
+          <td>The state of the submitted review. Can be one of: <code>commented</code>, <code>changes_requested</code>, or <code>approved</code>.</td>
+         </tr>
+         <tr>
+          <td><code>html_url</code></td>
+          <td><code>string</code></td>
+          <td>The HTML URL of the review.</td>
+         </tr>
+         <tr>
+          <td><code>pull_request_url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL to retrieve the pull request.</td>
+         </tr>
+         <tr>
+          <td><code>author_association</code></td>
+          <td><code>string</code></td>
+          <td>The permissions the user has in the issue's repository. For example, the value would be <code>"OWNER"</code> if the owner of repository created a comment.</td>
+         </tr>
+         <tr>
+          <td><code>_links</code></td>
+          <td><code>object</code></td>
+          <td>The <code>html_url</code> and <code>pull_request_url</code>.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>The event value is <code>"reviewed"</code>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="subscribed"><a href="#subscribed">subscribed</a></h3> 
+       <p>Someone subscribed to receive notifications for an issue or pull request.</p> 
+       <h4 id="availability-35"><a href="#availability-35">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-35"><a href="#event-object-properties-35">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="transferred"><a href="#transferred">transferred</a></h3> 
+       <p>The issue was transferred to another repository.</p> 
+       <h4 id="availability-36"><a href="#availability-36">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-36"><a href="#event-object-properties-36">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unassigned"><a href="#unassigned">unassigned</a></h3> 
+       <p>A user was unassigned from the issue.</p> 
+       <h4 id="availability-37"><a href="#availability-37">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-37"><a href="#event-object-properties-37">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>assignee</code></td>
+          <td><code>object</code></td>
+          <td>The person unassigned from this issue.</td>
+         </tr>
+         <tr>
+          <td><code>assigner</code></td>
+          <td><code>object</code></td>
+          <td>The person who performed the unassignment for this issue.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unlabeled"><a href="#unlabeled">unlabeled</a></h3> 
+       <p>A label was removed from the issue.</p> 
+       <h4 id="availability-38"><a href="#availability-38">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-38"><a href="#event-object-properties-38">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>label</code></td>
+          <td><code>object</code></td>
+          <td>The label removed from the issue</td>
+         </tr>
+         <tr>
+          <td><code>label[name]</code></td>
+          <td><code>string</code></td>
+          <td>The name of the label.</td>
+         </tr>
+         <tr>
+          <td><code>label[color]</code></td>
+          <td><code>string</code></td>
+          <td>The hex color code.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unlocked"><a href="#unlocked">unlocked</a></h3> 
+       <p>The issue was unlocked.</p> 
+       <h4 id="availability-39"><a href="#availability-39">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-39"><a href="#event-object-properties-39">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+         <tr>
+          <td><code>lock_reason</code></td>
+          <td><code>string</code></td>
+          <td>The reason an issue or pull request conversation was locked, if one was provided.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unmarked_as_duplicate"><a href="#unmarked_as_duplicate">unmarked_as_duplicate</a></h3> 
+       <p>An issue that a user had previously marked as a duplicate of another issue is no longer considered a duplicate, or a pull request that a user had previously marked as a duplicate of another pull request is no longer considered a duplicate.</p> 
+       <h4 id="availability-40"><a href="#availability-40">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-40"><a href="#event-object-properties-40">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unpinned"><a href="#unpinned">unpinned</a></h3> 
+       <p>The issue was unpinned.</p> 
+       <h4 id="availability-41"><a href="#availability-41">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-41"><a href="#event-object-properties-41">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="unsubscribed"><a href="#unsubscribed">unsubscribed</a></h3> 
+       <p>Someone unsubscribed from receiving notifications for an issue or pull request.</p> 
+       <h4 id="availability-42"><a href="#availability-42">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-42"><a href="#event-object-properties-42">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="user_blocked"><a href="#user_blocked">user_blocked</a></h3> 
+       <p>An organization owner blocked a user from the organization. This was done <a href="/en/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-organization#blocking-a-user-in-a-comment">through one of the blocked user's comments on the issue</a>.</p> 
+       <h4 id="availability-43"><a href="#availability-43">Availability</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Issue type</th>
+          <th align="center">Issue events API</th>
+          <th align="center">Timeline events API</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left">
+           <ul>
+            <li>Issues</li>
+            <li>Pull requests</li>
+           </ul></td>
+          <td align="center"><strong>X</strong></td>
+          <td align="center"><strong>X</strong></td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="event-object-properties-43"><a href="#event-object-properties-43">Event object properties</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><code>integer</code></td>
+          <td>The unique identifier of the event.</td>
+         </tr>
+         <tr>
+          <td><code>node_id</code></td>
+          <td><code>string</code></td>
+          <td>The <a href="/en/graphql/guides/using-global-node-ids">Global Node ID</a> of the event.</td>
+         </tr>
+         <tr>
+          <td><code>url</code></td>
+          <td><code>string</code></td>
+          <td>The REST API URL for fetching the event.</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td><code>object</code></td>
+          <td>The person who generated the event.</td>
+         </tr>
+         <tr>
+          <td><code>event</code></td>
+          <td><code>string</code></td>
+          <td>Identifies the actual type of event that occurred.</td>
+         </tr>
+         <tr>
+          <td><code>commit_id</code></td>
+          <td><code>string</code></td>
+          <td>The SHA of the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>commit_url</code></td>
+          <td><code>string</code></td>
+          <td>The GitHub REST API link to the commit that referenced this issue.</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td><code>string</code></td>
+          <td>The timestamp indicating when the event occurred.</td>
+         </tr>
+        </tbody>
+       </table> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/sit

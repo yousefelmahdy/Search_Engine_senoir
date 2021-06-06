@@ -1,0 +1,271 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab Runner | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <meta name="docsearch:language" content="en"> 
+  <meta name="docsearch:version" content="13.10"> 
+  <meta http-equiv="content-security-policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'self'; connect-src 'self' https:; frame-src 'self' https:; img-src 'self' https: data:; manifest-src 'self'; media-src 'self'; worker-src 'none';"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/stylesheet-v104.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/highlight-v7.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/footer-v9.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/toc-v19.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/help-v2.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5"></script> 
+  <script src="/13.10/assets/javascripts/google_tagmanager-v1.js"></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <meta name="google-site-verification" content="xAUTWp3CDg-tU1LVVwsM9OrVhLR7L3SmiyKzkOuPNos"> 
+  <meta name="google-site-verification" content="F0zzwaMpiyWFcPQ1Lqu18qN3EnuQsqFXbySl_29yvHs"> 
+  <meta name="google-site-verification" content="nwo1bVaU0t9TZxZyM-aOI6-CofaH9GRL-uBPbdREWgc"> 
+  <script async src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js" integrity="sha256-idm3p7jl0XwymUpIccg6WI96tQmoDR/5DWEsnPnxYU4=" crossorigin="anonymous"></script> 
+  <script async src="/13.10/assets/javascripts/closest-polyfill-v.js"></script> 
+  <meta name="generator" content="Nanoc 4.12.0"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/13.10/assets/images/apple-touch-icon.png"> 
+  <link rel="manifest" href="/13.10/assets/manifests/site.webmanifest"> 
+  <meta name="msapplication-config" content="/13.10/assets/manifests/browserconfig.xml"> 
+  <meta name="msapplication-TileColor" content="#FC6D26"> 
+  <meta name="theme-color" content="#FC6D26"> 
+  <link rel="canonical" href="/13.10/runner/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90"> 
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0"> <a class="navbar-brand d-flex align-items-center justify-content-center" href="/"> <img src="/13.10/assets/images/gitlab-logo.svg" alt="GitLab logo" class="logo"> <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+    <ul class="navbar-nav mr-auto"> 
+     <li class="nav-item active"> 
+      <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/"> <span class="fa fa-search form-control-feedback position-absolute ml-2 text-muted"></span> 
+       <input class="form-control mr-sm-2 docsearch" name="query" type="search" placeholder="Search the docs..." aria-label="Search"> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+    </ul> 
+    <ul class="navbar-nav"> 
+     <li class="nav-item p-2 dropdown"> <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 13.10 </button> 
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/runner/index.html">GitLab.com (13.13-pre) <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/13.12/runner/index.html"> 13.12 </a> <a class="dropdown-item" href="/13.11/runner/index.html"> 13.11 </a> <a class="dropdown-item" href="/13.10/runner/index.html"> 13.10 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/12.10/runner/index.html"> 12.10 </a> <a class="dropdown-item" href="/11.11/runner/index.html"> 11.11 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/archives/">Archives</a> 
+      </div> </li>
+     <li class="nav-item p-2"> <a class="btn btn-danger text-white" href="https://about.gitlab.com/free-trial/" target="_blank" rel="noopener noreferrer" role="button"> Get free trial </a> </li>
+    </ul> 
+   </div> 
+  </nav> 
+  <section class="container-fluid pt-5"> 
+   <div class="row"> 
+    <div class="col-0 col-lg-2 pl-0"> 
+     <div class="nav-wrapper active"> 
+      <aside id="global-nav" class="global-nav"> 
+       <nav class="global-nav-content"> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0  active" href="/13.10/runner/"> Runner Docs </a> 
+          <div class="section-title  active" data-toggle="collapse" aria-expanded="false" data-target="#sec_27529007-a516-4080-a43d-811c8d08781e"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/runner/install/"> Install </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_cc9ee003-6bd0-4aa4-9196-fd89c38ece38"></div> </span> 
+         <div class="collapse" id="sec_cc9ee003-6bd0-4aa4-9196-fd89c38ece38"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/docker.html"> Docker </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_1146f75a-7cdb-4bd5-8ee2-4badca6ebd3d"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/freebsd.html"> FreeBSD </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_6bf5e4ef-3492-4cf2-9f3c-b7b1abce1100"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/kubernetes.html"> Kubernetes (Helm Chart) </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_c00a9cbe-2889-4ae9-a704-49734db0fc8f"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/kubernetes-agent.html"> Kubernetes (Agent) </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_800caf36-b5d4-4dae-9555-3ce225060909"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/linux-manually.html"> Linux </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_a5144d2f-0d60-4d28-94b9-ff3c78ac32d6"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/osx.html"> macOS </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_141d2f96-d20d-47f9-bcab-538ebf67e812"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/openshift.html"> OpenShift </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_9f011f6c-c1e2-4810-b72c-0487ae615814"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/windows.html"> Windows </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_bebbf1dc-d6b0-4e6b-8988-6a11293432d2"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/bleeding-edge.html"> Bleeding edge releases </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_11379548-af13-43d8-a1ef-48bc8186c3d7"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/linux-repository.html"> Official Linux packages </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_1fc2544e-0419-4805-acf4-0ff9623c7ddb"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/install/old.html"> Old GitLab Runner URLs </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_e61ba627-bb4f-4c55-8082-75006460d938"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/runner/configuration/"> Configure </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_77a51326-c378-463d-b300-45a6d9c7e1ce"></div> </span> 
+         <div class="collapse" id="sec_77a51326-c378-463d-b300-45a6d9c7e1ce"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/advanced-configuration.html"> Advanced config </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_2ad6b0be-a533-420e-8576-5c91487f0ab8"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/autoscale.html"> Autoscale config </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_0d733f48-de0f-4393-b687-30e09bab343f"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/runner_autoscale_aws/"> Autoscale on AWS EC2 </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_d8ce0275-e60f-443e-9855-f98ab43e9824"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/runner_autoscale_aws_fargate/"> Autoscale on AWS Fargate </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b08b5f9e-7741-46af-8e90-1f45439e0e43"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/commands/README.html"> Commands </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_4c7732b3-be55-40a5-b6e1-32edb15a6238"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/feature-flags.html"> Feature flags </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_57c85132-3970-45ab-b908-c931ad82e9c2"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/proxy.html"> Running behind a proxy </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b7c8fd20-06ed-40f8-b655-b079afe02f32"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/proxy.html#handling-rate-limited-requests"> Rate limited requests </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_9f89249e-90f6-41d7-b1a3-2bdc9b057f1c"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/tls-self-signed.html"> Self-signed certificates </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_e14a675a-c510-4181-bfff-0277166dc52f"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/init.html"> System services </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_dce11ed5-1918-4f3e-9664-0c97c9d29695"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/configuration/speed_up_job_execution.html"> Speed up job execution </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_0857c155-9213-4049-b93e-988b30a0607f"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/runner/register/"> Register </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_2fec68c2-dc09-4cba-a4af-8df779ba3179"></div> </span> 
+         <div class="collapse" id="sec_2fec68c2-dc09-4cba-a4af-8df779ba3179"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/examples/gitlab.html"> Examples </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_814a54f9-20f7-4a86-8739-c12ab1956f7f"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/runner/executors/README.html"> Executors </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_5006eef1-10e3-4a8c-8ee8-d65dcb59343b"></div> </span> 
+         <div class="collapse" id="sec_5006eef1-10e3-4a8c-8ee8-d65dcb59343b"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/runner/executors/custom.html"> Custom </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_04cb2a79-ddc5-45de-bb9f-25675ae17d21"></div> </span> 
+          <div class="collapse" id="cat_04cb2a79-ddc5-45de-bb9f-25675ae17d21"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/runner/executors/custom_examples/libvirt.html"> libvirt </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/runner/executors/custom_examples/lxd.html"> LXD </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/docker.html"> Docker </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_c15b81c3-6290-42c8-86ec-5d76fd7b6b11"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/docker_machine.html"> Docker Machine </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_096c3912-4d81-44ca-8324-b08801cedd92"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/kubernetes.html"> Kubernetes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_2ed1036a-fcc8-4796-8cfd-7be751e8847f"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/shell.html"> Shell </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_5484abc4-c990-4f34-a2d5-609b364e4c36"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/ssh.html"> SSH </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_7477776f-b875-4448-8607-ed4c66ca22d7"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/parallels.html"> Parallels </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_f8269743-f39d-49e2-8177-d095655d9a84"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/executors/virtualbox.html"> Virtual Box </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ff1ce0af-d492-4585-8756-66bd1a03e033"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/runner/monitoring/README.html"> Monitor </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_2feae4f3-4214-4515-93e8-62c390a35adf"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/runner/security/"> Security </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_0949b95a-3e54-4847-83ca-4d475e564ead"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/runner/shells/"> Shells </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_31f2687c-ab52-418f-8660-cf55afa492fb"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/runner/faq/README.html"> Troubleshoot </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_a1ef7ecb-4f02-4c6a-8ea9-82978c5f0a8f"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/runner/development/README.html"> Contribute </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_ad324bb2-6d3e-4cb1-a2dc-2f74a22ce7a1"></div> </span> 
+         <div class="collapse" id="sec_ad324bb2-6d3e-4cb1-a2dc-2f74a22ce7a1"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/ee/development/documentation/" target="_blank"> Documentation </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_0d93d666-1d2b-45d6-a201-d68a30318e73"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/runner/development/reviewing-gitlab-runner.html"> Reviewing GitLab Runner </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_979701ae-f64c-4c3e-b872-a3ecf104c902"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/runner/best_practice/"> Best Practices </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_f59fe48a-0cfe-4495-8176-9f1280872170"></div> </span> 
+        </div> 
+       </nav> 
+      </aside> 
+      <div id="js-nav-toggle"></div> 
+     </div> 
+    </div> 
+    <div class="main wrapper js-main-wrapper col-12 col-lg-7"> 
+     <div class="row"> 
+      <div class="col"> 
+       <div id="js-version-banner" data-is-outdated data-latest-version-url="/runner/index.html" data-archives-url="/archives/"></div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+       <div class="my-3 my-lg-0"> <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a> 
+        <div class="gl-breadcrumbs d-flex w-100"> 
+         <img src="https://assets.gitlab-static.net/uploads/-/system/group/avatar/9970/logo-extra-whitespace.png?width=15" class="gl-breadcrumb-avatar-tile" width="15" height="15"> 
+         <ol class="breadcrumb gl-breadcrumb-list ml-1"> 
+          <li class="gl-breadcrumb-item">GitLab Runner </li>
+         </ol> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row d-lg-none"> 
+      <div class="col"> 
+       <div class="doc-nav"></div> 
+      </div> 
+     </div> 
+     <main> 
+      <div class="row"> 
+       <div class="col"> 
+        <div class="article-metadata"> 
+        </div> 
+        <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+         <ul id="markdown-toc"> 
+          <li><a href="#gitlab-runner-versions" id="markdown-toc-gitlab-runner-versions">GitLab Runner versions</a> </li>
+          <li> <a href="#runner-registration" id="markdown-toc-runner-registration">Runner registration</a> 
+           <ul> 
+            <li><a href="#executors" id="markdown-toc-executors">Executors</a> </li>
+            <li><a href="#who-has-access-to-runners-in-the-gitlab-ui" id="markdown-toc-who-has-access-to-runners-in-the-gitlab-ui">Who has access to runners in the GitLab UI</a> </li>
+            <li><a href="#tags" id="markdown-toc-tags">Tags</a> </li>
+           </ul> </li>
+          <li><a href="#configuring-runners" id="markdown-toc-configuring-runners">Configuring runners</a> </li>
+          <li><a href="#monitoring-runners" id="markdown-toc-monitoring-runners">Monitoring runners</a> </li>
+          <li><a href="#use-a-runner-to-run-your-job" id="markdown-toc-use-a-runner-to-run-your-job">Use a runner to run your job</a> </li>
+          <li><a href="#runners-on-gitlabcom" id="markdown-toc-runners-on-gitlabcom">Runners on GitLab.com</a> </li>
+          <li><a href="#features" id="markdown-toc-features">Features</a> </li>
+          <li><a href="#runner-execution-flow" id="markdown-toc-runner-execution-flow">Runner execution flow</a> </li>
+          <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> </li>
+          <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a> </li>
+          <li><a href="#changelog" id="markdown-toc-changelog">Changelog</a> </li>
+          <li><a href="#license" id="markdown-toc-license">License</a> </li>
+         </ul> 
+         <h1 id="gitlab-runner">GitLab Runner<a href="#gitlab-runner" title="Permalink" class="anchor"></a> </h1> 
+         <p>GitLab Runner is an application that works with GitLab CI/CD to run jobs in a pipeline. </p>
+         <p>You can choose to <a href="install/index.html"><strong>install</strong></a> the GitLab Runner application on infrastructure that you own or manage. If you do, you should install GitLab Runner on a machine that’s separate from the one that hosts the GitLab instance for security and performance reasons. When you use separate machines, you can have different operating systems and tools, like Kubernetes or Docker, on each. </p>
+         <p>GitLab Runner is open-source and written in <a href="https://golang.org">Go</a>. It can be run as a single binary; no language-specific requirements are needed. </p>
+         <p>You can install GitLab Runner on several different supported operating systems. Other operating systems may also work, as long as you can compile a Go binary on them. </p>
+         <p>GitLab Runner can also run inside a Docker container or be deployed into a Kubernetes cluster. </p>
+         <p>View some <a href="best_practice/index.html">best practices</a> for how to use and administer GitLab Runner. </p>
+         <h2 id="gitlab-runner-versions">GitLab Runner versions<a href="#gitlab-runner-versions" title="Permalink" class="anchor"></a> </h2> 
+         <p>GitLab Runner should be the same version as GitLab. Older runners may still work with newer GitLab versions, and vice versa. However, features may be not available or work properly if a version difference exists. </p>
+         <p>Backward compatibility is guaranteed between minor version updates. However, sometimes minor version updates of GitLab can introduce new features that require GitLab Runner to be on the same minor version. </p>
+         <h2 id="runner-registration">Runner registration<a href="#runner-registration" title="Permalink" class="anchor"></a> </h2> 
+         <p>After you install the application, you <a href="register/index.html"><strong>register</strong></a> individual runners. Runners are the agents that run the CI/CD jobs that come from GitLab. </p>
+         <p>When you register a runner, you are setting up communication between your GitLab instance and the machine where GitLab Runner is installed. </p>
+         <p>Runners usually process jobs on the same machine where you installed GitLab Runner. However, you can also have a runner process jobs in a container, in a Kubernetes cluster, or in auto-scaled instances in the cloud. </p>
+         <h3 id="executors">Executors<a href="#executors" title="Permalink" class="anchor"></a> </h3> 
+         <p>When you register a runner, you must choose an executor. </p>
+         <p>An <a href="executors/README.html"><strong>executor</strong></a> determines the environment each job runs in. </p>
+         <p>For example: </p>
+         <ul> 
+          <li>If you want your CI/CD job to run PowerShell commands, you might install GitLab Runner on a Windows server and then register a runner that uses the shell executor. </li>
+          <li>If you want your CI/CD job to run commands in a custom Docker container, you might install GitLab Runner on a Linux server and register a runner that uses the Docker executor. </li>
+         </ul> 
+         <p>These are only a few of the possible configurations. You can install GitLab Runner on a virtual machine and have it use another virtual machine as an executor. </p>
+         <p>When you install GitLab Runner in a Docker container and choose the <a href="/13.10/ee/ci/docker/using_docker_images.html">Docker executor</a> to run your jobs, it’s sometimes referred to as a “Docker-in-Docker” configuration. </p>
+         <h3 id="who-has-access-to-runners-in-the-gitlab-ui">Who has access to runners in the GitLab UI<a href="#who-has-access-to-runners-in-the-gitlab-ui" title="Permalink" class="anchor"></a> </h3> 
+         <p>Before you register a runner, you should determine if everyone in GitLab should have access to it, or if you want to limit it to a specific GitLab group or project. </p>
+         <p>There are three types of runners, based on who you want to have access: </p>
+         <ul> 
+          <li> <a href="/13.10/ee/ci/runners/README.html#shared-runners">Shared runners</a> are for use by all projects </li>
+          <li> <a href="/13.10/ee/ci/runners/README.html#group-runners">Group runners</a> are for all projects and subgroups in a group </li>
+          <li> <a href="/13.10/ee/ci/runners/README.html#specific-runners">Specific runners</a> are for individual projects </li>
+         </ul> 
+         <p>When you register a runner, you specify a token for the GitLab instance, group, or project. This is how the runner knows which projects it’s available for. </p>
+         <h3 id="tags">Tags<a href="#tags" title="Permalink" class="anchor"></a> </h3> 
+         <p>When you register a runner, you can add <a href="/13.10/ee/ci/yaml/README.html#tags"><strong>tags</strong></a> to it. </p>
+         <p>When a CI/CD job runs, it knows which runner to use by looking at the assigned tags. </p>
+         <p>For example, if a runner has the <code class="highlighter-rouge">ruby</code> tag, you would add this code to your project’s <code class="highlighter-rouge">.gitlab-ci.yml</code> file: </p>
+         <div class="language-yaml highlighter-rouge">
+          <div class="highlight">
+           <pre class="highlight"><code><span class="na">job</span><span class="pi">:</span>
+  <span class="na">tags</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ruby</span>
+</code></pre>
+          </div>
+         </div> 
+         <p>When the job runs, it uses the runner with the <code class="highlighter-rouge">ruby</code> tag. </p>
+         <h2 id="configuring-runners">Configuring runners<a href="#configuring-runners" title="Permalink" class="anchor"></a> </h2> 
+         <p>You can <a href="configuration/advanced-configuration.html"><strong>configure</strong></a> the runner by editing the <code class="highlighter-rouge">config.toml</code> file. This is a file that is installed during the runner installation process. </p>
+         <p>In this file you can edit settings for a specific runner, or for all runners. </p>
+         <p>You can specify settings like logging and cache. You can set concurrency, memory, CPU limits, and more. </p>
+         <h2 id="monitoring-runners">Monitoring runners<a href="#monitoring-runners" title="Permalink" class="anchor"></a> </h2> 
+         <p>You can use Prometheus to <a href="monitoring/README.html"><strong>monitor</strong></a> your runners. You can view things like the number of currently-running jobs and how much CPU your runners are using. </p>
+         <h2 id="use-a-runner-to-run-your-job">Use a runner to run your job<a href="#use-a-runner-to-run-your-job" title="Permalink" class="anchor"></a> </h2> 
+         <p>After a runner is configured and available for your project, your <a href="/13.10/ee/ci/README.html">CI/CD</a> jobs can use the runner. </p>
+         <p>Specify the name of the runner or its tags in your <a href="/13.10/ee/ci/yaml/README.html"><code class="highlighter-rouge">.gitlab-ci.yml</code></a> file. Then, when you commit to your repository, the pipeline runs, and the runner’s executor processes the commands. </p>
+         <h2 id="runners-on-gitlabcom">Runners on GitLab.com<a href="#runners-on-gitlabcom" title="Permalink" class="anchor"></a> </h2> 
+         <p>If you use GitLab.com, GitLab <a href="/13.10/ee/user/gitlab_com/index.html#shared-runners">manages runners for you</a>. These runners are enabled for all projects, though <a href="/13.10/ee/ci/runners/README.html#disable-shared-runners">you can disable them</a>. </p>
+         <p>If you don’t want to use runners managed by GitLab, you can install GitLab Runner and register your own runners on GitLab.com. </p>
+         <h2 id="features">Features<a href="#features" title="Permalink" class="anchor"></a> </h2> 
+         <p>GitLab Runner has the following features. </p>
+         <ul> 
+          <li>Run multiple jobs concurrently. </li>
+          <li>Use multiple tokens with multiple servers (even per-project). </li>
+          <li>Limit the number of concurrent jobs per-token. </li>
+          <li>Jobs can be run: 
+           <ul> 
+            <li>Locally. </li>
+            <li>Using Docker containers. </li>
+            <li>Using Docker containers and executing job over SSH. </li>
+            <li>Using Docker containers with autoscaling on different clouds and virtualization hypervisors. </li>
+            <li>Connecting to a remote SSH server. </li>
+           </ul> </li>
+          <li>Is written in Go a

@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>SARIF support for code scanning - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="To display results from a third-party static analysis tool in your repository on GitHub, you'll need your results stored in a SARIF file that supports a specific subset of the SARIF 2.1.0 JSON schema for code scanning. If you use the default CodeQL static analysis engine, then your results will display in your repository on GitHub automatically."> 
+  <meta name="keywords" content="Advanced Security,Code scanning,Integration,SARIF"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="kRVQ0nGS-NO7u3H6MYYZuVm5b0cxOB7RLozQ"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/code-security" class="pl-4 pr-5 pb-1 f4 color-text-primary">Code security</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/getting-started" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting started</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/github-security-features" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub security features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your repository</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/adding-a-security-policy-to-your-repository" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Adding a security policy to your repository</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secret-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secret security</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/about-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/configuring-secret-scanning-for-your-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring secret scanning for your repositories</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/defining-custom-patterns-for-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Defining custom patterns</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/managing-alerts-from-secret-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing alerts from secret scanning</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secure-coding" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secure coding</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors" class="pl-4 pr-5 py-2 color-text-primary">Scanning automatically </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/triaging-code-scanning-alerts-in-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Triaging alerts in pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/managing-code-scanning-alerts-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing alerts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-the-codeql-workflow-for-compiled-languages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring for compiled languages</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/troubleshooting-the-codeql-workflow" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting CodeQL</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/running-codeql-code-scanning-in-a-container" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Code scanning in a container</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning" class="pl-4 pr-5 py-2 color-text-primary">Integration </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/about-integration-with-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About integration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/uploading-a-sarif-file-to-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Uploading a SARIF file</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">SARIF support</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system" class="pl-4 pr-5 py-2 color-text-primary">CodeQL CI system support </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/about-codeql-code-scanning-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Code scanning in your CI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL CLI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/troubleshooting-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting CodeQL runner</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-advisories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security advisories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/supply-chain-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Supply chain security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security overview</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Code security 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      color-text-link text-underline active"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/github-ae@latest/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Code security" href="/en/code-security" class="d-inline-block ">Code security</a><a title="category: Secure coding" href="/en/code-security/secure-coding" class="d-inline-block ">Secure coding</a><a title="mapTopic: Integration" href="/en/code-security/secure-coding/integrating-with-code-scanning" class="d-inline-block ">Integration</a><a title="article: SARIF support" href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-inline-block color-text-tertiary">SARIF support</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/github-ae@latest/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">SARIF support for code scanning</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>To display results from a third-party static analysis tool in your repository on GitHub, you'll need your results stored in a SARIF file that supports a specific subset of the SARIF 2.1.0 JSON schema for code scanning. If you use the default CodeQL static analysis engine, then your results will display in your repository on GitHub automatically.</p>
+       </div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>Code scanning is available for all public repositories, and for private repositories owned by organizations where GitHub Advanced Security is enabled. For more information, see "<a href="/en/github/getting-started-with-github/about-github-advanced-security">About GitHub Advanced Security</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-sarif-support">About SARIF support</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#preventing-duplicate-alerts-using-fingerprints">Preventing duplicate alerts using fingerprints</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#validating-your-sarif-file">Validating your SARIF file</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#supported-sarif-output-file-properties">Supported SARIF output file properties</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#sariflog-object"><code>sarifLog</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#run-object"><code>run</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#reportingdescriptor-object"><code>reportingDescriptor</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#result-object"><code>result</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#location-object"><code>location</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#physicallocation-object"><code>physicalLocation</code> object</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#runautomationdetails-object"><code>runAutomationDetails</code> object</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#sarif-output-file-examples">SARIF output file examples</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#example-with-minimum-required-properties">Example with minimum required properties</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#example-showing-all-supported-sarif-properties">Example showing all supported SARIF properties</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-sarif-support"><a href="#about-sarif-support">About SARIF support</a></h3> 
+       <p>SARIF (Static Analysis Results Interchange Format) is an <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html">OASIS Standard</a> that defines an output file format. The SARIF standard is used to streamline how static analysis tools share their results. Code scanning supports a subset of the SARIF 2.1.0 JSON schema.</p> 
+       <p>To upload a SARIF file from a third-party static code analysis engine, you'll need to ensure that uploaded files use the SARIF 2.1.0 version. GitHub will parse the SARIF file and show alerts using the results in your repository as a part of the code scanning experience. For more information, see "<a href="/en/code-security/secure-coding/uploading-a-sarif-file-to-github">Uploading a SARIF file to GitHub</a>." For more information about the SARIF 2.1.0 JSON schema, see <a href="https://github.com/oasis-tcs/sarif-spec/blob/master/Schemata/sarif-schema-2.1.0.json"><code>sarif-schema-2.1.0.json</code></a>.</p> 
+       <p>If you're using GitHub Actions with the CodeQL analysis workflow or using the CodeQL runner, then the code scanning results will automatically use the supported subset of SARIF 2.1.0. For more information, see "<a href="/en/code-security/secure-coding/setting-up-code-scanning-for-a-repository">Setting up code scanning for a repository</a>" or "<a href="/en/code-security/secure-coding/running-codeql-runner-in-your-ci-system">Running CodeQL runner in your CI system</a>."</p> 
+       <p>If you're using the CodeQL CLI, then you can specify the version of SARIF to use. For more information, see "<a href="/en/code-security/secure-coding/running-codeql-cli-in-your-ci-system#uploading-results-to-github">Running CodeQL CLI in your CI system</a>."</p> 
+       <p>You can upload multiple SARIF files for the same tool and commit, and analyze each file using code scanning. You can indicate a "category" for each analysis by specifying a <code>runAutomationDetails.id</code> in each file. Only SARIF files with the same category will overwrite each other. For more information about this property, see <a href="#runautomationdetails-object"><code>runAutomationDetails</code> object</a> below.</p> 
+       <p>GitHub uses properties in the SARIF file to display alerts. For example, the <code>shortDescription</code> and <code>fullDescription</code> appear at the top of a code scanning alert. The <code>location</code> allows GitHub to show annotations in your code file. For more information, see "<a href="/en/code-security/secure-coding/managing-code-scanning-alerts-for-your-repository">Managing code scanning alerts for your repository</a>."</p> 
+       <p>If you're new to SARIF and want to learn more, see Microsoft's <a href="https://github.com/microsoft/sarif-tutorials"><code>SARIF tutorials</code></a> repository.</p> 
+       <h3 id="preventing-duplicate-alerts-using-fingerprints"><a href="#preventing-duplicate-alerts-using-fingerprints">Preventing duplicate alerts using fingerprints</a></h3> 
+       <p>Each time the results of a new code scan are uploaded, the results are processed and alerts are added to the repository. To prevent duplicate alerts for the same problem, code scanning uses fingerprints to match results across various runs so they only appear once in the latest run for the selected branch. This makes it possible to match alerts to the right line of code when files are edited.</p> 
+       <p>GitHub uses the <code>partialFingerprints</code> property in the OASIS standard to detect when two results are logically identical. For more information, see the "<a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html#_Toc16012611">partialFingerprints property</a>" entry in the OASIS documentation.</p> 
+       <p>SARIF files created by the CodeQL analysis workflow or using the CodeQL runner include fingerprint data. If you upload a SARIF file using the <code>upload-sarif</code> action and this data is missing, GitHub attempts to populate the <code>partialFingerprints</code> field from the source files. For more information about uploading results, see "<a href="/en/code-security/secure-coding/uploading-a-sarif-file-to-github#uploading-a-code-scanning-analysis-with-github-actions">Uploading a SARIF file to GitHub</a>."</p> 
+       <p>If you upload a SARIF file without fingerprint data using the <code>/code-scanning/sarifs</code> API endpoint, the code scanning alerts will be processed and displayed, but users may see duplicate alerts. To avoid seeing duplicate alerts, you should calculate fingerprint data and populate the <code>partialFingerprints</code> property before you upload the SARIF file. You may find the script that the <code>upload-sarif</code> action uses a helpful starting point: <a href="https://github.com/github/codeql-action/blob/main/src/fingerprints.ts">https://github.com/github/codeql-action/blob/main/src/fingerprints.ts</a>. For more information about the API, see "<a href="/en/rest/reference/code-scanning#upload-an-analysis-as-sarif-data">Upload an analysis as SARIF data</a>."</p> 
+       <h3 id="validating-your-sarif-file"><a href="#validating-your-sarif-file">Validating your SARIF file</a></h3> 
+       <p>You can check a SARIF file is compatible with code scanning by testing it against the GitHub ingestion rules. For more information, visit the <a href="https://sarifweb.azurewebsites.net/">Microsoft SARIF validator</a>.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> SARIF upload supports a maximum of 5000 results per upload. Any results over this limit are ignored. If a tool generates too many results, you should update the configuration to focus on results for the most important rules or queries.</p> 
+       </div> 
+       <h3 id="supported-sarif-output-file-properties"><a href="#supported-sarif-output-file-properties">Supported SARIF output file properties</a></h3> 
+       <p>If you use a code analysis engine other than CodeQL, you can review the supported SARIF properties to optimize how your analysis results will appear on GitHub.</p> 
+       <p>Any valid SARIF 2.1.0 output file can be uploaded, however, code scanning will only use the following supported properties.</p> 
+       <h4 id="sariflog-object"><a href="#sariflog-object"><code>sarifLog</code> object</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>$schema</code></td>
+          <td><strong>Required.</strong> The URI of the SARIF JSON schema for version 2.1.0. For example, <code>https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json</code>.</td>
+         </tr>
+         <tr>
+          <td><code>version</code></td>
+          <td><strong>Required.</strong> Code scanning only supports SARIF version <code>2.1.0</code>.</td>
+         </tr>
+         <tr>
+          <td><code>runs[]</code></td>
+          <td><strong>Required.</strong> A SARIF file contains an array of one or more runs. Each run represents a single run of an analysis tool. For more information about a <code>run</code>, see the <a href="#run-object"><code>run</code> object</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="run-object"><a href="#run-object"><code>run</code> object</a></h4> 
+       <p>Code scanning uses the <code>run</code> object to filter results by tool and provide information about the source of a result. The <code>run</code> object contains the <code>tool.driver</code> tool component object, which contains information about the tool that generated the results. Each <code>run</code> can only have results for one analysis tool.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>tool.driver.name</code></td>
+          <td><strong>Required.</strong> The name of the analysis tool. Code scanning displays the name on GitHub to allow you to filter results by tool.</td>
+         </tr>
+         <tr>
+          <td><code>tool.driver.version</code></td>
+          <td><strong>Optional.</strong> The version of the analysis tool. Code scanning uses the version number to track when results may have changed due to a tool version change rather than a change in the code being analyzed. If the SARIF file includes the <code>semanticVersion</code> field, <code>version</code> is not used by code scanning.</td>
+         </tr>
+         <tr>
+          <td><code>tool.driver.semanticVersion</code></td>
+          <td><strong>Optional.</strong> The version of the analysis tool, specified by the Semantic Versioning 2.0 format. Code scanning uses the version number to track when results may have changed due to a tool version change rather than a change in the code being analyzed. If the SARIF file includes the <code>semanticVersion</code> field, <code>version</code> is not used by code scanning. For more information, see "<a href="https://semver.org/">Semantic Versioning 2.0.0</a>" in the Semantic Versioning documentation.</td>
+         </tr>
+         <tr>
+          <td><code>tool.driver.rules[]</code></td>
+          <td><strong>Required.</strong> An array of <code>reportingDescriptor</code> objects that represent rules. The analysis tool uses rules to find problems in the code being analyzed. For more information, see the <a href="#reportingdescriptor-object"><code>reportingDescriptor</code> object</a>.</td>
+         </tr>
+         <tr>
+          <td><code>results[]</code></td>
+          <td><strong>Required.</strong> The results of the analysis tool. Code scanning displays the results on GitHub. For more information, see the <a href="#result-object"><code>result</code> object</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="reportingdescriptor-object"><a href="#reportingdescriptor-object"><code>reportingDescriptor</code> object</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><strong>Required.</strong> A unique identifier for the rule. The <code>id</code> is referenced from other parts of the SARIF file and may be used by code scanning to display URLs on GitHub.</td>
+         </tr>
+         <tr>
+          <td><code>name</code></td>
+          <td><strong>Optional.</strong> The name of the rule. Code scanning displays the name to allow results to be filtered by rule on GitHub.</td>
+         </tr>
+         <tr>
+          <td><code>shortDescription.text</code></td>
+          <td><strong>Required.</strong> A concise description of the rule. Code scanning displays the short description on GitHub next to the associated results.</td>
+         </tr>
+         <tr>
+          <td><code>fullDescription.text</code></td>
+          <td><strong>Required.</strong> A description of the rule. Code scanning displays the full description on GitHub next to the associated results. The max number of characters is limited to 1000.</td>
+         </tr>
+         <tr>
+          <td><code>defaultConfiguration.level</code></td>
+          <td><strong>Optional.</strong> Default severity level of the rule. Code scanning uses severity levels to help you understand how critical the result is for a given rule. This value can be overridden by the <code>level</code> attribute in the <code>result</code> object. For more information, see the <a href="#result-object"><code>result</code> object</a>. Default: <code>warning</code>.</td>
+         </tr>
+         <tr>
+          <td><code>help.text</code></td>
+          <td><strong>Required.</strong> Documentation for the rule using text format. Code scanning displays this help documentation next to the associated results.</td>
+         </tr>
+         <tr>
+          <td><code>help.markdown</code></td>
+          <td><strong>Recommended.</strong> Documentation for the rule using Markdown format. Code scanning displays this help documentation next to the associated results. When <code>help.markdown</code> is available, it is displayed instead of <code>help.text</code>.</td>
+         </tr>
+         <tr>
+          <td><code>properties.tags[]</code></td>
+          <td><strong>Optional.</strong> An array of strings. Code scanning uses <code>tags</code> to allow you to filter results on GitHub. For example, it is possible to filter to all results that have the tag <code>security</code>.</td>
+         </tr>
+         <tr>
+          <td><code>properties.precision</code></td>
+          <td><strong>Recommended.</strong> A string that indicates how often the results indicated by this rule are true. For example, if a rule has a known high false-positive rate, the precision should be <code>low</code>. Code scanning orders results by precision on GitHub so that the results with the highest <code>level</code>, and highest <code>precision</code> are shown first. Can be one of: <code>very-high</code>, <code>high</code>, <code>medium</code>, or <code>low</code>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="result-object"><a href="#result-object"><code>result</code> object</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> SARIF upload supports a maximum of 5000 results per upload. Any results over this limit are ignored. If a tool generates too many results, you should update the configuration to focus on results for the most important rules or queries.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>ruleId</code></td>
+          <td><strong>Optional.</strong> The unique identifier of the rule (<code>reportingDescriptor.id</code>). For more information, see the <a href="#reportingdescriptor-object"><code>reportingDescriptor</code> object</a>. Code scanning uses the rule identifier to filter results by rule on GitHub.</td>
+         </tr>
+         <tr>
+          <td><code>ruleIndex</code></td>
+          <td><strong>Optional.</strong> The index of the associated rule (<code>reportingDescriptor</code> object) in the tool component <code>rules</code> array. For more information, see the <a href="#run-object"><code>run</code> object</a>.</td>
+         </tr>
+         <tr>
+          <td><code>rule</code></td>
+          <td><strong>Optional.</strong> A reference used to locate the rule (reporting descriptor) for this result. For more information, see the <a href="#reportingdescriptor-object"><code>reportingDescriptor</code> object</a>.</td>
+         </tr>
+         <tr>
+          <td><code>level</code></td>
+          <td><strong>Optional.</strong> The severity of the result. This level overrides the default severity defined by the rule. Code scanning uses the level to filter results by severity on GitHub.</td>
+         </tr>
+         <tr>
+          <td><code>message.text</code></td>
+          <td><strong>Required.</strong> A message that describes the result. Code scanning displays the message text as the title of the result. Only the first sentence of the message will be displayed when visible space is limited.</td>
+         </tr>
+         <tr>
+          <td><code>locations[]</code></td>
+          <td><strong>Required.</strong> The set of locations where the result was detected up to a maximum of 10. Only one location should be included unless the problem can only be corrected by making a change at every specified location. <strong>Note:</strong> At least one location is required for code scanning to display a result. Code scanning will use this property to decide which file to annotate with the result. Only the first value of this array is used. All other values are ignored.</td>
+         </tr>
+         <tr>
+          <td><code>partialFingerprints</code></td>
+          <td><strong>Required.</strong> A set of strings used to track the unique identity of the result. Code scanning uses <code>partialFingerprints</code> to accurately identify which results are the same across commits and branches. Code scanning will attempt to use <code>partialFingerprints</code> if they exist. If you are uploading third-party SARIF files with the <code>upload-action</code>, the action will create <code>partialFingerprints</code> for you when they are not included in the SARIF file. For more information, see "<a href="#preventing-duplicate-alerts-using-fingerprints">Preventing duplicate alerts using fingerprints</a>." <strong>Note:</strong> Code scanning only uses the <code>primaryLocationLineHash</code>.</td>
+         </tr>
+         <tr>
+          <td><code>codeFlows[].threadFlows[].locations[]</code></td>
+          <td><strong>Optional.</strong> An array of <code>location</code> objects for a <code>threadFlow</code> object, which describes the progress of a program through a thread of execution. A <code>codeFlow</code> object describes a pattern of code execution used to detect a result. If code flows are provided, code scanning will expand code flows on GitHub for the relevant result. For more information, see the <a href="#location-object"><code>location</code> object</a>.</td>
+         </tr>
+         <tr>
+          <td><code>relatedLocations[]</code></td>
+          <td>A set of locations relevant to this result. Code scanning will link to related locations when they are embedded in the result message. For more information, see the <a href="#location-object"><code>location</code> object</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="location-object"><a href="#location-object"><code>location</code> object</a></h4> 
+       <p>A location within a programming artifact, such as a file in the repository or a file that was generated during a build.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>location.id</code></td>
+          <td><strong>Optional.</strong> A unique identifier that distinguishes this location from all other locations within a single result object.</td>
+         </tr>
+         <tr>
+          <td><code>location.physicalLocation</code></td>
+          <td><strong>Required.</strong> Identifies the artifact and region. For more information, see the <a href="#physicallocation-object"><code>physicalLocation</code></a>.</td>
+         </tr>
+         <tr>
+          <td><code>location.message.text</code></td>
+          <td><strong>Optional.</strong> A message relevant to the location.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="physicallocation-object"><a href="#physicallocation-object"><code>physicalLocation</code> object</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>artifactLocation.uri</code></td>
+          <td><strong>Required.</strong> A URI indicating the location of an artifact, usually a file either in the repository or generated during a build. If the URI is relative, it should be relative to the root of the GitHub repository being analyzed. For example, main.js or src/script.js are relative to the root of the repository. If the URI is absolute, code scanning can use the URI to checkout the artifact and match up files in the repository. For example, <code>https://github.com/ghost/example/blob/00/src/promiseUtils.js</code>.</td>
+         </tr>
+         <tr>
+          <td><code>region.startLine</code></td>
+          <td><strong>Required.</strong> The line number of the first character in the region.</td>
+         </tr>
+         <tr>
+          <td><code>region.startColumn</code></td>
+          <td><strong>Required.</strong> The column number of the first character in the region.</td>
+         </tr>
+         <tr>
+          <td><code>region.endLine</code></td>
+          <td><strong>Required.</strong> The line number of the last character in the region.</td>
+         </tr>
+         <tr>
+          <td><code>region.endColumn</code></td>
+          <td><strong>Required.</strong> The column number of the character following the end of the region.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="runautomationdetails-object"><a href="#runautomationdetails-object"><code>runAutomationDetails</code> object</a></h4> 
+       <p>The <code>runAutomationDetails</code> object contains information that specifies the identity of a run.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> <code>runAutomationDetails</code> is a SARIF v2.1.0 object. If you're using the CodeQL CLI, you can specify the version of SARIF to use. The equivalent object to <code>runAutomationDetails</code> is <code>&lt;run&gt;.automationId</code> for SARIF v1 and <code>&lt;run&gt;.automationLogicalId</code> for SARIF v2.</p> 
+       </div> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>id</code></td>
+          <td><strong>Optional.</strong> A string that identifies the category of the analysis and the run ID. Use if you want to upload multiple SARIF files for the same tool and commit, but performed on different languages or different parts of the code.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>The use of the <code>runAutomationDetails</code> object is optional.</p> 
+       <p>The <code>id</code> field can include an analysis category and a run ID. We don't use the run ID part of the <code>id</code> field, but we store it.</p> 
+       <p>Use the category to distinguish between multiple analyses for the same tool or commit, but performed on different languages or different parts of the code. Use the run ID to identify the specific run of the analysis, such as the date the analysis was run.</p> 
+       <p><code>id</code> is interpreted as <code>category/run-id</code>. If the <code>id</code> contains no forward slash (<code>/</code>), then the entire string is the <code>run_id</code> and the <code>category</code> is empty. Otherwise, <code>category</code> is everything in the string until the last forward slash, and <code>run_id</code> is everything after.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th><code>id</code></th>
+          <th>category</th>
+          <th><code>run_id</code></th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>my-analysis/tool1/2021-02-01</td>
+          <td>my-analysis/tool1</td>
+          <td>2021-02-01</td>
+         </tr>
+         <tr>
+          <td>my-analysis/tool1/</td>
+          <td>my-analysis/tool1</td>
+          <td><em>no <code>run-id</code></em></td>
+         </tr>
+         <tr>
+          <td>my-analysis for tool1</td>
+          <td><em>no category</em></td>
+          <td>my-analysis for tool1</td>
+         </tr>
+        </tbody>
+       </table> 
+       <ul> 
+        <li>The run with an <code>id</code> of "my-analysis/tool1/2021-02-01" belongs to the category "my-analysis/tool1". Presumably, this is the run from February 2, 2021.</li> 
+        <li>The run with an <code>id</code> of "my-analysis/tool1/" belongs to the category "my-analysis/tool1" but is not distinguished from other runs in that category.</li> 
+        <li>The run whose <code>id</code> is "my-analysis for tool1 " has a unique identifier but cannot be inferred to belong to any category.</li> 
+       </ul> 
+       <p>For more information about the <code>runAutomationDetails</code> object and the <code>id</code> field, see <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html#_Toc16012479">runAutomationDetails object</a> in the OASIS documentation. </p> 
+       <p>Note that the rest of the supported fields are ignored.</p> 
+       <h3 id="sarif-output-file-examples"><a href="#sarif-output-file-examples">SARIF output file examples</a></h3> 
+       <p>These example SARIF output files show supported properties and example values.</p> 
+       <h4 id="example-with-minimum-required-properties"><a href="#example-with-minimum-required-properties">Example with minimum required properties</a></h4> 
+       <p>This SARIF output file has example values to show the minimum required properties for code scanning results to work as expected. If you remove any properties or don't include values, this data will not be displayed correctly or sync on GitHub.</p> 
+       <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.1.0"</span>,
+  <span class="hljs-attr">"runs"</span>: [
+    {
+      <span class="hljs-attr">"tool"</span>: {
+        <span class="hljs-attr">"driver"</span>: {
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tool Name"</span>,
+          <span class="hljs-attr">"rules"</span>: [
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-string">"R01"</span>
+            }
+          ]
+        }
+      },
+      <span class="hljs-attr">"results"</span>: [
+        {
+          <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"R01"</span>,
+          <span class="hljs-attr">"message"</span>: {
+            <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Result text. This result does not have a rule associated."</span>
+          },
+          <span class="hljs-attr">"locations"</span>: [
+            {
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"fileURI"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">2</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">7</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">10</span>
+                }
+              }
+            }
+          ],
+          <span class="hljs-attr">"partialFingerprints"</span>: {
+            <span class="hljs-attr">"primaryLocationLineHash"</span>: <span class="hljs-string">"39fa2ee980eb94b0:1"</span>
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre> 
+       <h4 id="example-showing-all-supported-sarif-properties"><a href="#example-showing-all-supported-sarif-properties">Example showing all supported SARIF properties</a></h4> 
+       <p>This SARIF output file has example values to show all supported SARIF properties for code scanning.</p> 
+       <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.1.0"</span>,
+  <span class="hljs-attr">"runs"</span>: [
+    {
+      <span class="hljs-attr">"tool"</span>: {
+        <span class="hljs-attr">"driver"</span>: {
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tool Name"</span>,
+          <span class="hljs-attr">"semanticVersion"</span>: <span class="hljs-string">"2.0.0"</span>,
+          <span class="hljs-attr">"rules"</span>: [
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-string">"3f292041e51d22005ce48f39df3585d44ce1b0ad"</span>,
+              <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/unused-local-variable"</span>,
+              <span class="hljs-attr">"shortDescription"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Unused variable, import, function or class"</span>
+              },
+              <span class="hljs-attr">"fullDescription"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Unused variables, imports, functions or classes may be a symptom of a bug and should be examined carefully."</span>
+              },
+              <span class="hljs-attr">"defaultConfiguration"</span>: {
+                <span class="hljs-attr">"level"</span>: <span class="hljs-string">"note"</span>
+              },
+              <span class="hljs-attr">"properties"</span>: {
+                <span class="hljs-attr">"tags"</span>: [
+                  <span class="hljs-string">"maintainability"</span>
+                ],
+                <span class="hljs-attr">"precision"</span>: <span class="hljs-string">"very-high"</span>
+              }
+            },
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-string">"d5b664aefd5ca4b21b52fdc1d744d7d6ab6886d0"</span>,
+              <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/inconsistent-use-of-new"</span>,
+              <span class="hljs-attr">"shortDescription"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Inconsistent use of 'new'"</span>
+              },
+              <span class="hljs-attr">"fullDescription"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"If a function is intended to be a constructor, it should always be invoked with 'new'. Otherwise, it should always be invoked as a normal function, that is, without 'new'."</span>
+              },
+              <span class="hljs-attr">"properties"</span>: {
+                <span class="hljs-attr">"tags"</span>: [
+                  <span class="hljs-string">"reliability"</span>,
+                  <span class="hljs-string">"correctness"</span>,
+                  <span class="hljs-string">"language-features"</span>
+                ],
+                <span class="hljs-attr">"precision"</span>: <span class="hljs-string">"very-high"</span>
+              }
+            },
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-string">"R01"</span>
+            }
+          ]
+        }
+      },
+      <span class="hljs-attr">"automationDetails"</span>: { 
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"my-category/"</span>
+      },
+      <span class="hljs-attr">"results"</span>: [
+        {
+          <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"3f292041e51d22005ce48f39df3585d44ce1b0ad"</span>,
+          <span class="hljs-attr">"ruleIndex"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"message"</span>: {
+            <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Unused variable foo."</span>
+          },
+          <span class="hljs-attr">"locations"</span>: [
+            {
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"main.js"</span>,
+                  <span class="hljs-attr">"uriBaseId"</span>: <span class="hljs-string">"%SRCROOT%"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">2</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">7</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">10</span>
+                }
+              }
+            }
+          ],
+          <span class="hljs-attr">"partialFingerprints"</span>: {
+            <span class="hljs-attr">"primaryLocationLineHash"</span>: <span class="hljs-string">"39fa2ee980eb94b0:1"</span>,
+            <span class="hljs-attr">"primaryLocationStartColumnFingerprint"</span>: <span class="hljs-string">"4"</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"d5b664aefd5ca4b21b52fdc1d744d7d6ab6886d0"</span>,
+          <span class="hljs-attr">"ruleIndex"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"message"</span>: {
+            <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Function resolvingPromise is sometimes invoked as a constructor (for example [here](1)), and sometimes as a normal function (for example [here](2))."</span>
+          },
+          <span class="hljs-attr">"locations"</span>: [
+            {
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"src/promises.js"</span>,
+                  <span class="hljs-attr">"uriBaseId"</span>: <span class="hljs-string">"%SRCROOT%"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">2</span>
+                }
+              }
+            }
+          ],
+          <span class="hljs-attr">"partialFingerprints"</span>: {
+            <span class="hljs-attr">"primaryLocationLineHash"</span>: <span class="hljs-string">"5061c3315a741b7d:1"</span>,
+            <span class="hljs-attr">"primaryLocationStartColumnFingerprint"</span>: <span class="hljs-string">"7"</span>
+          },
+          <span class="hljs-attr">"relatedLocations"</span>: [
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"src/ParseObject.js"</span>,
+                  <span class="hljs-attr">"uriBaseId"</span>: <span class="hljs-string">"%SRCROOT%"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">2281</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">33</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">55</span>
+                }
+              },
+              <span class="hljs-attr">"message"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"here"</span>
+              }
+            },
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"src/LiveQueryClient.js"</span>,
+                  <span class="hljs-attr">"uriBaseId"</span>: <span class="hljs-string">"%SRCROOT%"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">166</span>
+                }
+              },
+              <span class="hljs-attr">"message"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"here"</span>
+              }
+            }
+          ]
+        },
+        {
+          <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"R01"</span>,
+          <span class="hljs-attr">"message"</span>: {
+            <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Specifying both [ruleIndex](1) and [ruleID](2) might lead to inconsistencies."</span>
+          },
+          <span class="hljs-attr">"level"</span>: <span class="hljs-string">"error"</span>,
+          <span class="hljs-attr">"locations"</span>: [
+            {
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"full.sarif"</span>,
+                  <span class="hljs-attr">"uriBaseId"</span>: <span class="hljs-string">"%SRCROOT%"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">54</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">10</span>,
+                  <span class="hljs-attr">"endLine"</span>: <span class="hljs-number">55</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">25</span>
+                }
+              }
+            }
+          ],
+          <span class="hljs-attr">"relatedLocations"</span>: [
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"full.sarif"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">81</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">10</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">18</span>
+                }
+              },
+              <span class="hljs-attr">"message"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"here"</span>
+              }
+            },
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+              <span class="hljs-attr">"physicalLocation"</span>: {
+                <span class="hljs-attr">"artifactLocation"</span>: {
+                  <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"full.sarif"</span>
+                },
+                <span class="hljs-attr">"region"</span>: {
+                  <span class="hljs-attr">"startLine"</span>: <span class="hljs-number">82</span>,
+                  <span class="hljs-attr">"startColumn"</span>: <span class="hljs-number">10</span>,
+                  <span class="hljs-attr">"endColumn"</span>: <span class="hljs-number">21</span>
+                }
+              },
+              <span class="hljs-attr">"message"</span>: {
+                <span class="hljs-attr">"text"</span>: <span class="hljs-string">"here"</span>
+              }
+            }
+          ],
+          <span class="hljs-attr">"codeFlows"</span>: [
+            {
+              <span class="hljs-attr">"threadFlows"</span>: [
+                {
+                  <span class="hljs-attr">"locations"</span>: [
+                    {
+                      <span class="hljs-attr">"location"</span>: {
+                        <span class="hljs-attr">"physicalLocation"</span>: {
+                          <span cl

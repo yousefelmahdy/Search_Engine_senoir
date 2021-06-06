@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="nl" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "> 
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"71b0675e2c",applicationID:"1125735167"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script> 
+  <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style> 
+  <meta property="og:site_name" content="Instructure"> 
+  <meta property="og:url" content="https://www.instructure.com/nl/canvas/support-faq"> 
+  <meta property="og:title" content="Support FAQ"> 
+  <meta property="og:image" content="https://www.instructure.com/sites/default/files/image/2021-05/OG-Instructure-Learning-Platform.jpeg"> 
+  <meta name="twitter:title" content="Support FAQ"> 
+  <meta name="twitter:url" content="https://www.instructure.com/nl/canvas/support-faq"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="alternate" hreflang="en" href="https://www.instructure.com/canvas/support-faq"> 
+  <link rel="alternate" hreflang="en-au" href="https://www.instructure.com/en-au/canvas/support-faq"> 
+  <link rel="alternate" hreflang="de" href="https://www.instructure.com/de/canvas/support-faq"> 
+  <link rel="alternate" hreflang="pt-br" href="https://www.instructure.com/pt-br/canvas/suppor-faq"> 
+  <link rel="alternate" hreflang="es" href="https://www.instructure.com/es/canvas/suppor-faq"> 
+  <link rel="alternate" hreflang="es-es" href="https://www.instructure.com/es-es/canvas/support-faq"> 
+  <link rel="alternate" hreflang="en-gb" href="https://www.instructure.com/en-gb/canvas/support-faq"> 
+  <link rel="alternate" hreflang="nl" href="https://www.instructure.com/nl/canvas/support-faq"> 
+  <link rel="shortcut icon" href="/themes/custom/themekit/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <link rel="canonical" href="https://www.instructure.com/nl/canvas/support-faq"> 
+  <link rel="shortlink" href="https://www.instructure.com/nl/node/5401"> 
+  <link rel="revision" href="https://www.instructure.com/nl/canvas/support-faq"> 
+  <script src="/sites/default/files/google_tag/primary/google_tag.script.js?qu1bz3" defer></script> 
+  <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script> 
+  <title>Support FAQ | Instructure</title> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_SoyGJGrsCbVyrRvIx6bWrS8uhBn4AgsU5fDYHSkMbvs.css"> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_e8EFhNp-gkS8zkCwjcEZ9An12jRAKC4K9lBxz6RxWEU.css"> 
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"nl\/","currentPath":"node\/5401","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"nl"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany,classy\/base,classy\/messages,classy\/node,clientside_validation_jquery\/cv.jquery.ckeditor,clientside_validation_jquery\/cv.jquery.validate,core\/Drupal,core\/html5shiv,core\/normalize,dismissible_message_bar\/dismissible_message_bar,e3_marketo\/e3-marketo-munchkin,e3_regional_redirects\/country_redirect,e3_regional_redirects\/region_switcher,ins_personalization\/ins_personalization,lazy\/lazy,paragraphs\/drupal.paragraphs.unpublished,system\/base,themekit\/,themekit\/basic,themekit\/component-page--full,themekit\/dismissible-message-bar,themekit\/footer,themekit\/header,themekit\/header-banner-basic,themekit\/layout--onecol,themekit\/link-default,themekit\/search,themekit\/text","theme":"themekit","theme_token":null},"ajaxTrustedUrl":{"\/nl\/search":true},"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":true,"messages":{"required":"Dit veld is verplicht.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"marketoForms":{"munchkinId":"449-BVJ-543","instanceHost":"\/\/app-ab20.marketo.com"},"apiEndpoint":"https:\/\/pro.ip-api.com\/json?key=NsI877AefRmEbY3\u0026fields=countryCode","crrData":[],"disableModal":"1","lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.80000000000000004,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false},"dmbNotifications":{"dmb-notifications-ajax-wrapper":{"notificationWrapper":".dmb-notifications-ajax-wrapper","contentType":"component_page","contentPath":"\/nl\/canvas\/support-faq","notificationType":""}},"clearRedirectSettings":{"accept":"You are currently being automatically redirected to the version of the site appropriate for your region.","decline":"You are currently blocking all automatic redirects to the version of the site appropriate for your region."},"user":{"uid":0,"permissionsHash":"bef9fb9117d133f2abaf0ece093964a51140323a31a0dca24ecf66a4b0372640"}}</script> 
+  <script src="//app-ab20.marketo.com/js/forms2/js/forms2.min.js"></script> <!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_4fNUZYjtJjJIPp0KKMGPJiIG3DtacHQRD8P6_tgSlvo.js"></script>
+<![endif]--> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script> 
+  <script src="/sites/default/files/js/js_8fpyATzmDXxJ_N4zswYWNQDw9czrlKy0MhVPb0OPd1g.js"></script> 
+  <script src="//munchkin.marketo.net/munchkin.js"></script> 
+  <script src="/sites/default/files/js/js_s0OvPBdhSyBh0-x4xmB-DRZHNJLN2LEe702hgFxsMKM.js"></script> 
+  <script>var dataLayer = [];</script> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-9138420-54', 'auto');
+    ga('send', 'pageview');
+    </script> 
+  <meta name="theme-color" content="#8eabc3"> 
+  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script> 
+ </head> 
+ <body class="path-node page-node-type-component-page"> 
+  <div id="skip-to-content"> <a href="#main-content" class="skip-to-content-link">Skip to main content</a> 
+  </div> 
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMN72MJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <div class="layout-container"> 
+    <header role="banner"> 
+     <div data-sticky-container> 
+      <div class="sticky sticky-header" data-sticky data-margin-top="0" data-sticky-on="small"> 
+       <div class="region region-header-top"> 
+        <div class="region-content"> 
+         <div id="block-regionswitcher" class="block block-e3-regional-redirects block-region-switcher-block block-regionswitcher"> 
+          <div class="region-switcher-main-wrapper switcher-closed">
+           <div class="region-switcher-modal hidden">
+            <div class="region-switcher-modal-logo"></div> <button class="region-switcher-close-modal">Close modal</button> 
+            <div class="region-switcher-list-wrapper item-list">
+             <h3>Select your location</h3>
+             <ul class="region-switcher-list">
+              <li>
+               <div class="item-list">
+                <h3>Americas</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/" data-active-text="United States" class="region-link skip-external" hreflang="en">United States</a>
+                  <div>
+                   English
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/pt-br" data-active-text="Brazil" class="region-link skip-external" hreflang="pt-br">Brazil</a>
+                  <div>
+                   Português
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/es" data-active-text="Latin America" class="region-link skip-external" hreflang="es">Latin America</a>
+                  <div>
+                   Español
+                  </div> </li>
+                </ul>
+               </div></li>
+              <li>
+               <div class="item-list">
+                <h3>Asia Pacific</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/en-au" data-active-text="Australia" class="region-link skip-external" hreflang="en-au">Australia</a>
+                  <div>
+                   English
+                  </div> </li>
+                </ul>
+               </div></li>
+              <li>
+               <div class="item-list">
+                <h3>Europe</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/de" data-active-text="Germany" class="region-link skip-external" hreflang="de">Germany</a>
+                  <div>
+                   Deutsch
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/es-es" data-active-text="Spain" class="region-link skip-external" hreflang="es-es">Spain</a>
+                  <div>
+                   Español
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/en-gb" data-active-text="United Kingdom" class="region-link skip-external" hreflang="en-gb">United Kingdom</a>
+                  <div>
+                   English
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/nl" data-active-text="Benelux" class="region-link skip-external region-link-active" hreflang="nl">Benelux</a>
+                  <div>
+                   Dutch
+                  </div> </li>
+                </ul>
+               </div></li>
+             </ul>
+            </div>
+           </div> 
+           <div class="region-switcher-active-region">
+            <a href="/nl">Benelux</a>
+           </div> 
+          </div> 
+          <div class="region-redirect-reset-link hidden">
+           <a href="">Reset language preference</a>
+          </div> 
+          <div class="modal-redirect-reset-wrapper hidden">
+           <div class="modal-redirect-reset-copy"></div> <a href="" class="clear-preference-link">Clear redirect preference</a>
+          </div> 
+         </div> 
+         <div id="block-searchinputblock" class="block block-ins-search block-search-input block-searchinputblock"> 
+          <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-page-1" action="/nl/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8"> 
+           <div class="form--inline clearfix"> 
+            <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label"> 
+             <input placeholder="Search..." data-drupal-selector="edit-search-api-fulltext" data-msg-maxlength="This field field has a maximum length of 128." type="text" id="edit-search-api-fulltext" name="search_api_fulltext" value="" size="30" maxlength="128" class="form-text"> 
+            </div> 
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+             <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit"> 
+            </div> 
+           </div> 
+          </form> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-utilitydutch-menu" id="block-utilitydutch" class="block block-menu navigation menu--utility-dutch"> 
+          <h2 class="visually-hidden" id="block-utilitydutch-menu">Utility - Dutch</h2> 
+          <ul class="menu utility-dropdown"> 
+           <li class="menu-item"> <a href="https://www.instructure.com/nl/canvas/support-faq" tabindex="0">Ondersteuning</a> </li> 
+           <li class="menu-item"> <a href="https://www.instructure.com/contact-us" tabindex="0">Neem contact met ons op</a> </li> 
+           <li class="menu-item menu-item--expanded"> <span tabindex="0">Log In</span> 
+            <ul class="menu"> 
+             <li class="menu-item"> <a href="/nl/canvas/login/free-for-teacher" class="menu-item--login-canvas" tabindex="0" data-drupal-link-system-path="node/2286">Canvas</a> </li> 
+            </ul> </li> 
+          </ul> 
+         </nav> 
+        </div> 
+       </div> 
+       <div class="region region-header"> 
+        <div class="region-content"> 
+         <div id="block-themekit-branding" class="block block-system block-system-branding-block block-themekit-branding"> <a href="/nl" rel="home" class="site-logo"> <img src="/themes/custom/themekit/logo.svg" alt="Home"> </a> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-maindutch-menu" id="block-maindutch" class="block block-menu navigation menu--main--dutch"> 
+          <h2 class="visually-hidden" id="block-maindutch-menu">Main - Dutch</h2> 
+          <ul class="menu menu-level-0 dropdown" data-dropdown-menu=""> 
+           <li class="menu-item menu-item--expanded"> <a href="/nl/canvas/hoger-onderwijs" tabindex="0">Hoger onderwijs</a> 
+            <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> 
+                <div class="menu_link_content menu-link-contentmain--dutch view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">Het Canvas-ecosysteem</span> 
+                 <ul class="menu"> 
+                  <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/lms" tabindex="0">Canvas LMS</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas LMS vereenvoudigt cursusbeheer, communicatie en studentenverbinding.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/studio" tabindex="0">Canvas Studio</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Studio maakt videoleren boeiender en interactiever.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/catalog" tabindex="0">Canvas Catalog</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Catalog stroomlijnt en moderniseert cursusregistratie en inschrijving.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/nl/product/canvas/diensten" tabindex="0">Diensten</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>We bieden uitrolplannen, producttraining, contentontwikkeling en meer.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/nl/product/alle-producten" class="view-all" tabindex="0">Alle Producten</a> </li> 
+                  <li class="menu-item"> <a href="/nl/canvas/probeer-canvas" class="view-all" tabindex="0">PROBEER HET GRATIS</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Oplossingen naar behoefte</span> 
+                <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/online-blended-leren" tabindex="0">Online &amp; Blended Leren</a> </li> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/succes-van-studenten-betrokkenheid" tabindex="0">Succes Van Studenten Betrokkenheid</a> </li> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/gegevensanalyse" tabindex="0">Gegevensanalyse</a> </li> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/integratie-andere-tools" tabindex="0">Integratie Andere Tools</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0"> Oplossingen naar rol</span> 
+                <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/beheerders" tabindex="0">Voor Beheerders</a> </li> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/it-technologen" tabindex="0">Voor It Technologen</a> </li> 
+                 <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/docenten" tabindex="0">Voor Docenten</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item menu-item--expanded dropdown-narrow"> <a href="https://www.instructure.com/news-events" tabindex="0">Nieuws en evenementen</a> 
+            <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item"> <a href="https://www.instructure.com/nl/events" tabindex="0">Evenementen</a> </li> 
+               <li class="menu-item"> <a href="https://www.instructure.com/media-resources" tabindex="0">Mediabronnen</a> </li> 
+               <li class="menu-item"> <a href="https://www.instructure.com/news/public-relations" tabindex="0">Persberichten</a> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item menu-item--expanded dropdown-narrow"> <a href="https://www.instructure.com/about" tabindex="0"> OVER ONS</a> 
+            <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">het bedrijf</span> 
+                <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="https://instructure.com/about/our-story" tabindex="0"> Ons verhaal</a> </li> 
+                 <li class="menu-item"> <a href="https://instructure.com/about/leadership" tabindex="0">Leadership</a> </li> 
+                 <li class="menu-item"> <a href="https://instructure.com/about/careers" tabindex="0">Carrières</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/contact-us" tabindex="0">Neem contact met ons op</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Privacy</span> 
+                <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/privacy" tabindex="0">Privacy en beveiliging</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0"> Partnerschappen</span> 
+                <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="https://instructure.com/canvas/our-partners" tabindex="0">Onze partners</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/become-partner" tabindex="0">Word partner</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+            </ul> </li> 
+          </ul> 
+         </nav> 
+         <div id="block-getademo" class="block block-block-content block-block-content2400af04-38e3-46a4-8dc1-5152e588f63b block--text block-getademo"> 
+          <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+           <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+            <a href="/nl/canvas/vraag-info-aan">VRAAG INFO AAN</a>
+           </div> 
+          </div> 
+         </div> <button class="menu-toggle" type="button"><span>Menu</span></button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="region region-mobile-nav"> 
+      <div id="block-searchinputblock-2" class="block block-ins-search block-search-input block-searchinputblock-2"> 
+       <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-page-1" action="/nl/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8"> 
+        <div class="form--inline clearfix"> 
+         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label"> 
+          <input placeholder="Search..." data-drupal-selector="edit-search-api-fulltext" data-msg-maxlength="This field field has a maximum length of 128." type="text" id="edit-search-api-fulltext" name="search_api_fulltext" value="" size="30" maxlength="128" class="form-text"> 
+         </div> 
+         <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--3">
+          <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit"> 
+         </div> 
+        </div> 
+       </form> 
+      </div> 
+      <nav role="navigation" aria-labelledby="block-maindutch-2-menu" id="block-maindutch-2" class="block block-menu navigation menu--main--dutch"> 
+       <h2 class="visually-hidden" id="block-maindutch-2-menu">Main - Dutch</h2> 
+       <ul class="menu menu-level-0 accordion-menu" data-accordion-menu="" data-submenu-toggle="true"> 
+        <li class="menu-item menu-item--expanded"> <a href="/nl/canvas/hoger-onderwijs" tabindex="0">Hoger onderwijs</a> 
+         <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> 
+             <div class="menu_link_content menu-link-contentmain--dutch view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">Het Canvas-ecosysteem</span> 
+              <ul class="menu"> 
+               <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/lms" tabindex="0">Canvas LMS</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas LMS vereenvoudigt cursusbeheer, communicatie en studentenverbinding.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/studio" tabindex="0">Canvas Studio</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Studio maakt videoleren boeiender en interactiever.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/nl/product/canvas/hoger-onderwijs/catalog" tabindex="0">Canvas Catalog</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Catalog stroomlijnt en moderniseert cursusregistratie en inschrijving.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/nl/product/canvas/diensten" tabindex="0">Diensten</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>We bieden uitrolplannen, producttraining, contentontwikkeling en meer.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/nl/product/alle-producten" class="view-all" tabindex="0">Alle Producten</a> </li> 
+               <li class="menu-item"> <a href="/nl/canvas/probeer-canvas" class="view-all" tabindex="0">PROBEER HET GRATIS</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Oplossingen naar behoefte</span> 
+             <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/online-blended-leren" tabindex="0">Online &amp; Blended Leren</a> </li> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/succes-van-studenten-betrokkenheid" tabindex="0">Succes Van Studenten Betrokkenheid</a> </li> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/gegevensanalyse" tabindex="0">Gegevensanalyse</a> </li> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/integratie-andere-tools" tabindex="0">Integratie Andere Tools</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0"> Oplossingen naar rol</span> 
+             <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/beheerders" tabindex="0">Voor Beheerders</a> </li> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/it-technologen" tabindex="0">Voor It Technologen</a> </li> 
+              <li class="menu-item"> <a href="/nl/canvas/hoger-onderwijs/docenten" tabindex="0">Voor Docenten</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item menu-item--expanded dropdown-narrow"> <a href="https://www.instructure.com/news-events" tabindex="0">Nieuws en evenementen</a> 
+         <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item"> <a href="https://www.instructure.com/nl/events" tabindex="0">Evenementen</a> </li> 
+            <li class="menu-item"> <a href="https://www.instructure.com/media-resources" tabindex="0">Mediabronnen</a> </li> 
+            <li class="menu-item"> <a href="https://www.instructure.com/news/public-relations" tabindex="0">Persberichten</a> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item menu-item--expanded dropdown-narrow"> <a href="https://www.instructure.com/about" tabindex="0"> OVER ONS</a> 
+         <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">het bedrijf</span> 
+             <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="https://instructure.com/about/our-story" tabindex="0"> Ons verhaal</a> </li> 
+              <li class="menu-item"> <a href="https://instructure.com/about/leadership" tabindex="0">Leadership</a> </li> 
+              <li class="menu-item"> <a href="https://instructure.com/about/careers" tabindex="0">Carrières</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/contact-us" tabindex="0">Neem contact met ons op</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Privacy</span> 
+             <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/privacy" tabindex="0">Privacy en beveiliging</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0"> Partnerschappen</span> 
+             <ul class="menu_link_content menu-link-contentmain--dutch view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="https://instructure.com/canvas/our-partners" tabindex="0">Onze partners</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/become-partner" tabindex="0">Word partner</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <div id="block-regionswitcher-2" class="block block-e3-regional-redirects block-region-switcher-block block-regionswitcher-2"> 
+       <div class="region-switcher-main-wrapper switcher-closed">
+        <div class="region-switcher-modal hidden">
+         <div class="region-switcher-modal-logo"></div> <button class="region-switcher-close-modal">Close modal</button> 
+         <div class="region-switcher-list-wrapper item-list">
+          <h3>Select your location</h3>
+          <ul class="region-switcher-list">
+           <li>
+            <div class="item-list">
+             <h3>Americas</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/" data-active-text="United States" class="region-link skip-external" hreflang="en">United States</a>
+               <div>
+                English
+               </div> </li>
+              <li class="region-switcher-link"><a href="/pt-br" data-active-text="Brazil" class="region-link skip-external" hreflang="pt-br">Brazil</a>
+               <div>
+                Português
+               </div> </li>
+              <li class="region-switcher-link"><a href="/es" data-active-text="Latin America" class="region-link skip-external" hreflang="es">Latin America</a>
+               <div>
+                Español
+               </div> </li>
+             </ul>
+            </div></li>
+           <li>
+            <div class="item-list">
+             <h3>Asia Pacific</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/en-au" data-active-text="Australia" class="region-link skip-external" hreflang="en-au">Australia</a>
+               <div>
+                English
+               </div> </li>
+             </ul>
+            </div></li>
+           <li>
+            <div class="item-list">
+             <h3>Europe</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/de" data-active-text="Germany" class="region-link skip-external" hreflang="de">Germany</a>
+               <div>
+                Deutsch
+               </div> </li>
+              <li class="region-switcher-link"><a href="/es-es" data-active-text="Spain" class="region-link skip-external" hreflang="es-es">Spain</a>
+               <div>
+                Español
+               </div> </li>
+              <li class="region-switcher-link"><a href="/en-gb" data-active-text="United Kingdom" class="region-link skip-external" hreflang="en-gb">United Kingdom</a>
+               <div>
+                English
+               </div> </li>
+              <li class="region-switcher-link"><a href="/nl" data-active-text="Benelux" class="region-link skip-external region-link-active" hreflang="nl">Benelux</a>
+               <div>
+                Dutch
+               </div> </li>
+             </ul>
+            </div></li>
+          </ul>
+         </div>
+        </div> 
+        <div class="region-switcher-active-region">
+         <a href="/nl">Benelux</a>
+        </div> 
+       </div> 
+       <div class="region-redirect-reset-link hidden">
+        <a href="">Reset language preference</a>
+       </div> 
+       <div class="modal-redirect-reset-wrapper hidden">
+        <div class="modal-redirect-reset-copy"></div> <a href="" class="clear-preference-link">Clear redirect preference</a>
+       </div> 
+      </div> 
+      <nav role="navigation" aria-labelledby="block-utilitydutch-2-menu" id="block-utilitydutch-2" class="block block-menu navigation menu--utility-dutch"> 
+       <h2 id="block-utilitydutch-2-menu">Utility - Dutch</h2> 
+       <ul class="menu utility-dropdown"> 
+        <li class="menu-item"> <a href="https://www.instructure.com/nl/canvas/support-faq" tabindex="0">Ondersteuning</a> </li> 
+        <li class="menu-item"> <a href="https://www.instructure.com/contact-us" tabindex="0">Neem contact met ons op</a> </li> 
+        <li class="menu-item menu-item--expanded"> <span tabindex="0">Log In</span> 
+         <ul class="menu"> 
+          <li class="menu-item"> <a href="/nl/canvas/login/free-for-teacher" class="menu-item--login-canvas" tabindex="0" data-drupal-link-system-path="node/2286">Canvas</a> </li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <div id="block-getademo-2" class="block block-block-content block-block-content2400af04-38e3-46a4-8dc1-5152e588f63b block--text block-getademo-2"> 
+       <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+        <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+         <a href="/nl/canvas/vraag-info-aan">VRAAG INFO AAN</a>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+    <div class="region region-highlighted"> 
+     <div id="block-dmbnotificationsblock" class="block block-dismissible-message-bar block-dmb-notifications-block block-dmbnotificationsblock"> 
+      <div class="container"> 
+       <div>
+        <div class="dmb-notifications-ajax-wrapper"></div> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-drupal-messages-fallback class="hidden"></div> 
+    </div> 
+    <main id="main-content" role="main"> 
+     <div class="layout-content"> 
+      <div class="region region-content"> 
+       <div id="block-themekit-content" class="block block-system block-system-main-block block-themekit-content"> 
+        <article role="article" about="/nl/canvas/support-faq" class="node node--type-component-page node--promoted node--view-mode-full"> 
+         <div class="paragraph paragraph--type--header-banner-basic paragraph--view-mode--default"> 
+          <div class="bg-container"></div> 
+          <div class="paragraph-content"> 
+           <div class="title-container"> 
+            <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+             <p>SELF-SERVICE CANVAS HULP</p> 
+            </div> 
+            <h1 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pcanvas-hulp-span-classemphasisfaqsspanp"><p>Canvas Hulp <span class="emphasis">FAQ's</span></p></h1> 
+           </div> 
+           <div class="content-container"> 
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+             <p>Hieronder vind je Canvas' antwoorden op veelgestelde vragen. Wij raden je ook aan om onze gids voor probleemoplossing te bekijken met antwoorden op de belangrijkste vragen of om naar onze Community te gaan voor een stap-voor-stap uitleg en hulpmiddelen die aangepast zijn op jouw rol.</p>
+            </div> 
+            <div class="field field--name-field-p-cta-primary field--type-entity-reference-revisions field--label-hidden field__item"> 
+             <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+              <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+               <a href="https://community.canvaslms.com/t5/Troubleshooting/tkb-p/Troubleshooting">GIDS VOOR PROBLEEMOPLOSSING</a>
+              </div> 
+             </div> 
+            </div> 
+            <div class="field field--name-field-p-cta-secondary field--type-entity-reference-revisions field--label-hidden field__item"> 
+             <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+              <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+               <a href="https://community.canvaslms.com/">VRAAG HET ONZE COMMUNITY</a>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="node__content"> 
+          <div class="layout onecol-layout bg-color--none m-top--half m-bottom--half"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>WACHTWOORD EN INLOGGEGEVENS</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-kan-ik-mijn-wachtwoord-wijzigen"><p>Hoe kan ik mijn wachtwoord wijzigen?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Als je je eigen Canvas-account hebt aangemaakt, ga dan naar "Log in" en klik op de link "Wachtwoord vergeten?". Vul de inloggegevens van jouw Canvas-account in en klik op "Vraag wachtwoord aan". Je krijgt dan een e-mail toegestuurd om je wachtwoord te wijzigen. Zodra je je wachtwoord hebt gewijzigd, ga je terug naar de inlogpagina om in te loggen. Bekijk voor meer informatie de inlogtips voor:</p> 
+               <ul>
+                <li><a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-reset-my-password-as-an-instructor/ta-p/1182">Docenten</a></li> 
+                <li><a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-reset-my-password-as-a-student/ta-p/409">Studenten</a></li> 
+                <li><a href="https://community.canvaslms.com/t5/Observer-Guide/How-do-I-reset-my-password-as-an-observer/ta-p/570">Ouders (waarnemers)</a></li> 
+               </ul>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-vind-ik-de-inloggegevens-van-mijn-school"><p>Hoe vind ik de inloggegevens van mijn school?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Als je Canvas gebruikt als onderdeel van een schoolaccount, log je in vanaf de website van jouw instelling of door de directe Canvas-URL te gebruiken. Met een <a href="https://www.canvas.net/">Canvas-Netwerk</a>-account log je ook in via een Canvas-URL. Hier <a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-log-in-to-Canvas-as-a-student/ta-p/505">vind je een stap-voor-stap uitleg</a>.</p> 
+               <p> Opmerking: Je hebt een account nodig om bij Canvas in te kunnen loggen. Als je verbonden bent aan een instelling die Canvas gebruikt en je weet je gebruikersnaam en wachtwoord niet, moet je contact opnemen met je sitebeheerder. Als je een deelnamecode hebt gekregen of een geheime link om deel te nemen aan een cursus, kun je hier een <a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-sign-up-for-a-Canvas-account-with-a-join-code-or-secret/ta-p/437">Canvas-account aanmaken</a>.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-kan-ik-als-ouder-een-account-aanmaken-en-inloggen"><p>Hoe kan ik als ouder een account aanmaken en inloggen?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ouders kunnen in Canvas een account aanmaken als "waarnemer". Waarnemers kunnen hun Canvas-account koppelen aan dat van een student zodat zij deadlines, aankondigingen en andere cursusinformatie kunnen zien.</p> 
+               <p> Om een Canvas-account aan te maken, heb je een Canvas-URL nodig van de instelling waar jouw student staat ingeschreven. Als je deze URL niet hebt, moet je contact opnemen met de instelling. Als je al een account hebt van de instelling van jouw student, log dan bij Canvas in met de inloggegevens die je hebt gekregen. <a href="https://community.canvaslms.com/t5/Observer-Guide/How-do-I-sign-up-for-a-Canvas-account-as-a-parent/ta-p/540">Vind hier een stap-voor-stap uitleg</a>.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-krijg-ik-toegang-tot-hulpmiddelen-voor-ouders"><p>Hoe krijg ik toegang tot hulpmiddelen voor ouders?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>In de Community hebben we een hele sectie gewijd aan <a href="https://community.canvaslms.com/t5/Observer-Parent/gh-p/observer">hulpmiddelen voor ouders</a> voor Canvas, met handige links, een forum om vragen op te stellen en een blog.</p> 
+               <p> Een docent en community coach hebben bovendien<a href="https://community.canvaslms.com/t5/Observer-Parent/Finding-Your-Way-The-Observer-Adventure/ba-p/405164">deze gids</a> opgesteld, waarin je bijvoorbeeld een stap-voor-stap uitleg vindt over koppelcodes, het toevoegen en organiseren van meerdere studenten, het inzien van cursussen en cijfers van studenten en het krijgen van notificaties.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-krijg-ik-een-koppelcode"><p>Hoe krijg ik een koppelcode?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Om je eigen account aan dat van een student te koppelen, heb je een specifieke koppelcode voor die student nodig. Studenten kunnen deze koppelcodes krijgen via hun gebruiksinstellingen. Als de instelling er toestemming voor gegeven heeft, mogen beheerders en docenten ook koppelcodes uitgeven. Ga voor meer informatie naar <a href="https://s3.amazonaws.com/tr-learncanvas/docs/Mobile_PairingCodePDF.pdf">FAQ's over koppelcodes</a>.</p> 
+               <p>Afhankelijk van jouw rol zijn er twee manier om een koppelcode te krijgen.</p> 
+               <ul>
+                <li><a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-generate-a-pairing-code-for-an-observer-as-a-student/ta-p/418">Hoe je als student een koppelcode voor een waarnemer kunt krijgen</a></li> 
+                <li><a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-generate-a-pairing-code-for-an-observer-as-an/ta-p/1217">Hoe je als docent een koppelcode voor een waarnemer kunt krijgen</a></li> 
+               </ul>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="mijn-koppelcode-is-ongeldig-wat-moet-ik-doen"><p>Mijn koppelcode is ongeldig Wat moet ik doen?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Een paar dingen om op te letten als een koppelcode ongeldig is:</p> 
+               <p>Als de koppelcode al door een andere waarnemer (ouder) wordt gebruikt, heb je een nieuwe code nodig.</p> 
+               <p>Als de koppelcode langer dan zeven dagen geleden aangemaakt is, heb je een nieuwe code nodig.</p> 
+               <p>De koppelcode moet precies ingevoerd worden zoals deze er staat (ze zijn hoofdlettergevoelig) en zonder spaties.</p> 
+               <p>De koppelcode moet ingevoerd worden vanaf dezelfde instelling (d.w.z. de Canvas-URL) als waar jouw student staat ingeschreven. Gebruik, als deze probleemoplossende tips niet van toepassing zijn, de optie "Meld een probleem" <a href="https://community.canvaslms.com/t5/Canvas-Parent-iOS-Guide/How-do-I-get-help-with-the-Canvas-Parent-app-on-my-iOS-device/ta-p/2066">in de app</a> of <a href="https://community.canvaslms.com/t5/Observer-Guide/How-do-I-get-help-with-Canvas-as-an-observer/ta-p/568">in je browser</a> zodat we kunnen vaststellen wat het probleem is. Vermeld hierbij het e-mailadres van de student, niet jouw persoonlijke e-mailadres, aangezien dat niet in ons systeem staat.</p>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--half m-bottom--half"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>GRATIS CANVAS-ACCOUNT</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="is-het-voor-altijd-gratis"><p>Is het voor altijd gratis?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ja, onze gratis Canvas-accounts (ook wel "Free for Teacher"-accounts genoemd) zijn altijd gratis.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="k-heb-hulp-nodig-met-mijn-gratis-canvas-account-waar-kan-ik-hulp-vinden"><p>k heb hulp nodig met mijn gratis Canvas-account. Waar kan ik hulp vinden?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ga voor hulp met je Free for Teacher-account naar <a href="https://community.canvaslms.com/docs/DOC-16623">FAQ over Free for Teacher-account</a> in de Canvas Community.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="kan-ik-dat-ook-gebruiken-als-ik-geen-docent-ben"><p>Kan ik dat ook gebruiken als ik geen docent ben?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ja! Studenten, hun ouders en iedereen die gebruik wil maken van Canvas-leermiddelen kan een account aanmaken.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="wat-zijn-de-beperkingen"><p>Wat zijn de beperkingen?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Het gratis Canvas-account bevat niet alle functies die gebruikers van instellingen in Canvas hebben. Bekijk deze <a href="https://s3.amazonaws.com/tr-learncanvas/docs/Canvas_Account_Comparisons.pdf">gids ter vergelijking van Canvas-accounts</a> om het verschil te zien.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="hoe-kan-ik-een-deelnamecode-krijgen"><p>Hoe kan ik een deelnamecode krijgen?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Als je Canvas via je instelling gebruikt, heb je waarschijnlijk al een account en moet je een cursusuitnodiging accepteren. Jouw instelling stuurt jou je inloggegevens toe. Als je nog geen account hebt, kun je dat aanmaken wanneer je de cursusuitnodiging accepteert.</p> 
+               <p> Als je Canvas niet via je instelling gebruikt, kun je je eigen account aanmaken. Van je docent krijg je een deelnamecode waarmee je rechtstreeks in de cursus terechtkomt. Deze code wordt apart verstuurd, dus niet samen met de e-mail van Canvas waarin je wordt uitgenodigd deel te nemen aan de cursus. Als je een Canvas-account aan moet maken, maar je hebt je deelnamecode nog niet gekregen, neem dan alsjeblieft contact op met je docent of instelling om jou te helpen in te loggen. Volg <a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-sign-up-for-a-Canvas-account-with-a-join-code-or-secret/ta-p/437">deze stap-voor-stap uitleg</a>.</p>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--half m-bottom--half"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>CANVAS-HULPMIDDELEN</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="waar-moet-ik-als-huidige-klant-heen-voor-hulp"><p>Waar moet ik als huidige klant heen voor hulp?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ga naar je Canvas-Dashboard en klik op "Help" onderaan Globale Navigatie. Van daaruit heb je toegang tot een groot aantal hulpmiddelen en het Portal voor Trainingsdiensten. Je kunt ook contact opnemen met de beheerder van jouw school of de hulpgidsen en fora in de <a href="https://community.canvaslms.com/">Community</a> bekijken.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="waar-kan-ik-de-canvas-hulpknop-vinden"><p>Waar kan ik de Canvas-hulpknop vinden?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Ga naar je Canvas-Dashboard en klik op "Help" onderaan Globale Navigatie. Van daaruit heb je toegang tot een groot aantal hulpmiddelen en het Portal voor Trainingsdiensten.</p>
+              </div> 
+             </div> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="wat-moet-ik-doen-als-ik-mijn-account-niet-in-kom"><p>Wat moet ik doen als ik mijn account niet in kom?</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Volg deze <a href="https://community.canvaslms.com/t5/Troubleshooting/Logging-into-Canvas/ta-p/875">stap-voor-stap uitleg</a> als je niet kunt inloggen op Canvas.</p> 
+               <p><a href="https:/

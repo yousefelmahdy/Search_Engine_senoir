@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Using the GitHub API in your app - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Learn how to set up your app to listen for events and use the Octokit library to perform REST API operations."> 
+  <meta name="keywords" content="GitHub Apps"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/developers/apps/guides/using-the-github-api-in-your-app"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="0A8IfOs9-FB809IkIamBi2QgyGB8x2VjbQxo"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/developers" class="pl-4 pr-5 pb-1 f4 color-text-primary">Developers</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/about-githubs-apis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub's APIs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/managing-deploy-keys" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing deploy keys</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/viewing-deployment-history" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing deployment history</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/using-ssh-agent-forwarding" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using SSH agent forwarding</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/replacing-github-services" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Replacing GitHub Services</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/github-developer-program" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">GitHub Developer Program</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/webhooks-and-events" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Webhooks and events</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/webhooks" class="pl-4 pr-5 py-2 color-text-primary">Webhooks </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/about-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/creating-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/configuring-your-server-to-receive-payloads" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring your server to receive payloads</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/testing-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Testing webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/securing-your-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Webhook events and payloads</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/events" class="pl-4 pr-5 py-2 color-text-primary">Events </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/github-event-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub event types</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Issue event types</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/apps" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Apps</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/getting-started-with-apps" class="pl-4 pr-5 py-2 color-text-primary">Getting started with apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/about-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/activating-optional-features-for-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activating optional features for apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Differences between GitHub Apps and OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating OAuth Apps to GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/setting-up-your-development-environment-to-create-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up your development environment to create a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Building GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/setting-permissions-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting permissions for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/authenticating-with-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authenticating with GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Identifying and authorizing users for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/rate-limits-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limits for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/refreshing-user-to-server-access-tokens" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Refreshing user-to-server access tokens</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-from-a-manifest" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App from a manifest</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-using-url-parameters" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App using URL parameters</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-custom-badge-for-your-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/installing-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/modifying-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Editing a GitHub App's permissions</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/making-a-github-app-public-or-private" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Making a GitHub App public or private</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/suspending-a-github-app-installation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Suspending a GitHub App installation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/transferring-ownership-of-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/deleting-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Building OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/authorizing-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authorizing OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scopes for OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-a-custom-badge-for-your-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/modifying-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/transferring-ownership-of-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-authorization-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting authorization request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting OAuth App access token request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/deleting-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting an OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/developers/apps/guides" class="pl-4 pr-5 py-2 color-text-primary">Guides </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the GitHub API in your app</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-content-attachments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using content attachments</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/creating-ci-tests-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating CI tests with the Checks API</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/github-marketplace" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Marketplace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Developers 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      color-text-link text-underline active"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Developers" href="/en/developers" class="d-inline-block ">Developers</a><a title="category: Apps" href="/en/developers/apps" class="d-inline-block ">Apps</a><a title="mapTopic: Guides" href="/en/developers/apps/guides" class="d-inline-block ">Guides</a><a title="article: Using the GitHub API in your app" href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="d-inline-block color-text-tertiary">Using the GitHub API in your app</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/apps/guides/using-the-github-api-in-your-app" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Using the GitHub API in your app</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Learn how to set up your app to listen for events and use the Octokit library to perform REST API operations.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#introduction">Introduction</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#prerequisites">Prerequisites</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#building-the-app">Building the app</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-1-update-app-permissions">Step 1. Update app permissions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-2-add-event-handling">Step 2. Add event handling</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-3-create-a-new-label">Step 3. Create a new label</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-4-add-label-handling">Step 4. Add label handling</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#troubleshooting">Troubleshooting</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#conclusion">Conclusion</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#next-steps">Next steps</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="introduction"><a href="#introduction">Introduction</a></h3> 
+       <p>This guide will help you build a GitHub App and run it on a server. The app you build will add a label to all new issues opened in the repository where the app is installed.</p> 
+       <p>This project will walk you through the following:</p> 
+       <ul> 
+        <li>Programming your app to listen for events</li> 
+        <li>Using the Octokit.rb library to do REST API operations</li> 
+       </ul> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> This guide demonstrates the app development process using the Ruby programming language. However, there are many <a href="/en/rest/overview/libraries">flavors of Octokit</a>. If you prefer JavaScript, you can use <a href="https://probot.github.io/">Probot</a> and <a href="https://octokit.github.io/rest.js/">Node.js</a> to develop GitHub Apps.</p> 
+       </div> 
+       <p>Once you've worked through the steps, you'll be ready to develop other kinds of integrations using the full suite of GitHub APIs. You can check out successful examples of apps on <a href="https://github.com/marketplace">GitHub Marketplace</a> and <a href="https://github.com/works-with">Works with GitHub</a>.</p> 
+       <h3 id="prerequisites"><a href="#prerequisites">Prerequisites</a></h3> 
+       <p>You may find it helpful to have a basic understanding of the following:</p> 
+       <ul> 
+        <li><a href="/en/apps/about-apps">GitHub Apps</a></li> 
+        <li><a href="/en/webhooks">Webhooks</a></li> 
+        <li><a href="https://www.ruby-lang.org/en/">The Ruby programming language</a></li> 
+        <li><a href="/en/rest">REST APIs</a></li> 
+        <li><a href="http://sinatrarb.com/">Sinatra</a></li> 
+       </ul> 
+       <p>But you can follow along at any experience level. We'll link out to information you need along the way!</p> 
+       <p>Before you begin, you'll need to do the following:</p> 
+       <ol> 
+        <li> <p>Clone the <a href="https://github.com/github-developer/using-the-github-api-in-your-app">Using the GitHub API in your app</a> repository.</p> <pre><code class="hljs language-shell">$ git clone https://github.com/github-developer/using-the-github-api-in-your-app.git</code></pre> <p>Inside the directory, you'll find a <code>template_server.rb</code> file with the template code you'll use in this quickstart and a <code>server.rb</code> file with the completed project code.</p> </li> 
+        <li> <p>Follow the steps in the <a href="/en/apps/quickstart-guides/setting-up-your-development-environment">Setting up your development environment</a> quickstart to configure and run the <code>template_server.rb</code> app server. If you've previously completed a GitHub App quickstart other than <a href="/en/apps/quickstart-guides/setting-up-your-development-environment">Setting up your development environment</a>, you should register a <em>new</em> GitHub App and start a new Smee channel to use with this quickstart.</p> <p>This quickstart includes the same <code>template_server.rb</code> code as the <a href="/en/apps/quickstart-guides/setting-up-your-development-environment">Setting up your development environment</a> quickstart. <strong>Note:</strong> As you follow along with the <a href="/en/apps/quickstart-guides/setting-up-your-development-environment">Setting up your development environment</a> quickstart, make sure to use the project files included in the <a href="https://github.com/github-developer/using-the-github-api-in-your-app">Using the GitHub API in your app</a> repository.</p> <p>See the <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#troubleshooting">Troubleshooting</a> section if you are running into problems setting up your template GitHub App.</p> </li> 
+       </ol> 
+       <h3 id="building-the-app"><a href="#building-the-app">Building the app</a></h3> 
+       <p>Now that you're familiar with the <code>template_server.rb</code> code, you're going to create code that automatically adds the <code>needs-response</code> label to all issues opened in the repository where the app is installed.</p> 
+       <p>The <code>template_server.rb</code> file contains app template code that has not yet been customized. In this file, you'll see some placeholder code for handling webhook events and some other code for initializing an Octokit.rb client.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> <code>template_server.rb</code> contains many code comments that complement this guide and explain additional technical details. You may find it helpful to read through the comments in that file now, before continuing with this section, to get an overview of how the code works.</p> 
+        <p>The final customized code that you'll create by the end of this guide is provided in <a href="https://github.com/github-developer/using-the-github-api-in-your-app/blob/master/server.rb"><code>server.rb</code></a>. Try waiting until the end to look at it, though!</p> 
+       </div> 
+       <p>These are the steps you'll complete to create your first GitHub App:</p> 
+       <ol> 
+        <li><a href="#step-1-update-app-permissions">Update app permissions</a></li> 
+        <li><a href="#step-2-add-event-handling">Add event handling</a></li> 
+        <li><a href="#step-3-create-a-new-label">Create a new label</a></li> 
+        <li><a href="#step-4-add-label-handling">Add label handling</a></li> 
+       </ol> 
+       <h3 id="step-1-update-app-permissions"><a href="#step-1-update-app-permissions">Step 1. Update app permissions</a></h3> 
+       <p>When you <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-2-register-a-new-github-app">first registered your app</a>, you accepted the default permissions, which means your app doesn't have access to most resources. For this example, your app will need permission to read issues and write labels.</p> 
+       <p>To update your app's permissions:</p> 
+       <ol> 
+        <li>Select your app from the <a href="https://github.com/settings/apps">app settings page</a> and click <strong>Permissions &amp; Webhooks</strong> in the sidebar.</li> 
+        <li>In the "Permissions" section, find "Issues," and select <strong>Read &amp; Write</strong> in the "Access" dropdown next to it. The description says this option grants access to both issues and labels, which is just what you need.</li> 
+        <li>In the "Subscribe to events" section, select <strong>Issues</strong> to subscribe to the event.</li> 
+        <li>Click <strong>Save changes</strong> at the bottom of the page.</li> 
+        <li>If you've installed the app on your account, check your email and follow the link to accept the new permissions. Any time you change your app's permissions or webhooks, users who have installed the app (including yourself) will need to accept the new permissions before the changes take effect. You can also accept the new permissions by navigating to your <a href="https://github.com/settings/installations">installations page</a> and clicking on "Configure" next to your app. You'll see a banner at the top of the page letting you know that the app is requesting different permissions. Click "Details" and click "Accept new permissions."</li> 
+       </ol> 
+       <p>Great! Your app has permission to do the tasks you want it to do. Now you can add the code to make it work.</p> 
+       <h3 id="step-2-add-event-handling"><a href="#step-2-add-event-handling">Step 2. Add event handling</a></h3> 
+       <p>The first thing your app needs to do is listen for new issues that are opened. Now that you've subscribed to the <strong>Issues</strong> event, you'll start receiving the <a href="/en/webhooks/event-payloads/#issues"><code>issues</code></a> webhook, which is triggered when certain issue-related actions occur. You can filter this event type for the specific action you want in your code.</p> 
+       <p>GitHub sends webhook payloads as <code>POST</code> requests. Because you forwarded your Smee webhook payloads to <code>http://localhost/event_handler:3000</code>, your server will receive the <code>POST</code> request payloads in the <code>post '/event_handler'</code> route.</p> 
+       <p>An empty <code>post '/event_handler'</code> route is already included in the <code>template_server.rb</code> file, which you downloaded in the <a href="#prerequisites">prerequisites</a> section. The empty route looks like this:</p> 
+       <pre><code class="hljs language-ruby">  post <span class="hljs-string">'/event_handler'</span> <span class="hljs-keyword">do</span>
+
+    <span class="hljs-comment"># # # # # # # # # # # #</span>
+    <span class="hljs-comment"># ADD YOUR CODE HERE  #</span>
+    <span class="hljs-comment"># # # # # # # # # # # #</span>
+
+    <span class="hljs-number">200</span> <span class="hljs-comment"># success status</span>
+  <span class="hljs-keyword">end</span>
+</code></pre> 
+       <p>Use this route to handle the <code>issues</code> event by adding the following code:</p> 
+       <pre><code class="hljs language-ruby"><span class="hljs-keyword">case</span> request.env[<span class="hljs-string">'HTTP_X_GITHUB_EVENT'</span>]
+<span class="hljs-keyword">when</span> <span class="hljs-string">'issues'</span>
+  <span class="hljs-keyword">if</span> <span class="hljs-variable">@payload</span>[<span class="hljs-string">'action'</span>] === <span class="hljs-string">'opened'</span>
+    handle_issue_opened_event(<span class="hljs-variable">@payload</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre> 
+       <p>Every event that GitHub sends includes a request header called <code>HTTP_X_GITHUB_EVENT</code>, which indicates the type of event in the <code>POST</code> request. Right now, you're only interested in <code>issues</code> event types. Each event has an additional <code>action</code> field that indicates the type of action that triggered the events. For <code>issues</code>, the <code>action</code> field can be <code>assigned</code>, <code>unassigned</code>, <code>labeled</code>, <code>unlabeled</code>, <code>opened</code>, <code>edited</code>, <code>milestoned</code>, <code>demilestoned</code>, <code>closed</code>, or <code>reopened</code>.</p> 
+       <p>To test your event handler, try adding a temporary helper method. You'll update later when you <a href="#step-4-add-label-handling">Add label handling</a>. For now, add the following code inside the <code>helpers do</code> section of the code. You can put the new method above or below any of the other helper methods. Order doesn't matter.</p> 
+       <pre><code class="hljs language-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_issue_opened_event</span><span class="hljs-params">(payload)</span></span>
+  logger.debug <span class="hljs-string">'An issue was opened!'</span>
+<span class="hljs-keyword">end</span>
+</code></pre> 
+       <p>This method receives a JSON-formatted event payload as an argument. This means you can parse the payload in the method and drill down to any specific data you need. You may find it helpful to inspect the full payload at some point: try changing <code>logger.debug 'An issue was opened!</code> to <code>logger.debug payload</code>. The payload structure you see should match what's <a href="/en/webhooks/event-payloads/#issues">shown in the <code>issues</code> webhook event docs</a>.</p> 
+       <p>Great! It's time to test the changes.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> You'll need to restart the Sinatra server before you can test changes. Enter <code>Ctrl-C</code> to stop the server, and then run <code>ruby template_server.rb</code> again. If you don't want to do this every time you change your app code, you can look into <a href="http://sinatrarb.com/faq.html#reloading">reloading</a>.</p> 
+       </div> 
+       <p>In your browser, visit the repository where you installed your app. Open a new issue in this repository. The issue can say anything you like. It's just for testing.</p> 
+       <p>When you look back at your Terminal, you should see a message in the output that says, <code>An issue was opened!</code> Congrats! You've added an event handler to your app. ?</p> 
+       <h3 id="step-3-create-a-new-label"><a href="#step-3-create-a-new-label">Step 3. Create a new label</a></h3> 
+       <p>Okay, your app can tell when issues are opened. Now you want it to add the label <code>needs-response</code> to any newly opened issue in a repository the app is installed in.</p> 
+       <p>Before the label can be <em>added</em> anywhere, you'll need to <em>create</em> the custom label in your repository. You'll only need to do this one time. For the purposes of this guide, create the label manually on GitHub. In your repository, click <strong>Issues</strong>, then <strong>Labels</strong>, then click <strong>New label</strong>. Name the new label <code>needs-response</code>.</p> 
+       <div class="extended-markdown tip border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Tip</strong>: Wouldn't it be great if your app could create the label programmatically? <a href="/en/rest/reference/issues#create-a-label">It can</a>! Try adding the code to do that on your own after you finish the steps in this guide.</p> 
+       </div> 
+       <p>Now that the label exists, you can program your app to use the REST API to <a href="/en/rest/reference/issues#add-labels-to-an-issue">add the label to any newly opened issue</a>.</p> 
+       <h3 id="step-4-add-label-handling"><a href="#step-4-add-label-handling">Step 4. Add label handling</a></h3> 
+       <p>Congrats—you've made it to the final step: adding label handling to your app. For this task, you'll want to use the <a href="http://octokit.github.io/octokit.rb/">Octokit.rb Ruby library</a>.</p> 
+       <p>In the Octokit.rb docs, find the list of <a href="http://octokit.github.io/octokit.rb/Octokit/Client/Labels.html">label methods</a>. The method you'll want to use is <a href="http://octokit.github.io/octokit.rb/Octokit/Client/Labels.html#add_labels_to_an_issue-instance_method"><code>add_labels_to_an_issue</code></a>.</p> 
+       <p>Back in <code>template_server.rb</code>, find the method you defined previously:</p> 
+       <pre><code class="hljs language-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_issue_opened_event</span><span class="hljs-params">(payload)</span></span>
+  logger.debug <span class="hljs-string">'An issue was opened!'</span>
+<span class="hljs-keyword">end</span>
+</code></pre> 
+       <p>The <a href="http://octokit.github.io/octokit.rb/Octokit/Client/Labels.html#add_labels_to_an_issue-instance_method"><code>add_labels_to_an_issue</code></a> docs show you'll need to pass three arguments to this method:</p> 
+       <ul> 
+        <li>Repo (string in <code>"owner/name"</code> format)</li> 
+        <li>Issue number (integer)</li> 
+        <li>Labels (array)</li> 
+       </ul> 
+       <p>You can parse the payload to get both the repo and the issue number. Since the label name will always be the same (<code>needs-response</code>), you can pass it as a hardcoded string in the labels array. Putting these pieces together, your updated method might look like this:</p> 
+       <pre><code class="hljs language-ruby"><span class="hljs-comment"># When an issue is opened, add a label</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_issue_opened_event</span><span class="hljs-params">(payload)</span></span>
+  repo = payload[<span class="hljs-string">'repository'</span>][<span class="hljs-string">'full_name'</span>]
+  issue_number = payload[<span class="hljs-string">'issue'</span>][<span class="hljs-string">'number'</span>]
+  <span class="hljs-variable">@installation_client</span>.add_labels_to_an_issue(repo, issue_number, [<span class="hljs-string">'needs-response'</span>])
+<span class="hljs-keyword">end</span>
+</code></pre> 
+       <p>Try opening a new issue in your test repository and see what happens! If nothing happens right away, try refreshing.</p> 
+       <p>You won't see much in the Terminal, <em>but</em> you should see that a bot user has added a label to the issue.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> When GitHub Apps take actions via the API, such as adding labels, GitHub shows these actions as being performed by <em>bot</em> accounts. For more information, see "<a href="/en/apps/differences-between-apps/#machine-vs-bot-accounts">Machine vs. bot accounts</a>."</p> 
+       </div> 
+       <p>If so, congrats! You've successfully built a working app! ?</p> 
+       <p>You can see the final code in <code>server.rb</code> in the <a href="https://github.com/github-developer/using-the-github-api-in-your-app">app template repository</a>.</p> 
+       <p>See "<a href="#next-steps">Next steps</a>" for ideas about where you can go from here.</p> 
+       <h3 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h3> 
+       <p>Here are a few common problems and some suggested solutions. If you run into any other trouble, you can ask for help or advice in the <a href="https://github.community/c/github-api-development-and-support/37">GitHub API Development and Support Forum</a>.</p> 
+       <ul> 
+        <li> <p><strong>Q:</strong> My server isn't listening to events! The Smee client is running in a Terminal window, and I'm sending events on GitHub.com by opening new issues, but I don't see any output in the Terminal window where I'm running the server.</p> <p> <strong>A:</strong> You may not have the correct Smee domain in your app settings. Visit your <a href="https://github.com/settings/apps">app settings page</a> and double-check the fields shown in "<a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-2-register-a-new-github-app">Register a new app with GitHub</a>." Make sure the domain in those fields matches the domain you used in your <code>smee -u &lt;unique_channel&gt;</code> command in "<a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-1-start-a-new-smee-channel">Start a new Smee channel</a>."</p> </li> 
+        <li> <p><strong>Q:</strong> My app doesn't work! I opened a new issue, but even after refreshing, no label has been added to it.</p> <p> <strong>A:</strong> Make sure all of the following are true:</p> 
+         <ul> 
+          <li>You <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-7-install-the-app-on-your-account">installed the app</a> on the repository where you're opening the issue.</li> 
+          <li>Your <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-1-start-a-new-smee-channel">Smee client is running</a> in a Terminal window.</li> 
+          <li>Your <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-6-start-the-server">web server is running</a> with no errors in another Terminal window.</li> 
+          <li>Your app has <a href="/en/apps/quickstart-guides/setting-up-your-development-environment/#step-1-start-a-new-smee-channel">read &amp; write permissions on issues and is subscribed to issue events</a>.</li> 
+          <li>You <a href="#step-1-update-app-permissions">checked your email</a> after updating the permissions and accepted the new permissions.</li> 
+         </ul> </li> 
+       </ul> 
+       <h3 id="conclusion"><a href="#conclusion">Conclusion</a></h3> 
+       <p>After walking through this guide, you've learned the basic building blocks for developing GitHub Apps! To review, you:</p> 
+       <ul> 
+        <li>Programmed your app to listen for events</li> 
+        <li>Used the Octokit.rb library to do REST API operations</li> 
+       </ul> 
+       <h3 id="next-steps"><a href="#next-steps">Next steps</a></h3> 
+       <p>Here are some ideas for what you can do next:</p> 
+       <ul> 
+        <li><a href="https://developer.github.com/changes/2018-04-30-graphql-supports-github-apps/">Rewrite your app using GraphQL</a>!</li> 
+        <li>Rewrite your app in Node.js using <a href="https://github.com/probot/probot">Probot</a>!</li> 
+        <li>Have the app check whether the <code>needs-response</code> label already exists on the issue, and if not, add it.</li> 
+        <li>When the bot successfully adds the label, show a message in t

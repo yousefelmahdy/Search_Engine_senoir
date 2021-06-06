@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="google-site-verification" content="2V6atu8V9lqfHdeoHzlSG3waxE_LbV2-JMK8iOy7hRU">
+  <meta property="og:site_name" content="Pageclip">
+  <meta name="twitter:site" content="@benogle">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Pageclip is a simple way to save information from your website via forms or
+    front-end JavaScript. That is, you can save data from your website without a
+    server—Pageclip is your server.">
+  <meta property="og:description" content="Pageclip is a simple way to save information from your website via forms or
+    front-end JavaScript. That is, you can save data from your website without a
+    server—Pageclip is your server.">
+  <meta name="twitter:description" content="Pageclip is a simple way to save information from your website via forms or
+    front-end JavaScript. That is, you can save data from your website without a
+    server—Pageclip is your server.">
+  <meta name="author" content="Ben Ogle">
+  <meta property="article:author" content="Ben Ogle">
+  <meta name="twitter:creator" content="@benogle">
+  <meta name="title" content="">
+  <meta property="og:title" content="">
+  <meta property="twitter:title" content="">
+  <meta property="og:image" content="https://d2qlddhczasafd.cloudfront.net/img/marketing/product-16x9@2x.png">
+  <meta name="twitter:image:src" content="https://d2qlddhczasafd.cloudfront.net/img/marketing/product-16x9@2x.png">
+  <meta name="slack-app-id" content="A8RM09Q4B">
+  <title>Documentation - Pageclip</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen">
+  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+  <script>window.__INITIAL_PROPS = {};</script>
+  <link rel="shortcut icon" href="https://d2qlddhczasafd.cloudfront.net/favicon.png">
+  <link href="https://d2qlddhczasafd.cloudfront.net/docs.0bfd6eb154f7f87074e5133ceae383e0.css" rel="stylesheet">
+ </head>
+ <body>
+  <div class="content" id="page-root">
+   <nav class="public-navbar">
+    <a class="public-navbar__brand" href="/"><img src="/img/logo-black.png"> <span class="public-navbar__brand__subtitle">docs</span></a>
+    <div class="public-navbar__right">
+     <a href="/#pricing">Pricing</a> <a href="/#uses">Uses</a> <a href="/docs" class="public-navbar__active">Docs</a> <a href="/login" class="show-xs">Login</a> <a href="/signup" class="show-xs">Signup</a>
+    </div>
+    <div class="public-navbar__center">
+     <a href="/home" class="show-xs"><img class="public-navbar__mark" src="/img/mark-gradient.png"></a>
+    </div>
+   </nav>
+   <section class="section">
+    <div class="container docs">
+     <h1 class="docs__title show-mobile">Pageclip Documentation</h1>
+     <div class="col-md-3 scrollspy docs__left-column">
+      <div class="bs-sidebar hidden-print" data-spy="affix" data-offset-top="90" data-offset-bottom="90">
+       <div class="bs-sidebar__title show-mobile">
+        Contents
+       </div>
+       <ul class="nav bs-sidenav">
+        <li class="main has-children"><a href="#setup">Setup</a>
+         <ul class="nav">
+          <li><a href="#sites">Sites</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#forms">Forms</a></li>
+         </ul></li>
+        <li class="main has-children"><a href="#website-integration">Website Integration</a>
+         <ul class="nav">
+          <li><a href="#what-data-is-saved">What data is saved?</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#special-fields">Special fields</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#bare-minimum-integration">Bare minimum integration</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#using-the-loading-spinner">Using the loading spinner</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#form-validation">Form Validation</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#saving-data-to-a-specific-form">Saving data to a specific form</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#advanced-integration-pageclipjs">Advanced integration (pageclip.js)</a></li>
+         </ul></li>
+        <li class="main has-children"><a href="#3rd-party-integrations">3rd Party Integrations</a>
+         <ul class="nav">
+          <li><a href="#webhook">Webhook</a></li>
+         </ul></li>
+        <li class="main has-children"><a href="#rest-api">REST API</a>
+         <ul class="nav">
+          <li><a href="#api-keys">API Keys</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#api-version">API Version</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#api-clients">API Clients</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#authentication">Authentication</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#errors">Errors</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#endpoints">Endpoints</a></li>
+         </ul>
+         <ul class="nav">
+          <li><a href="#items">Items</a></li>
+         </ul></li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-md-9 docs__right-column padding_bottom-largest" role="main">
+      <h1 class="docs__title hide-mobile">Pageclip Documentation</h1>
+      <p>Pageclip is a simple way to save information from your website via forms or front-end JavaScript. That is, you can save data from your website without a server—<em>Pageclip is your server</em>.</p>
+      <p>Pageclip works great when you want the simplicity of a static website, but don't want to setup a server for a form or two. Capture leads on landing pages, use for contact forms, collecting emails for a newsletter, polls, surveys, etc.</p>
+      <p>Pageclip works anywhere you can put an HTML form. It works with any static site generator e.g. Jekyll, Hugo, Hexo, GitBook, Gatsby and all others. Pageclip also works on any hosting provider, from blog hosting providers like Wordpress, to static hosting providers like GitHub Pages or S3, to Platform-as-a-Service providers like Heroku and Docker, and any other method of hosting you have up your sleeve.</p>
+      <h2 id="setup">Setup</h2>
+      <p>First thing's first: have a website where you have access to edit the HTML :)</p>
+      <p><a href="./signup">Create a Pageclip account</a> if you haven't already. Once you have created an account, Pageclip will ask you to setup a site.</p>
+      <h3 id="sites">Sites</h3>
+      <p>A site is a website that has one or more forms you want to save to Pageclip. Give your site a name, and its domains.</p>
+      <ul>
+       <li><strong>Name</strong> - The name can be anything that helps you remember the site e.g. <code>Personal Blog</code></li>
+       <li><strong>Domains</strong> - Domains are a comma-separated list of domains (with or without subdomains) that can send data to this Pageclip site. For example, <code>example.com,localhost</code> will save data from forms on <code>http://example.com</code>, <code>http://www.example.com</code>, and <code>http://localhost:3000</code>, but reject data from <code>http://www.unicorns.com</code>.</li>
+      </ul>
+      <h3 id="forms">Forms</h3>
+      <p>If you have more than one form on your website that you want to store in Pageclip, you will need to create a named form in Pageclip's UI for each form on your site.</p>
+      <p>For example, if you have a contact form and a newsletter form, you would create two named forms in Pageclip: <code>contact</code>, and <code>newsletter</code>.</p>
+      <h2 id="website-integration">Website Integration</h2>
+      <p>Pageclip provides an <code>HTTPS</code> endpoint that will accept form data for each site and form. After you have created a site in Pageclip, it will show you the code to place on your website.</p>
+      <p><strong>Step 1</strong>: You place a script tag before the <code>&lt;/body&gt;</code> tag. This script provides the <code>Pageclip</code> global. By default this script will look for all <code>form.pageclip-form</code> elements on the page, and wrap them.</p>
+      <pre><code class="xml">&lt;script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"&gt;&lt;/script&gt;
+</code></pre>
+      <p><strong>Step 2</strong>: Next, you add the stylesheet to the <code>&lt;head&gt;</code>. It provides a loading spinner on the submit button and a 'thank you' message shown to the user after they have submitted the form. Feel free to override it with your own styling.</p>
+      <pre><code class="xml">&lt;link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"&gt;
+</code></pre>
+      <p><strong>Step 3</strong>: Create your form with the specified form element. The key pieces are the <code>action=</code> attribute and the <code>class="pageclip-form"</code> attribute.</p>
+      <pre><code class="xml">&lt;form action="https://send.pageclip.co/{yourSiteKey}/{formName}" class="pageclip-form" method="post"&gt;
+  &lt;!-- Add your inputs with your own as you normally would --&gt;
+&lt;/form&gt;
+</code></pre>
+      <p>Add your own <code>&lt;input /&gt;</code> tags with your own form fields, taking care that they have a <code>name="..."</code> attribute. Only fields with a <code>name</code> attribute will be saved to Pageclip.</p>
+      <p>Using name and email fields, this code will produce the following form:</p>
+      <div class="example-form">
+       <div class="example-title">
+        example
+       </div>
+       <form class="pageclip-form" method="post" action="https://send.pageclip.co/yYo14hdvw3pSIJi1Y6maW1LFR7gOAUaI/docs-example">
+        <input class="form-control" type="text" name="name" placeholder="Billy Jean" required> 
+        <input class="form-control" type="email" name="email" placeholder="billy@example.com" required> 
+        <input type="hidden" name="example" value="basic"> <button class="button button_cta pageclip-form__submit" type="submit"><span>Save</span></button>
+       </form>
+      </div>
+      <p>Note that the form is submitted asynchronously and shows a 'thank you' message to the user once successfully submitted.</p>
+      <h3 id="what-data-is-saved">What data is saved?</h3>
+      <p>Any form <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, or <code>&lt;select&gt;</code> element with a <code>name</code> attribute is saved into Pageclip. Some notes:</p>
+      <ul>
+       <li>Naming inputs with square brackets (e.g. <code>someName[aChildKey]</code>) will save the input under a child object. This is useful for groups of things like checkboxes. e.g. <code>{someName: {aChildKey: true}}</code></li>
+       <li>Checkboxes (<code>&lt;input type="checkbox"&gt;</code>) are stored as booleans. When unchecked, the browser does not send the input in the request, so a checkbox value will either be true, or the key will not exist at all.</li>
+       <li>File inputs (<code>&lt;input type="file"&gt;</code>) are ignored, and multipart requests will be rejected.</li>
+      </ul>
+      <p>An example form:</p>
+      <pre><code class="xml">&lt;form action="https://send.pageclip.co/{yourSiteKey}/{formName}" className="pageclip-form" method="post"&gt;
+
+  &lt;!-- text field --&gt;
+  &lt;input type="email" name="email" value="bob@omg.com"/&gt;
+
+  &lt;select name="heardFrom"&gt;
+    &lt;option value="ph" selected&gt;Product Hunt&lt;/option&gt;
+    &lt;option value="hn"&gt;Hacker News&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- radio buttons --&gt;
+  &lt;input type="radio" name="animal" value="tarantula" id="tarantula" checked/&gt;
+  &lt;label htmlFor="tarantula"&gt;Tarantula&lt;/label&gt;
+
+  &lt;input type="radio" name="animal" value="turtle" id="turtle"/&gt;
+  &lt;label htmlFor="turtle"&gt;Turtle&lt;/label&gt;
+
+  &lt;!-- checkboxes --&gt;
+  &lt;input type="checkbox" name="likes[pizza]" id="pizza" checked/&gt;
+  &lt;label htmlFor="pizza"&gt;Pizza ?&lt;/label&gt;
+
+  &lt;input type="checkbox" name="likes[yams]" id="yams"/&gt;
+  &lt;label htmlFor="yams"&gt;Sweet Potatos ?&lt;/label&gt;
+
+  &lt;!-- hidden inputs --&gt;
+  &lt;input type="hidden" name="version" value="v1" /&gt;
+  &lt;button class="pageclip-form__submit" type="button"&gt;
+    &lt;span&gt;Submit&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+      <p>Will save the following payload:</p>
+      <pre><code>{
+  email: 'bob@omg.com',
+  heardFrom: 'ph',
+  animal: 'tarantula',
+  likes: {
+    pizza: true
+  },
+  version: 'v1'
+}
+</code></pre>
+      <h3 id="special-fields">Special fields</h3>
+      <p>Pageclip can send you an email for each form submission and there are two specially named fields that make those emails easier to use:</p>
+      <ul>
+       <li><code>email</code> - the user's email. This will be used in the <code>reply-to</code> field of the email that Pageclip sends you. So all you have to do is hit 'Reply' in your email client to respond to the user.</li>
+       <li><code>subject</code> - This will set the subject of the email that Pageclip sends you for each submission.</li>
+      </ul>
+      <p>These fields are useful when you setup contact forms. An example contact form:</p>
+      <pre><code class="xml">&lt;form action="https://send.pageclip.co/{yourSiteKey}/{formName}" className="pageclip-form" method="post"&gt;
+
+  &lt;!-- This will be used in the email's reply-to field. Must have name="email" --&gt;
+  &lt;input type="email" name="email" value="bob@omg.com"/&gt;
+
+  &lt;!-- This will be used in the email's subject. Must have name="subject" --&gt;
+  &lt;input type="text" name="subject" value="Email subject"/&gt;
+
+  &lt;textarea name="body"&gt;Email body&lt;/textarea&gt;
+
+  &lt;button class="pageclip-form__submit" type="button"&gt;
+    &lt;span&gt;Submit&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+      <h3 id="bare-minimum-integration">Bare minimum integration</h3>
+      <p>You do not need to use the default asynchronous submission behavior. The absolute minimum you need to do is have your form <code>POST</code> to your site URL:</p>
+      <pre><code class="xml">&lt;form method="post" action="https://send.pageclip.co/{yourSiteKey}"&gt;
+  &lt;input type="text" name="name" value="Billy Jean"/&gt;
+  &lt;input type="text" name="email" value="billy@example.com"/&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;
+</code></pre>
+      <p>With this form, Pageclip will save the data, then redirect back to the originating page.</p>
+      <h3 id="using-the-loading-spinner">Using the loading spinner</h3>
+      <p>Pageclip can overlay a loading spinner on your submit button with some special markup. You must have a <code>&lt;button&gt;</code> element with the <code>.pageclip-form__submit</code> and a <code>&lt;span&gt;</code> child.</p>
+      <pre><code class="xml">&lt;form&gt;
+  ...
+  &lt;button class="button pageclip-form__submit" type="submit"&gt;
+    &lt;span&gt;Submit&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+      <div class="example-form">
+       <div class="button-bar">
+        <button class="button button_cta pageclip-form__submit" type="button"><span>Submit</span></button> ? <button class="button button_cta pageclip-form__submit pageclip-form__submit--loading" type="button"><span>Submit</span></button>
+       </div>
+      </div>
+      <h4 id="styling-the-spinner">Styling the spinner</h4>
+      <p>By default the spinner is white. You can change it to black by adding the <code>pageclip-form__submit--dark-loader</code> class to the button.</p>
+      <div class="example-form">
+       <div class="example-title">
+        default button
+       </div>
+       <div class="button-bar">
+        <button class="button button_cta pageclip-form__submit pageclip-form__submit--loading" type="button"><span>Submit</span></button>
+       </div>
+       <div class="example-title">
+        using the `dark-loader` class
+       </div>
+       <div class="button-bar">
+        <button class="button button_cta pageclip-form__submit pageclip-form__submit--loading pageclip-form__submit--dark-loader" type="button"><span>Submit</span></button>
+       </div>
+      </div>
+      <p>You can specify a custom color by styling the border</p>
+      <pre><code class="css">.pageclip-form__submit::after {
+  border-color: rgba(0, 255, 0, 0.8);
+  border-left-color: blue;
+}
+</code></pre>
+      <style>.special-loader.pageclip-form__submit::after {
+    border-color: rgba(0, 255, 0, 0.8);
+    border-left-color: blue;
+  }</style>
+      <div class="example-form">
+       <div class="example-title">
+        very attractive custom loader
+       </div>
+       <div class="button-bar">
+        <button class="button button_cta pageclip-form__submit pageclip-form__submit--loading special-loader" type="button"><span>Submit</span></button>
+       </div>
+      </div>
+      <h4 id="loading-spinner-details">Loading spinner details</h4>
+      <p>When a form is submitted, the <code>&lt;button&gt;</code> will go through a few CSS class states. These classes provide CSS animations.</p>
+      <ul>
+       <li><code>.pageclip-form__submit--start-loading</code>: fades the <code>&lt;span&gt;</code> text out, and pops the loader into view</li>
+       <li><code>.pageclip-form__submit--loading</code>: spins the loader</li>
+       <li><code>.pageclip-form__submit--end-loading</code>: hides the loader, and fades the <code>&lt;span&gt;</code> text back in.</li>
+      </ul>
+      <p>Some notes:</p>
+      <ul>
+       <li>If the inner <code>&lt;span&gt;</code> is not specified, it will just overlay the spinner on the text.</li>
+       <li>If an <code>&lt;input type="submit" /&gt;</code> is used, the loading spinner will not work. A button must be used as the loading spinner is rendered in the <code>::after</code> pseudo element.</li>
+       <li>The start and animations can be removed from the button. If animations do not exist, the JS will detect it and only add the <code>.pageclip-form__submit--loading</code> class to the button.</li>
+      </ul>
+      <h3 id="form-validation">Form Validation</h3>
+      <p>Pageclip works with any form validation library or scheme. If you have a favorite, just use that!</p>
+      <p>If you are unsure, we recommend using HTML5 validation that is built into the browser. HTML5 validation is very rich these days, and has <a href="http://caniuse.com/#search=validation">good browser support</a>. For more info, check out <a href="./blog/2018-02-20-you-should-use-html5-form-validation.html">our blog post on HTML5 form validation</a>.</p>
+      <p>A basic example enforcing required attributes:</p>
+      <pre><code class="xml">&lt;!-- Note the `required` attributes in inputs! --&gt;
+&lt;form method="post" action="https://send.pageclip.co/{yourSiteKey}"&gt;
+  &lt;input type="text" name="name" required /&gt;
+  &lt;input type="text" name="email" required /&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;
+</code></pre>
+      <p>HTML5 validation has a few warts, so we created an open source library called <code>valid-form</code> that makes them nicer.</p>
+      <ul>
+       <li><code>valid-form</code> code at <a href="https://github.com/Pageclip/valid-form">https://github.com/Pageclip/valid-form</a></li>
+       <li>See it in action at <a href="http://valid-form.pageclip.co">http://valid-form.pageclip.co</a></li>
+      </ul>
+      <p>Other HTML5 Form Validation Resources</p>
+      <ul>
+       <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation">MDN: Form data validation</a></li>
+       <li><a href="http://caniuse.com/#search=validation">HTML5 validation browser support</a></li>
+       <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN: <code>&lt;input&gt;</code> docs</a></li>
+      </ul>
+      <h3 id="saving-data-to-a-specific-form">Saving data to a specific form</h3>
+      <p>By default, your site URL will save data to the 'default' form</p>
+      <pre><code class="sh"># Saves to the default form
+https://send.pageclip.co/{yourSiteKey}
+
+# e.g. This URL saves to the default form
+https://send.pageclip.co/1WoHHQWPLiWnR7IzGKwW9PROHL2G51BP
+</code></pre>
+      <p>After you setup a named form in the Pageclip UI, you can save to that named form by appending the <code>formName</code> onto the end of your site's URL:</p>
+      <pre><code class="sh"># Saves to the default form
+https://send.pageclip.co/{yourSiteKey}/{formName}
+
+# e.g. This URL saves to the 'newsletter' form
+https://send.pageclip.co/1WoHHQWPLiWnR7IzGKwW9PROHL2G51BP/newsletter
+</code></pre>
+      <h3 id="advanced-integration-pageclipjs">Advanced integration (pageclip.js)</h3>
+      <p>When <code>https://s.pageclip.co/v1/pageclip.js</code> is included on the page, a <code>window.Pageclip</code> object is created. With it, you can hook into form submission, or send data to pageclip without a form at all.</p>
+      <ul>
+       <li><a href="#pageclipformform-options"><code>Pageclip.form(form[, options])</code></a></li>
+       <li><a href="#pageclipsendsitekey-formname-data-callback"><code>Pageclip.send(siteKey, formName, data, callback)</code></a></li>
+      </ul>
+      <h4 id="pageclipformform-options">Pageclip.form(form[, options])</h4>
+      <p><code>Pageclip.form(...)</code> wraps a form, submits the data to Pageclip asynchronously, and gives you a couple hooks into the lifecycle. You can use these for things like validation or displaying messages to the user. By default, any forms with class <code>pageclip-form</code> will be automatically wrapped with <code>Pageclip.form(...)</code>.</p>
+      <ul>
+       <li><code>form:HTMLFormElement</code> - the <code>&lt;form /&gt;</code> element to submit to Pageclip. It must have an action pointing to your Pageclip site.</li>
+       <li><code>options:Object</code> - <em>(optional)</em>
+        <ul>
+         <li><code>onSubmit:Function</code> - returning <code>false</code> from this will prevent submission to Pageclip</li>
+         <li><code>onResponse:Function</code> - returning <code>false</code> from this will prevent showing the <code>successTemplate</code> to the user</li>
+         <li><code>successTemplate:String</code></li>
+        </ul></li>
+      </ul>
+      <pre><code class="js">var form = document.querySelector('.pageclip-form')
+Pageclip.form(form, {
+  onSubmit: function (event) { },
+  onResponse: function (error, response) { },
+  successTemplate: '&lt;span&gt;Thank you!&lt;/span&gt;'
+})
+</code></pre>
+      <h4 id="pageclipsendsitekey-formname-data-callback">Pageclip.send(siteKey, formName, data, callback)</h4>
+      <p><code>Pageclip.send(...)</code> allows you to send arbitrary JSON data via XHR to a Pageclip form.</p>
+      <ul>
+       <li><code>siteKey:String</code> - Your public siteKey; a unique token give to each site.</li>
+       <li><code>formName:String</code> - The name of the form to save to. If you wish to send to a default form, <code>formName</code> must be <code>'default'</code>.</li>
+       <li><code>data:Object</code> - The actual data to save. <code>JSON.stringify()</code> will be called on this object before submission.</li>
+       <li><code>callback:Function</code> - Called when submission is finished
+        <ul>
+         <li><code>error:Error</code> - <code>null</code> when the request succeeds; <code>Object</code> with <code>.message</code> on failure.</li>
+         <li><code>response:Object</code> - <code>{"data":"ok"}</code></li>
+        </ul></li>
+      </ul>
+      <pre><code class="js">var data = {
+  name: 'Billy Jean',
+  email: 'billy@example.com'
+}
+Pageclip.send('...yourSiteKey...', 'contact', data, function (error, response) {
+  console.log('saved?', !!error, '; response:', error || response)
+})
+</code></pre>
+      <h2 id="3rd-party-integrations">3rd Party Integrations</h2>
+      <h3 id="webhook">Webhook</h3>
+      <p>You can set up Pageclip to call a URL on your own server for each form submissi

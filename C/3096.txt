@@ -1,0 +1,692 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> 
+  <meta name="description" content="description"> 
+  <meta name="keywords" content="keywords"> 
+  <meta name="author" content="author"> 
+  <title>Delivery - FBI Email Delivery</title> 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/static/css/subscribe-form.css"> 
+  <link href="/static/css/foundation.css" media="all" rel="stylesheet"> 
+  <link href="/static/css/icons/foundation-icons.css" media="all" rel="stylesheet"> 
+  <link href="/static/css/style.css" media="all" rel="stylesheet"> 
+  <script src="/static/admin_tools/js/jquery/jquery.min.js"></script> 
+  <script type="text/javascript" src="/static/js/courier.js"></script> 
+  <style type="text/css">
+
+</style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ </head> 
+ <body> 
+  <div id="wrapper"> 
+   <nav role="navigation" data-topbar="" class="top-bar" id="navigation"> 
+    <ul class="title-area"> 
+     <li class="name"> <a href="https://www.fbi.gov/"><span aria-hidden="true" id="fbi">FBI</span> <span id="federalbureauofinvestigation">Federal Bureau of Investigation</span></a> </li> 
+    </ul> 
+   </nav> 
+   <ul id="social-icons"> 
+    <li><a title="Twitter" class="fi-social-twitter" href="http://twitter.com/FBI"><span>Twitter</span></a></li> 
+    <li><a title="Facebook" class="fi-social-facebook" href="https://www.facebook.com/FBI"><span>Facebook</span></a></li> 
+    <li><a title="E-Mail" class="fi-mail" target="_top" href="https://www.fbi.gov/e-mail-updates"><span>E-Mail</span></a></li> 
+   </ul> 
+  </div> 
+  <div class="title-wrapper"> 
+   <h1>Delivery System</h1> 
+  </div> 
+  <div id="content" class="row"> 
+   <form action="/subscribe" method="post" id="subscribe-form"> 
+    <input type="hidden" name="csrfmiddlewaretoken" value="RI1cyEOKhfeMvveNYgvpZRhzckAptDAclkieO1DSOfQOFU5Jp8OHPUdBwo80VQYo"> 
+    <div class="wrapper"> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <h2>Sign Up for Email Updates</h2> 
+        <p>Sign up for e-mail updates from the FBI by entering your information below and hitting the “Subscribe” button at the bottom of the page. If you're already a subscriber, to change your e-mail address or subscription settings, visit the <a href="/account-reminder">subscriber account page.</a></p> 
+        <hr> 
+       </div> 
+      </div> 
+      <div class="personal"> 
+       <div class="row"> 
+        <div class="col-sm-12"> 
+         <h3 class="form-headers">Personal</h3> 
+         <div class="form-group"> 
+          <div id="div_id_email" class="ctrlHolder"> <label for="id_email" class="requiredField"> E-Mail Address<span class="asteriskField">*</span> </label> 
+           <input type="email" name="email" id="id_email" required class="emailinput" maxlength="254"> 
+          </div> 
+          <div class="additional-personal-expand"> 
+           <p> <a id="button" data-toggle="collapse" data-target="#additional-personal"> <span class="glyphicon glyphicon-plus-sign"></span> <span class="glyphicon-text">Add a Phone Number or an Additional Email Address</span> </a> </p> 
+           <div class="collapse" id="additional-personal"> 
+            <div class="card card-body" style="padding: 10px;"> 
+             <div id="div_id_additional_email" class="ctrlHolder"> <label for="id_additional_email"> Additional E-Mail Address </label> 
+              <input type="email" name="additional_email" id="id_additional_email" class="emailinput" maxlength="254"> 
+             </div> <small id="emailHelp" class="form-text text-muted">This email address will also receive email updates.</small> 
+             <br>
+             <br> <label for="exampleInputEmail1">Wireless Phone Number for Text Updates</label> <small id="emailHelp" class="form-text text-muted">Note: If you choose this option, you must provide a 10-digit phone number and select a wireless provider from the drop-down menu.</small> 
+             <input class="form-control" id="exampleInputEmail1" name="wireless_email-number" aria-describedby="emailHelp" placeholder="Enter a 10-digit cellphone number"> <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small> 
+             <br>
+             <br> <label for="exampleFormControlSelect1">Service</label> <select class="form-control" name="wireless_email-provider" id="exampleFormControlSelect1"> <option>Please select a cell phone carrier</option> <option value="message.alltel.com">Alltel</option> <option value="txt.att.net">AT&amp;T</option> <option value="bellmobility.ca">Bell Canada</option> <option value="txt.bellmobility.ca">Bell Mobility</option> <option value="myboostmobile.com">Boost</option> <option value="mobile.celloneusa.com">Cellular One</option> <option value="comcastpcs.textmsg.com">Comcast</option> <option value="sms.mycricket.com">Cricket</option> <option value="sms.edgewireless.com">Edge Wireless</option> <option value="messaging.sprintpcs.com">Helio</option> <option value="messaging.nextel.com">Nextel</option> <option value="qwestmp.com">Quest</option> <option value="messaging.sprintpcs.com">Sprint</option> <option value="tmomail.net">T-Mobile</option> <option value="txt.att.net">Tracfone</option> <option value="email.uscc.net">US Cellular</option> <option value="vtext.com">Verizon</option> <option value="vmobl.com">Virgin Mobile</option> </select> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="CheckBoxList" class="email-subscription-categories"> 
+       <h3 class="form-headers">Email Subscription Categories</h3> 
+       <div class="panel-group" id="accordion"> 
+        <div class="panel panel-default"> 
+         <div class="panel-heading"> 
+          <h4 class="panel-title"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne"> <span class="glyphicon glyphicon-minus"></span> Most Requested Subscriptions </a> </h4> 
+         </div> 
+         <div id="collapseOne" class="panel-collapse collapse in"> 
+          <div class="panel-body"> 
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_47" value="47" type="checkbox" data-weekly-average="1.0" data-category-title="FBI Newsletter"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_47"> <h5>FBI Newsletter (2-4 a month)</h5> </label> 
+               <p> A curated weekly newsletter that highlights the latest top stories and other content from fbi.gov </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_24294" value="24294" type="checkbox" data-weekly-average="2.0" data-category-title="FBI Top Stories"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24294"> <h5>FBI Top Stories (2 per week)</h5> </label> 
+               <p> The latest original stories, photos, and videos from fbi.gov </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80054" value="80054" type="checkbox" data-weekly-average="3.0" data-category-title="     National Press Releases"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80054"> <h5> National Press Releases (2-3 per week)</h5> </label> 
+               <p> Wanted fugitives, missing persons, and seeking information posters </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_24374" value="24374" type="checkbox" data-weekly-average="1.0" data-category-title="FBI Most Wanted"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24374"> <h5>FBI Most Wanted (1 per week)</h5> </label> 
+               <p> Press releases issued by the FBI's National Press Office </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-default"> 
+         <div class="panel-heading"> 
+          <h4 class="panel-title"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> <span class="glyphicon glyphicon-plus"></span> Additional Subscriptions </a> </h4> 
+         </div> 
+         <div id="collapseTwo" class="panel-collapse collapse"> 
+          <div class="panel-body"> 
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_12" value="12" type="checkbox" data-weekly-average="0.5" data-category-title="Podcast &amp; Radio"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_12"> <h5>Podcast &amp; Radio (1 per week)</h5> </label> 
+               <p> Podcast shows produced by the FBI </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80044" value="80044" type="checkbox" data-weekly-average="0.15" data-category-title="Crime Statistics"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80044"> <h5>Crime Statistics (1 every 2-3 months)</h5> </label> 
+               <p> Alerts related to the Uniform Crime Report (UCR) program </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_124059" value="124059" type="checkbox" data-weekly-average="0.25" data-category-title="FBI Law Enforcement Bulletin (LEB)"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_124059"> <h5>FBI Law Enforcement Bulletin (LEB) (1 per month)</h5> </label> 
+               <p> Monthly online magazine that covers topics of interest to the criminal justice community </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80030" value="80030" type="checkbox" data-weekly-average="20.0" data-category-title="      FBI In the News"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80030"> <h5> FBI In the News (3-5 per day)</h5> </label> 
+               <p> Compilation of the latest national and field office press releases from across the FBI </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80045" value="80045" type="checkbox" data-weekly-average="0.25" data-category-title="Reports &amp; Publications"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80045"> <h5>Reports &amp; Publications (1 per month)</h5> </label> 
+               <p> Various reports and publications issued by the FBI </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80027" value="80027" type="checkbox" data-weekly-average="1.0" data-category-title="Internet Crime Complaint Center (IC3)"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80027"> <h5>Internet Crime Complaint Center (IC3) (1-2 per month. Varies heavily.)</h5> </label> 
+               <p> Scam alerts issued by the Internet Crime Complaint Center (IC3) </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_15" value="15" type="checkbox" data-weekly-average="0.5" data-category-title="CJIS Link/Information Letters"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_15"> <h5>CJIS Link/Information Letters (2 per month)</h5> </label> 
+               <p> Publication that informs partners about CJIS services and system capabilities, as well as relevant changes in policy </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80031" value="80031" type="checkbox" data-weekly-average="0.5" data-category-title="    Executive Speeches"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80031"> <h5> Executive Speeches (2 per month)</h5> </label> 
+               <p> Speeches delivered by FBI executives </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_80032" value="80032" type="checkbox" data-weekly-average="0.5" data-category-title="   Congressional Testimony"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_80032"> <h5> Congressional Testimony (2 per month)</h5> </label> 
+               <p> Congressional testimony delivered by FBI executives </p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="col-md-6"> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p style="text-align: center;"> <input name="id_category_48" value="48" type="checkbox" data-weekly-average="0.5" data-category-title="FBI en Español"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_48"> <h5>FBI en Español (2 per month)</h5> </label> 
+               <p> Spanish-language stories and podcasts </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div>
+           <div class="row"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-default"> 
+         <div class="panel-heading"> 
+          <h4 class="panel-title"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree"> <span class="glyphicon glyphicon-plus"></span> FBI Field Office Updates </a> </h4> 
+         </div> 
+         <div id="collapseThree" class="panel-collapse collapse"> 
+          <div class="panel-body"> 
+           <p>Press releases and fugitive/missing person information from selected field office(s). Each individual field office published on average 3-5 items per day.</p> 
+           <div class="row"> 
+            <div class="col-md-6"> 
+             <h4>Alabama</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24301" value="24301" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Birmingham  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24301"> <h5>Birmingham Field Office Updates</h5> </label> 
+               <p> Covers the Northern District of Alabama </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24302" value="24302" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Mobile  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24302"> <h5>Mobile Field Office Updates</h5> </label> 
+               <p> Covers the Middle Judicial District of Alabama and the Southern Judicial District of Alabama </p> 
+              </div> 
+             </div> 
+             <h4>Alaska</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_49" value="49" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Anchorage Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_49"> <h5>Anchorage Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Alaska </p> 
+              </div> 
+             </div> 
+             <h4>Arizona</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_50" value="50" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Phoenix Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_50"> <h5>Phoenix Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Arizona and Grand Canyon National Park </p> 
+              </div> 
+             </div> 
+             <h4>Arkansas</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_51" value="51" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Little Rock Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_51"> <h5>Little Rock Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Arkansas </p> 
+              </div> 
+             </div> 
+             <h4>California</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24307" value="24307" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Los Angeles Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24307"> <h5>Los Angeles Field Office Updates</h5> </label> 
+               <p> Covers the Central District of California </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24308" value="24308" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Sacramento Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24308"> <h5>Sacramento Field Office Updates</h5> </label> 
+               <p> Along with our main office in Roseville, we have eight satellite offices, known as resident agencies, in the area </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24309" value="24309" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="San Diego Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24309"> <h5>San Diego Field Office Updates</h5> </label> 
+               <p> Covers San Diego and Imperial Counties in southern California. </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24310" value="24310" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="San Francisco Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24310"> <h5>San Francisco Field Office Updates</h5> </label> 
+               <p> Along with our main office in San Francisco, we have seven satellite offices in the area. </p> 
+              </div> 
+             </div> 
+             <h4>Colorado</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_52" value="52" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Denver Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_52"> <h5>Denver Field Office Updates</h5> </label> 
+               <p> Covers the entire states of Colorado and Wyoming </p> 
+              </div> 
+             </div> 
+             <h4>Connecticut</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_53" value="53" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="New Haven Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_53"> <h5>New Haven Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Connecticut </p> 
+              </div> 
+             </div> 
+             <h4>Delaware</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Maryland's Baltimore Field Office for updates for the entire state of Delaware)</i> </p> 
+             <h4>District of Columbia</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_54" value="54" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Washington Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_54"> <h5>Washington Field Office Updates</h5> </label> 
+               <p> Covers the District of Columbia and several counties in Northern Virginia </p> 
+              </div> 
+             </div> 
+             <h4>Florida</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24315" value="24315" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Jacksonville Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24315"> <h5>Jacksonville Field Office Updates</h5> </label> 
+               <p> Covers 40 counties throughout northern Florida </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24316" value="24316" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Miami Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24316"> <h5>Miami Field Office Updates</h5> </label> 
+               <p> Covers nine counties in southern Florida and responsible for addressing extraterritorial violations of American citizens in Mexico, the Caribbean, and Central and South America </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24317" value="24317" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Tampa Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24317"> <h5>Tampa Field Office Updates</h5> </label> 
+               <p> Covers 18 counties in central and southwest Florida </p> 
+              </div> 
+             </div> 
+             <h4>Georgia</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_55" value="55" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Atlanta Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_55"> <h5>Atlanta Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Georgia </p> 
+              </div> 
+             </div> 
+             <h4>Hawaii</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_56" value="56" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Honolulu Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_56"> <h5>Honolulu Field Office Updates</h5> </label> 
+               <p> Covers the state of Hawaii along with Guam and Saipan </p> 
+              </div> 
+             </div> 
+             <h4>Idaho</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Utah's Salt Lake City Field Office for updates for the entire state of Idaho)</i> </p> 
+             <h4>Illinois</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24321" value="24321" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Chicago Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24321"> <h5>Chicago Field Office Updates</h5> </label> 
+               <p> Covers 18 counties in northern Illinois extending from Interstate 80 north to the Wisconsin border, east to Indiana, and west to Iowa </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24322" value="24322" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Springfield Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24322"> <h5>Springfield Field Office Updates</h5> </label> 
+               <p> Covers central and southern Illinois </p> 
+              </div> 
+             </div> 
+             <h4>Indiana</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_57" value="57" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Indianapolis Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_57"> <h5>Indianapolis Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Indiana </p> 
+              </div> 
+             </div> 
+             <h4>Iowa</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Nebraska's Omaha Field Office for updates for the entire state of Iowa)</i> </p> 
+             <h4>Kansas</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Missouri's Kansas City Field Office for updates for the entire state of Kansas)</i> </p> 
+             <h4>Kentucky</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_58" value="58" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Louisville Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_58"> <h5>Louisville Field Office Updates</h5> </label> 
+               <p> Covers the Northern District of Alabama </p> 
+              </div> 
+             </div> 
+             <h4>Louisiana</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_59" value="59" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="New Orleans Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_59"> <h5>New Orleans Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Louisiana </p> 
+              </div> 
+             </div> 
+             <h4>Maine</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Massachusetts' Boston Field Office for updates of the entire states of Maine, Massachusetts, New Hampshire, and Rhode Island.)</i> </p> 
+             <h4>Maryland</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_60" value="60" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Baltimore Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_60"> <h5>Baltimore Field Office Updates</h5> </label> 
+               <p> Covers the entire states of Maryland and Delaware </p> 
+              </div> 
+             </div> 
+             <h4>Massachusetts</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_61" value="61" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Boston Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_61"> <h5>Boston Field Office Updates</h5> </label> 
+               <p> Covers the entire states of Maine, Massachusetts, New Hampshire, and Rhode Island. </p> 
+              </div> 
+             </div> 
+             <h4>Michigan</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_63" value="63" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Detroit Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_63"> <h5>Detroit Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Michigan, including the Upper Peninsula </p> 
+              </div> 
+             </div> 
+             <h4>Minnesota</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_62" value="62" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Minneapolis Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_62"> <h5>Minneapolis Field Office Updates</h5> </label> 
+               <p> Covers the entire states of Minnesota, North Dakota, and South Dakota </p> 
+              </div> 
+             </div> 
+             <h4>Mississippi</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_64" value="64" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Jackson Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_64"> <h5>Jackson Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Mississippi </p> 
+              </div> 
+             </div> 
+             <h4>Missouri</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24332" value="24332" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Kansas City  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24332"> <h5>Kansas City Field Office Updates</h5> </label> 
+               <p> Covers the Western District of Missouri and the entire state of Kansas </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24333" value="24333" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="St. Louis  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24333"> <h5>St. Louis Field Office Updates</h5> </label> 
+               <p> Along with our main office in St. Louis, we have three satellite offices, known as resident agencies, in the area. </p> 
+              </div> 
+             </div> 
+             <h4>Montana</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Utah's Salt Lake City Field Office for updates of the entire states of Utah, Idaho, and Montana.)</i> </p> 
+            </div> 
+            <div class="col-md-6"> 
+             <h4>Nebraska</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_65" value="65" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Omaha Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_65"> <h5>Omaha Field Office Updates</h5> </label> 
+               <p> Covers the entire states of Nebraska and Iowa </p> 
+              </div> 
+             </div> 
+             <h4>Nevada</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_66" value="66" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Las Vegas Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_66"> <h5>Las Vegas Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Nevada </p> 
+              </div> 
+             </div> 
+             <h4>New Hampshire</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Massachusetts' Boston Field Office for updates of the entire states of Maine, Massachusetts, New Hampshire, and Rhode Island.)</i> </p> 
+             <h4>New Jersey</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Pennsylvania's Philadelphia Field Office for updates in eastern Pennsylvania and three counties in New Jersey.)</i> </p> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_67" value="67" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Newark Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_67"> <h5>Newark Field Office Updates</h5> </label> 
+               <p> Covers most of New Jersey </p> 
+              </div> 
+             </div> 
+             <h4>New Mexico</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_68" value="68" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Albuquerque Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_68"> <h5>Albuquerque Field Office Updates</h5> </label> 
+               <p> Counties Covered: Bernalillo, Catron, Cibola (eastern half), Guadalupe, Quay, Sandoval (southern corner), Socorro, Torrence, and Valencia </p> 
+              </div> 
+             </div> 
+             <h4>New York</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24339" value="24339" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Albany Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24339"> <h5>Albany Field Office Updates</h5> </label> 
+               <p> Counties Covered: Albany, Fulton, Hamilton, Montgomery, Rensselaer, Saratoga, Schenectady, Schoharie, Warren, and Washington </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24340" value="24340" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Buffalo Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24340"> <h5>Buffalo Field Office Updates</h5> </label> 
+               <p> Covers 17 counties in western New York </p> 
+              </div> 
+             </div> 
+             <h4>North Carolina</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_69" value="69" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Charlotte Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_69"> <h5>Charlotte Field Office Updates</h5> </label> 
+               <p> Covers the entire state of North Carolina </p> 
+              </div> 
+             </div> 
+             <h4>North Dakota</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Minnesota's Minneapolis Field Office for updates of the entire states of Minnesota, North Dakota, and South Dakota.)</i> </p> 
+             <h4>Ohio</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24345" value="24345" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Cleveland  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24345"> <h5>Cleveland Field Office Updates</h5> </label> 
+               <p> Covers 40 counties in Ohio </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24344" value="24344" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Cincinnati Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24344"> <h5>Cincinnati Field Office Updates</h5> </label> 
+               <p> Covers 48 counties throughout central and southern Ohio </p> 
+              </div> 
+             </div> 
+             <h4>Oklahoma</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_70" value="70" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Oklahoma City Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_70"> <h5>Oklahoma City Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Oklahoma </p> 
+              </div> 
+             </div> 
+             <h4>Oregon</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_71" value="71" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Portland Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_71"> <h5>Portland Field Office Updates</h5> </label> 
+               <p> Covers the entire state of Oregon </p> 
+              </div> 
+             </div> 
+             <h4>Pennsylvania</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24349" value="24349" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Philadelphia Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24349"> <h5>Philadelphia Field Office Updates</h5> </label> 
+               <p> Covers eastern Pennsylvania and three counties in New Jersey </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24350" value="24350" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Pittsburgh Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24350"> <h5>Pittsburgh Field Office Updates</h5> </label> 
+               <p> Covers 25 counties in western Pennsylvania as well as the entire state of West Virginia </p> 
+              </div> 
+             </div> 
+             <h4>Rhode Island</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Massachusetts' Boston Field Office for updates of the entire states of Maine, Massachusetts, New Hampshire, and Rhode Island.)</i> </p> 
+             <h4>South Carolina</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_73" value="73" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Columbia Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_73"> <h5>Columbia Field Office Updates</h5> </label> 
+               <p> Covers the entire state of South Carolina </p> 
+              </div> 
+             </div> 
+             <h4>South Dakota</h4> 
+             <p class="missing-field-description"> <i>(Subscribe to Minnesota's Minneapolis Field Office for updates of the entire states of Minnesota, North Dakota, and South Dakota.)</i> </p> 
+             <h4>Tennessee</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24354" value="24354" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Knoxville  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24354"> <h5>Knoxville Field Office Updates</h5> </label> 
+               <p> Covers 41 counties in eastern Tennessee </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24355" value="24355" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Memphis  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24355"> <h5>Memphis Field Office Updates</h5> </label> 
+               <p> Covers 54 counties in western Tennessee </p> 
+              </div> 
+             </div> 
+             <h4>Texas</h4> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24357" value="24357" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="Dallas  Field Office Updates"> </p> 
+              </div> 
+              <div class="col-xs-11 form-checkbox-details"> <label class="form-check-label" for="id_category_24357"> <h5>Dallas Field Office Updates</h5> </label> 
+               <p> Covers 137 counties in North Texas and portions of East and West Texas </p> 
+              </div> 
+             </div> 
+             <div class="row"> 
+              <div class="col-xs-1 form-checkbox"> 
+               <p> <input name="id_category_24358" value="24358" type="checkbox" style="margin-right: 10px; margin-bottom: 10px;" data-weekly-average="15.0" data-category-title="El Paso  F

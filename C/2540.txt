@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Finding and customizing actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Actions are the building blocks that power your workflow. A workflow can contain actions created by the community, or you can create your own actions directly within your application's repository. This guide will show you how to discover, use, and customize actions."> 
+  <meta name="keywords" content="Fundamentals"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/actions/learn-github-actions/finding-and-customizing-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="GGJKHyI9-0VJE6Bg5lvGFP3DgWDkgetPM3mI"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/actions" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Actions</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/actions/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Actions</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-continuous-integration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About continuous integration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up CI using templates</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-nodejs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Node.js</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-net" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing .NET</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-powershell" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing PowerShell</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-python" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Python</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-ruby" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Ruby</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-ant" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Ant</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-swift" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Swift</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing an Apple certificate on macOS runners for Xcode development</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-xamarin-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Xamarin applications</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-packaging-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About packaging with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-nodejs-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Node.js packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-docker-images" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Docker images</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/storing-workflow-data-as-artifacts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Storing workflow artifacts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching dependencies</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-redis-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Redis service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-postgresql-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">PostgreSQL service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-amazon-elastic-container-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Amazon Elastic Container Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-azure-app-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Azure App Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/using-github-actions-for-project-management" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using GitHub Actions for project management</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/closing-inactive-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Closing inactive issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/scheduling-issue-creation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scheduling issue creation</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/adding-labels-to-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding labels to issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Commenting on an issue when a label is added</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/moving-assigned-issues-on-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Moving assigned issues on project boards</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a label when a card is added to a project board column</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/managing-github-actions-with-github-cli" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing GitHub Actions with GitHub CLI</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/learn-github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Actions</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/introduction-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Actions</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding and customizing actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Essential features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/managing-complex-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing complex workflows</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/sharing-workflows-with-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sharing workflows with your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Security hardening</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Azure Pipelines to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from CircleCI to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from GitLab CI/CD to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Jenkins to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from Travis CI to GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/managing-workflow-runs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing workflow runs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/creating-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating actions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/using-github-hosted-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Using GitHub-hosted runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/hosting-your-own-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Hosting your own runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Actions 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Actions" href="/en/actions" class="d-inline-block ">GitHub Actions</a><a title="category: Learn GitHub Actions" href="/en/actions/learn-github-actions" class="d-inline-block ">Learn GitHub Actions</a><a title="article: Finding and customizing actions" href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="d-inline-block color-text-tertiary">Finding and customizing actions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/finding-and-customizing-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Finding and customizing actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Actions are the building blocks that power your workflow. A workflow can contain actions created by the community, or you can create your own actions directly within your application's repository. This guide will show you how to discover, use, and customize actions.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#overview">Overview</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#browsing-marketplace-actions-in-the-workflow-editor">Browsing Marketplace actions in the workflow editor</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#adding-an-action-to-your-workflow">Adding an action to your workflow</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-release-management-for-your-custom-actions">Using release management for your custom actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-inputs-and-outputs-with-an-action">Using inputs and outputs with an action</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#referencing-an-action-in-the-same-repository-where-a-workflow-file-uses-the-action">Referencing an action in the same repository where a workflow file uses the action</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#referencing-a-container-on-docker-hub">Referencing a container on Docker Hub</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#next-steps">Next steps</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="overview"><a href="#overview">Overview</a></h3> 
+       <p>The actions you use in your workflow can be defined in:</p> 
+       <ul> 
+        <li>A public repository</li> 
+        <li>The same repository where your workflow file references the action</li> 
+        <li>A published Docker container image on Docker Hub</li> 
+       </ul> 
+       <p>GitHub Marketplace is a central location for you to find actions created by the GitHub community. <a href="https://github.com/marketplace/actions/">GitHub Marketplace page</a> enables you to filter for actions by category.</p> 
+       <h3 id="browsing-marketplace-actions-in-the-workflow-editor"><a href="#browsing-marketplace-actions-in-the-workflow-editor">Browsing Marketplace actions in the workflow editor</a></h3> 
+       <p>You can search and browse actions directly in your repository's workflow editor. From the sidebar, you can search for a specific action, view featured actions, and browse featured categories. You can also view the number of stars an action has received from the GitHub community.</p> 
+       <ol> 
+        <li>In your repository, browse to the workflow file you want to edit.</li> 
+        <li>In the upper right corner of the file view, to open the workflow editor, click 
+         <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-pencil" aria-label="The edit icon" role="img">
+          <path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path>
+         </svg>. <span class="procedural-image-wrapper"><img src="/assets/images/help/repository/actions-edit-workflow-file.png" alt="Edit workflow file button"></span></li> 
+        <li>To the right of the editor, use the GitHub Marketplace sidebar to browse actions. Actions with the 
+         <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-verified" aria-label="The verified badge" role="img">
+          <path fill-rule="evenodd" d="M9.585.52a2.678 2.678 0 00-3.17 0l-.928.68a1.178 1.178 0 01-.518.215L3.83 1.59a2.678 2.678 0 00-2.24 2.24l-.175 1.14a1.178 1.178 0 01-.215.518l-.68.928a2.678 2.678 0 000 3.17l.68.928c.113.153.186.33.215.518l.175 1.138a2.678 2.678 0 002.24 2.24l1.138.175c.187.029.365.102.518.215l.928.68a2.678 2.678 0 003.17 0l.928-.68a1.17 1.17 0 01.518-.215l1.138-.175a2.678 2.678 0 002.241-2.241l.175-1.138c.029-.187.102-.365.215-.518l.68-.928a2.678 2.678 0 000-3.17l-.68-.928a1.179 1.179 0 01-.215-.518L14.41 3.83a2.678 2.678 0 00-2.24-2.24l-1.138-.175a1.179 1.179 0 01-.518-.215L9.585.52zM7.303 1.728c.415-.305.98-.305 1.394 0l.928.68c.348.256.752.423 1.18.489l1.136.174c.51.078.909.478.987.987l.174 1.137c.066.427.233.831.489 1.18l.68.927c.305.415.305.98 0 1.394l-.68.928a2.678 2.678 0 00-.489 1.18l-.174 1.136a1.178 1.178 0 01-.987.987l-1.137.174a2.678 2.678 0 00-1.18.489l-.927.68c-.415.305-.98.305-1.394 0l-.928-.68a2.678 2.678 0 00-1.18-.489l-1.136-.174a1.178 1.178 0 01-.987-.987l-.174-1.137a2.678 2.678 0 00-.489-1.18l-.68-.927a1.178 1.178 0 010-1.394l.68-.928c.256-.348.423-.752.489-1.18l.174-1.136c.078-.51.478-.909.987-.987l1.137-.174a2.678 2.678 0 001.18-.489l.927-.68zM11.28 6.78a.75.75 0 00-1.06-1.06L7 8.94 5.78 7.72a.75.75 0 00-1.06 1.06l1.75 1.75a.75.75 0 001.06 0l3.75-3.75z"></path>
+         </svg> badge indicate GitHub has verified the creator of the action as a partner organization. <span class="procedural-image-wrapper"><img src="/assets/images/help/repository/actions-marketplace-sidebar.png" alt="Marketplace workflow sidebar"></span></li> 
+       </ol> 
+       <h3 id="adding-an-action-to-your-workflow"><a href="#adding-an-action-to-your-workflow">Adding an action to your workflow</a></h3> 
+       <p>An action's listing page includes the action's version and the workflow syntax required to use the action. To keep your workflow stable even when updates are made to an action, you can reference the version of the action to use by specifying the Git or Docker tag number in your workflow file.</p> 
+       <ol> 
+        <li>Navigate to the action you want to use in your workflow.</li> 
+        <li>Under "Installation", click 
+         <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-clippy" aria-label="The edit icon" role="img">
+          <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>
+         </svg> to copy the workflow syntax. <span class="procedural-image-wrapper"><img src="/assets/images/help/repository/actions-sidebar-detailed-view.png" alt="View action listing"></span></li> 
+        <li>Paste the syntax as a new step in your workflow. For more information, see "<a href="/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#jobsjob_idsteps">Workflow syntax for GitHub Actions</a>."</li> 
+        <li>If the action requires you to provide inputs, set them in your workflow. For information on inputs an action might require, see "<a href="/en/actions/learn-github-actions/finding-and-customizing-actions#using-inputs-and-outputs-with-an-action">Using inputs and outputs with an action</a>."</li> 
+       </ol> 
+       <p>You can also enable Dependabot version updates for the actions that you add to your workflow. For more information, see "<a href="/en/github/administering-a-repository/keeping-your-actions-up-to-date-with-dependabot">Keeping your actions up to date with Dependabot</a>."</p> 
+       <h3 id="using-release-management-for-your-custom-actions"><a href="#using-release-management-for-your-custom-actions">Using release management for your custom actions</a></h3> 
+       <p>The creators of a community action have the option to use tags, branches, or SHA values to manage releases of the action. Similar to any dependency, you should indicate the version of the action you'd like to use based on your comfort with automatically accepting updates to the action.</p> 
+       <p>You will designate the version of the action in your workflow file. Check the action's documentation for information on their approach to release management, and to see which tag, branch, or SHA value to use.</p> 
+       <h4 id="using-tags"><a href="#using-tags">Using tags</a></h4> 
+       <p>Tags are useful for letting you decide when to switch between major and minor versions, but these are more ephemeral and can be moved or deleted by the maintainer. This example demonstrates how to target an action that's been tagged as <code>v1.0.1</code>:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/javascript-action@v1.0.1</span>
+</code></pre> 
+       <h4 id="using-shas"><a href="#using-shas">Using SHAs</a></h4> 
+       <p>If you need more reliable versioning, you should use the SHA value associated with the version of the action. SHAs are immutable and therefore more reliable than tags or branches. However this approach means you will not automatically receive updates for an action, including important bug fixes and security updates. You must use a commit's full SHA value, and not an abbreviated value. This example targets an action's SHA:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/javascript-action@172239021f7ba04fe7327647b213799853a9eb89</span>
+</code></pre> 
+       <h4 id="using-branches"><a href="#using-branches">Using branches</a></h4> 
+       <p>Specifying a target branch for the action means it will always run the version currently on that branch. This approach can create problems if an update to the branch includes breaking changes. This example targets a branch named <code>@main</code>:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/javascript-action@main</span>
+</code></pre> 
+       <p>For more information, see "<a href="/en/actions/creating-actions/about-actions#using-release-management-for-actions">Using release management for actions</a>."</p> 
+       <h3 id="using-inputs-and-outputs-with-an-action"><a href="#using-inputs-and-outputs-with-an-action">Using inputs and outputs with an action</a></h3> 
+       <p>An action often accepts or requires inputs and generates outputs that you can use. For example, an action might require you to specify a path to a file, the name of a label, or other data it will use as part of the action processing.</p> 
+       <p>To see the inputs and outputs of an action, check the <code>action.yml</code> or <code>action.yaml</code> in the root directory of the repository.</p> 
+       <p>In this example <code>action.yml</code>, the <code>inputs</code> keyword defines a required input called <code>file-path</code>, and includes a default value that will be used if none is specified. The <code>outputs</code> keyword defines an output called <code>results-file</code>, which tells you where to locate the results.</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">'Example'</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">'Receives file and generates output'</span>
+<span class="hljs-attr">inputs:</span>
+  <span class="hljs-attr">file-path:</span>  <span class="hljs-comment"># id of input</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">"Path to test script"</span>
+    <span class="hljs-attr">required:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">default:</span> <span class="hljs-string">'test-file.js'</span>
+<span class="hljs-attr">outputs:</span>
+  <span class="hljs-attr">results-file:</span> <span class="hljs-comment"># id of output</span>
+    <span class="hljs-attr">description:</span> <span class="hljs-string">"Path to results file"</span>
+</code></pre> 
+       <h3 id="referencing-an-action-in-the-same-repository-where-a-workflow-file-uses-the-action"><a href="#referencing-an-action-in-the-same-repository-where-a-workflow-file-uses-the-action">Referencing an action in the same repository where a workflow file uses the action</a></h3> 
+       <p>If an action is defined in the same repository where your workflow file uses the action, you can reference the action with either the ?<code>{owner}/{repo}@{ref}</code> or <code>./path/to/dir</code> syntax in your workflow file.</p> 
+       <p>Example repository file structure:</p> 
+       <pre><code>|-- hello-world (repository)
+|   |__ .github
+|       ??? workflows
+|           ??? my-first-workflow.yml
+|       ??? actions
+|           |__ hello-world-action
+|               ??? action.yml
+</code></pre> 
+       <p>Example workflow file:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-comment"># This step checks out a copy of your repository.</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-comment"># This step references the directory that contains the action.</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">./.github/actions/hello-world-action</span>
+</code></pre> 
+       <p>The <code>action.yml</code> file is used to provide metadata for the action. Learn about the content of this file in "<a href="/en/actions/creating-actions/metadata-syntax-for-github-actions">Metadata syntax for GitHub Actions</a>"</p> 
+       <h3 id="referencing-a-container-on-docker-hub"><a href="#referencing-a-container-on-docker-hub">Referencing a container on Docker Hub</a></h3> 
+       <p>If an action is defined in a published Docker container image on Docker Hub, you must reference the action with the <code>docker://{image}:{tag}</code> syntax in your workflow file. To protect your code and data, we strongly recommend you verify the integrity of the Docker container image from Docker Hub before using it in your workflow.</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">my_first_job:</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">My</span> <span class="hljs-string">first</span> <span class="hljs-string">step</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">docker://alpine:3.8</span>
+</code></pre> 
+       <p>For some examples of Docker actions, see the <a href="https://github.com/actions/starter-workflows/blob/main/ci/docker-image.yml">Docker-image.yml workflow</a> and "<a href="/en/articles/creating-a-docker-container-action">Creating a Docker container action</a>."</p> 
+       <h3 id="next-steps"><a href="#next-steps">Next steps</a></h3> 
+       <p>To continue learning about GitHub Actions, see "<a href="/en/actions/learn-github-actions/essential-features-of-github-actions">Essential features of GitHub Actions</a>."</p> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-pr

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en-us" itemscope itemtype="http://schema.org/Article"> 
+ <head>
+  <script async src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script>
+  <script>window.redwood={"consentGroups":{"C0001":true,"C0002":true,"C0003":true,"C0004":true},"country":"EG","colo":"LHR","user":null,"locale":"en-US"}</script> 
+  <script type="text/javascript">
+      var OneTrust={"geolocationResponse":{"stateCode":"C","countryCode":"EG"}}
+    </script> 
+  <script>
+     const acceptedLocales = [
+      'en-au',
+      'en-ca',
+      'en-gb',
+      'en-in',
+      'en-us',
+      'de-de',
+      'es-es',
+      'es-la',
+      'fr-fr',
+      'it-it',
+      'ja-jp',
+      'ko-kr',
+      'pt-br',
+      'zh-tw',
+      'zh-cn',
+    ];
+    const orphanLocales = [
+      'ru-ru',
+      'sv-se',
+      'nl-nl',
+      'vi-vn',
+      'th-th',
+      'id-id',
+    ];
+    const ignoreList = [
+      'apps',
+      'docs',
+      'rate-limit-test',
+      'rss',
+    ]
+    function getPathFromLocale(locale, code, pathString) {
+      if ( locale === code || !acceptedLocales.includes(code) || acceptedLocales.includes(locale) || orphanLocales.includes(locale) ) {
+        return null;
+      } else {
+        return [code, locale ? locale : '', pathString].filter(part => part !== '').join('/');
+      }
+    };
+    if (localStorage.getItem('langPreference')) {
+      if (localStorage.getItem('langPreference').toLowerCase() != 'en-us') {
+          const langPreference = localStorage.getItem('langPreference').toLowerCase();
+          const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+          const currentLang = splitPath[0];
+          if (!acceptedLocales.includes(currentLang) && !orphanLocales.includes(currentLang) && !ignoreList.includes(splitPath[0])) {
+            splitPath.splice(0, 0, langPreference.toLowerCase());
+            const newUrl = 'https://' + window.location.hostname + '/' + splitPath.join('/') + '/' + window.location.search;
+            window.location.replace(newUrl);   
+          }
+        }
+    } else if (!window.navigator.userAgent.toLowerCase().includes('googlebot')) {
+        const requestedLang = window.navigator.language;
+        const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+        const maybeLocale = splitPath.shift();
+        const splitPathString = splitPath.join('/');
+
+        if (requestedLang && requestedLang.toLowerCase() != "en-us") {
+          const requestedLangCode = requestedLang
+            .toLowerCase()
+            .replace('_', '-');
+          const redirectPath = getPathFromLocale(maybeLocale, requestedLangCode, splitPathString);
+          if (redirectPath && !ignoreList.includes(maybeLocale)) {
+            window.location.replace('https://' + window.location.hostname + '/' + redirectPath + '/' + window.location.search);
+          }
+        }
+      }
+    </script> 
+  <meta charset="UTF-8"> 
+  <title>Athenian Project | Cloudflare</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="canonical" href="https://www.cloudflare.com/athenian/guide/"> 
+  <meta itemprop="name" content="Athenian Project | Cloudflare"> 
+  <meta itemprop="description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta itemprop="image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Athenian Project | Cloudflare"> 
+  <meta name="twitter:description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <meta name="twitter:creator" content="@cloudflare"> 
+  <meta name="twitter:image" content="https://www.cloudflare.com/img/cf-twitter-card.png"> 
+  <meta property="og:title" content="Athenian Project | Cloudflare"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.cloudflare.com/athenian/guide/"> 
+  <meta property="og:image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta property="og:description" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta property="og:site_name" content="Cloudflare"> 
+  <meta class="swiftype" name="language" data-type="string" content="en-us"> 
+  <meta class="swiftype" name="title" data-type="string" content="Athenian Project"> 
+  <meta class="swiftype" name="description" data-type="string" content="DDoS attack protection for at-risk public interest websites"> 
+  <meta class="swiftype" name="url" data-type="enum" content="https://www.cloudflare.com/athenian/guide/"> 
+  <meta name="baidu-site-verification" content="N0CNJSCAk5"> 
+  <meta name="baidu-site-verification" content="Kj9FQ1BEWh"> 
+  <meta name="baidu-site-verification" content="OEDgbws38Y"> 
+  <meta name="baidu-site-verification" content="code-LHd7bZjChM"> 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png"> 
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196"> 
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> 
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> 
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> 
+  <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128"> 
+  <meta name="application-name" content="Cloudflare"> 
+  <meta name="msapplication-TileColor" content="#FFFFFF"> 
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png"> 
+  <meta name="msapplication-square70x70logo" content="/mstile-70x70.png"> 
+  <meta name="msapplication-square150x150logo" content="/mstile-150x150.png"> 
+  <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png"> 
+  <meta name="msapplication-square310x310logo" content="/mstile-310x310.png"> 
+  <noscript>
+   <style>.nojs-hide{display: none;}</style>
+  </noscript> 
+  <style>.async-hide {opacity: 0 !important}</style> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/application-ee0728fba2.min.css"> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/athenian/athenian-interactive-guide-35c6cebf7c.min.css"> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/athenian/athenian-lp-19cab89ee5.min.css"> 
+  <script nonce="76b6f761-8ad7-4169-9734-803c4263650a">
+  window.CFJS = {
+    config: {
+      rumEnabled: true,
+      env: '/marketing-api',
+      availableLanguages: ''.split(','),
+      excludeMarketo: false,
+      marketoEnabled: true,
+      bizibleEnabled: true,
+      excludeHeapAnalytics: false,
+      asyncHide: false,
+      remarketingEnabled: false,
+      sentryDSN: 'https://bd9df81d859641f39ce626ce2a2cc90d@sentry.io/229513',
+      serverLang: "en-us",
+      isEnglish: true,
+      isLocalized: true,
+      intlTelInputUtils: '/js/chunk-d060ffec04635cca1500.js',
+      cookieDomain: "cloudflare.com",
+      techtargetEnabled: true,
+      googleOptimizeEnabled: true,
+      gtm: {
+        containerId: "GTM-PKQFGQB",
+        disabled: false,
+        uaCookieDomain: ".cloudflare.com",
+        uaCodeMarketing_29: "UA-10218544-29",
+        optimize: "GTM-N4JSZJ8",
+        uaCodeAdWords: "AW-819572718",
+        uaCodeAdWordsBI: "DC-8921596",
+        adWordsConversionCode: "AW-972248548",
+        adWordsConversionCodeForm: "AW-836330296",
+        adWordsConversionLabel: "caqvCO3e32EQ5KvNzwM",
+        adWordsConversionLabelForm: "-l5JCJnczYgBELjG5Y4D",
+      }
+    }
+  }
+</script> 
+  <script src="https://assets.www.cloudflare.com/js/runtime-6a16446847617098e330.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-232ffa51e57f882f0534.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-55ad6e1817237ece29a0.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-e06d79a8c06c0d46865a.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-27eef9fa207b28718df2.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-06380521ff19239efe05.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-cd8895b507ee9e702e17.js" nonce="76b6f761-8ad7-4169-9734-803c4263650a"></script> 
+  <script src="https://www.cloudflare.com/vendor/onetrust/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="e34df59b-4a48-4bf9-b2b5-7a4bb09cd231"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class="marketing-nojs athenian"> 
+  <ul id="athenian-menu" class="athenian__nav athenian--mobile-hide"> 
+   <li data-menuanchor="introduction-1" class="athenian__nav__item athenian__nav__item--hover--light-blue"><a class="athenian__nav__item__copy" href="#introduction-1">Introduction</a></li> 
+   <li data-menuanchor="threat-1" class="athenian__nav__item athenian__nav__item--hover--pink"><a class="athenian__nav__item__copy" href="#threat-1">Why election sites can be targeted</a></li> 
+   <li data-menuanchor="protect-intro-1" class="athenian__nav__item athenian__nav__item--hover--blue"><a class="athenian__nav__item__copy" href="#protect-intro-1">How to protect your election website</a></li> 
+   <li data-menuanchor="sign-up-1" class="athenian__nav__item athenian__nav__item--hover--light-blue"><a class="athenian__nav__item__copy" href="#sign-up-1">How can I sign up for Athenian Project?</a></li> 
+  </ul> 
+  <header class="athenian-lp-page-header athenian-lp-page-header--desktop-hide"> 
+   <div class="athenian-lp-page-header__nav"> 
+    <img class="athenian-lp-page-header__logo athenian-lp-page-header__logo--light athenian-lp-page-header__logo--show" title="athenian logo white" alt="athenian logo white" src="/img/athenian/athenian-logo-white.svg"> 
+    <img class="athenian-lp-page-header__logo athenian-lp-page-header__logo--dark athenian-lp-page-header__logo--hide" title="athenian logo dark" alt="athenian logo dark" src="/img/athenian/athenian-logo-dark.svg"> 
+    <div class="js-athenian-hamburger athenian-lp-page-header__hamburger athenian-lp-page-header__hamburger--light"> 
+     <div class="athenian-lp-page-header__hamburger-bar1"></div> 
+     <div class="athenian-lp-page-header__hamburger-bar2"></div> 
+     <div class="athenian-lp-page-header__hamburger-bar3"></div> 
+    </div> 
+   </div> 
+   <ul class="js-athenian-mobile-nav athenian-lp-page-header__mobile-nav"> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-1" class="athenian-lp-page-header__mobile-nav__link">Introduction</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-4" class="athenian-lp-page-header__mobile-nav__link">Why election sites can be targeted</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-6" class="athenian-lp-page-header__mobile-nav__link">How to protect your election website</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-7" class="athenian-lp-page-header__mobile-nav__link"><span>Threat 1:</span> Website Availablity</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-9" class="athenian-lp-page-header__mobile-nav__link"><span>Threat 2:</span> Data Theft</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-12" class="athenian-lp-page-header__mobile-nav__link"><span>Threat 3:</span> Malicious Bots</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-14" class="athenian-lp-page-header__mobile-nav__link"><span>Threat 4:</span> Website Availablity</a> </li> 
+    <li class="athenian-lp-page-header__mobile-nav__item athenian-lp-page-header__mobile-nav__item--black-bg"> <a href="#athenian-18" class="athenian-lp-page-header__mobile-nav__link">How can I sign up for Athenian Project?</a> </li> 
+   </ul> 
+  </header> 
+  <div class="fullpage"> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-welcome"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <div id="js-nav-scroll"></div> 
+      <div class="athenian__wrapper"> 
+       <div class="athenian__wrapper__header-section"> 
+        <img class="athenian__wrapper__header-section__image" title="0 1" alt="0 1" src="/img/athenian/interactive/0-1.svg"> 
+       </div> 
+       <div class="athenian__wrapper__copy"> 
+        <h1 class="athenian__wrapper__copy__h1 athenian__header"><span>The Interactive Guide</span>to Protecting Your Election Website</h1> 
+        <h2 class="athenian__wrapper__copy__h2 athenian__subheader athenian--mobile-hide">Scroll down to get started</h2> 
+        <div class="athenian__wrapper__copy__arrow athenian--mobile-hide"></div> 
+       </div> 
+      </div> 
+      <div class="athenian__guide-info athenian--mobile-hide"> 
+       <div class="athenian__guide-info__arrows"> 
+        <div class="athenian__guide-info__arrows--row"> 
+         <div class="athenian__guide-info__arrows__box athenian__guide-info__arrows__box--no-border"></div> 
+         <div class="athenian__guide-info__arrows__box"> 
+          <div class="athenian__guide-info__arrow--top"></div> 
+         </div> 
+         <div class="athenian__guide-info__arrows__box athenian__guide-info__arrows__box--no-border"></div> 
+        </div> 
+        <div class="athenian__guide-info__arrows--row"> 
+         <div class="athenian__guide-info__arrows__box athenian__guide-info__arrows__box--light-gray"> 
+          <div class="athenian__guide-info__arrow--left"></div> 
+         </div> 
+         <div class="athenian__guide-info__arrows__box"> 
+          <div class="athenian__guide-info__arrow--down"></div> 
+         </div> 
+         <div class="athenian__guide-info__arrows__box athenian__guide-info__arrows__box--light-gray"> 
+          <div class="athenian__guide-info__arrow--right"></div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="athenian__guide-info__copy">
+         This guide can also be navigated with your arrow keys. 
+       </div> 
+      </div> 
+      <div class="athenian__share athenian__share--absolute"> 
+       <div class="athenian__share--img athenian--mobile-hide"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.cloudflare.com/athenian/guide/" target="_blank"><img class="athenian__share--img__icon" title="facebook" alt="facebook" src="/img/athenian/interactive/facebook.svg"></a> <a href="https://twitter.com/intent/tweet?original_referer=https%3A//www.cloudflare.com/athenian/guide/&amp;ref_src=twsrc%5Etfw&amp;text=Protect%20your%20election%20website%20for%20free.%20Check%20out%20our%20guide.%20%23AthenianProject&amp;tw_p=tweetbutton&amp;url=https%3A//www.cloudflare.com/athenian/guide/" target="_blank"><img class="athenian__share--img__icon" title="twitter" alt="twitter" src="/img/athenian/interactive/twitter.svg"></a> <a href="/media/pdf/cloudflare-athenian-project-terms-of-service-interactive-guide-print.pdf" target="_blank"><img class="athenian__share--img__icon" title="print" alt="print" src="/img/athenian/interactive/print.svg"></a> 
+       </div> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__top-center athenian__curve-border--blue"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile tile--gray athenian__tile" id="athenian-1"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__1__bubble-1" title="1 1" alt="1 1" src="/img/athenian/interactive/1-1.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__section-header athenian__section-header--light-blue">1 INTRODUCTION</h1> 
+       <h2 class="athenian__header">Cloudflare is on a mission to help build a better Internet.</h2> 
+       <p>Cloudflare is one of the world’s largest networks. Today, businesses, nonprofits, bloggers, and anyone with an Internet presence uses our network to make their websites, apps, and anything connected to the Internet fast and secure. Approximately 25 million Internet properties are on Cloudflare, and our network is growing by tens of thousands each day. Cloudflare powers Internet requests for ~17% of the Fortune 1,000, and serves 25 million HTTP requests per second on average..</p> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__bot-center athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-2"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__2__bubble-1 athenian--mobile-hide" title="2 1" alt="2 1" src="/img/athenian/interactive/2-1.svg"> 
+      <img class="athenian__2__bubble-2" title="2 2" alt="2 2" src="/img/athenian/interactive/2-2.svg"> 
+      <img class="athenian__2__bubble-3 athenian--mobile-hide" title="2 3" alt="2 3" src="/img/athenian/interactive/2-3.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__subheader">As one of the world’s largest networks, we believe it is our duty to help protect the most vulnerable voices and most critical institutions on the Internet.</h1> 
+       <div class="athenian__wrapper__copy"> 
+        <p class="athenian__text athenian__wrapper__copy__text">In September 2017, the U.S. Department of Homeland Security informed 21 states that their voter registration files or public election websites had been the target of cyber attacks.</p> 
+        <p class="athenian__text athenian__wrapper__copy__text">Among their many responsibilities, state and local officials are often responsible for election websites, which are increasingly the primary source of critical voter information, such as where to vote, how to vote, and who is running for office. Just like every other Internet property, election websites need to be fast, they need to be reliable, they need to be secure. Yet, scarce budgets too often prevent governments from getting the right resources to prevent attacks and stay online.</p> 
+       </div> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-3"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__3__bubble-1" title="3 1" alt="3 1" src="/img/athenian/interactive/3-1.svg"> 
+      <img class="athenian__3__bubble-2" title="3 2" alt="3 2" src="/img/athenian/interactive/3-2.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__subheader">We created Athenian Project to ensure that state and local governments have the highest level of protection and reliability, so that their constituents can access election information and voter registration.</h1> 
+       <div class="athenian__wrapper__copy"> 
+        <p class="athenian__text athenian__wrapper__copy__text">Athenian Project offers Cloudflare’s Enterprise level of protection to state and local election websites for free. As part of this project, we are introducing this Interactive Guide to Protecting Your Election Website so that you are aware of the vulnerabilities and how Athenian Project protects you from them.</p> 
+        <p class="athenian__text athenian__wrapper__copy__text">Taking the steps included in this guide helps us all ensure that the Internet remains a vital resource for elections.</p> 
+       </div> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile tile--gray athenian__tile" id="athenian-4"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__4__bubble-1" title="4 1" alt="4 1" src="/img/athenian/interactive/4-1.svg"> 
+      <img class="athenian__4__bubble-2 athenian--mobile-hide" title="4 2" alt="4 2" src="/img/athenian/interactive/4-2.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__section-header athenian__section-header--red">2 WHY ELECTION SITES CAN BE TARGETS</h1> 
+       <h2 class="athenian__header">Election websites serve a powerful role in democratic elections.</h2> 
+       <div class="athenian__wrapper__copy"> 
+        <p class="athenian__text athenian__wrapper__copy__text">They provide crucial information to people before, during, and after elections. Election websites can also be targets of attack and can face vulnerabilities due to peaks in traffic.</p> 
+        <p class="athenian__text athenian__wrapper__copy__text">Here are just some of the ways that ways that vulnerabilities can interfere with a smooth democratic election:</p> 
+       </div> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__top-left athenian__curve-border__top-left--extra-top athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-5"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__5__bubble-1" title="5 1" alt="5 1" src="/img/athenian/interactive/5-1.svg"> 
+      <img class="athenian__5__bubble-2" title="5 2" alt="5 2" src="/img/athenian/interactive/5-2.svg"> 
+      <img class="athenian__5__bubble-3" title="5 3" alt="5 3" src="/img/athenian/interactive/5-3.svg"> 
+      <img class="athenian__5__bubble-4" title="5 4" alt="5 4" src="/img/athenian/interactive/5-4.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <h1 class="athenian__header">Before Elections</h1> 
+       <p class="athenian__text">Security and performance vulnerabilities can cause these sites to become unavailable or to spread false information about how to register to vote and the specific state and local measures that will be on the ballot.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__header">During Elections</h1> 
+       <p class="athenian__text">Security and performance vulnerabilities can prevent citizens who visit election websites from accessing important information about where and when to vote.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__header">After Elections</h1> 
+       <p class="athenian__text">Security and performance vulnerabilities can interfere with people who visit election websites after an election to see the results and get real-time updates.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile tile--gray athenian__tile" id="athenian-6"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__6__bubble-1" title="6 1" alt="6 1" src="/img/athenian/interactive/6-1.svg"> 
+      <img class="athenian__6__bubble-2" title="6 2" alt="6 2" src="/img/athenian/interactive/6-2.svg"> 
+      <img class="athenian__6__bubble-3" title="6 3" alt="6 3" src="/img/athenian/interactive/6-3.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__section-header athenian__section-header--blue">3 VULNERABILITIES AND SAFEGUARDS - HOW TO PROTECT YOUR ELECTION WEBSITE</h1> 
+       <h2 class="athenian__header">The Internet’s open, distributed nature creates security and performance vulnerabilities for election websites.</h2> 
+       <h3 class="athenian__subheader">Here’s what you need to know to protect your Internet presence before any damage is done.</h3> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__bot-left athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-7"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__7__bubble-1" title="7 1" alt="7 1" src="/img/athenian/interactive/7-1.svg"> 
+      <img class="athenian__7__bubble-2 athenian--mobile-hide" title="7 2" alt="7 2" src="/img/athenian/interactive/7-2.svg"> 
+      <img class="athenian__7__bubble-3 athenian--mobile-hide" title="7 3" alt="7 3" src="/img/athenian/interactive/7-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__share"> 
+        <div class="athenian__share--img athenian__share--img--small"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-2" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="facebook" alt="facebook" src="/img/athenian/interactive/facebook.svg"></a> <a href="https://twitter.com/intent/tweet?original_referer=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-2/&amp;ref_src=twsrc%5Etfw&amp;text=Cloudflare’s%20%23AthenianProject%20automatically%20blocks%20bad%20traffic%20at%20the%20edge%2C%20protecting%20your%20election%20website%20from%20DDoS%20attacks.%20Check%20out%20how%20in%20the%20guide.&amp;tw_p=tweetbutton&amp;url=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-2/" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="twitter" alt="twitter" src="/img/athenian/interactive/twitter.svg"></a> 
+        </div> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue">THREAT #1</h1> 
+       </div> 
+       <h1 class="athenian__header">Distributed Denial-of-Service (DDoS) attacks</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">What is it?</h1> 
+       <div class="athenian__wrapper__copy"> 
+        <p class="athenian__text">Bad actors can target election websites with denial-of-service (DoS) or distributed denial-of-service (DDoS) attacks that target websites and network infrastructure. These attacks overwhelm available resources, often utilizing application layer (layer 7) attacks.</p> 
+       </div> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__top-left athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-8"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__8__bubble-1" title="8 1" alt="8 1" src="/img/athenian/interactive/8-1.svg"> 
+      <img class="athenian__8__bubble-2" title="8 2" alt="8 2" src="/img/athenian/interactive/8-2.svg"> 
+      <img class="athenian__8__bubble-3" title="8 3" alt="8 3" src="/img/athenian/interactive/8-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__header-wrapper"> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue athenian__section-header--wider athenian--mobile-hide">SOLUTION #1</h1> 
+        <h2 class="athenian__section-header athenian__section-header--blue athenian--mobile-hide">DDoS ATTACKS</h2> 
+       </div> 
+       <h1 class="athenian__header">How Athenian Project protects your election website:</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">Protect your network</h1> 
+       <p class="athenian__text">The first step in protecting against a DDoS attack is to ensure that multiple layers of security controls are able to protect your network. Example controls include utilizing a web application firewall or IP reputation database.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__subheader">Block malicious traffic at the edge</h1> 
+       <p class="athenian__text">A CDN provider will have insights into global traffic that would be impossible for individual websites to maintain. This knowledge is often fed into security actions. For example, Cloudflare employs a program called Gatebot, which automatically blocks bad traffic at the edge, preventing this traffic from reaching your origin.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--4"> 
+       <h1 class="athenian__subheader">Protect your DNS</h1> 
+       <p class="athenian__text">DNS, short for Domain Name System, is the phone book for the Internet. It associates an IP address with a corresponding URL address. Nearly every action you take on the Internet starts with a DNS request. For example, when you type ‘google.com’ into a web browser, DNS is the system that finds the numerical IP address behind the letters. Cloudflare can help protect DNS because our authoritative DNS servers run on the same 67 Tbps network which protects more than million Internet properties from DDoS attacks.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-9"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__9__bubble-1" title="9 1" alt="9 1" src="/img/athenian/interactive/9-1.svg"> 
+      <img class="athenian__9__bubble-2" title="9 2" alt="9 2" src="/img/athenian/interactive/9-2.svg"> 
+      <img class="athenian__9__bubble-3" title="9 3" alt="9 3" src="/img/athenian/interactive/9-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__share"> 
+        <div class="athenian__share--img athenian__share--img--small"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-4" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="facebook" alt="facebook" src="/img/athenian/interactive/facebook.svg"></a> <a href="https://twitter.com/intent/tweet?original_referer=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-4/&amp;ref_src=twsrc%5Etfw&amp;text=A%20Web%20Application%20Firewall%2C%20HTTPS%20encryption%2C%20and%20DNSSEC%20are%20ways%20that%20Cloudflare’s%20%23AthenianProject%20protects%20your%20election%20website%20from%20data%20theft.%20Learn%20more%20in%20the%20guide.&amp;tw_p=tweetbutton&amp;url=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-4/" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="twitter" alt="twitter" src="/img/athenian/interactive/twitter.svg"></a> 
+        </div> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue">THREAT #2</h1> 
+       </div> 
+       <h1 class="athenian__header">Data Theft</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">What is it?</h1> 
+       <p class="athenian__text">Election websites can be vulnerable to security breaches like SQL injection attacks, cross-site scripting, and cross-site forgery requests, which can lead to the theft of data, including voter data.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__subheader">What’s SQL Injection?</h1> 
+       <p class="athenian__text">Structured Query Language (SQL) Injection is a code injection technique used to modify or retrieve data from SQL databases. By inserting specialized SQL statements into an entry field, an attacker is able to execute commands that allow for the retrieval of data from the database.</p> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__bot-left athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-10"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__10__bubble-1" title="10 1" alt="10 1" src="/img/athenian/interactive/10-1.svg"> 
+      <img class="athenian__10__bubble-2" title="10 2" alt="10 2" src="/img/athenian/interactive/10-2.svg"> 
+      <img class="athenian__10__bubble-3 athenian--mobile-hide" title="10 3" alt="10 3" src="/img/athenian/interactive/10-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__header-wrapper"> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue athenian__section-header--wider athenian--mobile-hide">SOLUTION #2</h1> 
+        <h2 class="athenian__section-header athenian__section-header--blue athenian--mobile-hide">DATA THREAT</h2> 
+       </div> 
+       <h1 class="athenian__header">How Athenian Project protects your election website:</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">Did you know?</h1> 
+       <p class="athenian__text">Cloudflare develops automatic rules for our WAF based on intelligence we gather from our global network.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__subheader">Use HTTPS encryption</h1> 
+       <p class="athenian__text">Protecting your website starts with strong encryption practices. Secure Sockets Layer, or SSL, is the first widely-adopted web encryption protocol. The latest protocol is called TLS, short for Transport Security Layer. Because data on the Internet is transferred across many locations, it is possible for bad actors to intercept packets of information as they move across the globe. By using a cryptographic protocol, like TLS, websites ensure that only the intended recipient is able to decode and read the information, and intermediaries are prevented from decoding the contents of the transferred data.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--4"> 
+       <h1 class="athenian__subheader">Use a Web Application Firewall</h1> 
+       <p class="athenian__text">A Web Application Firewall (WAF) monitors, filters, and blocks HTTP traffic to a web application. Using a WAF protects your Internet property from common vulnerabilities like SQL injection attacks, cross-site scripting, and cross-site forgery requests.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-11"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__11__bubble-1" title="11 1" alt="11 1" src="/img/athenian/interactive/11-1.svg"> 
+      <img class="athenian__11__bubble-2" title="11 2" alt="11 2" src="/img/athenian/interactive/11-2.svg"> 
+      <img class="athenian__11__bubble-3 athenian--mobile-hide" title="11 4" alt="11 4" src="/img/athenian/interactive/11-4.svg"> 
+      <div class="athenian__wrapper"> 
+       <h1 class="athenian__subheader">Use DNSSEC</h1> 
+       <p class="athenian__text">If DNS is the phone book of the Internet, DNSSEC is the Internet’s unspoofable caller ID. It guarantees a web application’s traffic is safely routed to the correct servers so that a site’s visitors are not intercepted by a hidden ‘man-in-the-middle’ attacker which can go unnoticed by site visitors, increasing the risk of phishing, malware infections, and personal data usage.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-12"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__12__bubble-1" title="12 1" alt="12 1" src="/img/athenian/interactive/12-1.svg"> 
+      <img class="athenian__12__bubble-2" title="12 2" alt="12 2" src="/img/athenian/interactive/12-2.svg"> 
+      <img class="athenian__12__bubble-3 athenian--mobile-hide" title="12 3" alt="12 3" src="/img/athenian/interactive/12-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__share"> 
+        <div class="athenian__share--img athenian__share--img--small"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-7" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="facebook" alt="facebook" src="/img/athenian/interactive/facebook.svg"></a> <a href="https://twitter.com/intent/tweet?original_referer=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-7/&amp;ref_src=twsrc%5Etfw&amp;text=A%20web%20application%20firewall%20and%20IP%20reputation%20database%20are%20just%20two%20of%20the%20ways%20Cloudflare’s%20%23AthenianProject%20protects%20your%20election%20website%20from%20malicious%20bots.%20Check%20out%20how%20in%20the%20guide.%20&amp;tw_p=tweetbutton&amp;url=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-7/" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="twitter" alt="twitter" src="/img/athenian/interactive/twitter.svg"></a> 
+        </div> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue">THREAT #3</h1> 
+       </div> 
+       <h1 class="athenian__header">Malicious Bots</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">What is it?</h1> 
+       <p class="athenian__text">Bad actors can create bots that interfere with election websites. The most common types of abuse include content scraping and account takeover, which can lead to increases in operational costs and data loss.</p> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__top-left athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-13"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__13__bubble-1" title="10 2" alt="10 2" src="/img/athenian/interactive/10-2.svg"> 
+      <img class="athenian__13__bubble-2 athenian--mobile-hide" title="13 2" alt="13 2" src="/img/athenian/interactive/13-2.svg"> 
+      <img class="athenian__13__bubble-3" title="13 3" alt="13 3" src="/img/athenian/interactive/13-3.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__header-wrapper"> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue athenian__section-header--wider athenian--mobile-hide">SOLUTION #3</h1> 
+        <h2 class="athenian__section-header athenian__section-header--blue athenian--mobile-hide">MALICIOUS BOTS</h2> 
+       </div> 
+       <h1 class="athenian__header">How Athenian Project protects your election website:</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">Use a Web Application Firewall</h1> 
+       <p class="athenian__text">A Web Application Firewall (WAF) filters, monitors, and blocks HTTP traffic to and from a web application. Using a WAF protects your internet property from common vulnerabilities like SQL injection attacks, cross-site scripting, and cross-site forgery requests.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__subheader">Use an IP reputation database</h1> 
+       <p class="athenian__text">IPs that perform malicious actions can be tracked with a global reputation system. An IP reputation database enables shared network intelligence and predictive security to identify and block abusive bots.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile athenian__tile--gray--mobile" id="athenian-14"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__14__bubble-1 athenian--mobile-hide" title="14 1" alt="14 1" src="/img/athenian/interactive/14-1.svg"> 
+      <img class="athenian__14__bubble-2" title="14 2" alt="14 2" src="/img/athenian/interactive/14-2.svg"> 
+      <img class="athenian__14__bubble-3 athenian--mobile-hide" title="14 3" alt="14 3" src="/img/athenian/interactive/14-3.svg"> 
+      <img class="athenian__14__bubble-4 athenian--mobile-hide" title="14 4" alt="14 4" src="/img/athenian/interactive/14-4.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__share"> 
+        <div class="athenian__share--img athenian__share--img--small"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-9" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="facebook" alt="facebook" src="/img/athenian/interactive/facebook.svg"></a> <a href="https://twitter.com/intent/tweet?original_referer=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-9/&amp;ref_src=twsrc%5Etfw&amp;text=Keep%20your%20election%20website%20up%20and%20running%20even%20during%20spikes%20in%20traffic%20with%20Cloudflare’s%20%23AthenianProject.%20Check%20out%20how%20in%20the%20guide.&amp;oq=Keep%20your%20election%20website%20up%20and%20running%20even%20during%20spikes%20in%20traffic%20with%20Cloudflare’s%20%23AthenianProject.%20Check%20out%20how%20in%20the%20guide.&amp;tw_p=tweetbutton&amp;url=https%3A//www.cloudflare.com/athenian/guide/%23protect-intro-9/" target="_blank"><img class="athenian__share--img__icon athenian__share--img__icon--small" title="twitter" alt="twitter" src="/img/athenian/interactive/twitter.svg"></a> 
+        </div> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue">THREAT #4</h1> 
+       </div> 
+       <h1 class="athenian__header">Website Availability</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">What is it?</h1> 
+       <div class="athenian__wrapper__copy"> 
+        <p class="athenian__text">Oftentimes, election websites experience periods of high traffic, often referred to as network spikes. These spikes in traffic can overwhelm websites creating a poor user experience — at times, content on the website will slowly load; at other times, the content will not load at all.</p> 
+        <p class="athenian__text">Similarly, spikes in traffic can also lead to increased network infrastructure bills, due to higher network and server utilization. Using a CDN and caching will help offload resources from your server at all times, optimizing your website's resources and reducing the burden of spikes in traffic.</p> 
+       </div> 
+      </div> 
+      <div class="athenian__curve-border athenian__curve-border__bot-left athenian__curve-border--white"></div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-15"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__15__bubble-1" title="15 1" alt="15 1" src="/img/athenian/interactive/15-1.svg"> 
+      <img class="athenian__15__bubble-3" title="15 3" alt="15 3" src="/img/athenian/interactive/15-3.svg"> 
+      <img class="athenian__15__bubble-4" title="15 4" alt="15 4" src="/img/athenian/interactive/15-4.svg"> 
+      <img class="athenian__15__bubble-5" title="15 5" alt="15 5" src="/img/athenian/interactive/15-5.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <div class="athenian__header-wrapper"> 
+        <h1 class="athenian__section-header athenian__section-header--bg-blue athenian__section-header--wider athenian--mobile-hide">SOLUTION #4</h1> 
+        <h2 class="athenian__section-header athenian__section-header--blue athenian--mobile-hide">WEBSITE AVAILABILITY</h2> 
+       </div> 
+       <h1 class="athenian__header">How Athenian Project protects your election website:</h1> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">Reliable DNS</h1> 
+       <p class="athenian__text">Reliable DNS providers like Cloudflare use vast networks of servers to ensure that your content is always reachable and decreases delays in resolving your DNS.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--3"> 
+       <h1 class="athenian__subheader">Anycast Content Delivery Network</h1> 
+       <p class="athenian__text">Cloudflare is an Anycast CDN which quickly routes incoming traffic to the nearest data center with the capacity to process the request efficiently, handling surges in web traffic due to voter registration deadlines and election result updates.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-16"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__16__bubble-1" title="16 1" alt="16 1" src="/img/athenian/interactive/16-1.svg"> 
+      <img class="athenian__16__bubble-2" title="16 2" alt="16 2" src="/img/athenian/interactive/16-2.svg"> 
+      <img class="athenian__16__bubble-3 athenian--mobile-hide" title="15 2" alt="15 2" src="/img/athenian/interactive/15-2.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <h1 class="athenian__subheader">Perform country blocks at the edge</h1> 
+       <p class="athenian__text">Oftentimes, election websites are looking to serve web traffic to countries in which the visitor is not a constituent. Being able to block specific countries frees up resources and prevents malicious attacks.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__subheader">CDN/Caching</h1> 
+       <p class="athenian__text">Serving static assets from a CDN provider will significantly offload resource load from your origin. This will allow for more processing power from your servers, especially during peak times, during the election or when results are published.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile athenian__tile" id="athenian-17"> 
+     <section class="tile__content tile__content--1200px athenian__tile__content"> 
+      <img class="athenian__17__bubble-1" title="17 1" alt="17 1" src="/img/athenian/interactive/17-1.svg"> 
+      <img class="athenian__17__bubble-2 athenian--mobile-hide" title="6 1" alt="6 1" src="/img/athenian/interactive/6-1.svg"> 
+      <img class="athenian__17__bubble-4" title="17 4" alt="17 4" src="/img/athenian/interactive/17-4.svg"> 
+      <div class="athenian__wrapper athenian__wrapper--1"> 
+       <h1 class="athenian__subheader">Knowing is half the battle</h1> 
+       <p class="athenian__text">It’s important to monitor how your election website is performing. With Athenian Project, you have access to Cloudflare’s analytics platform, giving you full insight into performance, availability, and security of your election website.</p> 
+      </div> 
+      <div class="athenian__wrapper athenian__wrapper--2"> 
+       <h1 class="athenian__header">OK, you’re well on your way!</h1> 
+       <p class="athenian__subheader">You now have the fundamentals of election website vulnerabilities and the steps you can take to make them secure and reliable.</p> 
+      </div> 
+     </section> 
+    </section> 
+   </div> 
+   <div class="section"> 
+    <section class="tile tile--gray athenian__tile" id="athenian-18"> 
+     <section class="tile__content

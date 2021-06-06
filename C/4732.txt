@@ -1,0 +1,313 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Omnibus GitLab Docs | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <meta name="docsearch:language" content="en"> 
+  <meta name="docsearch:version" content="13.10"> 
+  <meta http-equiv="content-security-policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'self'; connect-src 'self' https:; frame-src 'self' https:; img-src 'self' https: data:; manifest-src 'self'; media-src 'self'; worker-src 'none';"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/stylesheet-v104.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/highlight-v7.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/footer-v9.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/toc-v19.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/help-v2.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5"></script> 
+  <script src="/13.10/assets/javascripts/google_tagmanager-v1.js"></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <meta name="google-site-verification" content="xAUTWp3CDg-tU1LVVwsM9OrVhLR7L3SmiyKzkOuPNos"> 
+  <meta name="google-site-verification" content="F0zzwaMpiyWFcPQ1Lqu18qN3EnuQsqFXbySl_29yvHs"> 
+  <meta name="google-site-verification" content="nwo1bVaU0t9TZxZyM-aOI6-CofaH9GRL-uBPbdREWgc"> 
+  <script async src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js" integrity="sha256-idm3p7jl0XwymUpIccg6WI96tQmoDR/5DWEsnPnxYU4=" crossorigin="anonymous"></script> 
+  <script async src="/13.10/assets/javascripts/closest-polyfill-v.js"></script> 
+  <meta name="generator" content="Nanoc 4.12.0"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/13.10/assets/images/apple-touch-icon.png"> 
+  <link rel="manifest" href="/13.10/assets/manifests/site.webmanifest"> 
+  <meta name="msapplication-config" content="/13.10/assets/manifests/browserconfig.xml"> 
+  <meta name="msapplication-TileColor" content="#FC6D26"> 
+  <meta name="theme-color" content="#FC6D26"> 
+  <link rel="canonical" href="/13.10/omnibus/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90"> 
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0"> <a class="navbar-brand d-flex align-items-center justify-content-center" href="/"> <img src="/13.10/assets/images/gitlab-logo.svg" alt="GitLab logo" class="logo"> <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+    <ul class="navbar-nav mr-auto"> 
+     <li class="nav-item active"> 
+      <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/"> <span class="fa fa-search form-control-feedback position-absolute ml-2 text-muted"></span> 
+       <input class="form-control mr-sm-2 docsearch" name="query" type="search" placeholder="Search the docs..." aria-label="Search"> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+    </ul> 
+    <ul class="navbar-nav"> 
+     <li class="nav-item p-2 dropdown"> <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 13.10 </button> 
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/omnibus/README.html">GitLab.com (13.13-pre) <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/13.12/omnibus/README.html"> 13.12 </a> <a class="dropdown-item" href="/13.11/omnibus/README.html"> 13.11 </a> <a class="dropdown-item" href="/13.10/omnibus/README.html"> 13.10 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/12.10/omnibus/README.html"> 12.10 </a> <a class="dropdown-item" href="/11.11/omnibus/README.html"> 11.11 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/archives/">Archives</a> 
+      </div> </li>
+     <li class="nav-item p-2"> <a class="btn btn-danger text-white" href="https://about.gitlab.com/free-trial/self-managed/" target="_blank" rel="noopener noreferrer" role="button"> Get free trial </a> </li>
+    </ul> 
+   </div> 
+  </nav> 
+  <section class="container-fluid pt-5"> 
+   <div class="row"> 
+    <div class="col-0 col-lg-2 pl-0"> 
+     <div class="nav-wrapper active"> 
+      <aside id="global-nav" class="global-nav"> 
+       <nav class="global-nav-content"> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0  active" href="/13.10/omnibus/README.html"> Omnibus GitLab Docs </a> 
+          <div class="section-title  active" data-toggle="collapse" aria-expanded="false" data-target="#sec_16e90a79-0544-4e37-83b9-8a99457d7fdb"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/architecture/README.html"> Architecture </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_9b542bfb-7ec2-45e5-acbc-d6ed26b4f5f8"></div> </span> 
+         <div class="collapse" id="sec_9b542bfb-7ec2-45e5-acbc-d6ed26b4f5f8"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/omnibus_packages.html"> Omnibus packages and images </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_fb175532-83c7-464c-967c-806087b80f61"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/README.html"> Package information </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_44255851-d5cf-49ad-ac02-b5d9e0181ade"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/defaults.html"> Package defaults </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_0ba9251d-3711-43ac-a6af-2b279aef95c7"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/licensing.html"> Package licensing </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ab5b9d5f-f80c-4c1b-b39c-bde4b8c58740"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/signed_packages.html"> Package signatures </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ed65ec8c-6b12-402a-bc0c-f6880c559793"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/installation/"> Installation </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_9385767b-ea00-445a-8ffa-76ffd6b687b3"></div> </span> 
+         <div class="collapse" id="sec_9385767b-ea00-445a-8ffa-76ffd6b687b3"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/architecture/registry/README.html"> Container Registry </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_eb02c703-941e-499a-abff-5bc0a2f999d2"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/deprecation_policy.html"> Deprecation policy </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ab582c92-2e43-487e-890e-d8fb59a9e723"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/package-information/deprecated_os.html"> Deprecated OSes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_2d9eef36-082a-45cb-8293-da8f66ba60c8"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/docker/README.html"> Docker images </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_731ca8e0-e9a7-467d-ae10-7502f4b8668d"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/manual_install.html"> Manual installation </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_08e74c70-fdb6-4587-8f3a-3d0eddc2969f"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/settings/README.html"> Configure </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_3edaf8cf-1cb9-42f1-bd51-2ddded619106"></div> </span> 
+         <div class="collapse" id="sec_3edaf8cf-1cb9-42f1-bd51-2ddded619106"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/environment-variables.html"> Custom environment variables </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_f02179a9-3ce4-41a2-8772-59bf65e2f9ec"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/backups.html"> Backups </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_631b817c-90b5-4bbc-b10f-8962411da137"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/database.html"> Database </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_a03d1383-7f9f-46c5-a5d6-b041fd258148"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/gitlab-mattermost/README.html"> GitLab Mattermost </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_9ae07d03-e333-4138-be6c-e298ff91f2d4"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/grafana.html"> Grafana </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_07f7c179-ffd4-4909-8b8a-85eebd8f00b9"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/roles/README.html"> High availability roles </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_4f8c3a23-ab76-4c85-a8f4-7667394c9110"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/ee/administration/auth/ldap/index.html" target="_blank"> LDAP </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_d5aea692-0756-4b70-bea0-47fecb6951a2"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/logs.html"> Logs </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_e5d7e40e-eb72-4658-9851-3ada3c86a301"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/nginx.html"> NGINX </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b200f359-6212-46de-bd62-1ad49af9e026"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/praefect.html"> Gitaly Cluster </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ecb21205-809e-4ad0-b384-27e68d1a05fb"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/prometheus.html"> Prometheus </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_00d64f5f-f53a-41f0-97c6-62beee3f4e57"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/puma.html"> Puma </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_e94f3855-694c-42af-ac20-8368a012d78b"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/rpi.html"> Raspberry Pi </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_96cfa710-9a33-4570-8341-e4f033a268e0"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/redis.html"> Redis </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_18c75591-26f3-4410-a774-20d644146474"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/smtp.html"> SMTP </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_99fc3433-4657-475e-b96e-4299e61e55a7"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/ssl.html"> SSL </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_68c8b81b-5455-4dfa-891f-a7f5edc29331"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/dns.html"> DNS </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_016bd484-6ccc-47f0-a7f9-d8bb220b80f8"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/unicorn.html"> Unicorn </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_f48ec301-196f-4aa5-9734-09bedfef2577"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/image_scaling.html"> Image scaling </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b9e2cf44-3681-4681-9569-b27148229341"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/release/README.html"> Release process </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_a5515e4d-4d4e-4083-aeeb-b45bcab40ea7"></div> </span> 
+         <div class="collapse" id="sec_a5515e4d-4d4e-4083-aeeb-b45bcab40ea7"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/release/openshift.html"> OpenShift release process </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_13be592c-8ca5-4a93-a122-16e24795803d"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/update/README.html"> Update </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_61dfd9b9-94fd-4bf3-a550-f9b6a0a37f85"></div> </span> 
+         <div class="collapse" id="sec_61dfd9b9-94fd-4bf3-a550-f9b6a0a37f85"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/convert_to_omnibus.html"> Convert to Omnibus </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_fb70c3eb-6fc0-4d1a-9b0f-74e363bfbee7"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/package_signatures.html"> Package signatures </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_a823b503-bd99-47d8-a5da-86bb313b5aad"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/gitlab_13_changes.html"> GitLab 13 changes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_cbbdf87d-8e15-427b-9deb-b9207542f12d"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/gitlab_12_changes.html"> GitLab 12 changes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_d9f8e8aa-bdff-4048-9e6b-d291d54702ca"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/gitlab_11_changes.html"> GitLab 11 changes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_67cbf608-0a6e-4ca6-8c50-98f1d40fb55b"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/update/gitlab_10_changes.html"> GitLab 10 changes </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_90c933b1-a8f6-4285-a4ef-0eadcd1ef511"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/omnibus/maintenance/README.html"> Maintain </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_ed3f378d-243c-454b-8b50-0b6bd1ec6026"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/omnibus/common_installation_problems/README.html"> Troubleshoot </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_167a7bea-edc6-49af-a14c-8cea85c7b79e"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/omnibus/development/README.html"> Development </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_bb2a35f3-a9b9-4f5b-8088-cd0eb86f7429"></div> </span> 
+         <div class="collapse" id="sec_bb2a35f3-a9b9-4f5b-8088-cd0eb86f7429"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/ee/development/documentation/" target="_blank"> Documentation </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_90c8a178-1c3e-46b4-89db-73b8ae64a18e"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/omnibus/build/README.html"> Build locally </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_339bead5-c51d-4288-8c65-ada006c29e66"></div> </span> 
+          <div class="collapse" id="cat_339bead5-c51d-4288-8c65-ada006c29e66"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/omnibus/build/build_package.html"> Build Omnibus GitLab package </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/omnibus/build/build_docker_image.html"> Build all-in-one Docker image </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/omnibus/build/team_member_docs.html"> Information for GitLab team members </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/setup.html"> Set up a development environment </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_59c04c2d-1bf7-4012-9155-fa71b5dcdde9"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/configuration.html"> Config options </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_fc2a9e9f-928e-40a6-b66e-0800da739632"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/settings/gitlab.yml.html"> Changing YAML config options </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_1348fca1-b04d-4ab9-a3d5-08df7cbded23"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/adding-deprecation-messages.html"> Adding deprecation messages </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_08f85a75-520d-4a91-8a10-0e38c8093b9a"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/gitlab-ctl-commands.html"> Adding new gitlab-ctl commands </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_4594a76d-dd2f-4b75-9f0f-2874a3506218"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/new-services.html"> Adding new services </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_26039743-e4d2-45cc-9f87-725fe5ac1f44"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/new-software-definition.html"> Adding new software definitions </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_037ee38e-1060-4275-9417-580ee3a11ca0"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/creating-patches.html"> Creating patches </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_8d371fbe-34dc-41d6-b124-dc4f4637977a"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/openshift/README.html"> Installing OpenShift </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_27892831-5767-4517-8f23-defd37b1ad00"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/managing-postgresql-versions.html"> Managing PostgreSQL versions </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_f588c44e-79a7-499f-b605-d66a3b7b4268"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/omnibus/development/public-attributes.html"> Working with public_attributes.json </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_6a2440b5-7d64-47be-94aa-f3ed10116424"></div> </span> 
+         </div> 
+        </div> 
+       </nav> 
+      </aside> 
+      <div id="js-nav-toggle"></div> 
+     </div> 
+    </div> 
+    <div class="main wrapper js-main-wrapper col-12 col-lg-7"> 
+     <div class="row"> 
+      <div class="col"> 
+       <div id="js-version-banner" data-is-outdated data-latest-version-url="/omnibus/README.html" data-archives-url="/archives/"></div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+       <div class="my-3 my-lg-0"> <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a> 
+        <div class="gl-breadcrumbs d-flex w-100"> 
+         <img src="https://assets.gitlab-static.net/uploads/-/system/group/avatar/9970/logo-extra-whitespace.png?width=15" class="gl-breadcrumb-avatar-tile" width="15" height="15"> 
+         <ol class="breadcrumb gl-breadcrumb-list ml-1"> 
+          <li class="gl-breadcrumb-item">Omnibus GitLab Docs </li>
+         </ol> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row d-lg-none"> 
+      <div class="col"> 
+       <div class="doc-nav"></div> 
+      </div> 
+     </div> 
+     <main> 
+      <div class="row"> 
+       <div class="col"> 
+        <div class="article-metadata"> 
+        </div> 
+        <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+         <ul id="markdown-toc"> 
+          <li><a href="#package-information" id="markdown-toc-package-information">Package information</a> </li>
+          <li><a href="#installation" id="markdown-toc-installation">Installation</a> </li>
+          <li><a href="#running-on-a-low-resource-device-like-a-raspberry-pi" id="markdown-toc-running-on-a-low-resource-device-like-a-raspberry-pi">Running on a low-resource device (like a Raspberry Pi)</a> </li>
+          <li><a href="#maintenance" id="markdown-toc-maintenance">Maintenance</a> </li>
+          <li><a href="#configuring" id="markdown-toc-configuring">Configuring</a> </li>
+          <li><a href="#updating" id="markdown-toc-updating">Updating</a> </li>
+          <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> </li>
+          <li><a href="#omnibus-gitlab-developer-documentation" id="markdown-toc-omnibus-gitlab-developer-documentation">Omnibus GitLab developer documentation</a> </li>
+         </ul> 
+         <h1 id="omnibus-gitlab-docs">Omnibus GitLab Docs<a href="#omnibus-gitlab-docs" title="Permalink" class="anchor"></a> </h1> 
+         <p>Omnibus GitLab is a way to package different services and tools required to run GitLab, so that most users can install it without laborious configuration. </p>
+         <h2 id="package-information">Package information<a href="#package-information" title="Permalink" class="anchor"></a> </h2> 
+         <ul> 
+          <li><a href="package-information/README.html#checking-the-versions-of-bundled-software">Checking the versions of bundled software</a> </li>
+          <li><a href="package-information/defaults.html">Package defaults</a> </li>
+          <li><a href="/13.10/ee/development/architecture.html#component-list">Components included</a> </li>
+          <li><a href="package-information/deprecated_os.html">Deprecated Operating Systems</a> </li>
+          <li><a href="package-information/signed_packages.html">Signed Packages</a> </li>
+          <li><a href="package-information/deprecation_policy.html">Deprecation Policy</a> </li>
+          <li><a href="https://gitlab-org.gitlab.io/omnibus-gitlab/licenses.html">Licenses of bundled dependencies</a> </li>
+         </ul> 
+         <h2 id="installation">Installation<a href="#installation" title="Permalink" class="anchor"></a> </h2> 
+         <p>For installation details, see <a href="installation/index.html">Installing Omnibus GitLab</a>. </p>
+         <h2 id="running-on-a-low-resource-device-like-a-raspberry-pi">Running on a low-resource device (like a Raspberry Pi)<a href="#running-on-a-low-resource-device-like-a-raspberry-pi" title="Permalink" class="anchor"></a> </h2> 
+         <p>You can run GitLab on supported low-resource computers like the Raspberry Pi 3, but you must tune the settings to work best with the available resources. Check out the <a href="settings/rpi.html">documentation</a> for suggestions on what to adjust. </p>
+         <h2 id="maintenance">Maintenance<a href="#maintenance" title="Permalink" class="anchor"></a> </h2> 
+         <ul> 
+          <li><a href="maintenance/README.html#get-service-status">Get service status</a> </li>
+          <li><a href="maintenance/README.html#starting-and-stopping">Starting and stopping</a> </li>
+          <li><a href="maintenance/README.html#invoking-rake-tasks">Invoking Rake tasks</a> </li>
+          <li><a href="maintenance/README.html#starting-a-rails-console-session">Starting a Rails console session</a> </li>
+          <li><a href="maintenance/README.html#starting-a-postgresql-superuser-psql-session">Starting a PostgreSQL superuser <code class="highlighter-rouge">psql</code> session</a> </li>
+          <li><a href="maintenance/README.html#container-registry-garbage-collection">Container registry garbage collection</a> </li>
+         </ul> 
+         <h2 id="configuring">Configuring<a href="#configuring" title="Permalink" class="anchor"></a> </h2> 
+         <ul> 
+          <li><a href="settings/configuration.html#configuring-the-external-url-for-gitlab">Configuring the external URL</a> </li>
+          <li><a href="settings/configuration.html#configuring-a-relative-url-for-gitlab">Configuring a relative URL for GitLab (experimental)</a> </li>
+          <li><a href="settings/configuration.html#storing-git-data-in-an-alternative-directory">Storing Git data in an alternative directory</a> </li>
+          <li><a href="settings/configuration.html#changing-the-name-of-the-git-user--group">Changing the name of the Git user group</a> </li>
+          <li><a href="settings/configuration.html#specify-numeric-user-and-group-identifiers">Specify numeric user and group identifiers</a> </li>
+          <li><a href="settings/configuration.html#only-start-omnibus-gitlab-services-after-a-given-file-system-is-mounted">Only start Omnibus GitLab services after a given file system is mounted</a> </li>
+          <li><a href="settings/configuration.html#disable-user-and-group-account-management">Disable user and group account management</a> </li>
+          <li><a href="settings/configuration.html#disable-storage-directories-management">Disable storage directory management</a> </li>
+          <li><a href="settings/configuration.html#configuring-rack-attack">Configuring Rack attack</a> </li>
+          <li><a href="settings/smtp.html">SMTP</a> </li>
+          <li><a href="settings/nginx.html">NGINX</a> </li>
+          <li><a href="settings/ldap.html">LDAP</a> </li>
+          <li><a href="settings/puma.html">Puma</a> </li>
+          <li><a href="settings/unicorn.html">Unicorn</a> </li>
+          <li><a href="settings/actioncable.html">ActionCable</a> </li>
+          <li><a href="settings/redis.html">Redis</a> </li>
+          <li><a href="settings/logs.html">Logs</a> </li>
+          <li><a href="settings/database.html">Database</a> </li>
+          <li><a href="/13.10/ee/administration/reply_by_email.html">Reply by email</a> </li>
+          <li><a href="settings/environment-variables.html">Environment variables</a> </li>
+          <li><a href="settings/gitlab.yml.html"><code class="highlighter-rouge">gitlab.yml</code></a> </li>
+          <li><a href="settings/backups.html">Backups</a> </li>
+          <li><a href="/13.10/ee/administration/pages/index.html">Pages</a> </li>
+          <li><a href="settings/ssl.html">SSL</a> </li>
+          <li><a href="architecture/registry/README.html">GitLab and Registry</a> </li>
+          <li><a href="/13.10/ee/security/asset_proxy.html">Configuring an asset proxy server</a> </li>
+          <li><a href="settings/image_scaling.html">Image scaling</a> </li>
+         </ul> 
+         <h2 id="updating">Updating<a href="#updating" title="Permalink" class="anchor"></a> </h2> 
+         <ul> 
+          <li> <a href="/13.10/ee/update/index.html">Upgrade guidance</a>, including <a href="/13.10/ee/update/index.html#upgrade-paths">supported upgrade paths</a>. </li>
+          <li><a href="update/README.html#update-community-edition-to-enterprise-edition">Upgrade from Community Edition to Enterprise Edition</a> </li>
+          <li><a href="update/README.html#update-using-the-official-repositories">Update to the latest version</a> </li>
+          <li><a href="update/README.html#downgrade">Downgrade to an earlier version</a> </li>
+          <li><a href="update/convert_to_omnibus.html#upgrading-from-non-omnibus-postgresql-to-an-omnibus-installation-using-a-backup">Upgrade from a non-Omnibus installation to an Omnibus installation using a backup</a> </li>
+          <li><a href="update/convert_to_omnibus.html#upgrading-from-non-omnibus-postgresql-to-an-omnibus-installation-in-place">Upgrade from non-Omnibus PostgreSQL to an Omnibus installation in-place</a> </li>
+          <li><a href="update/convert_to_omnibus.html#upgrading-from-non-omnibus-mysql-to-an-omnibus-installation-version-68">Upgrade from non-Omnibus MySQL to an Omnibus installation (version 6.8+)</a> </li>
+          <li><a href="update/gitlab_7_changes.html#updating-from-gitlab-66-and-higher-to-710-or-newer">Update from GitLab 6.6 and higher to 7.10 or newer</a> </li>
+          <li><a href="update/gitlab_6_changes.html#updating-from-gitlab-660pre1-to-664">Update from GitLab 6.6.0.pre1 to 6.6.4</a> </li>
+          <li><a href="update/README.html#update-gitlab-ci-from-prior-540-to-version-714-via-omnibus-gitlab">Update from GitLab CI version prior to 5.4.0 to the latest version</a> </li>
+         </ul> 
+         <h2 id="troubleshooting">Troubleshooting<a href="#troubleshooting" title="Permalink" class="anchor"></a> </h2> 
+         <ul> 
+          <li><a href="common_installation_problems/README.html#hash-sum-mismatch-when-downloading-packages">Hash Sum mismatch when downloading packages</a> </li>
+          <li> <a href="common_installation_problems/README.html#apt-error-the-requested-url-returned-error-403">Apt error: <code class="highlighter-rouge">The requested URL returned error: 403</code></a>. </li>
+          <li> <a href="common_installation_problems/README.html#gitlab-is-unreachable-in-my-browser">GitLab is unreachable in my browser</a>. </li>
+          <li> <a href="common_installation_problems/README.html#emails-are-not-being-delivered">Emails are not being delivered</a>. </li>
+          <li> <a href="common_installation_problems/README.html#reconfigure-freezes-at-ruby_blocksupervise_redis_sleep-action-run">Reconfigure freezes at ruby_block[supervise_redis_sleep] action run</a>. </li>
+          <li> <a href="common_installation_problems/README.html#tcp-ports-for-gitlab-services-are-already-taken">TCP ports for GitLab services are already taken</a>. </li>
+          <li> <a href="common_installation_problems/README.html#selinux-enabled-systems">Git SSH access stops working on SELinux-enabled systems</a>. </li>
+          <li> <a href="common_installation_problems/README.html#postgresql-error-fatal--could-not-create-shared-memory-segment-cannot-allocate-memory">PostgreSQL error <code class="highlighter-rouge">FATAL: could not create shared memory segment: Cannot allocate memory</code></a>. </li>
+          <li> <a href="common_installation_problems/README.html#reconfigure-complains-about-the-glibc-version">Reconfigure complains about the GLIBC version</a>. </li>
+          <li> <a href="common_installation_problems/README.html#reconfigure-fails-to-create-the-git-user">Reconfigure fails to create the Git user</a>. </li>
+          <li> <a href="common_installation_problems/README.html#failed-to-modify-kernel-parameters-with-sysctl">Failed to modify kernel parameters with sysctl</a>. </li>
+          <li> <a href="common_installation_problems/README.html#i-am-unable-to-install-omnibus-gitlab-without-root-access">I am unable to install Omnibus GitLab without root access</a>. </li>
+          <li> <a href="common_installation_problems/README.html#gitlab-rake-assetsprecompile-fails-with-permission-denied"><code class="highlighter-rouge">gitlab-rake assets:precompile</code> fails with <code class="highlighter-rouge">Permission denied</code></a>. </li>
+          <li> <a href="common_installation_problems/README.html#short-read-or-oom-loading-db-error"><code class="highlighter-rouge">Short read or OOM loading DB</code> error</a>. </li>
+          <li><a href="settings/database.html#using-a-non-packaged-postgresql-database-management-server"><code class="highlighter-rouge">pg_dump: aborting because of server version mismatch</code></a> </li>
+          <li><a href="common_installation_problems/README.html#errnoenomem-cannot-allocate-memory-during-backup-or-upgrade"><code class="highlighter-rouge">Errno::ENOMEM: Cannot allocate memory</code> during backup or upgrade</a> </li>
+          <li><a href="common_installation_problems/README.html#nginx-error-could-not-build-server_names_hash-you-should-increase-server_names_hash_bucket_size">NGINX error: <code class="highlighter-rouge">could not build server_names_hash</code></a> </li>
+          <li><a href="common_installation_problems/README.html#reconfigure-fails-due-to-root-cannot-chown-with-nfs-root_squash">Reconfigure fails due to <code class="highlighter-rouge">'root' cannot chown</code> with NFS root_squash</a> </li>
+         </ul> 
+         <h2 id="omnibus-gitlab-developer-documentation">Omnibus GitLab developer documentation<a href="#omnibus-gitlab-developer-documentation" title="Permalink" class="anchor"></a> </h2> 
+         <p>See the <a href="development/README.html">development documentation</a> </p>
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+     <div class="row px-4"> 
+      <div class="col"> 
+       <div class="help-and-feedback-section mb-5"> <a data-toggle="collapse" href="#help-feedback-content" class="help-and-feedback-toggle text-decoration-none" aria-expanded="false" aria-controls="help-feedback-content"> <h4 class="help-and-feedback-title" id="help-and-feedback">
+          <svg role="img" class="gl-icon ml-1 mr-1 s16 help-icon">
+           <use href="/13.10/assets/images/icons.svg#question" />
+           <title></title>
+          </svg> Help &amp; feedback
+          <svg role="img" class="gl-icon ml-1 mr-1 s16 toggle-icon">
+           <use href="/13.10/assets/images/icons.svg#chevron-lg-up" />
+           <title></title>
+          </svg> </h4> </a> 
+        <div class="collapse show" id="help-feedback-content"> 
+         <div class="row mt-3"> 
+          <div class="col-md-8"> 
+           <div> 
+            <h5 class="help-and-feedback-heading">Docs</h5> <a class="help-and-feedback-link" href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/README.md" target="_blank" rel="noopener noreferrer">Edit this page</a> to fix an error or add an improvement in a merge request.
+            <br> <a class="help-and-feedback-link" href="https://gitlab.com/gitlab-org/gitlab/-/issues/new?issue[description]=Link%20the%20doc%20and%20describe%20what%20is%20wrong%20with%20it.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~d

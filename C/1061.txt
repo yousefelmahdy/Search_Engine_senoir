@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "> 
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"71b0675e2c",applicationID:"1125735167"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script> 
+  <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style> 
+  <meta name="description" content="The Canvas higher education LMS is the world's fastest-growing learning management system. Schedule a live demo to learn how Canvas can help your team."> 
+  <meta property="og:site_name" content="Instructure"> 
+  <meta property="og:url" content="https://www.instructure.com/product/higher-education/canvas-lms"> 
+  <meta property="og:title" content="LMS - Higher Ed"> 
+  <meta property="og:image" content="https://www.instructure.com/sites/default/files/image/2021-05/OG-Instructure-Learning-Platform.jpeg"> 
+  <meta name="twitter:title" content="LMS - Higher Ed"> 
+  <meta name="twitter:url" content="https://www.instructure.com/product/higher-education/canvas-lms"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="alternate" hreflang="en" href="https://www.instructure.com/product/higher-education/canvas-lms"> 
+  <link rel="alternate" hreflang="en-au" href="https://www.instructure.com/en-au/product/canvas/higher-education/lms"> 
+  <link rel="alternate" hreflang="de" href="https://www.instructure.com/de/produkt/canvas/hochschule/lms"> 
+  <link rel="alternate" hreflang="pt-br" href="https://www.instructure.com/pt-br/produto/canvas/ensino-superior/lms"> 
+  <link rel="alternate" hreflang="es" href="https://www.instructure.com/es/producto/canvas/educacion-superior/lms"> 
+  <link rel="alternate" hreflang="es-es" href="https://www.instructure.com/es-es/producto/canvas/educaci%C3%B3n-superior/lms"> 
+  <link rel="alternate" hreflang="en-gb" href="https://www.instructure.com/en-gb/product/canvas/higher-education/lms"> 
+  <link rel="alternate" hreflang="nl" href="https://www.instructure.com/nl/product/canvas/hoger-onderwijs/lms"> 
+  <link rel="shortcut icon" href="/themes/custom/themekit/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <link rel="canonical" href="https://www.instructure.com/product/higher-education/canvas-lms"> 
+  <link rel="shortlink" href="https://www.instructure.com/node/1446"> 
+  <link rel="revision" href="https://www.instructure.com/product/higher-education/canvas-lms"> 
+  <script src="/sites/default/files/google_tag/primary/google_tag.script.js?qu1bz3" defer></script> 
+  <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script> 
+  <title>Higher Education LMS | Canvas for Colleges &amp; Universities</title> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_7GPV9X3pYr27qjhAUlqajMNnv1794GHWsUkpl4pRJwU.css"> 
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_CLdKNffWLRTbyNc4bK1TpW0SyqwhH9gE8LacLfRKQso.css"> 
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1446","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany,classy\/base,classy\/messages,classy\/node,clientside_validation_jquery\/cv.jquery.ckeditor,clientside_validation_jquery\/cv.jquery.validate,core\/Drupal,core\/html5shiv,core\/normalize,core\/picturefill,dismissible_message_bar\/dismissible_message_bar,e3_marketo\/e3-marketo-munchkin,e3_regional_redirects\/country_redirect,e3_regional_redirects\/region_switcher,ins_personalization\/ins_personalization,lazy\/lazy,media\/oembed.formatter,paragraphs\/drupal.paragraphs.unpublished,system\/base,themekit\/,themekit\/accordion,themekit\/accordion-item,themekit\/basic,themekit\/callout,themekit\/card-grid,themekit\/content-slider,themekit\/cta,themekit\/dismissible-message-bar,themekit\/footer,themekit\/header,themekit\/header-banner-basic,themekit\/icon-card,themekit\/layout--onecol,themekit\/layout--twocol,themekit\/link-default,themekit\/media,themekit\/menu-callout,themekit\/node-reference,themekit\/product--full,themekit\/quote,themekit\/search,themekit\/text,themekit\/text-list,themekit\/uberflip-item--teaser","theme":"themekit","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":true,"messages":{"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"marketoForms":{"munchkinId":"449-BVJ-543","instanceHost":"\/\/app-ab20.marketo.com"},"apiEndpoint":"https:\/\/pro.ip-api.com\/json?key=NsI877AefRmEbY3\u0026fields=countryCode","crrData":[],"disableModal":"1","lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.80000000000000004,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false},"dmbNotifications":{"dmb-notifications-ajax-wrapper":{"notificationWrapper":".dmb-notifications-ajax-wrapper","contentType":"product","contentPath":"\/product\/higher-education\/canvas-lms","notificationType":""}},"clearRedirectSettings":{"accept":"You are currently being automatically redirected to the version of the site appropriate for your region.","decline":"You are currently blocking all automatic redirects to the version of the site appropriate for your region."},"user":{"uid":0,"permissionsHash":"bef9fb9117d133f2abaf0ece093964a51140323a31a0dca24ecf66a4b0372640"}}</script> 
+  <script src="//app-ab20.marketo.com/js/forms2/js/forms2.min.js"></script> <!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_4fNUZYjtJjJIPp0KKMGPJiIG3DtacHQRD8P6_tgSlvo.js"></script>
+<![endif]--> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script> 
+  <script src="/sites/default/files/js/js_LgohPOhCy5jhP3pbbTnFFA2xTh6zrX0rslAiEBBPMQQ.js"></script> 
+  <script src="//munchkin.marketo.net/munchkin.js"></script> 
+  <script src="/sites/default/files/js/js_s0OvPBdhSyBh0-x4xmB-DRZHNJLN2LEe702hgFxsMKM.js"></script> 
+  <script>var dataLayer = [];</script> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-9138420-54', 'auto');
+    ga('send', 'pageview');
+    </script> 
+  <meta name="theme-color" content="#8eabc3"> 
+  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script> 
+ </head> 
+ <body class="path-node page-node-type-product"> 
+  <div id="skip-to-content"> <a href="#main-content" class="skip-to-content-link">Skip to main content</a> 
+  </div> 
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMN72MJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <div class="layout-container"> 
+    <header role="banner"> 
+     <div data-sticky-container> 
+      <div class="sticky sticky-header" data-sticky data-margin-top="0" data-sticky-on="small"> 
+       <div class="region region-header-top"> 
+        <div class="region-content"> 
+         <div id="block-regionswitcher" class="block block-e3-regional-redirects block-region-switcher-block block-regionswitcher"> 
+          <div class="region-switcher-main-wrapper switcher-closed">
+           <div class="region-switcher-modal hidden">
+            <div class="region-switcher-modal-logo"></div> <button class="region-switcher-close-modal">Close modal</button> 
+            <div class="region-switcher-list-wrapper item-list">
+             <h3>Select your location</h3>
+             <ul class="region-switcher-list">
+              <li>
+               <div class="item-list">
+                <h3>Americas</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/" data-active-text="United States" class="region-link skip-external region-link-active" hreflang="en">United States</a>
+                  <div>
+                   English
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/pt-br" data-active-text="Brazil" class="region-link skip-external" hreflang="pt-br">Brazil</a>
+                  <div>
+                   Português
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/es" data-active-text="Latin America" class="region-link skip-external" hreflang="es">Latin America</a>
+                  <div>
+                   Español
+                  </div> </li>
+                </ul>
+               </div></li>
+              <li>
+               <div class="item-list">
+                <h3>Asia Pacific</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/en-au" data-active-text="Australia" class="region-link skip-external" hreflang="en-au">Australia</a>
+                  <div>
+                   English
+                  </div> </li>
+                </ul>
+               </div></li>
+              <li>
+               <div class="item-list">
+                <h3>Europe</h3>
+                <ul>
+                 <li class="region-switcher-link"><a href="/de" data-active-text="Germany" class="region-link skip-external" hreflang="de">Germany</a>
+                  <div>
+                   Deutsch
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/es-es" data-active-text="Spain" class="region-link skip-external" hreflang="es-es">Spain</a>
+                  <div>
+                   Español
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/en-gb" data-active-text="United Kingdom" class="region-link skip-external" hreflang="en-gb">United Kingdom</a>
+                  <div>
+                   English
+                  </div> </li>
+                 <li class="region-switcher-link"><a href="/nl" data-active-text="Benelux" class="region-link skip-external" hreflang="nl">Benelux</a>
+                  <div>
+                   Dutch
+                  </div> </li>
+                </ul>
+               </div></li>
+             </ul>
+            </div>
+           </div> 
+           <div class="region-switcher-active-region">
+            <a href="/">United States</a>
+           </div> 
+          </div> 
+          <div class="region-redirect-reset-link hidden">
+           <a href="">Reset language preference</a>
+          </div> 
+          <div class="modal-redirect-reset-wrapper hidden">
+           <div class="modal-redirect-reset-copy"></div> <a href="" class="clear-preference-link">Clear redirect preference</a>
+          </div> 
+         </div> 
+         <div id="block-searchinputblock" class="block block-ins-search block-search-input block-searchinputblock"> 
+          <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-page-1" action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8"> 
+           <div class="form--inline clearfix"> 
+            <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label"> 
+             <input placeholder="Search..." data-drupal-selector="edit-search-api-fulltext" data-msg-maxlength="This field field has a maximum length of 128." type="text" id="edit-search-api-fulltext" name="search_api_fulltext" value="" size="30" maxlength="128" class="form-text"> 
+            </div> 
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+             <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit"> 
+            </div> 
+           </div> 
+          </form> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-utility-menu" id="block-utility" class="block block-menu navigation menu--utility"> 
+          <h2 class="visually-hidden" id="block-utility-menu">Utility</h2> 
+          <ul class="menu utility-dropdown"> 
+           <li class="menu-item"> <a href="/canvas/try-canvas" tabindex="0" data-drupal-link-system-path="node/2281">Try Canvas Free</a> </li> 
+           <li class="menu-item"> <a href="/corporate-canvas" tabindex="0" data-drupal-link-system-path="node/9966">For Business</a> </li> 
+           <li class="menu-item"> <a href="/canvas/support-faq" tabindex="0" data-drupal-link-system-path="node/5401">Support</a> </li> 
+           <li class="menu-item"> <a href="/contact-us" tabindex="0" data-drupal-link-system-path="node/9286">Contact Us</a> </li> 
+           <li class="menu-item menu-item--expanded"> <span tabindex="0">Log In</span> 
+            <ul class="menu"> 
+             <li class="menu-item"> <a href="/canvas/login/free-for-teacher" class="menu-item--login-canvas" tabindex="0" data-drupal-link-system-path="node/2286">Canvas</a> </li> 
+             <li class="menu-item"> <a href="https://app.masteryconnect.com/login" class="menu-item--login-masteryconnect" tabindex="0">MasteryConnect</a> </li> 
+             <li class="menu-item"> <a href="https://portfolium.com/login" class="menu-item--login-portfolium" tabindex="0">Portfolium</a> </li> 
+            </ul> </li> 
+          </ul> 
+         </nav> 
+        </div> 
+       </div> 
+       <div class="region region-header"> 
+        <div class="region-content"> 
+         <div id="block-themekit-branding" class="block block-system block-system-branding-block block-themekit-branding"> <a href="/" rel="home" class="site-logo"> <img src="/themes/custom/themekit/logo.svg" alt="Home"> </a> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-themekit-main-menu-menu" id="block-themekit-main-menu" class="block block-menu navigation menu--main"> 
+          <h2 class="visually-hidden" id="block-themekit-main-menu-menu">Main</h2> 
+          <ul class="menu menu-level-0 dropdown" data-dropdown-menu=""> 
+           <li class="menu-item menu-item--expanded"> <a href="/k-12" tabindex="0">K-12</a> 
+            <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> 
+                <div class="menu_link_content menu-link-contentmain view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">The Instructure Learning Platform</span> 
+                 <ul class="menu"> 
+                  <li class="menu-item"> <a href="/product/k-12/canvas-lms" tabindex="0">Canvas LMS</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Simplify teaching and learning activities and organize coursework with Canvas LMS.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/k-12/canvas-studio" tabindex="0">Canvas Studio</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Studio makes video learning more engaging and interactive.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/k-12/canvas-catalog" tabindex="0">Canvas Catalog</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Catalog streamlines and modernizes course registration and enrollment.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/k-12/masteryconnect" tabindex="0">MasteryConnect</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>MasteryConnect ties assessment data to actionable student mastery insights.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/k-12/assessment" tabindex="0">Assessments and Item Banks</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Expertly-developed assessment offerings that deliver the feedback teachers need to drive learning forward.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/k-12/videri-analytics" tabindex="0">Videri Analytics</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Videri Analytics provides real-time access to integrated district data for comprehensive insights.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/services" tabindex="0">Services</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>We offer rollout plans, product training, content development, and more.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/canvas/leadership-development" tabindex="0">Leadership Development</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Through the Center of Leadership &amp; Learning, we offer professional development experiences for school and district leaders.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/all-products" class="view-all" tabindex="0">All Products</a> </li> 
+                  <li class="menu-item"> <a href="/canvas/try-canvas" class="view-all try-canvas-K12-nav button k12-button" tabindex="0">Try Canvas Free</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Need</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/k-12/learning-management" tabindex="0">Learning Management</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/assessment-tools" tabindex="0">Assessment</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/assessment-content" tabindex="0">Content</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/online-programs" tabindex="0">Online Programs</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/analytics" tabindex="0">Analytics</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/professional-development" tabindex="0">Professional Development</a> </li> 
+                 <li class="menu-item"> <a href="/k12/integrations-other-tools" tabindex="0">Integrations With Partner Tools</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Role</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/k-12/administrators" tabindex="0">For Administrators</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/it-technologists" tabindex="0">For IT/Technologists</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/educators" tabindex="0">For Educators</a> </li> 
+                 <li class="menu-item"> <a href="/k-12/students-parents" tabindex="0">For Students &amp; Parents</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item menu-item--expanded menu-item--active-trail"> <a href="/higher-education" tabindex="0">Higher Education</a> 
+            <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded menu-item--active-trail"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded menu-item--active-trail"> 
+                <div class="menu_link_content menu-link-contentmain view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">The Instructure Learning Platform</span> 
+                 <ul class="menu"> 
+                  <li class="menu-item menu-item--active-trail"> <a href="/product/higher-education/canvas-lms" tabindex="0">Canvas LMS</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas LMS simplifies course management, communication, and student connection.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/higher-education/canvas-studio" tabindex="0">Canvas Studio</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Studio makes video learning more engaging and interactive.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/higher-education/canvas-catalog" tabindex="0">Canvas Catalog</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Canvas Catalog streamlines and modernizes course registration and enrollment.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/higher-education/pathways" tabindex="0">Pathways</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Pathways helps students map their academic and skill-building journeys.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/higher-education/program-assessment" tabindex="0">Program Assessment</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>Program Assessment centralizes and scales course- and program-level assessment.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/services" tabindex="0">Services</a> 
+                   <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                    <p>We offer rollout plans, product training, content development, and more.</p> 
+                   </div> </li> 
+                  <li class="menu-item"> <a href="/product/all-products" class="view-all" tabindex="0">All Products</a> </li> 
+                  <li class="menu-item"> <a href="/canvas/try-canvas" class="view-all button he-button" tabindex="0">Try Canvas Free</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Need</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/higher-education/learning-management" tabindex="0">Learning Management</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/student-engagement-success" tabindex="0">Student Engagement &amp; Success</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/instructional-content" tabindex="0">Content</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/online-programs" tabindex="0">Online Programs</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/data-analytics" tabindex="0">Analytics</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/integrations-other-tools" tabindex="0">Integrations With Partner Tools</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Role</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/higher-education/administrators" tabindex="0">For Administrators</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/it-technologists" tabindex="0">For IT/Technologists</a> </li> 
+                 <li class="menu-item"> <a href="/higher-education/educators" tabindex="0">For Educators</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item menu-item--expanded"> <a href="https://www.instructure.com/canvas/resources" tabindex="0">Resources</a> 
+            <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">By Type</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/articles" tabindex="0">Articles</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/research" tabindex="0">Research</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/infographics" tabindex="0">Infographics</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/guides-ebooks" tabindex="0">Guides &amp; E-Books</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/on-demand-webinars" tabindex="0">Webinars</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/videos" tabindex="0">Videos</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/case-studies" tabindex="0">Case Studies</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources" class="view-all" tabindex="0">All Resources</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Centers</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources" tabindex="0">The Study Hall</a> 
+                  <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                   <p>Articles, videos, stories, and news about our products, edtech, and education.</p> 
+                  </div> </li> 
+                 <li class="menu-item"> <a href="/canvas/community" tabindex="0">Our Community</a> 
+                  <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                   <p>Share ideas, ask and answer questions, access guides, and connect with peers.</p> 
+                  </div> </li> 
+                 <li class="menu-item"> <a href="https://www.canvas.net/" tabindex="0">Canvas Network</a> 
+                  <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                   <p>Modify and use online courses from educators and institutions worldwide.</p> 
+                  </div> </li> 
+                 <li class="menu-item"> <a href="https://community.canvaslms.com/t5/Partners/ct-p/partners" tabindex="0">Integrations</a> 
+                  <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                   <p>See how we integrate with your SIS, custom apps, and hundreds of external edu apps.</p> 
+                  </div> </li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item"> 
+                <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+                 <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+                  <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                   <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg.webp?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg.webp?itok=uy5y8IAu 2x" type="image/webp"> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=uy5y8IAu 2x" type="image/jpeg"> 
+                     <img srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=uy5y8IAu 2x" src="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3" alt="girl using device" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                   <div class="paragraph-content"> 
+                    <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="accelerate-better-learning-with-stimulus-funding"><p>Accelerate Better Learning With Stimulus Funding</p> </h4> 
+                    <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                     <a href="/stimulus-funding">Learn More</a>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item menu-item--expanded"> <a href="/news-events" tabindex="0">News &amp; Events</a> 
+            <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">By Type</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/events" tabindex="0">Events</a> </li> 
+                 <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/on-demand-webinars" tabindex="0">Webinars</a> </li> 
+                 <li class="menu-item"> <a href="/media-resources" tabindex="0">Media Resources</a> </li> 
+                 <li class="menu-item"> <a href="/news/public-relations" tabindex="0">Press Releases</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item"> 
+                <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+                 <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+                  <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                   <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg.webp?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg.webp?itok=f3Kf5Q1c 2x" type="image/webp"> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=f3Kf5Q1c 2x" type="image/jpeg"> 
+                     <img srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=f3Kf5Q1c 2x" src="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc" alt="og image" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                   <div class="paragraph-content"> 
+                    <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+                     <p>Webinar</p> 
+                    </div> 
+                    <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="using-data-to-impact-student-success"><p>Using Data to Impact Student Success</p> </h4> 
+                    <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                     <a href="https://www.instructure.com/canvas/resources/direct/using-actionable-and-comprehensive-data-to-impact-student-success">Watch the Webinar</a>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> </li> 
+              </ul> </li> 
+            </ul> </li> 
+           <li class="menu-item dropdown-narrow"> <a href="https://www.instructure.com/canvas/resources/customer-love" tabindex="0">Stories</a> </li> 
+           <li class="menu-item menu-item--expanded"> <a href="/about" tabindex="0">About Us</a> 
+            <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">The Company</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/about/our-story" tabindex="0">Our Story</a> </li> 
+                 <li class="menu-item"> <a href="/about/leadership" tabindex="0">Leadership</a> </li> 
+                 <li class="menu-item"> <a href="/about/careers" tabindex="0">Careers</a> </li> 
+                 <li class="menu-item"> <a href="/contact-us" tabindex="0">Contact Us</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">We Value</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/canvas/privacy" tabindex="0">Privacy</a> </li> 
+                 <li class="menu-item"> <a href="/canvas/security" tabindex="0">Security</a> </li> 
+                 <li class="menu-item"> <a href="/accessibility" tabindex="0">Accessibility</a> </li> 
+                </ul> </li> 
+               <li class="menu-item menu-item--expanded"> <span tabindex="0">Partnerships</span> 
+                <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+                 <li class="menu-item"> <a href="/canvas/our-partners" tabindex="0">Our Partners</a> </li> 
+                 <li class="menu-item"> <a href="/canvas/become-partner" tabindex="0">Become a Partner</a> </li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+              <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+               <li class="menu-item"> 
+                <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+                 <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+                  <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                   <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png.webp?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png.webp?itok=L8UY0zhc 2x" type="image/webp"> 
+                     <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=L8UY0zhc 2x" type="image/png"> 
+                     <img srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=L8UY0zhc 2x" src="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y" alt="pirate panda" typeof="foaf:Image"> 
+                    </picture> 
+                   </div> 
+                   <div class="paragraph-content"> 
+                    <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+                     <p>Work with Us</p> 
+                    </div> 
+                    <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="instructure-careers"><p>Instructure Careers</p> </h4> 
+                    <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                     <a href="https://instructure.com/canvas/resources/wistia-uberflip-videos-noram/instructure-careers">Watch the Video</a>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> </li> 
+              </ul> </li> 
+            </ul> </li> 
+          </ul> 
+         </nav> 
+         <div id="block-getademo" class="block block-block-content block-block-content2400af04-38e3-46a4-8dc1-5152e588f63b block--text block-getademo"> 
+          <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+           <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+            <a href="/canvas/request-demo">Get a Demo</a>
+           </div> 
+          </div> 
+         </div> <button class="menu-toggle" type="button"><span>Menu</span></button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="region region-mobile-nav"> 
+      <div id="block-searchinputblock-2" class="block block-ins-search block-search-input block-searchinputblock-2"> 
+       <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-page-1" action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8"> 
+        <div class="form--inline clearfix"> 
+         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label"> 
+          <input placeholder="Search..." data-drupal-selector="edit-search-api-fulltext" data-msg-maxlength="This field field has a maximum length of 128." type="text" id="edit-search-api-fulltext" name="search_api_fulltext" value="" size="30" maxlength="128" class="form-text"> 
+         </div> 
+         <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+          <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit"> 
+         </div> 
+        </div> 
+       </form> 
+      </div> 
+      <nav role="navigation" aria-labelledby="block-main-menu" id="block-main" class="block block-menu navigation menu--main"> 
+       <h2 class="visually-hidden" id="block-main-menu">Main</h2> 
+       <ul class="menu menu-level-0 accordion-menu" data-accordion-menu="" data-submenu-toggle="true"> 
+        <li class="menu-item menu-item--expanded"> <a href="/k-12" tabindex="0">K-12</a> 
+         <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> 
+             <div class="menu_link_content menu-link-contentmain view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">The Instructure Learning Platform</span> 
+              <ul class="menu"> 
+               <li class="menu-item"> <a href="/product/k-12/canvas-lms" tabindex="0">Canvas LMS</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Simplify teaching and learning activities and organize coursework with Canvas LMS.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/k-12/canvas-studio" tabindex="0">Canvas Studio</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Studio makes video learning more engaging and interactive.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/k-12/canvas-catalog" tabindex="0">Canvas Catalog</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Catalog streamlines and modernizes course registration and enrollment.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/k-12/masteryconnect" tabindex="0">MasteryConnect</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>MasteryConnect ties assessment data to actionable student mastery insights.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/k-12/assessment" tabindex="0">Assessments and Item Banks</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Expertly-developed assessment offerings that deliver the feedback teachers need to drive learning forward.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/k-12/videri-analytics" tabindex="0">Videri Analytics</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Videri Analytics provides real-time access to integrated district data for comprehensive insights.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/services" tabindex="0">Services</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>We offer rollout plans, product training, content development, and more.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/canvas/leadership-development" tabindex="0">Leadership Development</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Through the Center of Leadership &amp; Learning, we offer professional development experiences for school and district leaders.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/all-products" class="view-all" tabindex="0">All Products</a> </li> 
+               <li class="menu-item"> <a href="/canvas/try-canvas" class="view-all try-canvas-K12-nav button k12-button" tabindex="0">Try Canvas Free</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Need</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/k-12/learning-management" tabindex="0">Learning Management</a> </li> 
+              <li class="menu-item"> <a href="/k-12/assessment-tools" tabindex="0">Assessment</a> </li> 
+              <li class="menu-item"> <a href="/k-12/assessment-content" tabindex="0">Content</a> </li> 
+              <li class="menu-item"> <a href="/k-12/online-programs" tabindex="0">Online Programs</a> </li> 
+              <li class="menu-item"> <a href="/k-12/analytics" tabindex="0">Analytics</a> </li> 
+              <li class="menu-item"> <a href="/k-12/professional-development" tabindex="0">Professional Development</a> </li> 
+              <li class="menu-item"> <a href="/k12/integrations-other-tools" tabindex="0">Integrations With Partner Tools</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Role</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/k-12/administrators" tabindex="0">For Administrators</a> </li> 
+              <li class="menu-item"> <a href="/k-12/it-technologists" tabindex="0">For IT/Technologists</a> </li> 
+              <li class="menu-item"> <a href="/k-12/educators" tabindex="0">For Educators</a> </li> 
+              <li class="menu-item"> <a href="/k-12/students-parents" tabindex="0">For Students &amp; Parents</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item menu-item--expanded menu-item--active-trail"> <a href="/higher-education" tabindex="0">Higher Education</a> 
+         <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded menu-item--active-trail"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded menu-item--active-trail"> 
+             <div class="menu_link_content menu-link-contentmain view-mode-multi-column menu-dropdown menu-dropdown-2 menu-type-multi_column columns-2"> <span tabindex="0">The Instructure Learning Platform</span> 
+              <ul class="menu"> 
+               <li class="menu-item menu-item--active-trail"> <a href="/product/higher-education/canvas-lms" tabindex="0">Canvas LMS</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas LMS simplifies course management, communication, and student connection.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/higher-education/canvas-studio" tabindex="0">Canvas Studio</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Studio makes video learning more engaging and interactive.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/higher-education/canvas-catalog" tabindex="0">Canvas Catalog</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Catalog streamlines and modernizes course registration and enrollment.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/higher-education/pathways" tabindex="0">Pathways</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Pathways helps students map their academic and skill-building journeys.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/higher-education/program-assessment" tabindex="0">Program Assessment</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>Program Assessment centralizes and scales course- and program-level assessment.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/services" tabindex="0">Services</a> 
+                <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                 <p>We offer rollout plans, product training, content development, and more.</p> 
+                </div> </li> 
+               <li class="menu-item"> <a href="/product/all-products" class="view-all" tabindex="0">All Products</a> </li> 
+               <li class="menu-item"> <a href="/canvas/try-canvas" class="view-all button he-button" tabindex="0">Try Canvas Free</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Need</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/higher-education/learning-management" tabindex="0">Learning Management</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/student-engagement-success" tabindex="0">Student Engagement &amp; Success</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/instructional-content" tabindex="0">Content</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/online-programs" tabindex="0">Online Programs</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/data-analytics" tabindex="0">Analytics</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/integrations-other-tools" tabindex="0">Integrations With Partner Tools</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Solutions by Role</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/higher-education/administrators" tabindex="0">For Administrators</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/it-technologists" tabindex="0">For IT/Technologists</a> </li> 
+              <li class="menu-item"> <a href="/higher-education/educators" tabindex="0">For Educators</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item menu-item--expanded"> <a href="https://www.instructure.com/canvas/resources" tabindex="0">Resources</a> 
+         <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">By Type</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/articles" tabindex="0">Articles</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/research" tabindex="0">Research</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/infographics" tabindex="0">Infographics</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/guides-ebooks" tabindex="0">Guides &amp; E-Books</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/on-demand-webinars" tabindex="0">Webinars</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/videos" tabindex="0">Videos</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/case-studies" tabindex="0">Case Studies</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources" class="view-all" tabindex="0">All Resources</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Centers</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources" tabindex="0">The Study Hall</a> 
+               <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                <p>Articles, videos, stories, and news about our products, edtech, and education.</p> 
+               </div> </li> 
+              <li class="menu-item"> <a href="/canvas/community" tabindex="0">Our Community</a> 
+               <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                <p>Share ideas, ask and answer questions, access guides, and connect with peers.</p> 
+               </div> </li> 
+              <li class="menu-item"> <a href="https://www.canvas.net/" tabindex="0">Canvas Network</a> 
+               <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                <p>Modify and use online courses from educators and institutions worldwide.</p> 
+               </div> </li> 
+              <li class="menu-item"> <a href="https://community.canvaslms.com/t5/Partners/ct-p/partners" tabindex="0">Integrations</a> 
+               <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                <p>See how we integrate with your SIS, custom apps, and hundreds of external edu apps.</p> 
+               </div> </li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item"> 
+             <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+              <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+               <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg.webp?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg.webp?itok=uy5y8IAu 2x" type="image/webp"> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=uy5y8IAu 2x" type="image/jpeg"> 
+                  <img srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=uy5y8IAu 2x" src="/sites/default/files/styles/small_hq/public/image/2021-01/Canvas-NORAM-nav-highlight-funding.jpg?itok=hfNgqZa3" alt="girl using device" typeof="foaf:Image"> 
+                 </picture> 
+                </div> 
+                <div class="paragraph-content"> 
+                 <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="accelerate-better-learning-with-stimulus-funding"><p>Accelerate Better Learning With Stimulus Funding</p> </h4> 
+                 <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                  <a href="/stimulus-funding">Learn More</a>
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item menu-item--expanded"> <a href="/news-events" tabindex="0">News &amp; Events</a> 
+         <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">By Type</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/events" tabindex="0">Events</a> </li> 
+              <li class="menu-item"> <a href="https://www.instructure.com/canvas/resources/on-demand-webinars" tabindex="0">Webinars</a> </li> 
+              <li class="menu-item"> <a href="/media-resources" tabindex="0">Media Resources</a> </li> 
+              <li class="menu-item"> <a href="/news/public-relations" tabindex="0">Press Releases</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item"> 
+             <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+              <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+               <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg.webp?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg.webp?itok=f3Kf5Q1c 2x" type="image/webp"> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=f3Kf5Q1c 2x" type="image/jpeg"> 
+                  <img srcset="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc 1x, /sites/default/files/styles/large_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=f3Kf5Q1c 2x" src="/sites/default/files/styles/small_hq/public/image/2021-05/2021-5-K12-Social-OG-Student-Success.jpeg?itok=DZQZd-Sc" alt="og image" typeof="foaf:Image"> 
+                 </picture> 
+                </div> 
+                <div class="paragraph-content"> 
+                 <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+                  <p>Webinar</p> 
+                 </div> 
+                 <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="using-data-to-impact-student-success"><p>Using Data to Impact Student Success</p> </h4> 
+                 <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                  <a href="https://www.instructure.com/canvas/resources/direct/using-actionable-and-comprehensive-data-to-impact-student-success">Watch the Webinar</a>
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item dropdown-narrow"> <a href="https://www.instructure.com/canvas/resources/customer-love" tabindex="0">Stories</a> </li> 
+        <li class="menu-item menu-item--expanded"> <a href="/about" tabindex="0">About Us</a> 
+         <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-type-default"> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">The Company</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/about/our-story" tabindex="0">Our Story</a> </li> 
+              <li class="menu-item"> <a href="/about/leadership" tabindex="0">Leadership</a> </li> 
+              <li class="menu-item"> <a href="/about/careers" tabindex="0">Careers</a> </li> 
+              <li class="menu-item"> <a href="/contact-us" tabindex="0">Contact Us</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">We Value</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/canvas/privacy" tabindex="0">Privacy</a> </li> 
+              <li class="menu-item"> <a href="/canvas/security" tabindex="0">Security</a> </li> 
+              <li class="menu-item"> <a href="/accessibility" tabindex="0">Accessibility</a> </li> 
+             </ul> </li> 
+            <li class="menu-item menu-item--expanded"> <span tabindex="0">Partnerships</span> 
+             <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default"> 
+              <li class="menu-item"> <a href="/canvas/our-partners" tabindex="0">Our Partners</a> </li> 
+              <li class="menu-item"> <a href="/canvas/become-partner" tabindex="0">Become a Partner</a> </li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded"> <span class="hide-title" tabindex="0">Column</span> 
+           <ul class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default"> 
+            <li class="menu-item"> 
+             <div class="menu_link_content menu-link-contentmain view-mode-callout menu-dropdown menu-dropdown-2 menu-type-callout"> 
+              <div class="field field--name-field-p-callout field--type-entity-reference-revisions field--label-hidden field__item"> 
+               <div class="paragraph paragraph--type--menu-callout paragraph--view-mode--default"> 
+                <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png.webp?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png.webp?itok=L8UY0zhc 2x" type="image/webp"> 
+                  <source srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=L8UY0zhc 2x" type="image/png"> 
+                  <img srcset="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y 1x, /sites/default/files/styles/large_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=L8UY0zhc 2x" src="/sites/default/files/styles/small_hq/public/image/2021-01/Instructure%20Careers%20.png?itok=rLQ8lC2y" alt="pirate panda" typeof="foaf:Image"> 
+                 </picture> 
+                </div> 
+                <div class="paragraph-content"> 
+                 <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+                  <p>Work with Us</p> 
+                 </div> 
+                 <h4 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="instructure-careers"><p>Instructure Careers</p> </h4> 
+                 <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                  <a href="https://instructure.com/canvas/resources/wistia-uberflip-videos-noram/instructure-careers">Watch the Video</a>
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <div id="block-regionswitcher-2" class="block block-e3-regional-redirects block-region-switcher-block block-regionswitcher-2"> 
+       <div class="region-switcher-main-wrapper switcher-closed">
+        <div class="region-switcher-modal hidden">
+         <div class="region-switcher-modal-logo"></div> <button class="region-switcher-close-modal">Close modal</button> 
+         <div class="region-switcher-list-wrapper item-list">
+          <h3>Select your location</h3>
+          <ul class="region-switcher-list">
+           <li>
+            <div class="item-list">
+             <h3>Americas</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/" data-active-text="United States" class="region-link skip-external region-link-active" hreflang="en">United States</a>
+               <div>
+                English
+               </div> </li>
+              <li class="region-switcher-link"><a href="/pt-br" data-active-text="Brazil" class="region-link skip-external" hreflang="pt-br">Brazil</a>
+               <div>
+                Português
+               </div> </li>
+              <li class="region-switcher-link"><a href="/es" data-active-text="Latin America" class="region-link skip-external" hreflang="es">Latin America</a>
+               <div>
+                Español
+               </div> </li>
+             </ul>
+            </div></li>
+           <li>
+            <div class="item-list">
+             <h3>Asia Pacific</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/en-au" data-active-text="Australia" class="region-link skip-external" hreflang="en-au">Australia</a>
+               <div>
+                English
+               </div> </li>
+             </ul>
+            </div></li>
+           <li>
+            <div class="item-list">
+             <h3>Europe</h3>
+             <ul>
+              <li class="region-switcher-link"><a href="/de" data-active-text="Germany" class="region-link skip-external" hreflang="de">Germany</a>
+               <div>
+                Deutsch
+               </div> </li>
+              <li class="region-switcher-link"><a href="/es-es" data-active-text="Spain" class="region-link skip-external" hreflang="es-es">Spain</a>
+               <div>
+                Español
+               </div> </li>
+              <li class="region-switcher-link"><a href="/en-gb" data-active-text="United Kingdom" class="region-link skip-external" hreflang="en-gb">United Kingdom</a>
+               <div>
+                English
+               </div> </li>
+              <li class="region-switcher-link"><a href="/nl" data-active-text="Benelux" class="region-link skip-external" hreflang="nl">Benelux</a>
+               <div>
+                Dutch
+               </div> </li>
+             </ul>
+            </div></li>
+          </ul>
+         </div>
+        </div> 
+        <div class="region-switcher-active-region">
+         <a href="/">United States</a>
+        </div> 
+       </div> 
+       <div class="region-redirect-reset-link hidden">
+        <a href="">Reset language preference</a>
+       </div> 
+       <div class="modal-redirect-reset-wrapper hidden">
+        <div class="modal-redirect-reset-copy"></div> <a href="" class="clear-preference-link">Clear redirect preference</a>
+       </div> 
+      </div> 
+      <nav role="navigation" aria-labelledby="block-utility-2-menu" id="block-utility-2" class="block block-menu navigation menu--utility"> 
+       <h2 class="visually-hidden" id="block-utility-2-menu">Utility</h2> 
+       <ul class="menu utility-dropdown"> 
+        <li class="menu-item"> <a href="/canvas/try-canvas" tabindex="0" data-drupal-link-system-path="node/2281">Try Canvas Free</a> </li> 
+        <li class="menu-item"> <a href="/corporate-canvas" tabindex="0" data-drupal-link-system-path="node/9966">For Business</a> </li> 
+        <li class="menu-item"> <a href="/canvas/support-faq" tabindex="0" data-drupal-link-system-path="node/5401">Support</a> </li> 
+        <li class="menu-item"> <a href="/contact-us" tabindex="0" data-drupal-link-system-path="node/9286">Contact Us</a> </li> 
+        <li class="menu-item menu-item--expanded"> <span tabindex="0">Log In</span> 
+         <ul class="menu"> 
+          <li class="menu-item"> <a href="/canvas/login/free-for-teacher" class="menu-item--login-canvas" tabindex="0" data-drupal-link-system-path="node/2286">Canvas</a> </li> 
+          <li class="menu-item"> <a href="https://app.masteryconnect.com/login" class="menu-item--login-masteryconnect" tabindex="0">MasteryConnect</a> </li> 
+          <li class="menu-item"> <a href="https://portfolium.com/login" class="menu-item--login-portfolium" tabindex="0">Portfolium</a> </li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <div id="block-getademo-2" class="block block-block-content block-block-content2400af04-38e3-46a4-8dc1-5152e588f63b block--text block-getademo-2"> 
+       <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+        <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+         <a href="/canvas/request-demo">Get a Demo</a>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+    <div class="region region-highlighted"> 
+     <div id="block-dmbnotificationsblock" class="block block-dismissible-message-bar block-dmb-notifications-block block-dmbnotificationsblock"> 
+      <div class="container"> 
+       <div>
+        <div class="dmb-notifications-ajax-wrapper"></div> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-drupal-messages-fallback class="hidden"></div> 
+    </div> 
+    <main id="main-content" role="main"> 
+     <div class="layout-content"> 
+      <div class="region region-content"> 
+       <div id="block-themekit-content" class="block block-system block-system-main-block block-themekit-content"> 
+        <article role="article" about="/product/higher-education/canvas-lms" class="node node--type-product node--view-mode-full"> 
+         <div class="paragraph paragraph--type--header-banner-basic paragraph--view-mode--default"> 
+          <div class="bg-container"></div> 
+          <div class="paragraph-content"> 
+           <div class="title-container"> 
+            <h1 class="field heading field--name-field-micro-heading field--type-text-long field--label-hidden field__item" id="higher-ed-canvas-lms"><p>Higher Ed Canvas LMS.</p> </h1> 
+            <div class="clearfix text-formatted field field--name-field-heading field--type-text-long field--label-hidden field__item">
+             <p><span><span><span><span><span><span>Teaching and Learning. <span class="emphasis">To the Power of Canvas LMS.</span></span></span></span></span></span></span></p>
+            </div> 
+           </div> 
+           <div class="content-container"> 
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+             <p>Canvas LMS is the open, extensible learning management system that amplifies everyone’s awesomeness.</p>
+            </div> 
+            <div class="field field--name-field-p-cta-primary field--type-entity-reference-revisions field--label-hidden field__item"> 
+             <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+              <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+               <a href="/canvas/request-demo">Request a Demo</a>
+              </div> 
+             </div> 
+            </div> 
+            <div class="field field--name-field-p-cta-secondary field--type-entity-reference-revisions field--label-hidden field__item"> 
+             <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+              <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+               <a href="/canvas/try-canvas">Try Canvas Free</a>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="node__content"> 
+          <div class="layout twocol-layout bg-color--none m-top--half m-bottom--half width--50-50 vertical-align--top"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="stay-ahead-of-the-learning-curve-with-canvas"><p>Stay ahead of the learning curve with Canvas.</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Deliver dynamic, engaging learning experiences. For every student. Everywhere. Every day. Canvas is a robust digital foundation for all aspects of higher-ed learning.</p>
+              </div> 
+             </div> 
+            </div> 
+            <div class="layout__region layout__region--second"> 
+             <div class="block block-layout-builder block-inline-blockcallout block--callout callout-type--remote-video"> <a class="callout-wrapper" href="#" data-micromodal-trigger="callout-modal-block-callout-modal-7468"> 
+               <div class="callout-image"> 
+                <article class="media media--type-remote-video media--view-mode-thumbnail"> 
+                 <div class="field field--name-thumbnail field--type-image field--label-hidden field__item"> <picture> 
+                   <source type="image/webp" data-srcset="/sites/default/files/styles/small_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg.webp?itok=PJLY3oIz 1x, /sites/default/files/styles/large_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg.webp?itok=JYBQKylx 2x"> 
+                   <source type="image/jpeg" data-srcset="/sites/default/files/styles/small_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg?itok=PJLY3oIz 1x, /sites/default/files/styles/large_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg?itok=JYBQKylx 2x"> 
+                   <img alt="" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg?itok=PJLY3oIz" data-srcset="/sites/default/files/styles/small_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg?itok=PJLY3oIz 1x, /sites/default/files/styles/large_hq/public/oembed_thumbnails/ambHA2uHKGvFYisN_w2H3MCZgFIcBPMfmfF8oWYdFFc.jpg?itok=JYBQKylx 2x" typeof="foaf:Image"> 
+                  </picture> 
+                 </div> 
+                </article> 
+               </div> 
+               <div class="callout-content"> 
+                <div class="clearfix text-formatted field field--name-field-heading field--type-text-long field--label-hidden field__item">
+                 <p>Canvas Across the Globe</p> 
+                </div> 
+                <div class="view-more">
+                 Watch Now
+                </div> 
+               </div> </a> 
+              <div id="callout-modal-block-callout-modal-7468" aria-hidden="true" class="callout-modal"> 
+               <div class="modal-overlay" tabindex="-1" data-micromodal-close> 
+                <div class="modal-content-wrapper" role="dialog" aria-modal="true" aria-labelledby="callout-modal-block-callout-modal-7468-title"> 
+                 <header> 
+                  <h3 id="callout-modal-block-callout-modal-7468-title" aria-hidden="true" class="visually-hidden">Canvas Across the Globe</h3> <button class="modal-close" aria-label="Close modal" data-micromodal-close></button> 
+                 </header> 
+                 <div id="callout-modal-block-callout-modal-7468-content"> 
+                  <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item">
+                   <article class="media media--type-remote-video media--view-mode-card"> 
+                    <div class="field field--name-field-media-oembed-video field--type-string field--label-hidden field__item">
+                     <iframe src="/media/oembed?url=https%3A//instructure-7.wistia.com/medias/ha64tqs94z&amp;max_width=0&amp;max_height=0&amp;hash=BL24C98ttDNdfadOS2QvNaRTn6_PrhLybG09yvQXI8g" frameborder="0" allowtransparency width="960" height="540" class="media-oembed-content" title="Canvas Across the Globe"></iframe> 
+                    </div> 
+                   </article> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--half m-bottom--half"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blockaccordion block--accordion"> 
+              <div class="left-col-wrapper"> 
+               <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"> <picture> 
+                 <source type="image/webp" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Accordian.jpg.webp?itok=soKSHzak 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Accordian.jpg.webp?itok=XbU6okQo 2x"> 
+                 <source type="image/jpeg" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Accordian.jpg?itok=soKSHzak 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Accordian.jpg?itok=XbU6okQo 2x"> 
+                 <img alt="person working on laptop outside" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Accordian.jpg?itok=soKSHzak" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Accordian.jpg?itok=soKSHzak 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Accordian.jpg?itok=XbU6okQo 2x" typeof="foaf:Image"> 
+                </picture> 
+               </div> 
+               <div class="paragraph paragraph--type--quote paragraph--view-mode--default"> 
+                <div class="clearfix text-formatted field field--name-field-quote field--type-text-long field--label-hidden field__item">
+                 <p>Canvas is kind of the unicorn of LMSs. You don't think it's out there, but then you see it, and you're like, ‘Oh, maybe this is a real thing.’ And for us, it has been.</p> 
+                </div> 
+                <div class="clearfix text-formatted field field--name-field-attribution field--type-text-long field--label-hidden field__item">
+                 <p>—Becky Vasquez</p> 
+                </div> 
+                <div class="clearfix text-formatted field field--name-field-attribution-description field--type-text-long field--label-hidden field__item">
+                 <p>Vice President and Chief Information Officer, Embry-Riddle Aeronautical University, Daytona Beach, FL</p> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="accordion-wrapper"> 
+               <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="welcome-to-next-level-curriculum-and-instruction"><p>Welcome to next-level curriculum and instruction.</p> </h2> 
+               <div class="field field--name-field-p-accordion field--type-entity-reference-revisions field--label-hidden field__items accordion" data-accordion data-allow-all-closed="true"> 
+                <div class="paragraph paragraph--type--accordion-item paragraph--view-mode--default accordion-item" data-accordion-item> <a href="#" class="field field--name-field-label field--type-text-long field--label-hidden accordion-title"><p>Everything in One Place</p> </a> 
+                 <div class="field field--name-field-description field--type-text-long field--label-hidden accordion-content" data-tab-content>
+                  <p><span><span><span><span><span><span><span>Engaging course content. Quizzes and grades. Data and insights. Student interaction with educators and peers. All right there in the Canvas LMS. Ready to support in-person, online, and blended learning.</span></span></span></span></span></span></span></p>
+                 </div> 
+                </div> 
+                <div class="paragraph paragraph--type--accordion-item paragraph--view-mode--default accordion-item" data-accordion-item> <a href="#" class="field field--name-field-label field--type-text-long field--label-hidden accordion-title"><p>Total Accessibility</p> </a> 
+                 <div class="field field--name-field-description field--type-text-long field--label-hidden accordion-content" data-tab-content>
+                  <p><span><span><span><span><span><span><span>Student expectations have changed. You need an LMS that can deliver learning that meets students where they are right now. The Canvas LMS ensures that both students and instructors have access to everything they need in one place.</span></span></span></span></span></span></span></p>
+                 </div> 
+                </div> 
+                <div class="paragraph paragraph--type--accordion-item paragraph--view-mode--default accordion-item" data-accordion-item> <a href="#" class="field field--name-field-label field--type-text-long field--label-hidden accordion-title"><p>Instant Content Delivery</p> </a> 
+                 <div class="field field--name-field-description field--type-text-long field--label-hidden accordion-content" data-tab-content>
+                  <p><span><span><span><span><span><span><span>Quickly upload and share course information in an array of captivating ways. And use Blueprints to push curriculum throughout your institution.</span></span></span></span></span></span></span></p>
+                 </div> 
+                </div> 
+                <div class="paragraph paragraph--type--accordion-item paragraph--view-mode--default accordion-item" data-accordion-item> <a href="#" class="field field--name-field-label field--type-text-long field--label-hidden accordion-title"><p>Mobile Learning</p> </a> 
+                 <div class="field field--name-field-description field--type-text-long field--label-hidden accordion-content" data-tab-content>
+                  <p><span><span><span><span><span><span><span>Canvas delivers industry-leading mobile applications combined with full-featured responsive design for unmatched accessibility and assurance that your institution can reach every learner. </span></span></span></span></span></span></span></p>
+                 </div> 
+                </div> 
+                <div class="paragraph paragraph--type--accordion-item paragraph--view-mode--default accordion-item" data-accordion-item> <a href="#" class="field field--name-field-label field--type-text-long field--label-hidden accordion-title"><p>Increased Productivity</p> </a> 
+                 <div class="field field--name-field-description field--type-text-long field--label-hidden accordion-content" data-tab-content>
+                  <p><span><span><span><span><span><span><span>There’s only one you. Spend your time on teaching and learning. Let the Canvas LMS handle the administrative stuff.</span></span></span></span></span></span></span></p>
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="bg-container"></div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout twocol-layout bg-color--none m-top--half m-bottom--half width--50-50 vertical-align--top"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>Integrations</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="higher-education-tools-that-play-nicely-with-others"><p>Higher education tools that play nicely with others.</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Rubrics. Modules. Calendars. Schedules. Quizzes. Syllabi. Analytics. SpeedGrader! (Cue angels singing.) Canvas has so many whiz-bang features that will add pizzazz to your courses. And don’t even get us started about the integrations. The Canvas API buddies right up with tools like Google Classroom, Microsoft Teams, Zoom, Adobe, and hundreds of other technology partners to deliver one centralized learning hub.</p> 
+              </div> 
+              <div class="paragraph paragraph--type--quote paragraph--view-mode--default"> 
+               <div class="clearfix text-formatted field field--name-field-quote field--type-text-long field--label-hidden field__item">
+                <p>We wanted to create consistency across all 23 colleges while still allowing for creativity and academic freedom, and we could do that with Canvas.</p> 
+               </div> 
+               <div class="clearfix text-formatted field field--name-field-attribution field--type-text-long field--label-hidden field__item">
+                <p>—Page Durham</p> 
+               </div> 
+               <div class="clearfix text-formatted field field--name-field-attribution-description field--type-text-long field--label-hidden field__item">
+                <p>Instructional Designer, Virginia Community College System, VA</p> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="layout__region layout__region--second"> 
+             <div class="block block-layout-builder block-inline-blockmedia block--media"> 
+              <div class="field--name-field-media"> <picture> 
+                <source type="image/webp" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story1.jpg.webp?itok=GuxK99F2 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story1.jpg.webp?itok=3Haeylyy 2x"> 
+                <source type="image/jpeg" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story1.jpg?itok=GuxK99F2 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story1.jpg?itok=3Haeylyy 2x"> 
+                <img width="1000" height="1000" alt="two people sitting on stone steps looking at a laptop" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story1.jpg?itok=GuxK99F2" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story1.jpg?itok=GuxK99F2 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story1.jpg?itok=3Haeylyy 2x" typeof="foaf:Image"> 
+               </picture> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout twocol-layout bg-color--none m-top--half m-bottom--half width--50-50 vertical-align--top"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blockmedia block--media"> 
+              <div class="field--name-field-media"> <picture> 
+                <source type="image/webp" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story2.jpg.webp?itok=8W1zHkpM 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story2.jpg.webp?itok=PSXk1ENW 2x"> 
+                <source type="image/jpeg" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story2.jpg?itok=8W1zHkpM 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story2.jpg?itok=PSXk1ENW 2x"> 
+                <img width="1000" height="1000" alt="person with backpack on looking at tablet" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story2.jpg?itok=8W1zHkpM" data-srcset="/sites/default/files/styles/small_hq/public/image/2020-12/HE-LMS-Story2.jpg?itok=8W1zHkpM 1x, /sites/default/files/styles/large_hq/public/image/2020-12/HE-LMS-Story2.jpg?itok=PSXk1ENW 2x" typeof="foaf:Image"> 
+               </picture> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="layout__region layout__region--second"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>Mobile Apps</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="you-get-an-app-and-you-get-an-app-and-you-get-an-app"><p>You get an app. And you get an app. And you get an app.</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Canvas LMS has top-rated mobile apps for both teachers and students that give everyone access to just what they need on the go. Teachers can engage with students whenever and wherever through native mobile notifications and Canvas apps that boast best-in-class data security and accessibility—not to mention SpeedGrader, which can cut grading time by 50%.</p> 
+              </div> 
+              <div class="paragraph paragraph--type--text-list paragraph--view-mode--default"> 
+               <div class="clearfix text-formatted field field--name-field-text-list-item field--type-text-long field--label-hidden field__items"> 
+                <div class="field__item">
+                 <p>Take Canvas anywhere</p> 
+                </div> 
+                <div class="field__item">
+                 <p>Grade on the go</p> 
+                </div> 
+                <div class="field__item">
+                 <p>Stay connected to students</p> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout twocol-layout bg-color--none m-top--half m-bottom--half width--50-50 vertical-align--top"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blocktext block--text"> 
+              <div class="clearfix text-formatted field field--name-field-micro-heading field--type-text-long field--label-hidden field__item">
+               <p>Collaborative Tools</p> 
+              </div> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="dialog-discussion-and-discourse-for-the-digital-age"><p>Dialog, discussion, and discourse. For the digital age.</p> </h2> 
+              <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+               <p>Teachers can communicate with individual students, groups, or the entire class through messaging, audio notes, video, and more. And students can collaborate amongst themselves via chat group, video, and other messaging tools.</p> 
+              </div> 
+              <div class="paragraph paragraph--type--quote paragraph--view-mode--default"> 
+               <div class="clearfix text-formatted field field--name-field-quote field--type-text-long field--label-hidden field__item">
+                <p>Canvas has allowed our university community to create a sustainable and responsive teaching and learning ecosystem that meets the many diverse needs of our students and faculty.</p> 
+               </div> 
+               <div class="clearfix text-formatted field field--name-field-attribution field--type-text-long field--label-hidden field__item">
+                <p>—Donalee Attardo</p> 
+               </div> 
+               <div class="clearfix text-formatted field field--name-field-attribution-description field--type-text-long field--label-hidden field__item">
+                <p>Senior Director, Academic Technology, University of Minnesota, Minneapolis-Saint Paul, MN</p> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="layout__region layout__region--second"> 
+             <div class="block block-layout-builder block-inline-blockmedia block--media"> 
+              <div class="field--name-field-media"> <picture> 
+                <source type="image/webp" data-srcset="/sites/default/files/styles/small_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg.webp?itok=N2SYL7oF 1x, /sites/default/files/styles/large_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg.webp?itok=qLqpSfSb 2x"> 
+                <source type="image/jpeg" data-srcset="/sites/default/files/styles/small_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg?itok=N2SYL7oF 1x, /sites/default/files/styles/large_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg?itok=qLqpSfSb 2x"> 
+                <img width="1000" height="1000" alt="students talking" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg?itok=N2SYL7oF" data-srcset="/sites/default/files/styles/small_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg?itok=N2SYL7oF 1x, /sites/default/files/styles/large_hq/public/image/2021-01/HE-LMS-Story3-comp.jpg?itok=qLqpSfSb 2x" typeof="foaf:Image"> 
+               </picture> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--normal m-bottom--normal"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blockcard-grid block--card-grid three-column"> <label class="field heading field--name-field-micro-heading field--type-text-long field--label-hidden field__item" id="more-features"><p>MORE FEATURES</p> </label> 
+              <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="all-the-functionality-you-need-none-you-dont"><p>All the functionality you need. None you don’t.</p> </h2> 
+              <div class="field field--name-field-p-cards field--type-entity-reference-revisions field--label-hidden field__items"> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspanundivided-attentionspanspanspanspanspanspanp"><p><span><span><span><span><span><span>Undivided Attention</span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>Enrich lessons with video and audio and even keep up face-to-face interactions from inside the Canvas LMS.</p> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspanspan999-uptimespanspanspanspanspanspanspanp"><p><span><span><span><span><span><span><span>99.9% Uptime</span></span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>Everybody needs a little downtime. But not because your learning management platform crashed. Canvas keeps your educational ecosystem going strong.</p> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspango-speedgraderspanspanspanspanspanspanp"><p><span><span><span><span><span><span>Go, SpeedGrader</span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>Provide targeted feedback with annotations. Use rubrics for scoring. Share comments via video. Add grades to the gradebook and quickly create powerful, actionable reports about student progress.</p> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspanunlimited-file-sizespanspanspanspanspanspanp"><p><span><span><span><span><span><span>Unlimited File Size</span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>The only limit is your imagination. Pile on as much audio, visuals, and video as you’d like to enrich students’ learning experiences.</p> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspaninsights-aplentyspanspanspanspanspanspanp"><p><span><span><span><span><span><span>Insights Aplenty</span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>Course analytics serve up data that can help you increase student engagement by offering insights on how students are interacting with course materials.</p> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="field__item"> 
+                <div class="paragraph paragraph--type--icon-card paragraph--view-mode--default"> 
+                 <h3 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="pspanspanspanspanspanspancloud-based-and-bornspanspanspanspanspanspanp"><p><span><span><span><span><span><span>Cloud-Based (and Born)</span></span></span></span></span></span></p></h3> 
+                 <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+                  <p>That means no downtime due to updates. You simply log in for instant connection from anywhere, anytime—on just about any computer or smart handheld device.</p> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--half m-bottom--half"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blockcontent-slider block--content-slider"> 
+              <div class="block-content"> 
+               <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="the-latest-from-instructure"><p>The Latest From Instructure</p> </h2> 
+               <div class="field field--name-field-p-cards field--type-entity-reference-revisions field--label-hidden large--hide-arrows glide" data-total-slides="3"> 
+                <div class="glide__arrows" data-glide-el="controls"> <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button> <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button> 
+                </div> 
+                <div class="glide__track" data-glide-el="track"> 
+                 <div class="glide__slides"> 
+                  <div class="glide__slide"> 
+                   <div class="paragraph paragraph--type--node-reference paragraph--view-mode--default"> 
+                    <div class="field field--name-field-node-reference field--type-entity-reference field--label-hidden field__item"> <a class="node node--type-uberflip-item node--view-mode-teaser" href="https://instructure.com/canvas/resources/wistia-uberflip-videos-noram/california-online-education-initiative-canvas-streamlining-worlds-largest-education-system"> 
+                      <div class="field field--name-field-uberflip-thumbnail field--type-entity-reference field--label-hidden field__item"> <picture> 
+                        <source media="all and (min-width: 640px)" type="image/webp" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_642007321.jpeg.webp?itok=ogtpW7Jv 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_642007321.jpeg.webp?itok=x1Il1nmz 2x"> 
+                        <source type="image/webp" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_642007321.jpeg.webp?itok=a30xTU6W 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_642007321.jpeg.webp?itok=_yzHjXkK 2x"> 
+                        <source media="all and (min-width: 640px)" type="image/jpeg" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_642007321.jpeg?itok=ogtpW7Jv 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_642007321.jpeg?itok=x1Il1nmz 2x"> 
+                        <source type="image/jpeg" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_642007321.jpeg?itok=a30xTU6W 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_642007321.jpeg?itok=_yzHjXkK 2x"> 
+                        <img alt="California Community Colleges" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small/public/uberflip/media_uberflip_642007321.jpeg?itok=a30xTU6W" typeof="foaf:Image"> 
+                       </picture> 
+                      </div> 
+                      <div class="node__content"> 
+                       <h3><span class="field field--name-title field--type-string field--label-hidden">California Community Colleges</span> </h3> 
+                       <div class="view-more"> <span>Watch the video</span> 
+                       </div> 
+                      </div> </a> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="glide__slide"> 
+                   <div class="paragraph paragraph--type--node-reference paragraph--view-mode--default"> 
+                    <div class="field field--name-field-node-reference field--type-entity-reference field--label-hidden field__item"> <a class="node node--type-uberflip-item node--view-mode-teaser" href="https://www.instructure.com/canvas/resources/higher-education/guide-choosing-learning-management-platform-6-key-considerations"> 
+                      <div class="field field--name-field-uberflip-thumbnail field--type-entity-reference field--label-hidden field__item"> <picture> 
+                        <source media="all and (min-width: 640px)" type="image/webp" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_644832433.png.webp?itok=HsR8lMd1 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_644832433.png.webp?itok=CCr_SyLZ 2x"> 
+                        <source type="image/webp" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_644832433.png.webp?itok=FxSdARrh 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_644832433.png.webp?itok=VF0Ho8HX 2x"> 
+                        <source media="all and (min-width: 640px)" type="image/png" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_644832433.png?itok=HsR8lMd1 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_644832433.png?itok=CCr_SyLZ 2x"> 
+                        <source type="image/png" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_644832433.png?itok=FxSdARrh 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_644832433.png?itok=VF0Ho8HX 2x"> 
+                        <img alt="Your Guide to Choosing a Learning Management System" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small/public/uberflip/media_uberflip_644832433.png?itok=FxSdARrh" typeof="foaf:Image"> 
+                       </picture> 
+                      </div> 
+                      <div class="node__content"> 
+                       <h3><span class="field field--name-title field--type-string field--label-hidden">Your Guide to Choosing a Learning Management System</span> </h3> 
+                       <div class="view-more"> <span>Download the document</span> 
+                       </div> 
+                      </div> </a> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="glide__slide"> 
+                   <div class="paragraph paragraph--type--node-reference paragraph--view-mode--default"> 
+                    <div class="field field--name-field-node-reference field--type-entity-reference field--label-hidden field__item"> <a class="node node--type-uberflip-item node--view-mode-teaser" href="https://instructure.com/canvas/resources/case-study/rmit-university"> 
+                      <div class="field field--name-field-uberflip-thumbnail field--type-entity-reference field--label-hidden field__item"> <picture> 
+                        <source media="all and (min-width: 640px)" type="image/webp" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_648528820.jpeg.webp?itok=epXMmrkk 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_648528820.jpeg.webp?itok=VzlUHMgU 2x"> 
+                        <source type="image/webp" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_648528820.jpeg.webp?itok=UAxbGVVR 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_648528820.jpeg.webp?itok=uYMB8amJ 2x"> 
+                        <source media="all and (min-width: 640px)" type="image/jpeg" data-srcset="/sites/default/files/styles/x_small/public/uberflip/media_uberflip_648528820.jpeg?itok=epXMmrkk 1x, /sites/default/files/styles/medium/public/uberflip/media_uberflip_648528820.jpeg?itok=VzlUHMgU 2x"> 
+                        <source type="image/jpeg" data-srcset="/sites/default/files/styles/small/public/uberflip/media_uberflip_648528820.jpeg?itok=UAxbGVVR 1x, /sites/default/files/styles/large_hq/public/uberflip/media_uberflip_648528820.jpeg?itok=uYMB8amJ 2x"> 
+                        <img alt="RMIT University" loading="lazy" class="lazyload" data-src="/sites/default/files/styles/small/public/uberflip/media_uberflip_648528820.jpeg?itok=UAxbGVVR" typeof="foaf:Image"> 
+                       </picture> 
+                      </div> 
+                      <div class="node__content"> 
+                       <h3><span class="field field--name-title field--type-string field--label-hidden">RMIT University</span> </h3> 
+                       <div class="view-more"> <span>Download the document</span> 
+                       </div> 
+                      </div> </a> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="glide__pager"> <span class="current">1</span> <span class="total">of 3</span> 
+                </div> 
+               </div> 
+               <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                <a href="https://www.instructure.com/canvas/resources">View All Resources</a>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="layout onecol-layout bg-color--none m-top--none m-bottom--none"> 
+           <div class="layout-content"> 
+            <div class="layout__region layout__region--first"> 
+             <div class="block block-layout-builder block-inline-blockcta block--cta bg-color--red"> 
+              <div class="content-wrapper"> 
+               <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="ready-to-explore-our-learning-ecosystem"><p>Ready to explore our learning ecosystem?</p> </h2> 
+               <div class="field field--name-field-p-link field--type-entity-reference-revisions field--label-hidden field__item"> 
+                <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+                 <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+                  <a href="/canvas/request-demo">Let's Get Started</a>
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </article> 
+       </div> 
+      </div> 
+     </div> 
+    </main> 
+    <footer role="contentinfo"> 
+     <div class="region region-footer"> 
+      <div class="region-content"> <a class="logo-footer" href="/" title="Home">Home</a> 
+       <div id="block-footercontact" class="block block-block-content block-block-content83c8e43c-d074-4b35-9946-36d6444cfb8f block--text block-footercontact"> 
+        <h2 class="field heading field--name-field-heading field--type-text-long field--label-hidden field__item" id="global-hq"><p>Global HQ</p> </h2> 
+        <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item">
+         <p>6330 South 3000 East Suite 700 Salt Lake City, UT 84121 USA</p>
+        </div> 
+        <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+         <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+          <a href="/contact-us">Contact Us</a>
+         </div> 
+        </div> 
+        <div class="paragraph paragraph--type--link-default paragraph--view-mode--default"> 
+         <div class="field field--name-field-link field--type-link field--label-hidden field__item">
+          <a href="tel:800-203-6755">800-203-6755</a>
+         </div> 
+        </div> 
+       </div> 
+       <nav role="navigation" aria-labelledby="block-themekit-footer-menu" id="block-themekit-footer" class="block block-menu navigation menu--footer"> 
+        <h2 class="visually-hidden" id="block-themekit-footer-menu">Footer menu</h2> 
+        <ul class="menu accordion-menu columns-4" data-accordion-menu=""> 
+         <li class="menu-item menu-item--expanded menu-item--active-trail"> <span>Instructure Learning Platform</span> 
+          <ul class="menu"> 
+           <li class="menu-item menu-item--active-trail"> <a href="/product/higher-education/canvas-lms" data-drupal-link-system-path="node/1446" class="is-active">Canvas LMS</a> </li> 
+           <li class="menu-item"> <a href="/product/higher-education/canvas-studio" data-drupal-link-system-path="node/1441">Canvas Studio</a> </li> 
+           <li class="menu-item"> <a href="/product/higher-education/canvas-catalog" data-drupal-link-system-path="node/1431">Canvas Catalog</a> </li> 
+           <li class="menu-item"> <a href="/product/k-12/assessment" data-drupal-link-system-path="node/10101">Assessment</a> </li> 
+           <li class="menu-item"> <a href="/product/k-12/videri-analytics" data-drupal-link-system-path="node/1316

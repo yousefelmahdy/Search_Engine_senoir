@@ -1,0 +1,268 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab cloud native Helm Chart | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/charts/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/charts/index.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/charts/index.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/charts/index.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <div id="doc-nav" class="doc-nav toc-no-breadcrumbs"> <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> GitLab cloud native Helm Chart </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a> </li>
+      <li><a href="#limitations" id="markdown-toc-limitations">Limitations</a> </li>
+      <li><a href="#gitlab-version-mappings" id="markdown-toc-gitlab-version-mappings">GitLab version mappings</a> </li>
+      <li><a href="#list-of-charts" id="markdown-toc-list-of-charts">List of charts</a> </li>
+      <li><a href="#global-settings" id="markdown-toc-global-settings">Global settings</a> </li>
+      <li><a href="#installing-gitlab-using-the-helm-chart" id="markdown-toc-installing-gitlab-using-the-helm-chart">Installing GitLab using the Helm Chart</a> </li>
+      <li><a href="#updating-gitlab-using-the-helm-chart" id="markdown-toc-updating-gitlab-using-the-helm-chart">Updating GitLab using the Helm Chart</a> </li>
+      <li><a href="#uninstalling-gitlab-using-the-helm-chart" id="markdown-toc-uninstalling-gitlab-using-the-helm-chart">Uninstalling GitLab using the Helm Chart</a> </li>
+      <li><a href="#migrate-from-omnibus-gitlab-to-kubernetes" id="markdown-toc-migrate-from-omnibus-gitlab-to-kubernetes">Migrate from Omnibus GitLab to Kubernetes</a> </li>
+      <li><a href="#advanced-configuration" id="markdown-toc-advanced-configuration">Advanced configuration</a> </li>
+      <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> </li>
+      <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a> </li>
+      <li><a href="#misc" id="markdown-toc-misc">Misc</a> </li>
+     </ul> 
+     <h1 id="gitlab-cloud-native-helm-chart">GitLab cloud native Helm Chart<a href="#gitlab-cloud-native-helm-chart" title="Permalink" class="anchor"></a> </h1> 
+     <p>This is the official and recommended way to install GitLab on a cloud native environment. </p>
+     <p>Do note that it is not necessary to have GitLab installed on Kubernetes in order to use the <a href="/11.11/ee/user/project/clusters/">GitLab Kubernetes integration</a>. </p>
+     <h2 id="introduction">Introduction<a href="#introduction" title="Permalink" class="anchor"></a> </h2> 
+     <p>The <code class="highlighter-rouge">gitlab</code> chart is the best way to operate GitLab on Kubernetes. This chart contains all the required components to get started, and can scale to large deployments. </p>
+     <p>The default deployment includes: </p>
+     <ul> 
+      <li>Core GitLab components: Unicorn, Shell, Workhorse, Registry, Sidekiq, and Gitaly </li>
+      <li>Optional dependencies: Postgres, Redis, Minio </li>
+      <li>An auto-scaling, unprivileged <a href="/11.11/runner/">GitLab Runner</a> using the Kubernetes executor </li>
+      <li>Automatically provisioned SSL via <a href="https://letsencrypt.org/">Let’s Encrypt</a>. </li>
+     </ul> 
+     <p>There are also some <a href="https://gitlab.com/charts/gitlab/tree/master/examples">example values.yaml files</a>. </p>
+     <h2 id="limitations">Limitations<a href="#limitations" title="Permalink" class="anchor"></a> </h2> 
+     <p>Some features of GitLab are not currently available using the Helm chart: </p>
+     <ul> 
+      <li><a href="https://gitlab.com/charts/gitlab/issues/37">GitLab Pages</a> </li>
+      <li><a href="https://gitlab.com/charts/gitlab/issues/8">GitLab Geo</a> </li>
+      <li><a href="https://gitlab.com/charts/gitlab/issues/48">No in-cluster HA database</a> </li>
+      <li><a href="https://gitlab.com/charts/gitlab/issues/988">Smartcard authentication</a> </li>
+     </ul> 
+     <p>Database limitations: </p>
+     <ul> 
+      <li>MySQL will not be supported, as support is <a href="/11.11/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only">deprecated within GitLab</a> </li>
+      <li>Support is only available for Postgres 9.6. Backup and restore <a href="https://gitlab.com/charts/gitlab/issues/852">will not work with other versions</a>. </li>
+     </ul> 
+     <h2 id="gitlab-version-mappings">GitLab version mappings<a href="#gitlab-version-mappings" title="Permalink" class="anchor"></a> </h2> 
+     <p>The GitLab chart doesn’t have the same version number as GitLab itself. Breaking changes are anticipated that may need to be introduced to the chart that would warrant a major version bump, and the requirement for these changes could completely block other development on these charts until completed. </p>
+     <p>To quickly see the full list of the <code class="highlighter-rouge">gitlab</code> chart versions and the GitLab version they map to, issue the following command with <a href="installation/tools.html#helm">helm</a>: </p>
+     <div class="language-sh highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code>helm repo add gitlab https://charts.gitlab.io/
+helm search <span class="nt">-l</span> gitlab/gitlab
+</code></pre>
+      </div>
+     </div> 
+     <p>For more information, visit the <a href="installation/version_mappings.html">version mappings docs</a>. </p>
+     <h2 id="list-of-charts">List of charts<a href="#list-of-charts" title="Permalink" class="anchor"></a> </h2> 
+     <p>The main GitLab chart is based on a variety of other charts. Each sub-chart is documented individually, and laid in a structure that matches the <a href="https://gitlab.com/charts/gitlab/tree/master/charts">charts</a> directory structure. </p>
+     <p>Non-GitLab components are packaged and documented on the top level. GitLab component services are documented under the <a href="charts/gitlab/index.html">GitLab</a> chart: </p>
+     <ul> 
+      <li><a href="charts/nginx/index.html">NGINX</a> </li>
+      <li><a href="charts/redis/index.html">Redis</a> </li>
+      <li><a href="charts/minio/index.html">Minio</a> </li>
+      <li><a href="charts/registry/index.html">Registry</a> </li>
+      <li>GitLab/<a href="charts/gitlab/sidekiq/index.html">sidekiq</a> </li>
+      <li>GitLab/<a href="charts/gitlab/gitlab-shell/index.html">gitlab-shell</a> </li>
+      <li>GitLab/<a href="charts/gitlab/gitaly/index.html">gitaly</a> </li>
+      <li>GitLab/<a href="charts/gitlab/unicorn/index.html">unicorn</a> </li>
+      <li>GitLab/<a href="charts/gitlab/migrations/index.html">migrations</a> </li>
+     </ul> 
+     <h2 id="global-settings">Global settings<a href="#global-settings" title="Permalink" class="anchor"></a> </h2> 
+     <p>There are some common global settings that apply to multiple charts. See the <a href="charts/globals.html">Globals documentation</a> for details on the different global configuration. </p>
+     <h2 id="installing-gitlab-using-the-helm-chart">Installing GitLab using the Helm Chart<a href="#installing-gitlab-using-the-helm-chart" title="Permalink" class="anchor"></a> </h2> 
+     <p>The <code class="highlighter-rouge">gitlab</code> chart includes all required dependencies, and takes a few minutes to deploy: </p>
+     <ol> 
+      <li><a href="installation/index.html">Preparation</a> </li>
+      <li><a href="installation/deployment.html">Deployment</a> </li>
+     </ol> 
+     <h2 id="updating-gitlab-using-the-helm-chart">Updating GitLab using the Helm Chart<a href="#updating-gitlab-using-the-helm-chart" title="Permalink" class="anchor"></a> </h2> 
+     <p>Once your GitLab Chart is installed, configuration changes and chart updates should be done using <code class="highlighter-rouge">helm upgrade</code>: </p>
+     <div class="language-sh highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code>helm repo add gitlab https://charts.gitlab.io/
+helm repo update
+helm get values gitlab <span class="o">&gt;</span> gitlab.yaml
+helm upgrade gitlab gitlab/gitlab <span class="nt">-f</span> gitlab.yaml
+</code></pre>
+      </div>
+     </div> 
+     <p>For more detailed information see <a href="installation/upgrade.html">Upgrading</a>. </p>
+     <h2 id="uninstalling-gitlab-using-the-helm-chart">Uninstalling GitLab using the Helm Chart<a href="#uninstalling-gitlab-using-the-helm-chart" title="Permalink" class="anchor"></a> </h2> 
+     <p>To uninstall the GitLab Chart, run the following: </p>
+     <div class="language-sh highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code>helm delete gitlab
+</code></pre>
+      </div>
+     </div> 
+     <h2 id="migrate-from-omnibus-gitlab-to-kubernetes">Migrate from Omnibus GitLab to Kubernetes<a href="#migrate-from-omnibus-gitlab-to-kubernetes" title="Permalink" class="anchor"></a> </h2> 
+     <p>To migrate your existing Omnibus GitLab instance to your Kubernetes cluster, follow the <a href="installation/migration/index.html">migration documentation</a>. </p>
+     <h2 id="advanced-configuration">Advanced configuration<a href="#advanced-configuration" title="Permalink" class="anchor"></a> </h2> 
+     <p>See <a href="advanced/index.html">Advanced Configuration</a>. </p>
+     <h2 id="troubleshooting">Troubleshooting<a href="#troubleshooting" title="Permalink" class="anchor"></a> </h2> 
+     <p>See <a href="troubleshooting/index.html">Troubleshooting</a>. </p>
+     <h2 id="contributing">Contributing<a href="#contributing" title="Permalink" class="anchor"></a> </h2> 
+     <p>See the <a href="development/index.html">developer documentation</a> to learn how to contribute to the GitLab charts. </p>
+     <h2 id="misc">Misc<a href="#misc" title="Permalink" class="anchor"></a> </h2> 
+     <p><a href="development/preparation/index.html">Weekly demos preparation</a> </p>
+    </div> 
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> REQUEST SUPPORT </a> </p>
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-more-features"> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To view <strong>all GitLab tiers</strong> and features or to upgrade <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/pricing/" target="_blank"> <i class="fa fa-credit-card-alt" aria-hidden="true"></i> VIEW PRICING PAGE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want to try all features available in <strong>GitLab.com</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://customers.gitlab.com/trials/new?gl_com=true" target="_blank"> <i class="fa fa-cloud" aria-hidden="true"></i> GITLAB GOLD FREE-TRIAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want to try all features available in <strong>GitLab self-managed</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/free-trial/" target="_blank"> <i class="fa fa-server" aria-hidden="true"></i> GITLAB ULTIMATE FREE-TRIAL </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane active" id="docs-feedback"> 
+         <div class="row" id="edit-page-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>spot an error or a need for improvement</strong> and would like to <strong>fix it yourself</strong> in a merge request <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+    

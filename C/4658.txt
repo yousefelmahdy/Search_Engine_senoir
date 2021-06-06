@@ -1,0 +1,241 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab Documentation</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <meta name="docsearch:language" content="en"> 
+  <meta name="docsearch:version" content="13.11"> 
+  <meta http-equiv="content-security-policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'self'; connect-src 'self' https:; frame-src 'self' https:; img-src 'self' https: data:; manifest-src 'self'; media-src 'self'; worker-src 'none';"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/13.11/assets/stylesheets/stylesheet-v108.css"> 
+  <link rel="stylesheet" href="/13.11/assets/stylesheets/highlight-v7.css"> 
+  <link rel="stylesheet" href="/13.11/assets/stylesheets/footer-v9.css"> 
+  <link rel="stylesheet" href="/13.11/assets/stylesheets/toc-v19.css"> 
+  <link rel="stylesheet" href="/13.11/assets/stylesheets/help-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5"></script> 
+  <script src="/13.11/assets/javascripts/google_tagmanager-v1.js"></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <meta name="google-site-verification" content="xAUTWp3CDg-tU1LVVwsM9OrVhLR7L3SmiyKzkOuPNos"> 
+  <meta name="google-site-verification" content="F0zzwaMpiyWFcPQ1Lqu18qN3EnuQsqFXbySl_29yvHs"> 
+  <meta name="google-site-verification" content="nwo1bVaU0t9TZxZyM-aOI6-CofaH9GRL-uBPbdREWgc"> 
+  <meta name="google-site-verification" content="rWoHrtHEmIX0t28oOb1ZEDMYZb_EZA6rr6ZOl5otEPI"> 
+  <script async src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js" integrity="sha256-idm3p7jl0XwymUpIccg6WI96tQmoDR/5DWEsnPnxYU4=" crossorigin="anonymous"></script> 
+  <script async src="/13.11/assets/javascripts/closest-polyfill-v.js"></script> 
+  <meta name="generator" content="Nanoc 4.12.1"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/13.11/assets/images/apple-touch-icon.png"> 
+  <link rel="manifest" href="/13.11/assets/manifests/site.webmanifest"> 
+  <meta name="msapplication-config" content="/13.11/assets/manifests/browserconfig.xml"> 
+  <meta name="msapplication-TileColor" content="#FC6D26"> 
+  <meta name="theme-color" content="#FC6D26"> 
+  <link rel="canonical" href="https://docs.gitlab.com/"> 
+ </head> 
+ <body class="landing"> 
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top py-lg-0"> <a class="navbar-brand d-flex align-items-center justify-content-center" href="/"> <img src="/13.11/assets/images/gitlab-logo.svg" alt="GitLab logo" class="logo"> <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+    <ul class="navbar-nav mr-auto"> 
+     <li class="nav-item active"> 
+      <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/"> <span class="fa fa-search form-control-feedback position-absolute ml-2 text-muted"></span> 
+       <input class="form-control mr-sm-2 docsearch border-0" name="query" type="search" placeholder="Search the docs..." aria-label="Search"> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+    </ul> 
+    <ul class="navbar-nav"> 
+     <li class="nav-item p-2 dropdown"> <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 13.11 </button> 
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/index.html">GitLab.com (13.13-pre) <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/13.12/index.html"> 13.12 </a> <a class="dropdown-item" href="/13.11/index.html"> 13.11 </a> <a class="dropdown-item" href="/13.10/index.html"> 13.10 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/12.10/index.html"> 12.10 </a> <a class="dropdown-item" href="/11.11/index.html"> 11.11 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/archives/">Archives</a> 
+      </div> </li>
+     <li class="nav-item p-2"> <a class="btn btn-danger btn-cta text-white" href="https://about.gitlab.com/free-trial/" target="_blank" rel="noopener noreferrer" role="button"> Get free trial </a> </li>
+    </ul> 
+   </div> 
+  </nav> 
+  <section class="hero text-center pt-5 mt-3"> 
+   <div class="container py-5 mb-2"> 
+    <div class="row"> 
+     <div class="col d-flex justify-content-center"> 
+      <div class="card search mt-3 pb-4"> 
+       <div class="card-body"> 
+        <h5 class="card-title pb-3 mb-2">Search the docs</h5> 
+        <form class="mb-3" id="search-form" action="/search"> 
+         <div class="form-group"> 
+          <img class="search-icon" src="/13.11/assets/images/search.svg" alt="search"> 
+          <input class="form-control docsearch-landing w-100" name="query" type="search" placeholder="Search the complete docs..." aria-label="Search"> 
+          <input type="submit" style="visibility:hidden;position:absolute"> 
+         </div> 
+        </form> <a href="/13.11/ee/README.html" class="card-link"> Explore all topics </a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="row pb-2"> 
+     <div class="col"> 
+      <h2> Get started with... </h2> 
+     </div> 
+    </div> 
+    <div class="oval"></div> 
+    <div class="row text-left"> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/agile.svg" alt="agile"> 
+        <h5 class="card-title py-2 m-0">Agile with GitLab</h5> 
+        <p class="card-text mb-2">Manage your work with built-in agile features. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/user/project/issues/" class="card-link">Issues</a> </li>
+         <li> <a href="/13.11/ee/user/project/issue_board.html" class="card-link">Issue boards</a> </li>
+         <li> <a href="/13.11/ee/user/project/labels.html" class="card-link">Labels</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/continuous-delivery.svg" alt="continuous-delivery"> 
+        <h5 class="card-title py-2 m-0">CI/CD</h5> 
+        <p class="card-text mb-2">Build, test, and deploy applications using Continuous Integration and Delivery. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/ci/README.html" class="card-link">GitLab CI/CD</a> </li>
+         <li> <a href="/13.11/runner/" class="card-link">GitLab Runner</a> </li>
+         <li> <a href="/13.11/ee/topics/autodevops/" class="card-link">Auto DevOps</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/collaberation.svg" alt="collaberation"> 
+        <h5 class="card-title py-2 m-0">Collaboration</h5> 
+        <p class="card-text mb-2">Configure and develop your applications. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/user/project/" class="card-link">Projects</a> </li>
+         <li> <a href="/13.11/ee/user/project/repository/" class="card-link">Repositories</a> </li>
+         <li> <a href="/13.11/ee/user/project/merge_requests/" class="card-link">Merge requests</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/locked.svg" alt="locked"> 
+        <h5 class="card-title py-2 m-0">Security</h5> 
+        <p class="card-text mb-2">Scan your CI pipeline and streamline vulnerability management. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/user/application_security/#security-scanning-tools" class="card-link">Security scans</a> </li>
+         <li> <a href="/13.11/ee/user/application_security/vulnerability_report/" class="card-link">Vulnerability management</a> </li>
+         <li> <a href="/13.11/ee/user/application_security/offline_deployments/" class="card-link">Offline environments</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/increase.svg" alt="increase"> 
+        <h5 class="card-title py-2 m-0">Analytics</h5> 
+        <p class="card-text mb-2">View reports and analysis of your team's work. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/development/value_stream_analytics.html" class="card-link">Value stream analytics</a> </li>
+         <li> <a href="/13.11/ee/user/group/issues_analytics/" class="card-link">Issue analytics</a> </li>
+         <li> <a href="/13.11/ee/user/admin_area/analytics/usage_trends.html" class="card-link">Usage trends</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 col-12 pb-4"> 
+      <div class="card topic h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/visibility.svg" alt="visibility"> 
+        <h5 class="card-title py-2 m-0">Administration</h5> 
+        <p class="card-text mb-2">Customize and configure your self-managed installation. </p>
+        <ul class="pl-0"> 
+         <li> <a href="/13.11/ee/user/admin_area/settings/" class="card-link">Admin area settings</a> </li>
+         <li> <a href="/13.11/ee/administration/auth/ldap/" class="card-link">Set up LDAP</a> </li>
+         <li> <a href="/13.11/ee/administration/pages/" class="card-link">GitLab Pages</a> </li>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="row pt-4"> 
+     <div class="col"> <a href="/13.11/ee/README.html" class="btn"> Explore all topics </a> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="popular text-center"> 
+   <div class="container"> 
+    <div class="row pt-5"> 
+     <div class="col"> 
+      <h2 class="m-0 pb-4"> Popular topics </h2> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-3 col-12"> 
+      <h5 class="align-top mt-0 text-left"> Developer </h5> 
+     </div> 
+     <div class="col-md-9 col-12"> 
+      <ul class="text-left"> 
+       <li class="d-flex"> <span> <a href="/13.11/ee/api/README.html"> <strong>API:</strong> Use the API to develop against GitLab </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/development/README.html"> <strong>Contributing:</strong> Learn the processes and technical information you need to contribute to GitLab </a> </span> </li>
+      </ul> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-3 col-12"> 
+      <h5 class="align-top mt-0 text-left"> Omnibus </h5> 
+     </div> 
+     <div class="col-md-9 col-12"> 
+      <ul class="text-left"> 
+       <li class="d-flex"> <span> <a href="/13.11/omnibus/settings/database.html"> <strong>Database settings: </strong> Configure database settings for your Omnibus GitLab self-managed instance </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/omnibus/settings/nginx.html"> <strong>NGINX settings: </strong> NGINX settings for your Omnibus GitLab self-managed instance </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/omnibus/settings/ssl.html"> <strong>SSL configuration: </strong> SSL settings for your Omnibus GitLab self-managed instance </a> </span> </li>
+      </ul> 
+     </div> 
+    </div> 
+    <div class="row pb-5"> 
+     <div class="col-md-3 col-12"> 
+      <h5 class="align-top mt-0 text-left"> General <br class="d-none d-md-block">topics </h5> 
+     </div> 
+     <div class="col-md-9 col-12"> 
+      <ul class="text-left"> 
+       <li class="d-flex"> <span> <a href="https://gitlab.com/gitlab-org/gitlab/-/releases"> <strong>Release notes: </strong> Review recent changes by version </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/user/profile/account/two_factor_authentication.html"> <strong>Two-factor authentication: </strong> Improve the security of your GitLab account </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/raketasks/backup_restore.html"> <strong>Back up and restore GitLab: </strong> Back up and restore your self-managed GitLab instance </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/user/group/index.html"> <strong>GitLab groups: </strong> Manage multiple projects at the same time </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/ci/yaml/README.html"> <strong>GitLab CI/CD reference: </strong> Configure GitLab CI/CD in the .gitlab-ci.yml file </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/integration/elasticsearch.html"> <strong>Elasticsearch integration: </strong> Enable advanced search by integrating Elasticsearch with GitLab </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/policy/maintenance.html"> <strong>GitLab policies: </strong> Review release and maintenance policies, and upgrade recommendations </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/user/admin_area/license.html"> <strong>Activate GitLab EE: </strong> Activate GitLab Enterprise Edition functionality with a license </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/user/gitlab_com/index.html"> <strong>GitLab.com settings: </strong> Learn about the settings on GitLab.com, like IP ranges, shared runners, and SSH keys fingerprints </a> </span> </li>
+       <li class="d-flex"> <span> <a href="/13.11/ee/administration/reference_architectures/index.html"> <strong>Reference architectures: </strong> Scale your GitLab installation for your number of users </a> </span> </li>
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="self-managed text-center pb-4 pt-1 mb-3"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-12"> 
+      <h2>Install self-managed GitLab</h2> 
+     </div> 
+     <div class="col-12 options"> 
+      <p>You’ve got options. <a href="/13.11/ee/install/">See them all <img src="/13.11/assets/images/collapse.svg" alt="collapse"></a> </p>
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-6 col-12 py-3"> 
+      <div class="card card-large h-100"> 
+       <div class="card-body"> 
+        <img class="card-img-top" src="/13.11/assets/images/docs-omnibus.svg" alt="docs-omnibus"> 
+        <h5 class="

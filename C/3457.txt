@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Fyrdility  </title> <!--[if !IE 6]><!--> 
+  <link rel="stylesheet" href="http://a.deveria.com/wordpress/wp-content/themes/fyrd2/style.css" type="text/css" media="screen"> <!--<![endif]--> <!--[if IE 6]><link rel="stylesheet" type="text/css" href="http://universal-ie6-css.googlecode.com/files/ie6.0.3.css" media="screen, projection" /><![endif]--> 
+  <link rel="alternate" type="application/rss+xml" title="Fyrdility RSS Feed" href="http://a.deveria.com/feed/"> 
+  <link rel="pingback" href="http://a.deveria.com/wordpress/xmlrpc.php"> 
+  <link rel="icon" type="image/png" href="/favicon.png"> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script src="/js/enhance.js"></script> <!--[if IE]><script src="/js/html5.js"></script><![endif]--> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://a.deveria.com/wordpress/xmlrpc.php?rsd"> <!--[if lt IE 8]><link rel="stylesheet" href="/css/ie7.css" /><![endif]--> 
+ </head>
+ <body> 
+  <header> 
+   <hgroup> 
+    <h1><a href="http://a.deveria.com/">Fyrdility</a></h1> 
+    <h2> by <a href="/about">Alexis Deveria</a> </h2> 
+   </hgroup> 
+   <ul id="nav1"> 
+    <li class="first"><a href="/">Home</a></li> 
+    <li><a href="/about">About</a></li> 
+    <li><a href="/work">Work</a></li> 
+    <li class="last"><a href="/contact">Contact</a></li> 
+   </ul> <!-- front only content here --> 
+  </header> 
+  <div id="page"> 
+   <div id="main"> 
+    <article id="recommended"> 
+     <p class="intro"><b></b>May I recommend...</p> 
+     <ol class="to_fade"> 
+      <li id="rec_wciu"><a href="/caniuse/"><b></b>When Can I Use...Browser Compatibility Tables</a> <span>- Interactive Compatibility tables for features in HTML5, CSS3, SVG and other upcoming web technologies</span></li> 
+      <li id="rec_csstpl"><a href="/?p=236"><b></b>CSS3 Template Layout Script</a> <span>- jQuery plugin that provides support for the CSS3 Template Layout Module</span></li> 
+      <li id="rec_radius"><a href="/?p=280"><b></b>SVG-Edit</a> <span>- Web-based vector graphics editing application</span></li> 
+     </ol> 
+     <p class="after to_fade"><a href="/work">See all projects</a></p> 
+    </article> 
+    <div id="content"> 
+     <article id="post-362"> 
+      <h2><a href="http://a.deveria.com/2013/preview-the-new-caniuse-com-features/" rel="bookmark" title="Permanent Link to Preview the new caniuse.com features">Preview the new caniuse.com features</a></h2> <small>October 15th, 2013 <!-- by Alexis Deveria --></small> 
+      <div class="entry"> 
+       <p>I’m happy to announce a number of new features coming to caniuse, with the new site now available for preview at <a title="beta.caniuse.com" href="http://beta.caniuse.com">beta.caniuse.com</a>. The features are built upon a complete rewrite of the site’s front end code, which will hopefully also lead to more improvements in the future.</p> 
+       <h3>New features</h3> 
+       <h4>Importing geographical usage data</h4> 
+       <p>Until now the site had only been using the “Worldwide” dataset from <a title="StatCounter" href="http://gs.statcounter.com">StatCounter</a> which was useful but could be quite different from the various geographic regions that many site owners are interested in targeting. You can now pick any of StatCounter’s regions to see the support value percentage based on that region.</p> 
+       <p>The first time you visit the site it will attempt to detect your current location to suggest the data to import. If you’d like to pick a different (or additional) location follow these steps:<br> <img class="alignright" alt="region picker" src="/images/caniuse-select-region.png"></p> 
+       <ol> 
+        <li>Click on “Show options” to show the option sidebar</li> 
+        <li>Under “Geographic usage data” start typing the region’s name</li> 
+        <li>Select the region and click “Import data”</li> 
+       </ol> 
+       <p>The data is always from the previous month, and will be automatically loaded when revisiting the site. On a new month, regional data is automatically updated.</p> 
+       <h4>&nbsp;New support “tables”</h4> 
+       <p>The support tables have been cleaned up and modified as following:</p> 
+       <ul> 
+        <li>A “Usage relative” mode – displays each browser version sized relative to the selected usage data</li> 
+        <li>Detailed tooltips when hovering over browser versions</li> 
+        <li>Support for version-specific notes – easily see which notes refer to which browser versions (see <a href="http://beta.caniuse.com/#feat=flexbox">flexbox</a> for example)</li> 
+        <li>Additional “unprefixed” usage information where applicable (% of users supporting properties etc. without prefix)</li> 
+       </ul> 
+       <p><img style="display: block; width: 100%;" title="New usage relative mode" alt="Example of the new usage relative view" src="/images/caniuse-usage-relative.png"></p> 
+       <h4>Miscellaneous improvements</h4> 
+       <p>Smaller improvements include:</p> 
+       <ul> 
+        <li>Import details from Google Analytics usage imports</li> 
+        <li>Some options like browser selection are stored and restored when revisiting the site</li> 
+        <li>Streamlined options panel</li> 
+        <li>Improved browser comparison with subsections for common/different usage.</li> 
+       </ul> 
+       <h4>What about the new design?</h4> 
+       <p>Quite some time ago it was announced that the site would implement <a href="http://dribbble.com/shots/904376-caniuse-com-redesign">a new design</a> in cooperation with Lennart Schoors. While some parts of this design have been already incorporated, the overall design is not there yet. This was due to some architectural inconsistencies between the design and the new features where I opted to get out the new features first.</p> 
+       <p>The good news is that the new design is next on my list, once the new features have been put on the main site. My goal is it to have it implemented before the end of the year.</p> 
+       <h4>Feedback</h4> 
+       <p>I hope you find the new caniuse.com features useful in your web development/design work. If something on the beta site’s not working right please <a href="https://github.com/fyrd/caniuse/issues">file an issue</a> (use “beta site” tag) so I can fix it before pushing the new features to the main site. Thanks!</p> 
+      </div> 
+      <p class="postmetadata"> Part of the <a href="http://a.deveria.com/category/geeky/web/" title="View all posts in Web development" rel="category tag">Web development</a> series. | <span>Comments Off</span></p> 
+     </article> 
+     <article id="post-344"> 
+      <h2><a href="http://a.deveria.com/2011/adobe/" rel="bookmark" title="Permanent Link to Adobe">Adobe</a></h2> <small>May 18th, 2011 <!-- by Alexis Deveria --></small> 
+      <div class="entry"> 
+       <p><img src="images/adobe_logo.png" width="152" height="148" alt="Adobe logo" class="alignright"><br> I’m delighted to announce that I will be working for Adobe, starting this June. Details to follow at some later point. <img src="http://a.deveria.com/wordpress/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley"> </p> 
+      </div> 
+      <p class="postmetadata">Tags: <a href="http://a.deveria.com/tag/adobe/" rel="tag">adobe</a><br> Part of the <a href="http://a.deveria.com/category/geeky/" title="View all posts in Geeky" rel="category tag">Geeky</a>, <a href="http://a.deveria.com/category/personal/" title="View all posts in Personal" rel="category tag">Personal</a> series. | <a href="http://a.deveria.com/2011/adobe/#comments" title="Comment on Adobe">7 Comments »</a></p> 
+     </article> 
+     <article id="post-286"> 
+      <h2><a href="http://a.deveria.com/2010/big-when-can-i-use-update/" rel="bookmark" title="Permanent Link to Big “When Can I Use” update!">Big “When Can I Use” update!</a></h2> <small>November 24th, 2010 <!-- by Alexis Deveria --></small> 
+      <div class="entry"> 
+       <p>UPDATE: The Android 2.2 browser has now also been included.</p> 
+       <p>I’m happy to announce a number of new changes to <a href="http://caniuse.com">caniuse.com</a>, providing all sorts of new information for your feature support needs:</p> 
+       <h3>Mobile browser information</h3> 
+       <p><img class="alignright" src="/images/mobile_stats.png" alt="Preview of mobile browser columns">The most popular WCIU request has been to add tables for support for mobile web browsers. This is now available together with the desktop browsers, including for now: iOS (iPhone/iPad/iPod touch) browsers, Opera Mini, Opera Mobile <ins datetime="2010-11-24T16:19:10+00:00">and the Android browser</ins>. These are known to be the most popular mobile browsers, so I thought I’d start with them. You can view each type as a set by using the URL <a href="http://caniuse.com/#agents=desktop">caniuse.com/#agents=desktop</a> or <a href="http://caniuse.com/#agents=mobile">caniuse.com/#agents=mobile</a>. In the future more mobile browsers are likely to be added, with the grade A browsers on <a href="http://jquerymobile.com/gbs/">this chart</a> having priority. </p> 
+       <h3>Browser usage statistics</h3> 
+       <p><img class="alignright" src="/images/user_stats.jpg" alt="Preview of global usage statistics">If you’d like to know just what percentage of users can use a given feature, you can now get a rough idea from the “Global user stats” displayed in the upper-right hand corner of a feature. Of course your audience may be very different, so this should just be used as a guide. Mobile browser statistics are not currently included, but hopefully I can find some way to include them in the future.</p> 
+       <h3>Single feature pages</h3> 
+       <p>Each feature has its own non-hash URL now, (i.e. <a href="http://caniuse.com/webworkers">caniuse.com/webworkers</a>) which is useful when sharing a feature table with others or looking up a feature quickly. These pages are designed to load quickly, with a link back to their interactive versions.</p> 
+       <h3>Search from address field</h3> 
+       <p>This previously existing feature has now been improved: Type in your query directly after http://caniuse.com/ and you will be directed either to the related feature page or (if multiple results are found) to the search results page. For example, <a href="http://caniuse.com/corner">caniuse.com/corner</a> will redirect you to the <a href="http://caniuse.com/border-radius">caniuse.com/border-radius</a> page.</p> 
+       <h3>Feature index</h3> 
+       <p><img class="alignright" src="/images/feat_index.png" alt="Preview of feature index">A full overview of all features mentioned on WCIU listed by category is now available by clicking on the big “Index” tab. The same overview is available on each single feature page too.</p> 
+       <h3>Feedback buttons</h3> 
+       <p>Each feature now includes a “Feedback” button, which you can use to quickly send me a correction/link suggestion, etc.</p> 
+       <h3>More browser features</h3> 
+       <p>Five new features have been added:</p> 
+       <ul> 
+        <li><a href="http://caniuse.com/css-opacity">CSS3 Opacity</a></li> 
+        <li><a href="http://caniuse.com/form-validation">HTML5 Form validation</a></li> 
+        <li><a href="http://caniuse.com/history">Session history management</a></li> 
+        <li><a href="http://caniuse.com/json">JSON parsing</a></li> 
+        <li><a href="http://caniuse.com/classlist">classList property (DOMTokenList)</a></li> 
+       </ul> 
+       <p>Also, thanks to the site’s restructuring, I plan on adding many more features in the future.</p> 
+       <h3>Bug fixes and minor improvements</h3> 
+       <p>I have fixed a number of bugs related to the working of the option checkboxes and URL hash, so things should work more as you’d expect them to. A number of links/notes/descriptions have also been updated. I’ve also added a “Three versions back” era (hidden by default) in case you need to go back even further in time.</p> 
+       <p>So that’s it! The remaining request I’ve had is for a public API, which is something I’m still looking into but should be in my next big update.</p> 
+       <p>Enjoy the new features, and let me know if you run into any bugs or mistakes.</p> 
+      </div> 
+      <p class="postmetadata">Tags: <a href="http://a.deveria.com/tag/android/" rel="tag">Android</a>, <a href="http://a.deveria.com/tag/css3/" rel="tag">CSS3</a>, <a href="http://a.deveria.com/tag/html-5/" rel="tag">HTML 5</a>, <a href="http://a.deveria.com/tag/ios/" rel="tag">iOS</a>, <a href="http://a.deveria.com/tag/iphone/" rel="tag">iPhone</a>, <a href="http://a.deveria.com/tag/mobile/" rel="tag">mobile</a>, <a href="http://a.deveria.com/tag/multiple-browser-support/" rel="tag">multiple browser support</a>, <a href="http://a.deveria.com/tag/web-standards/" rel="tag">Web standards</a>, <a href="http://a.deveria.com/tag/when-can-i-use/" rel="tag">when can i use</a><br> Part of the <a href="http://a.deveria.com/category/geeky/web/" title="View all posts in Web development" rel="category tag">Web development</a> series. | <a href="http://a.deveria.com/2010/big-when-can-i-use-update/#comments" title="Comment on Big “When Can I Use” update!">13 Comments »</a></p> 
+     </article> 
+     <article id="post-280"> 
+      <h2><a href="http://a.deveria.com/2010/svg-edit-2-4-released/" rel="bookmark" title="Permanent Link to SVG-Edit 2.4 released">SVG-Edit 2.4 released</a></h2> <small>January 11th, 2010 <!-- by Alexis Deveria --></small> 
+      <div class="entry"> 
+       <p>Apologies for the lack of blog updates, hopefully this big one will make up for the lack of news.</p> 
+       <p>Today, <a href="http://svg-edit.googlecode.com">SVG-Edit 2.4</a> was released. It’s a free web-based vector graphics editor that uses only open web technologies to operate, making it work on all modern web browsers. The 2.4 version (code named Arbelos) introduces powerful new tools including the ability to zoom, make curved paths, and organize shapes using groups and layers, as well as many other smaller features.</p> 
+       <p>Since the editor runs directly from the browser, you can give it a whirl right now just by <a href="http://svg-edit.googlecode.com/svn/branches/2.4/editor/svg-editor.html">visiting the demo page</a>. If you’d like to learn more about it first, feel free to watch <a href="http://blog.codedread.com">Jeff Schiller</a>‘s excellent <a href="http://www.youtube.com/watch?v=ZJKmEI06YiY">intro video</a> (v 2.2), as well as the <a href="http://www.youtube.com/watch?v=zpC7b1ZJvvM">first</a> and <a href="http://www.youtube.com/watch?v=mDzZEoGUDe8">second</a> parts of the new features in 2.4.</p> 
+       <p>As a project that uses HTML, CSS, SVG, JavaScript and the <a href="jquery.com">jQuery library</a>, it’s been the perfect project for me to contribute to. I’ve learned a lot of new things about these technologies, and got my first experience in working with others on a true open source project. I’m very grateful to Jeff for inviting me to help out on the project, and for recently allowing me to be one of the project owners of SVG-Edit. I’d also like to thank our lead tester <a href="http://vertex.corpsmoderne.net/main.php?g2_itemId=114">wormsxulla</a> both for filing so many issues, as well as for attracting translators willing to help translate SVG-Edit into eight different languages.</p> 
+       <p>I hope SVG-Edit provides people with a fast and easy to use tool to create their SVG images without requiring an installation process. Please let me or anyone else from the project know if you <a href="http://code.google.com/p/svg-edit/issues/list">find any bugs</a>, have any suggestions or would like to contribute. Thanks!</p> 
+      </div> 
+      <p class="postmetadata">Tags: <a href="http://a.deveria.com/tag/svg/" rel="tag">SVG</a>, <a href="http://a.deveria.com/tag/vector-graphics/" rel="tag">vector graphics</a>, <a href="http://a.deveria.com/tag/web-application/" rel="tag">web application</a>, <a href="http://a.deveria.com/tag/web-standards/" rel="tag">Web standards</a><br> Part of the <a href="http://a.deveria.com/category/geeky/web/" title="View all posts in Web development" rel="category tag">Web development</a> series. | <a href="http://a.deveria.com/2010/svg-edit-2-4-released/#comments" title="Comment 

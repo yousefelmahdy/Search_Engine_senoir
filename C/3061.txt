@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en"> 
+ <head class="sans-serif"> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="baidu-site-verification" content="KeThzeyMOr"> 
+  <meta name="baidu-site-verification" content="code-NIlrS7gNhx"> 
+  <title>Enhancing privacy-focused Web Analytics to better meet your metrics needs</title> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/themes/light.css"> 
+  <link rel="stylesheet" type="text/css" href="/assets/built/index.css?v=20d6e21a3c"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0.16/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0.16/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0.16/favicon-16x16.png"> 
+  <link rel="mask-icon" href="/favicon_package_v0.16/safari-pinned-tab.svg" color="#f78100"> 
+  <meta name="msapplication-TileColor" content="#da532c"> 
+  <meta name="theme-color" content="#ffffff"> 
+  <script type="text/javascript" src="/assets/built/index.js?v=20d6e21a3c"></script> 
+  <script src="/assets/js/check-for-tex.js" defer></script> 
+  <meta name="description" content="Last December we opened up our brand new privacy-first Web Analytics platform to everyone. Today, we’re excited to announce the release of three of the most requested features: adding multiple websites to an account, supporting Single-page Applications (SPA) as well as showing Core Web Vitals in Web Analytics."> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+  <link rel="canonical" href="https://blog.cloudflare.com/enhancing-privacy-focused-web-analytics-to-better-meet-your-metrics-needs/"> 
+  <meta name="referrer" content="no-referrer-when-downgrade"> 
+  <meta property="og:site_name" content="The Cloudflare Blog"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Enhancing privacy-focused Web Analytics to better meet your metrics needs"> 
+  <meta property="og:description" content="Today, we’re excited to announce the release of three of the most requested features: adding multiple websites to an account, supporting Single-page Applications (SPA) as well as showing Core Web Vitals in Web Analytics."> 
+  <meta property="og:url" content="https://blog.cloudflare.com/enhancing-privacy-focused-web-analytics-to-better-meet-your-metrics-needs/"> 
+  <meta property="og:image" content="https://blog.cloudflare.com/content/images/2021/03/facebook-link-image-8.png"> 
+  <meta property="article:published_time" content="2021-03-15T12:00:00.000Z"> 
+  <meta property="article:modified_time" content="2021-04-23T10:27:09.000Z"> 
+  <meta property="article:tag" content="Privacy"> 
+  <meta property="article:tag" content="Web Analytics"> 
+  <meta property="article:tag" content="Analytics"> 
+  <meta property="article:publisher" content="https://www.facebook.com/cloudflare"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Enhancing privacy-focused Web Analytics to better meet your metrics needs"> 
+  <meta name="twitter:description" content="Today, we’re excited to announce the release of three of the most requested features: adding multiple websites to an account, supporting Single-page Applications (SPA) as well as showing Core Web Vitals in Web Analytics."> 
+  <meta name="twitter:url" content="https://blog.cloudflare.com/enhancing-privacy-focused-web-analytics-to-better-meet-your-metrics-needs/"> 
+  <meta name="twitter:image" content="https://blog.cloudflare.com/content/images/2021/03/twitter-shared-link-9.png"> 
+  <meta name="twitter:label1" content="Written by"> 
+  <meta name="twitter:data1" content="Marc Lamik"> 
+  <meta name="twitter:label2" content="Filed under"> 
+  <meta name="twitter:data2" content="Privacy, Web Analytics, Analytics"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <meta name="twitter:creator" content="@marclamik"> 
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "The Cloudflare Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg",
+            "width": 109,
+            "height": 40.5
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Marc Lamik",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog-cloudflare-com-assets.storage.googleapis.com/2020/09/unnamed-2.jpg",
+            "width": 1974,
+            "height": 1974
+        },
+        "url": "https://blog.cloudflare.com/author/marc-lamik/",
+        "sameAs": [
+            "https://twitter.com/marclamik"
+        ]
+    },
+    "headline": "Enhancing privacy-focused Web Analytics to better meet your metrics needs",
+    "url": "https://blog.cloudflare.com/enhancing-privacy-focused-web-analytics-to-better-meet-your-metrics-needs/",
+    "datePublished": "2021-03-15T12:00:00.000Z",
+    "dateModified": "2021-04-23T10:27:09.000Z",
+    "image": "https://blog.cloudflare.com/content/images/2021/03/image2-9.png",
+    "keywords": "Privacy, Web Analytics, Analytics",
+    "description": "Today, we’re excited to announce the release of three of the most requested features: adding multiple websites to an account, supporting Single-page Applications (SPA) as well as showing Core Web Vitals in Web Analytics.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.cloudflare.com/"
+    }
+}
+    </script> 
+  <meta name="generator" content="Ghost 3.5"> 
+  <link rel="alternate" type="application/rss+xml" title="The Cloudflare Blog" href="https://blog.cloudflare.com/rss/"> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','cfDataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> <!-- Google Optimize --> 
+  <script src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script> 
+  <meta name="msvalidate.01" content="CF295E1604697F9CAD18B5A232E871F6"> 
+  <meta class="swiftype" name="language" data-type="string" content="en"> <!--<script src="/assets/js/index.js"></script>--> 
+  <script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async></script> 
+  <script>
+var trackRecruitingLink = function(role, url) {
+   ga('send', 'event', 'recruiting', 'jobscore-click', role, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script> 
+  <script type="text/javascript">
+	(function() {
+		var didInit = false;
+		function initMunchkin() {
+			if(didInit === false) {
+				didInit = true;
+				Munchkin.init('713-XSC-918');
+			}
+		}
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = '//munchkin.marketo.net/munchkin.js';
+		s.onreadystatechange = function() {
+			if (this.readyState == 'complete' || this.readyState == 'loaded') {
+				initMunchkin();
+			}
+		};
+		s.onload = initMunchkin;
+		document.getElementsByTagName('head')[0].appendChild(s);
+		})();
+</script> 
+  <script>
+var HTMLAttrToAdd = document.querySelector("html");
+HTMLAttrToAdd.setAttribute("lang", "en");
+</script> 
+  <style>
+    table {
+        background-color: transparent;
+    }
+    td {
+		padding: 5px 1em;
+    }
+    pre {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+</style> <!-- Cloudflare Web Analytics --> 
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;f446eacb44504e50864bad7c47ffa9e8&quot;}"></script> <!-- End Cloudflare Web Analytics --> 
+ </head> 
+ <body id="main-body" class="post-template tag-privacy tag-web-analytics tag-analytics sans-serif"> 
+  <div class="site-wrapper"> 
+   <header class="flex flex-row flex-wrap justify-between items-end mw8 center mv3 pl3 pr2"> 
+    <div class="w-100 flex items-end justify-between justify-start-l"> 
+     <div class="w-100 tr"> <span class="dn di-l"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" class="f1 gray4 no-underline underline-hover">Contact Sales: </a> <a href="tel:+18889935273" class="f1 gray4 no-underline underline-hover">+1 (888) 274-3482</a> </span> 
+     </div> 
+    </div> 
+    <div class="w-100 w-50-l flex items-end justify-between justify-start-l"> <a href="https://blog.cloudflare.com" class="header-logo mr4"> <img src="https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg" alt="The Cloudflare Blog" class="header-logo"> </a> 
+     <h2 class="mt0 mb1"> <a href="/" class="fw5 f5 gray3 no-underline"> <span class="dn di-l">The Cloudflare Blog</span> </a> </h2> 
+    </div> 
+    <div class="w-100 w-50-l dn db-l"> 
+     <div class="w-100 tr mkto-sub-message"> 
+      <p class="f2">Thanks for being here, come back soon. Get notified of new posts:</p> 
+     </div> 
+     <div class="w-100 tr"> 
+      <script src="//app-ab13.marketo.com/js/forms2/js/forms2.min.js"></script> 
+      <div class="marketo-form-container"> 
+       <form id="mktoForm_1653"></form> 
+      </div> 
+      <script>
+                MktoForms2.loadForm("//app-ab13.marketo.com", "713-XSC-918", 1653, function(form) {
+                    document.querySelectorAll('#mktoForm_1653 .mktoEmailField')[0].placeholder = "Email Address";
+
+                    form.onSuccess(function(vals, thanksURL){
+                        // Hide form and show success msg
+                        document.getElementById("mktoForm_1653").style.display = "none";
+                        document.getElementsByClassName("mkto-sub-message")[0].style.display = "none";
+
+                        document.getElementsByClassName("js-form-success-msg")[0].style.display = "block";
+                        return false;
+                    });
+                });
+            </script> 
+     </div> 
+     <div class="w-100 tr dn js-form-success-msg"> 
+      <p class="f2">Subscription confirmed. Thank you for subscribing!</p> 
+     </div> 
+    </div> 
+   </header> 
+   <nav id="nav" class="w-100 bb b--black-10 z-1"> 
+    <div id="desktop-nav-items-container" class="flex flex-row flex-wrap justify-between items-center mw8 center mv3 mv0-l"> 
+     <div class="nav-item nav-item-desktop ml3 mr2 dn db-l pv3" data-tag="product-news"> <a href="/tag/product-news/" class="no-underline gray1 f2 fw5 pv3">Product News</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="speed-and-reliability"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f2 fw5 pv3">Speed &amp; Reliability</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="security"> <a href="/tag/security/" class="no-underline gray1 f2 fw5 pv3">Security</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="serverless"> <a href="/tag/serverless/" class="no-underline gray1 f2 fw5 pv3">Serverless</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="zero-trust"> <a href="/tag/zero-trust/" class="no-underline gray1 f2 fw5 pv3">Zero Trust</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="developers"> <a href="/tag/developers/" class="no-underline gray1 f2 fw5 pv3">Developers</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="deep-dive"> <a href="/tag/deep-dive/" class="no-underline gray1 f2 fw5 pv3">Deep Dive</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop ml2 mr3 dn db-l pv3" data-tag="life-at-cloudflare"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f2 fw5 pv3">Life @Cloudflare</a> 
+     </div> <a href="/search/"><img src="/assets/images/magnifier.svg?v=20d6e21a3c" class="js-search-box-trigger mw2 pointer ph3 ph2-l"> </a> 
+     <img src="/assets/images/hamburger.svg?v=20d6e21a3c" class="w2 pointer js-mobile-nav-trigger ph3 db dn-l"> 
+    </div> 
+    <div class="js-mobile-nav-container dn"> 
+     <div class="flex flex-column flex-wrap bg-gray9 o-95 absolute w-100 ph3 z-1"> 
+      <div class="pv3 ph2"> <a href="/tag/product-news/" class="no-underline gray1 f4 fw7">Product News</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f4 fw7">Speed &amp; Reliability</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/security/" class="no-underline gray1 f4 fw7">Security</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/serverless/" class="no-underline gray1 f4 fw7">Serverless</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/zero-trust/" class="no-underline gray1 f4 fw7">Zero Trust</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/developers/" class="no-underline gray1 f4 fw7">Developers</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/deep-dive/" class="no-underline gray1 f4 fw7">Deep Dive</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f4 fw7">Life @Cloudflare</a> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+   <main id="post" class="flex flex-row flex-wrap items-center justify-center pt2 pt4-l"> 
+    <article class="post-full mw-100 ph3 ph0-l fs-20px post tag-privacy tag-web-analytics tag-analytics "> 
+     <h1 class="f6 f7-l fw4 gray1 pt1 pt3-l mb1">Enhancing privacy-focused Web Analytics to better meet your metrics needs</h1> 
+     <p class="f3 fw5 gray5 db di-l mt2" localize datetime="2021-03-15T12:00:00Z">Loading...</p> 
+     <noscript> 
+      <p class="f3 fw5 gray5 db di-l mt2">March 15, 2021 12:00PM</p> 
+     </noscript> 
+     <ul class="flex flex-wrap pl0 mt4"> 
+      <li class="list flex items-center ml0 pl0 pb1"> <a href="/author/marc-lamik/" class="static-avatar pr1"> <img class="author-profile-image h2 w2 br-100 mr2" src="https://blog-cloudflare-com-assets.storage.googleapis.com/2020/09/unnamed-2.jpg" alt="Marc Lamik"> </a> 
+       <div class="author-name-tooltip"> <a href="/author/marc-lamik" class="fw5 f3 no-underline black mr3">Marc Lamik</a> 
+       </div> </li> 
+      <li class="list flex items-center ml0 pl0 pb1"> <a href="/author/young/" class="static-avatar pr1"> <img class="author-profile-image h2 w2 br-100 mr2" src="https://blog-cloudflare-com-assets.storage.googleapis.com/2019/09/0ohSxwbVTeKvwCMqQJ6u_1204a20b3d1d96bba523a6a2a5fa3cd73bd4fe59240a27ad6eb8c064c6792446.png" alt="Young Park"> </a> 
+       <div class="author-name-tooltip"> <a href="/author/young" class="fw5 f3 no-underline black mr3">Young Park</a> 
+       </div> </li> 
+     </ul> 
+     <section class="post-full-content"> 
+      <div class="post-content lh-copy gray1"> 
+       <figure class="kg-card kg-image-card">
+        <img src="https://blog.cloudflare.com/content/images/2021/03/image2-8.png" class="kg-image">
+       </figure>
+       <p>Last December we opened up our brand new privacy-first Web Analytics platform to everyone. Today, we’re excited to announce the release of three of the most requested features: adding multiple websites to an account, supporting Single-page Applications (SPA) as well as showing Core Web Vitals in Web Analytics.</p>
+       <h3 id="bringing-privacy-first-analytics-to-everyone">Bringing privacy-first analytics to everyone</h3>
+       <p>Since we launched two months ago, we’ve received a lot of feedback from our users. We are really happy that we are able to provide our privacy-first analytics to so many of you.</p>
+       <p>Popular analytics vendors have business models driven by ad revenue. Using them implies a bargain: they track visitor behavior and create buyer profiles to retarget your visitors with ads; in exchange, you get free analytics.</p>
+       <p>Our mission is to help build a better Internet, and part of that is to deliver essential web analytics to everyone with a website without compromising user <a href="https://www.cloudflare.com/learning/privacy/what-is-data-privacy/">privacy</a>. We’ve never been interested in tracking users or selling advertising. We don’t want to know what you do on the Internet — it’s not our business.</p>
+       <h3 id="you-now-can-measure-multiple-sites">You now can measure multiple sites</h3>
+       <p>When we launched Web Analytics, each account was only able to measure one website. We are happy to announce that all users can now add up to 10 websites.</p>
+       <p>Add one or more new sites via the Cloudflare Dashboard by selecting "Add site" in Quick Actions.</p>
+       <figure class="kg-card kg-image-card">
+        <img src="https://blog.cloudflare.com/content/images/2021/03/image4-10.png" class="kg-image">
+       </figure>
+       <p>For measuring multiple subdomains (a.example.com and b.example.com) there are two options:</p>
+       <ol>
+        <li>Add the root domain (example.com) to Web Analytics and add the same JavaScript snippet on all subdomains (a.example.com and b.example.com)</li>
+        <li>Add the subdomains separately using multiple sites. Here you have to add separate snippets.</li>
+       </ol>
+       <p>We use the hostname to validate the request, so remember that you can only use the JavaScript snippet if both the configured and actual hostnames match.</p>
+       <h3 id="you-can-see-the-analytics-for-all-your-websites-sites-in-one-place">You can see the analytics for all your websites sites in one place</h3>
+       <figure class="kg-card kg-image-card">
+        <img src="https://lh6.googleusercontent.com/jwLOrKWVvHHkUeNKeJNdtVc416SWL2cHxKB7kNjUxsSfU8Y76VYRycQctec4CPf-WnTzRyP1XA-WVWTdNkVgXqspeT7pFf3dNvUjmOrF-ukWV-0bMv0TmR4ZMppwFdUzItwuTir3" class="kg-image">
+       </figure>
+       <p>When we talked to customers about the multiple site feature, we got the feedback that it is very important to add all sites to Web Analytics and be able to track them. But they also said that it would be even more powerful to have the option to see analytics for all your sites combined in one place.</p>
+       <p>We listened. If you select "View Web Analytics for all sites’ on the Web Analytics overview page, you can now see all your sites listed and apply filters to them using site tags.</p>
+       <h3 id="what-is-different-for-single-page-applications-spa-">What is different for Single Page Applications (SPA)?</h3>
+       <p>With frameworks such as Angular, React, or Vue.js being very popular, one of the most requested features for Web Analytics was supporting single-page applications (<a href="https://en.wikipedia.org/wiki/Single-page_application">SPA</a>).</p>
+       <p>SPAs work differently from a standard web application or website because they don't load a new page every time there's user interaction. Instead, they dynamically rewrite the current web page with new data retrieved from the web server.</p>
+       <p>Since we've previously collected metrics only when the page load event is triggered, we had to change the transmission and interpretation of the signals from our JavaScript snippet to include sending metrics whenever there are any route changes made by the application or the website.</p>
+       <p>We are happy to announce that we successfully implemented SPA support and enabled it for all customers.</p>
+       <h3 id="how-we-are-supporting-spas">How we are supporting SPAs</h3>
+       <p>You might have noticed that some websites keep the # in the URL whenever you navigate their webpages. You would see URLs like the following:</p><!--kg-card-begin: markdown-->
+       <pre><code>https://cloudflare.com/#blog
+https://cloudflare.com/#marketing
+</code></pre> <!--kg-card-end: markdown-->
+       <p>The portion separated by the # is called a fragment, and based on the fragment changes, SPAs dynamically pull the resources to rewrite the webpage. That is how it was done before the HTML 5 History API was introduced and widely used. These days most SPA libraries/frameworks use HTML 5 History API to keep your UI in sync with the URL instead of using # (although, some still support #-based routers). In most cases you won’t easily notice a SPA by looking at the URL path.</p>
+       <p>To support analytics for SPAs, we implemented sending additional payloads to the beacon endpoint, which collects the data for analytics, whenever we detect any changes to the state of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/History/state">History API</a>. The JavaScript snippet overrides the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/History/pushState">pushState</a></strong> method and listens to the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate">onpopstate</a> </strong>event. By tracking the History API's state, you'll now see the route changes in SPAs within the Web Analytics dashboard.</p>
+       <p>Some older SPA libraries/frameworks still support hash-based routers. If your application or website is using a hash-based router, unfortunately it is not yet supported in Web Analytics. However, this is our initial launch to support SPAs, so stay tuned for any improvements and updates.</p>
+       <h3 id="how-can-i-add-my-single-page-application-to-web-analytics">How can I add my Single Page Application to Web Analytics?</h3>
+       <p>SPA support is automatically enabled for all domains in Web Analytics.</p>
+       <h3 id="core-web-vitals-are-now-available-for-every-web-analytics-customer">Core Web Vitals are now available for every Web Analytics customer</h3>
+       <p>Core Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.</p>
+       <p>In September 2020, we introduced <a href="https://blog.cloudflare.com/start-measuring-web-vitals-with-browser-insights/">Web Vitals</a> for customers using Browser Insights, and many customers love getting those unique insights into their website performance. But we were also aware that Browser Insights wasn't available to all our Web Analytics customers simply because they're not able to onboard to the rest of Cloudflare for Infrastructure. Specifically, they're not able to change their DNS servers.</p>
+       <p>So today, we're introducing Core Web Vitals to Web Analytics as well.<br><br>You can see the Core Web Vitals metrics in the same dashboard as Visits and Page Views and check how healthy your website performance is.</p>
+       <figure class="kg-card kg-image-card">
+        <img src="https://blog.cloudflare.com/content/images/2021/03/image1-14.png" class="kg-image">
+       </figure>
+       <h3 id="what-s-next">What’s next</h3>
+       <p>This is just the start for our privacy-first Web Analytics.</p>
+       <p>We’re excited to integrate more closely with the rest of Cloudflare and give customers even more detailed stats about performance and security (not just traffic). We’re also hoping to make our analytics even more powerful as a standalone product by building support for alerts, real-time updates, and more.</p>
+       <p>Please let us know if you have any questions or feedback, and happy measuring!</p> 
+      </div> 
+     </section> <a href="/tag/privacy/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Privacy</a> <a href="/tag/web-analytics/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Web Analytics</a> <a href="/tag/analytics/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Analytics</a> 
+    </article> 
+   </main> 
+   <div class="ph3 pv3"> 
+    <div class=" flex flex-row flex-wrap mw7 center"> 
+     <div class="w-100 bt b--gray8"> 
+      <p class="black fw5 f4 mt4">Follow on Twitter</p> 
+     </div> 
+     <div class="w-100 pb2"> <span>Marc Lamik</span> <span class="ph1">|</span><a href="https://twitter.com/@marclamik" class="no-underline">@marclamik </a> 
+     </div> 
+     <div class="w-100 pb2"> <span>Cloudflare</span> <span class="ph2">|</span><a href="https://twitter.com/Cloudflare" class="no-underline">Cloudflare</a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="pv4 ph3 mw7 center" id="social-butto

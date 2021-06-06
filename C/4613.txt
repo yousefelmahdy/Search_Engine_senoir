@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <meta content="default-src 'self' https: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:; style-src 'self' 'unsafe-inline' https: http:; object-src https: http:; base-uri 'self'; connect-src 'self' https: http: wss: ws:; frame-src 'self' https: http:; img-src 'self' https: http: data:; manifest-src 'self'; media-src 'self' https: http:; worker-src 'self' https: http:;" http-equiv="Content-Security-Policy"> 
+  <script data-bl="j-no-m-no" data-blockingmode="auto" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" data-georegions="{'region':'US-06','cbid':'c2c1d015-6fa2-487d-aaf3-3a961d8a1984'}" id="Cookiebot" src="https://consent.cookiebot.com/uc.js"></script> 
+  <script>
+window.dataLayer = window.dataLayer || []
+</script> 
+  <script>document.documentElement.className = 'html--js'</script> 
+  <script async src="//cdn.bizible.com/scripts/bizible.js"></script> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37019925-1', 'auto', {allowLinker: true});
+ga('require', 'GTM-WC3ZR2P');
+</script> 
+  <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJXWQL');
+</script> 
+  <meta content="index, follow" name="robots"> 
+  <script data-cookieconsent="ignore">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+_st('install','Z4n7msKyctXXfJs66EKx','2.0.0');
+</script> 
+  <title>
+Set up Automated CI Systems with GitLab
+|
+GitLab
+</title> 
+  <meta content="Learn why GitLab's integrated CI pipelines help your team build, test, deploy, and monitor your code." name="description"> 
+  <meta content="Learn why GitLab's integrated CI pipelines help your team build, test, deploy, and monitor your code." name="twitter:description"> 
+  <meta content="Learn why GitLab's integrated CI pipelines help your team build, test, deploy, and monitor your code." property="og:description"> 
+  <meta content="GitLab" property="og:site_name"> 
+  <meta content="Set up Automated CI Systems with GitLab" property="og:title"> 
+  <meta content="https://gitlab.com/gitlab-com/www-gitlab-com/" property="og:repo"> 
+  <meta content="https://gitlab.com/" property="og:instance"> 
+  <meta content="gitlab-com/www-gitlab-com/" property="og:path"> 
+  <meta content="stages-devops-lifecycle/continuous-integration/index.html.haml" property="og:relative_path"> 
+  <meta content="sites/uncategorized/" property="og:monorepo_site_path_fragment"> 
+  <meta content="article" property="og:type"> 
+  <meta content="https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/" property="og:url"> 
+  <meta content="https://about.gitlab.com/images/opengraph/gitlab-blog-cover.png" property="og:image"> 
+  <meta content="https://about.gitlab.com/images/opengraph/gitlab-blog-cover.png" name="twitter:image"> 
+  <meta content="summary_large_image" name="twitter:card"> 
+  <meta content="@GitLab" name="twitter:site"> 
+  <meta content="Set up Automated CI Systems with GitLab" name="twitter:title"> 
+  <meta content="@GitLab" name="twitter:creator"> 
+  <link href="/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"> 
+  <link href="/all-releases.xml" rel="alternate" title="All Releases" type="application/atom+xml"> 
+  <link href="/security-releases.xml" rel="alternate" title="Security Releases" type="application/atom+xml"> 
+  <link href="/releases.xml" rel="alternate" title="Major Releases" type="application/atom+xml"> 
+  <link href="/ico/favicon.ico" rel="shortcut icon"> 
+  <link href="/ico/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png"> 
+  <link href="/ico/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png"> 
+  <link href="/ico/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"> 
+  <link href="/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"> 
+  <link href="/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"> 
+  <link href="/ico/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"> 
+  <link href="/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"> 
+  <link href="/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"> 
+  <link href="/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"> 
+  <link href="/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"> 
+  <link href="/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"> 
+  <link href="/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"> 
+  <link href="/ico/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"> 
+  <link href="/ico/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"> 
+  <meta content="#554488" name="msapplication-TileColor"> 
+  <meta content="/ico/mstile-144x144.png" name="msapplication-TileImage"> 
+  <meta content="/ico/browserconfig.xml" name="msapplication-config"> 
+  <link href="https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/" rel="canonical"> 
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700" rel="stylesheet"> 
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/tiny-slider.css" rel="stylesheet"> 
+  <link href="/stylesheets/styles.css" rel="stylesheet">
+  <link href="/stylesheets/highlight.css" rel="stylesheet"> 
+  <link href="/stylesheets/solutions2020.css" rel="stylesheet"> 
+  <link href="/stylesheets/bl-modal.css" rel="stylesheet"> 
+  <link href="/stylesheets/video-carousel.css" rel="stylesheet"> 
+  <link href="/stylesheets/slippers.css" rel="stylesheet"> 
+  <link href="/stylesheets/handbook.css" rel="stylesheet"> 
+  <link href="/stylesheets/navigation-helpers.css" rel="stylesheet"> 
+ </head> 
+ <body class="stages-devops-lifecycle stages-devops-lifecycle_continuous-integration stages-devops-lifecycle_continuous-integration_index " data-offset="90" data-spy="scroll" data-target=".qnav"> 
+  <noscript> <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-NJXWQL" style="display:none;visibility:hidden" width="0"></iframe> 
+  </noscript> 
+  <header class="navbar" id="main-nav" role="navigation"> 
+   <div class="navbar-left"> <a href="/" class="navbar-brand animated">
+     <svg height="36" viewbox="0 0 1231 342" xmlns="http://www.w3.org/2000/svg" class="nav-logo"> <g fill="none" fill-rule="evenodd"> 
+       <g fill="#8C929D" class="wordmark"> 
+        <path d="M764.367 94.13h-20.803l.066 154.74h84.155v-19.136h-63.352l-.066-135.603zM907.917 221.7c-5.2 5.434-13.946 10.87-25.766 10.87-15.838 0-22.22-7.797-22.22-17.957 0-15.354 10.637-22.678 33.332-22.678 4.255 0 11.11.472 14.655 1.18v28.586zm-21.51-93.787c-16.8 0-32.208 5.952-44.23 15.858l7.352 12.73c8.51-4.962 18.91-9.924 33.802-9.924 17.02 0 24.585 8.742 24.585 23.39v7.56c-3.31-.71-10.164-1.184-14.42-1.184-36.404 0-54.842 12.757-54.842 39.454 0 23.86 14.656 35.908 36.876 35.908 14.97 0 29.314-6.852 34.278-17.954l3.782 15.118h14.657v-79.14c0-25.04-10.874-41.815-41.84-41.815zM995.368 233.277c-7.802 0-14.657-.945-19.858-3.308v-71.58c7.093-5.908 15.84-10.16 26.95-10.16 20.092 0 27.893 14.174 27.893 37.09 0 32.6-12.53 47.957-34.985 47.957m8.742-105.364c-18.592 0-28.6 12.64-28.6 12.64V120.59l-.066-26.458H955.116l.066 150.957c10.164 4.25 24.11 6.613 39.24 6.613 38.768 0 57.442-24.804 57.442-67.564 0-33.783-17.26-56.227-47.754-56.227M538.238 110.904c18.438 0 30.258 6.142 38.06 12.285l8.938-15.477c-12.184-10.678-28.573-16.417-46.053-16.417-44.204 0-75.17 26.932-75.17 81.267 0 56.935 33.407 79.14 71.624 79.14 19.148 0 35.46-4.488 46.096-8.976l-.435-60.832V162.76h-56.734v19.135h36.167l.437 46.184c-4.727 2.362-13 4.252-24.11 4.252-30.73 0-51.297-19.32-51.297-60.006 0-41.34 21.275-61.422 52.478-61.422M684.534 94.13h-20.33l.066 25.988v89.771c0 25.04 10.874 41.814 41.84 41.814 4.28 0 8.465-.39 12.53-1.126v-18.245c-2.943.45-6.083.707-9.455.707-17.02 0-24.585-8.74-24.585-23.387v-61.895h34.04v-17.01H684.6l-.066-36.617zM612.62 248.87h20.33V130.747h-20.33v118.12zM612.62 114.448h20.33V94.13h-20.33v20.318z" /> 
+       </g> 
+       <path d="M185.398 341.13l68.013-209.322H117.39L185.4 341.13z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l-68.013-209.322h-95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M22.066 131.808l-20.67 63.61c-1.884 5.803.18 12.16 5.117 15.744L185.398 341.13 22.066 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M22.066 131.808h95.32L76.42 5.735c-2.107-6.487-11.284-6.487-13.39 0L22.065 131.808z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l68.013-209.322h95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M348.73 131.808l20.67 63.61c1.884 5.803-.18 12.16-5.117 15.744L185.398 341.13 348.73 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M348.73 131.808h-95.32L294.376 5.735c2.108-6.487 11.285-6.487 13.392 0l40.963 126.073z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+      </g> 
+     </svg> </a>
+    <div class="mobile-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+    </div> 
+   </div> 
+   <div class="navbar-right"> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="mobile-icons"> <button aria-label="Search" class="search-icon js-search-toggle" id="search-header" type="button"> <i class="fa fa-search"></i> </button> <button class="mobile-icon" id="mobile-icon"> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> </button> 
+   </div> 
+   <div class="display-none mobile-menu" id="mobile-menu"> <button class="exit-icon-container" id="exit-icon"> <img src="/images/icons/x.svg" class="exit-icon" alt="Gitlab x icon svg"> </button> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="search-box js-search-box"> <i class="fa fa-search search-box-icon"></i> 
+    <input class="search-input js-search st-header" placeholder="Search..."> <button aria-label="Close search" class="search-close js-search-toggle" type="button"> <i class="fa fa-times"></i> </button> 
+   </div> 
+  </header> 
+  <script src="/javascripts/mobile-menu.js"></script> 
+  <script src="/javascripts/libs/tweenmax.min.js"></script> 
+  <div class="container slp-container header-content"> 
+   <h1> GitLab Continuous Integration (CI) </h1> 
+   <h4> Outstanding source code exists. For teams and projects big and small, the proof is in the pipeline. </h4> <a class="btn cta-btn orange-light" href="/resources/ebook-single-app-cicd/">Get to know CI/CD</a> 
+  </div> 
+  <div class="container slp-container header-image"> 
+   <img alt="Image: version control" loading="lazy" src="/images/ci/gitlab-enterprise-panel-rapid-feedback.png"> 
+  </div> 
+  <div class="container slp-container solutions-blocks"> 
+   <div class="solutions-block solution-1"> 
+    <h2 class="title"> Seeing is believing </h2> 
+    <div class="subtitle">
+      Continuous integration (CI) delivers better software faster. 
+    </div> 
+    <div class="description">
+      Build, test, and deploy on day one with GitLab’s <a href="https://about.gitlab.com/stages-devops-lifecycle/continuous-delivery/">built-in CI/CD</a> and Auto DevOps. From scalable pipelines to integrated security—see it all in one tab, believe in a better workflow. 
+    </div> <a class="btn cta-btn orange-light" href="/resources/ebook-single-app-cicd/">Get to know CI/CD</a> 
+   </div> 
+   <div class="solutions-block image image-1"> 
+    <img alt="Image of collaboration" loading="lazy" src="/images/ci/gitlab-ci-2.png"> 
+   </div> 
+   <div class="solutions-block image image-2"> 
+    <img alt="Image of work process" loading="lazy" src="/images/ci/gitlab-ci-3.png"> 
+   </div> 
+   <div class="solutions-block solution-2"> 
+    <h2 class="title"> People-powered automation </h2> 
+    <div class="description"> <a href="https://about.gitlab.com/topics/ci-cd/">Continious integration (CI)</a> starts with you. You share new code in a merge request (MR), you trigger a pipeline. Build, test, and validate—GitLab does the rest. 
+    </div> 
+    <div class="description">
+      Continuous delivery (CD) puts your hard work into action, handing off CI-validated code to your application via structured deployment pipelines. 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container slp-container feature-cards"> 
+   <div class="feature-card"> 
+    <div class="icon"> 
+     <img alt="Code icon" loading="lazy" src="/images/ci/code-icon.svg"> 
+    </div> 
+    <h4 class="title"> See more coding </h4> 
+    <div class="description">
+      Merge happier developers with secure code. Forward-thinking tools like automated testing let teams focus more and debug less. Automated scans and tracking highlight security risks at the source for a faster fix. 
+    </div> 
+   </div> 
+   <div class="feature-card"> 
+    <div class="icon"> 
+     <img alt="Arrow icon" loading="lazy" src="/images/ci/uptime-icon.svg"> 
+    </div> 
+    <h4 class="title"> See more uptime </h4> 
+    <div class="description">
+      The sky’s the limit when everything’s up. User satisfaction and profits rely on the health of your app. Get real-time returns with continuous delivery (CD) monitoring tools that keep looking back so you can dream on. 
+    </div> 
+   </div> 
+   <div class="feature-card"> 
+    <div class="icon"> 
+     <img alt="Smile icon" loading="lazy" src="/images/ci/smile-icon.svg"> 
+    </div> 
+    <h4 class="title"> See more, together </h4> 
+    <div class="description">
+      One open DevOps platform for one team. One change? No problem. Collaborating is easy when everyone uses the same application to build, test, and validate. Developer, designer, admin—anyone can contribute at any time. 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container slp-container info-block"> 
+   <h2 class="title"> See more with less work </h2> 
+   <div class="description">
+     Log off and let GitLab’s CI/CD do the heavy lifting with automated workflows for compiling, testing, and staging. From jobs to issues, search it all from a single dashboard that doesn’t quit. We exist to help you work less. 
+   </div> <a class="btn cta-btn orange-light" href="https://about.gitlab.com/blog/2017/03/13/ci-cd-demo/">Watch demo</a> 
+  </div> 
+  <div class="container slp-container background-color"> 
+   <div class="grey-background"></div> 
+   <div class="resources"> 
+    <h2> Watch and Learn </h2> 
+    <div class="learn"> 
+     <div class="resource-block"> 
+      <div class="single-video-slider"> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/7dyJi0qZdo4/0.jpg" data-video-link="https://www.youtube.com/embed/7dyJi0qZdo4" data-video-title="GitOps &amp; Cloud Native - CI/CD Best Practices"> 
+        <img src="https://img.youtube.com/vi/7dyJi0qZdo4/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>GitOps &amp; Cloud Native - CI/CD Best Practices</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/1iXFbchozdY/0.jpg" data-video-link="https://www.youtube.com/embed/1iXFbchozdY" data-video-title="Demo: CI/CD with GitLab"> 
+        <img src="https://img.youtube.com/vi/1iXFbchozdY/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Demo: CI/CD with GitLab</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/0JCKe5lt1p4/0.jpg" data-video-link="https://www.youtube.com/embed/0JCKe5lt1p4" data-video-title="Why GitLab CI/CD? - 5 hacks to improve your CI/CD set-up!"> 
+        <img src="https://img.youtube.com/vi/0JCKe5lt1p4/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Why GitLab CI/CD? - 5 hacks to improve your CI/CD set-up!</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/ArS31CxneUA/0.jpg" data-video-link="https://www.youtube.com/embed/ArS31CxneUA" data-video-title="Commit Virtual 2020: How to Build a Compromise Resilient CI/CD"> 
+        <img src="https://img.youtube.com/vi/ArS31CxneUA/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Commit Virtual 2020: How to Build a Compromise Resilient CI/CD</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/os_TCMLePJw/0.jpg" data-video-link="https://www.youtube.com/embed/os_TCMLePJw" data-video-title="Commit Virtual 2020: Scientific Computing and Engineering Design Accelerated by CI:CD"> 
+        <img src="https://img.youtube.com/vi/os_TCMLePJw/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Commit Virtual 2020: Scientific Computing and Engineering Design Accelerated by CI:CD</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/ZLzHnVPPbW0/0.jpg" data-video-link="https://www.youtube.com/embed/ZLzHnVPPbW0" data-video-title="Commit San Francisco 2020: Enhance Your Kubernetes CI/CD Pipelines With GitLab &amp; Open Source"> 
+        <img src="https://img.youtube.com/vi/ZLzHnVPPbW0/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Commit San Francisco 2020: Enhance Your Kubernetes CI/CD Pipelines With GitLab &amp; Open Source</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/sPhh-gGlYdM/0.jpg" data-video-link="https://www.youtube.com/embed/sPhh-gGlYdM" data-video-title="Commit San Francisco 2020: Driving Cultural Change to Improve Software Development and CI/CD"> 
+        <img src="https://img.youtube.com/vi/sPhh-gGlYdM/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Commit San Francisco 2020: Driving Cultural Change to Improve Software Development and CI/CD</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/qy8A7Vp_7_8/0.jpg" data-video-link="https://www.youtube.com/embed/qy8A7Vp_7_8" data-video-title="GitLab for complex CI/CD: Robust, visible pipelines - Evening Session"> 
+        <img src="https://img.youtube.com/vi/qy8A7Vp_7_8/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>GitLab for complex CI/CD: Robust, visible pipelines - Evening Session</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/LMlMsbMTWUU/0.jpg" data-video-link="https://www.youtube.com/embed/LMlMsbMTWUU" data-video-title="GitLab for complex CI/CD: Robust, visible pipelines - Morning Session"> 
+        <img src="https://img.youtube.com/vi/LMlMsbMTWUU/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>GitLab for complex CI/CD: Robust, visible pipelines - Morning Session</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/sIegJaLy2ug/0.jpg" data-video-link="https://www.youtube.com/embed/sIegJaLy2ug" data-video-title="Getting started with GitLab CI/CD"> 
+        <img src="https://img.youtube.com/vi/sIegJaLy2ug/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Getting started with GitLab CI/CD</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/3gZCcrA0zW8/0.jpg" data-video-link="https://www.youtube.com/embed/3gZCcrA0zW8" data-video-title="Installing and using the GitLab Kubernetes Agent"> 
+        <img src="https://img.youtube.com/vi/3gZCcrA0zW8/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Installing and using the GitLab Kubernetes Agent</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/3gnCmiIdcyo/0.jpg" data-video-link="https://www.youtube.com/embed/3gnCmiIdcyo" data-video-title="CI/CD UX meeting - 2020-12-09"> 
+        <img src="https://img.youtube.com/vi/3gnCmiIdcyo/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>CI/CD UX meeting - 2020-12-09</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/GBQ4-vN9tvo/0.jpg" data-video-link="https://www.youtube.com/embed/GBQ4-vN9tvo" data-video-title="GitLab CI/CD Basics Demo with Sujeevan Vijayakumaran"> 
+        <img src="https://img.youtube.com/vi/GBQ4-vN9tvo/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>GitLab CI/CD Basics Demo with Sujeevan Vijayakumaran</h4> 
+       </div> 
+       <div class="video-item" data-target="#videoCarouselModal" data-toggle="modal" data-video-image="https://img.youtube.com/vi/6mAmH_-HCxg/0.jpg" data-video-link="https://www.youtube.com/embed/6mAmH_-HCxg" data-video-title="Commit Virtual 2020: Simple Cluster Deployments Using Nomad and GitLab CI:CD"> 
+        <img src="https://img.youtube.com/vi/6mAmH_-HCxg/0.jpg" class="video-photo" alt="Gitlab video photo jpg" loading="lazy"> 
+        <div class="play-btn"> <i class="fas fa-play play-icon"></i> 
+        </div> 
+        <h4>Commit Virtual 2020: Simple Cluster Deployments Using Nomad and GitLab CI:CD</h4> 
+       </div> 
+      </div> 
+      <div class="youtube-link"> <a href="https://youtube.com/playlist?list=PL05JrBw4t0Ko-mJZLo2uF3aQQuBfBaSKB">Explore GitLab’s CI YouTube Playlist ?</a> 
+      </div> 
+     </div> 
+     <div class="resource-block resource-links"> 
+      <div class="resource"> 
+       <div class="icon"> 
+        <img alt="Webcast icon" src="/images/ci/webcasts-icon.svg" style="max-width: 40px"> 
+       </div> 
+       <div class="text"> 
+        <h4 class="title"> Webcasts </h4> 
+        <div class="link"> <a href="/webcast/mastering-ci-cd/">Mastering continuous software development</a> <span class="arrow-head">?</span> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="resource"> 
+       <div class="icon"> 
+        <img alt="Whitepapers icon" src="/images/ci/whitepapers-icon.svg" style="max-width: 40px"> 
+       </div> 
+       <div class="text"> 
+        <h4 class="title"> Whitepapers </h4> 
+        <div class="link"> <a href="/resources/scaled-ci-cd/">Scaled continuous integration and delivery</a> <span class="arrow-head">?</span> 
+        </div> 
+        <div class="link"> <a href="/resources/ebook-single-app-cicd/">The benefits of single application CI/CD</a> <span class="arrow-head">?</span> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="resource"> 
+       <div class="icon"> 
+        <img alt="Case studies icon" src="/images/ci/casestudies-icon.svg" style="max-width: 40px"> 
+       </div> 
+       <div class="text"> 
+        <h4 class="title"> Case studies </h4> 
+        <div class="link"> <a href="/customers/cncf/">Cloud Native Computing Foundation (CNCF)</a> <span class="arrow-head">?</span> 
+        </div> 
+        <div class="link"> <a href="/blog/2019/02/14/verizon-customer-story/">Verizon</a> <span class="arrow-head">?</span> 
+        </div> 
+        <div class="link"> <a href="/blog/2017/06/07/continous-integration-ticketmaster/">Ticketmaster</a> <span class="arrow-head">?</span> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="resource"> 
+       <div class="icon"> 
+        <img alt="Reports icon" src="/images/ci/reports-icon.svg" style="max-width: 40px"> 
+       </div> 
+       <div class="text"> 
+        <h4 class="title"> Reports </h4> 
+        <div class="link"> <a href="/resources/forrester-wave-cloudnative-ci/">Voted a leader in The 2019 Forrester Wave Cloud-Native Continuous Integration Tools</a> <span class="arrow-head">?</span> 
+        </div> 
+        <div class="link"> <a href="/analysts/forrester-cdra20/">Voted as a Strong Performer in The Forrester Wave™ Continuous Delivery And Release Automation, Q2 2020</a> <span class="arrow-head">?</span> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="ask-us-anything"> 
+   <div class="u-padding-top-md"> 
+    <div class="container container2020"> 
+     <div class="row text-center cmp-cta-contact"> 
+      <div class="col-md-6 col-md-offset-3"> 
+       <div class="row"> 
+        <h3>Believe it</h3> 
+       </div> 
+       <div class="row"> 
+        <div class="col-md-12"> 
+         <p class="u-margin-top-xs u-margin-bottom-0">Get unlimited access to all GitLab features for 30 days. </p> 
+        </div> 
+       </div> 
+       <div class="row"> 
+        <div class="col-md-12"> <a class="btn cta-btn orange-light" href="/free-trial/">Start your free trial</a> <a class="btn cta-btn lavender" href="/sales/">Contact Sales</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/7dyJi0qZdo4" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/1iXFbchozdY" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/0JCKe5lt1p4" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/ArS31CxneUA" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/os_TCMLePJw" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/ZLzHnVPPbW0" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/sPhh-gGlYdM" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/qy8A7Vp_7_8" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal" type="button">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div aria-hidden="true" aria-labelledby="videoCarouselModalLabel" class="modal fade" id="videoCarouselModal" role="dialog" tabindex="-1"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <div class="modal-body" id="videoPlayer"> <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="carousel-modal-iframe" frameborder="0" height="333" loading="lazy" src="https://www.youtube.com/embed/LMlMsbMTWUU" srcdoc="" width="1109"></iframe> 
+     </div> 
+     <div class="modal-footer"> <button class="btn btn-secondary btn-close-modal" data-dismiss="modal

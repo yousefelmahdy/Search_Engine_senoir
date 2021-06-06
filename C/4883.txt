@@ -1,0 +1,324 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Requirements | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/ee/install/requirements.html"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/ee/install/requirements.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/ee/install/requirements.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/ee/install/requirements.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <ul class="breadcrumbs"> 
+     <li class="breadcrumb"><a href="/11.11/ee/README.html">GitLab Documentation</a> </li>
+     <li class="breadcrumb"><a href="/11.11/ee/install/README.html">Installation</a> </li>
+     <li class="breadcrumb">Requirements </li>
+    </ul> 
+    <div id="doc-nav" class="doc-nav"> <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> Requirements </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li> <a href="#operating-systems" id="markdown-toc-operating-systems">Operating Systems</a> 
+       <ul> 
+        <li><a href="#supported-unix-distributions" id="markdown-toc-supported-unix-distributions">Supported Unix distributions</a> </li>
+        <li><a href="#unsupported-unix-distributions" id="markdown-toc-unsupported-unix-distributions">Unsupported Unix distributions</a> </li>
+        <li><a href="#non-unix-operating-systems-such-as-windows" id="markdown-toc-non-unix-operating-systems-such-as-windows">Non-Unix operating systems such as Windows</a> </li>
+       </ul> </li>
+      <li><a href="#ruby-versions" id="markdown-toc-ruby-versions">Ruby versions</a> </li>
+      <li> <a href="#hardware-requirements" id="markdown-toc-hardware-requirements">Hardware requirements</a> 
+       <ul> 
+        <li><a href="#storage" id="markdown-toc-storage">Storage</a> </li>
+        <li><a href="#cpu" id="markdown-toc-cpu">CPU</a> </li>
+        <li><a href="#memory" id="markdown-toc-memory">Memory</a> </li>
+       </ul> </li>
+      <li> <a href="#database" id="markdown-toc-database">Database</a> 
+       <ul> 
+        <li> <a href="#postgresql-requirements" id="markdown-toc-postgresql-requirements">PostgreSQL Requirements</a> 
+         <ul> 
+          <li><a href="#additional-requirements-for-gitlab-geo" id="markdown-toc-additional-requirements-for-gitlab-geo">Additional requirements for GitLab Geo</a> </li>
+         </ul> </li>
+       </ul> </li>
+      <li><a href="#unicorn-workers" id="markdown-toc-unicorn-workers">Unicorn Workers</a> </li>
+      <li><a href="#redis-and-sidekiq" id="markdown-toc-redis-and-sidekiq">Redis and Sidekiq</a> </li>
+      <li><a href="#prometheus-and-its-exporters" id="markdown-toc-prometheus-and-its-exporters">Prometheus and its exporters</a> </li>
+      <li><a href="#gitlab-runner" id="markdown-toc-gitlab-runner">GitLab Runner</a> </li>
+      <li><a href="#supported-web-browsers" id="markdown-toc-supported-web-browsers">Supported web browsers</a> </li>
+     </ul> 
+     <h1 id="requirements">Requirements<a href="#requirements" title="Permalink" class="anchor"></a> </h1> 
+     <h2 id="operating-systems">Operating Systems<a href="#operating-systems" title="Permalink" class="anchor"></a> </h2> 
+     <h3 id="supported-unix-distributions">Supported Unix distributions<a href="#supported-unix-distributions" title="Permalink" class="anchor"></a> </h3> 
+     <ul> 
+      <li>Ubuntu </li>
+      <li>Debian </li>
+      <li>CentOS </li>
+      <li>openSUSE </li>
+      <li>Red Hat Enterprise Linux (please use the CentOS packages and instructions) </li>
+      <li>Scientific Linux (please use the CentOS packages and instructions) </li>
+      <li>Oracle Linux (please use the CentOS packages and instructions) </li>
+     </ul> 
+     <p>For the installations options please see <a href="https://about.gitlab.com/installation/">the installation page on the GitLab website</a>. </p>
+     <h3 id="unsupported-unix-distributions">Unsupported Unix distributions<a href="#unsupported-unix-distributions" title="Permalink" class="anchor"></a> </h3> 
+     <ul> 
+      <li>Arch Linux </li>
+      <li>Fedora </li>
+      <li>FreeBSD </li>
+      <li>Gentoo </li>
+      <li>macOS </li>
+     </ul> 
+     <p>On the above unsupported distributions is still possible to install GitLab yourself. Please see the <a href="installation.html">installation from source guide</a> and the <a href="https://about.gitlab.com/installation/">installation guides</a> for more information. </p>
+     <h3 id="non-unix-operating-systems-such-as-windows">Non-Unix operating systems such as Windows<a href="#non-unix-operating-systems-such-as-windows" title="Permalink" class="anchor"></a> </h3> 
+     <p>GitLab is developed for Unix operating systems. It does <strong>not</strong> run on Windows, and we have no plans to support it in the near future. For the latest development status view this <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/46567">issue</a>. Please consider using a virtual machine to run GitLab. </p>
+     <h2 id="ruby-versions">Ruby versions<a href="#ruby-versions" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab requires Ruby (MRI) 2.5. Support for Ruby versions below 2.5 (2.3, 2.4) will stop with GitLab 11.6. </p>
+     <p>You will have to use the standard MRI implementation of Ruby. We love <a href="https://www.jruby.org/">JRuby</a> and <a href="https://rubinius.com">Rubinius</a> but GitLab needs several Gems that have native extensions. </p>
+     <h2 id="hardware-requirements">Hardware requirements<a href="#hardware-requirements" title="Permalink" class="anchor"></a> </h2> 
+     <h3 id="storage">Storage<a href="#storage" title="Permalink" class="anchor"></a> </h3> 
+     <p>The necessary hard drive space largely depends on the size of the repos you want to store in GitLab but as a <em>rule of thumb</em> you should have at least as much free space as all your repos combined take up. </p>
+     <p>If you want to be flexible about growing your hard drive space in the future consider mounting it using LVM so you can add more hard drives when you need them. </p>
+     <p>Apart from a local hard drive you can also mount a volume that supports the network file system (NFS) protocol. This volume might be located on a file server, a network attached storage (NAS) device, a storage area network (SAN) or on an Amazon Web Services (AWS) Elastic Block Store (EBS) volume. </p>
+     <p>If you have enough RAM memory and a recent CPU the speed of GitLab is mainly limited by hard drive seek times. Having a fast drive (7200 RPM and up) or a solid state drive (SSD) will improve the responsiveness of GitLab. </p>
+     <div class="admonition-wrapper note">
+      <div class="admonition alert alert-info"> <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i><strong>Note:</strong> Since file system performance may affect GitLab’s overall performance, we do not recommend using EFS for storage. See the <a href="../administration/high_availability/nfs.html#avoid-using-awss-elastic-file-system-efs">relevant documentation</a> for more details.
+      </div>
+     </div> 
+     <h3 id="cpu">CPU<a href="#cpu" title="Permalink" class="anchor"></a> </h3> 
+     <ul> 
+      <li>1 core supports up to 100 users but the application can be a bit slower due to having all workers and background jobs running on the same core </li>
+      <li> <strong>2 cores</strong> is the <strong>recommended</strong> number of cores and supports up to 500 users </li>
+      <li>4 cores supports up to 2,000 users </li>
+      <li>8 cores supports up to 5,000 users </li>
+      <li>16 cores supports up to 10,000 users </li>
+      <li>32 cores supports up to 20,000 users </li>
+      <li>64 cores supports up to 40,000 users </li>
+      <li>More users? Run it on <a href="https://about.gitlab.com/high-availability/">multiple application servers</a> </li>
+     </ul> 
+     <h3 id="memory">Memory<a href="#memory" title="Permalink" class="anchor"></a> </h3> 
+     <p>You need at least 8GB of addressable memory (RAM + swap) to install and use GitLab! The operating system and any other running applications will also be using memory so keep in mind that you need at least 4GB available before running GitLab. With less memory GitLab will give strange errors during the reconfigure run and 500 errors during usage. </p>
+     <ul> 
+      <li>4GB RAM + 4GB swap supports up to 100 users but it will be very slow </li>
+      <li> <strong>8GB RAM</strong> is the <strong>recommended</strong> memory size for all installations and supports up to 100 users </li>
+      <li>16GB RAM supports up to 2,000 users </li>
+      <li>32GB RAM supports up to 4,000 users </li>
+      <li>64GB RAM supports up to 8,000 users </li>
+      <li>128GB RAM supports up to 16,000 users </li>
+      <li>256GB RAM supports up to 32,000 users </li>
+      <li>More users? Run it on <a href="https://about.gitlab.com/high-availability/">multiple application servers</a> </li>
+     </ul> 
+     <p>We recommend having at least <a href="https://askubuntu.com/a/505344/310789">2GB of swap on your server</a>, even if you currently have enough available RAM. Having swap will help reduce the chance of errors occurring if your available memory changes. We also recommend <a href="https://askubuntu.com/a/103916">configuring the kernel’s swappiness setting</a> to a low value like <code class="highlighter-rouge">10</code> to make the most of your RAM while still having the swap available when needed. </p>
+     <div class="admonition-wrapper note">
+      <div class="admonition alert alert-info"> <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i><strong>Note:</strong> The 25 workers of Sidekiq will show up as separate processes in your process overview (such as <code class="highlighter-rouge">top</code> or <code class="highlighter-rouge">htop</code>) but they share the same RAM allocation since Sidekiq is a multithreaded application. Please see the section below about Unicorn workers for information about how many you need of those.
+      </div>
+     </div> 
+     <h2 id="database">Database<a href="#database" title="Permalink" class="anchor"></a> </h2> 
+     <p>The server running the database should have <em>at least</em> 5-10 GB of storage available, though the exact requirements depend on the size of the GitLab installation (e.g. the number of users, projects, etc). </p>
+     <p>We currently support the following databases: </p>
+     <ul> 
+      <li>PostgreSQL (highly recommended) </li>
+      <li>MySQL/MariaDB (strongly discouraged, not all GitLab features are supported, no support for <a href="https://mariadb.com/kb/en/mariadb/gtid/">MySQL/MariaDB GTID</a>) </li>
+     </ul> 
+     <p>We highly recommend the use of PostgreSQL instead of MySQL/MariaDB as not all features of GitLab work with MySQL/MariaDB: </p>
+     <ol> 
+      <li>MySQL support for subgroups was <a href="https://about.gitlab.com/2017/06/22/gitlab-9-3-released/#dropping-support-for-subgroups-in-mysql">dropped with GitLab 9.3</a>. See <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/30472">issue #30472</a> for more information. </li>
+      <li>Geo does <a href="/11.11/ee/administration/geo/replication/database.html">not support MySQL</a>. This means no supported Disaster Recovery solution if using MySQL. <span class="badge-trigger premium-only"></span> </li>
+      <li> <a href="../update/README.html#upgrading-without-downtime">Zero downtime migrations</a> do not work with MySQL. </li>
+      <li> <a href="/11.11/ee/administration/database_load_balancing.html">Database load balancing</a> is supported only for PostgreSQL. <span class="badge-trigger premium-only"></span> </li>
+      <li>GitLab <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/31806">optimizes the loading of dashboard events</a> using <a href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">PostgreSQL LATERAL JOINs</a>. </li>
+      <li>In general, SQL optimized for PostgreSQL may run much slower in MySQL due to differences in query planners. For example, subqueries that work well in PostgreSQL may not be <a href="https://dev.mysql.com/doc/refman/5.7/en/optimizing-subqueries.html">performant in MySQL</a>. </li>
+      <li>Binary column index length is limited to 20 bytes. This is accomplished with <a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/config/initializers/mysql_set_length_for_binary_indexes.rb">a hack</a>. </li>
+      <li>MySQL requires a variety of hacks to increase limits on various columns, <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/49583">for example</a>. </li>
+      <li> <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/51173#note_99391731">The milestone filter runs slower queries on MySQL</a>. </li>
+      <li>We expect this list to grow over time. </li>
+     </ol> 
+     <p>Existing users using GitLab with MySQL/MariaDB are advised to <a href="../update/mysql_to_postgresql.html">migrate to PostgreSQL</a> instead. </p>
+     <h3 id="postgresql-requirements">PostgreSQL Requirements<a href="#postgresql-requirements" title="Permalink" class="anchor"></a> </h3> 
+     <p>As of GitLab 10.0, PostgreSQL 9.6 or newer is required, and earlier versions are not supported. We highly recommend users to use PostgreSQL 9.6 as this is the PostgreSQL version used for development and testing. </p>
+     <p>Users using PostgreSQL must ensure the <code class="highlighter-rouge">pg_trgm</code> extension is loaded into every GitLab database. This extension can be enabled (using a PostgreSQL super user) by running the following query for every database: </p>
+     <div class="highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code>CREATE EXTENSION pg_trgm;
+</code></pre>
+      </div>
+     </div> 
+     <p>On some systems you may need to install an additional package (e.g. <code class="highlighter-rouge">postgresql-contrib</code>) for this extension to become available. </p>
+     <h4 id="additional-requirements-for-gitlab-geo">Additional requirements for GitLab Geo<a href="#additional-requirements-for-gitlab-geo" title="Permalink" class="anchor"></a> </h4> 
+     <p>If you are using <a href="/11.11/ee/development/geo.html">GitLab Geo</a>: </p>
+     <ul> 
+      <li>We strongly recommend running Omnibus-managed instances as they are actively developed and tested. We aim to be compatible with most external (not managed by Omnibus) databases (for example, AWS RDS) but we do not guarantee compatibility. </li>
+      <li>The <a href="/11.11/ee/development/geo.html#geo-tracking-database">tracking database</a> requires the <a href="https://www.postgresql.org/docs/9.6/static/postgres-fdw.html">postgres_fdw</a> extension. </li>
+     </ul> 
+     <div class="highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code>CREATE EXTENSION postgres_fdw;
+</code></pre>
+      </div>
+     </div> 
+     <h2 id="unicorn-workers">Unicorn Workers<a href="#unicorn-workers" title="Permalink" class="anchor"></a> </h2> 
+     <p>It’s possible to increase the amount of unicorn workers and this will usually help to reduce the response time of the applications and increase the ability to handle parallel requests. </p>
+     <p>For most instances we recommend using: CPU cores + 1 = unicorn workers. So for a machine with 2 cores, 3 unicorn workers is ideal. </p>
+     <p>For all machines that have 2GB and up we recommend a minimum of three unicorn workers. If you have a 1GB machine we recommend to configure only two Unicorn workers to prevent excessive swapping. </p>
+     <p>To change the Unicorn workers when you have the Omnibus package (which defaults to the recommendation above) please see <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/unicorn.md#unicorn-settings">the Unicorn settings in the Omnibus GitLab documentation</a>. </p>
+     <h2 id="redis-and-sidekiq">Redis and Sidekiq<a href="#redis-and-sidekiq" title="Permalink" class="anchor"></a> </h2> 
+     <p>Redis stores all user sessions and the background task queue. The storage requirements for Redis are minimal, about 25kB per user. Sidekiq processes the background jobs with a multithreaded process. This process starts with the entire Rails stack (200MB+) but it can grow over time due to memory leaks. On a very active server (10,000 active users) the Sidekiq process can use 1GB+ of memory. </p>
+     <h2 id="prometheus-and-its-exporters">Prometheus and its exporters<a href="#prometheus-and-its-exporters" title="Permalink" class="anchor"></a> </h2> 
+     <p>As of Omnibus GitLab 9.0, <a href="https://prometheus.io">Prometheus</a> and its related exporters are enabled by default, to enable easy and in depth monitoring of GitLab. Approximately 200MB of memory will be consumed by these processes, with default settings. </p>
+     <p>If you would like to disable Prometheus and it’s exporters or read more information about it, check the <a href="../administration/monitoring/prometheus/index.html">Prometheus documentation</a>. </p>
+     <h2 id="gitlab-runner">GitLab Runner<a href="#gitlab-runner" title="Permalink" class="anchor"></a> </h2> 
+     <p>We strongly advise against installing GitLab Runner on the same machine you plan to install GitLab on. Depending on how you decide to configure GitLab Runner and what tools you use to exercise your application in the CI environment, GitLab Runner can consume significant amount of available memory. </p>
+     <p>Memory consumption calculations, that are available above, will not be valid if you decide to run GitLab Runner and the GitLab Rails application on the same machine. </p>
+     <p>It is also not safe to install everything on a single machine, because of the <a href="https://gitlab.com/gitlab-org/gitlab-runner/blob/master/docs/security/index.md">security reasons</a> - especially when you plan to use shell executor with GitLab Runner. </p>
+     <p>We recommend using a separate machine for each GitLab Runner, if you plan to use the CI features. </p>
+     <h2 id="supported-web-browsers">Supported web browsers<a href="#supported-web-browsers" title="Permalink" class="anchor"></a> </h2> 
+     <p>We support the current and the previous major release of: </p>
+     <ul> 
+      <li>Firefox </li>
+      <li>Chrome/Chromium </li>
+      <li>Safari </li>
+      <li>Microsoft Edge </li>
+      <li>Internet Explorer 11 </li>
+     </ul> 
+     <p>The browser vendors release regular minor version updates with important bug fixes and security updates. Support is only provided for the current minor version of the major version you are running. </p>
+     <p>Each time a new browser version is released, we begin supporting that version and stop supporting the third most recent version. </p>
+     <div class="admonition-wrapper note">
+      <div class="admonition alert alert-info"> <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i><strong>Note:</strong> We do not support running GitLab with JavaScript disabled in the browser and have no plans of supporting that in the future because we have features such as Issue Boards which require JavaScript extensively.
+      </div>
+     </div> 
+    </div> 
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> REQUEST SUPPORT </a> </p>
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-more-features"> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To view <strong>all GitLab tiers</strong> and features or to upgrade <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/pricing/" target="_blank"> <i class="fa fa-credit-card-alt" aria-hidden="true"></i> VIEW PRICING PAGE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want to try all features available in <strong>GitLab.com</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://customers.gitlab.com/trials/new?gl_com=true" target="_blank"> <i class="fa fa-cloud" aria-hidden="true"></i> GITLAB GOLD FREE-TRIAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="sales-row"> 
+          <div class="col-md-8 col-sm-12"> 
+ 

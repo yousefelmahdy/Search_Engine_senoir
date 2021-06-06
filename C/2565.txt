@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Migrating from CircleCI to GitHub Actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="GitHub Actions and CircleCI share several similarities in configuration, which makes migration to GitHub Actions relatively straightforward."> 
+  <meta name="keywords" content="CircleCI,Migration,CI,CD"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/actions/learn-github-actions/migrating-from-circleci-to-github-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="oUIdJDFz-ShXN-PnAmBDr9TDojIV5xiv5N2o"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/actions" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Actions</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/actions/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Actions</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-continuous-integration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About continuous integration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up CI using templates</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-nodejs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Node.js</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-net" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing .NET</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-powershell" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing PowerShell</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-python" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Python</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-ruby" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Ruby</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-ant" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Ant</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-swift" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Swift</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing an Apple certificate on macOS runners for Xcode development</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-xamarin-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Xamarin applications</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-packaging-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About packaging with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-nodejs-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Node.js packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-docker-images" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Docker images</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/storing-workflow-data-as-artifacts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Storing workflow artifacts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching dependencies</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-redis-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Redis service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-postgresql-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">PostgreSQL service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-amazon-elastic-container-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Amazon Elastic Container Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-azure-app-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Azure App Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/using-github-actions-for-project-management" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using GitHub Actions for project management</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/closing-inactive-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Closing inactive issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/scheduling-issue-creation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scheduling issue creation</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/adding-labels-to-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding labels to issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Commenting on an issue when a label is added</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/moving-assigned-issues-on-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Moving assigned issues on project boards</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a label when a card is added to a project board column</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/managing-github-actions-with-github-cli" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing GitHub Actions with GitHub CLI</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/learn-github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Actions</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/introduction-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding and customizing actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Essential features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/managing-complex-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing complex workflows</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/sharing-workflows-with-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sharing workflows with your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Security hardening</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Azure Pipelines to GitHub Actions</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from CircleCI to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from GitLab CI/CD to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Jenkins to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from Travis CI to GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/managing-workflow-runs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing workflow runs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/creating-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating actions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/using-github-hosted-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Using GitHub-hosted runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/hosting-your-own-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Hosting your own runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Actions 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Actions" href="/en/actions" class="d-inline-block ">GitHub Actions</a><a title="category: Learn GitHub Actions" href="/en/actions/learn-github-actions" class="d-inline-block ">Learn GitHub Actions</a><a title="article: Migrating from CircleCI to GitHub Actions" href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-inline-block color-text-tertiary">Migrating from CircleCI to GitHub Actions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Migrating from CircleCI to GitHub Actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>GitHub Actions and CircleCI share several similarities in configuration, which makes migration to GitHub Actions relatively straightforward.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#introduction">Introduction</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#key-differences">Key differences</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#migrating-workflows-and-jobs">Migrating workflows and jobs</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#migrating-orbs-to-actions">Migrating orbs to actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-docker-images">Using Docker images</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-variables-and-secrets">Using variables and secrets</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#caching">Caching</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#persisting-data-between-jobs">Persisting data between jobs</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-databases-and-service-containers">Using databases and service containers</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#complete-example">Complete Example</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="introduction"><a href="#introduction">Introduction</a></h3> 
+       <p>CircleCI and GitHub Actions both allow you to create workflows that automatically build, test, publish, release, and deploy code. CircleCI and GitHub Actions share some similarities in workflow configuration:</p> 
+       <ul> 
+        <li>Workflow configuration files are written in YAML and stored in the repository.</li> 
+        <li>Workflows include one or more jobs.</li> 
+        <li>Jobs include one or more steps or individual commands.</li> 
+        <li>Steps or tasks can be reused and shared with the community.</li> 
+       </ul> 
+       <p>For more information, see "<a href="/en/actions/getting-started-with-github-actions/core-concepts-for-github-actions">Core concepts for GitHub Actions</a>."</p> 
+       <h3 id="key-differences"><a href="#key-differences">Key differences</a></h3> 
+       <p>When migrating from CircleCI, consider the following differences:</p> 
+       <ul> 
+        <li>CircleCI’s automatic test parallelism automatically groups tests according to user-specified rules or historical timing information. This functionality is not built into GitHub Actions.</li> 
+        <li>Actions that execute in Docker containers are sensitive to permissions problems since containers have a different mapping of users. You can avoid many of these problems by not using the <code>USER</code> instruction in your <em>Dockerfile</em>. For more information about the Docker filesystem on GitHub-hosted runners, see "<a href="/en/actions/reference/virtual-environments-for-github-hosted-runners#docker-container-filesystem">Virtual environments for GitHub-hosted runners</a>."</li> 
+       </ul> 
+       <h3 id="migrating-workflows-and-jobs"><a href="#migrating-workflows-and-jobs">Migrating workflows and jobs</a></h3> 
+       <p>CircleCI defines <code>workflows</code> in the <em>config.yml</em> file, which allows you to configure more than one workflow. GitHub requires one workflow file per workflow, and as a consequence, does not require you to declare <code>workflows</code>. You'll need to create a new workflow file for each workflow configured in <em>config.yml</em>.</p> 
+       <p>Both CircleCI and GitHub Actions configure <code>jobs</code> in the configuration file using similar syntax. If you configure any dependencies between jobs using <code>requires</code> in your CircleCI workflow, you can use the equivalent GitHub Actions <code>needs</code> syntax. For more information, see "<a href="/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds">Workflow syntax for GitHub Actions</a>."</p> 
+       <h3 id="migrating-orbs-to-actions"><a href="#migrating-orbs-to-actions">Migrating orbs to actions</a></h3> 
+       <p>Both CircleCI and GitHub Actions provide a mechanism to reuse and share tasks in a workflow. CircleCI uses a concept called orbs, written in YAML, to provide tasks that people can reuse in a workflow. GitHub Actions has powerful and flexible reusable components called actions, which you build with either JavaScript files or Docker images. You can create actions by writing custom code that interacts with your repository in any way you'd like, including integrating with GitHub's APIs and any publicly available third-party API. For example, an action can publish npm modules, send SMS alerts when urgent issues are created, or deploy production-ready code. For more information, see "<a href="/en/actions/creating-actions">Creating actions</a>."</p> 
+       <p>CircleCI can reuse pieces of workflows with YAML anchors and aliases. GitHub Actions supports the most common need for reusability using build matrixes. For more information about build matrixes, see "<a href="/en/actions/learn-github-actions/managing-complex-workflows/#using-a-build-matrix">Managing complex workflows</a>."</p> 
+       <h3 id="using-docker-images"><a href="#using-docker-images">Using Docker images</a></h3> 
+       <p>Both CircleCI and GitHub Actions support running steps inside of a Docker image.</p> 
+       <p>CircleCI provides a set of pre-built images with common dependencies. These images have the <code>USER</code> set to <code>circleci</code>, which causes permissions to conflict with GitHub Actions.</p> 
+       <p>We recommend that you move away from CircleCI's pre-built images when you migrate to GitHub Actions. In many cases, you can use actions to install the additional dependencies you need.</p> 
+       <p>For more information about the Docker filesystem, see "<a href="/en/actions/reference/virtual-environments-for-github-hosted-runners#docker-container-filesystem">Virtual environments for GitHub-hosted runners</a>."</p> 
+       <p>For more information about the tools and packages available on GitHub-hosted virtual environments, see "<a href="/en/actions/reference/specifications-for-github-hosted-runners/#supported-software">Specifications for GitHub-hosted runners</a>".</p> 
+       <h3 id="using-variables-and-secrets"><a href="#using-variables-and-secrets">Using variables and secrets</a></h3> 
+       <p>CircleCI and GitHub Actions support setting environment variables in the configuration file and creating secrets using the CircleCI or GitHub UI.</p> 
+       <p>For more information, see "<a href="/en/actions/configuring-and-managing-workflows/using-environment-variables">Using environment variables</a>" and "<a href="/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets">Creating and using encrypted secrets</a>."</p> 
+       <h3 id="caching"><a href="#caching">Caching</a></h3> 
+       <p>CircleCI and GitHub Actions provide a method to manually cache files in the configuration file.</p> 
+       <p>Below is an example of the syntax for each system.</p> 
+       <table class="d-block"> 
+        <tbody>
+         <tr> 
+          <th> CircleCI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">restore_cache:</span>
+    <span class="hljs-attr">keys:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">v1-npm-deps-{{</span> <span class="hljs-string">checksum</span> <span class="hljs-string">"package-lock.json"</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">v1-npm-deps-</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">node</span> <span class="hljs-string">modules</span>
+  <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v2</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">path:</span> <span class="hljs-string">~/.npm</span>
+    <span class="hljs-attr">key:</span> <span class="hljs-string">v1-npm-deps-${{</span> <span class="hljs-string">hashFiles('**/package-lock.json')</span> <span class="hljs-string">}}</span>
+    <span class="hljs-attr">restore-keys:</span> <span class="hljs-string">v1-npm-deps-</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p>GitHub Actions caching is only applicable for repositories hosted on GitHub.com. For more information, see "<a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">Caching dependencies to speed up workflows</a>."</p> 
+       <p>GitHub Actions does not have an equivalent of CircleCI’s Docker Layer Caching (or DLC).</p> 
+       <h3 id="persisting-data-between-jobs"><a href="#persisting-data-between-jobs">Persisting data between jobs</a></h3> 
+       <p>Both CircleCI and GitHub Actions provide mechanisms to persist data between jobs.</p> 
+       <p>Below is an example in CircleCI and GitHub Actions configuration syntax.</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> CircleCI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">persist_to_workspace:</span>
+    <span class="hljs-attr">root:</span> <span class="hljs-string">workspace</span>
+    <span class="hljs-attr">paths:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">math-homework.txt</span>
+
+<span class="hljs-string">...</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">attach_workspace:</span>
+    <span class="hljs-attr">at:</span> <span class="hljs-string">/tmp/workspace</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Upload</span> <span class="hljs-string">math</span> <span class="hljs-string">result</span> <span class="hljs-string">for</span> <span class="hljs-string">job</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/upload-artifact@v2</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">homework</span>
+    <span class="hljs-attr">path:</span> <span class="hljs-string">math-homework.txt</span>
+
+<span class="hljs-string">...</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Download</span> <span class="hljs-string">math</span> <span class="hljs-string">result</span> <span class="hljs-string">for</span> <span class="hljs-string">job</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/download-artifact@v2</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">homework</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p>For more information, see "<a href="/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts">Persisting workflow data using artifacts</a>."</p> 
+       <h3 id="using-databases-and-service-containers"><a href="#using-databases-and-service-containers">Using databases and service containers</a></h3> 
+       <p>Both systems enable you to include additional containers for databases, caching, or other dependencies.</p> 
+       <p>In CircleCI, the first image listed in the <em>config.yaml</em> is the primary image used to run commands. GitHub Actions uses explicit sections: use <code>container</code> for the primary container, and list additional containers in <code>services</code>.</p> 
+       <p>Below is an example in CircleCI and GitHub Actions configuration syntax.</p> 
+       <table class="d-block"> 
+        <tbody>
+         <tr> 
+          <th> CircleCI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">version:</span> <span class="hljs-number">2.1</span>
+
+<span class="hljs-attr">jobs:</span>
+
+  <span class="hljs-attr">ruby-26:</span>
+    <span class="hljs-attr">docker:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">circleci/ruby:2.6.3-node-browsers-legacy</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">PGHOST:</span> <span class="hljs-string">localhost</span>
+          <span class="hljs-attr">PGUSER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">RAILS_ENV:</span> <span class="hljs-string">test</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:10.1-alpine</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">ruby26</span>
+          <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">""</span>
+
+    <span class="hljs-attr">working_directory:</span> <span class="hljs-string">~/administrate</span>
+
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">checkout</span>
+
+      <span class="hljs-comment"># Bundle install dependencies</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">install</span> <span class="hljs-string">--path</span> <span class="hljs-string">vendor/bundle</span>
+
+      <span class="hljs-comment"># Wait for DB</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">dockerize</span> <span class="hljs-string">-wait</span> <span class="hljs-string">tcp://localhost:5432</span> <span class="hljs-string">-timeout</span> <span class="hljs-string">1m</span>
+
+      <span class="hljs-comment"># Setup the environment</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">cp</span> <span class="hljs-string">.sample.env</span> <span class="hljs-string">.env</span>
+
+      <span class="hljs-comment"># Setup the database</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span> <span class="hljs-string">db:setup</span>
+
+      <span class="hljs-comment"># Run the tests</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span>
+
+<span class="hljs-attr">workflows:</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">jobs:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ruby-26</span>
+<span class="hljs-string">...</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">attach_workspace:</span>
+    <span class="hljs-attr">at:</span> <span class="hljs-string">/tmp/workspace</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Containers</span>
+
+<span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">container:</span> <span class="hljs-string">circleci/ruby:2.6.3-node-browsers-legacy</span>
+
+    <span class="hljs-attr">env:</span>
+      <span class="hljs-attr">PGHOST:</span> <span class="hljs-string">postgres</span>
+      <span class="hljs-attr">PGUSER:</span> <span class="hljs-string">administrate</span>
+      <span class="hljs-attr">RAILS_ENV:</span> <span class="hljs-string">test</span>
+
+    <span class="hljs-attr">services:</span>
+      <span class="hljs-attr">postgres:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:10.1-alpine</span>
+        <span class="hljs-attr">env:</span>
+          <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">ruby25</span>
+          <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">""</span>
+        <span class="hljs-attr">ports:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-number">5432</span><span class="hljs-string">:5432</span>
+        <span class="hljs-comment"># Add a health check</span>
+        <span class="hljs-attr">options:</span> <span class="hljs-string">--health-cmd</span> <span class="hljs-string">pg_isready</span> <span class="hljs-string">--health-interval</span> <span class="hljs-string">10s</span> <span class="hljs-string">--health-timeout</span> <span class="hljs-string">5s</span> <span class="hljs-string">--health-retries</span> <span class="hljs-number">5</span>
+
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-comment"># This Docker file changes sets USER to circleci instead of using the default user, so we need to update file permissions for this image to work on GH Actions.</span>
+      <span class="hljs-comment"># See https://docs.github.com/actions/reference/virtual-environments-for-github-hosted-runners#docker-container-filesystem</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">file</span> <span class="hljs-string">system</span> <span class="hljs-string">permissions</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">sudo</span> <span class="hljs-string">chmod</span> <span class="hljs-string">-R</span> <span class="hljs-number">777</span> <span class="hljs-string">$GITHUB_WORKSPACE</span> <span class="hljs-string">/github</span> <span class="hljs-string">/__w/_temp</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">dependencies</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">install</span> <span class="hljs-string">--path</span> <span class="hljs-string">vendor/bundle</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">environment</span> <span class="hljs-string">configuration</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">cp</span> <span class="hljs-string">.sample.env</span> <span class="hljs-string">.env</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">database</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span> <span class="hljs-string">db:setup</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Run</span> <span class="hljs-string">tests</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p>For more information, see "<a href="/en/actions/configuring-and-managing-workflows/about-service-containers">About service containers</a>."</p> 
+       <h3 id="complete-example"><a href="#complete-example">Complete Example</a></h3> 
+       <p>Below is a real-world example. The left shows the actual CircleCI <em>config.yml</em> for the <a href="https://github.com/thoughtbot/administrate">thoughtbot/administrator</a> repository. The right shows the GitHub Actions equivalent.</p> 
+       <table class="d-block"> 
+        <tbody>
+         <tr> 
+          <th> CircleCI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">version:</span> <span class="hljs-number">2.1</span>
+
+<span class="hljs-attr">commands:</span>
+  <span class="hljs-attr">shared_steps:</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">checkout</span>
+
+      <span class="hljs-comment"># Restore Cached Dependencies</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">restore_cache:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">Restore</span> <span class="hljs-string">bundle</span> <span class="hljs-string">cache</span>
+          <span class="hljs-attr">key:</span> <span class="hljs-string">administrate-{{</span> <span class="hljs-string">checksum</span> <span class="hljs-string">"Gemfile.lock"</span> <span class="hljs-string">}}</span>
+
+      <span class="hljs-comment"># Bundle install dependencies</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">install</span> <span class="hljs-string">--path</span> <span class="hljs-string">vendor/bundle</span>
+
+      <span class="hljs-comment"># Cache Dependencies</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">save_cache:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">Store</span> <span class="hljs-string">bundle</span> <span class="hljs-string">cache</span>
+          <span class="hljs-attr">key:</span> <span class="hljs-string">administrate-{{</span> <span class="hljs-string">checksum</span> <span class="hljs-string">"Gemfile.lock"</span> <span class="hljs-string">}}</span>
+          <span class="hljs-attr">paths:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">vendor/bundle</span>
+
+      <span class="hljs-comment"># Wait for DB</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">dockerize</span> <span class="hljs-string">-wait</span> <span class="hljs-string">tcp://localhost:5432</span> <span class="hljs-string">-timeout</span> <span class="hljs-string">1m</span>
+
+      <span class="hljs-comment"># Setup the environment</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">cp</span> <span class="hljs-string">.sample.env</span> <span class="hljs-string">.env</span>
+
+      <span class="hljs-comment"># Setup the database</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span> <span class="hljs-string">db:setup</span>
+
+      <span class="hljs-comment"># Run the tests</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">rake</span>
+
+<span class="hljs-attr">default_job:</span> <span class="hljs-meta">&amp;default_job</span>
+  <span class="hljs-attr">working_directory:</span> <span class="hljs-string">~/administrate</span>
+  <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">shared_steps</span>
+    <span class="hljs-comment"># Run the tests against multiple versions of Rails</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">appraisal</span> <span class="hljs-string">install</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">exec</span> <span class="hljs-string">appraisal</span> <span class="hljs-string">rake</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">ruby-25:</span>
+    <span class="hljs-string">&lt;&lt;:</span> <span class="hljs-meta">*default_job</span>
+    <span class="hljs-attr">docker:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">circleci/ruby:2.5.0-node-browsers</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">PGHOST:</span> <span class="hljs-string">localhost</span>
+          <span class="hljs-attr">PGUSER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">RAILS_ENV:</span> <span class="hljs-string">test</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:10.1-alpine</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">ruby25</span>
+          <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">""</span>
+
+  <span class="hljs-attr">ruby-26:</span>
+    <span class="hljs-string">&lt;&lt;:</span> <span class="hljs-meta">*default_job</span>
+    <span class="hljs-attr">docker:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">circleci/ruby:2.6.3-node-browsers-legacy</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">PGHOST:</span> <span class="hljs-string">localhost</span>
+          <span class="hljs-attr">PGUSER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">RAILS_ENV:</span> <span class="hljs-string">test</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:10.1-alpine</span>
+        <span class="hljs-attr">environment:</span>
+          <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">ruby26</span>
+          <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">""</span>
+
+<span class="hljs-attr">workflows:</span>
+  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span>
+  <span class="hljs-attr">multiple-rubies:</span>
+    <span class="hljs-attr">jobs:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ruby-26</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">ruby-25</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Containers</span>
+
+<span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+
+    <span class="hljs-attr">strategy:</span>
+      <span class="hljs-attr">matrix:</span>
+        <span class="hljs-attr">ruby:</span> [<span class="hljs-number">2.5</span>, <span class="hljs-number">2.6</span><span class="hljs-number">.3</span>]
+
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+
+    <span class="hljs-attr">env:</span>
+      <span class="hljs-attr">PGHOST:</span> <span class="hljs-string">localhost</span>
+      <span class="hljs-attr">PGUSER:</span> <span class="hljs-string">administrate</span>
+      <span class="hljs-attr">RAILS_ENV:</span> <span class="hljs-string">test</span>
+
+    <span class="hljs-attr">services:</span>
+      <span class="hljs-attr">postgres:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:10.1-alpine</span>
+        <span class="hljs-attr">env:</span>
+          <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">administrate</span>
+          <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">ruby25</span>
+          <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">""</span>
+        <span class="hljs-attr">ports:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-number">5432</span><span class="hljs-string">:5432</span>
+        <span class="hljs-comment"># Add a health check</span>
+        <span class="hljs-attr">options:</span> <span class="hljs-string">--health-cmd</span> <span class="hljs-string">pg_isready</span> <span class="hljs-string">--health-interval</span> <span class="hljs-string">10s</span> <span class="hljs-string">--health-timeout</span> <span class="hljs-string">5s</span> <span class="hljs-string">--health-retries</span> <span class="hljs-number">5</span>
+
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Ruby</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">eregon/use-ruby-action@master</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">ruby-version:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.ruby</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">dependencies</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v2</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">path:</span> <span class="hljs-string">vendor/bundle</span>
+          <span class="hljs-attr">key:</span> <span class="hljs-string">administrate-${{</span> <span class="hljs-string">matrix.image</span> <span class="hljs-string">}}-${{</span> <span class="hljs-string">hashFiles('Gemfile.lock')</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">postgres</span> <span class="hljs-string">headers</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">|
+          sudo apt-get update
+          sudo apt-get install libpq-dev
+</span>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">dependencies</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">bundle</span> <span class="hljs-string">install</span> <span class="hljs-string">--path</span> <span class="hljs-string">vendor/bundle</span>
+      <s

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+  <meta content="default-src 'self' https: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:; style-src 'self' 'unsafe-inline' https: http:; object-src https: http:; base-uri 'self'; connect-src 'self' https: http: wss: ws:; frame-src 'self' https: http:; img-src 'self' https: http: data:; manifest-src 'self'; media-src 'self' https: http:; worker-src 'self' https: http:;" http-equiv="Content-Security-Policy"> 
+  <script async="false" data-cookieconsent="ignore" defer="false" id="mermaidscriptsource" src="/javascripts/libs/mermaid.min.js"></script> 
+  <script data-bl="j-no-m-no" data-blockingmode="auto" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" data-georegions="{'region':'US-06','cbid':'c2c1d015-6fa2-487d-aaf3-3a961d8a1984'}" id="Cookiebot" src="https://consent.cookiebot.com/uc.js"></script> 
+  <script>
+window.dataLayer = window.dataLayer || []
+</script> 
+  <script>document.documentElement.className = 'html--js'</script> 
+  <script async src="//cdn.bizible.com/scripts/bizible.js"></script> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37019925-1', 'auto', {allowLinker: true});
+ga('require', 'GTM-WC3ZR2P');
+</script> 
+  <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJXWQL');
+</script> 
+  <meta content="index, follow" name="robots"> 
+  <script data-cookieconsent="ignore">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+_st('install','DTF81Pizm7yGQpgXcrMP','2.0.0');
+</script> 
+  <title>
+Handbook
+|
+GitLab
+</title> 
+  <meta content="Code, test and deploy with GitLab. Everyone can contribute!" name="description"> 
+  <meta content="Code, test and deploy with GitLab. Everyone can contribute!" name="twitter:description"> 
+  <meta content="Code, test and deploy with GitLab. Everyone can contribute!" property="og:description"> 
+  <meta content="GitLab" property="og:site_name"> 
+  <meta content="Handbook" property="og:title"> 
+  <meta content="https://gitlab.com/gitlab-com/www-gitlab-com/" property="og:repo"> 
+  <meta content="https://gitlab.com/" property="og:instance"> 
+  <meta content="gitlab-com/www-gitlab-com/" property="og:path"> 
+  <meta content="handbook/index.html.md" property="og:relative_path"> 
+  <meta content="sites/handbook/" property="og:monorepo_site_path_fragment"> 
+  <meta content="article" property="og:type"> 
+  <meta content="https://about.gitlab.com/handbook/" property="og:url"> 
+  <meta content="https://about.gitlab.com/images/tweets/handbook-gitlab.png" property="og:image"> 
+  <meta content="https://about.gitlab.com/images/tweets/handbook-gitlab.png" name="twitter:image"> 
+  <meta content="summary_large_image" name="twitter:card"> 
+  <meta content="@GitLab" name="twitter:site"> 
+  <meta content="Handbook" name="twitter:title"> 
+  <meta content="@GitLab" name="twitter:creator"> 
+  <link href="/atom.xml" rel="alternate" title="Blog" type="application/atom+xml"> 
+  <link href="/all-releases.xml" rel="alternate" title="All Releases" type="application/atom+xml"> 
+  <link href="/security-releases.xml" rel="alternate" title="Security Releases" type="application/atom+xml"> 
+  <link href="/releases.xml" rel="alternate" title="Major Releases" type="application/atom+xml"> 
+  <link href="/ico/handbook/favicon.ico" rel="shortcut icon"> 
+  <link href="/ico/handbook/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png"> 
+  <link href="/ico/handbook/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png"> 
+  <link href="/ico/handbook/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"> 
+  <link href="/ico/handbook/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"> 
+  <link href="/ico/handbook/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"> 
+  <link href="/ico/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"> 
+  <link href="/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"> 
+  <link href="/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"> 
+  <link href="/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"> 
+  <link href="/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"> 
+  <link href="/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"> 
+  <link href="/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"> 
+  <link href="/ico/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"> 
+  <link href="/ico/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"> 
+  <meta content="#554488" name="msapplication-TileColor"> 
+  <meta content="/ico/mstile-144x144.png" name="msapplication-TileImage"> 
+  <meta content="/ico/browserconfig.xml" name="msapplication-config"> 
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700" rel="stylesheet"> 
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/tiny-slider.css" rel="stylesheet"> 
+  <link href="/stylesheets/styles.css" rel="stylesheet">
+  <link href="/stylesheets/highlight.css" rel="stylesheet"> 
+  <link href="/stylesheets/highlight-tooltip.css" rel="stylesheet"> 
+  <link href="/stylesheets/slippers.css" rel="stylesheet"> 
+  <link href="/stylesheets/handbook.css" rel="stylesheet"> 
+  <link href="/stylesheets/navigation-helpers.css" rel="stylesheet"> 
+ </head> 
+ <body data-spy="scroll" data-target=".qnav"> 
+  <noscript> <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-NJXWQL" style="display:none;visibility:hidden" width="0"></iframe> 
+  </noscript> 
+  <header class="navbar" id="main-nav" role="navigation"> 
+   <div class="navbar-left"> <a href="/" class="navbar-brand animated">
+     <svg height="36" viewbox="0 0 1231 342" xmlns="http://www.w3.org/2000/svg" class="nav-logo"> <g fill="none" fill-rule="evenodd"> 
+       <g fill="#8C929D" class="wordmark"> 
+        <path d="M764.367 94.13h-20.803l.066 154.74h84.155v-19.136h-63.352l-.066-135.603zM907.917 221.7c-5.2 5.434-13.946 10.87-25.766 10.87-15.838 0-22.22-7.797-22.22-17.957 0-15.354 10.637-22.678 33.332-22.678 4.255 0 11.11.472 14.655 1.18v28.586zm-21.51-93.787c-16.8 0-32.208 5.952-44.23 15.858l7.352 12.73c8.51-4.962 18.91-9.924 33.802-9.924 17.02 0 24.585 8.742 24.585 23.39v7.56c-3.31-.71-10.164-1.184-14.42-1.184-36.404 0-54.842 12.757-54.842 39.454 0 23.86 14.656 35.908 36.876 35.908 14.97 0 29.314-6.852 34.278-17.954l3.782 15.118h14.657v-79.14c0-25.04-10.874-41.815-41.84-41.815zM995.368 233.277c-7.802 0-14.657-.945-19.858-3.308v-71.58c7.093-5.908 15.84-10.16 26.95-10.16 20.092 0 27.893 14.174 27.893 37.09 0 32.6-12.53 47.957-34.985 47.957m8.742-105.364c-18.592 0-28.6 12.64-28.6 12.64V120.59l-.066-26.458H955.116l.066 150.957c10.164 4.25 24.11 6.613 39.24 6.613 38.768 0 57.442-24.804 57.442-67.564 0-33.783-17.26-56.227-47.754-56.227M538.238 110.904c18.438 0 30.258 6.142 38.06 12.285l8.938-15.477c-12.184-10.678-28.573-16.417-46.053-16.417-44.204 0-75.17 26.932-75.17 81.267 0 56.935 33.407 79.14 71.624 79.14 19.148 0 35.46-4.488 46.096-8.976l-.435-60.832V162.76h-56.734v19.135h36.167l.437 46.184c-4.727 2.362-13 4.252-24.11 4.252-30.73 0-51.297-19.32-51.297-60.006 0-41.34 21.275-61.422 52.478-61.422M684.534 94.13h-20.33l.066 25.988v89.771c0 25.04 10.874 41.814 41.84 41.814 4.28 0 8.465-.39 12.53-1.126v-18.245c-2.943.45-6.083.707-9.455.707-17.02 0-24.585-8.74-24.585-23.387v-61.895h34.04v-17.01H684.6l-.066-36.617zM612.62 248.87h20.33V130.747h-20.33v118.12zM612.62 114.448h20.33V94.13h-20.33v20.318z" /> 
+       </g> 
+       <path d="M185.398 341.13l68.013-209.322H117.39L185.4 341.13z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l-68.013-209.322h-95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M22.066 131.808l-20.67 63.61c-1.884 5.803.18 12.16 5.117 15.744L185.398 341.13 22.066 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M22.066 131.808h95.32L76.42 5.735c-2.107-6.487-11.284-6.487-13.39 0L22.065 131.808z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+       <path d="M185.398 341.13l68.013-209.322h95.32L185.4 341.128z" fill="#FC6D26" class="logo-svg-shape logo-orange-shape" /> 
+       <path d="M348.73 131.808l20.67 63.61c1.884 5.803-.18 12.16-5.117 15.744L185.398 341.13 348.73 131.807z" fill="#FCA326" class="logo-svg-shape logo-light-orange-shape" /> 
+       <path d="M348.73 131.808h-95.32L294.376 5.735c2.108-6.487 11.285-6.487 13.392 0l40.963 126.073z" fill="#E24329" class="logo-svg-shape logo-dark-orange-shape" /> 
+      </g> 
+     </svg> </a>
+    <div class="mobile-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+    </div> 
+   </div> 
+   <div class="navbar-right"> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="mobile-icons"> <button aria-label="Search" class="search-icon js-search-toggle" id="search-header" type="button"> <i class="fa fa-search"></i> </button> <button class="mobile-icon" id="mobile-icon"> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> 
+     <div class="icon-bar"></div> </button> 
+   </div> 
+   <div class="display-none mobile-menu" id="mobile-menu"> <button class="exit-icon-container" id="exit-icon"> <img src="/images/icons/x.svg" class="exit-icon" alt="Gitlab x icon svg"> </button> 
+    <ul> 
+     <li> <a href="/stages-devops-lifecycle/" class="main-nav-link">Product</a> 
+      <div class="dropdown dropdown-wide"> <a href="/services/" class="main-nav-sub-link"><img src="/images/nav/cogs-color.svg" class="link-icon" alt="Gitlab cogs icon svg"> 
+        <div class="nav-text"> 
+         <p class="link-title"> GitLab Professional Services </p> 
+         <p class="link-description"> Accelerate your software lifecycle with help from GitLab experts </p> 
+        </div> </a>
+       <p class="nav-label"> Popular GitLab use cases </p> <a href="/enterprise/" class="main-nav-sub-link">Enterprise</a> <a href="/small-business/" class="main-nav-sub-link">Small Business</a> <a href="/stages-devops-lifecycle/continuous-integration/" class="main-nav-sub-link">Continuous Integration (CI/CD)</a> <a href="/stages-devops-lifecycle/source-code-management/" class="main-nav-sub-link">Source Code Management (SCM)</a> <a href="/stages-devops-lifecycle/auto-devops/" class="main-nav-sub-link">Out-of-the-box Pipelines (Auto DevOps)</a> <a href="/solutions/dev-sec-ops/" class="main-nav-sub-link">Security (DevSecOps)</a> <a href="/solutions/agile-delivery/" class="main-nav-sub-link">Agile Development</a> <a href="/solutions/value-stream-management/" class="main-nav-sub-link">Value Stream Management</a> <a href="/solutions/gitops/" class="main-nav-sub-link">GitOps</a> 
+      </div> </li> 
+     <li> <a href="/pricing/" class="main-nav-link">Pricing</a> </li> 
+     <li> <a href="/resources/" class="main-nav-link">Resources</a> 
+      <div class="dropdown"> <a href="/company/culture/all-remote/" class="main-nav-sub-link">All-Remote</a> <a href="/community/" class="main-nav-sub-link">Community</a> <a href="/get-started/" class="main-nav-sub-link">Get Started</a> <a href="/events/" class="main-nav-sub-link">Upcoming Events</a> <a href="/is-it-any-good/" class="main-nav-sub-link">Is GitLab any good?</a> <a href="/customers/" class="main-nav-sub-link">Customer Case Studies</a> <a href="/developer-survey/" class="main-nav-sub-link">2021 DevSecOps Survey</a> <a href="/topics/" class="main-nav-sub-link">Topics</a> <a class="main-nav-sub-link" href="https://docs.gitlab.com/">GitLab docs</a> 
+      </div> </li> 
+     <li> <a href="/blog/" class="main-nav-link">Blog</a> </li> 
+     <li> <a href="/partners/" class="main-nav-link">Partners</a> </li> 
+     <li> <a href="/support/" class="main-nav-link">Support</a> 
+      <div class="dropdown"> <a class="main-nav-sub-link" href="/support/#contact-support">Contact Support</a> <a href="/pricing/licensing-faq/" class="main-nav-sub-link">Licensing and Subscriptions</a> <a href="/customer-care/" class="main-nav-sub-link">Caring for Customers</a> <a href="/get-help/" class="main-nav-sub-link">Support Resources</a> <a href="/partners/" class="main-nav-sub-link">Partners</a> 
+      </div> </li> 
+     <li> <a href="/install/" class="main-nav-link">Install GitLab</a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/explore" target="_blank"> Explore </a> </li> 
+     <li class="nosubmenu"> <a class="main-nav-link sign-up" href="https://gitlab.com/users/sign_in"> Sign in </a> </li> 
+     <li> <button aria-label="Search" class="search-icon js-search-toggle" type="button"> <i class="fa fa-search"></i> </button> </li> 
+     <div class="nav-cta-container"> <a class="btn btn-nav-cta btn-nav-link-cta" href="/free-trial/"> Get free trial </a> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="search-box js-search-box"> <i class="fa fa-search search-box-icon"></i> 
+    <input class="search-input js-search st-header" placeholder="Search..."> <button aria-label="Close search" class="search-close js-search-toggle" type="button"> <i class="fa fa-times"></i> </button> 
+   </div> 
+  </header> 
+  <script src="/javascripts/mobile-menu.js"></script> 
+  <script src="/javascripts/libs/tweenmax.min.js"></script> 
+  <div class="blank-header"> 
+   <img src="/images/home/icons-pattern-left.svg" class="image-border image-border-left" alt="Gitlab hero border pattern left svg"> 
+   <img src="/images/home/icons-pattern-right.svg" class="image-border image-border-right" alt="Gitlab hero border pattern right svg"> 
+   <div class="header-content"> 
+    <h1> Handbook </h1> 
+   </div> 
+  </div> 
+  <div id="highlight-tooltip" role="tooltip"> <a class="highlight-tooltip-link highlight-tooltip-link-tweet" href="#" target="_blank"> <i class="fab fa-twitter"></i> <span class="sr-only">Share on Twitter</span> </a> <a class="highlight-tooltip-link highlight-tooltip-link-edit" href="#" target="_blank"> <i class="fab fa-gitlab"></i> <span class="sr-only">Edit this page</span> </a> <a class="highlight-tooltip-link highlight-tooltip-link-web-ide" href="#" target="_blank"> <i class="fas fa-pen"></i> <span class="sr-only">Open Web IDE</span> </a> 
+   <div id="highlight-tooltip-arrow" data-popper-arrow></div> 
+  </div> 
+  <div class="wrapper sidebar-layout-wrapper clearfix"> 
+   <aside class="tocs-sidebar"> 
+    <div class="codeowners"> 
+     <div> 
+      <h4 class="codeowners-header"> Maintained by<span class="hidden-md hidden-lg">:</span></h4> 
+     </div> 
+     <div class="codeowners-list"> <a class="codeowner" href="https://gitlab.com/sytses"> <img src="/images/team/picture_sytse-crop.jpg" class="codeowner-avatar-img" alt="Sid Sijbrandij" title="Sid Sijbrandij"> </a> <a class="codeowner" href="https://gitlab.com/streas"> <img src="/images/team/stellatreas-crop.jpg" class="codeowner-avatar-img" alt="Stella Treas" title="Stella Treas"> </a> 
+     </div> 
+    </div> 
+    <h5> Contribute to this page </h5> 
+    <div> <a href="https://gitlab.com/gitlab-com/www-gitlab-com/blob/master/sites/handbook/source/handbook/index.html.md" class="external-source-link">View source</a> • <a href="https://gitlab.com/-/ide/project/gitlab-com/www-gitlab-com/edit/master/-/sites/handbook/source/handbook/index.html.md" class="external-source-link">Open in Web IDE</a> 
+     <div class="d-flex align-items-center mt-2"> <a href="https://gitlab.com/gitlab-com/www-gitlab-com/-/sse/master%2Fsites%2Fhandbook%2Fsource%2Fhandbook%2Findex.html.md" class="external-source-link">Open in Static Site Editor</a> <span class="badge ml-4"> Beta </span> 
+     </div> 
+    </div> 
+   </aside> 
+   <div class="container md-page"> 
+    <ol class="breadcrumb"> 
+     <li class="meta-signage-header">You are here:</li> 
+     <li>Handbook</li> 
+    </ol> 
+    <input class="st-handbook" id="search-handbook" placeholder="Search through the handbook..."> 
+    <div class="hidden-md hidden-lg"> 
+     <div class="codeowners"> 
+      <div> 
+       <h4 class="codeowners-header"> Maintained by<span class="hidden-md hidden-lg">:</span></h4> 
+      </div> 
+      <div class="codeowners-list"> <a class="codeowner" href="https://gitlab.com/sytses"> <img src="/images/team/picture_sytse-crop.jpg" class="codeowner-avatar-img" alt="Sid Sijbrandij" title="Sid Sijbrandij"> </a> <a class="codeowner" href="https://gitlab.com/streas"> <img src="/images/team/stellatreas-crop.jpg" class="codeowner-avatar-img" alt="Stella Treas" title="Stella Treas"> </a> 
+      </div> 
+     </div> 
+    </div> 
+    <h2 class="no_toc hidden-md hidden-lg" id="on-this-page">On this page</h2> 
+    <ul class="hidden-md hidden-lg" id="markdown-toc"> 
+     <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li> 
+     <li><a href="#company" id="markdown-toc-company">Company</a></li> 
+     <li><a href="#people-group" id="markdown-toc-people-group">People Group</a></li> 
+     <li><a href="#engineering" id="markdown-toc-engineering">Engineering</a></li> 
+     <li><a href="#marketing" id="markdown-toc-marketing">Marketing</a></li> 
+     <li><a href="#sales" id="markdown-toc-sales">Sales</a></li> 
+     <li><a href="#finance" id="markdown-toc-finance">Finance</a></li> 
+     <li><a href="#product" id="markdown-toc-product">Product</a></li> 
+     <li><a href="#legal" id="markdown-toc-legal">Legal</a></li> 
+    </ul> 
+    <h2 id="introduction">Introduction</h2> 
+    <p>The GitLab team handbook is the central repository for how we run the company. Printed, it consists of over <a href="/handbook/about/#count-handbook-pages">10,400 pages of text</a>. As part of our value of being transparent the handbook is <a href="https://gitlab.com/gitlab-com/www-gitlab-com/tree/master/sites/handbook/source/handbook">open to the world</a>, and we welcome feedback. Please make a <a href="https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests">merge request</a> to suggest improvements or add clarifications. Please use <a href="https://gitlab.com/gitlab-com/www-gitlab-com/issues">issues</a> to ask questions.</p> 
+    <h2 id="company">Company</h2> 
+    <ul> 
+     <li><a href="/company/">About GitLab</a> 
+      <ul> 
+       <li><a href="/company/history/">History</a></li> 
+      </ul> </li> 
+     <li><a href="/handbook/values/">Values</a></li> 
+     <li><a href="/company/mission/">Mission</a></li> 
+     <li><a href="/company/vision/">Vision</a></li> 
+     <li><a href="/company/strategy/">Strategy</a></li> 
+     <li><a href="/handbook/communication/">Communication</a> 
+      <ul> 
+       <li><a href="/handbook/marketing/marketing-operations/youtube/">YouTube</a></li> 
+       <li><a href="/handbook/communication/zoom/webinars/">Zoom Webinars</a></li> 
+      </ul> </li> 
+     <li><a href="/company/culture/">Culture</a> 
+      <ul> 
+       <li><a href="/company/culture/all-remote/guide/">All-Remote</a></li> 
+       <li><a href="/company/culture/#life-at-gitlab">Life at GitLab</a></li> 
+       <li><a href="/events/gitlab-contribute/">GitLab Contribute</a></li> 
+       <li><a href="/company/team/">Team</a></li> 
+      </ul> </li> 
+     <li><a href="/handbook/about/">Handbook</a> 
+      <ul> 
+       <li><a href="/handbook/practical-handbook-edits/">Practical Handbook Edits</a></li> 
+       <li><a href="/handbook/handbook-usage/">Handbook Usage</a></li> 
+       <li><a href="/handbook/git-page-update/">Edit This Website Locally</a></li> 
+       <li><a href="/handbook/style-guide/">Handbook Style Guide</a></li> 
+       <li><a href="/handbook/CHANGELOG.html">Handbook Changelog</a></li> 
+       <li><a href="/handbook/about/roadmap/">Handbook Roadmap</a></li> 
+       <li><a href="/handbook/about/support/">Handbook Support</a></li> 
+       <li><a href="/handbook/about/on-call/">Handbook On-Call</a></li> 
+      </ul> </li> 
+     <li><a href="/handbook/ceo/">CEO Readme</a> 
+      <ul> 
+       <li><a href="/handbook/ceo/shadow/">CEO Shadow Program</a></li> 
+       <li><a href="/company/cadence/">Cadence</a></li> 
+       <li><a href="/company/offsite/">E-Group Offsite</a></li> 
+       <li><a href="/company/kpis/">KPIs</a></li> 
+       <li><a href="/company/okrs/">OKRs</a></li> 
+       <li><a href="/company/pricing/">Pricing Model</a></li> 
+      </ul> </li> 
+     <li><a href="/handbook/creator/pairing">Creator pairing</a></li> 
+     <li><a href="/handbook/ceo/chief-of-staff-team/">Chief of Staff Team</a></li> 
+     <li><a href="/handbook/key-review">Key Reviews</a></li> 
+     <li><a href="/handbook/group-conversations">Group Conversations</a></li> 
+     <li><a href="/handbook/e-group-weekly">E-Group Weekly</a></li> 
+    </ul> 
+    <h2 id="people-group">People Group</h2> 
+    <ul> 
+     <li><a href="/handbook/people-group/">People Group</a> 
+      <ul> 
+       <li><a href="/handbook/legal/gitlab-code-of-business-conduct-and-ethics/">Code of Conduct</a> 
+        <ul> 
+         <li><a href="/handbook/anti-harassment/">Anti-Harassment Policy</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/people-group/global-volunteer-month/">Global Volunteer Month</a></li> 
+       <li><a href="/handbook/hiring/">Hiring</a> 
+        <ul> 
+         <li><a href="/handbook/hiring/greenhouse/">Greenhouse</a></li> 
+         <li><a href="/handbook/hiring/interviewing/">Interviewing</a></li> 
+         <li><a href="/jobs/faq/">Jobs FAQ</a></li> 
+         <li><a href="/handbook/hiring/vacancies/">Vacancies</a></li> 
+        </ul> </li> 
+       <li><a href="/company/culture/inclusion/">Inclusion &amp; Diversity</a> 
+        <ul> 
+         <li><a href="/handbook/communication/ally-resources/">Ally Resources</a></li> 
+         <li><a href="/handbook/people-group/gender-pronouns/">Gender and Sexual Orientation Identity Definitions and FAQ</a></li> 
+         <li><a href="/company/culture/inclusion/unconscious-bias/">Unconscious Bias</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/labor-and-employment-notices/">Labor and Employment Notices</a></li> 
+       <li><a href="/handbook/leadership/">Leadership</a></li> 
+       <li><a href="/handbook/people-group/learning-and-development/">Learning &amp; Development</a></li> 
+       <li><a href="/handbook/people-group/offboarding/">Offboarding</a></li> 
+       <li><a href="/handbook/people-group/general-onboarding/">Onboarding</a></li> 
+       <li><a href="/handbook/spending-company-money/">Spending Company Money</a> 
+        <ul> 
+         <li><a href="/handbook/travel/">Travel</a></li> 
+         <li><a href="/handbook/people-group/visas/">Visas</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/people-group/team-member-relations-philosophy/">Team Member Relations Philosophy</a></li> 
+       <li><a href="/handbook/total-rewards">Total Rewards</a> 
+        <ul> 
+         <li><a href="/handbook/total-rewards/benefits/">Benefits</a></li> 
+         <li><a href="/handbook/incentives/">Incentives</a></li> 
+         <li><a href="/handbook/paid-time-off/">Paid time off</a></li> 
+         <li><a href="/handbook/total-rewards/compensation/">Compensation</a></li> 
+         <li><a href="/handbook/stock-options/">Stock Options</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/tools-and-tips/">Tools and Tips</a> 
+        <ul> 
+         <li><a href="/handbook/tools-and-tips/searching/">Searching the GitLab Website Like a Pro</a></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+    <h2 id="engineering">Engineering</h2> 
+    <ul> 
+     <li><a href="/handbook/engineering/">Engineering</a> 
+      <ul> 
+       <li><a href="/handbook/support/">Customer Support Department</a> 
+        <ul> 
+         <li><a href="/handbook/support/incident-management/">Incident Management for Self-Managed Customers</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/engineering/development/">Development Department</a> 
+        <ul> 
+         <li><a href="/handbook/engineering/development/dev/">Dev Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/enablement/">Enablement Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/fulfillment/">Fulfillment Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/growth/">Growth Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/ops/">Ops Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/protect/">Protect Sub-department</a></li> 
+         <li><a href="/handbook/engineering/development/secure/">Secure Sub-department</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/engineering/incubation/">Incubation Engineering Department</a></li> 
+       <li><a href="/handbook/engineering/infrastructure/">Infrastructure Department</a></li> 
+       <li><a href="/handbook/engineering/quality/">Quality Department</a></li> 
+       <li><a href="/handbook/engineering/security/">Security Department</a> 
+        <ul> 
+         <li><a href="/handbook/engineering/security/#secure-the-product---the-security-engineering--research-sub-department">Security Engineering &amp; Research</a></li> 
+         <li><a href="/handbook/engineering/security/security-operations/">Security Operations</a></li> 
+         <li><a href="/handbook/engineering/security/security-assurance/security-assurance.html">Security Assurance</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/engineering/ux/">UX Department</a> 
+        <ul> 
+         <li><a href="/handbook/engineering/ux/technical-writing/">Technical Writing</a></li> 
+         <li><a href="/handbook/engineering/ux/ux-research/">UX Research</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/security/">Security Practices</a></li> 
+       <li><a href="/handbook/engineering/open-source/">Open Source</a></li> 
+      </ul> </li> 
+    </ul> 
+    <h2 id="marketing">Marketing</h2> 
+    <ul> 
+     <li><a href="/handbook/marketing/">Marketing</a> 
+      <ul> 
+       <li><a href="/handbook/marketing/inbound-marketing/digital-experience/website/">Website</a></li> 
+       <li><a href="/handbook/marketing/blog/">Blog</a> 
+        <ul> 
+         <li><a href="/handbook/marketing/blog/unfiltered/">GitLab Unfiltered blog</a></li> 
+         <li><a href="/handbook/marketing/blog/git-guide/">Git guide for the blog</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/marketing/social-media-guidelines/">Social Media Guidelines</a></li> 
+       <li><a href="/handbook/marketing/revenue-marketing/">Revenue Marketing</a> 
+        <ul> 
+         <li><a href="/handbook/marketing/revenue-marketing/sdr/">Sales Development</a></li> 
+         <li><a href="/handbook/marketing/revenue-marketing/field-marketing/">Field Marketing</a></li> 
+         <li><a href="/handbook/marketing/revenue-marketing/digital-marketing-programs/">Digital Marketing Programs</a> 
+          <ul> 
+           <li><a href="/handbook/marketing/revenue-marketing/digital-marketing-programs/marketing-programs/">Marketing Programs</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li><a href="/handbook/marketing/corporate-marketing/">Corporate Marketing</a></li> 
+       <li><a href="/handbook/marketing/inbound-marketing/">Inbound Marketing</a> 
+        <ul> 
+         <li><a href="/handbook/marketing/inbound-marketing/digital-experience">Digital Experience</a></li> 
+         <li><a href="/handbook/marketing/inbound-marketing/content/">Global Content</a> 
+          <ul> 
+           <li><a href="/handbook/marketing/inbound-marketing/content/editorial-team/">Editorial</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li><a href="/handbook/marketing/marketing-operations/">Marketing Operations</a></li> 
+       <li><a href="/handbook/marketing/community-relations/">Community Relations</a> 
+        <ul> 
+         <li><a href="/handbook/marketing/community-relations/developer-evangelism/">Developer Evangelism</a></li> 
+        </ul> </li> 
+       <li><a href="/handbook/marketing/strategic-marketing/">Strategic marketing</a> 
+        <ul> 
+         <li><a href="/handbook/marketing/strategic-marketing/pmmteam/">Product marketing</a></li> 
+         <li><a href="/handbook/marketing/strategic-marketing/technical-marketing/">Technical marketing</a> 
+          <ul> 
+           <li><a hre

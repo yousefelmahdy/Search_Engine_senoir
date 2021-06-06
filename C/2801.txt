@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Managing enterprise accounts - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can manage your enterprise account and the organizations it owns with the GraphQL API."> 
+  <meta name="keywords" content="API"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/graphql/guides/managing-enterprise-accounts"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/graphql/guides/managing-enterprise-accounts"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/graphql/guides/managing-enterprise-accounts"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/graphql/guides/managing-enterprise-accounts"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/graphql/guides/managing-enterprise-accounts"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/graphql/guides/managing-enterprise-accounts"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="mLMFhewf-Zq1TvnIeKSqsbnX7nvu6c6pSO7I"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/graphql" class="pl-4 pr-5 pb-1 f4 color-text-primary">GraphQL API</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/about-the-graphql-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About the GraphQL API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/public-schema" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Public schema</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/schema-previews" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Schema previews</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/breaking-changes" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Breaking changes</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/changelog" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changelog</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/explorer" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Explorer</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/resource-limitations" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Resource limitations</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/queries" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Queries</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/mutations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Mutations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/objects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Objects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/interfaces" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Interfaces</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/enums" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enums</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/unions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Unions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/input-objects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Input objects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/scalars" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Scalars</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/introduction-to-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/forming-calls-with-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Forming calls with GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/using-global-node-ids" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using global node IDs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/migrating-from-rest-to-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from REST to GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/using-the-explorer" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the Explorer</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/graphql/guides/managing-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing enterprise accounts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/using-the-graphql-api-for-discussions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using the GraphQL API for Discussions</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GraphQL API 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      color-text-link text-underline active"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/graphql/guides/managing-enterprise-accounts" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/graphql/guides/managing-enterprise-accounts" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/graphql/guides/managing-enterprise-accounts" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/graphql/guides/managing-enterprise-accounts" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/graphql/guides/managing-enterprise-accounts" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/graphql/guides/managing-enterprise-accounts" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GraphQL API" href="/en/graphql" class="d-inline-block ">GraphQL API</a><a title="category: Guides" href="/en/graphql/guides" class="d-inline-block ">Guides</a><a title="article: Managing enterprise accounts" href="/en/graphql/guides/managing-enterprise-accounts" class="d-inline-block color-text-tertiary">Managing enterprise accounts</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/graphql/guides/managing-enterprise-accounts" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/graphql/guides/managing-enterprise-accounts" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Managing enterprise accounts</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can manage your enterprise account and the organizations it owns with the GraphQL API.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-managing-enterprise-accounts-with-graphql">About managing enterprise accounts with GraphQL</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#getting-started-using-graphql-for-enterprise-accounts">Getting started using GraphQL for enterprise accounts</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#an-example-query-using-the-enterprise-accounts-api">An example query using the Enterprise Accounts API</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#query-each-organization-separately">Query each organization separately</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#graphql-fields-and-types-for-the-enterprise-accounts-api">GraphQL fields and types for the Enterprise Accounts API</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-managing-enterprise-accounts-with-graphql"><a href="#about-managing-enterprise-accounts-with-graphql">About managing enterprise accounts with GraphQL</a></h3> 
+       <p>To help you monitor and make changes in your organizations and maintain compliance, you can use the Enterprise Accounts API and the Audit Log API, which are only available as GraphQL APIs.</p> 
+       <p>The enterprise account endpoints work for both GitHub Enterprise Cloud and for GitHub Enterprise Server.</p> 
+       <p>GraphQL allows you to request and return just the data you specify. For example, you can create a GraphQL query, or request for information, to see all the new organization members added to your organization. Or you can make a mutation, or change, to invite an administrator to your enterprise account.</p> 
+       <p>With the Audit Log API, you can monitor when someone:</p> 
+       <ul> 
+        <li>Accesses your organization or repository settings.</li> 
+        <li>Changes permissions.</li> 
+        <li>Adds or removes users in an organization, repository, or team.</li> 
+        <li>Promotes users to admin.</li> 
+        <li>Changes permissions of a GitHub App.</li> 
+       </ul> 
+       <p>The Audit Log API enables you to keep copies of your audit log data. For queries made with the Audit Log API, the GraphQL response can include data for up to 90 to 120 days. For a list of the fields available with the Audit Log API, see the "<a href="/en/graphql/reference/interfaces#auditentry">AuditEntry interface</a>."</p> 
+       <p>With the Enterprise Accounts API, you can:</p> 
+       <ul> 
+        <li>List and review all of the organizations and repositories that belong to your enterprise account.</li> 
+        <li>Change Enterprise account settings.</li> 
+        <li>Configure policies for settings on your enterprise account and its organizations.</li> 
+        <li>Invite administrators to your enterprise account.</li> 
+        <li>Create new organizations in your enterprise account.</li> 
+       </ul> 
+       <p>For a list of the fields available with the Enterprise Accounts API, see "<a href="/en/graphql/guides/managing-enterprise-accounts#graphql-fields-and-types-for-the-enterprise-accounts-api">GraphQL fields and types for the Enterprise account API</a>."</p> 
+       <h3 id="getting-started-using-graphql-for-enterprise-accounts"><a href="#getting-started-using-graphql-for-enterprise-accounts">Getting started using GraphQL for enterprise accounts</a></h3> 
+       <p>Follow these steps to get started using GraphQL to manage your enterprise accounts:</p> 
+       <ul> 
+        <li>Authenticating with a personal access token</li> 
+        <li>Choosing a GraphQL client or using the GraphQL Explorer</li> 
+        <li>Setting up Insomnia to use the GraphQL API</li> 
+       </ul> 
+       <p>For some example queries, see "<a href="#an-example-query-using-the-enterprise-accounts-api">An example query using the Enterprise Accounts API</a>."</p> 
+       <h4 id="1-authenticate-with-your-personal-access-token"><a href="#1-authenticate-with-your-personal-access-token">1. Authenticate with your personal access token</a></h4> 
+       <ol> 
+        <li> <p>To authenticate with GraphQL, you need to generate a personal access token (PAT) from developer settings. For more information, see "<a href="/en/github/authenticating-to-github/creating-a-personal-access-token">Creating a personal access token</a>."</p> </li> 
+        <li> <p>Grant admin and full control permissions to your personal access token for areas of GHES you'd like to access. For full permission to private repositories, organizations, teams, user data, and access to enterprise billing and profile data, we recommend you select these scopes for your personal access token:</p> 
+         <ul> 
+          <li><code>repo</code></li> 
+          <li><code>admin:org</code></li> 
+          <li><code>user</code></li> 
+          <li><code>admin:enterprise</code></li> 
+         </ul> <p>The enterprise account specific scopes are:</p> 
+         <ul> 
+          <li><code>admin:enterprise</code>: Gives full control of enterprises (includes <code>manage_billing:enterprise</code> and <code>read:enterprise</code>)</li> 
+          <li><code>manage_billing:enterprise</code>: Read and write enterprise billing data.</li> 
+          <li><code>read:enterprise</code>: Read enterprise profile data.</li> 
+         </ul> </li> 
+        <li> <p>Copy your personal access token and keep it in a secure place until you add it to your GraphQL client.</p> </li> 
+       </ol> 
+       <h4 id="2-choose-a-graphql-client"><a href="#2-choose-a-graphql-client">2. Choose a GraphQL client</a></h4> 
+       <p>We recommend you use GraphiQL or another standalone GraphQL client that lets you configure the base URL.</p> 
+       <p>You may also consider using these GraphQL clients:</p> 
+       <ul> 
+        <li><a href="https://support.insomnia.rest/article/176-graphql-queries">Insomnia</a></li> 
+        <li><a href="https://www.gatsbyjs.org/docs/running-queries-with-graphiql/">GraphiQL</a></li> 
+        <li><a href="https://learning.getpostman.com/docs/postman/sending_api_requests/graphql/">Postman</a></li> 
+       </ul> 
+       <p>The next steps will use Insomnia.</p> 
+       <h4 id="3-setting-up-insomnia-to-use-the-github-graphql-api-with-enterprise-accounts"><a href="#3-setting-up-insomnia-to-use-the-github-graphql-api-with-enterprise-accounts">3. Setting up Insomnia to use the GitHub GraphQL API with enterprise accounts</a></h4> 
+       <ol> 
+        <li> <p>Add the base url and <code>POST</code> method to your GraphQL client. When using GraphQL to request information (queries), change information (mutations), or transfer data using the GitHub API, the default HTTP method is <code>POST</code> and the base url follows this syntax:</p> 
+         <ul> 
+          <li>For your enterprise instance: <code>https://&lt;HOST&gt;/api/graphql</code></li> 
+          <li>For GitHub Enterprise Cloud: <code>https://api.github.com/graphql</code></li> 
+         </ul> </li> 
+        <li> <p>To authenticate, open the authentication options menu and select <strong>Bearer token</strong>. Next, add your personal access token that you copied earlier.</p> <p><span class="procedural-image-wrapper"><img src="/assets/images/developer/graphql/insomnia-base-url-and-pat.png" alt="Permissions options for personal access token"></span></p> <p><span class="procedural-image-wrapper"><img src="/assets/images/developer/graphql/insomnia-bearer-token-option.png" alt="Permissions options for personal access token"></span></p> </li> 
+        <li> <p>Include header information.</p> 
+         <ul> 
+          <li>Add <code>Content-Type</code> as the header and <code>application/json</code> as the value. <span class="procedural-image-wrapper"><img src="/assets/images/developer/graphql/json-content-type-header.png" alt="Standard header"></span> <span class="procedural-image-wrapper"><img src="/assets/images/developer/graphql/preview-header-for-2.18.png" alt="Header with preview value for the Audit Log API"></span></li> 
+         </ul> </li> 
+       </ol> 
+       <p>Now you are ready to start making queries.</p> 
+       <h3 id="an-example-query-using-the-enterprise-accounts-api"><a href="#an-example-query-using-the-enterprise-accounts-api">An example query using the Enterprise Accounts API</a></h3> 
+       <p>This GraphQL query requests the total number of <code>public</code> repositories in each of your appliance's organizations using the Enterprise Accounts API. To customize this query, replace <code>&lt;enterprise-account-name&gt;</code> with the slug of your Enterprise's instance slug.</p> 
+       <pre><code class="hljs language-graphql"><span class="hljs-keyword">query</span> publicRepositoriesByOrganization(<span class="hljs-name">$slug</span>:<span class="hljs-literal"> String</span>!) {
+  enterprise(slug: <span class="hljs-name">$slug</span>) {
+    ...enterpriseFragment
+  }
+}
+
+<span class="hljs-keyword">fragment</span> enterpriseFragment <span class="hljs-keyword">on</span><span class="hljs-literal"> Enterprise</span> {
+  ... <span class="hljs-keyword">on</span><span class="hljs-literal"> Enterprise</span>{
+    name
+    organizations(first: <span class="hljs-number">100</span>){
+      nodes{
+        name
+        ... <span class="hljs-keyword">on</span><span class="hljs-literal"> Organization</span>{
+          name
+          repositories(privacy:<span class="hljs-type"> PUBLIC</span>){
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}
+
+<span class="hljs-comment"># Passing our Enterprise Account as a variable</span>
+variables {
+  <span class="hljs-string">"slug"</span>: <span class="hljs-string">"&lt;enterprise-account-name&gt;"</span>
+}
+</code></pre> 
+       <p>The next GraphQL query example shows how challenging it is to retrieve the number of <code>public</code> repositories in each organization without using the Enterprise Account API. Notice that the GraphQL Enterprise Accounts API has made this task simpler for enterprises since you only need to customize a single variable. To customize this query, replace <code>&lt;name-of-organization-one&gt;</code> and <code>&lt;name-of-organization-two&gt;</code>, etc. with the organization names on your instance.</p> 
+       <pre><code class="hljs language-graphql"><span class="hljs-comment"># Each organization is queried separately</span>
+{
+  organizationOneAlias: organization(login: <span class="hljs-string">"nameOfOrganizationOne"</span>) {
+    <span class="hljs-comment"># How to use a fragment</span>
+    ...repositories
+  }
+  organizationTwoAlias: organization(login: <span class="hljs-string">"nameOfOrganizationTwo"</span>) {
+    ...repositories
+  }
+  <span class="hljs-comment"># organizationThreeAlias ... and so on up-to lets say 100</span>
+}
+
+<span class="hljs-comment">## How to define a fragment</span>
+<span class="hljs-keyword">fragment</span> repositories <span class="hljs-keyword">on</span><span class="hljs-literal"> Organization</span> {
+  name
+  repositories(privacy:<span class="hljs-type"> PUBLIC</span>){
+    totalCount
+  }
+}
+</code></pre> 
+       <h3 id="query-each-organization-separately"><a href="#query-each-organization-separately">Query each organization separately</a></h3> 
+       <pre><code class="hljs language-graphql"><span class="hljs-keyword">query</span> publicRepositoriesByOrganization {
+  organizationOneAlias: organization(login: <span class="hljs-string">"&lt;name-of-organization-one&gt;"</span>) {
+    <span class="hljs-comment"># How to use a fragment</span>
+    ...repositories
+  }
+  organizationTwoAlias: organization(login: <span class="hljs-string">"&lt;name-of-organization-two&gt;"</span>) {
+    ...repositories
+  }
+  <span class="hljs-comment"># organizationThreeAlias ... and so on up-to lets say 100</span>
+}
+<span class="hljs-comment"># How to define a fragment</span>
+<span class="hljs-keyword">fragment</span> repositories <span class="hljs-keyword">on</span><span class="hljs-literal"> Organization</span> {
+  name
+  repositories(privacy:<span class="hljs-type"> PUBLIC</span>){
+    totalCount
+  }
+}
+</code></pre> 
+       <p>This GraphQL query requests the last 5 log entries for an enterprise organization. To customize this query, replace <code>&lt;org-name&gt;</code> and <code>&lt;user-name&gt;</code>.</p> 
+       <pre><code class="hljs language-graphql">{
+  organization(login: <span class="hljs-string">"&lt;org-name&gt;"</span>) {
+    auditLog(last: <span class="hljs-number">5</span>, <span class="hljs-keyword">query</span>: <span class="hljs-string">"actor:&lt;user-name&gt;"</span>) {
+      edges {
+        node {
+          ... <span class="hljs-keyword">on</span><span class="hljs-literal"> AuditEntry</span> {
+<span class="hljs-comment"># Get Audit Log Entry by 'Action'</span>
+            action
+            actorLogin
+            createdAt
+<span class="hljs-comment"># User 'Action' was performed on</span>
+           user{
+              name
+                email
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre> 
+       <p>For more information about getting started with GraphQL, see "<a href="/en/graphql/guides/introduction-to-graphql">Introduction to GraphQL</a>" and "<a href="/en/graphql/guides/forming-calls-with-graphql">Forming Calls with GraphQL</a>."</p> 
+       <h3 id="graphql-fields-and-types-for-the-enterprise-accounts-api"><a href="#graphql-fields-and-types-for-the-enterprise-accounts-api">GraphQL fields and types for the Enterprise Accounts API</a></h3> 
+       <p>Here's an overview of the new queries, mutations, and schema defined types available for use with the Enterprise Accounts API.</p> 
+       <p>For more details about the new queries, mutations, and schema defined types available for use with the Enterprise Accounts API, see the sidebar with detailed GraphQL definitions from any <a href="/en/graphql">GraphQL reference page</a>.</p> 
+       <p>You can access the reference docs from within the GraphQL explorer on GitHub. For more information, see "<a href="/en/graphql/guides/using-the-explorer#accessing-the-sidebar-docs">Using the explorer</a>." For other information, such as authentication and rate limit details, check out the <a href="/en/graphql/guides">guides</a>.</p> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-labe

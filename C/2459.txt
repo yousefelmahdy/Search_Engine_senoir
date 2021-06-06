@@ -1,0 +1,652 @@
+<!doctype html>
+<html dir="ltr" lang="pt-BR"> 
+ <head> 
+  <meta charset="utf-8"> <!-- v19745 --> 
+  <title>Como funciona o painel Cloudflare – Central de Ajuda da Cloudflare</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="hc:meta:server:ruLP6EO2Ff9nhhbvAJliJHOoNa9mgjlDvSFvs-IJ-6tAgUWUZprYN4rEvUT-65Fyv6kRBQG5pVLl51iuxAswxw"> 
+  <meta name="description" content="Saiba mais sobre os aplicativos do painel Cloudflare para gerenciar as configurações de sua conta e site.  Visão geral Lista resumida de...">
+  <meta property="og:image" content="https://theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Central de Ajuda da Cloudflare"> 
+  <meta property="og:title" content="Como funciona o painel Cloudflare"> 
+  <meta property="og:description" content="Saiba mais sobre os aplicativos do painel Cloudflare para gerenciar as configurações de sua conta e site.
+
+Visão geral
+Lista resumida de aplicativos do painel Cloudflare
+Insights&nbsp;
+Segurança
+Flexibi..."> 
+  <meta property="og:url" content="https://support.cloudflare.com/hc/pt-br/articles/205075117-Como-funciona-o-painel-Cloudflare"> 
+  <link rel="canonical" href="https://support.cloudflare.com/hc/pt-br/articles/205075117-Como-funciona-o-painel-Cloudflare"> 
+  <link rel="alternate" hreflang="de" href="https://support.cloudflare.com/hc/de/articles/205075117-Das-Cloudflare-Dashboard-verstehen"> 
+  <link rel="alternate" hreflang="en" href="https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard"> 
+  <link rel="alternate" hreflang="es" href="https://support.cloudflare.com/hc/es-es/articles/205075117-Comprender-el-panel-de-control-de-Cloudflare"> 
+  <link rel="alternate" hreflang="fr" href="https://support.cloudflare.com/hc/fr-fr/articles/205075117-Comprendre-le-tableau-de-bord-Cloudflare"> 
+  <link rel="alternate" hreflang="ja" href="https://support.cloudflare.com/hc/ja/articles/205075117-Cloudflare%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B"> 
+  <link rel="alternate" hreflang="ko" href="https://support.cloudflare.com/hc/ko/articles/205075117-Cloudflare-dashboard-%EC%9D%B4%ED%95%B4"> 
+  <link rel="alternate" hreflang="pt" href="https://support.cloudflare.com/hc/pt-br/articles/205075117-Como-funciona-o-painel-Cloudflare"> 
+  <link rel="alternate" hreflang="zh" href="https://support.cloudflare.com/hc/zh-cn/articles/205075117-%E4%BA%86%E8%A7%A3-Cloudflare-%E4%BB%AA%E8%A1%A8%E6%9D%BF"> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-79172500fb4dbec2484043d570946543.css" id="stylesheet"> <!-- Entypo pictograms by Daniel Bruce — www.entypo.com --> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-cf937686d5b6669242017892da7bad78.css"> 
+  <link rel="stylesheet" type="text/css" href="//p13.zdassets.com/hc/theming_assets/184946/475874/style.css?digest=4402414509325"> 
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/184946/2dec4705e9ab399efdc6eef36e079aa31d1df8d9.ico"> 
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script> <!--
+  Template Name: Sagma
+  Version: 3.1.9
+  Author: Allies Interactive
+  Website: http://www.diziana.com/
+  Corporate Website : http://www.diziana.com
+  Contact: support@diziana.com
+  Follow: https://www.twitter.com/dizianaEngage
+  Like: https://www.facebook.com/diziana.engage
+  Purchase: Diziana.com
+  License: You must have a valid license purchased only from
+  diziana.com in order to legally use the theme for your project.
+  Copyright: © 2020 Allies Interactive Services Pvt. Ltd. All Rights Reserved
+--> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.0/URI.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/2a515632e0fd8ffdeb8d94cb25e44cf287feb32f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/a62d9ce6c78c259d7167495b85f03f38c8a6635f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/ef493f5fc3711bd1e6f7b876f3bfddeccbe99d36.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/d0608d7794a77e0c9fbdc1b0e5b4ecdfe79f2c37.js"></script> 
+  <script>
+  /**
+  * Icon for home category/section blocks
+  *
+  * Upload icon (ID.png) to assets for default block Icon
+  * Upload icon (hover_ID.png) to assets for hover block Icon
+  * Replace ID with category/section ID
+  * For font-icon, open the icon page and copy the class name attached in the tag as: <!--<i class="fas fa-pencil-alt"></i>-->
+  *
+  * Once asset is uploaded, click on it so details is shown in right pane
+  * Copy the text written under script tag and paste it below
+  *
+  * Your code should look like the below lines -
+  *  var assets360000004673 = "";
+  *  var assetsHover360000004673 = "";
+  *  var assets360000004673 = "fas fa-pencil-alt";
+  **/
+
+  // Paste copied code here
+  var assets200275228 = "fas fa-fire"; // Firewall category
+  var assets200276257 = "fas fa-file"; // Page Rules category
+  var assets200275248 = "fas fa-server"; // Caching category
+  var assets200276267 = "fas fa-chart-pie"; // Analytics category
+  var assets200275278 = "fas fa-user"; // Third-party software category
+  var assets200275298 = "fas fa-cog"; // Cloudflare client API category
+  var assets200276277 = "fas fa-hands-helping"; // Partners category
+  var assets200276287 = "fas fa-plus-circle"; // Cloudflare apps category
+
+</script> 
+  <script>
+  var systemStatusText = "All Systems Operational";
+  /* var systemStatusText = "" */
+  
+  var tocHeadingText = "Neste artigo";
+  /* var tocHeadingText = "" */
+
+  /**
+  * Returns URL of image
+  *
+  **/
+
+  function getAssetURLById(id) {
+    return {
+      blockIcon: window["assets" + id],
+      blockHoverIcon: window["assetsHover" + id]
+    }
+  }
+
+  /**
+  * sets the image url from assets id
+  *
+  **/
+  function setIcon(id) {
+    var icon = getAssetURLById(id);
+
+    if ( icon.blockIcon != undefined ) {
+      var blockIcon = $("."+ id + '-block-icon');
+      var blockHoverIcon = $("."+ id + '-block-hover-icon');
+      var blockFontIcon = $("."+ id + '-block-font-icon');
+
+      if ( icon.blockIcon.indexOf('fa') == 0 ) {
+        blockFontIcon.addClass(icon.blockIcon);
+        blockFontIcon.parent().removeClass('hide');
+        blockFontIcon.show();
+        blockIcon.hide();
+        blockHoverIcon.hide();
+      } else {
+        blockIcon.attr('src', icon.blockIcon);
+        blockHoverIcon.attr('src', icon.blockHoverIcon);
+        blockIcon.parent().removeClass('hide');
+        blockFontIcon.hide();
+      }
+    }
+  }
+</script> 
+  <style type="text/css">
+
+.search-box .search input[type="submit"] {
+  background-image: url('//theme.zdassets.com/theme_assets/184946/d784142ca13b85d3a5d7918637c1e4d77dfef300.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-category-list .accordion-toggle.collapsed:after, .home-category-list .accordion-toggle:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/e36baa2f259318b4e14f9a14bd17f8a567456e98.png") no-repeat center center;
+}
+
+.home-category-list .accordion-toggle.open:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/7fb2bfa79c7022b7c88692589f4a1e2e97b95150.png") no-repeat center center;
+}
+
+.user-nav li + li a:before {
+  background: url("//theme.zdassets.com/theme_assets/184946/3126fee5fe913e135dcd1bed4b5fc0e80f82ce5c.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+  
+.banner div { 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   background-color: #00517F; 
+   width: 100%;
+   z-index: 100;
+ }
+.banner-content div { 
+   margin: 0 auto; 
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+ }
+.banner-content a {
+   color: #fff; 
+ }
+
+</style> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> 
+  <script type="text/javascript" src="//p13.zdassets.com/hc/theming_assets/184946/475874/script.js?digest=4402414509325"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class=""> 
+  <header class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo"> <a href="https://support.cloudflare.com/hc/" alt="Cloudflare Help Center" title="Cloudflare Help Center"> <img src="//theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png" alt="Logotipo"> </a> 
+    </div> 
+    <div class="nav-wrapper"> <span class="icon-menu"></span> <i class="fas system-status-icon"></i> 
+     <nav class="user-nav" id="user-nav"> <a href="https://www.cloudflarestatus.com"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> <a href="https://community.cloudflare.com/" title="Pergunte à comunidade"> Pergunte à comunidade </a> 
+     </nav> 
+     <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br%2Farticles%2F205075117-Como-funciona-o-painel-Cloudflare" data-name="Português do Brasil"> Português do Brasil </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/de?return_to=%2Fhc%2Fde%2Farticles%2F205075117-Das-Cloudflare-Dashboard-verstehen" dir="ltr" rel="nofollow" role="menuitem"> Deutsch </a> <a href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us%2Farticles%2F205075117-Understanding-the-Cloudflare-dashboard" dir="ltr" rel="nofollow" role="menuitem"> English (US) </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es%2Farticles%2F205075117-Comprender-el-panel-de-control-de-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr%2Farticles%2F205075117-Comprendre-le-tableau-de-bord-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja%2Farticles%2F205075117-Cloudflare%25E3%2583%2580%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A5%25E3%2583%259C%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/ko?return_to=%2Fhc%2Fko%2Farticles%2F205075117-Cloudflare-dashboard-%25EC%259D%25B4%25ED%2595%25B4" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F205075117-%25E4%25BA%2586%25E8%25A7%25A3-Cloudflare-%25E4%25BB%25AA%25E8%25A1%25A8%25E6%259D%25BF" dir="ltr" rel="nofollow" role="menuitem"> ???? </a> </span> 
+     </div> <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="Abre uma caixa de diálogo" href="/hc/pt-br/signin?return_to=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fpt-br%2Farticles%2F205075117-Como-funciona-o-painel-Cloudflare&amp;locale=pt-br">Entrar</a> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="hero"> 
+   <div class="hero-inner"> 
+    <h1 class="welcome-message-title welcome-message hide">Central de Ajuda da Cloudflare</h1> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/pt-br/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Pesquisa" autocomplete="off" aria-label="Pesquisa"> 
+     <input type="submit" name="commit" value="Pesquisa">
+    </form> <span id="search_placeholder_template" data-value="Pesquise a base de conhecimento do Suporte da Cloudflare" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Pesquisas mais populares:</li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=lento+site&amp;utf8=%E2%9C%93'">site lento</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=tráfego+pico&amp;utf8=%E2%9C%93">pico de tráfego</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=subdomínio&amp;utf8=%E2%9C%93">subdomínio</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </div> 
+  </section> <!-- Modal --> 
+  <div class="modal" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-body"> <i class="fa fa-times close-modal"></i> <a href="https://www.cloudflarestatus.com" title="All Systems Operational"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> 
+    </div> 
+   </div> 
+  </div> <!-- /Modal --> 
+  <main role="main"> 
+   <script>
+  var templateName = 'articles';
+  $('.header-wrapper').addClass('fluid');
+</script> 
+   <style>
+  .footer-search-wrapper {display: none;}
+  @media (min-width: 1024px) {
+  	.hero {display: none;}
+  }
+</style> 
+   <div class="article-wrapper"> 
+    <section class="article-sidebar"> 
+     <form role="search" class="search" data-search="" data-instant="true" autocomplete="off" action="/hc/pt-br/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Pesquisa" autocomplete="off" aria-label="Pesquisa">
+     </form> 
+     <div class="system-status"> <i class="fas system-status-icon"></i> 
+      <div> 
+       <h3 class="system-status-text"></h3> <a href="https://www.cloudflarestatus.com" title="Detailed system status"> Detailed system status &gt; </a> 
+      </div> 
+     </div> 
+     <section class="section-articles collapsible-sidebar"> 
+      <h3 class="collapsible-sidebar-title sidenav-title">Artigos nessa seção</h3> 
+      <ul> 
+       <li> <a href="/hc/pt-br/articles/360037345072-Primeiros-passos-na-Cloudflare-tutoriais-em-v%C3%ADdeo" class="sidenav-item " title="Primeiros passos na Cloudflare: tutoriais em vídeo">Primeiros passos na Cloudflare: tutoriais em vídeo</a> </li> 
+       <li> <a href="/hc/pt-br/articles/201720164-Crie-uma-conta-na-Cloudflare-e-adicione-um-site" class="sidenav-item " title="Crie uma conta na Cloudflare e adicione um site">Crie uma conta na Cloudflare e adicione um site</a> </li> 
+       <li> <a href="/hc/pt-br/articles/360027989951-Primeiros-passos-com-a-Cloudflare" class="sidenav-item " title="Primeiros passos com a Cloudflare">Primeiros passos com a Cloudflare</a> </li> 
+       <li> <a href="/hc/pt-br/articles/205195708-Altera%C3%A7%C3%A3o-dos-nameservers-de-dom%C3%ADnio-para-Cloudflare" class="sidenav-item " title="Alteração dos nameservers de domínio para Cloudflare">Alteração dos nameservers de domínio para Cloudflare</a> </li> 
+       <li> <a href="/hc/pt-br/articles/205075117-Como-funciona-o-painel-Cloudflare" class="sidenav-item current-article" title="Como funciona o painel Cloudflare">Como funciona o painel Cloudflare</a> </li> 
+       <li> <a href="/hc/pt-br/articles/360027710672-Perguntas-frequentes-sobre-solu%C3%A7%C3%A3o-de-problemas-para-novos-clientes-da-Cloudflare" class="sidenav-item " title="Perguntas frequentes sobre solução de problemas para novos clientes da Cloudflare">Perguntas frequentes sobre solução de problemas para novos clientes da Cloudflare</a> </li> 
+      </ul> 
+     </section> <!--
+    <section class="community-block">
+      <div>
+        <i class="fas fa-users"></i>
+        <div>
+          
+          <h3>Connect with the Cloudflare Community</h3>
+          <a href="https://community.cloudflare.com/" class="button button-large">Get answers</a>
+          
+        </div>
+      </div>
+      <p>
+        
+        More on this topic: <a href="#">Discussions</a> and <a href="#">Tips</a>
+        
+      </p>
+    </section>
+   --> 
+     <section class="community-block"> 
+      <div> 
+       <img class="community-icon" src="//theme.zdassets.com/theme_assets/184946/513a9e8b35eaed0a35fce9cc22f9972e37872a33.png"> 
+       <div> 
+        <h4>Conecte-se com a Comunidade da Cloudflare</h4> <a id="submit-request" class="button button-large" href="https://community.cloudflare.com/" onclick="trackOutboundLink('https://community.cloudflare.com/'); return false;" target="_new">Obtenha respostas</a> 
+       </div> 
+      </div> 
+      <p>Mais sobre esse tópico: <a class="link" href="https://community.cloudflare.com/tags/dash-getting-started/l/latest" onclick="trackOutboundLink('https://community.cloudflare.com/tags/dash-getting-started/l/latest'); return false;" target="_new">Conversas</a> comunicados e Notas da Versão <a class="link" href="https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started" onclick="trackOutboundLink('https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started'); return false;" target="_new">Dicas</a> </p> 
+     </section> 
+    </section> 
+    <div class="article-container section" id="article-container"> 
+     <nav class="sub-nav"> 
+      <ol class="breadcrumbs"> 
+       <li title="Central de Ajuda da Cloudflare"> <a href="/hc/pt-br">Central de Ajuda da Cloudflare</a> </li> 
+       <li title="Sobre a Cloudflare"> <a href="/hc/pt-br/categories/200275218-Sobre-a-Cloudflare">Sobre a Cloudflare</a> </li> 
+       <li title="Comece a usar"> <a href="/hc/pt-br/sections/200820158-Comece-a-usar">Comece a usar</a> </li> 
+      </ol> 
+      <script>
+        var categoryid = $('.breadcrumbs li:nth-child(2) a').attr('href').match(/[0-9]+/)[0];
+      </script> 
+     </nav> 
+     <div class="article-side-main-block  "> 
+      <article class="article"> 
+       <header class="article-header meta-hidden"> 
+        <h1 title="Como funciona o painel Cloudflare" class="article-title"> <span> Como funciona o painel Cloudflare </span> 
+         <div> <a class="article-subscribe" title="Abrir um diálogo de acesso" rel="nofollow" role="button" data-auth-action="signin" aria-selected="false" href="/hc/pt-br/articles/205075117-Como-funciona-o-painel-Cloudflare/subscription.html">Seguir</a> 
+         </div> <script>
+              $('header .language-selector').clone().prependTo('.article-title > div');
+    					$('article .language-selector').removeClass('hide').addClass('button');
+              var articleId = 205075117;
+              var nodes = $(".language-selector a[href^='/hc/change_language/']");
+              nodes.each(function() {
+                var ele = $(this);
+                var href =  ele.attr("href");
+                var returnToValue = href.split("return_to")[1];
+                if(returnToValue.indexOf(articleId) < 0) {
+                  ele.remove();
+                }
+              });
+            </script> </h1> 
+        <div class="block-wrapper"> 
+         <div class="article-author"> 
+          <div class="article-meta"> 
+           <ul class="meta-group"> 
+            <li class="meta-data">Atualizado</li> 
+            <li class="meta-data"><time datetime="2020-04-16T15:04:15Z" title="2020-04-16T15:04:15Z" data-datetime="relative">16 de abril de 2020 15:04</time></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </header> 
+       <section class="article-info"> 
+        <div class="article-content"> 
+         <div class="article-body">
+          <div id="body_205075117" name="body">
+           <p><em>Saiba mais sobre os aplicativos do painel Cloudflare para gerenciar as configurações de sua conta e site.</em></p>
+           <div class="cf-toc">
+            <ul>
+             <li><a href="#2ca3W5UqLnxVQ5W5w1mm1b">Visão geral</a></li>
+             <li><a href="#5bTUH7qpF3EH6ZfpLMyDgR">Lista resumida de aplicativos do painel Cloudflare</a></li>
+             <li><a href="#3mMd7zkfrIf8Kw1WDTrQqX">Insights&nbsp;</a></li>
+             <li><a href="#43bPquxg1NyVgmRMNTyrAj">Segurança</a></li>
+             <li><a href="#5GLUd4g91i0staGGIXS38V">Flexibilidade</a></li>
+             <li><a href="#24CcAO9Q1yoWO3oHlIhezV">Desempenho</a></li>
+             <li><a href="#64t47MhPMfjIYXIrZ4PyUp">Recursos relacionados</a></li>
+            </ul>
+           </div>
+           <hr>
+           <h2 id="2ca3W5UqLnxVQ5W5w1mm1b">Visão geral</h2>
+           <p>O painel Cloudflare gerencia as configurações da conta e domínio. Principais funcionalidades:</p>
+           <ul>
+            <li>Controlar as funcionalidades do painel Cloudflare;</li>
+            <li>Obter informações de segurança de domínio e analytics de cache,</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200167946">Compartilhar o acesso à conta;</a></li>
+            <li>Ajustar as configurações usando qualquer dispositivo por meio do nosso design de painel flexível.</li>
+           </ul>
+           <p>As alterações são atualizadas globalmente na rede da Cloudflare em até 30 segundos. Isso se aplica a alterações na configuração de todos os produtos e recursos da Cloudflare, exceto <a href="https://support.cloudflare.com/hc/articles/200169246">limpeza de cache</a>, que pode levar até um minuto.&nbsp;Todas as alterações confirmadas via API e painel Cloudflare, bem como via <a href="https://developers.cloudflare.com/terraform/getting-started/">Terraform</a>, utilizam a mesma API e tecnologia básica.</p>
+           <p>Todos os planos da Cloudflare permitem <a href="https://support.cloudflare.com/hc/articles/200167946">compartilhar o acesso à conta com outros usuários</a>. Nos planos Enterprise, os administradores podem criar <a href="https://support.cloudflare.com/hc/articles/205065067">contas multiusuário</a> e cada usuário pode editar apenas as configurações do painel Cloudflare que se aplicam à função.</p>
+           <div class="cf-sidebar-2 cf-note">
+            O painel Cloudflare requer um navegador Web que ofereça suporte a <a href="https://caniuse.com/#search=tls%201.2">TLS 1.2</a> ou mais recente, e não é compatível com versões anteriores ao navegador IE 10. Acesse o site <a href="https://browsehappy.com/?locale=en">Browse Happy</a> para obter links de atualização dos navegadores mais populares.
+           </div>
+           <p>A Cloudflare usa tokens para autenticar uma sessão quando um usuário está conectado à uma conta da empresa. Quando seu ISP muda o endereço IP durante a sessão, o token perde a validade e uma mensagem de erro de e-mail ou de token inválido é exibida. Saia e faça login novamente para corrigir o problema ou limpe o cache e os cookies do navegador.</p>
+           <hr>
+           <h2 id="5bTUH7qpF3EH6ZfpLMyDgR">Lista resumida de aplicativos do painel Cloudflare</h2>
+           <p>O painel Cloudflare contém vários aplicativos que fornecem <a href="https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard#h_76770eb2-b211-4e55-826f-8111c1d2cf30">insights de dados</a>, <a href="https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard#h_fd2d3e1b-c379-4a41-bfb0-b643f9fd127a">reforçam a segurança</a>, <a href="https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard#h_6f753407-f117-4162-9bdc-0252f09884a6">oferecem flexibilidade de configuração</a>, <a href="https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard#h_7764d480-95df-4aa8-8eeb-12a9e17079e9">melhoram o desempenho</a> e aumentam a confiabilidade do site.</p>
+           <p><img alt="captura de tela da lista de aplicativos do painel Cloudflare" src="https://images.ctfassets.net/slt3lc6tev37/17kbAxnMhT793bdHE8Ez5V/22f3d99c89bf166ae13a8b3fb9ab5afe/hc-import-dashboard_apps_no_crypto_sept19.png"></p>
+           <p>Segue, abaixo, um resumo da utilidade de cada aplicativo do painel.</p>
+           <hr>
+           <h2 id="3mMd7zkfrIf8Kw1WDTrQqX">Insights&nbsp;</h2>
+           <h3>Visão geral</h3>
+           <p class="cf-video-container"><iframe allowfullscreen height="320" src="https://iframe.cloudflarestream.com/1396ff01893962ed4e4471507b428212" style="border: none;" width="480"></iframe></p>
+           <p>Funcionalidades:</p>
+           <ul>
+            <li>Descreve resumidamente as analytics do site;</li>
+            <li>Exibe notificações;</li>
+            <li>Conecta-se a ações rápidas comuns;</li>
+            <li>Descreve resumidamente as extensões de plano e funcionalidades complementares;</li>
+            <li>Fornece detalhes de autenticação da API, incluindo <strong>ID de zona</strong> e <strong>ID da conta</strong>;</li>
+            <li>Permite alterar planos de domínio;</li>
+            <li>Permite remover um site do painel Cloudflare.</li>
+           </ul>
+           <h3>Analytics</h3>
+           <p>Monitore estatísticas e tendências referentes a:</p>
+           <ul>
+            <li>Tráfego de visitantes;</li>
+            <li>Tratamento de solicitação de DNS;</li>
+            <li>Detecção de ameaças;</li>
+            <li>Desempenho</li>
+           </ul>
+           <p>&nbsp;</p>
+           <hr>
+           <h2 id="43bPquxg1NyVgmRMNTyrAj">Segurança</h2>
+           <h3>Spectrum</h3>
+           <ul>
+            <li><a href="https://developers.cloudflare.com/spectrum/getting-started/">Proteja todas as portas TCP/UDP</a> contra <a href="https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/">ataques de negação de serviço (DoS)</a> de camadas 3 e 4;</li>
+            <li>Interrompa a espionagem do tráfego ativando a criptografia TLS para serviços TCP.</li>
+           </ul>
+           <h3>SSL/TLS</h3>
+           <ul>
+            <li>Gerencie <a href="https://support.cloudflare.com/hc/en-us/articles/203295200">produtos de certificados SSL da Cloudflare</a>;</li>
+            <li>Ajuste a <a href="https://support.cloudflare.com/hc/articles/203041594#h_812cc429-890f-421e-9c29-5fb895157522">compatibilidade com o navegador</a> modificando as configurações de TLS e criptografia;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/204144518">Redirecione todas as solicitações HTTP para HTTPS seguro.</a></li>
+           </ul>
+           <h3>Firewall</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/217074967">Bloqueie ou permita o tráfego</a> de acordo com o endereço IP, intervalo de IPs, país ou user agent;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/115001635128">Crie limites de taxa</a> e restrinja o acesso de URLs específicos a IPs específicos;</li>
+            <li>Ajuste as configurações das <a href="https://support.cloudflare.com/hc/articles/200172016#sJbboLurEVhipzWYJQnyz">regras de WAF </a> e <a href="https://support.cloudflare.com/hc/articles/200172016">OWASP</a>;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200170086">Inspecione os cabeçalhos HTTP do visitante em busca de ameaças.</a></li>
+           </ul>
+           <h3><strong>&nbsp;</strong>Access</h3>
+           <ul>
+            <li><a href="https://developers.cloudflare.com/access/about/">Elimine VPNs sem precisar alterar sua origem;</a></li>
+            <li>Proteja recursos internos exigindo autenticação;</li>
+            <li>Controle quais usuários e grupos podem ter acesso a recursos confidenciais;</li>
+            <li>Analise registros de acesso.</li>
+           </ul>
+           <h3>ScrapeShield</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/200170036">Proteja informações confidenciais</a> contra spammers e bots;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200170016">Ofusque endereços de e-mail</a> para impedir a extração de bots;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200170026">Impeça o abuso de links de imagem</a> de sites não aprovados.</li>
+           </ul>
+           <p>&nbsp;</p>
+           <hr>
+           <h2 id="5GLUd4g91i0staGGIXS38V">Flexibilidade</h2>
+           <h3>Workers</h3>
+           <ul>
+            <li><a href="https://developers.cloudflare.com/workers/about/">Execute aplicativos JavaScript em um ambiente de execução sem servidor;</a></li>
+            <li>Expanda aplicações sem gastar com infraestrutura ou operações;</li>
+            <li>Crie controle granular em solicitações e respostas.</li>
+           </ul>
+           <h3>Page Rules</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/218411427">Oferece controle granular</a> para várias configurações do painel Cloudflare de acordo com a URL correspondente;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/360021023712">Armazenamento em cache de HTML estático.</a></li>
+           </ul>
+           <h3>Custom&nbsp;Pages</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/200172706">Crie páginas de erro personalizadas</a> para bloqueios de IP, blocos de WAF, erros 5XX de HTTP, erros 1XXX de HTTP da Cloudflare, entre outros.</li>
+           </ul>
+           <h3>Aplicativo</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/115000305752">Visualize e instale</a> uma ampla variedade de aplicativos que melhoram a segurança, o desempenho, as analytics e o design do seu site e muito mais.</li>
+           </ul>
+           <p>&nbsp;</p>
+           <hr>
+           <h2 id="24CcAO9Q1yoWO3oHlIhezV">Desempenho</h2>
+           <h3>DNS</h3>
+           <p class="cf-video-container wysiwyg-text-align-center"><iframe allowfullscreen height="320" src="https://iframe.cloudflarestream.com/06075bdffe47898b464f65040a012a44" width="480"></iframe></p>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/360019093151">G</a><a href="https://support.cloudflare.com/hc/articles/360019093151">erencie os registros DNS de um domínio</a>;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200169626">Escolha quais registros A ou CNAME delegar para proxy;</a></li>
+            <li>Encontre os nameservers da Cloudflare atribuídos ao seu domínio.</li>
+           </ul>
+           <h3>Velocidade</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/219178057">Melhore o tempo de carregamento em dispositivos móveis;</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/360000607372">Comprima imagens para acelerar o carregamento da página;</a></li>
+            <li>Acelere a velocidade do site <a href="https://support.cloudflare.com/hc/articles/200168196">diminuindo o tamanho do seu código-fonte de origem</a>;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200168056">Adie o carregamento do JavaScript </a> até que o site seja renderizado.</li>
+           </ul>
+           <h3>Caching</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/200168256">Ajuste o nível de armazenamento em cache;</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200169246">Apague os arquivos em cache</a> de todos os data centers Cloudflare;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/202775670"> Diga ao Cloudflare o que armazenar em cache </a> e <a href="https://support.cloudflare.com/hc/articles/200168276"> defina o TTL </a> cache do navegador.</li>
+           </ul>
+           <h3>Rede</h3>
+           <ul>
+            <li>Alterne funcionalidades que melhoram o desempenho da rede, como <a href="https://www.cloudflare.com/website-optimization/http2/what-is-http2/">HTTP/2</a> e <a href="https://cloudflare-quic.com/">QUIC</a>.</li>
+           </ul>
+           <h3>Traffic</h3>
+           <ul>
+            <li><a href="https://www.cloudflare.com/products/argo-smart-routing/">Reduza erros de latência e conexão;</a></li>
+            <li><a href="https://developers.cloudflare.com/argo-tunnel/quickstart/">P</a><a href="https://developers.cloudflare.com/argo-tunnel/quickstart/">roteja servidores Web da exposição de endereços IP</a> e de ataques;</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/115000081911">Equilibre o tráfego</a>&nbsp;e impeça interrupções.</li>
+           </ul>
+           <h3>Stream</h3>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/360017801091">Codifique, armazene e disponibilize seus vídeos;</a></li>
+            <li>Otimize automaticamente o formato e a taxa de bits de todos os dispositivos e redes.</li>
+           </ul>
+           <p>&nbsp;</p>
+           <hr>
+           <h2 id="64t47MhPMfjIYXIrZ4PyUp">Recursos relacionados</h2>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/360027989951">Primeiros passos com a Cloudflare</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200167946">Acesso à conta compartilhada</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/205065067">Domínios multiusuário (somente Enterprise)</a></li>
+           </ul>
+           <p>&nbsp;</p>
+           <p>&nbsp;</p>
+          </div>
+         </div> 
+        </div> 
+       </section> 
+       <footer> 
+        <div class="article-footer"> 
+         <div class="article-share"> 
+          <ul class="share"> 
+           <li><a href="https://www.facebook.com/share.php?title=Como+funciona+o+painel+Cloudflare&amp;u=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fpt-br%2Farticles%2F205075117-Como-funciona-o-painel-Cloudflare" class="share-facebook">Facebook</a></li> 
+           <li><a href="https://twitter.com/share?lang=pt&amp;text=Como+funciona+o+painel+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fpt-br%2Farticles%2F205075117-Como-funciona-o-painel-Cloudflare" class="share-twitter">Twitter</a></li> 
+           <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;source=Cloudflare&amp;title=Como+funciona+o+painel+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fpt-br%2Farticles%2F205075117-Como-funciona-o-painel-Cloudflare" class="share-linkedin">LinkedIn</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="article-votes"> 
+         <div> <span class="article-votes-question">Esse artigo foi útil?</span> <small class="article-votes-count"> <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="205075117" data-upvote-count="43" data-vote-count="89" data-vote-sum="-3" data-vote-url="/hc/pt-br/articles/205075117/vote" data-value="null" data-label="Usuários que acharam isso útil: 43 de 89">Usuários que acharam isso útil: 43 de 89</span> </small> 
+         </div> 
+         <div class="article-votes-controls" role="radiogroup"> <a class="button article-vote article-vote-up" data-helper="vote" data-item="article" data-type="up" data-id="205075117" data-upvote-count="43" data-vote-count="89" data-vote-sum="-3" data-vote-url="/hc/pt-br/articles/205075117/vote" data-value="null" data-label="Usuários que acharam isso útil: 43 de 89" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Sim" href="#"></a> <a class="button article-vote article-vote-down" data-helper="vote" data-item="article" data-type="down" data-id="205075117" data-upvote-count="43" data-vote-count="89" data-vote-sum="-3" data-vote-url="/hc/pt-br/articles/205075117/vote" data-value="null" data-label="Usuários que acharam isso útil: 43 de 89" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Não" href="#"></a> 
+         </div> 
+        </div> 
+        <div class="article-return-to-top"> <a href="#article-container">Voltar ao topo <span class="icon-arrow-up"></span> </a> 
+        </div> 
+       </footer> 
+      </article> 
+     </div> 
+    </div> 
+   </div> 
+   <section class="article-footer-search-wrapper footer-search-wrapper"> 
+    <section class="container"> 
+     <section class="content-wrapper"> 
+      <section> 
+       <h1>Não encontrou o que está precisando?</h1> 
+       <p>A pesquisa pode ajudar a responder 95% das perguntas de suporte. É a forma mais rápida de obter respostas.</p> 
+      </section> 
+      <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Pergunte à comunidade"> Pergunte à comunidade </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Enviar uma solicitação"> Enviar uma solicitação </a> 
+      </section> 
+     </section> 
+     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/pt-br/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Pesquisa" autocomplete="off" aria-label="Pesquisa"> 
+      <input type="submit" name="commit" value="Pesquisa">
+     </form> <span id="search_placeholder_template" data-value="Pesquise a base de conhecimento do Suporte da Cloudflare" style="display:none"></span> 
+     <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+     <ul class="promoted-articles"> 
+      <li>Pesquisas mais populares:</li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=ddos&amp;utf8=%E2%9C%93">DDoS</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=cdn&amp;utf8=%E2%9C%93">CDN</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=2fa&amp;utf8=%E2%9C%93">2FA</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=lento+site&amp;utf8=%E2%9C%93'">site lento</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=tráfego+pico&amp;utf8=%E2%9C%93">pico de tráfego</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=subdomínio&amp;utf8=%E2%9C%93">subdomínio</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=cname&amp;utf8=%E2%9C%93">cname</a></li> 
+      <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     </ul> 
+    </section> 
+   </section> 
+   <section class="container"> 
+    <section class="article-relatives"> 
+     <div data-recent-articles></div> 
+     <section class="related-articles"> 
+      <h3 class="related-articles-title">Artigos relacionados</h3> 
+      <ul> 
+       <li> <a href="/hc/pt-br/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEZAEGDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkErTI5DDoLbG9jYWxlSSIKcHQtYnIGOgZFVDoIdXJsSSJRL2hjL3B0LWJyL2FydGljbGVzLzIwMTcyMDE2NC1DcmllLXVtYS1jb250YS1uYS1DbG91ZGZsYXJlLWUtYWRpY2lvbmUtdW0tc2l0ZQY7CFQ6CXJhbmtpBg%3D%3D--57f3b4f93c8c0face69c8647416e73d98d1b9e41" rel="nofollow">Crie uma conta na Cloudflare e adicione um site</a> </li> 
+       <li> <a href="/hc/pt-br/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE5LYIDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkErTI5DDoLbG9jYWxlSSIKcHQtYnIGOgZFVDoIdXJsSSJVL2hjL3B0LWJyL2FydGljbGVzLzIwMTg5NzcwMC1Db21vLXBlcm1pdGlyLW9zLWVuZGVyZSVDMyVBN29zLWRlLUlQLWRhLUNsb3VkZmxhcmUGOwhUOglyYW5raQc%3D--c96f989a67615684f77b612b97b58dd4d23e57bc" rel="nofollow">Como permitir os endereços de IP da Cloudflare</a> </li> 
+       <li> <a href="/hc/pt-br/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE7MA6DDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkErTI5DDoLbG9jYWxlSSIKcHQtYnIGOgZFVDoIdXJsSSI9L2hjL3B0LWJyL2FydGljbGVzLzIwNTE3NzA2OC1Db21vLWEtQ2xvdWRmbGFyZS1mdW5jaW9uYS0GOwhUOglyYW5raQg%3D--f4d495e2b536754e1a78354f20bba586c7ae4443" rel="nofollow">Como a Cloudflare funciona?</a> </li> 
+       <li> <a href="/hc/pt-br/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEo7EEDToYcmVmZXJyZXJfYXJ0aWNsZV9pZGkErTI5DDoLbG9jYWxlSSIKcHQtYnIGOgZFVDoIdXJsSSJvL2hjL3B0LWJyL2FydGljbGVzLzIxODQxMTQyNy1Db21vLWVudGVuZGVyLWUtY29uZmlndXJhci1vLVBhZ2UtUnVsZXMtZGEtQ2xvdWRmbGFyZS10dXRvcmlhbC1kby1QYWdlLVJ1bGVzLQY7CFQ6CXJhbmtpCQ%3D%3D--77de7692517ccb3841e3e15cd174563807fe4e6b" rel="nofollow">Como entender e configurar o Page Rules da Cloudflare (tutorial do Page Rules)</a> </li> 
+       <li> <a href="/hc/pt-br/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCADnuNFTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkErTI5DDoLbG9jYWxlSSIKcHQtYnIGOgZFVDoIdXJsSSJvL2hjL3B0LWJyL2FydGljbGVzLzM2MDAwMDg0MTQ3Mi1Db21vLWFkaWNpb25hci12JUMzJUExcmlvcy1zaXRlcy0lQzMlQTAtQ2xvdWRmbGFyZS12aWEtYXV0b21hJUMzJUE3JUMzJUEzbwY7CFQ6CXJhbmtpCg%3D%3D--356e154f12dca0edf4f6305cb13ad77149e55d33" rel="nofollow">Como adicionar vários sites à Cloudflare via automação</a> </li> 
+      </ul> 
+     </section> 
+    </section> 
+   </section> 
+  </main> 
+  <section class="footer-search-wrapper"> 
+   <section class="container"> 
+    <section class="content-wrapper"> 
+     <section> 
+      <h1>Não encontrou o que está precisando?</h1> 
+      <p>A pesquisa pode ajudar a responder 95% das perguntas de suporte. É a forma mais rápida de obter respostas.</p> 
+     </section> 
+     <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Pergunte à comunidade"> Pergunte à comunidade </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Envie uma solicitação"> Envie uma solicitação </a> 
+     </section> 
+    </section> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/pt-br/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Pesquisa" autocomplete="off" aria-label="Pesquisa"> 
+     <input type="submit" name="commit" value="Pesquisa">
+    </form> <span id="search_placeholder_template" data-value="Pesquise a base de conhecimento do Suporte da Cloudflare" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Pesquisas mais populares:</li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=lento+site&amp;utf8=%E2%9C%93'">site lento</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=tráfego+pico&amp;utf8=%E2%9C%93">pico de tráfego</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=subdomínio&amp;utf8=%E2%9C%93">subdomínio</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/pt-br/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </section> 
+  </section> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-inner"> 
+     <div class="footer-links"> 
+      <h3 title="Sales">Vendas</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" title="Enterprise Sales">Vendas para empresas</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/partners/" title="Become a Partner">Torne-se um parceiro</a> </li> 
+       <br> 
+       <li class="footer-link-item"> <a href="tel:+18889935273" title="Contact Sales: +1 (888) 99 FLARE  ">Fale com Vendas: <br> +55 (11) 3230 4523</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Getting Started">Comece agora</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/analysts/" title="Industry Analysts">Analistas do setor</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/" title=" Pricing">Tabela de preços</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/case-studies/" title="Case Studies">Estudos de casos</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/resources/" title="White Papers">Artigos</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/webinars/" title="Webinars">Webinars</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/learning/" title="Learning Center">Centro de Aprendizado</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Community">Comunidade</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://community.cloudflare.com" title="Community Hub">Centro da Comunidade</a> </li> 
+       <li class="footer-link-item"> <a href="https://blog.cloudflare.com" title="Blog">Blog</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/galileo/" title="Project Galileo">Projeto Galileu</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/athenian/" title="Athenian Project">Projeto Athenian</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Developers">Desenvolvedores</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://developers.cloudflare.com" title="Developers Hub">Central do Desenvolvedor</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/products/cloudflare-workers/" title="Cloudflare Workers">Cloudflare Workers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/integrations/" title="Integrations">Integrações</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Support">Suporte</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://support.cloudflare.com" title="Help Center">Central de Ajuda</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflarestatus.com" title="Cloudflare Status">Status da Cloudflare</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/compliance/" title="Compliance">Conformidade</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/gdpr/introduction/" title="GDPR">GDPR</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Company">A empresa</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/about-overview/" title="About Cloudflare">Sobre a Cloudflare</a> </li> 
+       <li class="footer-link-item"> <a href="https://cloudflare.net" title="Investor relations">Relações com investidores</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/people/" title="Our team">Nossa equipe</a> </li> 
+       <li class="footer-li

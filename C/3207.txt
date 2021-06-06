@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-US" dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta content="#2f3241" name="theme-color"> 
+  <meta property="og:type" content="website"> 
+  <title>Stable Releases | Electron</title> 
+  <meta property="og:title" content="Stable Releases | Electron"> 
+  <meta name="twitter:title" value="Stable Releases | Electron"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta property="twitter:image" content="https://www.electronjs.org/unknown.name"> <!-- consumed by scripts/get-localized-strings --> 
+  <meta name="localized.clipboard.copy" content="Copy"> 
+  <meta name="localized.clipboard.copy_to_clipboard" content="Copy to Clipboard"> 
+  <meta name="localized.clipboard.copied" content="Copied"> 
+  <meta name="localized.fiddle_launch_button.launch" content="Launch"> 
+  <meta name="localized.fiddle_launch_button.launch_in_fiddle" content="Launch in Fiddle"> 
+  <meta name="twitter:site" content="@ElectronJS"> 
+  <link rel="shortcut icon" href="/images/favicon.b7a59262df48d6563400baf5671da548.ico"> 
+  <link rel="alternate" type="application/rss+xml" title="Electron Blog" href="https://electronjs.org/blog.xml"> 
+  <link rel="alternate" type="application/rss+xml" title="Electron Releases" href="https://electronjs.org/releases.xml"> 
+  <link rel="stylesheet" href="/styles/index.b89afefc8d7e52e522f64bcb6f8a2e21.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-160365006-1', 'auto');
+    ga('send', 'pageview');
+  </script> 
+ </head> 
+ <body> 
+  <header class="site-header"> 
+   <div class="container"> <a class="site-header-logo no-underline-hover" href="/" aria-label="Electron Home Page"> 
+     <svg class="site-header-icon" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <g stroke="none" fill="none" fill-rule="evenodd"> 
+       <path class="svg-stroke" d="M11.7014354,7.72646259 C7.91761319,7.04380371 4.81334929,7.69369948 3.61536899,9.74908711 C2.72656361,11.27402 3.03878853,13.3122813 4.27551338,15.4489979 M6.32642733,18.1886712 C7.89193828,19.8928217 9.9666792,21.548102 12.4120986,22.9466461 C18.2414315,26.2804624 24.2930499,27.0779063 27.1669222,25.1368228 M29.8456419,24.0565148 C29.8456419,23.1971812 29.1423799,22.5005537 28.2748621,22.5005537 C27.4073444,22.5005537 26.7040823,23.1971812 26.7040823,24.0565148 C26.7040823,24.9158484 27.4073444,25.612476 28.2748621,25.612476 C29.1423799,25.612476 29.8456419,24.9158484 29.8456419,24.0565148 L29.8456419,24.0565148 Z"></path> 
+       <path class="svg-stroke" d="M26.1017264,17.699802 C28.5790274,14.8008665 29.5563892,11.8210699 28.3609038,9.7699627 C27.4866535,8.27000212 25.5971843,7.51855661 23.1692624,7.48727915 M19.6970573,7.86083838 C17.4054295,8.34719767 14.8948834,9.30454988 12.424266,10.7175048 C6.42288792,14.1497143 2.65401611,19.1281832 3.16552768,22.580522 M3.68501877,25.612476 C4.5525365,25.612476 5.25579857,24.9158484 5.25579857,24.0565148 C5.25579857,23.1971812 4.5525365,22.5005537 3.68501877,22.5005537 C2.81750104,22.5005537 2.11423897,23.1971812 2.11423897,24.0565148 C2.11423897,24.9158484 2.81750104,25.612476 3.68501877,25.612476 L3.68501877,25.612476 L3.68501877,25.612476 Z"></path> 
+       <path class="svg-stroke" d="M10.1856596,25.0699995 C11.480995,28.6529192 13.5999849,30.9876144 15.99422,30.9876144 C17.7292778,30.9876144 19.3197869,29.7615184 20.5570359,27.7228112 M22.0509221,24.3364015 C22.7373456,22.1635452 23.1341282,19.5948285 23.1341282,16.8425133 C23.1341282,10.0879866 20.7444131,4.43922457 17.5485944,3.03357113 M15.99422,4.25337326 C16.8617378,4.25337326 17.5649998,3.55674574 17.5649998,2.69741214 C17.5649998,1.83807854 16.8617378,1.14145101 15.99422,1.14145101 C15.1267023,1.14145101 14.4234402,1.83807854 14.4234402,2.69741214 C14.4234402,3.55674574 15.1267023,4.25337326 15.99422,4.25337326 Z"></path> 
+       <path class="svg-fill" d="M16.2975137,18.2334955 C15.5219407,18.3994908 14.7578457,17.9112502 14.5899415,17.142994 C14.4226932,16.3747378 14.9152558,15.6178512 15.6908287,15.451531 C16.4664016,15.2855357 17.2304967,15.7737763 17.3984009,16.5420325 C17.5659771,17.3102887 17.0730866,18.0671753 16.2975137,18.2334955 Z"></path> 
+      </g> 
+     </svg> 
+     <svg class="vertical-middle" width="156px" height="18px" viewbox="0 0 156 18" xmlns="http://www.w3.org/2000/svg"> 
+      <title>Electron</title> <path stroke="none" fill="currentColor" fill-rule="evenodd" d="M0.93602403,17.0884387 L11.4962951,17.0884387 C11.9763075,17.0884387 12.3603173,16.7044288 12.3603173,16.2244165 C12.3603173,15.7444042 11.9763075,15.3603943 11.4962951,15.3603943 L1.89604868,15.3603943 L1.89604868,9.48024338 L10.2962643,9.48024338 C10.7762767,9.48024338 11.1602865,9.09623352 11.1602865,8.6162212 C11.1602865,8.16020949 10.7762767,7.75219902 10.2962643,7.75219902 L1.89604868,7.75219902 L1.89604868,2.01605176 L11.3762921,2.01605176 C11.8563044,2.01605176 12.2403142,1.6320419 12.2403142,1.15202958 C12.2403142,0.672017252 11.8563044,0.288007394 11.3762921,0.288007394 L0.93602403,0.288007394 C0.432011091,0.288007394 0,0.720018485 0,1.24803204 L0,16.1284141 C0,16.6564276 0.432011091,17.0884387 0.93602403,17.0884387 L0.93602403,17.0884387 Z M19.0804898,16.1284141 C19.0804898,16.6564276 19.5125009,17.0884387 20.0165139,17.0884387 L29.6887622,17.0884387 C30.1687745,17.0884387 30.5527844,16.7044288 30.5527844,16.2244165 C30.5527844,15.7444042 30.1687745,15.3363937 29.6887622,15.3363937 L20.9765385,15.3363937 L20.9765385,1.12802896 C20.9765385,0.600015404 20.5445274,0.168004313 20.0165139,0.168004313 C19.5125009,0.168004313 19.0804898,0.600015404 19.0804898,1.12802896 L19.0804898,16.1284141 Z M37.8729723,17.0884387 L48.4332434,17.0884387 C48.9132557,17.0884387 49.2972656,16.7044288 49.2972656,16.2244165 C49.2972656,15.7444042 48.9132557,15.3603943 48.4332434,15.3603943 L38.8329969,15.3603943 L38.8329969,9.48024338 L47.2332126,9.48024338 C47.7132249,9.48024338 48.0972348,9.09623352 48.0972348,8.6162212 C48.0972348,8.16020949 47.7132249,7.75219902 47.2332126,7.75219902 L38.8329969,7.75219902 L38.8329969,2.01605176 L48.3132403,2.01605176 C48.7932526,2.01605176 49.1772625,1.6320419 49.1772625,1.15202958 C49.1772625,0.672017252 48.7932526,0.288007394 48.3132403,0.288007394 L37.8729723,0.288007394 C37.3689593,0.288007394 36.9369483,0.720018485 36.9369483,1.24803204 L36.9369483,16.1284141 C36.9369483,16.6564276 37.3689593,17.0884387 37.8729723,17.0884387 L37.8729723,17.0884387 Z M63.6976353,17.3764461 C66.4577061,17.3764461 68.2817529,16.4164214 69.9377955,14.9043826 C70.1057998,14.7603789 70.2498035,14.5203728 70.2498035,14.2323654 C70.2498035,13.7523531 69.8177924,13.320342 69.3377801,13.320342 C69.0977739,13.320342 68.8817684,13.440345 68.7377647,13.5843487 C67.2977277,14.9043826 65.8336901,15.6244011 63.7456365,15.6244011 C60.0495416,15.6244011 57.2414695,12.5763229 57.2414695,8.68822305 L57.2414695,8.64022181 C57.2414695,4.77612261 60.025541,1.75204498 63.7456365,1.75204498 C65.8096895,1.75204498 67.2737271,2.5200647 68.5697603,3.67209427 C68.713764,3.76809674 68.9297696,3.88809982 69.1937764,3.88809982 C69.6977893,3.88809982 70.153801,3.45608873 70.153801,2.95207579 C70.153801,2.61606716 69.9617961,2.35206038 69.7697911,2.18405607 C68.2097511,0.888022798 66.4817067,0 63.7696371,0 C58.8255102,0 55.273419,3.93610105 55.273419,8.68822305 L55.273419,8.73622428 C55.273419,13.5603481 58.8495108,17.3764461 63.6976353,17.3764461 L63.6976353,17.3764461 Z M81.1700838,16.2484171 C81.1700838,16.7764307 81.6020949,17.2084418 82.1301085,17.2084418 C82.658122,17.2084418 83.0901331,16.7764307 83.0901331,16.2484171 L83.0901331,2.04005237 L87.9622582,2.04005237 C88.4422705,2.04005237 88.850281,1.65604251 88.850281,1.17603019 C88.850281,0.696017868 88.4422705,0.288007394 87.9622582,0.288007394 L76.2979587,0.288007394 C75.8179464,0.288007394 75.4099359,0.696017868 75.4099359,1.17603019 C75.4099359,1.65604251 75.8179464,2.04005237 76.2979587,2.04005237 L81.1700838,2.04005237 L81.1700838,16.2484171 Z M95.2824461,16.2484171 C95.2824461,16.7764307 95.7144572,17.2084418 96.2184701,17.2084418 C96.7464837,17.2084418 97.1784948,16.7764307 97.1784948,16.2484171 L97.1784948,10.5602711 L102.002619,10.5602711 L106.73074,16.7044288 C106.946746,16.9924362 107.234753,17.2084418 107.618763,17.2084418 C108.098775,17.2084418 108.578787,16.7764307 108.578787,16.2724177 C108.578787,16.008411 108.458784,15.7924054 108.266779,15.5763999 L104.090672,10.2002619 C106.706739,9.69624892 108.578787,8.08820764 108.578787,5.32813679 L108.578787,5.28013555 C108.578787,3.96010166 108.098775,2.78407147 107.282754,1.96805052 C106.226727,0.912023414 104.570685,0.288007394 102.506632,0.288007394 L96.2184701,0.288007394 C95.7144572,0.288007394 95.2824461,0.720018485 95.2824461,1.24803204 L95.2824461,16.2484171 Z M97.1784948,8.85622736 L97.1784948,2.04005237 L102.362628,2.04005237 C105.074698,2.04005237 106.658738,3.28808441 106.658738,5.3521374 L106.658738,5.40013863 C106.658738,7.56019409 104.858692,8.85622736 102.338627,8.85622736 L97.1784948,8.85622736 Z M123.435169,17.3764461 C128.5473,17.3764461 132.027389,13.320342 132.027389,8.68822305 L132.027389,8.64022181 C132.027389,4.0081029 128.595301,0 123.48317,0 C118.371039,0 114.89095,4.05610413 114.89095,8.68822305 L114.89095,8.73622428 C114.89095,13.3683432 118.323038,17.3764461 123.435169,17.3764461 L123.435169,17.3764461 Z M123.48317,15.6244011 C119.643072,15.6244011 116.859,12.504321 116.859,8.68822305 L116.859,8.64022181 C116.859,4.82412385 119.59507,1.75204498 123.435169,1.75204498 C127.275267,1.75204498 130.059339,4.87212508 130.059339,8.68822305 L130.059339,8.73622428 C130.059339,12.5523222 127.323269,15.6244011 123.48317,15.6244011 L123.48317,15.6244011 Z M139.035569,16.2724177 C139.035569,16.7764307 139.44358,17.2084418 139.947593,17.2084418 C140.475606,17.2084418 140.883617,16.7764307 140.883617,16.2724177 L140.883617,3.2640838 L151.299884,16.5844258 C151.587892,16.9204344 151.875899,17.1604405 152.283909,17.1604405 L152.379912,17.1604405 C152.883925,17.1604405 153.243934,16.7764307 153.243934,16.2724177 L153.243934,1.10402834 C153.243934,0.600015404 152.835924,0.168004313 152.331911,0.168004313 C151.803897,0.168004313 151.395887,0.600015404 151.395887,1.10402834 L151.395887,13.7763537 L141.195625,0.768019717 C140.931618,0.432011091 140.667611,0.216005545 140.2356,0.216005545 L139.971593,0.216005545 C139.46758,0.216005545 139.035569,0.648016636 139.035569,1.15202958 L139.035569,16.2724177 Z"></path> 
+     </svg> </a> 
+    <nav class="site-header-nav"> <a class="site-header-nav-item" href="/docs">Docs</a> <a class="site-header-nav-item" data-href-match="/releases" href="/releases/stable">Releases</a> <a class="site-header-nav-item" href="/blog">Blog</a> <a class="site-header-nav-item" href="/apps">Apps</a> <a class="site-header-nav-item" href="/governance">Governance</a> <a class="site-header-nav-item" href="/community">Community</a> 
+     <input id="search-input" class="nav-search" placeholder="Search" aria-label="search-box"> <!-- <a class="site-header-nav-item" href="/userland">Userland</a> --> <!-- <img id="search-hint" alt="image of backslash shorcut" src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" /> --> <!-- <dialog id="search-hint-dialog" open>
+        <div class="dialog-text">Search for Electron APIs, tutorials, npm packages, and apps.</div>
+        <button class="dialog-button">OK</button>
+      </dialog> --> <a class="site-header-nav-item octicon" href="https://github.com/electron" title="Github Organization"> <span class="mega-octicon octicon-mark-github vertical-middle"></span> </a> <button class="site-header-nav-item bordered lang-select-button" aria-controls="languages-header-menu" aria-expanded="false" aria-label="Choose Your Site Language">English</button> 
+    </nav> 
+   </div> 
+  </header> 
+  <div id="languages-header-menu" class="container collapsed" role="region" aria-labelledby="choose-language"> 
+   <div class="m-4"> 
+    <div id="choose-language" class="text-center-sm mb-4"> <strong>Choose Your Site Language</strong> 
+    </div> 
+    <div class="clearfix"> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/en-US"> English </a>  <span class="faint"><span class="octicon octicon-check mr-1"></span></span> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/ja-JP"> ??? (Japanese) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/es-ES"> Español (Spanish) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/zh-CN"> ?? (Chinese Simplified) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/fr-FR"> Français (French) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/ru-RU"> ??????? (Russian) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/pt-BR"> Português (Portuguese) </a> 
+     </div> 
+     <div class="text-center-sm col-6 col-md-4 mb-2"> <a href="/languages/de-DE"> Deutsch (German) </a> 
+     </div> 
+    </div> 
+    <hr> 
+    <div class="text-center-sm"> <a href="/languages">View More Language Details</a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="announcement-banner">
+    Black Lives Matter. Support <a href="https://support.eji.org/give/153413/#!/donation/checkout">the Equal Justice Initiative</a> and <a href="/blacklivesmatter">read our statement here</a>. 
+  </div> 
+  <div class="subtron"> 
+   <div class="container-narrow"> 
+    <div class="r-resp-header-narrow"> 
+     <h1>Stable Releases</h1> <button class="btn-link r-resp-header-toggle" data-toggle-target="#release-navbar" type="button"> <span class="octicon octicon-list-unordered"></span> </button> 
+    </div> 
+    <nav id="release-navbar" class="r-resp-header d-none site-header-nav"> 
+     <h1>Show Releases:</h1> <a class="releases-link-stable active" href="/releases/stable"> 
+      <div class="menu-item" style="border-left: 1px solid #4078C0; background: #fcfcfc"> <span class="octicon octicon-clock"></span>Stable Releases 
+       <p>Regular, supported releases</p> 
+      </div> </a> <a class="releases-link-beta " href="/releases/beta"> 
+      <div class="menu-item" style=""> <span class="octicon octicon-zap"></span>Beta Releases 
+       <p>Test your app with upcoming changes</p> 
+      </div> </a> <a class="releases-link-nightly " href="/releases/nightly"> 
+      <div class="menu-item" style=""> <span class="octicon octicon-calendar"></span>Nightly Releases 
+       <p>Experiment with the latest features</p> 
+      </div> </a> 
+     <h3>Show Only Releases From:</h3> 
+     <ul class="release-version-filter"> 
+      <li><a class="active" href="?">All Versions</a></li> 
+      <li><a class="" href="?version=13">v13.x</a></li> 
+      <li><a class="" href="?version=12">v12.x</a></li> 
+      <li><a class="" href="?version=11">v11.x</a></li> 
+      <li><a class="" href="?version=10">v10.x</a></li> 
+      <li><a class="" href="?version=9">v9.x</a></li> 
+      <li><a class="" href="?version=8">v8.x</a></li> 
+      <li><a class="" href="?version=7">v7.x</a></li> 
+      <li><a class="" href="?version=6">v6.x</a></li> 
+      <li><a class="" href="?version=5">v5.x</a></li> 
+      <li><a class="" href="?version=4">v4.x</a></li> 
+      <li><a class="" href="?version=3">v3.x</a></li> 
+      <li><a class="" href="?version=2">v2.x</a></li> 
+      <li><a class="" href="?version=1">v1.x</a></li> 
+      <li><a class="" href="?version=0">v0.x</a></li> 
+     </ul> 
+    </nav> 
+   </div> 
+  </div> 
+  <section class="page-section PRIMER-REMOVE-ME"> 
+   <div class="docs-container-xl r-flex"> 
+    <div class="releases"> 
+     <article class="release-notes"> 
+      <h1 class="release-entry" id="13.1.0"> <a class="tag" href="#13.1.0">Electron 13.1.0</a> <em class="date" data-date="2021-06-03T03:10:28Z" data-format="%B %d, %Y">2021-06-03T03:10:28Z</em> <em class="date ltr-only">(<span data-date="2021-06-03T03:10:28Z"></span>)</em> <a href="https://github.com/electron/electron/releases/tag/v13.1.0" class="tag octicon-wrapper"><span class="octicon octicon-mark-github vertical-middle"></span></a> </h1> 
+      <h2 id="features-1310"><a href="#features-1310">Features</a></h2> 
+      <ul> 
+       <li>Added experimental cookie encryption support behind an <a href="https://www.electronjs.org/docs/tutorial/fuses">Electron Fuse</a>. <a href="https://github.com/electron/electron/pull/29493">#29493</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29492">14</a>)</span></li> 
+       <li>Added support for debug URLs such as <code>chrome://gpucrash</code>. <a href="https://github.com/electron/electron/pull/29491">#29491</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29466">14</a>)</span></li> 
+      </ul> 
+      <h2 id="fixes-1310"><a href="#fixes-1310">Fixes</a></h2> 
+      <ul> 
+       <li>Fixed missing 'fetch' event in service workers for requests using a registered protocol. <a href="https://github.com/electron/electron/pull/29446">#29446</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29447">12</a>, <a href="https://github.com/electron/electron/pull/29440">14</a>)</span></li> 
+       <li>Fixed pressing Alt with mouse click results in toggling menu bar. <a href="https://github.com/electron/electron/pull/29450">#29450</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29451">12</a>, <a href="https://github.com/electron/electron/pull/29452">14</a>)</span></li> 
+       <li>Fixed pressing <code>Alt+Shift</code> and <code>Alt+Ctrl</code> toggling menu bar on KDE. <a href="https://github.com/electron/electron/pull/29443">#29443</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29445">12</a>, <a href="https://github.com/electron/electron/pull/29444">14</a>)</span></li> 
+      </ul> 
+      <h2 id="other-changes-1310"><a href="#other-changes-1310">Other Changes</a></h2> 
+      <ul> 
+       <li>Backported fix for 1090441,1173656,1181434,1188117. <a href="https://github.com/electron/electron/pull/29494">#29494</a> </li> 
+       <li>Fixed using custom v8 snapshots on Apple Silicon. <a href="https://github.com/electron/electron/pull/29339">#29339</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29341">12</a>)</span></li> 
+       <li>Updated Chromium to 91.0.4472.77. <a href="https://github.com/electron/electron/pull/29321">#29321</a> </li> 
+      </ul> 
+      <h2 id="documentation-1310"><a href="#documentation-1310">Documentation</a></h2> 
+      <ul> 
+       <li>Documentation changes: <a href="https://github.com/electron/electron/pull/29430">#29430</a></li> 
+      </ul> 
+     </article> 
+     <article class="release-notes"> 
+      <h1 class="release-entry" id="13.0.1"> <a class="tag" href="#13.0.1">Electron 13.0.1</a> <em class="date" data-date="2021-05-25T19:27:24Z" data-format="%B %d, %Y">2021-05-25T19:27:24Z</em> <em class="date ltr-only">(<span data-date="2021-05-25T19:27:24Z"></span>)</em> <a href="https://github.com/electron/electron/releases/tag/v13.0.1" class="tag octicon-wrapper"><span class="octicon octicon-mark-github vertical-middle"></span></a> </h1> 
+      <h2 id="fixes-1301"><a href="#fixes-1301">Fixes</a></h2> 
+      <ul> 
+       <li>Fixed SHA issue when creating a universal macOS build.</li> 
+      </ul> 
+     </article> 
+     <article class="release-notes"> 
+      <h1 class="release-entry" id="13.0.0"> <a class="tag" href="#13.0.0">Electron 13.0.0</a> <em class="date" data-date="2021-05-25T03:02:13Z" data-format="%B %d, %Y">2021-05-25T03:02:13Z</em> <em class="date ltr-only">(<span data-date="2021-05-25T03:02:13Z"></span>)</em> <a href="https://github.com/electron/electron/releases/tag/v13.0.0" class="tag octicon-wrapper"><span class="octicon octicon-mark-github vertical-middle"></span></a> </h1> 
+      <h2 id="stack-upgrades-1300"><a href="#stack-upgrades-1300">Stack Upgrades</a></h2> 
+      <ul> 
+       <li>Chromium 91.0.4472.69.
+        <ul> 
+         <li><a href="https://developer.chrome.com/blog/new-in-chrome-91/">v91 blog post</a></li> 
+         <li><a href="https://developer.chrome.com/blog/new-in-chrome-90/">v90 blog post</a></li> 
+        </ul></li> 
+       <li>Node v14.17.0
+        <ul> 
+         <li><a href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V14.md#14.17.0">v14.17.0 release notes</a></li> 
+        </ul></li> 
+       <li>V8 v9.1
+        <ul> 
+         <li><a href="https://v8.dev/blog/v8-release-91">v9.1 blog post</a></li> 
+         <li><a href="https://v8.dev/blog/v8-release-90">v9.0 blog post</a></li> 
+        </ul></li> 
+      </ul> 
+      <h2 id="breaking-changes-1300"><a href="#breaking-changes-1300">Breaking Changes</a></h2> 
+      <ul> 
+       <li>Fixed so window.open() parameter <em>frameName</em> is no longer set as window title. <a href="https://github.com/electron/electron/pull/27481">#27481</a> </li> 
+       <li>Changed <code>session.setPermissionCheckHandler(handler)</code> to allow for <code>handler</code>'s first parameter, <code>webContents</code> to be <code>null</code>. <a href="https://github.com/electron/electron/pull/19903">#19903</a></li> 
+      </ul> 
+      <h2 id="features-1300"><a href="#features-1300">Features</a></h2> 
+      <h3 id="additions-1300"><a href="#additions-1300">Additions</a></h3> 
+      <ul> 
+       <li>Added <code>process.contextId</code> used by <code>@electron/remote</code>. <a href="https://github.com/electron/electron/pull/28251">#28251</a></li> 
+       <li>Added <code>process.contextIsolated</code> property that indicates whether the current renderer context has <code>contextIsolation</code> enabled. <a href="https://github.com/electron/electron/pull/28252">#28252</a></li> 
+       <li>Added <code>process.uptime()</code> to sandboxed renderers. <a href="https://github.com/electron/electron/pull/26684">#26684</a> </li> 
+       <li>Added <code>roundedCorners</code> option for <code>BrowserWindow</code>. <a href="https://github.com/electron/electron/pull/27572">#27572</a> </li> 
+       <li>Added missing fields to the parameters emitted as part of the <code>context-menu</code> event. <a href="https://github.com/electron/electron/pull/26788">#26788</a> </li> 
+       <li>Added new <code>session.storagePath</code> API to get the path on disk for session-specific data. <a href="https://github.com/electron/electron/pull/28866">#28866</a></li> 
+       <li>Added support for passing DOM elements over the context bridge. <a href="https://github.com/electron/electron/pull/26776">#26776</a> </li> 
+       <li>Added support for registering Manifest V3 extension service workers.
+        <ul> 
+         <li>Added 'registration-completed' event to <code>ServiceWorkers</code>. <a href="https://github.com/electron/electron/pull/27562">#27562</a> </li> 
+        </ul></li> 
+       <li>Added <code>disposition</code>, <code>referrer</code> and <code>postBody</code> to the details object passed to the window open handler registered with <code>setWindowOpenHandler</code>. <a href="https://github.com/electron/electron/pull/29277">#29277</a></li> 
+      </ul> 
+      <h3 id="improvements-1300"><a href="#improvements-1300">Improvements</a></h3> 
+      <ul> 
+       <li>Additional permission checks are now routed through <code>session.setPermissionCheckHandler</code>. These include <code>Notification.permission</code>, and <code>permission.query</code>. Please note that the <code>webContents</code> parameter to the check handler can now be null. <a href="https://github.com/electron/electron/pull/19903">#19903</a></li> 
+       <li>Allowed skipping process type transformation in win.SetVisibleOnAllWorkspaces on macOS. <a href="https://github.com/electron/electron/pull/27200">#27200</a></li> 
+       <li>Reverted <code>WebFrameMain.executeJavaScriptInIsolatedWorld()</code>. <a href="https://github.com/electron/electron/pull/27926">#27926</a></li> 
+       <li>Made <code>trafficLightPosition</code> option work for <code>customButtonOnHover</code> window. <a href="https://github.com/electron/electron/pull/26789">#26789</a> </li> 
+       <li>The <code>submitURL</code> option for <code>crashReporter.start</code> is no longer a required argument when <code>uploadToServer</code> is false. <a href="https://github.com/electron/electron/pull/28283">#28283</a></li> 
+       <li>Improved performance of <code>napi_threadsafe_function</code>. <a href="https://github.com/electron/electron/pull/29048">#29048</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29047">12</a>)</span></li> 
+      </ul> 
+      <h3 id="removeddeprecated-1300"><a href="#removeddeprecated-1300">Removed/Deprecated</a></h3> 
+      <ul> 
+       <li>Removed deprecated <code>BrowserWindow</code> extension APIs. <a href="https://github.com/electron/electron/pull/26696">#26696</a> </li> 
+       <li>Removed deprecated <code>shell.moveItemToTrash()</code>. <a href="https://github.com/electron/electron/pull/26723">#26723</a> </li> 
+       <li>Removed deprecated <code>systemPreferences</code> methods. <a href="https://github.com/electron/electron/pull/26849">#26849</a> </li> 
+      </ul> 
+      <h2 id="fixes-1300"><a href="#fixes-1300">Fixes</a></h2> 
+      <ul> 
+       <li>Fixed <code>hiddenInset</code> titleBarStyle's abnormal fullscreen titlebar. Fix <code>hiddenInset</code> titleBarStyle not working with <code>trafficLightPosition</code> option. <a href="https://github.com/electron/electron/pull/27489">#27489</a></li> 
+       <li>Fixed a use-after-free bug during shutdown when using off-the-record sessions. <a href="https://github.com/electron/electron/pull/26680">#26680</a></li> 
+       <li>Fixed an issue where <code>contextBridge</code> might incorrectly try to serialize some WebAssembly objects. <a href="https://github.com/electron/electron/pull/27518">#27518</a></li> 
+       <li>Fixed behavior of 302/303/307 redirect responses in the protocol module. <a href="https://github.com/electron/electron/pull/26297">#26297</a></li> 
+       <li>Made <code>BrowserWindow.setWindowButtonVisibility</code> work for window with <code>customButtonsOnHover</code> titlebar style. <a href="https://github.com/electron/electron/pull/27073">#27073</a></li> 
+       <li>Fixed a rare crash on boot. <a href="https://github.com/electron/electron/pull/29109">#29109</a></li> 
+       <li>Fixed permissions issue that was preventing the PDF viewer from displaying. <a href="https://github.com/electron/electron/pull/29252">#29252</a></li> 
+       <li>Fixed the possibility for incorrect visual artifacts when using vibrancy and making frameless windows fullscreen on macOS. <a href="https://github.com/electron/electron/pull/29099">#29099</a></li> 
+       <li>Fixed using vibrancy with titleBarStyle together resulting in weird window shadow on macOS. <a href="https://github.com/electron/electron/pull/29165">#29165</a></li> 
+       <li>Restored cross-platform noop implementation of <code>app.setAppUserModelId</code>. <a href="https://github.com/electron/electron/pull/28921">#28921</a></li> 
+       <li>Security: backported fix for chromium:1196683. <a href="https://github.com/electron/electron/pull/28637">#28637</a></li> 
+      </ul> 
+      <h3 id="also-in-earlier-versions-1300"><a href="#also-in-earlier-versions-1300">Also in earlier versions....</a></h3> 
+      <ul> 
+       <li>Allow Node.js to manage microtasks queue by using explicit microtasks policy before calling <code>uv_run()</code>. <a href="https://github.com/electron/electron/pull/28973">#28973</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28974">11</a>, <a href="https://github.com/electron/electron/pull/28972">12</a>)</span></li> 
+       <li>Allow loading source maps from custom protocols and asar bundles. <a href="https://github.com/electron/electron/pull/28615">#28615</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28616">12</a>)</span> </li> 
+       <li>Child windows with specified background colors or transpency now work as intended. <a href="https://github.com/electron/electron/pull/28112">#28112</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28107">12</a>)</span></li> 
+       <li>Colors returned from <code>systemPreferences.getAccentColor()</code>, <code>getSystemColor</code> and <code>getColor</code> are now correctly converted into the devices color space. Previously the color would have been subtly incorrect. <a href="https://github.com/electron/electron/pull/28173">#28173</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28171">11</a>, <a href="https://github.com/electron/electron/pull/28172">12</a>)</span></li> 
+       <li>Fixed ECDH.setPrivateKey() not updating the key. <a href="https://github.com/electron/electron/pull/27688">#27688</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27856">12</a>)</span></li> 
+       <li>Fixed <code>&amp;lt;webview&amp;gt;</code> <code>focus</code> / <code>blur</code> events not working with <code>contextIsolation</code> enabled. <a href="https://github.com/electron/electron/pull/29025">#29025</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29026">10</a>, <a href="https://github.com/electron/electron/pull/29027">11</a>, <a href="https://github.com/electron/electron/pull/29024">12</a>)</span></li> 
+       <li>Fixed <code>desktopCapturer.getSources()</code> promise result sometimes never resolving. <a href="https://github.com/electron/electron/pull/28280">#28280</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28279">10</a>, <a href="https://github.com/electron/electron/pull/28282">11</a>, <a href="https://github.com/electron/electron/pull/28281">12</a>)</span></li> 
+       <li>Fixed <code>postData</code> parameter missing from <code>new-window</code> event. <a href="https://github.com/electron/electron/pull/28542">#28542</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28543">12</a>)</span></li> 
+       <li>Fixed <code>webFrame</code> spell checker APIs crashing when called in sandboxed renderer. <a href="https://github.com/electron/electron/pull/29087">#29087</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29086">12</a>)</span></li> 
+       <li>Fixed a bug where, when a JumpList task description exceeded 260 characters, the JumpList was empty, despite valid entries. <a href="https://github.com/electron/electron/pull/28526">#28526</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28524">11</a>, <a href="https://github.com/electron/electron/pull/28525">12</a>)</span></li> 
+       <li>Fixed a crash when calling <code>shell.trashItem()</code> from the renderer process. <a href="https://github.com/electron/electron/pull/28788">#28788</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28787">12</a>)</span></li> 
+       <li>Fixed a crash when loading pepper plugins. <a href="https://github.com/electron/electron/pull/28372">#28372</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28373">12</a>)</span></li> 
+       <li>Fixed a network process crash that could happen when using <code>setCertificateVerifyProc</code> with many concurrent verification requests. <a href="https://github.com/electron/electron/pull/28433">#28433</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28470">11</a>, <a href="https://github.com/electron/electron/pull/28465">12</a>)</span></li> 
+       <li>Fixed a potential crash when resetting <code>BrowserView</code>s. <a href="https://github.com/electron/electron/pull/27786">#27786</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27947">12</a>)</span></li> 
+       <li>Fixed a rare crash on Windows that could occur when emitting certain <code>Tray</code> events. <a href="https://github.com/electron/electron/pull/26668">#26668</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28111">12</a>)</span></li> 
+       <li>Fixed an issue where <code>BrowserView</code>s could have mismatched draggable regions to their bounds. <a href="https://github.com/electron/electron/pull/27952">#27952</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27986">10</a>, <a href="https://github.com/electron/electron/pull/27987">11</a>, <a href="https://github.com/electron/electron/pull/27988">12</a>)</span> </li> 
+       <li>Fixed an issue where <code>illegal access error</code> could be thrown when <code>nodeIntegrationInSubFrames</code> is enabled. <a href="https://github.com/electron/electron/pull/29170">#29170</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29169">12</a>)</span></li> 
+       <li>Fixed an issue where <code>select-serial-port</code> callback crashes when called with an invalid serial port ID. <a href="https://github.com/electron/electron/pull/28619">#28619</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28618">12</a>)</span></li> 
+       <li>Fixed an issue where <code>win.capturePage()</code> never called back after calling <code>hide()</code> for a hidden window on some platforms. <a href="https://github.com/electron/electron/pull/28076">#28076</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28074">11</a>, <a href="https://github.com/electron/electron/pull/28075">12</a>)</span></li> 
+       <li>Fixed an issue where <code>window.print()</code> did not work properly when printing a pdf from the pdf plugin. <a href="https://github.com/electron/electron/pull/28351">#28351</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28352">12</a>)</span></li> 
+       <li>Fixed an issue where drag regions on macOS would be offset incorrectly when no drag regions were set,. <a href="https://github.com/electron/electron/pull/29017">#29017</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29018">11</a>, <a href="https://github.com/electron/electron/pull/29019">12</a>)</span></li> 
+       <li>Fixed an issue where errors thrown in functions passed over the <code>contextBridge</code> could be displayed incorrectly. <a href="https://github.com/electron/electron/pull/28446">#28446</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28447">12</a>)</span></li> 
+       <li>Fixed an issue where extensions without a background page might not have file access. <a href="https://github.com/electron/electron/pull/29171">#29171</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29172">12</a>)</span></li> 
+       <li>Fixed an issue where libuv might hang with multiple subframes when <code>nodeIntegrationInSubframes</code> is enabled. <a href="https://github.com/electron/electron/pull/27582">#27582</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27881">10</a>, <a href="https://github.com/electron/electron/pull/27880">11</a>, <a href="https://github.com/electron/electron/pull/27879">12</a>)</span></li> 
+       <li>Fixed an issue where multiple calls to <code>window.setFullScreen</code> could cause problems. <a href="https://github.com/electron/electron/pull/28763">#28763</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28773">11</a>, <a href="https://github.com/electron/electron/pull/28772">12</a>)</span></li> 
+       <li>Fixed an issue where some Node.js modules would hang on page reload on Windows. <a href="https://github.com/electron/electron/pull/28335">#28335</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28336">11</a>, <a href="https://github.com/electron/electron/pull/28337">12</a>)</span></li> 
+       <li>Fixed an issue where some dialogs would stop working on macOS if <code>window.hide()</code> was called while they were open. <a href="https://github.com/electron/electron/pull/28694">#28694</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28696">11</a>, <a href="https://github.com/electron/electron/pull/28695">12</a>)</span></li> 
+       <li>Fixed an issue where the drag regions in BrowserViews on macOS could be off in their y-axis. <a href="https://github.com/electron/electron/pull/28298">#28298</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28295">10</a>, <a href="https://github.com/electron/electron/pull/28297">11</a>, <a href="https://github.com/electron/electron/pull/28296">12</a>)</span></li> 
+       <li>Fixed an issue where the thumbar disappeared after <code>win.hide()</code> on Windows. <a href="https://github.com/electron/electron/pull/28390">#28390</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28388">10</a>, <a href="https://github.com/electron/electron/pull/28391">11</a>, <a href="https://github.com/electron/electron/pull/28389">12</a>)</span></li> 
+       <li>Fixed an issue where the void function <code>Menu.setApplicationMenu</code> would return a value on some platforms. <a href="https://github.com/electron/electron/pull/29129">#29129</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29128">12</a>)</span></li> 
+       <li>Fixed an issue where the window couldn't be closed if a user tried to quit with a message box showing. <a href="https://github.com/electron/electron/pull/28988">#28988</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28989">12</a>)</span></li> 
+       <li>Fixed an issue where windows in <code>simpleFullscreen</code> mode were not properly resizing when display metrics changed. <a href="https://github.com/electron/electron/pull/28216">#28216</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28870">11</a>, <a href="https://github.com/electron/electron/pull/28869">12</a>)</span></li> 
+       <li>Fixed an out-of-bounds access in <code>WebContents.sendInputEvent</code>. <a href="https://github.com/electron/electron/pull/27827">#27827</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27854">10</a>, <a href="https://github.com/electron/electron/pull/27853">11</a>, <a href="https://github.com/electron/electron/pull/27855">12</a>)</span></li> 
+       <li>Fixed background color not being applied for child windows created by native window.open path. <a href="https://github.com/electron/electron/pull/27593">#27593</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27945">10</a>, <a href="https://github.com/electron/electron/pull/27944">11</a>, <a href="https://github.com/electron/electron/pull/27942">12</a>)</span> </li> 
+       <li>Fixed bug where TouchBarPopover and TouchBarGroup were no longer rendering. <a href="https://github.com/electron/electron/pull/27901">#27901</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28412">11</a>, <a href="https://github.com/electron/electron/pull/28411">12</a>)</span></li> 
+       <li>Fixed context menus not being positioned correctly when near the edge of the screen. <a href="https://github.com/electron/electron/pull/28276">#28276</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28278">11</a>, <a href="https://github.com/electron/electron/pull/28277">12</a>)</span></li> 
+       <li>Fixed corner radius for vibrancy view in macOS 11. <a href="https://github.com/electron/electron/pull/28679">#28679</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29072">11</a>, <a href="https://github.com/electron/electron/pull/29071">12</a>)</span></li> 
+       <li>Fixed crash when an exception occurs within the event emitter. <a href="https://github.com/electron/electron/pull/29106">#29106</a></li> 
+       <li>Fixed crash when calling <code>getBackgroundColor</code> on a transparent window with no assigned background color. <a href="https://github.com/electron/electron/pull/28187">#28187</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28186">11</a>, <a href="https://github.com/electron/electron/pull/28188">12</a>)</span></li> 
+       <li>Fixed failing to request file:// resources when web security is disabled. <a href="https://github.com/electron/electron/pull/28557">#28557</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28589">11</a>, <a href="https://github.com/electron/electron/pull/28560">12</a>)</span></li> 
+       <li>Fixed intensive I/O from asar files causing ERR_FILE_NOT_FOUND after a while. <a href="https://github.com/electron/electron/pull/28203">#28203</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28201">11</a>, <a href="https://github.com/electron/electron/pull/28202">12</a>)</span></li> 
+       <li>Fixed issue where <code>window.open()</code> would not return an object with a <code>location.href</code> setter when <code>contextIsolation</code> is enabled and <code>nativeWindowOpen</code> is disabled. <a href="https://github.com/electron/electron/pull/27899">#27899</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27940">12</a>)</span></li> 
+       <li>Fixed navigator.bluetooth.requestDevice. <a href="https://github.com/electron/electron/pull/27902">#27902</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27941">11</a>, <a href="https://github.com/electron/electron/pull/27927">12</a>)</span></li> 
+       <li>Fixed rare crash when initializing the internal PDF extension. <a href="https://github.com/electron/electron/pull/28453">#28453</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28452">12</a>)</span></li> 
+       <li>Fixed service worker not working with custom protocol. <a href="https://github.com/electron/electron/pull/28354">#28354</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28353">11</a>, <a href="https://github.com/electron/electron/pull/28355">12</a>)</span></li> 
+       <li>Fixed the handler set with <code>setWindowOpenHandler</code> not being invoked when a link was middle-clicked or shift-clicked. <a href="https://github.com/electron/electron/pull/28536">#28536</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28664">12</a>)</span></li> 
+       <li>Fixed the window-all-closed event being emitted while the last BrowserWindow was still in the process of being closed. <a href="https://github.com/electron/electron/pull/28914">#28914</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28912">11</a>, <a href="https://github.com/electron/electron/pull/28913">12</a>)</span></li> 
+       <li>Fixed warning when <code>worldSafeExecuteJavaScript</code> is disabled. <a href="https://github.com/electron/electron/pull/27928">#27928</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/27974">10</a>, <a href="https://github.com/electron/electron/pull/27968">11</a>, <a href="https://github.com/electron/electron/pull/27969">12</a>)</span></li> 
+       <li>No longer set backgroundColor in default-app when opening custom files / URLs. <a href="https://github.com/electron/electron/pull/28842">#28842</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28840">10</a>, <a href="https://github.com/electron/electron/pull/28843">11</a>, <a href="https://github.com/electron/electron/pull/28841">12</a>)</span></li> 
+       <li>Support <code>wasm-eval</code> csp behind <code>WebAssemblyCSP</code> flag. <a href="https://github.com/electron/electron/pull/28569">#28569</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28576">11</a>, <a href="https://github.com/electron/electron/pull/28575">12</a>)</span></li> 
+       <li>Transparent windows cannot be maximized using the Windows system menu or by double clicking the title bar. <a href="https://github.com/electron/electron/pull/28527">#28527</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28622">12</a>)</span></li> 
+       <li>URLS passed to <code>shell.openExternal</code> on windows are now correctly URI encoded. This was already occurring on macOS and Linux. <a href="https://github.com/electron/electron/pull/28342">#28342</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28339">10</a>, <a href="https://github.com/electron/electron/pull/28340">11</a>, <a href="https://github.com/electron/electron/pull/28341">12</a>)</span></li> 
+       <li>Fixed native module compilation with AsyncCleanupHooks on windows. <a href="https://github.com/electron/electron/pull/28110">#28110</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28108">11</a>, <a href="https://github.com/electron/electron/pull/28109">12</a>)</span></li> 
+       <li>Fixed <code>will-resize</code> and <code>will-move</code> events not scaling the emitted <code>newBounds</code> rectangle to the appropriate Windows display scale factor. <a href="https://github.com/electron/electron/pull/29227">#29227</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29225">11</a>, <a href="https://github.com/electron/electron/pull/29226">12</a>)</span></li> 
+       <li>Fixed drag and drop not working correctly for some x11 window managers. <a href="https://github.com/electron/electron/pull/29233">#29233</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/29271">11</a>, <a href="https://github.com/electron/electron/pull/29272">12</a>)</span></li> 
+      </ul> 
+      <h2 id="other-changes-1300"><a href="#other-changes-1300">Other Changes</a></h2> 
+      <ul> 
+       <li>Non-functional change; updates repository's issue template file. <a href="https://github.com/electron/electron/pull/27825">#27825</a> </li> 
+       <li>Updated community discussions link in default Electron menu. <a href="https://github.com/electron/electron/pull/28459">#28459</a> <span style="font-size:small;">(Also in <a href="https://github.com/electron/electron/pull/28458">12</a>)</span></li> 
+      </ul> 
+      <h2 id="documentation-1300"><a href="#documentation-1300">Documentation</a></h2> 
+      <ul> 
+       <li>Documentation changes: 
+        <ul> 
+         <li><a href="https://github.com/electron/electron/pull/26239">#26239</a>
+          <ul> 
+           <li><a href="https://www.electronjs.org/docs/tutorial/application-distribution#application-distribution">tutorial/application-distribution</a> </li> 
+           <li>tutorial/application-packaging (Removed)</li> 
+          </ul></li> 
+         <li><a href="https://github.com/electron/electron/pull/26501">#26501</a></li> 
+         <li><a href="https://github.com/electron/electron/pull/26542">#26542</a> - <a href="https://www.electronjs.org/docs/tutorial/offscreen-rendering#offscreen-rendering">tutorial/offscreen-rendering</a></li> 
+         <li><a href="https://github.com/electron/electron/pull/27387">#27387</a> - <a href="https://www.electronjs.org/docs/tutorial/native-file-drag-drop#native-file-drag--drop">tutorial/native-file-drag-drop</a> </li> 
+         <li><a href="https://github.com/electron/electron/pull/27486">#27486</a> - <a href="https://www.electronjs.org/docs/tutorial/support#electron-support">tutorial/support</a> </li> 
+         <li><a href="https://github.com/electron/electron/pull/27770">#

@@ -1,0 +1,608 @@
+<!doctype html><!-- Ask yourself, before you paste.. are you overwriting any updated info? - Sam -->
+<html> 
+ <head> 
+  <title>Core API</title> 
+ </head> 
+ <body class="core-api-page" data-title="core-api-index"> 
+  <meta name="google-translate-customization" content="5587c1b0a958bf07-62a8e309de686e87-gc92f61279a2c8524-11"> 
+  <link href="/css/mfv3_121821.php?ver=ssl" rel="stylesheet" type="text/css"> 
+  <link href="/css/mfv4_121821.php?ver=ssl" rel="stylesheet" type="text/css"> 
+  <link href="/developers/style.css" rel="stylesheet" type="text/css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+  <script>
+    if(window!==top)
+        top.location = window.location.href;
+</script> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '542578585845936');
+fbq('track', 'PageView');
+</script> 
+  <noscript>
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=542578585845936&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-829541-1"></script> 
+  <script>
+        try {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("js", new Date());
+            gtag("config", "UA-829541-1", {"dimension1":"unregistered","dimension7":"legacy","dimension8":"\/100\/"});
+        } catch(e) {}
+    </script> <!--//////////////////////////////////////////////////////////////////////////////////--> <!-- HEADER, located in /developers/ --> <!--//////////////////////////////////////////////////////////////////////////////////--> 
+  <div id="header"> 
+   <div class="wrap cf" style="position: relative; width: 1000px;"> 
+    <h2 class="logo cf"> <a href="/developers/"> <img alt="MediaFire" width="180" style="max-height: 25px" src="//static.mediafire.com/images/backgrounds/header/mf_logo_u1_full_color.svg"> </a> <span class="slogan">Developers</span> </h2> 
+    <div class="docNavLinks"> <a class="home-link" href="/developers/">Home</a> <a class="core-api-link" href="/developers/core_api/">API</a> <!-- Dropdown hidden since we are deprecating transcoding services | gabe 2/23/2016 --> <!-- <span class="core-api-link media-api-link" href=""><i>API</i>
+                <ul class="docNav-dropdown">
+                    <li><a href="/developers/core_api/">Core API</a></li>
+                    <li><a href="/developers/document_api/documents.php">Document API</a></li>
+                    <li><a href="/developers/multimedia_api/multimedia.php">Multimedia API<span class="labelSquare lGood">New</span></a></li>
+                </ul>
+            </span> --> <a class="app-link" href="/developers/apps/">Apps</a> <span class="sdk-link" href="/developers/sdks_and_tools/"><i>SDK</i> 
+      <ul class="docNav-dropdown"> 
+       <li><a href="https://github.com/MediaFire/mediafire-java-sdk" target="_blank">Java</a></li> 
+       <li><a href="/developers/sdks_and_tools/javascript/basics/">Javascript</a></li> 
+       <li><a href="/developers/sdks_and_tools/objective_c/basics/">Objective C</a></li> 
+       <li><a href="https://github.com/MediaFire/mediafire-php-open-sdk" target="_blank">PHP</a></li> 
+       <li><a href="https://github.com/MediaFire/mediafire-python-open-sdk" target="_blank">Python</a></li> 
+       <li><a href="https://github.com/MediaFire/mediafire-cpp-sdk" target="_blank">C++</a></li> 
+      </ul> </span> <a class="tools-link" href="/developers/tools/">Tools</a> <a class="brand-assets-link" href="/developers/brand_assets/">Brand</a> <span class="help-link" href=""><i>Help</i> 
+      <ul class="docNav-dropdown"> 
+       <li><a class="getting-started-link" href="/developers/getting_started/">Getting Started</a></li> 
+       <li><a href="https://mediafire.mantishub.com/" target="_blank">Bug Tracker</a></li> 
+      </ul> </span> 
+     <form> 
+      <input type="text" id="st-search-input" class="st-search-input" placeholder="Search..."> 
+     </form> 
+     <script>
+                $(".sdk-link i").on('click', function(){
+                    window.location = "/developers/sdks_and_tools/";
+                });
+            </script> 
+     <script type="text/javascript">
+                var Swiftype = window.Swiftype || {};
+                (function() {
+                Swiftype.key = 'K6vpKsdWk3ekN7x9TEH3';
+
+                /** DO NOT EDIT BELOW THIS LINE **/
+                var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+                script.src = "//swiftype.com/embed.js";
+                var entry = document.getElementsByTagName('script')[0];
+                document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
+                }());
+            </script> 
+     <div id="st-result-container"></div> 
+    </div> 
+   </div> 
+  </div> <!--CONTENT--> 
+  <div id="mainContentWrap" class="clr"> 
+   <div class="main-content" data-swiftype-index="true"> <!--LEFT COLUMN--> 
+    <div class="column-1"> 
+     <div class="menu" data-swiftype-index="false"> 
+      <div class="section dev-docs-getting_started open current"> 
+       <h3><a>Getting Started</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/getting_started/#getting_started_top">Frequently Used Terms</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#best_practices">Best Practices</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#api_basics">API Basics</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#call_signature">Call Signature</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#asynchronous_job_queue">Asynchronous Job Queue</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#authentication_widget">Authentication Widget</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#uploading_concepts">Uploading Concepts</a></li>
+        <li><a href="/developers/core_api/1.5/getting_started/#error_codes">Error Codes</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-change_log"> 
+       <h3><a>Change Log</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/change_log/#change_log_top">1.5 Changes</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-billing"> 
+       <h3><a>Billing</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/billing/#billing_top">Cancel Plan</a></li>
+        <li><a href="/developers/core_api/1.5/billing/#change_plan">Change Plan</a></li>
+        <li><a href="/developers/core_api/1.5/billing/#get_invoice">Get Invoice</a></li>
+        <li><a href="/developers/core_api/1.5/billing/#get_plans">Get Plans</a></li>
+        <li><a href="/developers/core_api/1.5/billing/#get_products">Get Products</a></li>
+        <li><a href="/developers/core_api/1.5/billing/#purchase_plan">Purchase Plan</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-contact"> 
+       <h3><a>Contact</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/contact/#contact_top">Add</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#delete">Delete</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#fetch">Fetch</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#get_avatar">Get Avatar</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#get_sources">Get Sources</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#set_avatar">Set Avatar</a></li>
+        <li><a href="/developers/core_api/1.5/contact/#summary">Summary</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-device"> 
+       <h3><a>Device</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/device/#device_top">Add Device</a></li>
+        <li><a href="/developers/core_api/1.5/device/#empty_trash">Empty Trash</a></li>
+        <li><a href="/developers/core_api/1.5/device/#follow_resource">Follow Resource</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_changes">Get Changes</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_foreign_changes">Get Foreign Changes</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_foreign_resources">Get Foreign Resources</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_patch">Get Patch</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_resource_shares">Get Resource Shares</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_status">Get Status</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_trash">Get Trash</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_updates">Get Updates</a></li>
+        <li><a href="/developers/core_api/1.5/device/#get_user_shares">Get User Shares</a></li>
+        <li><a href="/developers/core_api/1.5/device/#remove_device">Remove Device</a></li>
+        <li><a href="/developers/core_api/1.5/device/#request_foreign_resource">Request Foreign Resource</a></li>
+        <li><a href="/developers/core_api/1.5/device/#share_resources">Share Resources</a></li>
+        <li><a href="/developers/core_api/1.5/device/#unfollow_resource">Unfollow Resource</a></li>
+        <li><a href="/developers/core_api/1.5/device/#unshare_resources">Unshare Resources</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-download"> 
+       <h3><a>Download</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/download/#download_top">Bulk Download</a></li>
+        <li><a href="/developers/core_api/1.5/download/#direct_download_link">Direct Download Link</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-file"> 
+       <h3><a>File</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/file/#file_top">Configure One Time Key</a></li>
+        <li><a href="/developers/core_api/1.5/file/#copy">Copy</a></li>
+        <li><a href="/developers/core_api/1.5/file/#create">Create</a></li>
+        <li><a href="/developers/core_api/1.5/file/#delete">Delete</a></li>
+        <li><a href="/developers/core_api/1.5/file/#get_info">Get Info</a></li>
+        <li><a href="/developers/core_api/1.5/file/#get_links">Get Links</a></li>
+        <li><a href="/developers/core_api/1.5/file/#get_versions">Get Versions</a></li>
+        <li><a href="/developers/core_api/1.5/file/#move">Move</a></li>
+        <li><a href="/developers/core_api/1.5/file/#one_time_key">One Time Key</a></li>
+        <li><a href="/developers/core_api/1.5/file/#purge">Purge</a></li>
+        <li><a href="/developers/core_api/1.5/file/#recently_modified">Recently Modified</a></li>
+        <li><a href="/developers/core_api/1.5/file/#restore">Restore</a></li>
+        <li><a href="/developers/core_api/1.5/file/#set_artwork">Set Artwork</a></li>
+        <li><a href="/developers/core_api/1.5/file/#update">Update</a></li>
+        <li><a href="/developers/core_api/1.5/file/#update_file">Update File</a></li>
+        <li><a href="/developers/core_api/1.5/file/#zip">Zip</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-folder"> 
+       <h3><a>Folder</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/folder/#folder_top">Configure Filedrop</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#copy">Copy</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#create">Create</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#delete">Delete</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#get_content">Get Content</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#get_depth">Get Depth</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#get_info">Get Info</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#get_siblings">Get Siblings</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#move">Move</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#purge">Purge</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#search">Search</a></li>
+        <li><a href="/developers/core_api/1.5/folder/#update">Update</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-notifications"> 
+       <h3><a>Notifications</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/notifications/#notifications_top">Get Cache</a></li>
+        <li><a href="/developers/core_api/1.5/notifications/#peek_cache">Peek Cache</a></li>
+        <li><a href="/developers/core_api/1.5/notifications/#send_message">Send Message</a></li>
+        <li><a href="/developers/core_api/1.5/notifications/#send_notification">Send Notification</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-system"> 
+       <h3><a>System</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/system/#system_top">Get Editable Media</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_info">Get Info</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_limits">Get Limits</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_mime_types">Get Mime Types</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_status">Get Status</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_supported_media">Get Supported Media</a></li>
+        <li><a href="/developers/core_api/1.5/system/#get_version">Get Version</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-upload"> 
+       <h3><a>Upload</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/upload/#upload_top">Upload Guide</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#add_web_upload">Add Web Upload</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#check">Check</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#get_options">Get Options</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#get_web_uploads">Get Web Uploads</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#instant">Instant</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#patch">Patch</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#poll_upload">Poll Upload</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#resumable">Resumable</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#set_options">Set Options</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#simple">Simple</a></li>
+        <li><a href="/developers/core_api/1.5/upload/#update">Update</a></li> 
+       </ul> 
+      </div>
+      <div class="section dev-docs-user"> 
+       <h3><a>User</a></h3> 
+       <ul> 
+        <li><a href="/developers/core_api/1.5/user/#user_top">Accept Tos</a></li>
+        <li><a href="/developers/core_api/1.5/user/#destroy_action_token">Destroy Action Token</a></li>
+        <li><a href="/developers/core_api/1.5/user/#fetch_tos">Fetch Tos</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_action_token">Get Action Token</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_avatar">Get Avatar</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_devices">Get Devices</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_info">Get Info</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_limits">Get Limits</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_session_token">Get Session Token</a></li>
+        <li><a href="/developers/core_api/1.5/user/#get_settings">Get Settings</a></li>
+        <li><a href="/developers/core_api/1.5/user/#register">Register</a></li>
+        <li><a href="/developers/core_api/1.5/user/#renew_session_token">Renew Session Token</a></li>
+        <li><a href="/developers/core_api/1.5/user/#set_avatar">Set Avatar</a></li>
+        <li><a href="/developers/core_api/1.5/user/#set_settings">Set Settings</a></li>
+        <li><a href="/developers/core_api/1.5/user/#update">Update</a></li> 
+       </ul> 
+      </div> <!--CLOSING MENU--> 
+     </div> <!--END LEFT COLUMN--> 
+    </div> 
+    <div class="column-2 developers documentation"> 
+     <h1 id="getting_started_top">Getting Started<span class="version-indicator">1.5</span></h1> 
+     <h2 id="frequently_used_terms">Frequently Used Terms</h2> 
+     <br> 
+     <p> Below is a list of Frequently Used Terms used throughout this documentation. Any terms specific to MediaFire will be hyperlinked back to this page for further explanation. <br> <br> <b><span id="quick_key">quickkey:</span></b> quickkey is a reference to a file. You can get quickkeys from <a href="/developers/core_api/1.1/folder/#get_content" target="_blank">/folder/get_content.</a> <br> <br> <b><span id="folder_key">folderkey:</span></b> folderkey is a reference to a folder. You can get a list of folderkeys from <a href="/developers/core_api/1.1/folder/#get_content" target="_blank">/folder/get_content</a>. When you use the /folder/get_content API without a folder key defined, it will automatically give you the folderkeys for the folders in your root 'My Files' page. From there, you can retrieve the folderkey of the folder you would like to continue "digging into". Next, update the 'get_content' folder url with the folderkey you would like to inspect. This process can be repeated continually until you reach your desired folderkey. <br> <br> <b><span id="resource">resource:</span></b> resource is a file or folder object in a MediaFire account. <br><br> <b><span id="session_token">session token:</span></b> session token is a token used to authorize user specific transactions. You can get instructions for obtaining a session token at <a href="/developers/core_api/1.1/user/#get_session_token" target="_blank">/user/get_session_token.</a> <br> <br> <b><span id="web_upload">web upload:</span></b> a web upload is when you give MediaFire a URL of an item you would like placed in your account. In return, Mediafire will download the file from the specified URL and place it directly into your My Files (unless you specify a different folderkey). For example: if you give MediaFire the URL www.mediafire.comimages/contact_trie.jpg we will fetch contact_trie.jpg and download it into your account. This is an ideal situation to obtain a file for your account without you having to use your bandwidth to access it. <br> <br> </p> 
+     <br>
+     <h2 id="best_practices">Best Practices</h2> 
+     <br> 
+     <p> Below is a list of suggested measures which will ensure your code is using the MediaFire REST API in a more efficient and secure manner: <br> <br> </p>
+     <ul> 
+      <li> <b>DO</b> use <a href="/developers/core_api/1.1/user/#get_session_token" target="_blank">Session Token 2</a> over type 1. </li> 
+      <li> <b>DO</b> use <a href="/developers/core_api/1.1/upload/#resumable" target="_blank">Resumable Uploads</a>. </li> 
+      <li> <b>DO</b> use <a href="/developers/core_api/1.1/user/#get_action_token" target="_blank">Action Tokens</a> when fetching large numbers of images using the the Media API and Image Conversion systems. </li> 
+      <li> <b>DO</b> use restrictive security features, such as <a href="/developers/getting_started/getting_started/#edit_your_api_security_controls" target="_blank">restrictions by Domains, IP Addresses, and Callback URLs</a>, to improve security for web applications. </li> 
+      <li> <b>DO</b> attempt to use the <a href="/developers/core_api/1.1/upload/#instant" target="_blank">Instant Upload</a> feature. </li> 
+      <li> <b>DO</b> destroy <a href="/developers/core_api/1.1/user/#get_action_token" target="_blank">Action Tokens</a> when they are no longer necessary. </li> 
+      <li> <b>DO</b> use SSL whenever possible. </li> 
+      <li> <b>DO</b> use the POST request method instead of GET whenever possible. </li> 
+      <li> When performing an upload, <b>DO</b> use <a href="/developers/core_api/1.1/user/#get_action_token" target="_blank">Action Tokens</a> to improve performance. </li> 
+      <li> When performing an upload, <b>DO</b> ensure the account you are uploading to has adequate space for the file. </li> 
+      <li> <b>DO NOT</b> expose your API keys (when possible). </li> 
+     </ul> 
+     <p></p> 
+     <br>
+     <h1 id="api_basics">API Basics</h1> 
+     <br>
+     <h2 id="call_signature">Call Signature (Session Token 2)</h2> 
+     <br> 
+     <p> <b>Note:</b> When making an API call using the GET request method, it is permissible to URL-encode the query string. The server will compute the Call Signature with both permutations (encoded and not encoded) looking for a match. <br> <br> <b>Description:</b> The API call signature is required when Session Token version 2 is used. When you call the secure API user/get_session_token and supply 'token_version=2', in addition to 'session_token' you will receive two more values: 'secret_key' and 'time'. You will need to use these values to construct a signature to be passed along with any subsequent API calls that accept a session token. <br> <br> The signature = the Message-Digest (MD5) of the 'secret_key' modulo 256 + 'time' + the URI of the API call. <br> <br> The URI of the call is the URL excluding the signature and the hostname (e.g. "/1.0/file/get_info.php?quick_key=abcdefghijklmno"). <br> <br> After each API call that returns in the response new_key=yes, you will need to generate a new secret_key to use in the construction of the signature for the next API call. The generation of this new key is based on the MINSTD variant of a Linear Congruential Generator (LCG). The formula to use is: New Key = (Old Key * 16,807) modulo 2,147,483,647. <br> <br> <b>Obtaining an App ID and API Key</b> <br> <br> In order to build a signature, you will need to create an app with a unique ID and key. If you do not already have this information, follow these steps: </p>
+     <ul> 
+      <li> From MediaFire, visit your Account Settings page. </li> 
+      <li> Choose "Developers" from the sidebar menu. </li> 
+      <li> If you have never created an app before, fill in the requested information and click "Submit". </li> 
+      <li> You may need to validate your email address before continuing. </li> 
+      <li> Enter a name for your app and click "Create New Application". </li> 
+      <li> Copy the generated app ID and API key from the table below. </li> 
+     </ul> 
+     <br> <b>Notes:</b> Some APIs do not accept a session token and signature (<b>system/get_version</b> for instance). These APIs are designed to be called without needing any type of authentication. If you change your <b>secret_key</b> and construct a signature for these API calls, then your <b>secret_key</b> will become out of sync with the server. You will then be required to re-authenticate with <b>user/get_session_token</b> to acquire a new <b>secret_key</b> and <b>time</b>. Instead of changing your <b>secret_key</b> on each API call, be sure to check each response for a <b>new_key</b> field equal to "yes". This is the appropriate time to change your stored <b>secret_key</b>. 
+     <br> 
+     <p></p> 
+     <br> 
+     <div class="url"> <span class="method GET">GET</span> https://www.mediafire.com/api/1.5/user/get_session_token.php 
+     </div> 
+     <div class="url"> <span class="method POST">POST</span> https://www.mediafire.com/api/1.5/user/get_session_token.php 
+     </div> 
+     <br> 
+     <p> <b>Example:</b> </p> 
+     <br> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Request</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1" style="word-wrap: break-word;">https://www.mediafire.com/api/1.5/user/get_session_token.php?email=some_email@domain.com&amp;password=123456&amp;application_id=9999&amp;signature=0123456789012345678901234567890123456789&amp;token_version=2</span></pre> 
+      </div> 
+     </div> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Response</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1">&lt;response&gt;
+ &lt;action&gt;user/get_session_token&lt;/action&gt;
+ &lt;session_token&gt;
+&nbsp;&nbsp;01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789<br>
+ &lt;/session_token&gt;
+ &lt;secret_key&gt;9316931&lt;/secret_key&gt;
+ &lt;time&gt;1359061000.8125&lt;/time&gt;
+ &lt;result&gt;Success&lt;/result&gt;
+ &lt;current_api_version&gt;1.0&lt;/current_api_version&gt;
+&lt;/response&gt;</span>
+                        </pre> 
+      </div> 
+     </div> 
+     <p> <br> <b>Making a first call using this Session Token</b> <br> <br> Let's make a call to get the user's personal info. Our API call URI is : /api/1.5/user/get_info.php?session_token=[insert session token here] Therefore, we construct the signature by concatenating the Secret key modulo 256, Time and the URI, then apply MD5 on the result. 9316931 modulo 256 is 67. This will be calculated as follows: signature = MD5('671359061000.8125/api/1.5/user/get_info.php?session_token=[insert session token here) The signature is 938a3a05ba087245fc2c7f96512cdbd8 and the API call would be: <br> http://www.mediafire.com/api/1.5/user/get_info.php?session_token=[insert sample token here]&amp;signature=[insert signature here] <br> </p> 
+     <br> 
+     <p> <b>Making a second call using this Session Token</b> <br> Once a signature is created, the secret key is no longer usable for generating a call signature. However, the developer will still need to old secret key to generate a new secret key. The New key is calculated as follows: new key = (9316931 * 16807) modulo 2147483647 which is 1970836733 We will make a call to get the root folder's content. Our URI will be: /api/1.5/folder/get_content.php?session_token=[insert session token here]&amp;content_type=files <br> Next, we construct the signature using the new key. 1970836733 modulo 256 is 253. This is calculated as follows: signature = MD5('2531359061000.8125/api/1.5/folder/get_content.php?session_token=[insert session token here]&amp;content_type=files') The signature is 7b3faa54b895254aaff9f5caa30e25a4 and the API call would be: <br> http://www.mediafire.com/api/1.5/folder/get_content.php?session_token=[inset session token here]&amp;content_type=files&amp;signature=7b3faa54b895254aaff9f5caa30e25a4 <br> <br> We continue generating a new secret key for every API call as long as the previous API call returns 'new_key' data set to 'yes'. <br> <br> </p> 
+     <br>
+     <h2 id="asynchronous_job_queue">Asynchronous Job Queue</h2> 
+     <br> 
+     <p> Some API calls require extended processing time, for example copying a folder that has several hundred items in it. For those API calls, the API won't block for the operation to complete, but returns immediately and the operation is performed in the background as an asynchronous job. The API response then returns asynchronous=yes. However, copying a folder with few items in it will be performed synchronously and the API returns asynchronous=no. If an API doesn't return the meta tag asynchronous, the operation is always performed synchronously. Some of the API calls that might be performed asynchronously include, but are not limited to: <br> <br> </p>
+     <ul> 
+      <li> folder/copy </li> 
+      <li> folder/delete </li> 
+      <li> folder/move </li> 
+      <li> folder/purge, and </li> 
+      <li> folder/update </li> 
+     </ul> 
+     <p></p> 
+     <br> 
+     <p> Example - Purging a folder with 700 nested folders and files in it (permanent deletion): </p> 
+     <br> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Request</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1" style="word-wrap: break-word;">http://www.mediafire.com/api/1.5/folder/purge.php?session_token=70544260fc2ad423bffc0d2d446719c32db7758d6c38d8b6a78d13d6158cf29e2491a05c2c0c023140a0c04471c95a263d1fefbb3a125ac734181daec640d690ca6cabac774c5a1c&amp;folder_key=618o4cknwzyak</span></pre> 
+      </div> 
+     </div> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Response</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1">&lt;response&gt;
+ &lt;action&gt;folder/purge&lt;/action&gt;
+ &lt;asynchronous&gt;yes&lt;/asynchronous&gt;
+ &lt;result&gt;Success&lt;/result&gt;
+ &lt;current_api_version&gt;1.0&lt;/current_api_version&gt;
+&lt;/response&gt;</span>
+                        </pre> 
+      </div> 
+     </div> 
+     <h2 id="http_status_codes">HTTP Status Codes </h2> 
+     <br> 
+     <p> The API returns, as part of the response headers, a HTTP Status code. If the API call succeeds, a 200 OK is always returned. In case of an error, a different code is returned and an API response body is still returned. The following is a list of possible HTTP codes. <br> <br> </p>
+     <ul> 
+      <li> 200 OK </li> 
+      <li> 400 Bad Request </li> 
+      <li> 403 Forbidden </li> 
+      <li> 404 Not Found </li> 
+      <li> 900 Internal Server Error </li> 
+     </ul> 
+     <p></p> 
+     <br>
+     <h2 id="authentication_widget">Authentication Widget</h2> 
+     <br> 
+     <p> Instead of handling user credentials yourself, MediaFire supports an OAuth-style login flow. <br> <br> First, a small (&lt;1KB) JS file should be included in your page. <br> <br> <a href="https://github.com/MediaFire/mediafire-javascript-sdk" target="_blank">https://github.com/MediaFire/mediafire-javascript-sdk</a> <br> <br> This exposes a global function: MF.login(options, callback, scope) <br> The options parameter should be an object consisting of the fields apiKey and apiID. <br> Those fields should contain your application key and application id, respectively. <br> The second parameter is your callback, which will be called when the session token is available. The session token will be the first argument in the callback. <br> You may optionally specify a scope, which will override the context of the "this" keyword in the callback. <br> </p> 
+     <p> Example </p> 
+     <br> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Request</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1" style="word-wrap: break-word;">http://www.mediafire.com/auth/mediafire_login.js</span></pre> 
+      </div> 
+     </div> <!-- CODE EXAMPLE BLOCK --> 
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Response</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;title&gt;Login Test&lt;/title&gt;
+ &lt;script src="https://www.mediafire.com/auth/mediafire_login.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;button onclick="login();"&gt;Login&lt;/button&gt;
+ &lt;script&gt;
+&nbsp;&nbsp;var options = {<br>
+&nbsp;&nbsp; apiID: 9001<br>
+&nbsp;&nbsp;};<br>
+ <br>
+&nbsp;&nbsp;function login() {<br>
+&nbsp;&nbsp; MF.login(options, function(sessionToken) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alert(sessionToken);<br>
+&nbsp;&nbsp; });<br>
+&nbsp;&nbsp;}<br>
+ &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span>
+                        </pre> 
+      </div> 
+     </div> 
+     <br>
+     <h2 id="uploading_concepts">Uploading Concepts</h2> 
+     <br> 
+     <p> All MediaFire Upload APIs conform to the <b>Multipart MIME</b> standard. As such, the file name is specified in the <b>filename</b> field of the Content-Disposition header. An example for such a header can be found below: <br> <br> <!-- CODE EXAMPLE BLOCK --> </p>
+     <div class="example"> 
+      <div class="example-header"> <!-- HEADER --> <em>Request</em> 
+      </div> 
+      <div class="highlight"> <!-- CODE --> 
+       <pre><span class="s1">POST http://www.mediafire.com/api/1.5/upload/upload.php?uploadkey=5bb66g94blnnk&amp;session_token=aa22f5a968f827daf69fd6b3515110c43e036bc5d2ed8b81657dd1bdfe4b4c3e3ea6757d1f47bc3d6a001a16bc6f25abb486c5e779328a5769bd9ed6064edb69 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-Filehash:564dc5e9541a494e966066da8b2392e2e70e2438e4fcf4b0058cd9249abc4e1d
+X-Filesize:29278
+X-Filetype:text/plain
+Content-Type: multipart/form-data; boundary=---------------------------41184676334
+Content-Length: 29278
+
+-----------------------------41184676334
+
+
+Summer vacation
+-----------------------------41184676334
+Content-Disposition: form-data; name="image1"; filename="GrandCanyon.jpg"
+Content-Type: image/jpeg
+
+(Binary data not shown)
+-----------------------------41184676334--</span>
+                        </pre> 
+      </div> 
+     </div> 
+     <br> 
+     <br> 
+     <p> In the example above, the custom headers X-Filesize and X-Filehash are supplied. While these headers are not required for all upload scenarios, their inclusion is strongly recommended as it will ensure a higher level of upload data integrity. Although it is not shown in this example, the custom header X-Filename is also supported. This will override the filename specified in the Content-Disposition header when Content-Type is application/octet-stream. </p> 
+     <br>
+     <h2 id="error_codes">Error Codes</h2>
+     <br> <b>Note:</b> Error codes may have a "+" or "-" preceding them.
+     <br>
+     <br> 
+     <p>Below is a list of errors you may incur and their definition:<br><br> </p>
+     <ul> 
+      <li><b>100 :</b> ERROR_INTERNAL: Internal server error.</li> 
+      <li><b>101 :</b> ERROR_USER_ERROR : User error.</li> 
+      <li><b>102 :</b> ERROR_MISSING_KEY: API Key is missing.</li> 
+      <li><b>103 :</b> ERROR_INVALID_KEY: The supplied API Key is invalid.</li> 
+      <li><b>104 :</b> ERROR_MISSING_TOKEN: Session Token is missing.</li> 
+      <li><b>105 :</b> ERROR_INVALID_TOKEN: The supplied Session Token is expired or invalid.</li> 
+      <li><b>106 :</b> ERROR_CHANGE_EXTENSION: You cannot change the file extension by changing the file name.</li> 
+      <li><b>107 :</b> ERROR_INVALID_CREDENTIALS: The Credentials you entered are invalid.</li> 
+      <li><b>108 :</b> ERROR_INVALID_USER: Unknown or invalid user.</li> 
+      <li><b>109 :</b> ERROR_INVALID_APPID: Unknown or invalid Application ID.</li> 
+      <li><b>110 :</b> ERROR_INVALID_QUICKKEY: Unknown or Invalid QuickKey.</li> 
+      <li><b>111 :</b> ERROR_MISSING_QUICKKEY: Quick Key is missing.</li> 
+      <li><b>112 :</b> ERROR_INVALID_FOLDERKEY: Unknown or invalid FolderKey.</li> 
+      <li><b>113 :</b> ERROR_MISSING_FOLDERKEY: Folder Key is missing.</li> 
+      <li><b>114 :</b> ERROR_ACCESS_DENIED: Access denied.</li> 
+      <li><b>115 :</b> ERROR_FOLDER_PATH_CONFLICT: Cannot move/copy a Folder to itself or to one of its Sub-Folders.</li> 
+      <li><b>116 :</b> ERROR_INVALID_DATE: The date specified is not valid.</li> 
+      <li><b>117 :</b> ERROR_MISSING_FOLDERNAME: Folder Name is missing.</li> 
+      <li><b>118 :</b> ERROR_INVALID_FILENAME: The File Name specified is invalid.</li> 
+      <li><b>119 :</b> ERROR_NO_MF_EMAIL: You cannot register a Mediafire.com email address.</li> 
+      <li><b>120 :</b> ERROR_EMAIL_TAKEN: The email address you specified is already in use.</li> 
+      <li><b>121 :</b> ERROR_EMAIL_REJECTED: The email address you specified is found to be rejected/bounced.</li> 
+      <li><b>122 :</b> ERROR_EMAIL_MISFORMATTED: The email address you specified is misformatted.</li> 
+      <li><b>123 :</b> ERROR_PASSWORD_MISFORMATTED: The password you specified is misformatted.</li> 
+      <li><b>124 :</b> ERROR_API_VERSION_MISSING: The API Version is missing.</li> 
+      <li><b>125 :</b> ERROR_OLD_API_VERSION: The API version specified or the API Library is old for this call. Please Specify a higher API version or update your API Library.</li> 
+      <li><b>126 :</b> ERROR_API_CALL_DEPRECATED: This API call has been deprecated for the API version specified or the API Library. Please refer to the API documentation for alternative calls.</li> 
+      <li><b>127 :</b> ERROR_INVALID_SIGNATURE: The signature you specified is invalid.</li> 
+      <li><b>128 :</b> ERROR_MISSING_PARAMS: Required parameters for this request are missing.</li> 
+      <li><b>129 :</b> ERROR_INVALID_PARAMS: One or more parameters for this request are invalid.</li> 
+      <li><b>130 :</b> ERROR_NON_PRO_LIMIT_REACHED: Non premium account limitation reached.</li> 
+      <li><b>131 :</b> ERROR_ADD_OWNED_FOLDER: Cannot add a shared folder to its owner's account.</li> 
+      <li><b>132 :</b> ERROR_REMOVE_OWNED_FOLDER: Cannot remove a shared folder from its owner's account.</li> 
+      <li><b>133 :</b> ERROR_ADD_ANON_FOLDER: Cannot add a shared folder from an anonymous account.</li> 
+      <li><b>137 :</b> ERROR_CONTACT_ALREADY_EXISTS: This contact already exists in the user's contact list.</li> 
+      <li><b>138 :</b> ERROR_CONTACT_DOES_NOT_EXIST: This contact does not exist.</li> 
+      <li><b>139 :</b> ERROR_CONTACT_GROUP_EXISTS: This group already exists in the user's contact list.</li> 
+      <li><b>140 :</b> ERROR_UNKNOWN_CONTACT_GROUP: This group does not exist.</li> 
+      <li><b>141 :</b> ERROR_UNKNOWN_DEVICE: Unknown or invalid device.</li> 
+      <li><b>142 :</b> ERROR_INVALID_FILE_TYPE: Unsupported or invalid file type.</li> 
+      <li><b>143 :</b> ERROR_FILE_ALREADY_EXISTS: This file already exists.</li> 
+      <li><b>144 :</b> ERROR_FOLDER_ALREADY_EXISTS: This folder already exists.</li> 
+      <li><b>145 :</b> ERROR_APPLICATION_DISABLED: The application trying to access the API is disabled.</li> 
+      <li><b>146 :</b> ERROR_APPLICATION_SUSPENDED: The application trying to access the API is suspended.</li> 
+      <li><b>147 :</b> ERROR_ZIP_MULTIPLE_OWNERS: Bulk downloading from multiple file owners is currently not supported.</li> 
+      <li><b>148 :</b> ERROR_ZIP_NON_PRO_DOWNLOAD: Bulk download requires the file owner or the downloader to be premium.</li> 
+      <li><b>149 :</b> ERROR_ZIP_OWNER_NOT_PRO: The owner of the files is not a premium user. You need to confirm the download using your own bandwidth.</li> 
+      <li><b>150 :</b> ERROR_ZIP_FILE_TOO_BIG: One or more files are too large to be included. Files must be X MB or less in order to be included in the zip file.</li> 
+      <li><b>151 :</b> ERROR_ZIP_NO_FILES_SELECTED: The item you selected contained no files. You must select at least one file to zip.</li> 
+      <li><b>152 :</b> ERROR_ZIP_NO_FILES_ZIPPED: None of the selected files were able to be zipped at this time.</li> 
+      <li><b>153 :</b> ERROR_ZIP_TOTAL_SIZE_TOO_BIG: The total size of the zip file is larger than X MB. You need to confirm the download.</li> 
+      <li><b>154 :</b> ERROR_ZIP_NUM_FILES_EXCEEDED: Maximum number of files reached. Cannot add more than X files.</li> 
+      <li><b>155 :</b> ERROR_ZIP_OWNER_INSUFFICIENT_BANDWIDTH: The files owner does not have enough bandwidth to download the zip file. You need to confirm the download using your own bandwidth.</li> 
+      <li><b>156 :</b> ERROR_ZIP_REQUESTER_INSUFFICIENT_BANDWIDTH: You do not have enough bandwidth to download the zip file.</li> 
+      <li><b>157 :</b> ERROR_ZIP_ALL_INSUFFICIENT_BANDWIDTH: Neither the owner of the files nor you have enough bandwidth to download the zip file.</li> 
+      <li><b>158 :</b> ERROR_FILE_EXISTS: This file exists already.</li> 
+      <li><b>159 :</b> ERROR_FOLDER_EXISTS: This folder exists already.</li> 
+      <li><b>160 :</b> ERROR_INVALID_ACCEPTANCE_TOKEN: The Terms of Service acceptance token is invalid.</li> 
+      <li><b>161 :</b> ERROR_USER_MUST_ACCEPT_TOS: You must accept the latest Terms of Service.</li> 
+      <li><b>162 :</b> ERROR_LIMIT_EXCEEDED: The file(s)/folder(s) you upload/copy exceed your total storage limit.</li> 
+      <li><b>163 :</b> ERROR_ACCESS_LIMIT_REACHED: You have reached the limit accessing the API. Please try again later.</li> 
+      <li><b>164 :</b> ERROR_DMCA_ALREADY_REPORTED: These files have already been reported.</li> 
+      <li><b>165 :</b> ERROR_DMCA_ALREADY_REMOVED: These files no longer exist in our system.</li> 
+      <li><b>166 :</b> ERROR_ADD_PRIVATE_FOLDER: Cannot add a private folder to an account.</li> 
+      <li><b>167 :</b> ERROR_FOLDER_DEPTH_LIMIT: Maximum depth of folder reached. Cannot add more than X nested folders.</li> 
+      <li><b>168 :</b> ERROR_INVALID_PRODUCT_ID: Invalid Product Id.</li> 
+      <li><b>169 :</b> ERROR_UPLOAD_FAILED: Upload Failed.</li> 
+      <li><b>170 :</b> ERROR_TARGET_PLAN_NOT_IN_THE_SAME_CLASS: Can't change plan to one that is not in the same class with the current.</li> 
+      <li><b>171 :</b> ERROR_BIZ_PLAN_RESTRICTION: Can't change plan from/to business plan.</li> 
+      <li><b>172 :</b> ERROR_EXPIRATION_DATE_RESTRICTION: Can't change plan, plan will be expiring or it has already expired.</li> 
+      <li><b>173 :</b> ERROR_NOT_PREMIUM_USER: Must be a premium user to use this function.</li> 
+      <li><b>174 :</b> ERROR_INVALID_URL: The URL specified is invalid.</li> 
+      <li><b>175 :</b> ERROR_INVALID_UPLOAD_KEY: The Upload Key specified is invalid.</li> 
+      <li><b>176 :</b> ERROR_STORAGE_LIMIT_RESTRICTION: The storage amount for this product is less than the total size of your files.</li> 
+      <li><b>177 :</b> ERROR_DUPLICATE_ENTRY: Cannot insert a duplicate entry.</li> 
+      <li><b>178 :</b> ERROR_PRODUCT_ID_MATCH: Cannot change to same plan.</li> 
+      <li><b>179 :</b> ERROR_NOT_CURRENT_PRODUCT: Must change to a current product.</li> 
+      <li><b>180 :</b> ERROR_BIZ_DOWNGRADE: Cannot downgrade from a business account.</li> 
+      <li><b>181 :</b> ERROR_BUSINESS_UPGRADE: Error upgrading to business account.</li> 
+      <li><b>182 :</b> ERROR_CHANGE_PLAN_CREDIT: You do not have enough credit to change to this plan. Please contact customer service.</li> 
+      <li><b>183 :</b> ERROR_BANDWIDTH_ERROR: Changing to this product would give you negative bandwidth.</li> 
+      <li><b>184 :</b> ERROR_ALREADY_LINKED: The account you are trying to link is already linked to another MediaFire user.</li> 
+      <li><b>185 :</b> ERROR_INVALID_FOLDERNAME: The specified Folder Name is invalid.</li> 
+      <li><b>186 :</b> ERROR_ZIP_PASSWORD_BULK: Cannot download password-protected files in bulk.</li> 
+      <li><b>187 :</b> ERROR_SERVER_NOT_FOUND: Found no server matching your request.</li> 
+      <li><b>188 :</b> ERROR_NOT_LOGGED_IN: You must be logged in to purchase a plan.</li> 
+      <li><b>189 :</b> ERROR_RESELLER_TOS: You must agree to the reseller terms of service.</li> 
+      <li><b>190 :</b> ERROR_BUSINESS_SEAT: Business seats cannot make purchases.</li> 
+      <li><b>191 :</b> ERROR_BANNED_BUYER: This user is a banned buyer.</li> 
+      <li><b>192 :</b> ERROR_RESELLER_CREDITS_ERROR: Error with reseller credits.</li> 
+      <li><b>193 :</b> ERROR_PURCHASE_BANNED_ERROR: You may not purchase from this country.</li> 
+      <li><b>194 :</b> ERROR_SUBDOMAIN_ERROR: The subdomain is in use or invalid.</li> 
+      <li><b>195 :</b> ERROR_TOO_MANY_FAILED: This user has too many failed transactions.</li> 
+      <li><b>196 :</b> ERROR_INVALID_CARD: The credit card you have entered is invalid.</li> 
+      <li><b>197 :</b> ERROR_RECENT_SUBSCRIBER: You have purchased an account within the last 3 days.</li> 
+      <li><b>198 :</b> ERROR_INVOICE_FAILED: There was an error storing the invoice.</li> 
+      <li><b>199 :</b> ERROR_DUPLICATE_API_TRANSACTION: A duplicate transaction has been submitted.</li> 
+      <li><b>200 :</b> ERROR_CARDCCV_ERROR: Invalid card CCV code</li>
+      <li><b>200 :</b> Invalid card CCV code.</li> 
+      <li><b>201 :</b> ERROR_TRANSACTION_DECLINED: This transaction has been declined.</li> 
+      <li><b>202 :</b> ERROR_PREPAID_CARD: Prepaid card error.</li> 
+      <li><b>206 :</b> ERROR_CARD_STORE_FAILED: There was an error storing the credit card.</li> 
+      <li><b>207 :</b> ERROR_COPY_LIMIT_EXCEEDED: Total number of files copied cannot exceed "(MAX_OBJECTS, HTTP_STATUS_FORBIDDEN).</li> 
+      <li><b>208 :</b> ERROR_ASYNC_JOB_IN_PROGRESS: Another Asynchronous Operation is in progress. Please Retry later.</li> 
+      <li><b>209 :</b> ERROR_FOLDER_ALREADY_DELETED: This folder has already been deleted.</li> 
+      <li><b>210 :</b> ERROR_FILE_ALREADY_DELETED: This file has already been deleted.</li> 
+      <li><b>211 :</b> ERROR_CANT_MODIFY_DELETED_ITEMS: Items in the Trash Can cannot be modified.</li> 
+      <li><b>212 :</b> ERROR_CHANGE_FROM_FREE: You cannot change from a free plan.</li> 
+      <li><b>214 :</b> ERROR_INVALID_FILEDROP_KEY: The specified FileDrop Key is invalid.</li> 
+      <li><b>215 :</b> ERROR_MISSING_SIGNATURE: The call signature is missing.</li> 
+      <li><b>216 :</b> ERROR_EMAIL_ADDRESS_TOO_SHORT: The email address provided must be greater than 3 characters.</li> 
+      <li><b>217 :</b> ERROR_EMAIL_ADDRESS_TOO_LONG: The email address provided must be less than 50 characters.</li> 
+      <li><b>218 :</b> ERROR_FB_EMAIL_MISSING: Cannot register via Facebook. The Facebook Email is missing.</li> 
+      <li><b>219 :</b> ERROR_FB_EMAIL_EXISTS: The Facebook Email is already registered with a MediaFire account.</li> 
+      <li><b>220 :</b> ERROR_AUTH_FACEBOOK: Failed to authenticate to Facebook.</li> 
+      <li><b>221 :</b> ERROR_AUTH_TWITTER: Failed to authenticate to Twitter.</li> 
+      <li><b>223 :</b> ERROR_INVALID_REVISION: The revision you requested is invalid or cannot be restored.</li> 
+      <li><b>224 :</b> ERROR_NO_ACTIVE_INVOICE: There is no active invoice to cancel.</li> 
+      <li><b>225 :</b> ERROR_APPLICATION_NO_LOGGING: This application is not allowed to log to the database.</li> 
+      <li><b>226 :</b> ERROR_INVALID_INSTALLATION_ID: Invalid installation ID.</li> 
+      <li><b>227 :</b> ERROR_INCIDENT_MISMATCH: The provided incident and installation ID's do not match.</li> 
+      <li><b>228 :</b> ERROR_MISSING_FACEBOOK_TOKEN: The Facebook Access Token is required.</li> 
+      <li><b>229 :</b> ERROR_MISSING_TWITTER_TOKEN: The Twitter OAuth Token is required.</li> 
+      <li><b>230 :</b> ERROR_NO_AVATAR: This user has no associated avatar image.</li> 
+      <li><b>231 :</b> ERROR_INVALID_SOFTWARE_TOKEN: The provided software token is invalid.</li> 
+      <li><b>232 :</b> ERROR_EMAIL_NOT_VALIDATED: The email address of the sender is not yet validated.</li> 
+      <li><b>233 :</b> ERROR_AUTH_GMAIL: Failed to authenticate to Google.</li> 
+      <li><b>234 :</b> ERROR_FAILED_TO_SEND_MESSAGE: Failed to send message.</li> 
+      <li><b>235 :</b> ERROR_USER_IS_OWNER: You own this resource.</li> 
+      <li><b>236 :</b> ERROR_USER_IS_FOLLOWER: You already follow this resource.</li> 
+      <li><b>237 :</b> ERROR_USER_NOT_FOLLOWER: You are not following this resource.</li> 
+      <li><b>238 :</b> ERROR_UPDATE_NO_CHANGE: This file has not changed; no need to update.</li> 
+      <li><b>239 :</b> ERROR_SHARE_LIMIT_REACHED: Maximum number of allowed share for this resource is reached.</li> 
+      <li><b>240 :</b> ERROR_CANNOT_GRANT_PERMS: Cannot grant permissions to the specified resource(s).</li> 
+      <li><b>241 :</b> ERROR_INVALID_PRINT_SERVICE: The service number provided is not a recognized service.</li> 
+      <li><b>242 :</b> ERROR_FOLDER_FILES_EXCEEDED: The folder trying to be deleted has over 1000 files.</li> 
+      <li><b>243 :</b> ERROR_ACCOUNT_TEMPORARILY_LOCKED: This account is temporarily locked. Please, try again later.</li> 
+      <li><b>244 :</b> ERROR_NON_US_USER: This service is available to US residents only.</li> 
+      <li><b>245 :</b> ERROR_INVALID_SERVICE: You do not have permissions to access this Service.</li> 
+      <li><b>246 :</b> ERROR_CHANGE_FROM_AFFILIATE: You cannot change from a plan purchased through an affiliate.</li> 
+      <li><b>247 :</b> ERROR_CHANGE_FROM_APPLE: You cannot change from a plan purchased through the App Store.</li> 
+      <li><b>248 :</b> ERROR_APP_NOT_AUTHENTICATED: Unable to authenticate app.</li> 
+      <li><b>249 :</b> ERROR_INVALID_RECEIPT_DATA: Invalid receipt data submitted.</li> 
+      <li><b>250 :</b> ERROR_INVALID_TRANSACTION_ID: Transaction ID not found in receipt data.</li> 
+      <li><b>251 :</b> ERROR_USED_TRANSACTION_ID: This transaction ID has already been redeemed.</li> 
+      <li><b>252 :</b> ERROR_TOKEN_ALREADY_UPGRADED: The passed session token is already an upgraded version.</li> 
+      <li><b>253 :</b> ERROR_UNKNOWN_API: Unknown or invalid API method.</li> 
+      <li><b>254 :</b> ERROR_LIST_ALREADY

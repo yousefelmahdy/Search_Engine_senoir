@@ -1,0 +1,708 @@
+<!doctype html>
+<html dir="ltr" lang="en-US"> 
+ <head> 
+  <meta charset="utf-8"> <!-- v19745 --> 
+  <title>Changing your domain nameservers to Cloudflare – Cloudflare Help Center</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="hc:meta:server:NZ3cs15Cogp2r-kKYZTfrfIwORyN15dEc7Fv33CY2PIzSB_tX96cHGeAUh6ysNcR23xiG1F21if7Jpv8uuSocQ"> 
+  <meta name="description" content="Understand how to update nameservers at your domain registrar to successfully activate Cloudflare. Overview Before you begin Change your...">
+  <meta property="og:image" content="https://theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Cloudflare Help Center"> 
+  <meta property="og:title" content="Changing your domain nameservers to Cloudflare"> 
+  <meta property="og:description" content="Understand how to update nameservers at your domain registrar to successfully activate Cloudflare.
+Overview
+Before you begin
+Change your domain nameservers
+How to check if your domain nameservers a..."> 
+  <meta property="og:url" content="https://support.cloudflare.com/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare"> 
+  <link rel="canonical" href="https://support.cloudflare.com/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare"> 
+  <link rel="alternate" hreflang="de" href="https://support.cloudflare.com/hc/de/articles/205195708-Umstellung-Ihrer-Domain-Nameserver-auf-Cloudflare"> 
+  <link rel="alternate" hreflang="en" href="https://support.cloudflare.com/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare"> 
+  <link rel="alternate" hreflang="es" href="https://support.cloudflare.com/hc/es-es/articles/205195708-Cambiar-tus-servidores-de-nombres-de-dominio-a-Cloudflare"> 
+  <link rel="alternate" hreflang="fr" href="https://support.cloudflare.com/hc/fr-fr/articles/205195708-Changer-les-serveurs-de-noms-de-votre-domaine-pour-Cloudflare"> 
+  <link rel="alternate" hreflang="ja" href="https://support.cloudflare.com/hc/ja/articles/205195708-%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E3%83%8D%E3%83%BC%E3%83%A0%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92Cloudflare%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B"> 
+  <link rel="alternate" hreflang="ko" href="https://support.cloudflare.com/hc/ko/articles/205195708-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%9D%B4%EB%A6%84-%EC%84%9C%EB%B2%84%EB%A5%BC-Cloudflare%EB%A1%9C-%EB%B3%80%EA%B2%BD"> 
+  <link rel="alternate" hreflang="pt" href="https://support.cloudflare.com/hc/pt-br/articles/205195708-Altera%C3%A7%C3%A3o-dos-nameservers-de-dom%C3%ADnio-para-Cloudflare"> 
+  <link rel="alternate" hreflang="zh" href="https://support.cloudflare.com/hc/zh-cn/articles/205195708-%E5%B0%86%E6%82%A8%E7%9A%84%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E4%B8%BA-Cloudflare"> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-79172500fb4dbec2484043d570946543.css" id="stylesheet"> <!-- Entypo pictograms by Daniel Bruce — www.entypo.com --> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-cf937686d5b6669242017892da7bad78.css"> 
+  <link rel="stylesheet" type="text/css" href="//p13.zdassets.com/hc/theming_assets/184946/475874/style.css?digest=4402414509325"> 
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/184946/2dec4705e9ab399efdc6eef36e079aa31d1df8d9.ico"> 
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script> <!--
+  Template Name: Sagma
+  Version: 3.1.9
+  Author: Allies Interactive
+  Website: http://www.diziana.com/
+  Corporate Website : http://www.diziana.com
+  Contact: support@diziana.com
+  Follow: https://www.twitter.com/dizianaEngage
+  Like: https://www.facebook.com/diziana.engage
+  Purchase: Diziana.com
+  License: You must have a valid license purchased only from
+  diziana.com in order to legally use the theme for your project.
+  Copyright: © 2020 Allies Interactive Services Pvt. Ltd. All Rights Reserved
+--> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.0/URI.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/2a515632e0fd8ffdeb8d94cb25e44cf287feb32f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/a62d9ce6c78c259d7167495b85f03f38c8a6635f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/ef493f5fc3711bd1e6f7b876f3bfddeccbe99d36.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/d0608d7794a77e0c9fbdc1b0e5b4ecdfe79f2c37.js"></script> 
+  <script>
+  /**
+  * Icon for home category/section blocks
+  *
+  * Upload icon (ID.png) to assets for default block Icon
+  * Upload icon (hover_ID.png) to assets for hover block Icon
+  * Replace ID with category/section ID
+  * For font-icon, open the icon page and copy the class name attached in the tag as: <!--<i class="fas fa-pencil-alt"></i>-->
+  *
+  * Once asset is uploaded, click on it so details is shown in right pane
+  * Copy the text written under script tag and paste it below
+  *
+  * Your code should look like the below lines -
+  *  var assets360000004673 = "";
+  *  var assetsHover360000004673 = "";
+  *  var assets360000004673 = "fas fa-pencil-alt";
+  **/
+
+  // Paste copied code here
+  var assets200275228 = "fas fa-fire"; // Firewall category
+  var assets200276257 = "fas fa-file"; // Page Rules category
+  var assets200275248 = "fas fa-server"; // Caching category
+  var assets200276267 = "fas fa-chart-pie"; // Analytics category
+  var assets200275278 = "fas fa-user"; // Third-party software category
+  var assets200275298 = "fas fa-cog"; // Cloudflare client API category
+  var assets200276277 = "fas fa-hands-helping"; // Partners category
+  var assets200276287 = "fas fa-plus-circle"; // Cloudflare apps category
+
+</script> 
+  <script>
+  var systemStatusText = "All Systems Operational";
+  /* var systemStatusText = "" */
+  
+  var tocHeadingText = "In this article";
+  /* var tocHeadingText = "" */
+
+  /**
+  * Returns URL of image
+  *
+  **/
+
+  function getAssetURLById(id) {
+    return {
+      blockIcon: window["assets" + id],
+      blockHoverIcon: window["assetsHover" + id]
+    }
+  }
+
+  /**
+  * sets the image url from assets id
+  *
+  **/
+  function setIcon(id) {
+    var icon = getAssetURLById(id);
+
+    if ( icon.blockIcon != undefined ) {
+      var blockIcon = $("."+ id + '-block-icon');
+      var blockHoverIcon = $("."+ id + '-block-hover-icon');
+      var blockFontIcon = $("."+ id + '-block-font-icon');
+
+      if ( icon.blockIcon.indexOf('fa') == 0 ) {
+        blockFontIcon.addClass(icon.blockIcon);
+        blockFontIcon.parent().removeClass('hide');
+        blockFontIcon.show();
+        blockIcon.hide();
+        blockHoverIcon.hide();
+      } else {
+        blockIcon.attr('src', icon.blockIcon);
+        blockHoverIcon.attr('src', icon.blockHoverIcon);
+        blockIcon.parent().removeClass('hide');
+        blockFontIcon.hide();
+      }
+    }
+  }
+</script> 
+  <style type="text/css">
+
+.search-box .search input[type="submit"] {
+  background-image: url('//theme.zdassets.com/theme_assets/184946/d784142ca13b85d3a5d7918637c1e4d77dfef300.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-category-list .accordion-toggle.collapsed:after, .home-category-list .accordion-toggle:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/e36baa2f259318b4e14f9a14bd17f8a567456e98.png") no-repeat center center;
+}
+
+.home-category-list .accordion-toggle.open:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/7fb2bfa79c7022b7c88692589f4a1e2e97b95150.png") no-repeat center center;
+}
+
+.user-nav li + li a:before {
+  background: url("//theme.zdassets.com/theme_assets/184946/3126fee5fe913e135dcd1bed4b5fc0e80f82ce5c.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+  
+.banner div { 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   background-color: #00517F; 
+   width: 100%;
+   z-index: 100;
+ }
+.banner-content div { 
+   margin: 0 auto; 
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+ }
+.banner-content a {
+   color: #fff; 
+ }
+
+</style> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> 
+  <script type="text/javascript" src="//p13.zdassets.com/hc/theming_assets/184946/475874/script.js?digest=4402414509325"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class=""> 
+  <header class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo"> <a href="https://support.cloudflare.com/hc/" alt="Cloudflare Help Center" title="Cloudflare Help Center"> <img src="//theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png" alt="Logo"> </a> 
+    </div> 
+    <div class="nav-wrapper"> <span class="icon-menu"></span> <i class="fas system-status-icon"></i> 
+     <nav class="user-nav" id="user-nav"> <a href="https://www.cloudflarestatus.com"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> <a href="https://community.cloudflare.com/" title="Ask the Community"> Ask the Community </a> 
+     </nav> 
+     <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us%2Farticles%2F205195708-Changing-your-domain-nameservers-to-Cloudflare" data-name="English (US)"> English (US) </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/de?return_to=%2Fhc%2Fde%2Farticles%2F205195708-Umstellung-Ihrer-Domain-Nameserver-auf-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Deutsch </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es%2Farticles%2F205195708-Cambiar-tus-servidores-de-nombres-de-dominio-a-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr%2Farticles%2F205195708-Changer-les-serveurs-de-noms-de-votre-domaine-pour-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja%2Farticles%2F205195708-%25E3%2583%2589%25E3%2583%25A1%25E3%2582%25A4%25E3%2583%25B3%25E3%2581%25AE%25E3%2583%258D%25E3%2583%25BC%25E3%2583%25A0%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2583%25BC%25E3%2582%2592Cloudflare%25E3%2581%25AB%25E5%25A4%2589%25E6%259B%25B4%25E3%2581%2599%25E3%2582%258B" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/ko?return_to=%2Fhc%2Fko%2Farticles%2F205195708-%25EB%258F%2584%25EB%25A9%2594%25EC%259D%25B8-%25EC%259D%25B4%25EB%25A6%2584-%25EC%2584%259C%25EB%25B2%2584%25EB%25A5%25BC-Cloudflare%25EB%25A1%259C-%25EB%25B3%2580%25EA%25B2%25BD" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br%2Farticles%2F205195708-Altera%25C3%25A7%25C3%25A3o-dos-nameservers-de-dom%25C3%25ADnio-para-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Português do Brasil </a> <a href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F205195708-%25E5%25B0%2586%25E6%2582%25A8%25E7%259A%2584%25E5%259F%259F%25E5%2590%258D%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E6%259B%25B4%25E6%2594%25B9%25E4%25B8%25BA-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> ???? </a> </span> 
+     </div> <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="Opens a dialog" href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F205195708-Changing-your-domain-nameservers-to-Cloudflare&amp;locale=en-us">Sign in</a> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="hero"> 
+   <div class="hero-inner"> 
+    <h1 class="welcome-message-title welcome-message hide">Cloudflare Help Center</h1> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+     <input type="submit" name="commit" value="Search">
+    </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Popular searches:</li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </div> 
+  </section> <!-- Modal --> 
+  <div class="modal" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-body"> <i class="fa fa-times close-modal"></i> <a href="https://www.cloudflarestatus.com" title="All Systems Operational"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> 
+    </div> 
+   </div> 
+  </div> <!-- /Modal --> 
+  <main role="main"> 
+   <script>
+  var templateName = 'articles';
+  $('.header-wrapper').addClass('fluid');
+</script> 
+   <style>
+  .footer-search-wrapper {display: none;}
+  @media (min-width: 1024px) {
+  	.hero {display: none;}
+  }
+</style> 
+   <div class="article-wrapper"> 
+    <section class="article-sidebar"> 
+     <form role="search" class="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search">
+     </form> 
+     <div class="system-status"> <i class="fas system-status-icon"></i> 
+      <div> 
+       <h3 class="system-status-text"></h3> <a href="https://www.cloudflarestatus.com" title="Detailed system status"> Detailed system status &gt; </a> 
+      </div> 
+     </div> 
+     <section class="section-articles collapsible-sidebar"> 
+      <h3 class="collapsible-sidebar-title sidenav-title">Articles in this section</h3> 
+      <ul> 
+       <li> <a href="/hc/en-us/articles/360037345072-Getting-Started-with-Cloudflare-Video-Tutorials" class="sidenav-item " title="Getting Started with Cloudflare: Video Tutorials">Getting Started with Cloudflare: Video Tutorials</a> </li> 
+       <li> <a href="/hc/en-us/articles/201720164-Creating-a-Cloudflare-account-and-adding-a-website" class="sidenav-item " title="Creating a Cloudflare account and adding a website">Creating a Cloudflare account and adding a website</a> </li> 
+       <li> <a href="/hc/en-us/articles/360047880631-Getting-Started-with-Cloudflare-Product-Demos" class="sidenav-item " title="Getting Started with Cloudflare: Product Demos">Getting Started with Cloudflare: Product Demos</a> </li> 
+       <li> <a href="/hc/en-us/articles/360042815891-Understanding-domain-status" class="sidenav-item " title="Understanding domain status">Understanding domain status</a> </li> 
+       <li> <a href="/hc/en-us/articles/360027989951-Getting-Started-with-Cloudflare" class="sidenav-item " title="Getting Started with Cloudflare">Getting Started with Cloudflare</a> </li> 
+       <li> <a href="/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare" class="sidenav-item current-article" title="Changing your domain nameservers to Cloudflare">Changing your domain nameservers to Cloudflare</a> </li> 
+       <li> <a href="/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard" class="sidenav-item " title="Understanding the Cloudflare dashboard">Understanding the Cloudflare dashboard</a> </li> 
+       <li> <a href="/hc/en-us/articles/360027710672-Troubleshooting-FAQ-for-new-Cloudflare-customers" class="sidenav-item " title="Troubleshooting FAQ for new Cloudflare customers">Troubleshooting FAQ for new Cloudflare customers</a> </li> 
+      </ul> 
+     </section> <!--
+    <section class="community-block">
+      <div>
+        <i class="fas fa-users"></i>
+        <div>
+          
+          <h3>Connect with the Cloudflare Community</h3>
+          <a href="https://community.cloudflare.com/" class="button button-large">Get answers</a>
+          
+        </div>
+      </div>
+      <p>
+        
+        More on this topic: <a href="#">Discussions</a> and <a href="#">Tips</a>
+        
+      </p>
+    </section>
+   --> 
+     <section class="community-block"> 
+      <div> 
+       <img class="community-icon" src="//theme.zdassets.com/theme_assets/184946/513a9e8b35eaed0a35fce9cc22f9972e37872a33.png"> 
+       <div> 
+        <h4>Connect with the Cloudflare Community</h4> <a id="submit-request" class="button button-large" href="https://community.cloudflare.com/" onclick="trackOutboundLink('https://community.cloudflare.com/'); return false;" target="_new">Get answers</a> 
+       </div> 
+      </div> 
+      <p>More on this topic: <a class="link" href="https://community.cloudflare.com/tags/dash-getting-started/l/latest" onclick="trackOutboundLink('https://community.cloudflare.com/tags/dash-getting-started/l/latest'); return false;" target="_new">Discussions</a> and <a class="link" href="https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started" onclick="trackOutboundLink('https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started'); return false;" target="_new">Tips</a> </p> 
+     </section> 
+    </section> 
+    <div class="article-container section" id="article-container"> 
+     <nav class="sub-nav"> 
+      <ol class="breadcrumbs"> 
+       <li title="Cloudflare Help Center"> <a href="/hc/en-us">Cloudflare Help Center</a> </li> 
+       <li title="About Cloudflare"> <a href="/hc/en-us/categories/200275218-About-Cloudflare">About Cloudflare</a> </li> 
+       <li title="Getting Started"> <a href="/hc/en-us/sections/200820158-Getting-Started">Getting Started</a> </li> 
+      </ol> 
+      <script>
+        var categoryid = $('.breadcrumbs li:nth-child(2) a').attr('href').match(/[0-9]+/)[0];
+      </script> 
+     </nav> 
+     <div class="article-side-main-block  "> 
+      <article class="article"> 
+       <header class="article-header meta-hidden"> 
+        <h1 title="Changing your domain nameservers to Cloudflare" class="article-title"> <span> Changing your domain nameservers to Cloudflare </span> 
+         <div> <a class="article-subscribe" title="Opens a sign-in dialog" rel="nofollow" role="button" data-auth-action="signin" aria-selected="false" href="/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare/subscription.html">Follow</a> 
+         </div> <script>
+              $('header .language-selector').clone().prependTo('.article-title > div');
+    					$('article .language-selector').removeClass('hide').addClass('button');
+              var articleId = 205195708;
+              var nodes = $(".language-selector a[href^='/hc/change_language/']");
+              nodes.each(function() {
+                var ele = $(this);
+                var href =  ele.attr("href");
+                var returnToValue = href.split("return_to")[1];
+                if(returnToValue.indexOf(articleId) < 0) {
+                  ele.remove();
+                }
+              });
+            </script> </h1> 
+        <div class="block-wrapper"> 
+         <div class="article-author"> 
+          <div class="article-meta"> 
+           <ul class="meta-group"> 
+            <li class="meta-data">Updated</li> 
+            <li class="meta-data"><time datetime="2021-04-12T16:45:41Z" title="2021-04-12T16:45:41Z" data-datetime="relative">April 12, 2021 16:45</time></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </header> 
+       <section class="article-info"> 
+        <div class="article-content"> 
+         <div class="article-body">
+          <p><i>Understand how to update nameservers at your domain registrar to successfully activate Cloudflare.</i></p>
+          <div class="cf-toc">
+           <ul>
+            <li><a href="#h_22e18701-3a56-4404-9e22-897c75301174">Overview</a></li>
+            <li><a href="#h_17l3jYyLHPIGtMLQW2FwVP">Before you begin</a></li>
+            <li><a href="#434Ce5yZ7oM1ijYPg29SBB">Change your domain nameservers</a></li>
+            <li><a href="#Sup6FYrwnD8xnENE3Xrez4nu">How to check if your domain nameservers are now pointing to Cloudflare</a></li>
+            <li><a href="#h_815d1b1e-74cf-4a5f-b477-e441a76ac3fd">Confirm traffic is proxied to Cloudflare</a></li>
+            <li><a href="#h_9da2a9fe-ea78-4b8b-9c23-ae82792f935e">Related resources</a></li>
+           </ul>
+          </div>
+          <hr>
+          <h2 id="h_22e18701-3a56-4404-9e22-897c75301174">Overview</h2>
+          <p>To route web traffic through the Cloudflare network, update the nameservers at your domain registrar to resolve your domain’s DNS with Cloudflare's nameservers. Updating your nameservers&nbsp;does not change where your website is hosted.&nbsp; Also, you can still use OpenDNS, Google DNS, etc for recursive DNS although Cloudflare recommends the&nbsp;<a href="https://developers.cloudflare.com/1.1.1.1/setting-up-1.1.1.1/">1.1.1.1 resolver</a>.</p>
+          <p></p>
+          <div class="cf-sidebar-2 cf-note">
+           Changing nameservers is not required for Business and Enterprise domains on <a href="https://support.cloudflare.com/hc/en-us/articles/360020348832">CNAME setups</a>. 
+          </div>
+          <p></p>
+          <hr>
+          <h2 id="h_17l3jYyLHPIGtMLQW2FwVP">Before you begin</h2>
+          <h4><b>Tasks</b></h4>
+          <p>Before you change your domain nameservers to Cloudflare, you will need to <a href="https://support.cloudflare.com/hc/articles/201720164">create an account and add your domain to Cloudflare</a>.</p>
+          <h4><b>Concepts</b></h4>
+          <p>If you are new to Cloudflare or Internet concepts more generally, you might want to review the following concepts:</p>
+          <ul>
+           <li><a href="https://www.cloudflare.com/learning/dns/glossary/what-is-a-domain-name-registrar/">Registrar</a></li>
+           <li><a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/">Content Delivery Network (CDN)</a></li>
+           <li><a href="https://www.cloudflare.com/learning/dns/dns-server-types">Nameservers</a></li>
+           <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Domain Name System (DNS)</a></li>
+           <li><a href="https://www.cloudflare.com/learning/dns/dns-security/">DNS Security (DNSSEC)</a></li>
+          </ul>
+          <p></p>
+          <hr>
+          <h2 id="434Ce5yZ7oM1ijYPg29SBB">Change your domain nameservers</h2>
+          <p>To change your domain nameservers, you will need to use information from Cloudflare to update admin settings at your current registrar.</p>
+          <h4><b>1. Copy information from Cloudflare</b></h4>
+          <p>Once you have <a href="https://support.cloudflare.com/hc/articles/201720164">added an application</a> to Cloudflare, that application will receive two assigned nameservers. You will need this information for future steps.</p>
+          <p>To get this information:</p>
+          <p>1. In the <a href="dash.cloudflare.com/?to=/:account/:zone">Cloudflare dashboard</a>, select your account and newly added domain.</p>
+          <p>2. Copy the information from <b>Replace with Cloudflare's nameservers</b>.</p>
+          <img src="https://images.ctfassets.net/slt3lc6tev37/6td4IKteo4KHdtn7LwiYV8/dd99a297eae1d160d81eb94aaa8c9381/nameserver-names.png" alt="Get the names of your assigned nameservers from the Cloudflare dashboard.">
+          <h4><b>2. Update the admin settings for your registrar</b></h4>
+          <p>1. If you do not know the name of your registrar, go to <a href="https://whois.icann.org/">ICANN WHOIS</a> and enter your domain.</p>
+          <img src="https://images.ctfassets.net/slt3lc6tev37/5RgcL9QrReuwcADbxcdL0A/87bc6a0080fc0ac481cdb0686745d5ec/hc-external_ICANN_whois_domain_nameservers.png" alt="screenshot of ICAN WHOIS page with contact information redacted and registrar and name server section highlighted">
+          <p>2. Log into the administrator account for your domain registrar.</p>
+          <p>3. Make sure your registrar has disabled DNSSEC for your domain. For more details, see <a href="https://support.cloudflare.com/hc/articles/205359838#h_94453043811540417238269">Why do I have to disable DNSSEC</a><b>.</b> </p>
+          <p>4. Replace the current nameserver records in your registrar account with the information you copied from Cloudflare. For detailed instructions, select a link in the list below.</p>
+          <p></p>
+          <table style="width:85.8304%"> 
+           <tbody> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-center" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p class="wysiwyg-text-align-left"> <a href="https://help.1and1.com/domains-c36931/manage-domains-c79822/dns-c37586/use-your-own-name-server-for-a-1and1-domain-a594904.html">1and1</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://billing.flokinet.is/index.php?rp%3D/knowledgebase/57/Nameserver-changes.html">FlokiNET</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.name.com/support/articles/205934547-Changing-Your-Name-Servers">Name.com</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://help.blacknight.com/entries/22942338-Changing-nameservers-in-cp-blacknight-com">Blacknight</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://wiki.gandi.net/en/dns/change">Gandi</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/767/10/how-can-i-change-the-nameservers-for-my-domain">NameCheap</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://my.bluehost.com/cgi/help/222">BlueHost</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.godaddy.com/help/change-nameservers-for-your-domain-names-664">GoDaddy</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.networksolutions.com/manage-it/edit-nameservers.jsp">Network Solutions</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://directnic.com/knowledge/article/33:how%2Bdo%2Bi%2Bmodify%2Bname%2Bservers%2Bfor%2Bmy%2Bdomain%2Bname%253F">DirectNIC</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://support.google.com/domains/answer/3290309?hl%3Den">Google Domains</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://docs.ovh.com/gb/en/domains/web_hosting_general_information_about_dns_servers/#step-2-edit-your-domains-dns-servers">OVH</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://www.dnsmadeeasy.com/support/faq/">DNSMadeEasy</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/how-do-i-change-my-dns-or-name-servers">HostGator</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://support.rackspace.com/how-to/rackspace-name-servers/">Rackspace</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://www1.domain.com/knowledgebase/beta/article.bml?ArticleID%3D166">Domain.com</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://my.hostmonster.com/cgi/help/222">HostMonster</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://knowledge.web.com/subjects/article/KA-01114/en-us">Register</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.dotster.com/help/article/domain-management-how-to-update-nameservers">Dotster</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://internetbs.net/faq/content/1/13/en/how-to-update-the-list-of-dns-nameservers-linked-to-a-domain.html?highlight%3Dnameservers">Internetbs</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://knowledge.web.com/subjects/article/KA-01114/en-us">Site5</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://help.dreamhost.com/hc/en-us/articles/216385417">DreamHost</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.ipage.com/help/article/domain-management-how-to-update-nameservers">iPage</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://console.bluemix.net/docs/infrastructure/dns/add-edit-custom-name-servers.html#add-edit-or-delete-custom-name-servers-for-a-domain">Softlayer</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://www.easydns.com/nameservers/">EasyDNS</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://mediatemple.net/community/products/dv/204643220/how-do-i-edit-my-domain's-nameservers">MediaTemple</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://www.tucowsdomains.com/name-server-dns-changes/how-do-i-change-my-name-servers-dns/">Tucows</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://www.enom.com/kb/kb/kb_0086_how-to-change-dns.htm">Enom</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://support.melbourneit.com.au/articles/help/Domain-Name-Administration-FAQ/?q%3Dedit%2Bnameservers%26fs%3DSearch%26pn%3D1">MelbourneIT</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://support.hostgator.com/articles/how-to-change-name-servers-with-yahoo-com">Yahoo!</a> </p> </td> 
+            </tr> 
+            <tr style="height:49px"> 
+             <td class="wysiwyg-text-align-left" style="width:24.0121%;height:49px" colspan="1" rowspan="1"> <p> <a href="http://www1.domain.com/help/article/domain-management-how-to-update-nameservers">Fast Domain</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p> <a href="https://faq.moniker.com/register-own-nameservers">Moniker</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:28%;height:49px" colspan="1" rowspan="1"> <p class="wysiwyg-text-align-left"> <a href="https://www.yola.com/tutorials/article/Changing-the-name-servers-1285944436498/Publishing_domains_and_email">Yola</a> </p> </td> 
+            </tr> 
+            <tr style="height:50.4688px"> 
+             <td class="wysiwyg-text-align-left" style="width:26.9879%;height:49px" colspan="1" rowspan="1"> <p class="wysiwyg-text-align-left"> <a href="https://help.101domain.com/domain-management/nameservers-dns">101Domain</a> </p> </td> 
+             <td class="wysiwyg-text-align-left" style="width:79%;height:50.4688px" colspan="2" rowspan="1"> <p class="wysiwyg-text-align-left"> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-name-servers-glue-records.html#domain-name-servers-glue-records-adding-changing">Amazon</a> </p> </td> 
+            </tr> 
+           </tbody> 
+          </table>
+          <p></p>
+          <p>5. Wait 24 hours while your registrar updates your nameservers. You will receive an email when your site is active on Cloudflare.</p>
+          <p>6. Confirm your site activation by logging into the <a href="https://dash.cloudflare.com/?to=/:account/:zone">Cloudflare dashboard</a>:</p>
+          <ul>
+           <li>If you no longer see&nbsp;<b>Complete your nameserver setup</b>, you have successfully updated your nameservers and your domain is active at Cloudflare.</li>
+           <li>If&nbsp;<b>Complete your nameserver setup&nbsp;</b>still appears:
+            <ul>
+             <li>Ensure the <b>Name Server </b>output correctly spells the Cloudflare nameservers and confirm Cloudflare's nameservers are the only nameservers listed.</li>
+             <li>If the <b>Name Server </b>output is correct, select <b>Re-check now</b>.</li>
+            </ul></li>
+          </ul>
+          <p></p>
+          <div class="cf-sidebar-2 cf-note">
+           Certain European registrars have a different nameserver registration process. <a href="https://support.cloudflare.com/hc/en-us/articles/200172476">Contact Cloudflare support</a> if you experience issues. 
+          </div>
+          <p></p>
+          <hr>
+          <h2 id="Sup6FYrwnD8xnENE3Xrez4nu">How to check if your domain nameservers are now pointing to Cloudflare</h2>
+          <p>There are a couple of different methods on how to check whether the nameservers have been updated at your Registrar to point to the Cloudflare nameservers:</p>
+          <ul>
+           <li>You can use the command line to confirm what are the nameservers assigned to your domain:</li>
+          </ul>
+          <p></p>
+          <pre>*Linux/Unix*
+dig domain_name +trace @1.1.1.1 
+dig domain_name +trace @8.8.8.8
+
+*Windows*
+nslookup domain_name 1.1.1.1
+nslookup domain_name 8.8.8.8</pre>
+          <p></p>
+          <ul>
+           <li>You can also use online tools, such as&nbsp;<a href="https://www.whatsmydns.net/">https://www.whatsmydns.net/</a></li>
+          </ul>
+          <p>If the nameservers returned here are not the ones provided and expected by Cloudflare, you'll need to check with your Registrar.</p>
+          <p></p>
+          <div class="cf-sidebar-2 cf-note">
+           Most DNS tools online use cached query results, therefore it may take longer for them to show the updated nameservers. 
+          </div>
+          <p></p>
+          <p>If you run into issues, below are some things you will want to confirm before reaching out to Support for further assistance:</p>
+          <ul>
+           <li>check that <a href="https://support.cloudflare.com/hc/en-us/articles/360017421192-Cloudflare-DNS-FAQ#h_3yslZOSrNhsasnFQz7E8T1">no DS record</a> is present, if so remove them at your Registrar</li>
+           <li>check that <i><b>only</b></i><i> </i>the Cloudflare nameservers are present, and if not remove the other ones in Registrar configuration</li>
+           <li>check that the Cloudflare nameservers are spelled correctly in your Registrar configuration</li>
+          </ul>
+          <p>Once your domain is active on Cloudflare, review our&nbsp;<a href="https://support.cloudflare.com/hc/articles/360027989951#h_87dac948-9e12-47e0-a32c-2144aadd0a2a">best practices for active Cloudflare domains</a>.</p>
+          <hr>
+          <h2 id="h_815d1b1e-74cf-4a5f-b477-e441a76ac3fd">Confirm traffic is proxied to Cloudflare</h2>
+          <p>Some online tools such as&nbsp;<a href="https://gtmetrix.com/">GTmetrix</a>&nbsp;don't recognize Cloudflare as a Content Delivery Network (<a href="https://www.cloudflare.com/features-cdn">CDN</a>)&nbsp;because we don't operate like a traditional&nbsp;<a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/">CDN</a>.&nbsp; Instead, confirm your domain traffic actively proxies through Cloudflare by browsing to&nbsp;https://<i>www.example.com</i>/cdn-cgi/trace.&nbsp;Replace&nbsp;<i>www.example.com</i>&nbsp;with the domain and hostname proxied to Cloudflare.&nbsp;&nbsp;If proxied to Cloudflare, output similar to the following appears in the browser:</p>
+          <p></p>
+          <pre>  fl=4f177
+  h=www.example.com
+  ip=2001:1900:2200:7525:749f:9ed1:444c:80b4
+  ts=1562191016.292
+  visit_scheme=https
+  uag=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML,
+  like Gecko) Chrome/74.0.3729.157 Safari/537.36
+  colo=SJC
+  http=http/2
+  loc=US
+  tls=TLSv1.3
+  sni=plaintext
+  warp=off
+</pre>
+          <p></p>
+          <p>If you don't observe similar output:</p>
+          <ol>
+           <li>Confirm your DNS record is <a href="https://support.cloudflare.com/hc/articles/360019093151#h_70577325041543271574371">orange-clouded</a>&nbsp;in the Cloudflare <b>DNS </b>app,</li>
+           <li>Enter your domain at&nbsp;<a href="https://whois.icann.org/">ICANN WHOIS</a>&nbsp;to confirm the <b>Name Servers </b>only list Cloudflare nameservers for your domain, or</li>
+           <li><a href="https://support.cloudflare.com/hc/articles/200172476">Contact Cloudflare Support</a>.</li>
+          </ol>
+          <p></p>
+          <hr>
+          <h2 id="h_9da2a9fe-ea78-4b8b-9c23-ae82792f935e">Related resources</h2>
+          <ul>
+           <li><a href="https://support.cloudflare.com/hc/articles/201720164">Creating a Cloudflare account and adding a website</a></li>
+           <li><a href="https://support.cloudflare.com/hc/articles/360027989951#h_87dac948-9e12-47e0-a32c-2144aadd0a2a">Best practices for active Cloudflare domains</a></li>
+           <li><a href="https://support.cloudflare.com/hc/articles/205359838">I cannot add my domain to Cloudflare</a></li>
+           <li><a href="https://support.cloudflare.com/hc/articles/360027710672">Troubleshooting FAQ for new Cloudflare customers</a></li>
+           <li><a href="https://support.cloudflare.com/hc/articles/205075117">Understanding the Cloudflare dashboard</a></li>
+           <li><a href="https://support.cloudflare.com/hc/articles/200172476">Contacting Cloudflare support</a></li>
+          </ul>
+          <p></p>
+         </div> 
+        </div> 
+       </section> 
+       <footer> 
+        <div class="article-footer"> 
+         <div class="article-share"> 
+          <ul class="share"> 
+           <li><a href="https://www.facebook.com/share.php?title=Changing+your+domain+nameservers+to+Cloudflare&amp;u=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F205195708-Changing-your-domain-nameservers-to-Cloudflare" class="share-facebook">Facebook</a></li> 
+           <li><a href="https://twitter.com/share?lang=en&amp;text=Changing+your+domain+nameservers+to+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F205195708-Changing-your-domain-nameservers-to-Cloudflare" class="share-twitter">Twitter</a></li> 
+           <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;source=Cloudflare&amp;title=Changing+your+domain+nameservers+to+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F205195708-Changing-your-domain-nameservers-to-Cloudflare" class="share-linkedin">LinkedIn</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="article-votes"> 
+         <div> <span class="article-votes-question">Was this article helpful?</span> <small class="article-votes-count"> <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="205195708" data-upvote-count="598" data-vote-count="1119" data-vote-sum="77" data-vote-url="/hc/en-us/articles/205195708/vote" data-value="null" data-label="598 out of 1119 found this helpful">598 out of 1119 found this helpful</span> </small> 
+         </div> 
+         <div class="article-votes-controls" role="radiogroup"> <a class="button article-vote article-vote-up" data-helper="vote" data-item="article" data-type="up" data-id="205195708" data-upvote-count="598" data-vote-count="1119" data-vote-sum="77" data-vote-url="/hc/en-us/articles/205195708/vote" data-value="null" data-label="598 out of 1119 found this helpful" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Yes" href="#"></a> <a class="button article-vote article-vote-down" data-helper="vote" data-item="article" data-type="down" data-id="205195708" data-upvote-count="598" data-vote-count="1119" data-vote-sum="77" data-vote-url="/hc/en-us/articles/205195708/vote" data-value="null" data-label="598 out of 1119 found this helpful" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="No" href="#"></a> 
+         </div> 
+        </div> 
+        <div class="article-return-to-top"> <a href="#article-container">Return to top <span class="icon-arrow-up"></span> </a> 
+        </div> 
+       </footer> 
+      </article> 
+     </div> 
+    </div> 
+   </div> 
+   <section class="article-footer-search-wrapper footer-search-wrapper"> 
+    <section class="container"> 
+     <section class="content-wrapper"> 
+      <section> 
+       <h1>Not finding what you need?</h1> 
+       <p>Searching can help answer 95% of support questions. This is the quickest way to get answers.</p> 
+      </section> 
+      <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Ask the Community"> Ask the Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Submit a request"> Submit a request </a> 
+      </section> 
+     </section> 
+     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+      <input type="submit" name="commit" value="Search">
+     </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+     <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+     <ul class="promoted-articles"> 
+      <li>Popular searches:</li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=ddos&amp;utf8=%E2%9C%93">DDoS</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=cdn&amp;utf8=%E2%9C%93">CDN</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2fa&amp;utf8=%E2%9C%93">2FA</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=cname&amp;utf8=%E2%9C%93">cname</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     </ul> 
+    </section> 
+   </section> 
+   <section class="container"> 
+    <section class="article-relatives"> 
+     <div data-recent-articles></div> 
+     <section class="related-articles"> 
+      <h3 class="related-articles-title">Related articles</h3> 
+      <ul> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEZAEGDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEvAk7DDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJUL2hjL2VuLXVzL2FydGljbGVzLzIwMTcyMDE2NC1DcmVhdGluZy1hLUNsb3VkZmxhcmUtYWNjb3VudC1hbmQtYWRkaW5nLWEtd2Vic2l0ZQY7CFQ6CXJhbmtpBg%3D%3D--2a4c37b3039c208c0c5251f252026c742582479c" rel="nofollow">Creating a Cloudflare account and adding a website</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE5LYIDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEvAk7DDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJCL2hjL2VuLXVzL2FydGljbGVzLzIwMTg5NzcwMC1BbGxvd2luZy1DbG91ZGZsYXJlLUlQLWFkZHJlc3NlcwY7CFQ6CXJhbmtpBw%3D%3D--3269751b9a436e0addf8a305ec9f757649845544" rel="nofollow">Allowing Cloudflare IP addresses</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCADnuNFTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEvAk7DDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJXL2hjL2VuLXVzL2FydGljbGVzLzM2MDAwMDg0MTQ3Mi1BZGRpbmctTXVsdGlwbGUtU2l0ZXMtdG8tQ2xvdWRmbGFyZS12aWEtQXV0b21hdGlvbgY7CFQ6CXJhbmtpCA%3D%3D--4b93a562583f95a1eddee4d2b625c59679ba71ba" rel="nofollow">Adding Multiple Sites to Cloudflare via Automation</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE7MA6DDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEvAk7DDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI7L2hjL2VuLXVzL2FydGljbGVzLzIwNTE3NzA2OC1Ib3ctZG9lcy1DbG91ZGZsYXJlLXdvcmstBjsIVDoJcmFua2kJ--fa1420e69a21a253206f2023f0d919a1099148ea" rel="nofollow">How does Cloudflare work?</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE%2B2yRDToYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEvAk7DDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJML2hjL2VuLXVzL2FydGljbGVzLzIyNzYzNDQyNy1Vc2luZy10aGUtQ2xvdWRmbGFyZS1wbHVnaW4td2l0aC1Xb3JkUHJlc3MGOwhUOglyYW5raQo%3D--17c1c7cfb590e84612c27fb54c7e4e15ce149e27" rel="nofollow">Using the Cloudflare plugin with WordPress</a> </li> 
+      </ul> 
+     </section> 
+    </section> 
+   </section> 
+  </main> 
+  <section class="footer-search-wrapper"> 
+   <section class="container"> 
+    <section class="content-wrapper"> 
+     <section> 
+      <h1>Not finding what you need?</h1> 
+      <p>Searching can help answer 95% of support questions. This is the quickest way to get answers.</p> 
+     </section> 
+     <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Ask the Community"> Ask the Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Submit a request"> Submit a request </a> 
+     </section> 
+    </section> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+     <input type="submit" name="commit" value="Search">
+    </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Popular searches:</li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </section> 
+  </section> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-inner"> 
+     <div class="footer-links"> 
+      <h3 title="Sales">Sales</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" title="Enterprise Sales">Enterprise Sales</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/partners/" title="Become a Partner">Become a Partner</a> </li> 
+       <br> 
+       <li class="footer-link-item"> <a href="tel:+18889935273" title="Contact Sales: +1 (888) 99 FLARE  ">Contact Sales: <br> +1 (888) 99 FLARE</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Getting Started">Getting Started</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/analysts/" title="Industry Analysts">Industry Analysts</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/" title=" Pricing"> Pricing</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/case-studies/" title="Case Studies">Case Studies</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/resources/" title="White Papers">White Papers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/webinars/" title="Webinars">Webinars</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/learning/" title="Learning Center">Learning Center</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Community">Community</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://community.cloudflare.com" title="Community Hub">Community Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://blog.cloudflare.com" title="Blog">Blog</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/galileo/" title="Project Galileo">Project Galileo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/athenian/" title="Athenian Project">Athenian Project</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Developers">Developers</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://developers.cloudflare.com" title="Developers Hub">Developers Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/products/cloudflare-workers/" title="Cloudflare Workers">Cloudflare Workers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/integrations/" title="Integrations">Integrations</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Support">Support</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://support.cloudflare.com" title="Help Center">Help Center</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflarestatus.com" title="Cloudflare Status">Cloudflare Status</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/compliance/" title="Compliance">Compliance</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/gdpr/introduction/" title="GDPR">GDPR</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Company">Company</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/about-overview/" title="About Cloudflare">About Cloudflare</a> </li> 
+       <li class="footer-link-item"> <a href="https://cloudflare.net" title="Investor relations">Investor relations</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/people/" title="Our team">Our team</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/press/" title="Press">Press</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/careers/" title="Careers">Careers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/internetsummit/" title="Internet Summit">Internet Summit</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/logo/" title="Logo">Logo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/network/" title="Network Map">Network Map</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer-bottom"> 
+    <div class="footer-inner"> 
+     <div class="footer-content"> 
+      <ul class="share"> 
+       <li> <a title="Like us on facebook" class="facebook" href="https://www.facebook.com/Cloudflare/"> <i class="fab fa-facebook-f"></i> </a> </li> 
+       <li> <a title="Follow us on twitter" class="twitter" href="https://twitter.com/Cloudflare"> <i class="fab fa-twitter"></i> </a> </li> 
+       <li> <a title="Connect with us linkedin" class="linkedin" href="https://www.linkedin.com/company/cloudflare-inc-"> <i class="fab fa-linkedin-in"></i> </a> </li> 
+       <li> <a title="Subscribe our channel on youtube" class="youtube" href="https://www.youtube.com/cloudflare"> <i class="fab fa-youtube"></i> </a> </li> 
+       <li> <a title="Follow us on instagram" class="instagram" href="https://www.instagram.com/cloudflare"> <i class="fab fa-instagram"></i> </a> </li> 
+      </ul> 
+      <div class="footer-language-selector"> 
+       <div

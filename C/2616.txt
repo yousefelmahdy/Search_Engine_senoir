@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Getting started with your Node.js project in Codespaces - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Get started with your JavaScript, Node.js, or TypeScript project in Codespaces by creating a custom dev container."> 
+  <meta name="keywords" content="Codespaces,Developer,Node,JavaScript"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="G5OwU9uR-Sr-8ZvYbDND2fs4dAtjBYGNy50w"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/codespaces" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Codespaces</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/codespaces/about-codespaces" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">About Codespaces</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/codespaces/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Codespaces</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/getting-started-with-codespaces" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting Started with Codespaces</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with your Node.js project</a> </li> 
+          <li class="sidebar-article "> <a href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-dotnet-project" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with your C# (.NET) project</a> </li> 
+          <li class="sidebar-article "> <a href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-java-project-in-codespaces" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with your Java project</a> </li> 
+          <li class="sidebar-article "> <a href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-python-project-in-codespaces" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Getting started with your Python project</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/setting-up-your-codespace" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting up your codespace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/developing-in-codespaces" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Developing in a codespace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/managing-your-codespaces" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing your codespaces</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/managing-codespaces-for-your-organization" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing Codespaces for your organization</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/codespaces/codespaces-reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/codespaces/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> <!-- some categories have maptopics with child articles -->  </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Codespaces 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Codespaces" href="/en/codespaces" class="d-inline-block ">GitHub Codespaces</a><a title="category: Getting Started with Codespaces" href="/en/codespaces/getting-started-with-codespaces" class="d-inline-block ">Getting Started with Codespaces</a><a title="article: Getting started with your Node.js project" href="/en/codespaces/getting-started-with-codespaces/getting-started-with-your-nodejs-project-in-codespaces" class="d-inline-block color-text-tertiary">Getting started with your Node.js project</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Getting started with your Node.js project in Codespaces</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Get started with your JavaScript, Node.js, or TypeScript project in Codespaces by creating a custom dev container.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#introduction">Introduction</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-1-open-your-project-in-a-codespace">Step 1: Open your project in a codespace</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-2-add-a-dev-container-to-your-codespace-from-a-template">Step 2: Add a dev container to your codespace from a template</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-3-modify-your-devcontainerjson-file">Step 3: Modify your devcontainer.json file</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-4-run-your-application">Step 4: Run your application</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#step-5-commit-your-changes">Step 5: Commit your changes</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#next-steps">Next steps</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Codespaces is currently in limited public beta and subject to change. For more information about joining the beta, see "<a href="/en/github/developing-online-with-codespaces/about-codespaces#joining-the-beta">About Codespaces</a>."</p> 
+       </div> 
+       <h3 id="introduction"><a href="#introduction">Introduction</a></h3> 
+       <p>This guide shows you how to set up your JavaScript, Node.js, or TypeScript project in Codespaces. It will take you through an example of opening your project in a codespace, and adding and modifying a dev container configuration from a template.</p> 
+       <h4 id="prerequisites"><a href="#prerequisites">Prerequisites</a></h4> 
+       <ul> 
+        <li>You should have an existing JavaScript, Node.js, or TypeScript project in a repository on GitHub.com. If you don't have a project, you can try this tutorial with the following example: <a href="https://github.com/microsoft/vscode-remote-try-node">https://github.com/microsoft/vscode-remote-try-node</a></li> 
+        <li>You must have Codespaces enabled for your organization.</li> 
+       </ul> 
+       <h3 id="step-1-open-your-project-in-a-codespace"><a href="#step-1-open-your-project-in-a-codespace">Step 1: Open your project in a codespace</a></h3> 
+       <ol> 
+        <li> <p>Navigate to your project's repository. Use the 
+          <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-download" aria-label="The download icon" role="img">
+           <path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path>
+          </svg> <strong>Code</strong> drop-down menu, and select <strong>Open with Codespaces</strong>. If you don’t see this option, your project isn’t available for Codespaces.</p> <p><span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/open-with-codespaces-button.png" alt="Open with Codespaces button"></span> </p> </li> 
+        <li> <p>To create a new codespace, click 
+          <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-plus" aria-label="The plus icon" role="img">
+           <path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path>
+          </svg> <strong>New codespace</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/new-codespace-button.png" alt="New codespace button"></span></p> </li> 
+       </ol> 
+       <p>When you create a codespace, your project is created on a remote VM that is dedicated to you. By default, the container for your codespace has many languages and runtimes including Node.js, JavaScript, Typescript, nvm, npm, and yarn. It also includes a common set of tools like git, wget, rsync, openssh, and nano. </p> 
+       <p>You can customize your codespace by adjusting the amount of vCPUs and RAM, <a href="/en/codespaces/setting-up-your-codespace/personalizing-codespaces-for-your-account">adding dotfiles to personalize your environment</a>, or by modifying the tools and scripts installed. </p> 
+       <p>Codespaces uses a file called <code>devcontainer.json</code> to store configurations. On launch Codespaces uses the file to install any tools, dependencies, or other set up that might be needed for the project. For more information, see "<a href="/en/codespaces/setting-up-your-codespace/configuring-codespaces-for-your-project">Configuring Codespaces for your project</a>."</p> 
+       <h3 id="step-2-add-a-dev-container-to-your-codespace-from-a-template"><a href="#step-2-add-a-dev-container-to-your-codespace-from-a-template">Step 2: Add a dev container to your codespace from a template</a></h3> 
+       <p>The default codespaces container will support running Node.js projects like <a href="https://github.com/microsoft/vscode-remote-try-node">vscode-remote-try-node</a> out of the box. By setting up a custom container you can customize the tools and scripts that run as part of codespace creation and ensure a fully reproducible environment for all Codespaces users in your repository.</p> 
+       <p>To set up your project with a custom container, you will need to use a <code>devcontainer.json</code> file to define the environment. In Codespaces you can add this either from a template or you can create your own. For more information on dev containers, see "<a href="/en/codespaces/setting-up-your-codespace/configuring-codespaces-for-your-project">Configuring Codespaces for your project</a>". </p> 
+       <ol> 
+        <li>Access the command palette (<code>shift command P</code> / <code>shift control P</code>), then start typing "dev container". Click <strong>Codespaces: Add Development Container Configuration Files...</strong> <span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/add-prebuilt-container-command.png" alt="&quot;Codespaces: Add Development Container Configuration Files...&quot; in the command palette"></span></li> 
+        <li>For this example, click <strong>Node.js</strong>. If you need additional features you can select any container that’s specific to Node or a combination of tools such as Node and MongoDB. <span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/add-node-prebuilt-container.png" alt="Select Node option from the list"></span></li> 
+        <li>Click the recommended version of Node.js. <span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/add-node-version.png" alt="Node.js version selection"></span></li> 
+        <li>To rebuild your container, access the command palette (<code>shift command P</code> / <code>shift control P</code>), then start typing "rebuild". Click <strong>Codespaces: Rebuild Container</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/codespaces-rebuild.png" alt="Rebuild container option"></span></li> 
+       </ol> 
+       <h4 id="anatomy-of-your-dev-container"><a href="#anatomy-of-your-dev-container">Anatomy of your dev container</a></h4> 
+       <p>Adding the Node.js dev container template adds a <code>.devcontainer</code> folder to the root of your project's repository with the following files:</p> 
+       <ul> 
+        <li><code>devcontainer.json</code></li> 
+        <li>Dockerfile</li> 
+       </ul> 
+       <p>The newly added <code>devcontainer.json</code> file defines a few properties that are described after the sample.</p> 
+       <h5 id="devcontainerjson"><a href="#devcontainerjson">devcontainer.json</a></h5> 
+       <pre><code class="hljs language-json"><span class="hljs-comment">// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:</span>
+<span class="hljs-comment">// https://github.com/microsoft/vscode-dev-containers/tree/v0.162.0/containers/javascript-node</span>
+{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Node.js"</span>,
+    <span class="hljs-attr">"build"</span>: {
+        <span class="hljs-attr">"dockerfile"</span>: <span class="hljs-string">"Dockerfile"</span>,
+        <span class="hljs-comment">// Update 'VARIANT' to pick a Node version: 10, 12, 14</span>
+        <span class="hljs-attr">"args"</span>: { <span class="hljs-attr">"VARIANT"</span>: <span class="hljs-string">"14"</span> }
+    },
+
+    <span class="hljs-comment">// Set *default* container specific settings.json values on container create.</span>
+    <span class="hljs-attr">"settings"</span>: { 
+        <span class="hljs-attr">"terminal.integrated.shell.linux"</span>: <span class="hljs-string">"/bin/bash"</span>
+    },
+
+    <span class="hljs-comment">// Add the IDs of extensions you want installed when the container is created.</span>
+    <span class="hljs-attr">"extensions"</span>: [
+        <span class="hljs-string">"dbaeumer.vscode-eslint"</span>
+    ],
+
+    <span class="hljs-comment">// Use 'forwardPorts' to make a list of ports inside the container available locally.</span>
+    <span class="hljs-comment">// "forwardPorts": [],</span>
+
+    <span class="hljs-comment">// Use 'postCreateCommand' to run commands after the container is created.</span>
+    <span class="hljs-comment">// "postCreateCommand": "yarn install",</span>
+
+    <span class="hljs-comment">// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.</span>
+    <span class="hljs-attr">"remoteUser"</span>: <span class="hljs-string">"node"</span>
+}
+</code></pre> 
+       <ul> 
+        <li><strong>Name</strong> - You can name your dev container anything, this is just the default.</li> 
+        <li><strong>Build</strong> - The build properties.
+         <ul> 
+          <li><strong>dockerfile</strong> - In the build object, dockerfile is a reference to the Dockerfile that was also added from the template.</li> 
+          <li><strong>Args</strong>
+           <ul> 
+            <li><strong>Variant</strong>: This file only contains one build argument, which is the node variant we want to use that is passed into the Dockerfile.</li> 
+           </ul></li> 
+         </ul></li> 
+        <li><strong>Settings</strong> - These are Visual Studio Code settings that you can set.
+         <ul> 
+          <li><strong>Terminal.integrated.shell.linux</strong> - While bash is the default here, you could use other terminal shells by modifying this.</li> 
+         </ul></li> 
+        <li><strong>Extensions</strong> - These are extensions included by default.
+         <ul> 
+          <li><strong>Dbaeumer.vscode-eslint</strong> - ES lint is a great extension for linting, but for JavaScript there are a number of great Marketplace extensions you could also include.</li> 
+         </ul></li> 
+        <li><strong>forwardPorts</strong> - Any ports listed here will be forwarded automatically.</li> 
+        <li><strong>postCreateCommand</strong> - If you want to run anything after you land in your codespace that’s not defined in the Dockerfile, you can do that here.</li> 
+        <li><strong>remoteUser</strong> - By default, you’re running as the vscode user, but you can optionally set this to root.</li> 
+       </ul> 
+       <h5 id="dockerfile"><a href="#dockerfile">Dockerfile</a></h5> 
+       <pre><code class="hljs language-bash"><span class="hljs-comment"># [Choice] Node.js version: 14, 12, 10</span>
+ARG VARIANT=<span class="hljs-string">"14-buster"</span>
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-<span class="hljs-variable">${VARIANT}</span>
+
+<span class="hljs-comment"># [Optional] Uncomment this section to install additional OS packages.</span>
+<span class="hljs-comment"># RUN apt-get update &amp;&amp; export DEBIAN_FRONTEND=noninteractive \</span>
+<span class="hljs-comment">#     &amp;&amp; apt-get -y install --no-install-recommends &lt;your-package-list-here&gt;</span>
+
+<span class="hljs-comment"># [Optional] Uncomment if you want to install an additional version of node using nvm</span>
+<span class="hljs-comment"># ARG EXTRA_NODE_VERSION=10</span>
+<span class="hljs-comment"># RUN su node -c "source /usr/local/share/nvm/nvm.sh &amp;&amp; nvm install ${EXTRA_NODE_VERSION}"</span>
+
+<span class="hljs-comment"># [Optional] Uncomment if you want to install more global node modules</span>
+<span class="hljs-comment"># RUN su node -c "npm install -g &lt;your-package-list-here&gt;"</span>
+</code></pre> 
+       <p>You can use the Dockerfile to add additional container layers to specify OS packages, node versions, or global packages we want included in our Dockerfile.</p> 
+       <h3 id="step-3-modify-your-devcontainerjson-file"><a href="#step-3-modify-your-devcontainerjson-file">Step 3: Modify your devcontainer.json file</a></h3> 
+       <p>With your dev container added and a basic understanding of what everything does, you can now make changes to configure it for your environment. In this example, you'll add properties to install npm when your codespace launches and make a list of ports inside the container available locally.</p> 
+       <ol> 
+        <li> <p>In the Explorer, select the <code>devcontainer.json</code> file from the tree to open it. You might have to exand the <code>.devcontainer</code> folder to see it. </p> <p><span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/devcontainers-options.png" alt="&quot;Codespaces: Rebuild Container&quot; in the command palette"></span> </p> </li> 
+        <li> <p>Add the following lines to your <code>devcontainer.json</code> file after <code>extensions</code>:</p> 
+         <div class="code-extra">
+          <header class="d-flex flex-items-center flex-justify-between p-2 text-small rounded-top-1 border">
+           <span>JSON</span><button class="js-btn-copy btn btn-sm tooltipped tooltipped-nw" data-clipboard-text="&quot;postCreateCommand&quot;: &quot;npm install&quot;,
+&quot;forwardPorts&quot;: [4000]," aria-label="Copy code to clipboard">
+            <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-clippy" aria-hidden="true">
+             <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>
+            </svg></button>
+          </header>
+          <pre><code class="hljs language-json"><span class="hljs-string">"postCreateCommand"</span>: <span class="hljs-string">"npm install"</span>,
+<span class="hljs-string">"forwardPorts"</span>: [<span class="hljs-number">4000</span>],</code></pre>
+         </div> <p>For more information on <code>devcontainer.json</code> properties, see the <a href="https://code.visualstudio.com/docs/remote/devcontainerjson-reference">devcontainer.json reference</a> in the Visual Studio Code docs.</p> </li> 
+        <li> <p>To rebuild your container, access the command palette (<code>shift command P</code> / <code>shift control P</code>), then start typing "rebuild". Click <strong>Codespaces: Rebuild Container</strong>. </p> <p><span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/codespaces-rebuild.png" alt="Rebuild container option"></span></p> <p>Rebuilding inside your codespace ensures your changes work as expected before you commit the changes to the repository. If something does result in a failure, you’ll be placed in a codespace with a recovery container that you can rebuild from to keep adjusting your container.</p> </li> 
+       </ol> 
+       <h3 id="step-4-run-your-application"><a href="#step-4-run-your-application">Step 4: Run your application</a></h3> 
+       <p>In the previous section, you used the <code>postCreateCommand</code> to installing a set of packages via npm. You can now use this to run our application with npm.</p> 
+       <ol> 
+        <li> <p>Run your start command in the terminal with<code>npm start</code>.</p> <p><span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/codespaces-npmstart.png" alt="npm start in terminal"></span></p> </li> 
+        <li> <p>When your project starts, you should see a toast in the bottom right corner with a prompt to connect to the port your project uses. </p> <p><span class="procedural-image-wrapper"><img src="/assets/images/help/codespaces/codespaces-port-toast.png" alt="Port forwarding toast"></span></p> </li> 
+       </ol> 
+       <h3 id="step-5-commit-your-changes"><a href="#step-5-commit-your-changes">Step 5: Commit your changes</a></h3> 
+       <p>Once you've made changes to your codespace, either new code or configuration changes, you'll want to commit your changes. Committing changes to your repository ensures that anyone else who creates a codespace from this repository has the same configuration. This also means that any customization you do, such as adding Visual Studio Code extensions, will appear for all users.</p> 
+       <p>For information, see "<a href="/en/codespaces/developing-in-codespaces/using-source-control-in-your-codespace#committing-your-changes">Using source control in your codespace</a>." </p> 
+       <h3 id="next-steps"><a href="#next-steps">Next steps</a></h3> 
+       <p>You should now be ready start developing your JavaScript project in Codespaces. Here are some additional resources for more advanced scenarios.</p> 
+       <ul> 
+        <li><a href="/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces">Managing encrypted secrets for your codespaces</a></li> 
+        <li><a href="/en/codespaces/managing-your-codespaces/managing-gpg-verification-for-codespaces">Managing GPG verification for Codespaces</a></li> 
+        <li><a href="/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace">Forwarding ports in your codespace</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-label" for="survey

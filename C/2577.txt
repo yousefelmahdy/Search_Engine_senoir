@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Migrating from Travis CI to GitHub Actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="GitHub Actions and Travis CI share multiple similarities, which helps make it relatively straightforward to migrate to GitHub Actions."> 
+  <meta name="keywords" content="Travis CI,Migration,CI,CD"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="IOwRt4Hk-g7Gwh__HkFc1WHHuFEvRh4FH5XA"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/actions" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Actions</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/actions/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Actions</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-continuous-integration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About continuous integration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/setting-up-continuous-integration-using-workflow-templates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up CI using templates</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-nodejs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Node.js</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-net" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing .NET</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-powershell" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing PowerShell</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-python" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Python</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-ruby" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Ruby</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-java-with-ant" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Java with Ant</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-swift" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Swift</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/installing-an-apple-certificate-on-macos-runners-for-xcode-development" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing an Apple certificate on macOS runners for Xcode development</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/building-and-testing-xamarin-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building and testing Xamarin applications</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-packaging-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About packaging with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-nodejs-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Node.js packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-maven" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Maven</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-java-packages-with-gradle" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Java packages with Gradle</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/publishing-docker-images" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing Docker images</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/storing-workflow-data-as-artifacts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Storing workflow artifacts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching dependencies</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/about-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-redis-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Redis service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/creating-postgresql-service-containers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">PostgreSQL service containers</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-amazon-elastic-container-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Amazon Elastic Container Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-azure-app-service" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Azure App Service</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/deploying-to-google-kubernetes-engine" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deploying to Google Kubernetes Engine</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/using-github-actions-for-project-management" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using GitHub Actions for project management</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/closing-inactive-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Closing inactive issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/scheduling-issue-creation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scheduling issue creation</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/adding-labels-to-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding labels to issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/commenting-on-an-issue-when-a-label-is-added" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Commenting on an issue when a label is added</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/moving-assigned-issues-on-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Moving assigned issues on project boards</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/removing-a-label-when-a-card-is-added-to-a-project-board-column" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a label when a card is added to a project board column</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/guides/managing-github-actions-with-github-cli" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing GitHub Actions with GitHub CLI</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/learn-github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Actions</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/introduction-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/finding-and-customizing-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding and customizing actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/essential-features-of-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Essential features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/managing-complex-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing complex workflows</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/sharing-workflows-with-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sharing workflows with your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/security-hardening-for-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Security hardening</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Azure Pipelines to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-circleci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from CircleCI to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from GitLab CI/CD to GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/actions/learn-github-actions/migrating-from-jenkins-to-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from Jenkins to GitHub Actions</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating from Travis CI to GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/managing-workflow-runs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing workflow runs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/creating-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating actions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/using-github-hosted-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Using GitHub-hosted runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/hosting-your-own-runners" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Hosting your own runners</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/actions/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Actions 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Actions" href="/en/actions" class="d-inline-block ">GitHub Actions</a><a title="category: Learn GitHub Actions" href="/en/actions/learn-github-actions" class="d-inline-block ">Learn GitHub Actions</a><a title="article: Migrating from Travis CI to GitHub Actions" href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-inline-block color-text-tertiary">Migrating from Travis CI to GitHub Actions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Migrating from Travis CI to GitHub Actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>GitHub Actions and Travis CI share multiple similarities, which helps make it relatively straightforward to migrate to GitHub Actions.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#introduction">Introduction</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#before-you-start">Before you start</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#comparing-job-execution">Comparing job execution</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#key-similarities">Key similarities</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#key-features-in-github-actions">Key features in GitHub Actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#executing-scripts">Executing scripts</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#error-handling-in-github-actions">Error handling in GitHub Actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#migrating-syntax-for-conditionals-and-expressions">Migrating syntax for conditionals and expressions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#migrating-phases-to-steps">Migrating phases to steps</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#caching-dependencies">Caching dependencies</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#examples-of-common-tasks">Examples of common tasks</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#next-steps">Next steps</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="introduction"><a href="#introduction">Introduction</a></h3> 
+       <p>This guide helps you migrate from Travis CI to GitHub Actions. It compares their concepts and syntax, describes the similarities, and demonstrates their different approaches to common tasks.</p> 
+       <h3 id="before-you-start"><a href="#before-you-start">Before you start</a></h3> 
+       <p>Before starting your migration to GitHub Actions, it would be useful to become familiar with how it works:</p> 
+       <ul> 
+        <li>For a quick example that demonstrates a GitHub Actions job, see "<a href="/en/actions/quickstart">Quickstart for GitHub Actions</a>."</li> 
+        <li>To learn the essential GitHub Actions concepts, see "<a href="/en/actions/learn-github-actions/introduction-to-github-actions">Introduction to GitHub Actions</a>."</li> 
+       </ul> 
+       <h3 id="comparing-job-execution"><a href="#comparing-job-execution">Comparing job execution</a></h3> 
+       <p>To give you control over when CI tasks are executed, a GitHub Actions <em>workflow</em> uses <em>jobs</em> that run in parallel by default. Each job contains <em>steps</em> that are executed in a sequence that you define. If you need to run setup and cleanup actions for a job, you can define steps in each job to perform these.</p> 
+       <h3 id="key-similarities"><a href="#key-similarities">Key similarities</a></h3> 
+       <p>GitHub Actions and Travis CI share certain similarities, and understanding these ahead of time can help smooth the migration process.</p> 
+       <h4 id="using-yaml-syntax"><a href="#using-yaml-syntax">Using YAML syntax</a></h4> 
+       <p>Travis CI and GitHub Actions both use YAML to create jobs and workflows, and these files are stored in the code's repository. For more information on how GitHub Actions uses YAML, see <a href="/en/actions/learn-github-actions/introduction-to-github-actions#create-an-example-workflow">"Creating a workflow file</a>."</p> 
+       <h4 id="custom-environment-variables"><a href="#custom-environment-variables">Custom environment variables</a></h4> 
+       <p>Travis CI lets you set environment variables and share them between stages. Similarly, GitHub Actions lets you define environment variables for a step, job, or workflow. For more information, see <a href="/en/actions/reference/environment-variables">"Environment variables</a>."</p> 
+       <h4 id="default-environment-variables"><a href="#default-environment-variables">Default environment variables</a></h4> 
+       <p>Travis CI and GitHub Actions both include default environment variables that you can use in your YAML files. For GitHub Actions, you can see these listed in "<a href="/en/actions/reference/environment-variables#default-environment-variables">Default environment variables</a>."</p> 
+       <h4 id="parallel-job-processing"><a href="#parallel-job-processing">Parallel job processing</a></h4> 
+       <p>Travis CI can use <code>stages</code> to run jobs in parallel. Similarly, GitHub Actions runs <code>jobs</code> in parallel. For more information, see "<a href="/en/actions/learn-github-actions/managing-complex-workflows#creating-dependent-jobs">Creating dependent jobs</a>."</p> 
+       <h4 id="status-badges"><a href="#status-badges">Status badges</a></h4> 
+       <p>Travis CI and GitHub Actions both support status badges, which let you indicate whether a build is passing or failing. For more information, see <a href="/en/actions/managing-workflow-runs/adding-a-workflow-status-badge">"Adding a workflow status badge to your repository</a>."</p> 
+       <h4 id="using-a-build-matrix"><a href="#using-a-build-matrix">Using a build matrix</a></h4> 
+       <p>Travis CI and GitHub Actions both support a build matrix, allowing you to perform testing using combinations of operating systems and software packages. For more information, see "<a href="/en/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix">Using a build matrix</a>."</p> 
+       <p>Below is an example comparing the syntax for each system:</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">matrix:</span>
+  <span class="hljs-attr">include:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">rvm:</span> <span class="hljs-number">2.5</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">rvm:</span> <span class="hljs-number">2.6</span><span class="hljs-number">.3</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">strategy:</span>
+      <span class="hljs-attr">matrix:</span>
+        <span class="hljs-attr">ruby:</span> [<span class="hljs-number">2.5</span>, <span class="hljs-number">2.6</span><span class="hljs-number">.3</span>]</code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <h4 id="targeting-specific-branches"><a href="#targeting-specific-branches">Targeting specific branches</a></h4> 
+       <p>Travis CI and GitHub Actions both allow you to target your CI to a specific branch. For more information, see "<a href="/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags">Workflow syntax for GitHub Actions</a>."</p> 
+       <p>Below is an example of the syntax for each system:</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">branches:</span>
+  <span class="hljs-attr">only:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">main</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">'mona/octocat'</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">'mona/octocat'</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <h4 id="checking-out-submodules"><a href="#checking-out-submodules">Checking out submodules</a></h4> 
+       <p>Travis CI and GitHub Actions both allow you to control whether submodules are included in the repository clone.</p> 
+       <p>Below is an example of the syntax for each system:</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">git:</span>
+  <span class="hljs-attr">submodules:</span> <span class="hljs-literal">false</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">submodules:</span> <span class="hljs-literal">false</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <h4 id="using-environment-variables-in-a-matrix"><a href="#using-environment-variables-in-a-matrix">Using environment variables in a matrix</a></h4> 
+       <p>Travis CI and GitHub Actions can both add custom environment variables to a test matrix, which allows you to refer to the variable in a later step.</p> 
+       <p>In GitHub Actions, you can use the <code>include</code> key to add custom environment variables to a matrix. In this example, the matrix entries for <code>node-version</code> are each configured to use different values for the <code>site</code> and <code>datacenter</code> environment variables. The <code>Echo site details</code> step then uses <code>env: ${{ matrix.env }}</code> to refer to the custom variables:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">CI</span>
+<span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">strategy:</span>
+      <span class="hljs-attr">matrix:</span>
+       <span class="hljs-attr">include:</span>
+         <span class="hljs-bullet">-</span> <span class="hljs-attr">node-version:</span> <span class="hljs-number">10.</span><span class="hljs-string">x</span>
+           <span class="hljs-attr">site:</span> <span class="hljs-string">"prod"</span>
+           <span class="hljs-attr">datacenter:</span> <span class="hljs-string">"site-a"</span>
+         <span class="hljs-bullet">-</span> <span class="hljs-attr">node-version:</span> <span class="hljs-number">12.</span><span class="hljs-string">x</span>
+           <span class="hljs-attr">site:</span> <span class="hljs-string">"dev"</span>
+           <span class="hljs-attr">datacenter:</span> <span class="hljs-string">"site-b"</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Echo</span> <span class="hljs-string">site</span> <span class="hljs-string">details</span>
+        <span class="hljs-attr">env:</span>
+          <span class="hljs-attr">SITE:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.site</span> <span class="hljs-string">}}</span>
+          <span class="hljs-attr">DATACENTER:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.datacenter</span> <span class="hljs-string">}}</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">echo</span> <span class="hljs-string">$SITE</span> <span class="hljs-string">$DATACENTER</span>
+</code></pre> 
+       <h3 id="key-features-in-github-actions"><a href="#key-features-in-github-actions">Key features in GitHub Actions</a></h3> 
+       <p>When migrating from Travis CI, consider the following key features in GitHub Actions:</p> 
+       <h4 id="storing-secrets"><a href="#storing-secrets">Storing secrets</a></h4> 
+       <p>GitHub Actions allows you to store secrets and reference them in your jobs. GitHub Actions organizations can limit which repositories can access organization secrets. Environment protection rules can require manual approval for a workflow to access environment secrets. For more information, see "<a href="/en/actions/reference/encrypted-secrets">Encrypted secrets</a>."</p> 
+       <h4 id="sharing-files-between-jobs-and-workflows"><a href="#sharing-files-between-jobs-and-workflows">Sharing files between jobs and workflows</a></h4> 
+       <p>GitHub Actions includes integrated support for artifact storage, allowing you to share files between jobs in a workflow. You can also save the resulting files and share them with other workflows. For more information, see "<a href="/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs">Sharing data between jobs</a>."</p> 
+       <h4 id="hosting-your-own-runners"><a href="#hosting-your-own-runners">Hosting your own runners</a></h4> 
+       <p>If your jobs require specific hardware or software, GitHub Actions allows you to host your own runners and send your jobs to them for processing. GitHub Actions also lets you use policies to control how these runners are accessed, granting access at the organization or repository level. For more information, see <a href="/en/actions/hosting-your-own-runners">"Hosting your own runners</a>."</p> 
+       <h4 id="concurrent-jobs-and-execution-time"><a href="#concurrent-jobs-and-execution-time">Concurrent jobs and execution time</a></h4> 
+       <p>The concurrent jobs and workflow execution times in GitHub Actions can vary depending on your GitHub plan. For more information, see "<a href="/en/actions/reference/usage-limits-billing-and-administration">Usage limits, billing, and administration</a>."</p> 
+       <h4 id="using-different-languages-in-github-actions"><a href="#using-different-languages-in-github-actions">Using different languages in GitHub Actions</a></h4> 
+       <p>When working with different languages in GitHub Actions, you can create a step in your job to set up your language dependencies. For more information about working with a particular language, see the specific guide:</p> 
+       <ul> 
+        <li><a href="/en/actions/guides/building-and-testing-nodejs">Building and testing Node.js</a></li> 
+        <li><a href="/en/actions/guides/building-and-testing-powershell">Building and testing PowerShell</a></li> 
+        <li><a href="/en/actions/guides/building-and-testing-python">Building and testing Python</a></li> 
+        <li><a href="/en/actions/guides/building-and-testing-java-with-maven">Building and testing Java with Maven</a></li> 
+        <li><a href="/en/actions/guides/building-and-testing-java-with-gradle">Building and testing Java with Gradle</a></li> 
+        <li><a href="/en/actions/guides/building-and-testing-java-with-ant">Building and testing Java with Ant</a></li> 
+       </ul> 
+       <h3 id="executing-scripts"><a href="#executing-scripts">Executing scripts</a></h3> 
+       <p>GitHub Actions can use <code>run</code> steps to run scripts or shell commands. To use a particular shell, you can specify the <code>shell</code> type when providing the path to the script. For more information, see "<a href="/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun">Workflow syntax for GitHub Actions</a>."</p> 
+       <p>For example:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">steps:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Run</span> <span class="hljs-string">build</span> <span class="hljs-string">script</span>
+    <span class="hljs-attr">run:</span> <span class="hljs-string">./.github/scripts/build.sh</span>
+    <span class="hljs-attr">shell:</span> <span class="hljs-string">bash</span>
+</code></pre> 
+       <h3 id="error-handling-in-github-actions"><a href="#error-handling-in-github-actions">Error handling in GitHub Actions</a></h3> 
+       <p>When migrating to GitHub Actions, there are different approaches to error handling that you might need to be aware of.</p> 
+       <h4 id="script-error-handling"><a href="#script-error-handling">Script error handling</a></h4> 
+       <p>GitHub Actions stops a job immediately if one of the steps returns an error code. For more information, see "<a href="/en/actions/reference/workflow-syntax-for-github-actions#exit-codes-and-error-action-preference">Workflow syntax for GitHub Actions</a>."</p> 
+       <h4 id="job-error-handling"><a href="#job-error-handling">Job error handling</a></h4> 
+       <p>GitHub Actions uses <code>if</code> conditionals to execute jobs or steps in certain situations. For example, you can run a step when another step results in a <code>failure()</code>. For more information, see "<a href="/en/actions/reference/workflow-syntax-for-github-actions#example-using-status-check-functions">Workflow syntax for GitHub Actions</a>." You can also use <a href="/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontinue-on-error"><code>continue-on-error</code></a> to prevent a workflow run from stopping when a job fails.</p> 
+       <h3 id="migrating-syntax-for-conditionals-and-expressions"><a href="#migrating-syntax-for-conditionals-and-expressions">Migrating syntax for conditionals and expressions</a></h3> 
+       <p>To run jobs under conditional expressions, Travis CI and GitHub Actions share a similar <code>if</code> condition syntax. GitHub Actions lets you use the <code>if</code> conditional to prevent a job or step from running unless a condition is met. For more information, see "<a href="/en/actions/reference/context-and-expression-syntax-for-github-actions">Context and expression syntax for GitHub Actions</a>."</p> 
+       <p>This example demonstrates how an <code>if</code> conditional can control whether a step is executed:</p> 
+       <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">conditional:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">echo</span> <span class="hljs-string">"This step runs with str equals 'ABC' and num equals 123"</span>
+        <span class="hljs-attr">if:</span> <span class="hljs-string">env.str</span> <span class="hljs-string">==</span> <span class="hljs-string">'ABC'</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">env.num</span> <span class="hljs-string">==</span> <span class="hljs-number">123</span>
+</code></pre> 
+       <h3 id="migrating-phases-to-steps"><a href="#migrating-phases-to-steps">Migrating phases to steps</a></h3> 
+       <p>Where Travis CI uses <em>phases</em> to run <em>steps</em>, GitHub Actions has <em>steps</em> which execute <em>actions</em>. You can find prebuilt actions in the <a href="https://github.com/marketplace?type=actions">GitHub Marketplace</a>, or you can create your own actions. For more information, see "<a href="/en/actions/building-actions">Building actions</a>."</p> 
+       <p>Below is an example of the syntax for each system:</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">python</span>
+<span class="hljs-attr">python:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"3.7"</span>
+
+<span class="hljs-attr">script:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">python</span> <span class="hljs-string">script.py</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">run_python:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-python@v2</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">python-version:</span> <span class="hljs-string">'3.7'</span>
+          <span class="hljs-attr">architecture:</span> <span class="hljs-string">'x64'</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">python</span> <span class="hljs-string">script.py</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <h3 id="caching-dependencies"><a href="#caching-dependencies">Caching dependencies</a></h3> 
+       <p>Travis CI and GitHub Actions let you manually cache dependencies for later reuse. This example demonstrates the cache syntax for each system.</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions </th> 
+         </tr> 
+         <tr> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+<span class="hljs-attr">cache:</span> <span class="hljs-string">npm</span></code></pre> </td> 
+          <td class="d-table-cell v-align-top"> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">node</span> <span class="hljs-string">modules</span>
+  <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v2</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">path:</span> <span class="hljs-string">~/.npm</span>
+    <span class="hljs-attr">key:</span> <span class="hljs-string">v1-npm-deps-${{</span> <span class="hljs-string">hashFiles('**/package-lock.json')</span> <span class="hljs-string">}}</span>
+    <span class="hljs-attr">restore-keys:</span> <span class="hljs-string">v1-npm-deps-</span></code></pre> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p>GitHub Actions caching is only applicable to GitHub-hosted runners. For more information, see "<a href="/en/actions/guides/caching-dependencies-to-speed-up-workflows" class="dotcom-only">Caching dependencies to speed up workflows</a>."</p> 
+       <h3 id="examples-of-common-tasks"><a href="#examples-of-common-tasks">Examples of common tasks</a></h3> 
+       <p>This section compares how GitHub Actions and Travis CI perform common tasks.</p> 
+       <h4 id="configuring-environment-variables"><a href="#configuring-environment-variables">Configuring environment variables</a></h4> 
+       <p>You can create custom environment variables in a GitHub Actions job. For example:</p> 
+       <table> 
+        <tbody>
+         <tr> 
+          <th> Travis CI </th> 
+          <th> GitHub Actions Workflow </th> 
+         </tr> 
+         <tr> 
+          <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">env:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">MAVEN_PATH="/usr/local/maven"</span></code></pre> </td> 
+          <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">jobs:</span>
+  <span clas

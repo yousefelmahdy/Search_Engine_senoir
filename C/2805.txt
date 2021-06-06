@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Using the GraphQL API for Discussions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Learn how to use the GitHub Discussions GraphQL API."> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/graphql/guides/using-the-graphql-api-for-discussions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="W21JWOnf-d2TbLVPFcnE5B5BhLuoDlRyUW1E"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/graphql" class="pl-4 pr-5 pb-1 f4 color-text-primary">GraphQL API</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/about-the-graphql-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About the GraphQL API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/public-schema" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Public schema</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/schema-previews" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Schema previews</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/breaking-changes" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Breaking changes</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/changelog" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changelog</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/explorer" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Explorer</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/overview/resource-limitations" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Resource limitations</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/queries" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Queries</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/mutations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Mutations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/objects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Objects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/interfaces" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Interfaces</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/enums" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enums</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/unions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Unions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/input-objects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Input objects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/reference/scalars" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Scalars</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/graphql/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/introduction-to-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/forming-calls-with-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Forming calls with GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/using-global-node-ids" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using global node IDs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/migrating-from-rest-to-graphql" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating from REST to GraphQL</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/using-the-explorer" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the Explorer</a> </li> 
+          <li class="sidebar-article "> <a href="/en/graphql/guides/managing-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing enterprise accounts</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/graphql/guides/using-the-graphql-api-for-discussions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using the GraphQL API for Discussions</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GraphQL API 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      color-text-link text-underline active"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/graphql/guides/using-the-graphql-api-for-discussions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/graphql/guides/using-the-graphql-api-for-discussions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/graphql/guides/using-the-graphql-api-for-discussions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/graphql/guides/using-the-graphql-api-for-discussions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/graphql/guides/using-the-graphql-api-for-discussions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GraphQL API" href="/en/graphql" class="d-inline-block ">GraphQL API</a><a title="category: Guides" href="/en/graphql/guides" class="d-inline-block ">Guides</a><a title="article: Using the GraphQL API for Discussions" href="/en/graphql/guides/using-the-graphql-api-for-discussions" class="d-inline-block color-text-tertiary">Using the GraphQL API for Discussions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Using the GraphQL API for Discussions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Learn how to use the GitHub Discussions GraphQL API.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#fields">Fields</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorydiscussions">Repository.discussions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorydiscussioncategories">Repository.discussionCategories</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorydiscussion">Repository.discussion</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorypinneddiscussions">Repository.pinnedDiscussions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#objects">Objects</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#discussion">Discussion</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#discussioncomment">DiscussionComment</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#discussioncategory">DiscussionCategory</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#pinneddiscussion">PinnedDiscussion</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#interfaces">Interfaces</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorydiscussionauthor">RepositoryDiscussionAuthor</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repositorydiscussioncommentauthor">RepositoryDiscussionCommentAuthor</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#mutations">Mutations</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#creatediscussion">createDiscussion</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#updatediscussion">updateDiscussion</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#deletediscussion">deleteDiscussion</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#adddiscussioncomment">addDiscussionComment</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#updatediscussioncomment">updateDiscussionComment</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#deletediscussioncomment">deleteDiscussionComment</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#markdiscussioncommentasanswer">markDiscussionCommentAsAnswer</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#unmarkdiscussioncommentasanswer">unmarkDiscussionCommentAsAnswer</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#search">Search</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>The GitHub Discussions GraphQL API allows you to get, create, edit, and delete discussion posts. For more information about GitHub Discussions, see "<a href="/en/discussions/collaborating-with-your-community-using-discussions/about-discussions">?About discussions</a>."</p> 
+       <p>This API is available for authenticated users, OAuth Apps, and GitHub Apps. Access tokens require the <code>repo</code> scope for private repositories and the <code>public_repo</code> scope for public repositories. For more information, see "<a href="/en/developers/apps/scopes-for-oauth-apps">Scopes for OAuth apps</a>."</p> 
+       <p>To use this API, you must include <code>GraphQL-Features: discussions_api</code> in the <code>HTTP</code> header.</p> 
+       <h2 id="fields"><a href="#fields">Fields</a></h2> 
+       <h3 id="repositorydiscussions"><a href="#repositorydiscussions">Repository.discussions</a></h3> 
+       <p>List the discussions within a repository. If <code>categoryId</code> is specified, only results within that category will be returned.</p> 
+       <p><em>Signature:</em></p> 
+       <pre><code class="hljs language-graphql">discussions(
+  after:<span class="hljs-literal"> String</span>,
+  before:<span class="hljs-literal"> String</span>,
+  first:<span class="hljs-literal"> Int</span>,
+  last:<span class="hljs-literal"> Int</span>,
+  categoryId: <span class="hljs-literal">ID</span> = <span class="hljs-variable">null</span>,
+  orderBy:<span class="hljs-literal"> DiscussionOrder</span> = {field:<span class="hljs-type"> UPDATED_AT</span>, direction:<span class="hljs-type"> DESC</span>}
+) :<span class="hljs-literal"> Discussion</span>
+</code></pre> 
+       <h4 id="discussionorder"><a href="#discussionorder">DiscussionOrder</a></h4> 
+       <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Ways in which discussions can be ordered.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">input</span><span class="hljs-literal"> DiscussionOrder</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The field by which to order discussions.
+  "</span><span class="hljs-string">""</span>
+  field:<span class="hljs-literal"> DiscussionOrderField</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The direction in which to order discussions by the specified field.
+  "</span><span class="hljs-string">""</span>
+  direction:<span class="hljs-literal"> OrderDirection</span>!
+}
+</code></pre> 
+       <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Properties by which discussion connections can be ordered.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">enum</span><span class="hljs-literal"> DiscussionOrderField</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Order discussions by creation time.
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> CREATED_AT</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Order discussions by most recent modification time.
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> UPDATED_AT</span>
+}
+</code></pre> 
+       <h3 id="repositorydiscussioncategories"><a href="#repositorydiscussioncategories">Repository.discussionCategories</a></h3> 
+       <p>Return the available discussion categories defined within this repository. Each repository may have up to 10 categories. For more information about discussion categories, see "<a href="/en/discussions/collaborating-with-your-community-using-discussions/about-discussions#about-categories-and-formats-for-discussions">About discussions</a>."</p> 
+       <p><em>Signature:</em></p> 
+       <pre><code class="hljs language-graphql">discussionCategories(
+  after:<span class="hljs-literal"> String</span>,
+  before:<span class="hljs-literal"> String</span>,
+  first:<span class="hljs-literal"> Int</span>,
+  last:<span class="hljs-literal"> Int</span>,
+) :<span class="hljs-literal"> DiscussionCategoryConnection</span>!
+</code></pre> 
+       <h3 id="repositorydiscussion"><a href="#repositorydiscussion">Repository.discussion</a></h3> 
+       <p>Get a discussion. Returns <code>null</code> if discussion with the specified ID does not exist.</p> 
+       <p><em>Signature:</em></p> 
+       <pre><code class="hljs language-graphql">discussion(number:<span class="hljs-literal"> Int</span>!) :<span class="hljs-literal"> Discussion</span>
+</code></pre> 
+       <h3 id="repositorypinneddiscussions"><a href="#repositorypinneddiscussions">Repository.pinnedDiscussions</a></h3> 
+       <p>Return discussions pinned to this repository, ordered by pin position.</p> 
+       <p><em>Signature:</em></p> 
+       <pre><code class="hljs language-graphql">pinnedDiscussions(
+  after:<span class="hljs-literal"> String</span>,
+  before:<span class="hljs-literal"> String</span>,
+  first:<span class="hljs-literal"> Int</span>,
+  last:<span class="hljs-literal"> Int</span>,
+) :<span class="hljs-literal"> PinnedDiscussionConnection</span>!
+</code></pre> 
+       <h2 id="objects"><a href="#objects">Objects</a></h2> 
+       <p><strong>Note:</strong> For brevity, connection types are not expanded here. Each connection type mentioned in the schema follows the same pattern as other connections in the GraphQL API. For more information, see "<a href="/en/graphql/guides/introduction-to-graphql#connection">Introduction to GraphQL</a>."</p> 
+       <pre><code class="hljs language-graphql"><span class="hljs-keyword">query</span> {
+  repository(owner: <span class="hljs-string">"github"</span>, name: <span class="hljs-string">"some-repo"</span>) {
+    discussions(first: <span class="hljs-number">10</span>) {
+      <span class="hljs-comment"># type: DiscussionConnection</span>
+      totalCount <span class="hljs-comment"># Int!</span>
+
+      pageInfo {
+        <span class="hljs-comment"># type: PageInfo (from the public schema)</span>
+        startCursor
+        endCursor
+        hasNextPage
+        hasPreviousPage
+      }
+
+      edges {
+        <span class="hljs-comment"># type: DiscussionEdge</span>
+        cursor
+        node {
+          <span class="hljs-comment"># type: Discussion</span>
+          id
+        }
+      }
+
+      nodes {
+        <span class="hljs-comment"># type: Discussion</span>
+        id
+      }
+    }
+  }
+}
+</code></pre> 
+       <h3 id="discussion"><a href="#discussion">Discussion</a></h3> 
+       <details> <summary>Fields:</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+A discussion in a repository.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">type</span><span class="hljs-literal"> Discussion</span> <span class="hljs-keyword">implements</span><span class="hljs-literal"> Comment</span> &amp;<span class="hljs-literal"> Deletable</span> &amp;<span class="hljs-literal"> Lockable</span> &amp;<span class="hljs-literal"> Node</span> &amp;<span class="hljs-literal"> Reactable</span> &amp;<span class="hljs-literal"> RepositoryNode</span> &amp;<span class="hljs-literal"> Subscribable</span> &amp;<span class="hljs-literal"> Updatable</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Reason that the conversation was locked.
+  "</span><span class="hljs-string">""</span>
+  activeLockReason:<span class="hljs-literal"> LockReason</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The comment chosen as this discussion's answer, if any.
+  "</span><span class="hljs-string">""</span>
+  answer:<span class="hljs-literal"> DiscussionComment</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The time when a user chose this discussion's answer, if answered.
+  "</span><span class="hljs-string">""</span>
+  answerChosenAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The user who chose this discussion's answer, if answered.
+  "</span><span class="hljs-string">""</span>
+  answerChosenBy:<span class="hljs-literal"> Actor</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The actor who authored the comment.
+  "</span><span class="hljs-string">""</span>
+  author:<span class="hljs-literal"> Actor</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Author's association with the subject of the comment.
+  "</span><span class="hljs-string">""</span>
+  authorAssociation:<span class="hljs-literal"> CommentAuthorAssociation</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The main text of the discussion post.
+  "</span><span class="hljs-string">""</span>
+  body:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The body rendered to HTML.
+  "</span><span class="hljs-string">""</span>
+  bodyHTML:<span class="hljs-type"> HTML</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The body rendered to text.
+  "</span><span class="hljs-string">""</span>
+  bodyText:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The category for this discussion.
+  "</span><span class="hljs-string">""</span>
+  category:<span class="hljs-literal"> DiscussionCategory</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The replies to the discussion.
+  "</span><span class="hljs-string">""</span>
+  comments(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+  ):<span class="hljs-literal"> DiscussionCommentConnection</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was created.
+  "</span><span class="hljs-string">""</span>
+  createdAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if this comment was created via an email reply.
+  "</span><span class="hljs-string">""</span>
+  createdViaEmail:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the primary key from the database.
+  "</span><span class="hljs-string">""</span>
+  databaseId:<span class="hljs-literal"> Int</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The actor who edited the comment.
+  "</span><span class="hljs-string">""</span>
+  editor:<span class="hljs-literal"> Actor</span>
+  id: <span class="hljs-literal">ID</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if this comment was edited and includes an edit with the creation data
+  "</span><span class="hljs-string">""</span>
+  includesCreatedEdit:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The moment the editor made the last edit
+  "</span><span class="hljs-string">""</span>
+  lastEditedAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  `true` if the object is locked
+  "</span><span class="hljs-string">""</span>
+  locked:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The number identifying this discussion within the repository.
+  "</span><span class="hljs-string">""</span>
+  number:<span class="hljs-literal"> Int</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies when the comment was published at.
+  "</span><span class="hljs-string">""</span>
+  publishedAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of reactions grouped by content left on the subject.
+  "</span><span class="hljs-string">""</span>
+  reactionGroups: [<span class="hljs-literal">ReactionGroup</span>!]
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of Reactions left on the Issue.
+  "</span><span class="hljs-string">""</span>
+  reactions(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Allows filtering Reactions by emoji.
+    "</span><span class="hljs-string">""</span>
+    content:<span class="hljs-literal"> ReactionContent</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Allows specifying the order in which reactions are returned.
+    "</span><span class="hljs-string">""</span>
+    orderBy:<span class="hljs-literal"> ReactionOrder</span>
+  ):<span class="hljs-literal"> ReactionConnection</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The repository associated with this node.
+  "</span><span class="hljs-string">""</span>
+  repository:<span class="hljs-literal"> Repository</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The path for this discussion.
+  "</span><span class="hljs-string">""</span>
+  resourcePath:<span class="hljs-type"> URI</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The title of this discussion.
+  "</span><span class="hljs-string">""</span>
+  title:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was last updated.
+  "</span><span class="hljs-string">""</span>
+  updatedAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The URL for this discussion.
+  "</span><span class="hljs-string">""</span>
+  url:<span class="hljs-type"> URI</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of edits to this content.
+  "</span><span class="hljs-string">""</span>
+  userContentEdits(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+  ):<span class="hljs-literal"> UserContentEditConnection</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the current viewer can delete this object.
+  "</span><span class="hljs-string">""</span>
+  viewerCanDelete:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Can user react to this subject
+  "</span><span class="hljs-string">""</span>
+  viewerCanReact:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the viewer is able to change their subscription status for the repository.
+  "</span><span class="hljs-string">""</span>
+  viewerCanSubscribe:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the current viewer can update this object.
+  "</span><span class="hljs-string">""</span>
+  viewerCanUpdate:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Did the viewer author this comment.
+  "</span><span class="hljs-string">""</span>
+  viewerDidAuthor:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
+  "</span><span class="hljs-string">""</span>
+  viewerSubscription:<span class="hljs-literal"> SubscriptionState</span>
+}
+</code></pre> 
+       </details> 
+       <h3 id="discussioncomment"><a href="#discussioncomment">DiscussionComment</a></h3> 
+       <details> <summary>Fields</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+A comment on a discussion.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">type</span><span class="hljs-literal"> DiscussionComment</span> <span class="hljs-keyword">implements</span><span class="hljs-literal"> Comment</span> &amp;<span class="hljs-literal"> Deletable</span> &amp;<span class="hljs-literal"> Minimizable</span> &amp;<span class="hljs-literal"> Node</span> &amp;<span class="hljs-literal"> Reactable</span> &amp;<span class="hljs-literal"> Updatable</span> &amp;<span class="hljs-literal"> UpdatableComment</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The actor who authored the comment.
+  "</span><span class="hljs-string">""</span>
+  author:<span class="hljs-literal"> Actor</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Author's association with the subject of the comment.
+  "</span><span class="hljs-string">""</span>
+  authorAssociation:<span class="hljs-literal"> CommentAuthorAssociation</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The body as Markdown.
+  "</span><span class="hljs-string">""</span>
+  body:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The body rendered to HTML.
+  "</span><span class="hljs-string">""</span>
+  bodyHTML:<span class="hljs-type"> HTML</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The body rendered to text.
+  "</span><span class="hljs-string">""</span>
+  bodyText:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was created.
+  "</span><span class="hljs-string">""</span>
+  createdAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if this comment was created via an email reply.
+  "</span><span class="hljs-string">""</span>
+  createdViaEmail:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the primary key from the database.
+  "</span><span class="hljs-string">""</span>
+  databaseId:<span class="hljs-literal"> Int</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The time when this replied-to comment was deleted
+  "</span><span class="hljs-string">""</span>
+  deletedAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The discussion this comment was created in
+  "</span><span class="hljs-string">""</span>
+  discussion:<span class="hljs-literal"> Discussion</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The actor who edited the comment.
+  "</span><span class="hljs-string">""</span>
+  editor:<span class="hljs-literal"> Actor</span>
+  id: <span class="hljs-literal">ID</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if this comment was edited and includes an edit with the creation data
+  "</span><span class="hljs-string">""</span>
+  includesCreatedEdit:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Has this comment been chosen as the answer of its discussion?
+  "</span><span class="hljs-string">""</span>
+  isAnswer:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Returns whether or not a comment has been minimized.
+  "</span><span class="hljs-string">""</span>
+  isMinimized:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The moment the editor made the last edit
+  "</span><span class="hljs-string">""</span>
+  lastEditedAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Returns why the comment was minimized.
+  "</span><span class="hljs-string">""</span>
+  minimizedReason:<span class="hljs-literal"> String</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies when the comment was published at.
+  "</span><span class="hljs-string">""</span>
+  publishedAt:<span class="hljs-literal"> DateTime</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of reactions grouped by content left on the subject.
+  "</span><span class="hljs-string">""</span>
+  reactionGroups: [<span class="hljs-literal">ReactionGroup</span>!]
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of Reactions left on the Issue.
+  "</span><span class="hljs-string">""</span>
+  reactions(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Allows filtering Reactions by emoji.
+    "</span><span class="hljs-string">""</span>
+    content:<span class="hljs-literal"> ReactionContent</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Allows specifying the order in which reactions are returned.
+    "</span><span class="hljs-string">""</span>
+    orderBy:<span class="hljs-literal"> ReactionOrder</span>
+  ):<span class="hljs-literal"> ReactionConnection</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The threaded replies to this comment.
+  "</span><span class="hljs-string">""</span>
+  replies(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+  ):<span class="hljs-literal"> DiscussionCommentConnection</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The discussion comment this comment is a reply to
+  "</span><span class="hljs-string">""</span>
+  replyTo:<span class="hljs-literal"> DiscussionComment</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The path for this discussion comment.
+  "</span><span class="hljs-string">""</span>
+  resourcePath:<span class="hljs-type"> URI</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was last updated.
+  "</span><span class="hljs-string">""</span>
+  updatedAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The URL for this discussion comment.
+  "</span><span class="hljs-string">""</span>
+  url:<span class="hljs-type"> URI</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A list of edits to this content.
+  "</span><span class="hljs-string">""</span>
+  userContentEdits(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+  ):<span class="hljs-literal"> UserContentEditConnection</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the current viewer can delete this object.
+  "</span><span class="hljs-string">""</span>
+  viewerCanDelete:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Can the current user mark this comment as an answer?
+  "</span><span class="hljs-string">""</span>
+  viewerCanMarkAsAnswer:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the current viewer can minimize this object.
+  "</span><span class="hljs-string">""</span>
+  viewerCanMinimize:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Can user react to this subject
+  "</span><span class="hljs-string">""</span>
+  viewerCanReact:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Can the current user unmark this comment as an answer?
+  "</span><span class="hljs-string">""</span>
+  viewerCanUnmarkAsAnswer:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Check if the current viewer can update this object.
+  "</span><span class="hljs-string">""</span>
+  viewerCanUpdate:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Reasons why the current viewer can not update this comment.
+  "</span><span class="hljs-string">""</span>
+  viewerCannotUpdateReasons: [<span class="hljs-literal">CommentCannotUpdateReason</span>!]!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Did the viewer author this comment.
+  "</span><span class="hljs-string">""</span>
+  viewerDidAuthor:<span class="hljs-literal"> Boolean</span>!
+}
+</code></pre> 
+       </details> 
+       <h3 id="discussioncategory"><a href="#discussioncategory">DiscussionCategory</a></h3> 
+       <details> <summary>Fields</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+A category for discussions in a repository.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">type</span><span class="hljs-literal"> DiscussionCategory</span> <span class="hljs-keyword">implements</span><span class="hljs-literal"> Node</span> &amp;<span class="hljs-literal"> RepositoryNode</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was created.
+  "</span><span class="hljs-string">""</span>
+  createdAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A description of this category.
+  "</span><span class="hljs-string">""</span>
+  description:<span class="hljs-literal"> String</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  An emoji representing this category.
+  "</span><span class="hljs-string">""</span>
+  emoji:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  This category's emoji rendered as HTML.
+  "</span><span class="hljs-string">""</span>
+  emojiHTML:<span class="hljs-type"> HTML</span>!
+  id: <span class="hljs-literal">ID</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Whether or not discussions in this category support choosing an answer with the markDiscussionCommentAsAnswer mutation.
+  "</span><span class="hljs-string">""</span>
+  isAnswerable:<span class="hljs-literal"> Boolean</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The name of this category.
+  "</span><span class="hljs-string">""</span>
+  name:<span class="hljs-literal"> String</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The repository associated with this node.
+  "</span><span class="hljs-string">""</span>
+  repository:<span class="hljs-literal"> Repository</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was last updated.
+  "</span><span class="hljs-string">""</span>
+  updatedAt:<span class="hljs-literal"> DateTime</span>!
+}
+</code></pre> 
+       </details> 
+       <h3 id="pinneddiscussion"><a href="#pinneddiscussion">PinnedDiscussion</a></h3> 
+       <details> <summary>Fields:</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+A Pinned discussion is a discussion pinned to a repository's index page.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">type</span><span class="hljs-literal"> PinnedDiscussion</span> <span class="hljs-keyword">implements</span><span class="hljs-literal"> Node</span> &amp;<span class="hljs-literal"> RepositoryNode</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was created.
+  "</span><span class="hljs-string">""</span>
+  createdAt:<span class="hljs-literal"> DateTime</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the primary key from the database.
+  "</span><span class="hljs-string">""</span>
+  databaseId:<span class="hljs-literal"> Int</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The discussion that was pinned.
+  "</span><span class="hljs-string">""</span>
+  discussion:<span class="hljs-literal"> Discussion</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Color stops of the chosen gradient
+  "</span><span class="hljs-string">""</span>
+  gradientStopColors: [<span class="hljs-literal">String</span>!]!
+  id: <span class="hljs-literal">ID</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Background texture pattern
+  "</span><span class="hljs-string">""</span>
+  pattern:<span class="hljs-literal"> PinnedDiscussionPattern</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The actor that pinned this discussion.
+  "</span><span class="hljs-string">""</span>
+  pinnedBy:<span class="hljs-literal"> Actor</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Preconfigured background gradient option
+  "</span><span class="hljs-string">""</span>
+  preconfiguredGradient:<span class="hljs-literal"> PinnedDiscussionGradient</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  The repository associated with this node.
+  "</span><span class="hljs-string">""</span>
+  repository:<span class="hljs-literal"> Repository</span>!
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Identifies the date and time when the object was last updated.
+  "</span><span class="hljs-string">""</span>
+  updatedAt:<span class="hljs-literal"> DateTime</span>!
+}
+</code></pre> 
+       </details> 
+       <h4 id="pinneddiscussionpattern"><a href="#pinneddiscussionpattern">PinnedDiscussionPattern</a></h4> 
+       <details> <summary>Values</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Preconfigured background patterns that may be used to style discussions pinned within a repository.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">enum</span><span class="hljs-literal"> PinnedDiscussionPattern</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  An upward-facing chevron pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> CHEVRON_UP</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A hollow dot pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> DOT</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A solid dot pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> DOT_FILL</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A heart pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> HEART_FILL</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A friendly octocat face pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> OCTOFACE</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A plus sign pattern
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> PLUS</span>
+}
+</code></pre> 
+       </details> 
+       <h4 id="pinneddiscussiongradient"><a href="#pinneddiscussiongradient">PinnedDiscussionGradient</a></h4> 
+       <details> <summary>Values</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Preconfigured gradients that may be used to style discussions pinned within a repository.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">enum</span><span class="hljs-literal"> PinnedDiscussionGradient</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A gradient of blue to mint
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> BLUE_MINT</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A gradient of blue to purple
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> BLUE_PURPLE</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A gradient of pink to blue
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> PINK_BLUE</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A gradient of purple to coral
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> PURPLE_CORAL</span>
+
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  A gradient of red to orange
+  "</span><span class="hljs-string">""</span>
+ <span class="hljs-type"> RED_ORANGE</span>
+}
+</code></pre> 
+       </details> 
+       <h2 id="interfaces"><a href="#interfaces">Interfaces</a></h2> 
+       <h3 id="repositorydiscussionauthor"><a href="#repositorydiscussionauthor">RepositoryDiscussionAuthor</a></h3> 
+       <p>Implemented by the <code>User</code> and <code>Organization</code> types. <strong>Note:</strong> An <code>Organization</code> will only have discussions associated with it if it was converted from a <code>User</code>.</p> 
+       <details> <summary>Fields</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Represents an author of discussions in repositories.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">interface</span><span class="hljs-literal"> RepositoryDiscussionAuthor</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Discussions this user has started.
+  "</span><span class="hljs-string">""</span>
+  repositoryDiscussions(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Filter discussions to only those that have been answered or not. Defaults to
+    including both answered and unanswered discussions.
+    "</span><span class="hljs-string">""</span>
+    answered:<span class="hljs-literal"> Boolean</span> = <span class="hljs-variable">null</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Ordering options for discussions returned from the connection.
+    "</span><span class="hljs-string">""</span>
+    orderBy:<span class="hljs-literal"> DiscussionOrder</span> = {field:<span class="hljs-type"> CREATED_AT</span>, direction:<span class="hljs-type"> DESC</span>}
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Filter discussions to only those in a specific repository.
+    "</span><span class="hljs-string">""</span>
+    repositoryId: <span class="hljs-literal">ID</span>
+  ):<span class="hljs-literal"> DiscussionConnection</span>!
+}
+</code></pre> 
+       </details> 
+       <h3 id="repositorydiscussioncommentauthor"><a href="#repositorydiscussioncommentauthor">RepositoryDiscussionCommentAuthor</a></h3> 
+       <p>Also implemented by the <code>User</code> and <code>Organization</code> types.</p> 
+       <details> <summary>Fields</summary> 
+        <pre><code class="hljs language-graphql"><span class="hljs-string">""</span><span class="hljs-string">"
+Represents an author of discussion comments in repositories.
+"</span><span class="hljs-string">""</span>
+<span class="hljs-keyword">interface</span><span class="hljs-literal"> RepositoryDiscussionCommentAuthor</span> {
+  <span class="hljs-string">""</span><span class="hljs-string">"
+  Discussion comments this user has authored.
+  "</span><span class="hljs-string">""</span>
+  repositoryDiscussionComments(
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come after the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    after:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the elements in the list that come before the specified cursor.
+    "</span><span class="hljs-string">""</span>
+    before:<span class="hljs-literal"> String</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the first _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    first:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Returns the last _n_ elements from the list.
+    "</span><span class="hljs-string">""</span>
+    last:<span class="hljs-literal"> Int</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Filter discussion comments to only those that were marked as the answer
+    "</span><span class="hljs-string">""</span>
+    onlyAnswers:<span class="hljs-literal"> Boolean</span> = <span class="hljs-variable">false</span>
+
+    <span class="hljs-string">""</span><span class="hljs-string">"
+    Filter discussion comments to only those in a specific repository.
+    "</span><span class="hljs-string">""</span>
+    repositoryId: <span class="hljs-literal">ID</span>
+  ):<span class="hljs-literal"> DiscussionCommentConnection</span>!
+}
+</code></pre> 
+       </details> 
+       <h2 id="mutations"><a href="#mutations">Mutations</a></h2> 
+       <p>These mutations follow the same implementation pattern that other mutations in the GraphQL API. Each mutation accepts a single argument of an <code>Input</code> type, named after the mutation, and returns a <code>Payload</code> type containing the fields specified.</p> 
+       <p>For example, this is a basic <code>createDiscussion</code> mutation that will create a new discussion:</p> 
+       <pre><code class="hljs language-graphql"><span class="hljs-keyword">mutation</span> {
+  <span class="hljs-comment"># input type: CreateDiscussionInput</span>
+  createDiscussion(<span class="hljs-keyword">input</span>: {repositoryId: <span class="hljs-string">"1234"</span>, categoryId: <span class="hljs-string">"5678"</span>, body: <span class="hljs-string">"The body"</span>, title: <span class="hljs-string">"The title"</span>}) {
+
+    <span class="hljs-comment"># response type: CreateDiscussionPayload</span>
+    discussion {
+      id
+    }
+  }
+}
+</code></pre> 
+       <h3 id="creatediscussion"><a href="#creatediscussion">createDiscussion</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>body: String!</code> The body of the new discussion.</li> 
+        <li><code>title: String!</code> The title of the new discussion.</li> 
+        <li><code>repositoryId: ID!</code> The ID of a repository in which to create the discussion.</li> 
+        <li><code>categoryId: ID!</code> The ID of a <code>DiscussionCategory</code> within this repository.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>discussion: Discussion</code> The discussion that was created.</li> 
+       </ul> 
+       <h3 id="updatediscussion"><a href="#updatediscussion">updateDiscussion</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>discussionId: ID!</code> The node ID of the discussion to update.</li> 
+        <li><code>body: String</code> The new contents of the discussion body.</li> 
+        <li><code>title: String</code> The new discussion title.</li> 
+        <li><code>categoryId: ID</code> The node ID of a <code>DiscussionCategory</code> within the same repository to change this discussion to.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>discussion: Discussion</code> The discussion that was modified.</li> 
+       </ul> 
+       <h3 id="deletediscussion"><a href="#deletediscussion">deleteDiscussion</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>id: ID!</code> The node ID of the discussion to delete.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>discussion: Discussion</code> The discussion that was deleted.</li> 
+       </ul> 
+       <h3 id="adddiscussioncomment"><a href="#adddiscussioncomment">addDiscussionComment</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>body: String!</code> The contents of the comment.</li> 
+        <li><code>discussionId: ID!</code> The node ID of the discussion to comment on.</li> 
+        <li><code>replyToId: ID</code> The node ID of the discussion comment to reply to. If absent, the created comment will be a top-level comment.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>comment: DiscussionComment</code> The discussion comment that was created.</li> 
+       </ul> 
+       <h3 id="updatediscussioncomment"><a href="#updatediscussioncomment">updateDiscussionComment</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>body: String!</code> The new contents of the comment body.</li> 
+        <li><code>commentId: ID!</code> The node ID of the discussion comment to update.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>comment: DiscussionComment</code> The discussion comment that was updated.</li> 
+       </ul> 
+       <h3 id="deletediscussioncomment"><a href="#deletediscussioncomment">deleteDiscussionComment</a></h3> 
+       <p>Input fields:</p> 
+       <ul> 
+        <li><code>id: ID!</code> The node ID of the discussion comment to delete.</li> 
+        <li><code>clientMutationId: String</code> A unique identifier for the client performing the mutation.</li> 
+       </ul> 
+       <p>Return type fields:</p> 
+       <ul> 
+        <li><code>clientMutationId: String</code> The unique identifier provided as an input.</li> 
+        <li><code>comment: DiscussionComment</code> The discussion comment that was deleted.</li> 
+       </ul> 
+       <h3 id="markdiscussioncommentasanswer"><a href="#markdiscussioncommentasanswer">markDiscussionCommentAsAnswer</a></h3> 
+       <p>Input fields:</p> 
+    

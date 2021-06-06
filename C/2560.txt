@@ -1,0 +1,1635 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Code scanning - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content="API,Code scanning,REST"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/rest/reference/code-scanning"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/rest/reference/code-scanning"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/rest/reference/code-scanning"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/rest/reference/code-scanning"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/rest/reference/code-scanning"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/rest/reference/code-scanning"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="i4xuhJF6-GHRSBsY7jSMBZDzjzfZ-8-Q7Nuk"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/rest" class="pl-4 pr-5 pb-1 f4 color-text-primary">REST API</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/resources-in-the-rest-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Resources in the REST API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/media-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Media types</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/other-authentication-methods" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Other authentication methods</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/troubleshooting" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/api-previews" class="pl-6 pl-4 pr-5 py-1 color-text-primary">API previews</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/libraries" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Libraries</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/openapi-description" class="pl-6 pl-4 pr-5 py-1 color-text-primary">OpenAPI description</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/endpoints-available-for-github-apps" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Endpoints available for GitHub Apps</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/activity" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activity</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Apps</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/billing" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Billing</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/checks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Checks</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/codes-of-conduct" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Codes of conduct</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/rest/reference/code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Code scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/emojis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Emojis</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/enterprise-admin" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub Enterprise administration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/gists" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Gists</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Git database</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/gitignore" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Gitignore</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/interactions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Interactions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/licenses" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Licenses</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/markdown" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Markdown</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/meta" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Meta</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/migrations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/orgs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Organizations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/projects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Projects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/pulls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Pulls</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/rate-limit" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limit</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/reactions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Reactions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/repos" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Repositories</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/scim" class="pl-6 pl-4 pr-5 py-1 color-text-primary">SCIM</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/search" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Search</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/teams" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Teams</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/users" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Users</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/permissions-required-for-github-apps" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Permissions required for GitHub Apps</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-rest-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with the REST API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/basics-of-authentication" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Basics of authentication</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/discovering-resources-for-a-user" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Discovering resources for a user</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/delivering-deployments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Delivering deployments</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/rendering-data-as-graphs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rendering data as graphs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/working-with-comments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with comments</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/traversing-with-pagination" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Traversing with pagination</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/building-a-ci-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building a CI server</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/best-practices-for-integrators" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Best practices for integrators</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-git-database-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with the Git Database API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Getting started with the Checks API</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> REST API 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      color-text-link text-underline active"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/rest/reference/code-scanning" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/rest/reference/code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/rest/reference/code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/rest/reference/code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/rest/reference/code-scanning" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/rest/reference/code-scanning" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: REST API" href="/en/rest" class="d-inline-block ">REST API</a><a title="category: Reference" href="/en/rest/reference" class="d-inline-block ">Reference</a><a title="article: Code scanning" href="/en/rest/reference/code-scanning" class="d-inline-block color-text-tertiary">Code scanning</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/rest/reference/code-scanning" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/rest/reference/code-scanning" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Code scanning</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg"></div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>Code scanning is available for all public repositories, and for private repositories owned by organizations where GitHub Advanced Security is enabled. For more information, see "<a href="/en/github/getting-started-with-github/about-github-advanced-security">About GitHub Advanced Security</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#custom-media-type-for-code-scanning">Custom media type for code scanning</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#list-code-scanning-alerts-for-a-repository">List code scanning alerts for a repository</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#get-a-code-scanning-alert">Get a code scanning alert</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#update-a-code-scanning-alert">Update a code scanning alert</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#list-instances-of-a-code-scanning-alert">List instances of a code scanning alert</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#list-code-scanning-analyses-for-a-repository">List code scanning analyses for a repository</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#get-a-code-scanning-analysis-for-a-repository">Get a code scanning analysis for a repository</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#delete-a-code-scanning-analysis-from-a-repository">Delete a code scanning analysis from a repository</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#upload-an-analysis-as-sarif-data">Upload an analysis as SARIF data</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"> <a href="#get-information-about-a-sarif-upload">Get information about a SARIF upload</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>The code scanning API lets you retrieve and update code scanning alerts from a repository. You can use the endpoints to create automated reports for the code scanning alerts in an organization or upload analysis results generated using offline code scanning tools. For more information, see "<a href="/en/github/finding-security-vulnerabilities-and-errors-in-your-code">Finding security vulnerabilities and errors in your code</a>."</p> 
+       <h3 id="custom-media-type-for-code-scanning"><a href="#custom-media-type-for-code-scanning">Custom media type for code scanning</a></h3> 
+       <p>There is one supported custom media type for the code scanning REST API. You can use this with <code>GET</code> requests sent to the <code>/analyses/{analysis_id}</code> endpoint. When you use this media type with this operation, the response includes a subset of the actual data that was uploaded for the specified analysis, rather than details about the analysis, which is returned when you use the default media type. The response also includes additional data such as the <code>github/alertNumber</code> and <code>github/alertUrl</code> properties. The data is formatted as <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html">SARIF version 2.1.0</a>.</p> 
+       <pre><code>application/sarif+json
+</code></pre> 
+       <p>For more information, see "<a href="/en/rest/overview/media-types">Media types</a>."</p> 
+       <h4 id="response-using-the-custom-media-type"><a href="#response-using-the-custom-media-type">Response using the custom media type</a></h4> 
+       <p>This example response is from a <code>GET</code> request to the <code>/analyses/{analysis_id}</code> endpoint, using <code>application/sarif+json</code> as the <code>Accept</code> header value. The example has had indendation and line breaks added for readability. For more information about this endpoint, see "<a href="#get-a-code-scanning-analysis-for-a-repository">Get a code scanning analysis for a repository</a>." </p> 
+       <pre><code>{
+  "runs": [
+    {
+      "artifacts": [
+        {
+          "location": {
+            "index": 0,
+            "uri": "src/promiseUtils.js"
+          }
+        },
+        {
+          "location": {
+            "index": 1,
+            "uri": "main.js"
+          }
+        }
+      ],
+      "conversion": {
+        "tool": {
+          "driver": {
+            "name": "GitHub Code Scanning"
+          }
+        }
+      },
+      "results": [
+        {
+          "correlationGuid": "7f75ba0b-61a9-11eb-b882-b4969152bf2c",
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "src/promiseUtils.js"
+                },
+                "region": {
+                  "endLine": 2,
+                  "startColumn": 1,
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Function resolvingPromise is sometimes invoked as a constructor (for example [here](1)), and sometimes as a normal function (for example [here](2))."
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5061c3315a741b7d:1"
+          },
+          "properties": {
+            "github/alertNumber": 4,
+            "github/alertUrl": "https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4"
+          }
+        },
+        ...
+      ],
+      "tool": {
+        "driver": {
+          "name": "CodeQL",
+          "version": "2.0.0"
+        }
+      },
+      "versionControlProvenance": [
+        {
+          "branch": "refs/heads/master",
+          "repositoryUri": "https://github.com/octocat/hello-world",
+          "revisionId": "c18c69115354ff0166991962832dc2bd7756e655"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0"
+}
+</code></pre> 
+       <div> 
+        <div> 
+         <h3 id="list-code-scanning-alerts-for-a-repository" class="pt-3"> <a href="#list-code-scanning-alerts-for-a-repository">List code scanning alerts for a repository</a> </h3> 
+         <p>Lists all open code scanning alerts for the default branch (usually <code>main</code> or <code>master</code>). You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+         <p>The response includes a <code>most_recent_instance</code> object. This provides details of the most recent instance of this alert for the default branch or for the specified Git reference (if you used <code>ref</code> in the request).</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/alerts</code></pre> 
+        <div> 
+         <h4 id="list-code-scanning-alerts-for-a-repository--parameters"> <a href="#list-code-scanning-alerts-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>tool_name</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either <code>tool_name</code> or <code>tool_guid</code>, but not both.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>tool_guid</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either <code>tool_guid</code> or <code>tool_name</code>, but not both.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Page number of the results to fetch.</p> Default: <code>1</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>per_page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Results per page (max 100).</p> Default: <code>30</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>ref</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The Git reference for the results you want to list. The <code>ref</code> for a branch can be formatted either as <code>refs/heads/&lt;branch name&gt;</code> or simply <code>&lt;branch name&gt;</code>. To reference a pull request use <code>refs/pull/&lt;number&gt;/merge</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>state</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Set to <code>open</code>, <code>fixed</code>, or <code>dismissed</code> to list code scanning alerts in a specific state.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="list-code-scanning-alerts-for-a-repository--code-samples"> <a href="#list-code-scanning-alerts-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/alerts</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/alerts'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">[
+  {
+    <span class="hljs-attr">"number"</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-02-13T12:29:18Z"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4"</span>,
+    <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat/hello-world/code-scanning/4"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"open"</span>,
+    <span class="hljs-attr">"dismissed_by"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"dismissed_at"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"dismissed_reason"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"rule"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"js/zipslip"</span>,
+      <span class="hljs-attr">"severity"</span>: <span class="hljs-string">"error"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Arbitrary file write during zip extraction"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/zipslip"</span>
+    },
+    <span class="hljs-attr">"tool"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+      <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+    },
+    <span class="hljs-attr">"most_recent_instance"</span>: {
+      <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+      <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+      <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{}"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-string">"open"</span>,
+      <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"39406e42cb832f683daa691dd652a8dc36ee8930"</span>,
+      <span class="hljs-attr">"message"</span>: {
+        <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This path depends on a user-provided value."</span>
+      },
+      <span class="hljs-attr">"location"</span>: {
+        <span class="hljs-attr">"path"</span>: <span class="hljs-string">"spec-main/api-session-spec.ts"</span>,
+        <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">917</span>,
+        <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">917</span>,
+        <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">7</span>,
+        <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">18</span>
+      },
+      <span class="hljs-attr">"classifications"</span>: [
+        <span class="hljs-string">"test"</span>
+      ]
+    },
+    <span class="hljs-attr">"instances_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4/instances"</span>
+  },
+  {
+    <span class="hljs-attr">"number"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-02-13T12:29:18Z"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3"</span>,
+    <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat/hello-world/code-scanning/3"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"dismissed"</span>,
+    <span class="hljs-attr">"dismissed_by"</span>: {
+      <span class="hljs-attr">"login"</span>: <span class="hljs-string">"octocat"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"node_id"</span>: <span class="hljs-string">"MDQ6VXNlcjE="</span>,
+      <span class="hljs-attr">"avatar_url"</span>: <span class="hljs-string">"https://github.com/images/error/octocat_happy.gif"</span>,
+      <span class="hljs-attr">"gravatar_id"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat"</span>,
+      <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat"</span>,
+      <span class="hljs-attr">"followers_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/followers"</span>,
+      <span class="hljs-attr">"following_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/following{/other_user}"</span>,
+      <span class="hljs-attr">"gists_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/gists{/gist_id}"</span>,
+      <span class="hljs-attr">"starred_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/starred{/owner}{/repo}"</span>,
+      <span class="hljs-attr">"subscriptions_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/subscriptions"</span>,
+      <span class="hljs-attr">"organizations_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/orgs"</span>,
+      <span class="hljs-attr">"repos_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/repos"</span>,
+      <span class="hljs-attr">"events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/events{/privacy}"</span>,
+      <span class="hljs-attr">"received_events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/received_events"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"User"</span>,
+      <span class="hljs-attr">"site_admin"</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-attr">"dismissed_at"</span>: <span class="hljs-string">"2020-02-14T12:29:18Z"</span>,
+    <span class="hljs-attr">"dismissed_reason"</span>: <span class="hljs-string">"false positive"</span>,
+    <span class="hljs-attr">"rule"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"js/zipslip"</span>,
+      <span class="hljs-attr">"severity"</span>: <span class="hljs-string">"error"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Arbitrary file write during zip extraction"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/zipslip"</span>
+    },
+    <span class="hljs-attr">"tool"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+      <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+    },
+    <span class="hljs-attr">"most_recent_instance"</span>: {
+      <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+      <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+      <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{}"</span>,
+      <span class="hljs-attr">"state"</span>: <span class="hljs-string">"open"</span>,
+      <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"39406e42cb832f683daa691dd652a8dc36ee8930"</span>,
+      <span class="hljs-attr">"message"</span>: {
+        <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This path depends on a user-provided value."</span>
+      },
+      <span class="hljs-attr">"location"</span>: {
+        <span class="hljs-attr">"path"</span>: <span class="hljs-string">"lib/ab12-gen.js"</span>,
+        <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">917</span>,
+        <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">917</span>,
+        <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">7</span>,
+        <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">18</span>
+      },
+      <span class="hljs-attr">"classifications"</span>: []
+    },
+    <span class="hljs-attr">"instances_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3/instances"</span>
+  }
+]
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="get-a-code-scanning-alert" class="pt-3"> <a href="#get-a-code-scanning-alert">Get a code scanning alert</a> </h3> 
+         <p>Gets a single code scanning alert. You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+         <p><strong>Deprecation notice</strong>: The instances field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The same information can now be retrieved via a GET request to the URL specified by <code>instances_url</code>.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}</code></pre> 
+        <div> 
+         <h4 id="get-a-code-scanning-alert--parameters"> <a href="#get-a-code-scanning-alert--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>alert_number</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the <code>number</code> field in the response from the <code>GET /repos/{owner}/{repo}/code-scanning/alerts</code> operation.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="get-a-code-scanning-alert--code-samples"> <a href="#get-a-code-scanning-alert--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">alert_number</span>: <span class="hljs-number">42</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"number"</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-19T11:21:34Z"</span>,
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42"</span>,
+  <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat/hello-world/code-scanning/42"</span>,
+  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"dismissed"</span>,
+  <span class="hljs-attr">"dismissed_by"</span>: {
+    <span class="hljs-attr">"login"</span>: <span class="hljs-string">"octocat"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">54933897</span>,
+    <span class="hljs-attr">"node_id"</span>: <span class="hljs-string">"MDQ6VXNlcjE="</span>,
+    <span class="hljs-attr">"avatar_url"</span>: <span class="hljs-string">"https://github.com/images/error/octocat_happy.gif"</span>,
+    <span class="hljs-attr">"gravatar_id"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat"</span>,
+    <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat"</span>,
+    <span class="hljs-attr">"followers_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/followers"</span>,
+    <span class="hljs-attr">"following_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/following{/other_user}"</span>,
+    <span class="hljs-attr">"gists_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/gists{/gist_id}"</span>,
+    <span class="hljs-attr">"starred_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/starred{/owner}{/repo}"</span>,
+    <span class="hljs-attr">"subscriptions_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/subscriptions"</span>,
+    <span class="hljs-attr">"organizations_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/orgs"</span>,
+    <span class="hljs-attr">"repos_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/repos"</span>,
+    <span class="hljs-attr">"events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/events{/privacy}"</span>,
+    <span class="hljs-attr">"received_events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/received_events"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"User"</span>,
+    <span class="hljs-attr">"site_admin"</span>: <span class="hljs-literal">false</span>
+  },
+  <span class="hljs-attr">"dismissed_at"</span>: <span class="hljs-string">"2020-02-14T12:29:18Z"</span>,
+  <span class="hljs-attr">"dismissed_reason"</span>: <span class="hljs-string">"false positive"</span>,
+  <span class="hljs-attr">"rule"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"js/zipslip"</span>,
+    <span class="hljs-attr">"severity"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Arbitrary file write during zip extraction (\"Zip Slip\")"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/zipslip"</span>,
+    <span class="hljs-attr">"full_description"</span>: <span class="hljs-string">"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten."</span>,
+    <span class="hljs-attr">"tags"</span>: [
+      <span class="hljs-string">"security"</span>,
+      <span class="hljs-string">"external/cwe/cwe-022"</span>
+    ],
+    <span class="hljs-attr">"help"</span>: <span class="hljs-string">"# Arbitrary file write during zip extraction (\"Zip Slip\")\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ..."</span>
+  },
+  <span class="hljs-attr">"tool"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+    <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+  },
+  <span class="hljs-attr">"most_recent_instance"</span>: {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{}"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"dismissed"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"39406e42cb832f683daa691dd652a8dc36ee8930"</span>,
+    <span class="hljs-attr">"message"</span>: {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This path depends on a user-provided value."</span>
+    },
+    <span class="hljs-attr">"location"</span>: {
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"spec-main/api-session-spec.ts"</span>,
+      <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">18</span>
+    },
+    <span class="hljs-attr">"classifications"</span>: [
+      <span class="hljs-string">"test"</span>
+    ]
+  },
+  <span class="hljs-attr">"instances_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances"</span>,
+  <span class="hljs-attr">"instances"</span>: <span class="hljs-literal">null</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="update-a-code-scanning-alert" class="pt-3"> <a href="#update-a-code-scanning-alert">Update a code scanning alert</a> </h3> 
+         <p>Updates the status of a single code scanning alert. You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> write permission to use this endpoint.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">patch</span> /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}</code></pre> 
+        <div> 
+         <h4 id="update-a-code-scanning-alert--parameters"> <a href="#update-a-code-scanning-alert--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>alert_number</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the <code>number</code> field in the response from the <code>GET /repos/{owner}/{repo}/code-scanning/alerts</code> operation.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>state</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. Sets the state of the code scanning alert. Can be one of <code>open</code> or <code>dismissed</code>. You must provide <code>dismissed_reason</code> when you set the state to <code>dismissed</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>dismissed_reason</code></td> 
+            <td class="opacity-70">string or nullable</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required when the state is dismissed.</strong> The reason for dismissing or closing the alert. Can be one of: <code>false positive</code>, <code>won't fix</code>, and <code>used in tests</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="update-a-code-scanning-alert--code-samples"> <a href="#update-a-code-scanning-alert--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X PATCH \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42 \
+  -d '{"state":"state"}'</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">alert_number</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">state</span>: <span class="hljs-string">'state'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"number"</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-08-25T21:28:36Z"</span>,
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42"</span>,
+  <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat/hello-world/code-scanning/42"</span>,
+  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"dismissed"</span>,
+  <span class="hljs-attr">"dismissed_by"</span>: {
+    <span class="hljs-attr">"login"</span>: <span class="hljs-string">"octocat"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"node_id"</span>: <span class="hljs-string">"MDQ6VXNlcjE="</span>,
+    <span class="hljs-attr">"avatar_url"</span>: <span class="hljs-string">"https://github.com/images/error/octocat_happy.gif"</span>,
+    <span class="hljs-attr">"gravatar_id"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat"</span>,
+    <span class="hljs-attr">"html_url"</span>: <span class="hljs-string">"https://github.com/octocat"</span>,
+    <span class="hljs-attr">"followers_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/followers"</span>,
+    <span class="hljs-attr">"following_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/following{/other_user}"</span>,
+    <span class="hljs-attr">"gists_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/gists{/gist_id}"</span>,
+    <span class="hljs-attr">"starred_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/starred{/owner}{/repo}"</span>,
+    <span class="hljs-attr">"subscriptions_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/subscriptions"</span>,
+    <span class="hljs-attr">"organizations_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/orgs"</span>,
+    <span class="hljs-attr">"repos_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/repos"</span>,
+    <span class="hljs-attr">"events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/events{/privacy}"</span>,
+    <span class="hljs-attr">"received_events_url"</span>: <span class="hljs-string">"https://api.github.com/users/octocat/received_events"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"User"</span>,
+    <span class="hljs-attr">"site_admin"</span>: <span class="hljs-literal">false</span>
+  },
+  <span class="hljs-attr">"dismissed_at"</span>: <span class="hljs-string">"2020-09-02T22:34:56Z"</span>,
+  <span class="hljs-attr">"dismissed_reason"</span>: <span class="hljs-string">"false positive"</span>,
+  <span class="hljs-attr">"rule"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"js/zipslip"</span>,
+    <span class="hljs-attr">"severity"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Arbitrary file write during zip extraction (\"Zip Slip\")"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"js/zipslip"</span>,
+    <span class="hljs-attr">"full_description"</span>: <span class="hljs-string">"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten."</span>,
+    <span class="hljs-attr">"tags"</span>: [
+      <span class="hljs-string">"security"</span>,
+      <span class="hljs-string">"external/cwe/cwe-022"</span>
+    ],
+    <span class="hljs-attr">"help"</span>: <span class="hljs-string">"# Arbitrary file write during zip extraction (\"Zip Slip\")\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ..."</span>
+  },
+  <span class="hljs-attr">"tool"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+    <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+  },
+  <span class="hljs-attr">"most_recent_instance"</span>: {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{}"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"dismissed"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"39406e42cb832f683daa691dd652a8dc36ee8930"</span>,
+    <span class="hljs-attr">"message"</span>: {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This path depends on a user-provided value."</span>
+    },
+    <span class="hljs-attr">"location"</span>: {
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"spec-main/api-session-spec.ts"</span>,
+      <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">18</span>
+    },
+    <span class="hljs-attr">"classifications"</span>: [
+      <span class="hljs-string">"test"</span>
+    ]
+  },
+  <span class="hljs-attr">"instances_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response if the repository is archived or if github advanced security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="list-instances-of-a-code-scanning-alert" class="pt-3"> <a href="#list-instances-of-a-code-scanning-alert">List instances of a code scanning alert</a> </h3> 
+         <p>Lists all instances of the specified code scanning alert. You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances</code></pre> 
+        <div> 
+         <h4 id="list-instances-of-a-code-scanning-alert--parameters"> <a href="#list-instances-of-a-code-scanning-alert--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>alert_number</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the <code>number</code> field in the response from the <code>GET /repos/{owner}/{repo}/code-scanning/alerts</code> operation.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Page number of the results to fetch.</p> Default: <code>1</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>per_page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Results per page (max 100).</p> Default: <code>30</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>ref</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The Git reference for the results you want to list. The <code>ref</code> for a branch can be formatted either as <code>refs/heads/&lt;branch name&gt;</code> or simply <code>&lt;branch name&gt;</code>. To reference a pull request use <code>refs/pull/&lt;number&gt;/merge</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="list-instances-of-a-code-scanning-alert--code-samples"> <a href="#list-instances-of-a-code-scanning-alert--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">alert_number</span>: <span class="hljs-number">42</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">[
+  {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"open"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"39406e42cb832f683daa691dd652a8dc36ee8930"</span>,
+    <span class="hljs-attr">"message"</span>: {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This path depends on a user-provided value."</span>
+    },
+    <span class="hljs-attr">"location"</span>: {
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"lib/ab12-gen.js"</span>,
+      <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">917</span>,
+      <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">18</span>
+    },
+    <span class="hljs-attr">"classifications"</span>: [
+      <span class="hljs-string">"library"</span>
+    ]
+  },
+  {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/pull/3740/merge"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:CodeQL-Build"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"fixed"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"b09da05606e27f463a2b49287684b4ae777092f2"</span>,
+    <span class="hljs-attr">"message"</span>: {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"This suffix check is missing a length comparison to correctly handle lastIndexOf returning -1."</span>
+    },
+    <span class="hljs-attr">"location"</span>: {
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"app/script.js"</span>,
+      <span class="hljs-attr">"start_line"</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">"end_line"</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">"start_column"</span>: <span class="hljs-number">10</span>,
+      <span class="hljs-attr">"end_column"</span>: <span class="hljs-number">50</span>
+    },
+    <span class="hljs-attr">"classifications"</span>: [
+      <span class="hljs-string">"source"</span>
+    ]
+  }
+]
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="list-code-scanning-analyses-for-a-repository" class="pt-3"> <a href="#list-code-scanning-analyses-for-a-repository">List code scanning analyses for a repository</a> </h3> 
+         <p>Lists the details of all code scanning analyses for a repository, starting with the most recent. The response is paginated and you can use the <code>page</code> and <code>per_page</code> parameters to list the analyses you're interested in. By default 30 analyses are listed per page.</p> 
+         <p>The <code>rules_count</code> field in the response give the number of rules that were run in the analysis. For very old analyses this data is not available, and <code>0</code> is returned in this field.</p> 
+         <p>You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+         <p><strong>Deprecation notice</strong>: The <code>tool_name</code> field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the <code>tool</code> field.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/analyses</code></pre> 
+        <div> 
+         <h4 id="list-code-scanning-analyses-for-a-repository--parameters"> <a href="#list-code-scanning-analyses-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>tool_name</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either <code>tool_name</code> or <code>tool_guid</code>, but not both.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>tool_guid</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either <code>tool_guid</code> or <code>tool_name</code>, but not both.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Page number of the results to fetch.</p> Default: <code>1</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>per_page</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Results per page (max 100).</p> Default: <code>30</code> </td> 
+           </tr> 
+           <tr> 
+            <td><code>ref</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>The Git reference for the analyses you want to list. The <code>ref</code> for a branch can be formatted either as <code>refs/heads/&lt;branch name&gt;</code> or simply <code>&lt;branch name&gt;</code>. To reference a pull request use <code>refs/pull/&lt;number&gt;/merge</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>sarif_id</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Filter analyses belonging to the same SARIF upload.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="list-code-scanning-analyses-for-a-repository--code-samples"> <a href="#list-code-scanning-analyses-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/analyses</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/analyses'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">[
+  {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"d99612c3e1f2970085cfbaeadf8f010ef69bad83"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:analyze"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{\"language\":\"python\"}"</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"category"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:analyze/language:python"</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-08-27T15:05:21Z"</span>,
+    <span class="hljs-attr">"results_count"</span>: <span class="hljs-number">17</span>,
+    <span class="hljs-attr">"rules_count"</span>: <span class="hljs-number">49</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">201</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/201"</span>,
+    <span class="hljs-attr">"sarif_id"</span>: <span class="hljs-string">"6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53"</span>,
+    <span class="hljs-attr">"tool"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+      <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+    },
+    <span class="hljs-attr">"deletable"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"warning"</span>: <span class="hljs-string">""</span>
+  },
+  {
+    <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/my-branch"</span>,
+    <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"c8cff6510d4d084fb1b4aa13b64b97ca12b07321"</span>,
+    <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/shiftleft.yml:build"</span>,
+    <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{}"</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"category"</span>: <span class="hljs-string">".github/workflows/shiftleft.yml:build/"</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-08-31T22:46:44Z"</span>,
+    <span class="hljs-attr">"results_count"</span>: <span class="hljs-number">17</span>,
+    <span class="hljs-attr">"rules_count"</span>: <span class="hljs-number">32</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">200</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/200"</span>,
+    <span class="hljs-attr">"sarif_id"</span>: <span class="hljs-string">"8981cd8e-b078-4ac3-a3be-1dad7dbd0b582"</span>,
+    <span class="hljs-attr">"tool"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Python Security Analysis"</span>,
+      <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.2.0"</span>
+    },
+    <span class="hljs-attr">"deletable"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"warning"</span>: <span class="hljs-string">""</span>
+  }
+]
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="get-a-code-scanning-analysis-for-a-repository" class="pt-3"> <a href="#get-a-code-scanning-analysis-for-a-repository">Get a code scanning analysis for a repository</a> </h3> 
+         <p>Gets a specified code scanning analysis for a repository. You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+         <p>The default JSON response contains fields that describe the analysis. This includes the Git reference and commit SHA to which the analysis relates, the datetime of the analysis, the name of the code scanning tool, and the number of alerts.</p> 
+         <p>The <code>rules_count</code> field in the default response give the number of rules that were run in the analysis. For very old analyses this data is not available, and <code>0</code> is returned in this field.</p> 
+         <p>If you use the Accept header <code>application/sarif+json</code>, the response contains the analysis data that was uploaded. This is formatted as <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html">SARIF version 2.1.0</a>. For an example response, see "<a href="#custom-media-type-for-code-scanning">Custom media type for code scanning</a>."</p> 
+         <p><strong>Deprecation notice</strong>: The <code>tool_name</code> field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the <code>tool</code> field.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}</code></pre> 
+        <div> 
+         <h4 id="get-a-code-scanning-analysis-for-a-repository--parameters"> <a href="#get-a-code-scanning-analysis-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>analysis_id</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The ID of the analysis, as returned from the <code>GET /repos/{owner}/{repo}/code-scanning/analyses</code> operation.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="get-a-code-scanning-analysis-for-a-repository--code-samples"> <a href="#get-a-code-scanning-analysis-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/42</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">analysis_id</span>: <span class="hljs-number">42</span>
+})
+</code></pre> 
+         <h4>Default response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"ref"</span>: <span class="hljs-string">"refs/heads/main"</span>,
+  <span class="hljs-attr">"commit_sha"</span>: <span class="hljs-string">"c18c69115654ff0166991962832dc2bd7756e655"</span>,
+  <span class="hljs-attr">"analysis_key"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:analyze"</span>,
+  <span class="hljs-attr">"environment"</span>: <span class="hljs-string">"{\"language\":\"javascript\"}"</span>,
+  <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-attr">"category"</span>: <span class="hljs-string">".github/workflows/codeql-analysis.yml:analyze/language:javascript"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2021-01-13T11:55:49Z"</span>,
+  <span class="hljs-attr">"results_count"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"rules_count"</span>: <span class="hljs-number">67</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3602840</span>,
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/201"</span>,
+  <span class="hljs-attr">"sarif_id"</span>: <span class="hljs-string">"47177e22-5596-11eb-80a1-c1e54ef945c6"</span>,
+  <span class="hljs-attr">"tool"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeQL"</span>,
+    <span class="hljs-attr">"guid"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"2.4.0"</span>
+  },
+  <span class="hljs-attr">"deletable"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"warning"</span>: <span class="hljs-string">""</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="delete-a-code-scanning-analysis-from-a-repository" class="pt-3"> <a href="#delete-a-code-scanning-analysis-from-a-repository">Delete a code scanning analysis from a repository</a> </h3> 
+         <p>Deletes a specified code scanning analysis from a repository. For private repositories, you must use an access token with the <code>repo</code> scope. For public repositories, you must use an access token with <code>public_repo</code> and <code>repo:security_events</code> scopes. GitHub Apps must have the <code>security_events</code> write permission to use this endpoint.</p> 
+         <p>You can delete one analysis at a time. To delete a series of analyses, start with the most recent analysis and work backwards. Conceptually, the process is similar to the undo function in a text editor.</p> 
+         <p>When you list the analyses for a repository, one or more will be identified as deletable in the response:</p> 
+         <pre><code>"deletable": true
+</code></pre> 
+         <p>An analysis is deletable when it's the most recent in a set of analyses. Typically, a repository will have multiple sets of analyses for each enabled code scanning tool, where a set is determined by a unique combination of analysis values:</p> 
+         <ul> 
+          <li><code>ref</code></li> 
+          <li><code>tool</code></li> 
+          <li><code>analysis_key</code></li> 
+          <li><code>environment</code></li> 
+         </ul> 
+         <p>If you attempt to delete an analysis that is not the most recent in a set, you'll get a 400 response with the message:</p> 
+         <pre><code>Analysis specified is not deletable.
+</code></pre> 
+         <p>The response from a successful <code>DELETE</code> operation provides you with two alternative URLs for deleting the next analysis in the set (see the example default response below). Use the <code>next_analysis_url</code> URL if you want to avoid accidentally deleting the final analysis in the set. This is a useful option if you want to preserve at least one analysis for the specified tool in your repository. Use the <code>confirm_delete_url</code> URL if you are content to remove all analyses for a tool. When you delete the last analysis in a set the value of <code>next_analysis_url</code> and <code>confirm_delete_url</code> in the 200 response is <code>null</code>.</p> 
+         <p>As an example of the deletion process, let's imagine that you added a workflow that configured a particular code scanning tool to analyze the code in a repository. This tool has added 15 analyses: 10 on the default branch, and another 5 on a topic branch. You therefore have two separate sets of analyses for this tool. You've now decided that you want to remove all of the analyses for the tool. To do this you must make 15 separate deletion requests. To start, you must find the deletable analysis for one of the sets, step through deleting the analyses in that set, and then repeat the process for the second set. The procedure therefore consists of a nested loop:</p> 
+         <p><strong>Outer loop</strong>:</p> 
+         <ul> 
+          <li> <p>List the analyses for the repository, filtered by tool.</p> </li> 
+          <li> <p>Parse this list to find a deletable analysis. If found:</p> <p><strong>Inner loop</strong>:</p> 
+           <ul> 
+            <li>Delete the identified analysis.</li> 
+            <li>Parse the response for the value of <code>confirm_delete_url</code> and, if found, use this in the next iteration.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>The above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the <code>confirm_delete_url</code> value. Alternatively, you could use the <code>next_analysis_url</code> value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">delete</span> /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}</code></pre> 
+        <div> 
+         <h4 id="delete-a-code-scanning-analysis-from-a-repository--parameters"> <a href="#delete-a-code-scanning-analysis-from-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>analysis_id</code></td> 
+            <td class="opacity-70">integer</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The ID of the analysis, as returned from the <code>GET /repos/{owner}/{repo}/code-scanning/analyses</code> operation.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>confirm_delete</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">query</td> 
+            <td class="opacity-70"> <p>Allow deletion if the specified analysis is the last in a set. If you attempt to delete the final analysis in a set without setting this parameter to <code>true</code>, you'll get a 400 response with the message: <code>Analysis is last of its type and deletion may result in the loss of historical alert data. Please specify confirm_delete.</code></p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="delete-a-code-scanning-analysis-from-a-repository--code-samples"> <a href="#delete-a-code-scanning-analysis-from-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X DELETE \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/42</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">analysis_id</span>: <span class="hljs-number">42</span>
+})
+</code></pre> 
+         <h4>Default response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"next_analysis_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/41"</span>,
+  <span class="hljs-attr">"confirm_delete_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/41?confirm_delete"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Bad Request</h4> 
+         <pre><code>Status: 400 Bad Request</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Response if the repository is archived or if github advanced security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="upload-an-analysis-as-sarif-data" class="pt-3"> <a href="#upload-an-analysis-as-sarif-data">Upload an analysis as SARIF data</a> </h3> 
+         <p>Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> write permission to use this endpoint.</p> 
+         <p>There are two places where you can upload code scanning results.</p> 
+         <ul> 
+          <li>If you upload to a pull request, for example <code>--ref refs/pull/42/merge</code> or <code>--ref refs/pull/42/head</code>, then the results appear as alerts in a pull request check. For more information, see "<a href="/en/code-security/secure-coding/triaging-code-scanning-alerts-in-pull-requests">Triaging code scanning alerts in pull requests</a>."</li> 
+          <li>If you upload to a branch, for example <code>--ref refs/heads/my-branch</code>, then the results appear in the <strong>Security</strong> tab for your repository. For more information, see "<a href="/en/code-security/secure-coding/managing-code-scanning-alerts-for-your-repository#viewing-the-alerts-for-a-repository">Managing code scanning alerts for your repository</a>."</li> 
+         </ul> 
+         <p>You must compress the SARIF-formatted analysis data that you want to upload, using <code>gzip</code>, and then encode it as a Base64 format string. For example:</p> 
+         <pre><code>gzip -c analysis-data.sarif | base64 -w0
+</code></pre> 
+         <p>SARIF upload supports a maximum of 5000 results per analysis run. Any results over this limit are ignored and any SARIF uploads with more than 25,000 results are rejected. Typically, but not necessarily, a SARIF file contains a single run of a single tool. If a code scanning tool generates too many results, you should update the analysis configuration to run only the most important rules or queries.</p> 
+         <p>The <code>202 Accepted</code>, response includes an <code>id</code> value. You can use this ID to check the status of the upload by using this for the <code>/sarifs/{sarif_id}</code> endpoint. For more information, see "<a href="/en/rest/reference/code-scanning#get-information-about-a-sarif-upload">Get information about a SARIF upload</a>."</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">post</span> /repos/{owner}/{repo}/code-scanning/sarifs</code></pre> 
+        <div> 
+         <h4 id="upload-an-analysis-as-sarif-data--parameters"> <a href="#upload-an-analysis-as-sarif-data--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>commit_sha</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. The SHA of the commit to which the analysis you are uploading relates.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>ref</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. The full Git reference, formatted as <code>refs/heads/&lt;branch name&gt;</code>,<code>refs/pull/&lt;number&gt;/merge</code>, or <code>refs/pull/&lt;number&gt;/head</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>sarif</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using <a href="http://www.gnu.org/software/gzip/manual/gzip.html"><code>gzip</code></a> and then translate the contents of the file into a Base64 encoding string. For more information, see "<a href="https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning">SARIF support for code scanning</a>."</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>checkout_uri</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The base directory used in the analysis, as it appears in the SARIF file. This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>started_at</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The time that the analysis run began. This is a timestamp in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format: <code>YYYY-MM-DDTHH:MM:SSZ</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>tool_name</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the <code>tool_guid</code> parameter of operations such as <code>GET /repos/{owner}/{repo}/code-scanning/alerts</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="upload-an-analysis-as-sarif-data--code-samples"> <a href="#upload-an-analysis-as-sarif-data--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X POST \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/sarifs \
+  -d '{"commit_sha":"commit_sha","ref":"ref","sarif":"sarif"}'</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'POST /repos/{owner}/{repo}/code-scanning/sarifs'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">commit_sha</span>: <span class="hljs-string">'commit_sha'</span>,
+  <span class="hljs-attr">ref</span>: <span class="hljs-string">'ref'</span>,
+  <span class="hljs-attr">sarif</span>: <span class="hljs-string">'sarif'</span>
+})
+</code></pre> 
+         <h4>Default response</h4> 
+         <pre><code>Status: 202 Accepted</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"47177e22-5596-11eb-80a1-c1e54ef945c6"</span>,
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/sarifs/47177e22-5596-11eb-80a1-c1e54ef945c6"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Bad Request if the sarif field is invalid</h4> 
+         <pre><code>Status: 400 Bad Request</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Response if the repository is archived or if github advanced security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Resource not found</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Payload Too Large if the sarif field is too large</h4> 
+         <pre><code>Status: 413 Payload Too Large</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="get-information-about-a-sarif-upload" class="pt-3"> <a href="#get-information-about-a-sarif-upload">Get information about a SARIF upload</a> </h3> 
+         <p>Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "<a href="/en/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository">Get a code scanning analysis for a repository</a>." You must use an access token with the <code>security_events</code> scope to use this endpoint. GitHub Apps must have the <code>security_events</code> read permission to use this endpoint.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}</code></pre> 
+        <div> 
+         <h4 id="get-information-about-a-sarif-upload--parameters"> <a href="#get-information-about-a-sarif-upload--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>sarif_id</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> <p>The SARIF ID obtained after uploading.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="get-information-about-a-sarif-upload--code-samples"> <a href="#get-information-about-a-sarif-upload--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/code-scanning/sarifs/SARIF_ID</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">sarif_id</span>: <span class="hljs-string">'sarif_id'</span>
+})
+</code></pre> 
+         <h4>Default response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"processing_status"</span>: <span class="hljs-string">"complete"</span>,
+  <span class="hljs-attr">"analyses_url"</span>: <span class="hljs-string">"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses?sarif_id=47177e22-5596-11eb-80a1-c1e54ef945c6"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response if GitHub Advanced Security is not enabled for this repository</h4> 
+         <pre><code>Status: 403 Forbidden</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Not Found if the sarif id does not match any upload</h4> 
+         <pre><code>Status: 404 Not Found</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Service unavailable</h4> 
+         <pre><code>Status: 503 Service Unavailable</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-label" for="survey-yes"> 
+         <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-thumbsup" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.596 2.043c-1.301-.092-2.303.98

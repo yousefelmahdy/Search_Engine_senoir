@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Interactions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content="API"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/rest/reference/interactions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/rest/reference/interactions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/rest/reference/interactions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/rest/reference/interactions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/rest/reference/interactions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/rest/reference/interactions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="FajEHPQg-2raU2M9qiurUg-2XWCsJEACUQ3E"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/rest" class="pl-4 pr-5 pb-1 f4 color-text-primary">REST API</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/resources-in-the-rest-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Resources in the REST API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/media-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Media types</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/other-authentication-methods" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Other authentication methods</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/troubleshooting" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/api-previews" class="pl-6 pl-4 pr-5 py-1 color-text-primary">API previews</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/libraries" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Libraries</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/openapi-description" class="pl-6 pl-4 pr-5 py-1 color-text-primary">OpenAPI description</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/overview/endpoints-available-for-github-apps" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Endpoints available for GitHub Apps</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/reference" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Reference</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/activity" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activity</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Apps</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/billing" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Billing</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/checks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Checks</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/codes-of-conduct" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Codes of conduct</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Code scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/emojis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Emojis</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/enterprise-admin" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub Enterprise administration</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/gists" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Gists</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Git database</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/gitignore" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Gitignore</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/rest/reference/interactions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Interactions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Issues</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/licenses" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Licenses</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/markdown" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Markdown</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/meta" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Meta</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/migrations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/orgs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Organizations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/projects" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Projects</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/pulls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Pulls</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/rate-limit" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limit</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/reactions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Reactions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/repos" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Repositories</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/scim" class="pl-6 pl-4 pr-5 py-1 color-text-primary">SCIM</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/search" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Search</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/teams" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Teams</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/users" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Users</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/reference/permissions-required-for-github-apps" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Permissions required for GitHub Apps</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/rest/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-rest-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with the REST API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/basics-of-authentication" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Basics of authentication</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/discovering-resources-for-a-user" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Discovering resources for a user</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/delivering-deployments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Delivering deployments</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/rendering-data-as-graphs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rendering data as graphs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/working-with-comments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with comments</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/traversing-with-pagination" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Traversing with pagination</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/building-a-ci-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Building a CI server</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/best-practices-for-integrators" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Best practices for integrators</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-git-database-api" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting started with the Git Database API</a> </li> 
+          <li class="sidebar-article "> <a href="/en/rest/guides/getting-started-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Getting started with the Checks API</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> REST API 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      color-text-link text-underline active"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/rest/reference/interactions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/rest/reference/interactions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/rest/reference/interactions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/rest/reference/interactions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/rest/reference/interactions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: REST API" href="/en/rest" class="d-inline-block ">REST API</a><a title="category: Reference" href="/en/rest/reference" class="d-inline-block ">Reference</a><a title="article: Interactions" href="/en/rest/reference/interactions" class="d-inline-block color-text-tertiary">Interactions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Interactions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg"></div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#organization">Organization</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#get-interaction-restrictions-for-an-organization">Get interaction restrictions for an organization</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#set-interaction-restrictions-for-an-organization">Set interaction restrictions for an organization</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#remove-interaction-restrictions-for-an-organization">Remove interaction restrictions for an organization</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#repository">Repository</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#get-interaction-restrictions-for-a-repository">Get interaction restrictions for a repository</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#set-interaction-restrictions-for-a-repository">Set interaction restrictions for a repository</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#remove-interaction-restrictions-for-a-repository">Remove interaction restrictions for a repository</a> </li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#user">User</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#get-interaction-restrictions-for-your-public-repositories">Get interaction restrictions for your public repositories</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#set-interaction-restrictions-for-your-public-repositories">Set interaction restrictions for your public repositories</a> </li> 
+         <li class="ml-3  mb-2 lh-condensed"> <a href="#remove-interaction-restrictions-from-your-public-repositories">Remove interaction restrictions from your public repositories</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>Users interact with repositories by commenting, opening issues, and creating pull requests. The Interactions APIs allow people with owner or admin access to temporarily restrict interaction with public repositories to a certain type of user.</p> 
+       <h2 id="organization"><a href="#organization">Organization</a></h2> 
+       <p>The Organization Interactions API allows organization owners to temporarily restrict which type of user can comment, open issues, or create pull requests in the organization's public repositories. When restrictions are enabled, only the specified type of GitHub user will be able to participate in interactions. Restrictions automatically expire after a defined duration. Here's more about the types of GitHub users:</p> 
+       <ul> 
+        <li><strong>Existing users:</strong> When you limit interactions to <code>existing_users</code>, new users with accounts less than 24 hours old who have not previously contributed and are not collaborators will be temporarily restricted in the organization.</li> 
+        <li><strong>Contributors only:</strong> When you limit interactions to <code>contributors_only</code>, users who have not previously contributed and are not collaborators will be temporarily restricted in the organization.</li> 
+        <li><strong>Collaborators only:</strong> When you limit interactions to <code>collaborators_only</code>, users who are not collaborators will be temporarily restricted in the organization.</li> 
+       </ul> 
+       <p>Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization. To set different interaction limits for individual repositories owned by the organization, use the <a href="#repository">Repository</a> interactions endpoints instead.</p> 
+       <div> 
+        <div> 
+         <h3 id="get-interaction-restrictions-for-an-organization" class="pt-3"> <a href="#get-interaction-restrictions-for-an-organization">Get interaction restrictions for an organization</a> </h3> 
+         <p>Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /orgs/{org}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="get-interaction-restrictions-for-an-organization--parameters"> <a href="#get-interaction-restrictions-for-an-organization--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>org</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="get-interaction-restrictions-for-an-organization--code-samples"> <a href="#get-interaction-restrictions-for-an-organization--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/orgs/ORG/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /orgs/{org}/interaction-limits'</span>, {
+  <span class="hljs-attr">org</span>: <span class="hljs-string">'org'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"organization"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="set-interaction-restrictions-for-an-organization" class="pt-3"> <a href="#set-interaction-restrictions-for-an-organization">Set interaction restrictions for an organization</a> </h3> 
+         <p>Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">put</span> /orgs/{org}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="set-interaction-restrictions-for-an-organization--parameters"> <a href="#set-interaction-restrictions-for-an-organization--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>org</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>limit</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: <code>existing_users</code>, <code>contributors_only</code>, <code>collaborators_only</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>expiry</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The duration of the interaction restriction. Can be one of: <code>one_day</code>, <code>three_days</code>, <code>one_week</code>, <code>one_month</code>, <code>six_months</code>. Default: <code>one_day</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="set-interaction-restrictions-for-an-organization--code-samples"> <a href="#set-interaction-restrictions-for-an-organization--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X PUT \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/orgs/ORG/interaction-limits \
+  -d '{"limit":"limit"}'</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'PUT /orgs/{org}/interaction-limits'</span>, {
+  <span class="hljs-attr">org</span>: <span class="hljs-string">'org'</span>,
+  <span class="hljs-attr">limit</span>: <span class="hljs-string">'limit'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"organization"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Validation failed</h4> 
+         <pre><code>Status: 422 Unprocessable Entity</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="remove-interaction-restrictions-for-an-organization" class="pt-3"> <a href="#remove-interaction-restrictions-for-an-organization">Remove interaction restrictions for an organization</a> </h3> 
+         <p>Removes all interaction restrictions from public repositories in the given organization. You must be an organization owner to remove restrictions.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">delete</span> /orgs/{org}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="remove-interaction-restrictions-for-an-organization--parameters"> <a href="#remove-interaction-restrictions-for-an-organization--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>org</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="remove-interaction-restrictions-for-an-organization--code-samples"> <a href="#remove-interaction-restrictions-for-an-organization--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X DELETE \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/orgs/ORG/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'DELETE /orgs/{org}/interaction-limits'</span>, {
+  <span class="hljs-attr">org</span>: <span class="hljs-string">'org'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 204 No Content</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <h2 id="repository"><a href="#repository">Repository</a></h2> 
+       <p>The Repository Interactions API allows people with owner or admin access to temporarily restrict which type of user can comment, open issues, or create pull requests in a public repository. When restrictions are enabled, only the specified type of GitHub user will be able to participate in interactions. Restrictions automatically expire after a defined duration. Here's more about the types of GitHub users:</p> 
+       <ul> 
+        <li><strong>Existing users:</strong> When you limit interactions to <code>existing_users</code>, new users with accounts less than 24 hours old who have not previously contributed and are not collaborators will be temporarily restricted in the repository.</li> 
+        <li><strong>Contributors only:</strong> When you limit interactions to <code>contributors_only</code>, users who have not previously contributed and are not collaborators will be temporarily restricted in the repository.</li> 
+        <li><strong>Collaborators only:</strong> When you limit interactions to <code>collaborators_only</code>, users who are not collaborators will be temporarily restricted in the repository.</li> 
+       </ul> 
+       <p>If an interaction limit is enabled for the user or organization that owns the repository, the limit cannot be changed for the individual repository. Instead, use the <a href="#user">User</a> or <a href="#organization">Organization</a> interactions endpoints to change the interaction limit.</p> 
+       <div> 
+        <div> 
+         <h3 id="get-interaction-restrictions-for-a-repository" class="pt-3"> <a href="#get-interaction-restrictions-for-a-repository">Get interaction restrictions for a repository</a> </h3> 
+         <p>Shows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /repos/{owner}/{repo}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="get-interaction-restrictions-for-a-repository--parameters"> <a href="#get-interaction-restrictions-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="get-interaction-restrictions-for-a-repository--code-samples"> <a href="#get-interaction-restrictions-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /repos/{owner}/{repo}/interaction-limits'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"repository"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="set-interaction-restrictions-for-a-repository" class="pt-3"> <a href="#set-interaction-restrictions-for-a-repository">Set interaction restrictions for a repository</a> </h3> 
+         <p>Temporarily restricts interactions to a certain type of GitHub user within the given repository. You must have owner or admin access to set these restrictions. If an interaction limit is set for the user or organization that owns this repository, you will receive a <code>409 Conflict</code> response and will not be able to use this endpoint to change the interaction limit for a single repository.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">put</span> /repos/{owner}/{repo}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="set-interaction-restrictions-for-a-repository--parameters"> <a href="#set-interaction-restrictions-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>limit</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: <code>existing_users</code>, <code>contributors_only</code>, <code>collaborators_only</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>expiry</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The duration of the interaction restriction. Can be one of: <code>one_day</code>, <code>three_days</code>, <code>one_week</code>, <code>one_month</code>, <code>six_months</code>. Default: <code>one_day</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="set-interaction-restrictions-for-a-repository--code-samples"> <a href="#set-interaction-restrictions-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X PUT \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/interaction-limits \
+  -d '{"limit":"limit"}'</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'PUT /repos/{owner}/{repo}/interaction-limits'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>,
+  <span class="hljs-attr">limit</span>: <span class="hljs-string">'limit'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"repository"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response</h4> 
+         <pre><code>Status: 409 Conflict</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="remove-interaction-restrictions-for-a-repository" class="pt-3"> <a href="#remove-interaction-restrictions-for-a-repository">Remove interaction restrictions for a repository</a> </h3> 
+         <p>Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions. If the interaction limit is set for the user or organization that owns this repository, you will receive a <code>409 Conflict</code> response and will not be able to use this endpoint to change the interaction limit for a single repository.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">delete</span> /repos/{owner}/{repo}/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="remove-interaction-restrictions-for-a-repository--parameters"> <a href="#remove-interaction-restrictions-for-a-repository--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>owner</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+           <tr> 
+            <td><code>repo</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">path</td> 
+            <td class="opacity-70"> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="remove-interaction-restrictions-for-a-repository--code-samples"> <a href="#remove-interaction-restrictions-for-a-repository--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X DELETE \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/octocat/hello-world/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'DELETE /repos/{owner}/{repo}/interaction-limits'</span>, {
+  <span class="hljs-attr">owner</span>: <span class="hljs-string">'octocat'</span>,
+  <span class="hljs-attr">repo</span>: <span class="hljs-string">'hello-world'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 204 No Content</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Response</h4> 
+         <pre><code>Status: 409 Conflict</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+         <h4>Notes</h4> 
+         <ul class="mt-2"> 
+          <li><a href="/en/developers/apps">Works with GitHub Apps</a></li> 
+         </ul> 
+        </div> 
+        <hr> 
+       </div> 
+       <h2 id="user"><a href="#user">User</a></h2> 
+       <p>The User Interactions API allows you to temporarily restrict which type of user can comment, open issues, or create pull requests on your public repositories. When restrictions are enabled, only the specified type of GitHub user will be able to participate in interactions. Restrictions automatically expire after a defined duration. Here's more about the types of GitHub users:</p> 
+       <ul> 
+        <li><strong>Existing users:</strong> When you limit interactions to <code>existing_users</code>, new users with accounts less than 24 hours old who have not previously contributed and are not collaborators will be temporarily restricted from interacting with your repositories.</li> 
+        <li><strong>Contributors only:</strong> When you limit interactions to <code>contributors_only</code>, users who have not previously contributed and are not collaborators will be temporarily restricted from interacting with your repositories.</li> 
+        <li><strong>Collaborators only:</strong> When you limit interactions to <code>collaborators_only</code>, users who are not collaborators will be temporarily restricted from interacting with your repositories.</li> 
+       </ul> 
+       <p>Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user. To set different interaction limits for individual repositories owned by the user, use the <a href="#repository">Repository</a> interactions endpoints instead.</p> 
+       <div> 
+        <div> 
+         <h3 id="get-interaction-restrictions-for-your-public-repositories" class="pt-3"> <a href="#get-interaction-restrictions-for-your-public-repositories">Get interaction restrictions for your public repositories</a> </h3> 
+         <p>Shows which type of GitHub user can interact with your public repositories and when the restriction expires.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">get</span> /user/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="get-interaction-restrictions-for-your-public-repositories--code-samples"> <a href="#get-interaction-restrictions-for-your-public-repositories--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/user/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'GET /user/interaction-limits'</span>)
+</code></pre> 
+         <h4>Default response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"organization"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Response when there are no restrictions</h4> 
+         <pre><code>Status: 204 No Content</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="set-interaction-restrictions-for-your-public-repositories" class="pt-3"> <a href="#set-interaction-restrictions-for-your-public-repositories">Set interaction restrictions for your public repositories</a> </h3> 
+         <p>Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">put</span> /user/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="set-interaction-restrictions-for-your-public-repositories--parameters"> <a href="#set-interaction-restrictions-for-your-public-repositories--parameters">Parameters</a> </h4> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Name</th> 
+            <th>Type</th> 
+            <th>In</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> <!--
+            Previews require an `accept` header. These used to be documented
+            as `operation.parameters` but have moved to `operation.x-github.previews`
+          --> 
+           <tr> 
+            <td><code>accept</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">header</td> 
+            <td class="opacity-70"> <p> Setting to <code>application/vnd.github.v3+json</code> is recommended. </p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>limit</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p><strong>Required</strong>. The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: <code>existing_users</code>, <code>contributors_only</code>, <code>collaborators_only</code>.</p> </td> 
+           </tr> 
+           <tr> 
+            <td><code>expiry</code></td> 
+            <td class="opacity-70">string</td> 
+            <td class="opacity-70">body</td> 
+            <td class="opacity-70"> <p>The duration of the interaction restriction. Can be one of: <code>one_day</code>, <code>three_days</code>, <code>one_week</code>, <code>one_month</code>, <code>six_months</code>. Default: <code>one_day</code>.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h4 id="set-interaction-restrictions-for-your-public-repositories--code-samples"> <a href="#set-interaction-restrictions-for-your-public-repositories--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X PUT \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/user/interaction-limits \
+  -d '{"limit":"limit"}'</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'PUT /user/interaction-limits'</span>, {
+  <span class="hljs-attr">limit</span>: <span class="hljs-string">'limit'</span>
+})
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 200 OK</code></pre> 
+         <div class="height-constrained-code-block">
+          <pre><code class="hljs language-json">{
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-string">"collaborators_only"</span>,
+  <span class="hljs-attr">"origin"</span>: <span class="hljs-string">"user"</span>,
+  <span class="hljs-attr">"expires_at"</span>: <span class="hljs-string">"2018-08-17T04:18:39Z"</span>
+}
+</code></pre>
+         </div> 
+         <h4>Validation failed</h4> 
+         <pre><code>Status: 422 Unprocessable Entity</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+        </div> 
+        <hr> 
+       </div> 
+       <div> 
+        <div> 
+         <h3 id="remove-interaction-restrictions-from-your-public-repositories" class="pt-3"> <a href="#remove-interaction-restrictions-from-your-public-repositories">Remove interaction restrictions from your public repositories</a> </h3> 
+         <p>Removes any interaction restrictions from your public repositories.</p> 
+        </div> 
+        <pre><code><span class="color-bg-info-inverse color-text-inverse rounded-1 px-2 py-1" style="text-transform: uppercase">delete</span> /user/interaction-limits</code></pre> 
+        <div> 
+         <h4 id="remove-interaction-restrictions-from-your-public-repositories--code-samples"> <a href="#remove-interaction-restrictions-from-your-public-repositories--code-samples">Code samples</a> </h4> 
+         <h5> Shell </h5> 
+         <pre><code class="hljs language-shell">curl \
+  -X DELETE \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/user/interaction-limits</code></pre> 
+         <h5> JavaScript (<a href="https://github.com/octokit/core.js#readme">@octokit/core.js</a>) </h5> 
+         <pre><code class="hljs language-javascript"><span class="hljs-keyword">await</span> octokit.request(<span class="hljs-string">'DELETE /user/interaction-limits'</span>)
+</code></pre> 
+         <h4>Response</h4> 
+         <pre><code>Status: 204 No Content</code></pre> 
+         <div class="height-constrained-code-block"></div> 
+        </div> 
+        <hr> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-label" for="survey-yes"> 
+         <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-thumbsup" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.596 2.043c-1.301-.092-2.303.986-2.303 2.206v1.053c0 2.666-1.813 3.785-2.774 4.2a1.866 1.866 0 01-.523.131A1.75 1.75 0 005.25 8h-1.5A1.75 1.75 0 002 9.75v10.5c0 .967.784 1.75 1.75 1.75h1.5a1.75 1.75 0 001.742-1.58c.838.06 1.667.296 2.69.586l.602.17c1.464.406 3.213.824 5.544.824 2.188 0 3.693-.204 4.583-1.372.422-.554.65-1.255.816-2.05.148-.708.262-1.57.396-2.58l.051-.39c.319-2.386.328-4.18-.223-5.394-.293-.644-.743-1.125-1.355-1.431-.59-.296-1.284-.404-2.036-.404h-2.05l.056-.429c.025-.18.05-.372.076-.572.06-.483.117-1.006.117-1.438 0-1.245-.222-2.253-.92-2.941-.684-.675-1.668-.88-2.743-.956zM7 18.918c1.059.064 2.079.355 3.118.652l.568.16c1.406.39 3.006.77 5.142.77 2.277 0 3.004-.274 3.39-.781.216-.283.388-.718.54-1.448.136-.65.242-1.45.379-2.477l.05-.384c.32-2.4.253-3.795-.102-4.575-.16-.352-.375-.568-.66-.711-.305-.153-.74-.245-1.365-.245h-2.37c-.681 0-1.293-.57-1.211-1.328.026-.243.065-.537.105-.834l.07-.527c.06-.482.105-.921.105-1.25 0-1.125-.213-1.617-.473-1.873-.275-.27-.774-.455-1.795-.528-.351-.024-.698.274-.698.71v1.053c0 3.55-2.488 5.063-3.68 5.577-.372.16-.754.232-1.113.26v7.78zM3.75 20.5a.25.25 0 01-.25-.25V9.75

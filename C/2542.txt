@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Migrating OAuth Apps to GitHub Apps - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Learn about the advantages of migrating your OAuth App to a GitHub App and how to migrate an OAuth App that isn't listed on GitHub Marketplace."> 
+  <meta name="keywords" content="GitHub Apps"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="cwE24aMI-onIWksgPI3dGqba4FDw5qH4YSvw"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/developers" class="pl-4 pr-5 pb-1 f4 color-text-primary">Developers</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/about-githubs-apis" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub's APIs</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/managing-deploy-keys" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing deploy keys</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/viewing-deployment-history" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing deployment history</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/using-ssh-agent-forwarding" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using SSH agent forwarding</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/replacing-github-services" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Replacing GitHub Services</a> </li> 
+          <li class="sidebar-article "> <a href="/en/developers/overview/github-developer-program" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">GitHub Developer Program</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/webhooks-and-events" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Webhooks and events</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/webhooks" class="pl-4 pr-5 py-2 color-text-primary">Webhooks </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/about-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/creating-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/configuring-your-server-to-receive-payloads" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring your server to receive payloads</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/testing-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Testing webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/securing-your-webhooks" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your webhooks</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Webhook events and payloads</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/webhooks-and-events/events" class="pl-4 pr-5 py-2 color-text-primary">Events </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/github-event-types" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub event types</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/webhooks-and-events/events/issue-event-types" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Issue event types</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/apps" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Apps</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic active "> <a href="/en/developers/apps/getting-started-with-apps" class="pl-4 pr-5 py-2 color-text-primary">Getting started with apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/about-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/activating-optional-features-for-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activating optional features for apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Differences between GitHub Apps and OAuth Apps</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating OAuth Apps to GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/getting-started-with-apps/setting-up-your-development-environment-to-create-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up your development environment to create a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Building GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/setting-permissions-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting permissions for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/authenticating-with-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authenticating with GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Identifying and authorizing users for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/rate-limits-for-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rate limits for GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/refreshing-user-to-server-access-tokens" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Refreshing user-to-server access tokens</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-from-a-manifest" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App from a manifest</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-github-app-using-url-parameters" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a GitHub App using URL parameters</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-github-apps/creating-a-custom-badge-for-your-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-github-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing GitHub Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/installing-github-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/modifying-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Editing a GitHub App's permissions</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/making-a-github-app-public-or-private" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Making a GitHub App public or private</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/suspending-a-github-app-installation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Suspending a GitHub App installation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/transferring-ownership-of-a-github-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of a GitHub App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-github-apps/deleting-a-github-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting a GitHub App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/building-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Building OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/authorizing-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Authorizing OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Scopes for OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/building-oauth-apps/creating-a-custom-badge-for-your-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating a custom badge for your OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/managing-oauth-apps" class="pl-4 pr-5 py-2 color-text-primary">Managing OAuth Apps </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/modifying-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Modifying an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/transferring-ownership-of-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring ownership of an OAuth App</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-authorization-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting authorization request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting OAuth App access token request errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/managing-oauth-apps/deleting-an-oauth-app" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting an OAuth App</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/developers/apps/guides" class="pl-4 pr-5 py-2 color-text-primary">Guides </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-the-github-api-in-your-app" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using the GitHub API in your app</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/using-content-attachments" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using content attachments</a> </li> 
+            <li class="sidebar-article "> <a href="/en/developers/apps/guides/creating-ci-tests-with-the-checks-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Creating CI tests with the Checks API</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/developers/github-marketplace" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Marketplace</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Developers 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      color-text-link text-underline active"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Developers" href="/en/developers" class="d-inline-block ">Developers</a><a title="category: Apps" href="/en/developers/apps" class="d-inline-block ">Apps</a><a title="mapTopic: Getting started with apps" href="/en/developers/apps/getting-started-with-apps" class="d-inline-block ">Getting started with apps</a><a title="article: Migrating OAuth Apps to GitHub Apps" href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-inline-block color-text-tertiary">Migrating OAuth Apps to GitHub Apps</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Migrating OAuth Apps to GitHub Apps</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Learn about the advantages of migrating your OAuth App to a GitHub App and how to migrate an OAuth App that isn't listed on GitHub Marketplace. </p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#reasons-for-switching-to-github-apps">Reasons for switching to GitHub Apps</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#converting-an-oauth-app-to-a-github-app">Converting an OAuth App to a GitHub App</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <p>This article provides guidelines for existing integrators who are considering migrating from an OAuth App to a GitHub App.</p> 
+       <h3 id="reasons-for-switching-to-github-apps"><a href="#reasons-for-switching-to-github-apps">Reasons for switching to GitHub Apps</a></h3> 
+       <p><a href="/en/apps">GitHub Apps</a> are the officially recommended way to integrate with GitHub because they offer many advantages over a pure OAuth-based integration:</p> 
+       <ul> 
+        <li><a href="/en/apps/differences-between-apps/#requesting-permission-levels-for-resources">Fine-grained permissions</a> target the specific information a GitHub App can access, allowing the app to be more widely used by people and organizations with security policies than OAuth Apps, which cannot be limited by permissions.</li> 
+        <li><a href="/en/apps/differences-between-apps/#token-based-identification">Short-lived tokens</a> provide a more secure authentication method over OAuth tokens. An OAuth token does not expire until the person who authorized the OAuth App revokes the token. GitHub Apps use tokens that expire quickly, creating a much smaller window of time for compromised tokens to be in use.</li> 
+        <li><a href="/en/apps/differences-between-apps/#webhooks">Built-in, centralized webhooks</a> receive events for all repositories and organizations the app can access. Conversely, OAuth Apps require configuring a webhook for each repository and organization accessible to the user.</li> 
+        <li><a href="/en/apps/differences-between-apps/#machine-vs-bot-accounts">Bot accounts</a> don't consume a GitHub seat and remain installed even when the person who initially installed the app leaves the organization.</li> 
+        <li>Built-in support for OAuth is still available to GitHub Apps using <a href="/en/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps">user-to-server endpoints</a>.</li> 
+        <li>Dedicated <a href="/en/apps/building-github-apps/understanding-rate-limits-for-github-apps">API rate limits</a> for bot accounts scale with your integration.</li> 
+        <li>Repository owners can <a href="/en/apps/differences-between-apps/#who-can-install-github-apps-and-authorize-oauth-apps">install GitHub Apps</a> on organization repositories. If a GitHub App's configuration has permissions that request an organization's resources, the org owner must approve the installation.</li> 
+        <li>Open Source community support is available through <a href="/en/rest/overview/libraries">Octokit libraries</a> and other frameworks such as <a href="https://probot.github.io/">Probot</a>.</li> 
+        <li>Integrators building GitHub Apps have opportunities to adopt earlier access to APIs.</li> 
+       </ul> 
+       <h3 id="converting-an-oauth-app-to-a-github-app"><a href="#converting-an-oauth-app-to-a-github-app">Converting an OAuth App to a GitHub App</a></h3> 
+       <p>These guidelines assume that you have a registered OAuth App that may or may not be listed in GitHub Marketplace. At a high level, you'll need to follow these steps:</p> 
+       <ol> 
+        <li><a href="#review-the-available-api-endpoints-for-github-apps">Review the available API endpoints for GitHub Apps</a></li> 
+        <li><a href="#design-to-stay-within-api-rate-limits">Design to stay within API rate limits</a></li> 
+        <li><a href="#register-a-new-github-app">Register a new GitHub App</a></li> 
+        <li><a href="#determine-the-permissions-your-app-requires">Determine the permissions your app requires</a></li> 
+        <li><a href="#subscribe-to-webhooks">Subscribe to webhooks</a></li> 
+        <li><a href="#understand-the-different-methods-of-authentication">Understand the different methods of authentication</a></li> 
+        <li><a href="#direct-users-to-install-your-github-app-on-repositories">Direct users to install your GitHub App on repositories</a></li> 
+        <li><a href="#remove-any-unnecessary-repository-hooks">Remove any unnecessary repository hooks</a></li> 
+        <li><a href="#encourage-users-to-revoke-access-to-your-oauth-app">Encourage users to revoke access to your OAuth app</a></li> 
+       </ol> 
+       <h4 id="review-the-available-api-endpoints-for-github-apps"><a href="#review-the-available-api-endpoints-for-github-apps">Review the available API endpoints for GitHub Apps</a></h4> 
+       <p>While the majority of <a href="/en/rest">REST API</a> endpoints and <a href="/en/graphql">GraphQL</a> queries are available to GitHub Apps today, we are still in the process of enabling some endpoints. Review the <a href="/en/rest/overview/endpoints-available-for-github-apps">available REST endpoints</a> to ensure that the endpoints you need are compatible with GitHub Apps. Note that some of the API endpoints enabled for GitHub Apps allow the app to act on behalf of the user. See "<a href="/en/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#user-to-server-requests">User-to-server requests</a>" for a list of endpoints that allow a GitHub App to authenticate as a user.</p> 
+       <p>We recommend reviewing the list of API endpoints you need as early as possible. Please let Support know if there is an endpoint you require that is not yet enabled for GitHub Apps.</p> 
+       <h4 id="design-to-stay-within-api-rate-limits"><a href="#design-to-stay-within-api-rate-limits">Design to stay within API rate limits</a></h4> 
+       <p>GitHub Apps use <a href="/en/apps/building-github-apps/understanding-rate-limits-for-github-apps">sliding rules for rate limits</a>, which can increase based on the number of repositories and users in the organization. A GitHub App can also make use of <a href="/en/rest#conditional-requests">conditional requests</a> or consolidate requests by using the <a href="/en/graphql">GraphQL API V4</a>.</p> 
+       <h4 id="register-a-new-github-app"><a href="#register-a-new-github-app">Register a new GitHub App</a></h4> 
+       <p>Once you've decided to make the switch to GitHub Apps, you'll need to <a href="/en/apps/building-github-apps">create a new GitHub App</a>.</p> 
+       <h4 id="determine-the-permissions-your-app-requires"><a href="#determine-the-permissions-your-app-requires">Determine the permissions your app requires</a></h4> 
+       <p>When registering your GitHub App, you'll need to select the permissions required by each endpoint used in your app's code. See "<a href="/en/rest/reference/permissions-required-for-github-apps">GitHub App permissions</a>" for a list of the permissions needed for each endpoint available to GitHub Apps.</p> 
+       <p>In your GitHub App's settings, you can specify whether your app needs <code>No Access</code>, <code>Read-only</code>, or <code>Read &amp; Write</code> access for each permission type. The fine-grained permissions allow your app to gain targeted access to the subset of data you need. We recommend specifying the smallest set of permissions possible that provides the desired functionality.</p> 
+       <h4 id="subscribe-to-webhooks"><a href="#subscribe-to-webhooks">Subscribe to webhooks</a></h4> 
+       <p>After you've created a new GitHub App and selected its permissions, you can select the webhook events you wish to subscribe it to. See "<a href="/en/apps/managing-github-apps/editing-a-github-app-s-permissions">Editing a GitHub App's permissions</a>" to learn how to subscribe to webhooks.</p> 
+       <h4 id="understand-the-different-methods-of-authentication"><a href="#understand-the-different-methods-of-authentication">Understand the different methods of authentication</a></h4> 
+       <p>GitHub Apps primarily use a token-based authentication that expires after a short amount of time, providing more security than an OAuth token that does not expire. It’s important to understand the different methods of authentication available to you and when you need to use them:</p> 
+       <ul> 
+        <li>A <strong>JSON Web Token (JWT)</strong> <a href="/en/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app">authenticates as the GitHub App</a>. For example, you can authenticate with a <strong>JWT</strong> to fetch application installation details or exchange the <strong>JWT</strong> for an <strong>installation access token</strong>.</li> 
+        <li>An <strong>installation access token</strong> <a href="/en/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation">authenticates as a specific installation of your GitHub App</a> (also called server-to-server requests). For example, you can authenticate with an <strong>installation access token</strong> to open an issue or provide feedback on a pull request.</li> 
+        <li>An <strong>OAuth access token</strong> can <a href="/en/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site">authenticate as a user of your GitHub App</a> (also called user-to-server requests). For example, you can use an OAuth access token to authenticate as a user when a GitHub App needs to verify a user’s identity or act on a user’s behalf.</li> 
+       </ul> 
+       <p>The most common scenario is to authenticate as a specific installation using an <strong>installation access token</strong>.</p> 
+       <h4 id="direct-users-to-install-your-github-app-on-repositories"><a href="#direct-users-to-install-your-github-app-on-repositories">Direct users to install your GitHub App on repositories</a></h4> 
+       <p>Once you've made the transition from an OAuth App to a GitHub App, you will need to let users know that the GitHub App is available to install. For example, you can include an installation link for the GitHub App in a call-to-action banner inside your application. To ease the transition, you can use query parameters to identify the user or organization account that is going through the installation flow for your GitHub App and pre-select any repositories your OAuth App had access to. This allows users to easily install your GitHub App on repositories you already have access to.</p> 
+       <h5 id="query-parameters"><a href="#query-parameters">Query parameters</a></h5> 
+       <table>
+        <thead>
+         <tr>
+          <th>Name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>suggested_target_id</code></td>
+          <td><strong>Required</strong>: ID of the user or organization that is installing your GitHub App.</td>
+         </tr>
+         <tr>
+          <td><code>repository_ids[]</code></td>
+          <td>Array of repository IDs. If omitted, we select all repositories. The maximum number of repositories that can be pre-selected is 100.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h5 id="example-url"><a href="#example-url">Example URL</a></h5> 
+       <pre><code>https://github.com/apps/YOUR_APP_NAME/installations/new/permissions?suggested_target_id=ID_OF_USER_OR_ORG&amp;repository_ids[]=REPO_A_ID&amp;repository_ids[]=REPO_B_ID
+</code></pre> 
+       <p>You'll need to replace <code>YOUR_APP_NAME</code> with the name of your GitHub App, <code>ID_OF_USER_OR_ORG</code> with the ID of your target user or organization, and include up to 100 repository IDs (<code>REPO_A_ID</code> and <code>REPO_B_ID</code>). To get a list of repositories your OAuth App has access to, use the <a href="/en/rest/reference/repos#list-repositories-for-the-authenticated-user">List repositories for the authenticated user</a> and <a href="/en/rest/reference/repos#list-organization-repositories">List organization repositories</a> endpoints.</p> 
+       <h4 id="remove-any-unnecessary-repository-hooks"><a href="#remove-any-unnecessary-repository-hooks">Remove any unnecessary repository hooks</a></h4> 
+       <p>Once your GitHub App has been installed on a repository, you should remove any unnecessary webhooks that were created by your legacy OAuth App. If both apps are installed on a repository, they may duplicate functionality for the user. To remove webhooks, you can listen for the <a href="/en/webhooks/event-payloads/#installation_repositories"><code>installation_repositories</code> webhook</a> with the <code>repositories_added</code> action and <a href="/en/rest/reference/repos#delete-a-repository-webhook">Delete a repository webhook</a> on those repositories that were created by your OAuth App.</p> 
+       <h4 id="encourage-users-to-revoke-access-to-your-oauth-app"><a href="#encourage-users-to-revoke-access-to-your-oauth-app">Encourage users to revoke access to your OAuth app</a></h4> 
+       <p>As your GitHub App installation base grows, consider encouraging your users to <a href="/en

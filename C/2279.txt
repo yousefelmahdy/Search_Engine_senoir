@@ -1,0 +1,2226 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Reviewing the audit log for your organization - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="The audit log allows organization admins to quickly review the actions performed by members of your organization. It includes details such as who performed the action, what the action was, and when it was performed."> 
+  <meta name="keywords" content="Organizations,Teams"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="XN03vtFk-07b9c4hoIy3LuCpQIn8qPBvczPg"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/organizations" class="pl-4 pr-5 pb-1 f4 color-text-primary">Organizations</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/collaborating-with-groups-in-organizations" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Collaborating with groups in organizations</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/about-organizations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About organizations</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/about-your-organization-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About your organization dashboard</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating a new organization from scratch</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/accessing-your-organizations-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing your organization's settings</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/about-your-organizations-news-feed" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About your organization’s news feed</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/collaborating-with-groups-in-organizations/viewing-insights-for-your-organization" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Viewing insights for your organization</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-membership-in-your-organization" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing membership in your organization</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Inviting users to join your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-membership-in-your-organization/canceling-or-editing-an-invitation-to-join-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Canceling or editing an invitation to join your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-membership-in-your-organization/removing-a-member-from-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a member from your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-membership-in-your-organization/reinstating-a-former-member-of-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Reinstating a former member of your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-membership-in-your-organization/can-i-create-accounts-for-people-in-my-organization" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Can I create accounts for people in my organization?</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing people's access to your organization with roles</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/permission-levels-for-an-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Permission levels for an organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Maintaining ownership continuity for your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/giving-team-maintainer-permissions-to-an-organization-member" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Giving "team maintainer" permissions to an organization member</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/adding-a-billing-manager-to-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding a billing manager to your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/removing-a-billing-manager-from-your-organization" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Removing a billing manager from your organization</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/organizing-members-into-teams" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Organizing members into teams</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/collaborating-with-your-team" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Collaborating with your team</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-access-to-your-organizations-repositories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing access to your organization's repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-access-to-your-organizations-project-boards" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing access to your organization’s project boards</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-access-to-your-organizations-apps" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing access to your organization's apps</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-organization-settings" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing organization settings</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/restricting-access-to-your-organizations-data" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Restricting access to your organization's data</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/keeping-your-organization-secure" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Keeping your organization secure</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/viewing-whether-users-in-your-organization-have-2fa-enabled" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing whether users in your organization have 2FA enabled</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/preparing-to-require-two-factor-authentication-in-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Preparing to require two-factor authentication in your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/requiring-two-factor-authentication-in-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Requiring two-factor authentication in your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing security and analysis settings for your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing allowed IP addresses for your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/restricting-email-notifications-for-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Restricting email notifications for your organization</a> </li> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Reviewing the audit log for your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/organizations/keeping-your-organization-secure/reviewing-your-organizations-installed-integrations" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Reviewing your organization's installed integrations</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-saml-single-sign-on-for-your-organization" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing SAML single sign-on for your organization</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/granting-access-to-your-organization-with-saml-single-sign-on" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Granting access to your organization with SAML single sign-on</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/managing-git-access-to-your-organizations-repositories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing Git access to your organization's repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/organizations/migrating-to-improved-organization-permissions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Migrating to improved organization permissions</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Organizations 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      color-text-link text-underline active"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Organizations" href="/en/organizations" class="d-inline-block ">Organizations</a><a title="category: Keeping your organization secure" href="/en/organizations/keeping-your-organization-secure" class="d-inline-block ">Keeping your organization secure</a><a title="article: Reviewing the audit log for your organization" href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-inline-block color-text-tertiary">Reviewing the audit log for your organization</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Reviewing the audit log for your organization</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>The audit log allows organization admins to quickly review the actions performed by members of your organization. It includes details such as who performed the action, what the action was, and when it was performed.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#accessing-the-audit-log">Accessing the audit log</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#searching-the-audit-log">Searching the audit log</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-operation">Search based on operation</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-repository">Search based on repository</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-the-user">Search based on the user</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-the-action-performed">Search based on the action performed</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-time-of-action">Search based on time of action</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#search-based-on-location">Search based on location</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#exporting-the-audit-log">Exporting the audit log</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-the-audit-log-api">Using the audit log API</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#using-the-graphql-api">Using the GraphQL API</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#using-the-rest-api">Using the REST API</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#audit-log-actions">Audit log actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#account-category-actions"><code>account</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#advisory_credit-category-actions"><code>advisory_credit</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#billing-category-actions"><code>billing</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#codespaces-category-actions"><code>codespaces</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependabot_alerts-category-actions"><code>dependabot_alerts</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependabot_alerts_new_repos-category-actions"><code>dependabot_alerts_new_repos</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependabot_security_updates-category-actions"><code>dependabot_security_updates</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependabot_security_updates_new_repos-category-actions"><code>dependabot_security_updates_new_repos</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependency_graph-category-actions"><code>dependency_graph</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#dependency_graph_new_repos-category-actions"><code>dependency_graph_new_repos</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#discussion_post-category-actions"><code>discussion_post</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#discussion_post_reply-category-actions"><code>discussion_post_reply</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#enterprise-category-actions"><code>enterprise</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#environment-category-actions"><code>environment</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#git-category-actions"><code>git</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#hook-category-actions"><code>hook</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#integration_installation_request-category-actions"><code>integration_installation_request</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#issue-category-actions"><code>issue</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#marketplace_agreement_signature-category-actions"><code>marketplace_agreement_signature</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#marketplace_listing-category-actions"><code>marketplace_listing</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#members_can_create_pages-category-actions"><code>members_can_create_pages</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#org-category-actions"><code>org</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#org_credential_authorization-category-actions"><code>org_credential_authorization</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#organization_label-category-actions"><code>organization_label</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#oauth_application-category-actions"><code>oauth_application</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#packages-category-actions"><code>packages</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#payment_method-category-actions"><code>payment_method</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#profile_picture-category-actions"><code>profile_picture</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#project-category-actions"><code>project</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#protected_branch-category-actions"><code>protected_branch</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#pull_request-category-actions"><code>pull_request</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#pull_request_review-category-actions"><code>pull_request_review</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#pull_request_review_comment-category-actions"><code>pull_request_review_comment</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repo-category-actions"><code>repo</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_advisory-category-actions"><code>repository_advisory</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_content_analysis-category-actions"><code>repository_content_analysis</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_dependency_graph-category-actions"><code>repository_dependency_graph</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_secret_scanning-category-actions"><code>repository_secret_scanning</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_vulnerability_alert-category-actions"><code>repository_vulnerability_alert</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#repository_vulnerability_alerts-category-actions"><code>repository_vulnerability_alerts</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#secret_scanning-category-actions"><code>secret_scanning</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#secret_scanning_new_repos-category-actions"><code>secret_scanning_new_repos</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#sponsors-category-actions"><code>sponsors</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#team-category-actions"><code>team</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#team_discussions-category-actions"><code>team_discussions</code> category actions</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#workflows-category-actions"><code>workflows</code> category actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#further-reading">Further reading</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="accessing-the-audit-log"><a href="#accessing-the-audit-log">Accessing the audit log</a></h3> 
+       <p>The audit log lists events triggered by activities that affect your organization within the last 90 days. Only owners can access an organization's audit log.</p> 
+       <ol> 
+        <li>In the top right corner of GitHub, click your profile photo, then click <strong>Your organizations</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/help/profile/your-organizations.png" alt="Your organizations in the profile menu"></span></li> 
+        <li>Click <strong>Settings</strong> next to the organization. <span class="procedural-image-wrapper"><img src="/assets/images/help/organizations/settings-button.png" alt="The settings button"></span></li> 
+        <li>In the Settings sidebar, click <strong>Audit log</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/help/organizations/org-settings-audit-log.png" alt="Org audit log settings in sidebar"></span></li> 
+       </ol> 
+       <h3 id="searching-the-audit-log"><a href="#searching-the-audit-log">Searching the audit log</a></h3> 
+       <p>The log lists the following information about each action:</p> 
+       <ul> 
+        <li>Which repository an action was performed in</li> 
+        <li>The user that performed the action</li> 
+        <li>The action that was performed</li> 
+        <li>Which country the action took place in</li> 
+        <li>The date and time the action occurred</li> 
+       </ul> 
+       <p>Note that you cannot search for entries using text. You can, however, construct search queries using a variety of filters. Many operators used when querying the log, such as <code>-</code>, <code>&gt;</code>, or <code>&lt;</code>, match the same format as searching across GitHub. For more information, see "<a href="/en/github/searching-for-information-on-github/about-searching-on-github">Searching on GitHub</a>."</p> 
+       <h4 id="search-based-on-operation"><a href="#search-based-on-operation">Search based on operation</a></h4> 
+       <p>Use the <code>operation</code> qualifier to limit actions to specific types of operations. For example:</p> 
+       <ul> 
+        <li><code>operation:access</code> finds all events where a resource was accessed.</li> 
+        <li><code>operation:authentication</code> finds all events where an authentication event was performed.</li> 
+        <li><code>operation:create</code> finds all events where a resource was created.</li> 
+        <li><code>operation:modify</code> finds all events where an existing resource was modified.</li> 
+        <li><code>operation:remove</code> finds all events where an existing resource was removed.</li> 
+        <li><code>operation:restore</code> finds all events where an existing resource was restored.</li> 
+        <li><code>operation:transfer</code> finds all events where an existing resource was transferred.</li> 
+       </ul> 
+       <h4 id="search-based-on-repository"><a href="#search-based-on-repository">Search based on repository</a></h4> 
+       <p>Use the <code>repo</code> qualifier to limit actions to a specific repository. For example:</p> 
+       <ul> 
+        <li><code>repo:my-org/our-repo</code> finds all events that occurred for the <code>our-repo</code> repository in the <code>my-org</code> organization.</li> 
+        <li><code>repo:my-org/our-repo repo:my-org/another-repo</code> finds all events that occurred for both the <code>our-repo</code> and <code>another-repo</code> repositories in the <code>my-org</code> organization.</li> 
+        <li><code>-repo:my-org/not-this-repo</code> excludes all events that occurred for the <code>not-this-repo</code> repository in the <code>my-org</code> organization.</li> 
+       </ul> 
+       <p>Note that you must include the account name within the <code>repo</code> qualifier; searching for just <code>repo:our-repo</code> will not work.</p> 
+       <h4 id="search-based-on-the-user"><a href="#search-based-on-the-user">Search based on the user</a></h4> 
+       <p>The <code>actor</code> qualifier can scope events based on who performed the action. For example:</p> 
+       <ul> 
+        <li><code>actor:octocat</code> finds all events performed by <code>octocat</code>.</li> 
+        <li><code>actor:octocat actor:hubot</code> finds all events performed by both <code>octocat</code> and <code>hubot</code>.</li> 
+        <li><code>-actor:hubot</code> excludes all events performed by <code>hubot</code>.</li> 
+       </ul> 
+       <p>Note that you can only use a GitHub username, not an individual's real name.</p> 
+       <h4 id="search-based-on-the-action-performed"><a href="#search-based-on-the-action-performed">Search based on the action performed</a></h4> 
+       <p>To search for specific events, use the <code>action</code> qualifier in your query. Actions listed in the audit log are grouped within the following categories:</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Category name</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><a href="#account-category-actions"><code>account</code></a></td>
+          <td>Contains all activities related to your organization account.</td>
+         </tr>
+         <tr>
+          <td><a href="#advisory_credit-category-actions"><code>advisory_credit</code></a></td>
+          <td>Contains all activities related to crediting a contributor for a security advisory in the GitHub Advisory Database. For more information, see "<a href="/en/github/managing-security-vulnerabilities/about-github-security-advisories">About GitHub Security Advisories</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#billing-category-actions"><code>billing</code></a></td>
+          <td>Contains all activities related to your organization's billing.</td>
+         </tr>
+         <tr>
+          <td><a href="#codespaces-category-actions"><code>codespaces</code></a></td>
+          <td>Contains all activities related to your organization's codespaces.</td>
+         </tr>
+         <tr>
+          <td><a href="#dependabot_alerts-category-actions"><code>dependabot_alerts</code></a></td>
+          <td>Contains organization-level configuration activities for Dependabot alerts in existing repositories. For more information, see "<a href="/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies">About alerts for vulnerable dependencies</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#dependabot_alerts_new_repos-category-actions"><code>dependabot_alerts_new_repos</code></a></td>
+          <td>Contains organization-level configuration activities for Dependabot alerts in new repositories created in the organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#dependabot_security_updates-category-actions"><code>dependabot_security_updates</code></a></td>
+          <td>Contains organization-level configuration activities for Dependabot security updates in existing repositories. For more information, see "<a href="/en/github/managing-security-vulnerabilities/configuring-dependabot-security-updates">Configuring Dependabot security updates</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#dependabot_security_updates_new_repos-category-actions"><code>dependabot_security_updates_new_repos</code></a></td>
+          <td>Contains organization-level configuration activities for Dependabot security updates for new repositories created in the organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#dependency_graph-category-actions"><code>dependency_graph</code></a></td>
+          <td>Contains organization-level configuration activities for dependency graphs for repositories. For more information, see "<a href="/en/github/visualizing-repository-data-with-graphs/about-the-dependency-graph">About the dependency graph</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#dependency_graph_new_repos-category-actions"><code>dependency_graph_new_repos</code></a></td>
+          <td>Contains organization-level configuration activities for new repositories created in the organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#discussion_post-category-actions"><code>discussion_post</code></a></td>
+          <td>Contains all activities related to discussions posted to a team page.</td>
+         </tr>
+         <tr>
+          <td><a href="#discussion_post_reply-category-actions"><code>discussion_post_reply</code></a></td>
+          <td>Contains all activities related to replies to discussions posted to a team page.</td>
+         </tr>
+         <tr>
+          <td><a href="#hook-category-actions"><code>hook</code></a></td>
+          <td>Contains all activities related to webhooks.</td>
+         </tr>
+         <tr>
+          <td><a href="#integration_installation_request-category-actions"><code>integration_installation_request</code></a></td>
+          <td>Contains all activities related to organization member requests for owners to approve integrations for use in the organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#issue-category-actions"><code>issue</code></a></td>
+          <td>Contains activities related to deleting an issue.</td>
+         </tr>
+         <tr>
+          <td><a href="#marketplace_agreement_signature-category-actions"><code>marketplace_agreement_signature</code></a></td>
+          <td>Contains all activities related to signing the GitHub Marketplace Developer Agreement.</td>
+         </tr>
+         <tr>
+          <td><a href="#marketplace_listing-category-actions"><code>marketplace_listing</code></a></td>
+          <td>Contains all activities related to listing apps in GitHub Marketplace.</td>
+         </tr>
+         <tr>
+          <td><a href="#members_can_create_pages-category-actions"><code>members_can_create_pages</code></a></td>
+          <td>Contains all activities related to managing the publication of GitHub Pages sites for repositories in the organization. For more information, see "<a href="/en/organizations/managing-organization-settings/managing-the-publication-of-github-pages-sites-for-your-organization">Managing the publication of GitHub Pages sites for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#org-category-actions"><code>org</code></a></td>
+          <td>Contains activities related to organization membership.</td>
+         </tr>
+         <tr>
+          <td><a href="#org_credential_authorization-category-actions"><code>org_credential_authorization</code></a></td>
+          <td>Contains all activities related to authorizing credentials for use with SAML single sign-on.</td>
+         </tr>
+         <tr>
+          <td><a href="#organization_label-category-actions"><code>organization_label</code></a></td>
+          <td>Contains all activities related to default labels for repositories in your organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#oauth_application-category-actions"><code>oauth_application</code></a></td>
+          <td>Contains all activities related to OAuth Apps.</td>
+         </tr>
+         <tr>
+          <td><a href="#packages-category-actions"><code>packages</code></a></td>
+          <td>Contains all activities related to GitHub Packages.</td>
+         </tr>
+         <tr>
+          <td><a href="#payment_method-category-actions"><code>payment_method</code></a></td>
+          <td>Contains all activities related to how your organization pays for GitHub.</td>
+         </tr>
+         <tr>
+          <td><a href="#profile_picture-category-actions"><code>profile_picture</code></a></td>
+          <td>Contains all activities related to your organization's profile picture.</td>
+         </tr>
+         <tr>
+          <td><a href="#project-category-actions"><code>project</code></a></td>
+          <td>Contains all activities related to project boards.</td>
+         </tr>
+         <tr>
+          <td><a href="#protected_branch-category-actions"><code>protected_branch</code></a></td>
+          <td>Contains all activities related to protected branches.</td>
+         </tr>
+         <tr>
+          <td><a href="#repo-category-actions"><code>repo</code></a></td>
+          <td>Contains activities related to the repositories owned by your organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_advisory-category-actions"><code>repository_advisory</code></a></td>
+          <td>Contains repository-level activities related to security advisories in the GitHub Advisory Database. For more information, see "<a href="/en/github/managing-security-vulnerabilities/about-github-security-advisories">About GitHub Security Advisories</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_content_analysis-category-actions"><code>repository_content_analysis</code></a></td>
+          <td>Contains all activities related to <a href="/en/articles/about-github-s-use-of-your-data">enabling or disabling data use for a private repository</a>.</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_dependency_graph-category-actions"><code>repository_dependency_graph</code></a></td>
+          <td>Contains repository-level activities related to enabling or disabling the dependency graph for a private repository. For more information, see "<a href="/en/github/visualizing-repository-data-with-graphs/about-the-dependency-graph">About the dependency graph</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_secret_scanning-category-actions"><code>repository_secret_scanning</code></a></td>
+          <td>Contains repository-level activities related to secret scanning. For more information, see "<a href="/en/github/administering-a-repository/about-secret-scanning">About secret scanning</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_vulnerability_alert-category-actions"><code>repository_vulnerability_alert</code></a></td>
+          <td>Contains all activities related to <a href="/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies">Dependabot alerts for vulnerable dependencies</a>.</td>
+         </tr>
+         <tr>
+          <td><a href="#repository_vulnerability_alerts-category-actions"><code>repository_vulnerability_alerts</code></a></td>
+          <td>Contains repository-level configuration activities for Dependabot alerts.</td>
+         </tr>
+         <tr>
+          <td><a href="#secret_scanning-category-actions"><code>secret_scanning</code></a></td>
+          <td>Contains organization-level configuration activities for secret scanning in existing repositories. For more information, see "<a href="/en/github/administering-a-repository/about-secret-scanning">About secret scanning</a>."</td>
+         </tr>
+         <tr>
+          <td><a href="#secret_scanning_new_repos-category-actions"><code>secret_scanning_new_repos</code></a></td>
+          <td>Contains organization-level configuration activities for secret scanning for new repositories created in the organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#sponsors-category-actions"><code>sponsors</code></a></td>
+          <td>Contains all events related to sponsor buttons (see "<a href="/en/articles/displaying-a-sponsor-button-in-your-repository">Displaying a sponsor button in your repository</a>")</td>
+         </tr>
+         <tr>
+          <td><a href="#team-category-actions"><code>team</code></a></td>
+          <td>Contains all activities related to teams in your organization.</td>
+         </tr>
+         <tr>
+          <td><a href="#team_discussions-category-actions"><code>team_discussions</code></a></td>
+          <td>Contains activities related to managing team discussions for an organization.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>You can search for specific sets of actions using these terms. For example:</p> 
+       <ul> 
+        <li><code>action:team</code> finds all events grouped within the team category.</li> 
+        <li><code>-action:hook</code> excludes all events in the webhook category.</li> 
+       </ul> 
+       <p>Each category has a set of associated actions that you can filter on. For example:</p> 
+       <ul> 
+        <li><code>action:team.create</code> finds all events where a team was created.</li> 
+        <li><code>-action:hook.events_changed</code> excludes all events where the events on a webhook have been altered.</li> 
+       </ul> 
+       <h4 id="search-based-on-time-of-action"><a href="#search-based-on-time-of-action">Search based on time of action</a></h4> 
+       <p>Use the <code>created</code> qualifier to filter events in the audit log based on when they occurred. Date formatting must follow the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> standard, which is <code>YYYY-MM-DD</code> (year-month-day). You can also add optional time information <code>THH:MM:SS+00:00</code> after the date, to search by the hour, minute, and second. That's <code>T</code>, followed by <code>HH:MM:SS</code> (hour-minutes-seconds), and a UTC offset (<code>+00:00</code>).</p> 
+       <p>When you search for a date, you can use greater than, less than, and range qualifiers to further filter results. For more information, see "<a href="/en/github/searching-for-information-on-github/understanding-the-search-syntax">Understanding the search syntax</a>."</p> 
+       <p>For example:</p> 
+       <ul> 
+        <li><code>created:2014-07-08</code> finds all events that occurred on July 8th, 2014.</li> 
+        <li><code>created:&gt;=2014-07-08</code> finds all events that occurred on or after July 8th, 2014.</li> 
+        <li><code>created:&lt;=2014-07-08</code> finds all events that occurred on or before July 8th, 2014.</li> 
+        <li><code>created:2014-07-01..2014-07-31</code> finds all events that occurred in the month of July 2014.</li> 
+       </ul> 
+       <p>The audit log contains data for the past 90 days, but you can use the <code>created</code> qualifier to search for events earlier than that.</p> 
+       <h4 id="search-based-on-location"><a href="#search-based-on-location">Search based on location</a></h4> 
+       <p>Using the qualifier <code>country</code>, you can filter events in the audit log based on the originating country. You can use a country's two-letter short code or its full name. Keep in mind that countries with spaces in their name will need to be wrapped in quotation marks. For example:</p> 
+       <ul> 
+        <li><code>country:de</code> finds all events that occurred in Germany.</li> 
+        <li><code>country:Mexico</code> finds all events that occurred in Mexico.</li> 
+        <li><code>country:"United States"</code> all finds events that occurred in the United States.</li> 
+       </ul> 
+       <h3 id="exporting-the-audit-log"><a href="#exporting-the-audit-log">Exporting the audit log</a></h3> 
+       <p>You can export the log as JSON data or a comma-separated value (CSV) file.</p> 
+       <p><img src="/assets/images/help/organizations/org-audit-log-export.png" alt="Export button"></p> 
+       <p>To filter the results in your export, search by one or more of these supported qualifiers before using the <strong>Export</strong> drop-down menu.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Qualifier</th>
+          <th>Example value</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>action</code></td>
+          <td>team.create</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td>octocat</td>
+         </tr>
+         <tr>
+          <td><code>user</code></td>
+          <td>codertocat</td>
+         </tr>
+         <tr>
+          <td><code>org</code></td>
+          <td>octo-org</td>
+         </tr>
+         <tr>
+          <td><code>repo</code></td>
+          <td>octo-org/documentation</td>
+         </tr>
+         <tr>
+          <td><code>created</code></td>
+          <td>2019-06-01</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>After you export the log as JSON or CSV, you'll see the following keys and values in the resulting file.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Key</th>
+          <th>Example value</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>action</code></td>
+          <td>team.create</td>
+         </tr>
+         <tr>
+          <td><code>actor</code></td>
+          <td>octocat</td>
+         </tr>
+         <tr>
+          <td><code>user</code></td>
+          <td>codertocat</td>
+         </tr>
+         <tr>
+          <td><code>org</code></td>
+          <td>octo-org</td>
+         </tr>
+         <tr>
+          <td><code>repo</code></td>
+          <td>octo-org/documentation</td>
+         </tr>
+         <tr>
+          <td><code>created_at</code></td>
+          <td>1429548104000 (Timestamp shows the time since Epoch with milliseconds.)</td>
+         </tr>
+         <tr>
+          <td><code>data.hook_id</code></td>
+          <td>245</td>
+         </tr>
+         <tr>
+          <td><code>data.events</code></td>
+          <td>["issues", "issue_comment", "pull_request", "pull_request_review_comment"]</td>
+         </tr>
+         <tr>
+          <td><code>data.events_were</code></td>
+          <td>["push", "pull_request", "issues"]</td>
+         </tr>
+         <tr>
+          <td><code>data.target_login</code></td>
+          <td>octocat</td>
+         </tr>
+         <tr>
+          <td><code>data.old_user</code></td>
+          <td>hubot</td>
+         </tr>
+         <tr>
+          <td><code>data.team</code></td>
+          <td>octo-org/engineering</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="using-the-audit-log-api"><a href="#using-the-audit-log-api">Using the audit log API</a></h3> 
+       <p>You can interact with the audit log using the GraphQL API or the REST API.</p> 
+       <h4 id="using-the-graphql-api"><a href="#using-the-graphql-api">Using the GraphQL API</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note</strong>: The audit log GraphQL API is available for organizations using GitHub Enterprise. For more information, see "<a href="/en/articles/github-s-products">GitHub's products</a>."</p> 
+       </div> 
+       <p>To ensure a secure IP and maintain compliance for your organization, you can use the audit log GraphQL API to keep copies of your audit log data and monitor:</p> 
+       <ul> 
+        <li>Access to your organization or repository settings</li> 
+        <li>Changes in permissions</li> 
+        <li>Added or removed users in an organization, repository, or team</li> 
+        <li>Users being promoted to admin</li> 
+        <li>Changes to permissions of a GitHub App</li> 
+       </ul> 
+       <p>Note that you can't retrieve Git events using the GraphQL API. To retrieve Git events, use the REST API instead. For more information, see "<a href="#git-category-actions"><code>git</code> category actions</a>."</p> 
+       <p>The GraphQL response can include data for up to 90 to 120 days.</p> 
+       <p>For example, you can make a GraphQL request to see all the new organization members added to your organization. For more information, see the "<a href="/en/graphql/reference/interfaces#auditentry">GraphQL API Audit Log</a>."</p> 
+       <h4 id="using-the-rest-api"><a href="#using-the-rest-api">Using the REST API</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> The audit log REST API is available for users of GitHub Enterprise Cloud only.</p> 
+       </div> 
+       <p>To ensure a secure IP and maintain compliance for your organization, you can use the audit log REST API to keep copies of your audit log data and monitor:</p> 
+       <ul> 
+        <li>Access to your organization or repository settings</li> 
+        <li>Changes in permissions</li> 
+        <li>Added or removed users in an organization, repository, or team</li> 
+        <li>Users being promoted to admin</li> 
+        <li>Changes to permissions of a GitHub App</li> 
+        <li>Git events, such as cloning, fetching, and pushing</li> 
+       </ul> 
+       <p>The audit log retains Git events for 7 days. This is shorter than other audit log events, which can be retained for 90 days.</p> 
+       <p>For more information about the audit log REST API, see "<a href="/en/rest/reference/orgs#get-the-audit-log-for-an-organization">Organizations</a>."</p> 
+       <h3 id="audit-log-actions"><a href="#audit-log-actions">Audit log actions</a></h3> 
+       <p>An overview of some of the most common actions that are recorded as events in the audit log.</p> 
+       <h4 id="account-category-actions"><a href="#account-category-actions"><code>account</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>billing_plan_change</code></td>
+          <td>Triggered when an organization's <a href="/en/articles/changing-the-duration-of-your-billing-cycle">billing cycle</a> changes.</td>
+         </tr>
+         <tr>
+          <td><code>plan_change</code></td>
+          <td>Triggered when an organization's <a href="/en/articles/about-billing-for-github-accounts">subscription</a> changes.</td>
+         </tr>
+         <tr>
+          <td><code>pending_plan_change</code></td>
+          <td>Triggered when an organization owner or billing manager <a href="/en/articles/how-does-upgrading-or-downgrading-affect-the-billing-process">cancels or downgrades a paid subscription</a>.</td>
+         </tr>
+         <tr>
+          <td><code>pending_subscription_change</code></td>
+          <td>Triggered when a <a href="/en/articles/about-billing-for-github-marketplace">GitHub Marketplace free trial starts or expires</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="advisory_credit-category-actions"><a href="#advisory_credit-category-actions"><code>advisory_credit</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>accept</code></td>
+          <td>Triggered when someone accepts credit for a security advisory. For more information, see "<a href="/en/github/managing-security-vulnerabilities/editing-a-security-advisory">Editing a security advisory</a>."</td>
+         </tr>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when the administrator of a security advisory adds someone to the credit section.</td>
+         </tr>
+         <tr>
+          <td><code>decline</code></td>
+          <td>Triggered when someone declines credit for a security advisory.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when the administrator of a security advisory removes someone from the credit section.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="billing-category-actions"><a href="#billing-category-actions"><code>billing</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>change_billing_type</code></td>
+          <td>Triggered when your organization <a href="/en/articles/adding-or-editing-a-payment-method">changes how it pays for GitHub</a>.</td>
+         </tr>
+         <tr>
+          <td><code>change_email</code></td>
+          <td>Triggered when your organization's <a href="/en/articles/setting-your-billing-email">billing email address</a> changes.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="codespaces-category-actions"><a href="#codespaces-category-actions"><code>codespaces</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a user <a href="/en/github/developing-online-with-codespaces/creating-a-codespace">creates a codespace</a>.</td>
+         </tr>
+         <tr>
+          <td><code>resume</code></td>
+          <td>Triggered when a user resumes a suspended codespace.</td>
+         </tr>
+         <tr>
+          <td><code>delete</code></td>
+          <td>Triggered when a user <a href="/en/github/developing-online-with-codespaces/deleting-a-codespace">deletes a codespace</a>.</td>
+         </tr>
+         <tr>
+          <td><code>create_an_org_secret</code></td>
+          <td>Triggered when a user creates an organization-level <a href="/en/github/developing-online-with-codespaces/managing-encrypted-secrets-for-codespaces#about-encrypted-secrets-for-codespaces">secret for Codespaces</a></td>
+         </tr>
+         <tr>
+          <td><code>update_an_org_secret</code></td>
+          <td>Triggered when a user updates an organization-level <a href="/en/github/developing-online-with-codespaces/managing-encrypted-secrets-for-codespaces#about-encrypted-secrets-for-codespaces">secret for Codespaces</a>.</td>
+         </tr>
+         <tr>
+          <td><code>remove_an_org_secret</code></td>
+          <td>Triggered when a user removes an organization-level <a href="/en/github/developing-online-with-codespaces/managing-encrypted-secrets-for-codespaces#about-encrypted-secrets-for-codespaces">secret for Codespaces</a>.</td>
+         </tr>
+         <tr>
+          <td><code>manage_access_and_security</code></td>
+          <td>Triggered when a user updates <a href="/en/github/developing-online-with-codespaces/managing-access-and-security-for-codespaces">which repositories a codespace can access</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependabot_alerts-category-actions"><a href="#dependabot_alerts-category-actions"><code>dependabot_alerts</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables Dependabot alerts for all existing private repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables Dependabot alerts for all existing private repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependabot_alerts_new_repos-category-actions"><a href="#dependabot_alerts_new_repos-category-actions"><code>dependabot_alerts_new_repos</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables Dependabot alerts for all new private repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables Dependabot alerts for all new private repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependabot_security_updates-category-actions"><a href="#dependabot_security_updates-category-actions"><code>dependabot_security_updates</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables Dependabot security updates for all existing repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables Dependabot security updates for all existing repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependabot_security_updates_new_repos-category-actions"><a href="#dependabot_security_updates_new_repos-category-actions"><code>dependabot_security_updates_new_repos</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables Dependabot security updates for all new repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables Dependabot security updates for all new repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependency_graph-category-actions"><a href="#dependency_graph-category-actions"><code>dependency_graph</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables the dependency graph for all existing repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables the dependency graph for all existing repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="dependency_graph_new_repos-category-actions"><a href="#dependency_graph_new_repos-category-actions"><code>dependency_graph_new_repos</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables the dependency graph for all new repositories. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization">Managing security and analysis settings for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables the dependency graph for all new repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="discussion_post-category-actions"><a href="#discussion_post-category-actions"><code>discussion_post</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when <a href="/en/articles/managing-disruptive-comments/#editing-a-comment">a team discussion post is edited</a>.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when <a href="/en/articles/managing-disruptive-comments/#deleting-a-comment">a team discussion post is deleted</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="discussion_post_reply-category-actions"><a href="#discussion_post_reply-category-actions"><code>discussion_post_reply</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when <a href="/en/articles/managing-disruptive-comments/#editing-a-comment">a reply to a team discussion post is edited</a>.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when <a href="/en/articles/managing-disruptive-comments/#deleting-a-comment">a reply to a team discussion post is deleted</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="enterprise-category-actions"><a href="#enterprise-category-actions"><code>enterprise</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed.</td>
+         </tr>
+         <tr>
+          <td><code>register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners">Adding self-hosted runners</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_created</code></td>
+          <td>Triggered when a self-hosted runner group is created. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#about-self-hosted-runner-groups">About self-hosted runner groups</a>.</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_removed</code></td>
+          <td>Triggered when a self-hosted runner group is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#removing-a-self-hosted-runner-group">Removing a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runner_removed</code></td>
+          <td>Triggered when the REST API is used to remove a self-hosted runner from a group.</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_added</code></td>
+          <td>Triggered when a self-hosted runner is added to a group. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group">Moving a self-hosted runner to a group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_updated</code></td>
+          <td>Triggered when a runner group's list of members is updated. For more information, see "<a href="/en/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization">Set self-hosted runners in a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_updated</code></td>
+          <td>Triggered when the configuration of a self-hosted runner group is changed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group">Changing the access policy of a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="environment-category-actions"><a href="#environment-category-actions"><code>environment</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create_actions_secret</code></td>
+          <td>Triggered when a secret is created in an environment. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+         <tr>
+          <td><code>delete</code></td>
+          <td>Triggered when an environment is deleted. For more information, see <a href="/en/actions/reference/environments#deleting-an-environment">"Deleting an environment</a>."</td>
+         </tr>
+         <tr>
+          <td><code>remove_actions_secret</code></td>
+          <td>Triggered when a secret is removed from an environment. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+         <tr>
+          <td><code>update_actions_secret</code></td>
+          <td>Triggered when a secret in an environment is updated. For more information, see <a href="/en/actions/reference/environments#environment-secrets">"Environment secrets</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="git-category-actions"><a href="#git-category-actions"><code>git</code> category actions</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> To access Git events in the audit log, you must use the audit log REST API. The audit log REST API is available for users of GitHub Enterprise Cloud only. For more information, see "<a href="/en/rest/reference/orgs#get-the-audit-log-for-an-organization">Organizations</a>."</p> 
+       </div> 
+       <p>The audit log retains Git events for 7 days. This is shorter than other audit log events, which can be retained for 90 days.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>clone</code></td>
+          <td>Triggered when a repository is cloned.</td>
+         </tr>
+         <tr>
+          <td><code>fetch</code></td>
+          <td>Triggered when changes are fetched from a repository.</td>
+         </tr>
+         <tr>
+          <td><code>push</code></td>
+          <td>Triggered when changes are pushed to a repository.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="hook-category-actions"><a href="#hook-category-actions"><code>hook</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when <a href="/en/articles/creating-webhooks">a new hook was added</a> to a repository owned by your organization.</td>
+         </tr>
+         <tr>
+          <td><code>config_changed</code></td>
+          <td>Triggered when an existing hook has its configuration altered.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when an existing hook was removed from a repository.</td>
+         </tr>
+         <tr>
+          <td><code>events_changed</code></td>
+          <td>Triggered when the events on a hook have been altered.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="integration_installation_request-category-actions"><a href="#integration_installation_request-category-actions"><code>integration_installation_request</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when an organization member requests that an organization owner install an integration for use in the organization.</td>
+         </tr>
+         <tr>
+          <td><code>close</code></td>
+          <td>Triggered when a request to install an integration for use in an organization is either approved or denied by an organization owner, or canceled by the organization member who opened the request.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="issue-category-actions"><a href="#issue-category-actions"><code>issue</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when an organization owner or someone with admin permissions in a repository deletes an issue from an organization-owned repository.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="marketplace_agreement_signature-category-actions"><a href="#marketplace_agreement_signature-category-actions"><code>marketplace_agreement_signature</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when you sign the GitHub Marketplace Developer Agreement.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="marketplace_listing-category-actions"><a href="#marketplace_listing-category-actions"><code>marketplace_listing</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>approve</code></td>
+          <td>Triggered when your listing is approved for inclusion in GitHub Marketplace.</td>
+         </tr>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when you create a listing for your app in GitHub Marketplace.</td>
+         </tr>
+         <tr>
+          <td><code>delist</code></td>
+          <td>Triggered when your listing is removed from GitHub Marketplace.</td>
+         </tr>
+         <tr>
+          <td><code>redraft</code></td>
+          <td>Triggered when your listing is sent back to draft state.</td>
+         </tr>
+         <tr>
+          <td><code>reject</code></td>
+          <td>Triggered when your listing is not accepted for inclusion in GitHub Marketplace.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="members_can_create_pages-category-actions"><a href="#members_can_create_pages-category-actions"><code>members_can_create_pages</code> category actions</a></h4> 
+       <p>For more information, see "<a href="/en/organizations/managing-organization-settings/managing-the-publication-of-github-pages-sites-for-your-organization">Managing the publication of GitHub Pages sites for your organization</a>."</p> 
+       <table>
+        <thead>
+         <tr>
+          <th align="left">Action</th>
+          <th align="left">Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td align="left"><code>enable</code></td>
+          <td align="left">Triggered when an organization owner enables publication of GitHub Pages sites for repositories in the organization.</td>
+         </tr>
+         <tr>
+          <td align="left"><code>disable</code></td>
+          <td align="left">Triggered when an organization owner disables publication of GitHub Pages sites for repositories in the organization.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="org-category-actions"><a href="#org-category-actions"><code>org</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>advanced_security_policy_selected_member_disabled</code></td>
+          <td>Triggered when an enterprise owner prevents GitHub Advanced Security features from being enabled for repositories owned by the organization. For more information, see "<a href="/en/github/setting-up-and-managing-your-enterprise/enforcing-policies-for-advanced-security-in-your-enterprise-account">Enforcing policies for Advanced Security in your enterprise account</a>."</td>
+         </tr>
+         <tr>
+          <td><code>advanced_security_policy_selected_member_enabled</code></td>
+          <td>Triggered when an enterprise owner allows GitHub Advanced Security features to be enabled for repositories owned by the organization. For more information, see "<a href="/en/github/setting-up-and-managing-your-enterprise/enforcing-policies-for-advanced-security-in-your-enterprise-account">Enforcing policies for Advanced Security in your enterprise account</a>."</td>
+         </tr>
+         <tr>
+          <td><code>audit_log_export</code></td>
+          <td>Triggered when an organization admin <a href="#exporting-the-audit-log">creates an export of the organization audit log</a>. If the export included a query, the log will list the query used and the number of audit log entries matching that query.</td>
+         </tr>
+         <tr>
+          <td><code>block_user</code></td>
+          <td>Triggered when an organization owner <a href="/en/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-organization">blocks a user from accessing the organization's repositories</a>.</td>
+         </tr>
+         <tr>
+          <td><code>cancel_invitation</code></td>
+          <td>Triggered when an organization invitation has been revoked.</td>
+         </tr>
+         <tr>
+          <td><code>create_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is created for an organization. For more information, see "<a href="/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-an-organization">Creating encrypted secrets for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>disable_oauth_app_restrictions</code></td>
+          <td>Triggered when an owner <a href="/en/articles/disabling-oauth-app-access-restrictions-for-your-organization">disables OAuth App access restrictions</a> for your organization.</td>
+         </tr>
+         <tr>
+          <td><code>disable_saml</code></td>
+          <td>Triggered when an organization admin disables SAML single sign-on for an organization.</td>
+         </tr>
+         <tr>
+          <td><code>disable_member_team_creation_permission</code></td>
+          <td>Triggered when an organization owner limits team creation to owners. For more information, see "<a href="/en/articles/setting-team-creation-permissions-in-your-organization">Setting team creation permissions in your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>disable_two_factor_requirement</code></td>
+          <td>Triggered when an owner disables a two-factor authentication requirement for all members, billing managers, and outside collaborators in an organization.</td>
+         </tr>
+         <tr>
+          <td><code>enable_oauth_app_restrictions</code></td>
+          <td>Triggered when an owner <a href="/en/articles/enabling-oauth-app-access-restrictions-for-your-organization">enables OAuth App access restrictions</a> for your organization.</td>
+         </tr>
+         <tr>
+          <td><code>enable_saml</code></td>
+          <td>Triggered when an organization admin <a href="/en/articles/enabling-and-testing-saml-single-sign-on-for-your-organization">enables SAML single sign-on</a> for an organization.</td>
+         </tr>
+         <tr>
+          <td><code>enable_member_team_creation_permission</code></td>
+          <td>Triggered when an organization owner allows members to create teams. For more information, see "<a href="/en/articles/setting-team-creation-permissions-in-your-organization">Setting team creation permissions in your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable_two_factor_requirement</code></td>
+          <td>Triggered when an owner requires two-factor authentication for all members, billing managers, and outside collaborators in an organization.</td>
+         </tr>
+         <tr>
+          <td><code>invite_member</code></td>
+          <td>Triggered when <a href="/en/articles/adding-organization-members-to-a-team">a new user was invited to join your organization</a>.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_app_access_approved</code></td>
+          <td>Triggered when an owner <a href="/en/articles/approving-oauth-apps-for-your-organization">grants organization access to an OAuth App</a>.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_app_access_denied</code></td>
+          <td>Triggered when an owner <a href="/en/articles/denying-access-to-a-previously-approved-oauth-app-for-your-organization">disables a previously approved OAuth App's access</a> to your organization.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_app_access_requested</code></td>
+          <td>Triggered when an organization member requests that an owner grant an OAuth App access to your organization.</td>
+         </tr>
+         <tr>
+          <td><code>register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-an-organization">Adding a self-hosted runner to an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>remove_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is removed.</td>
+         </tr>
+         <tr>
+          <td><code>remove_billing_manager</code></td>
+          <td>Triggered when an <a href="/en/articles/removing-a-billing-manager-from-your-organization">owner removes a billing manager from an organization</a> or when <a href="/en/articles/requiring-two-factor-authentication-in-your-organization">two-factor authentication is required in an organization</a> and a billing manager doesn't use 2FA or disables 2FA.</td>
+         </tr>
+         <tr>
+          <td><code>remove_member</code></td>
+          <td>Triggered when an <a href="/en/articles/removing-a-member-from-your-organization">owner removes a member from an organization</a> or when <a href="/en/articles/requiring-two-factor-authentication-in-your-organization">two-factor authentication is required in an organization</a> and an organization member doesn't use 2FA or disables 2FA. Also triggered when an <a href="/en/articles/removing-yourself-from-an-organization">organization member removes themselves</a> from an organization.</td>
+         </tr>
+         <tr>
+          <td><code>remove_outside_collaborator</code></td>
+          <td>Triggered when an owner removes an outside collaborator from an organization or when <a href="/en/articles/requiring-two-factor-authentication-in-your-organization">two-factor authentication is required in an organization</a> and an outside collaborator does not use 2FA or disables 2FA.</td>
+         </tr>
+         <tr>
+          <td><code>remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/removing-self-hosted-runners#removing-a-runner-from-an-organization">Removing a runner from an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>revoke_external_identity</code></td>
+          <td>Triggered when an organization owner revokes a member's linked identity. For more information, see "<a href="/en/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization#viewing-and-revoking-a-linked-identity">Viewing and managing a member's SAML access to your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>revoke_sso_session</code></td>
+          <td>Triggered when an organization owner revokes a member's SAML session. For more information, see "<a href="/en/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization#viewing-and-revoking-a-linked-identity">Viewing and managing a member's SAML access to your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_created</code></td>
+          <td>Triggered when a self-hosted runner group is created. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#creating-a-self-hosted-runner-group-for-an-organization">Creating a self-hosted runner group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_removed</code></td>
+          <td>Triggered when a self-hosted runner group is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#removing-a-self-hosted-runner-group">Removing a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_updated</code></td>
+          <td>Triggered when the configuration of a self-hosted runner group is changed. For more information, see "<a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group">Changing the access policy of a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_added</code></td>
+          <td>Triggered when a self-hosted runner is added to a group. For more information, see <a href="/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group">Moving a self-hosted runner to a group</a>.</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runner_removed</code></td>
+          <td>Triggered when the REST API is used to remove a self-hosted runner from a group. For more information, see "<a href="/en/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-organization">Remove a self-hosted runner from a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_updated</code></td>
+          <td>Triggered when a runner group's list of members is updated. For more information, see "<a href="/en/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization">Set self-hosted runners in a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+         <tr>
+          <td><code>unblock_user</code></td>
+          <td>Triggered when an organization owner <a href="/en/communities/maintaining-your-safety-on-github/unblocking-a-user-from-your-organization">unblocks a user from an organization</a>.</td>
+         </tr>
+         <tr>
+          <td><code>update_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is updated.</td>
+         </tr>
+         <tr>
+          <td><code>update_new_repository_default_branch_setting</code></td>
+          <td>Triggered when an owner changes the name of the default branch for new repositories in the organization. For more information, see "<a href="/en/organizations/managing-organization-settings/managing-the-default-branch-name-for-repositories-in-your-organization">Managing the default branch name for repositories in your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>update_default_repository_permission</code></td>
+          <td>Triggered when an owner changes the default repository permission level for organization members.</td>
+         </tr>
+         <tr>
+          <td><code>update_member</code></td>
+          <td>Triggered when an owner changes a person's role from owner to member or member to owner.</td>
+         </tr>
+         <tr>
+          <td><code>update_member_repository_creation_permission</code></td>
+          <td>Triggered when an owner changes the create repository permission for organization members.</td>
+         </tr>
+         <tr>
+          <td><code>update_saml_provider_settings</code></td>
+          <td>Triggered when an organization's SAML provider settings are updated.</td>
+         </tr>
+         <tr>
+          <td><code>update_terms_of_service</code></td>
+          <td>Triggered when an organization changes between the Standard Terms of Service and the Corporate Terms of Service. For more information, see "<a href="/en/articles/upgrading-to-the-corporate-terms-of-service">Upgrading to the Corporate Terms of Service</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="org_credential_authorization-category-actions"><a href="#org_credential_authorization-category-actions"><code>org_credential_authorization</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>grant</code></td>
+          <td>Triggered when a member <a href="/en/github/authenticating-to-github/authenticating-with-saml-single-sign-on">authorizes credentials for use with SAML single sign-on</a>.</td>
+         </tr>
+         <tr>
+          <td><code>deauthorized</code></td>
+          <td>Triggered when a member <a href="/en/github/authenticating-to-github/authenticating-with-saml-single-sign-on">deauthorizes credentials for use with SAML single sign-on</a>.</td>
+         </tr>
+         <tr>
+          <td><code>revoke</code></td>
+          <td>Triggered when an owner <a href="/en/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization">revokes authorized credentials</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="organization_label-category-actions"><a href="#organization_label-category-actions"><code>organization_label</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a default label is created.</td>
+         </tr>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when a default label is edited.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when a default label is deleted.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="oauth_application-category-actions"><a href="#oauth_application-category-actions"><code>oauth_application</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a new OAuth App is created.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when an existing OAuth App is deleted.</td>
+         </tr>
+         <tr>
+          <td><code>reset_secret</code></td>
+          <td>Triggered when an OAuth App's client secret is reset.</td>
+         </tr>
+         <tr>
+          <td><code>revoke_tokens</code></td>
+          <td>Triggered when an OAuth App's user tokens are revoked.</td>
+         </tr>
+         <tr>
+          <td><code>transfer</code></td>
+          <td>Triggered when an existing OAuth App is transferred to a new organization.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="packages-category-actions"><a href="#packages-category-actions"><code>packages</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>package_version_published</code></td>
+          <td>Triggered when a package version is published.</td>
+         </tr>
+         <tr>
+          <td><code>package_version_deleted</code></td>
+          <td>Triggered when a specific package version is deleted. For more information, see "<a href="/en/packages/learn-github-packages/deleting-and-restoring-a-package">Deleting and restoring a package</a>."</td>
+         </tr>
+         <tr>
+          <td><code>package_deleted</code></td>
+          <td>Triggered when an entire package is deleted. For more information, see "<a href="/en/packages/learn-github-packages/deleting-and-restoring-a-package">Deleting and restoring a package</a>."</td>
+         </tr>
+         <tr>
+          <td><code>package_version_restored</code></td>
+          <td>Triggered when a specific package version is deleted. For more information, see "<a href="/en/packages/learn-github-packages/deleting-and-restoring-a-package">Deleting and restoring a package</a>."</td>
+         </tr>
+         <tr>
+          <td><code>package_restored</code></td>
+          <td>Triggered when an entire package is restored. For more information, see "<a href="/en/packages/learn-github-packages/deleting-and-restoring-a-package">Deleting and restoring a package</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="payment_method-category-actions"><a href="#payment_method-category-actions"><code>payment_method</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>clear</code></td>
+          <td>Triggered when a payment method on file is <a href="/en/articles/removing-a-payment-method">removed</a>.</td>
+         </tr>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a new payment method is added, such as a new credit card or PayPal account.</td>
+         </tr>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when an existing payment method is updated.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="profile_picture-category-actions"><a href="#profile_picture-category-actions"><code>profile_picture</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>update</td>
+          <td>Triggered when you set or update your organization's profile picture.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="project-category-actions"><a href="#project-category-actions"><code>project</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a project board is created.</td>
+         </tr>
+         <tr>
+          <td><code>link</code></td>
+          <td>Triggered when a repository is linked to a project board.</td>
+         </tr>
+         <tr>
+          <td><code>rename</code></td>
+          <td>Triggered when a project board is renamed.</td>
+         </tr>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when a project board is updated.</td>
+         </tr>
+         <tr>
+          <td><code>delete</code></td>
+          <td>Triggered when a project board is deleted.</td>
+         </tr>
+         <tr>
+          <td><code>unlink</code></td>
+          <td>Triggered when a repository is unlinked from a project board.</td>
+         </tr>
+         <tr>
+          <td><code>update_org_permission</code></td>
+          <td>Triggered when the base-level permission for all organization members is changed or removed.</td>
+         </tr>
+         <tr>
+          <td><code>update_team_permission</code></td>
+          <td>Triggered when a team's project board permission level is changed or when a team is added or removed from a project board.</td>
+         </tr>
+         <tr>
+          <td><code>update_user_permission</code></td>
+          <td>Triggered when an organization member or outside collaborator is added to or removed from a project board or has their permission level changed.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="protected_branch-category-actions"><a href="#protected_branch-category-actions"><code>protected_branch</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create </code></td>
+          <td>Triggered when branch protection is enabled on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when branch protection is disabled on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_admin_enforced </code></td>
+          <td>Triggered when branch protection is enforced for repository administrators.</td>
+         </tr>
+         <tr>
+          <td><code>update_require_code_owner_review </code></td>
+          <td>Triggered when enforcement of required Code Owner review is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>dismiss_stale_reviews </code></td>
+          <td>Triggered when enforcement of dismissing stale pull requests is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_signature_requirement_enforcement_level </code></td>
+          <td>Triggered when enforcement of required commit signing is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_pull_request_reviews_enforcement_level </code></td>
+          <td>Triggered when enforcement of required pull request reviews is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_required_status_checks_enforcement_level </code></td>
+          <td>Triggered when enforcement of required status checks is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_strict_required_status_checks_policy</code></td>
+          <td>Triggered when the requirement for a branch to be up to date before merging is changed.</td>
+         </tr>
+         <tr>
+          <td><code>rejected_ref_update </code></td>
+          <td>Triggered when a branch update attempt is rejected.</td>
+         </tr>
+         <tr>
+          <td><code>policy_override </code></td>
+          <td>Triggered when a branch protection requirement is overridden by a repository administrator.</td>
+         </tr>
+         <tr>
+          <td><code>update_allow_force_pushes_enforcement_level </code></td>
+          <td>Triggered when force pushes are enabled or disabled for a protected branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_allow_deletions_enforcement_level </code></td>
+          <td>Triggered when branch deletion is enabled or disabled for a protected branch.</td>
+         </tr>
+         <tr>
+          <td><code>update_linear_history_requirement_enforcement_level </code></td>
+          <td>Triggered when required linear commit history is enabled or disabled for a protected branch.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="pull_request-category-actions"><a href="#pull_request-category-actions"><code>pull_request</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a pull request is created.</td>
+         </tr>
+         <tr>
+          <td><code>close</code></td>
+          <td>Triggered when a pull request is closed without being merged.</td>
+         </tr>
+         <tr>
+          <td><code>reopen</code></td>
+          <td>Triggered when a pull request is reopened after previously being closed.</td>
+         </tr>
+         <tr>
+          <td><code>merge</code></td>
+          <td>Triggered when a pull request is merged.</td>
+         </tr>
+         <tr>
+          <td><code>indirect_merge</code></td>
+          <td>Triggered when a pull request is considered merged because its commits were merged into the target branch.</td>
+         </tr>
+         <tr>
+          <td><code>ready_for_review</code></td>
+          <td>Triggered when a pull request is marked as ready for review.</td>
+         </tr>
+         <tr>
+          <td><code>converted_to_draft</code></td>
+          <td>Triggered when a pull request is converted to a draft.</td>
+         </tr>
+         <tr>
+          <td><code>create_review_request</code></td>
+          <td>Triggered when a review is requested.</td>
+         </tr>
+         <tr>
+          <td><code>remove_review_request</code></td>
+          <td>Triggered when a review request is removed.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="pull_request_review-category-actions"><a href="#pull_request_review-category-actions"><code>pull_request_review</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>submit</code></td>
+          <td>Triggered when a review is submitted.</td>
+         </tr>
+         <tr>
+          <td><code>dismiss</code></td>
+          <td>Triggered when a review is dismissed.</td>
+         </tr>
+         <tr>
+          <td><code>delete</code></td>
+          <td>Triggered when a review is deleted.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="pull_request_review_comment-category-actions"><a href="#pull_request_review_comment-category-actions"><code>pull_request_review_comment</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a review comment is added.</td>
+         </tr>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when a review comment is changed.</td>
+         </tr>
+         <tr>
+          <td><code>delete</code></td>
+          <td>Triggered when a review comment is deleted.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repo-category-actions"><a href="#repo-category-actions"><code>repo</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>access</code></td>
+          <td>Triggered when a user <a href="/en/github/administering-a-repository/setting-repository-visibility">changes the visibility</a> of a repository in the organization.</td>
+         </tr>
+         <tr>
+          <td><code>actions_enabled</code></td>
+          <td>Triggered when GitHub Actions is enabled for a repository. Can be viewed using the UI. This event is not included when you access the audit log using the REST API. For more information, see "<a href="#using-the-rest-api">Using the REST API</a>."</td>
+         </tr>
+         <tr>
+          <td><code>add_member</code></td>
+          <td>Triggered when a user accepts an <a href="/en/articles/inviting-collaborators-to-a-personal-repository">invitation to have collaboration access to a repository</a>.</td>
+         </tr>
+         <tr>
+          <td><code>add_topic</code></td>
+          <td>Triggered when a repository admin <a href="/en/articles/classifying-your-repository-with-topics">adds a topic</a> to a repository.</td>
+         </tr>
+         <tr>
+          <td><code>advanced_security_disabled</code></td>
+          <td>Triggered when a repository administrator disables GitHub Advanced Security features for the repository. For more information, see "<a href="/en/github/administering-a-repository/managing-security-and-analysis-settings-for-your-repository">Managing security and analysis settings for your repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>advanced_security_enabled</code></td>
+          <td>Triggered when a repository administrator enables GitHub Advanced Security features for the repository. For more information, see "<a href="/en/github/administering-a-repository/managing-security-and-analysis-settings-for-your-repository">Managing security and analysis settings for your repository</a>.".</td>
+         </tr>
+         <tr>
+          <td><code>archived</code></td>
+          <td>Triggered when a repository admin <a href="/en/articles/about-archiving-repositories">archives a repository</a>.</td>
+         </tr>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when <a href="/en/articles/creating-a-new-repository">a new repository is created</a>.</td>
+         </tr>
+         <tr>
+          <td><code>create_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is created for a repository. For more information, see "<a href="/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository">Creating encrypted secrets for a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when <a href="/en/articles/deleting-a-repository">a repository is deleted</a>.</td>
+         </tr>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when a repository is disabled (e.g., for <a href="/en/articles/unlocking-a-locked-account">insufficient funds</a>).</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when a repository is reenabled.</td>
+         </tr>
+         <tr>
+          <td><code>remove_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is removed.</td>
+         </tr>
+         <tr>
+          <td><code>remove_member</code></td>
+          <td>Triggered when a user is <a href="/en/articles/removing-a-collaborator-from-a-personal-repository">removed from a repository as a collaborator</a>.</td>
+         </tr>
+         <tr>
+          <td><code>register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-a-repository">Adding a self-hosted runner to a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed. For more information, see "<a href="/en/actions/hosting-your-own-runners/removing-self-hosted-runners#removing-a-runner-from-a-repository">Removing a runner from a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>remove_topic</code></td>
+          <td>Triggered when a repository admin removes a topic from a repository.</td>
+         </tr>
+         <tr>
+          <td><code>rename</code></td>
+          <td>Triggered when <a href="/en/articles/renaming-a-repository">a repository is renamed</a>.</td>
+         </tr>
+         <tr>
+          <td><code>self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+         <tr>
+          <td><code>transfer</code></td>
+          <td>Triggered when <a href="/en/articles/how-to-transfer-a-repository">a repository is transferred</a>.</td>
+         </tr>
+         <tr>
+          <td><code>transfer_start</code></td>
+          <td>Triggered when a repository transfer is about to occur.</td>
+         </tr>
+         <tr>
+          <td><code>unarchived</code></td>
+          <td>Triggered when a repository admin unarchives a repository.</td>
+         </tr>
+         <tr>
+          <td><code>update_actions_secret</code></td>
+          <td>Triggered when a GitHub Actions secret is updated.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_advisory-category-actions"><a href="#repository_advisory-category-actions"><code>repository_advisory</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>close</code></td>
+          <td>Triggered when someone closes a security advisory. For more information, see "<a href="/en/github/managing-security-vulnerabilities/about-github-security-advisories">About GitHub Security Advisories</a>."</td>
+         </tr>
+         <tr>
+          <td><code>cve_request</code></td>
+          <td>Triggered when someone requests a CVE (Common Vulnerabilities and Exposures) number from GitHub for a draft security advisory.</td>
+         </tr>
+         <tr>
+          <td><code>github_broadcast</code></td>
+          <td>Triggered when GitHub makes a security advisory public in the GitHub Advisory Database.</td>
+         </tr>
+         <tr>
+          <td><code>github_withdraw</code></td>
+          <td>Triggered when GitHub withdraws a security advisory that was published in error.</td>
+         </tr>
+         <tr>
+          <td><code>open</code></td>
+          <td>Triggered when someone opens a draft security advisory.</td>
+         </tr>
+         <tr>
+          <td><code>publish</code></td>
+          <td>Triggered when someone publishes a security advisory.</td>
+         </tr>
+         <tr>
+          <td><code>reopen</code></td>
+          <td>Triggered when someone reopens as draft security advisory.</td>
+         </tr>
+         <tr>
+          <td><code>update</code></td>
+          <td>Triggered when someone edits a draft or published security advisory.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_content_analysis-category-actions"><a href="#repository_content_analysis-category-actions"><code>repository_content_analysis</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner or person with admin access to the repository <a href="/en/github/understanding-how-github-uses-and-protects-your-data/managing-data-use-settings-for-your-private-repository">enables data use settings for a private repository</a>.</td>
+         </tr>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner or person with admin access to the repository <a href="/en/github/understanding-how-github-uses-and-protects-your-data/managing-data-use-settings-for-your-private-repository">disables data use settings for a private repository</a>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_dependency_graph-category-actions"><a href="#repository_dependency_graph-category-actions"><code>repository_dependency_graph</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository disables the dependency graph for a private repository. For more information, see "<a href="/en/github/visualizing-repository-data-with-graphs/about-the-dependency-graph">About the dependency graph</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository enables the dependency graph for a private repository.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_secret_scanning-category-actions"><a href="#repository_secret_scanning-category-actions"><code>repository_secret_scanning</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository disables secret scanning for a private repository. For more information, see "<a href="/en/github/administering-a-repository/about-secret-scanning">About secret scanning</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository enables secret scanning for a private repository.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_vulnerability_alert-category-actions"><a href="#repository_vulnerability_alert-category-actions"><code>repository_vulnerability_alert</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when GitHub creates a Dependabot alert for a repository that uses a vulnerable dependency. For more information, see "<a href="/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies">About alerts for vulnerable dependencies</a>."</td>
+         </tr>
+         <tr>
+          <td><code>dismiss</code></td>
+          <td>Triggered when an organization owner or person with admin access to the repository dismisses a Dependabot alert about a vulnerable dependency.</td>
+         </tr>
+         <tr>
+          <td><code>resolve</code></td>
+          <td>Triggered when someone with write access to a repository pushes changes to update and resolve a vulnerability in a project dependency.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="repository_vulnerability_alerts-category-actions"><a href="#repository_vulnerability_alerts-category-actions"><code>repository_vulnerability_alerts</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>authorized_users_teams</code></td>
+          <td>Triggered when an organization owner or a person with admin permissions to the repository updates the list of people or teams authorized to receive Dependabot alerts for vulnerable dependencies in the repository. For more information, see "<a href="/en/github/administering-a-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts">Managing security and analysis settings for your repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository disables Dependabot alerts.</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when a repository owner or person with admin access to the repository enables Dependabot alerts.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="secret_scanning-category-actions"><a href="#secret_scanning-category-actions"><code>secret_scanning</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables secret scanning for all existing, private repositories. For more information, see "<a href="/en/github/administering-a-repository/about-secret-scanning">About secret scanning</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables secret scanning for all existing, private repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="secret_scanning_new_repos-category-actions"><a href="#secret_scanning_new_repos-category-actions"><code>secret_scanning_new_repos</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables secret scanning for all new private repositories. For more information, see "<a href="/en/github/administering-a-repository/about-secret-scanning">About secret scanning</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables secret scanning for all new private repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="sponsors-category-actions"><a href="#sponsors-category-actions"><code>sponsors</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>custom_amount_settings_change</code></td>
+          <td>Triggered when you enable or disable custom amounts, or when you change the suggested custom amount (see "<a href="/en/github/supporting-the-open-source-community-with-github-sponsors/managing-your-sponsorship-tiers">Managing your sponsorship tiers</a>")</td>
+         </tr>
+         <tr>
+          <td><code>repo_funding_links_file_action</code></td>
+          <td>Triggered when you change the FUNDING file in your repository (see "<a href="/en/articles/displaying-a-sponsor-button-in-your-repository">Displaying a sponsor button in your repository</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsor_sponsorship_cancel</code></td>
+          <td>Triggered when you cancel a sponsorship (see "<a href="/en/articles/downgrading-a-sponsorship">Downgrading a sponsorship</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsor_sponsorship_create</code></td>
+          <td>Triggered when you sponsor an account (see "<a href="/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor">Sponsoring an open source contributor</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsor_sponsorship_payment_complete</code></td>
+          <td>Triggered after you sponsor an account and your payment has been processed (see "<a href="/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor">Sponsoring an open source contributor</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsor_sponsorship_preference_change</code></td>
+          <td>Triggered when you change whether you receive email updates from a sponsored account (see "<a href="/en/sponsors/sponsoring-open-source-contributors/managing-your-sponsorship">Managing your sponsorship</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsor_sponsorship_tier_change</code></td>
+          <td>Triggered when you upgrade or downgrade your sponsorship (see "<a href="/en/articles/upgrading-a-sponsorship">Upgrading a sponsorship</a>" and "<a href="/en/articles/downgrading-a-sponsorship">Downgrading a sponsorship</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_approve</code></td>
+          <td>Triggered when your GitHub Sponsors account is approved (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/setting-up-github-sponsors-for-your-organization">Setting up GitHub Sponsors for your organization</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_create</code></td>
+          <td>Triggered when your GitHub Sponsors account is created (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/setting-up-github-sponsors-for-your-organization">Setting up GitHub Sponsors for your organization</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_disable</code></td>
+          <td>Triggered when your GitHub Sponsors account is disabled</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_redraft</code></td>
+          <td>Triggered when your GitHub Sponsors account is returned to draft state from approved state</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_profile_update</code></td>
+          <td>Triggered when you edit your sponsored organization profile (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/editing-your-profile-details-for-github-sponsors">Editing your profile details for GitHub Sponsors</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_request_approval</code></td>
+          <td>Triggered when you submit your application for GitHub Sponsors for approval (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/setting-up-github-sponsors-for-your-organization">Setting up GitHub Sponsors for your organization</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_tier_description_update</code></td>
+          <td>Triggered when you change the description for a sponsorship tier (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/managing-your-sponsorship-tiers">Managing your sponsorship tiers</a>")</td>
+         </tr>
+         <tr>
+          <td><code>sponsored_developer_update_newsletter_send</code></td>
+          <td>Triggered when you send an email update to your sponsors (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/contacting-your-sponsors">Contacting your sponsors</a>")</td>
+         </tr>
+         <tr>
+          <td><code>waitlist_invite_sponsored_developer</code></td>
+          <td>Triggered when you are invited to join GitHub Sponsors from the waitlist (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/setting-up-github-sponsors-for-your-organization">Setting up GitHub Sponsors for your organization</a>")</td>
+         </tr>
+         <tr>
+          <td><code>waitlist_join</code></td>
+          <td>Triggered when you join the waitlist to become a sponsored organization (see "<a href="/en/sponsors/receiving-sponsorships-through-github-sponsors/setting-up-github-sponsors-for-your-organization">Setting up GitHub Sponsors for your organization</a>")</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="team-category-actions"><a href="#team-category-actions"><code>team</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>add_member</code></td>
+          <td>Triggered when a member of an organization is <a href="/en/articles/adding-organization-members-to-a-team">added to a team</a>.</td>
+         </tr>
+         <tr>
+          <td><code>add_repository</code></td>
+          <td>Triggered when a team is given control of a repository.</td>
+         </tr>
+         <tr>
+          <td><code>change_parent_team</code></td>
+          <td>Triggered when a child team is created or <a href="/en/articles/moving-a-team-in-your-organization-s-hierarchy">a child team's parent is changed</a>.</td>
+         </tr>
+         <tr>
+          <td><code>change_privacy</code></td>
+          <td>Triggered when a team's privacy level is changed.</td>
+         </tr>
+         <tr>
+          <td><code>create</code></td>
+          <td>Triggered when a new team is created.</td>
+         </tr>
+         <tr>
+          <td><code>demote_maintainer</code></td>
+          <td>Triggered when a user was demoted from a team maintainer to a team member. For more information, see "<a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/giving-team-maintainer-permissions-to-an-organization-member">Giving "team maintainer" permissions to an organization member</a>."</td>
+         </tr>
+         <tr>
+          <td><code>destroy</code></td>
+          <td>Triggered when a team is deleted from the organization.</td>
+         </tr>
+         <tr>
+          <td><code>team.promote_maintainer</code></td>
+          <td>Triggered when a user was promoted from a team member to a team maintainer. For more information, see "<a href="/en/organizations/managing-peoples-access-to-your-organization-with-roles/giving-team-maintainer-permissions-to-an-organization-member">Giving "team maintainer" permissions to an organization member</a>."</td>
+         </tr>
+         <tr>
+          <td><code>remove_member</code></td>
+          <td>Triggered when a member of an organization is <a href="/en/articles/removing-organization-members-from-a-team">removed from a team</a>.</td>
+         </tr>
+         <tr>
+          <td><code>remove_repository</code></td>
+          <td>Triggered when a repository is no longer under a team's control.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="team_discussions-category-actions"><a href="#team_discussions-category-actions"><code>team_discussions</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>disable</code></td>
+          <td>Triggered when an organization owner disables team discussions for an organization. For more information, see "<a href="/en/articles/disabling-team-discussions-for-your-organization">Disabling team discussions for your organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enable</code></td>
+          <td>Triggered when an organization owner enables team discussions for an organization.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h4 id="workflows-category-actions"><a href="#workflows-category-actions"><code>workflows</code> category actions</a></h4> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>cancel_workflow_run</code></td>
+          <td>Triggered when a workflow run has been cancelled. For more information, see "<a href="/en/actions/managing-workflow-runs/canceling-a-workflow">Canceling a workflow</a>."</td>
+         </tr>
+         <tr>
+          <td><code>completed_workflow_run</code></td>
+          <td>Triggered when a workflow status changes to <code>completed</code>. Can only be viewed using the REST API; not visible in the UI or the JSON/CSV export. For more information, see "<a href="/en/actions/managing-workflow-runs/viewing-workflow-run-history">Viewing workflow run history</a>."</td>
+         </tr>
+         <tr>
+          <td><code>created_workflow_run</code></td>
+          <td>Triggered when a workflow run is created. Can only be viewed using the REST API; not visible in the UI or the JSON/CSV export. For more information, see "<a href="/en/actions/learn-github-actions/introduction-to-github-actions#create-an-example-workflow">Create an example workflow</a>."</td>
+         </tr>
+         <tr>
+          <td><code>delete_workflow_run</code></td>
+          <td>Triggered when a workflow run is deleted. For more information, see "<a href="/en/actions/managing-workflow-runs/deleting-a-workflow-run">Deleting a workflow run</a>."</td>
+         </tr>
+         <tr>
+          <td><code>disable_workflow</code></td>
+          <td>Triggered when a workflow is disabled.</td>
+         </tr>
+         <tr>
+          <td><code>enable_workflow</code></td>
+          <td>Triggered when a workflow is enabled, after previously being disabled by <code>disable_workflow</code>.</td>
+         </tr>
+         <tr>
+          <td><code>rerun_workflow_run</code></td>
+          <td>Triggered when a workflow run is re-run. For more information, see "<a href="/en/actions/managing-workflow-runs/re-running-a-workflow">Re-running a workflow</a>."</td>
+         </tr>
+         <tr>
+          <td><code>prepared_workflow_job</code></td>
+          <td>Triggered when a workflow job is started. Includes the list of secrets that were provided to the job. Can only be

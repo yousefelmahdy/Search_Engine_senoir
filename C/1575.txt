@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Renaming a branch - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can change the name of a branch in a repository."> 
+  <meta name="keywords" content="Repositories"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="idMK0MQV-d1OV-F1qKXNoZoRZipQR1wLnQgY"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/github" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub.com</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/getting-started-with-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting started</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/quickstart" class="pl-4 pr-5 py-2 color-text-primary">Quickstart </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/set-up-git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Set up Git</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/create-a-repo" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Create a repo</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/fork-a-repo" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Fork a repo</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/github-flow" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub flow</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/be-social" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Be social</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/communicating-on-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Communicating on GitHub</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/github-glossary" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub glossary</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/git-cheatsheet" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Git cheatsheet</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/quickstart/git-and-github-learning-resources" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Git and GitHub learning resources</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/learning-about-github" class="pl-4 pr-5 py-2 color-text-primary">Learning about GitHub </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/githubs-products" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub's products</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/github-language-support" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub language support</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/about-github-advanced-security" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About GitHub Advanced Security</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/types-of-github-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Types of GitHub accounts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/access-permissions-on-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Access permissions on GitHub</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/learning-about-github/faq-about-changes-to-githubs-plans" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">FAQ about changes to GitHub’s plans</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/signing-up-for-github" class="pl-4 pr-5 py-2 color-text-primary">Signing up for GitHub </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/signing-up-for-github/signing-up-for-a-new-github-account" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sign up for a new GitHub account</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/signing-up-for-github/verifying-your-email-address" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Verifying your email address</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/signing-up-for-github/setting-up-a-trial-of-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up a trial of GitHub Enterprise Cloud</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/signing-up-for-github/setting-up-a-trial-of-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up a trial of GitHub Enterprise Server</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/using-github" class="pl-4 pr-5 py-2 color-text-primary">Using GitHub </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/exploring-early-access-releases-with-feature-preview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Exploring early access releases with feature preview</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/supported-browsers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Supported browsers</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/github-cli" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub CLI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/github-desktop" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub Desktop</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/github-for-mobile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub for mobile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/keyboard-shortcuts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Keyboard shortcuts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-github/troubleshooting-connectivity-problems" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting connectivity problems</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/exploring-projects-on-github" class="pl-4 pr-5 py-2 color-text-primary">Exploring projects on GitHub </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Finding ways to contribute to open source on GitHub</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/exploring-projects-on-github/saving-repositories-with-stars" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Saving repositories with stars</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/exploring-projects-on-github/following-people" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Following people</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/getting-started-with-git" class="pl-4 pr-5 py-2 color-text-primary">Getting started with Git </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/setting-your-username-in-git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting your username in Git</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/caching-your-github-credentials-in-git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Caching your GitHub credentials in Git</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/why-is-git-always-asking-for-my-password" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Why is Git always asking for my password?</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/updating-credentials-from-the-macos-keychain" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Updating credentials from the macOS Keychain</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/git-workflows" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Git workflows</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/about-remote-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About remote repositories</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/managing-remote-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing remote repositories</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/associating-text-editors-with-git" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Associating text editors with Git</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/configuring-git-to-handle-line-endings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring Git to handle line endings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/getting-started-with-git/ignoring-files" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Ignoring files</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/getting-started-with-github/using-git" class="pl-4 pr-5 py-2 color-text-primary">Using Git </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/pushing-commits-to-a-remote-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Pushing commits to a remote repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/getting-changes-from-a-remote-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Getting changes from a remote repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/dealing-with-non-fast-forward-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Dealing with non-fast-forward errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/splitting-a-subfolder-out-into-a-new-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Splitting a subfolder out into a new repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/about-git-subtree-merges" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About Git subtree merges</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/about-git-rebase" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About Git rebase</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/using-git-rebase-on-the-command-line" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using Git rebase on the command line</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/getting-started-with-github/using-git/resolving-merge-conflicts-after-a-git-rebase" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Resolving merge conflicts after a Git rebase</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/setting-up-and-managing-your-github-user-account" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">User accounts</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings" class="pl-4 pr-5 py-2 color-text-primary">Managing user account settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/about-your-personal-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About your personal dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-your-theme-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your theme settings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/changing-your-github-username" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changing your GitHub username</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/merging-multiple-user-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Merging multiple user accounts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/converting-a-user-into-an-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Converting a user into an organization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/deleting-your-user-account" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deleting your user account</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/permission-levels-for-a-user-account-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Permission levels for a user account repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/permission-levels-for-user-owned-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Permission levels for user-owned project boards</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-the-default-branch-name-for-your-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing the default branch name for your repositories</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing security and analysis settings for your user account</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-access-to-your-user-accounts-project-boards" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing access to your user account's project boards</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/best-practices-for-leaving-your-company" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Best practices for leaving your company</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/what-does-the-available-for-hire-checkbox-do" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">What does the 'Available for hire' checkbox do?</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences" class="pl-4 pr-5 py-2 color-text-primary">Managing email preferences </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/adding-an-email-address-to-your-github-account" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding an email address to your GitHub account</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/changing-your-primary-email-address" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changing your primary email address</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-a-backup-email-address" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting a backup email address</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting your commit email address</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Blocking command line pushes that expose your personal email address</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/remembering-your-github-username-or-email" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Remembering your GitHub username or email</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/types-of-emails-github-sends" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Types of emails GitHub sends</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/managing-marketing-emails-from-github" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing marketing emails from GitHub</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories" class="pl-4 pr-5 py-2 color-text-primary">Managing access to your personal repositories </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Inviting collaborators to a personal repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/removing-a-collaborator-from-a-personal-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing a collaborator from a personal repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/removing-yourself-from-a-collaborators-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing yourself from a collaborator's repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-user-accounts-repositories" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Maintaining ownership continuity of your user account's repositories</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations" class="pl-4 pr-5 py-2 color-text-primary">Managing your membership in organizations </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/about-organization-membership" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About organization membership</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/accessing-an-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing an organization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/viewing-peoples-roles-in-an-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing people's roles in an organization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/requesting-organization-approval-for-oauth-apps" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Requesting organization approval for OAuth Apps</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/publicizing-or-hiding-organization-membership" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publicizing or hiding organization membership</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/managing-your-scheduled-reminders" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your scheduled reminders</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-user-account/managing-your-membership-in-organizations/removing-yourself-from-an-organization" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Removing yourself from an organization</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/setting-up-and-managing-your-github-profile" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Profiles</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile" class="pl-4 pr-5 py-2 color-text-primary">Customizing your profile </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About your profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-organizations-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About your organization's profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Personalizing your profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your profile README</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Pinning items to your profile</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile" class="pl-4 pr-5 py-2 color-text-primary">Managing contribution graphs on your profile </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/viewing-contributions-on-your-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing contributions on your profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/showing-an-overview-of-your-activity-on-your-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Showing an overview of your activity on your profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/publicizing-or-hiding-your-private-contributions-on-your-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publicizing or hiding your private contributions on your profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/sending-your-github-enterprise-server-contributions-to-your-githubcom-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sending your GitHub Enterprise Server contributions to your GitHub.com profile</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Why are my contributions not showing up on my profile?</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/troubleshooting-commits-on-your-timeline" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting commits on your timeline</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/authenticating-to-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Authentication</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/managing-subscriptions-and-notifications-on-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing subscriptions and notifications on GitHub</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/setting-up-and-managing-your-enterprise" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/writing-on-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Writing on GitHub</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/creating-cloning-and-archiving-repositories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Creating, cloning, and archiving repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/committing-changes-to-your-project" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Committing changes to your project</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/collaborating-with-pull-requests" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Collaborating with pull requests</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/searching-for-information-on-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Searching for information on GitHub</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/importing-your-projects-to-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Importing your projects</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/administering-a-repository" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Administering a repository</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/github/administering-a-repository/managing-repository-settings" class="pl-4 pr-5 py-2 color-text-primary">Managing repository settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/setting-repository-visibility" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting repository visibility</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing teams and people with access to your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/classifying-your-repository-with-topics" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Classifying your repository with topics</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/customizing-how-changed-files-appear-on-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Customizing how changed files appear on GitHub</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/about-email-notifications-for-pushes-to-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About email notifications for pushes to your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/displaying-a-sponsor-button-in-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Displaying a sponsor button in your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/customizing-your-repositorys-social-media-preview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Customizing your repository's social media preview</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/viewing-deployment-activity-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing deployment activity for your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/managing-the-forking-policy-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing the forking policy for your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring the retention period for GitHub Actions artifacts and logs in your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/disabling-or-limiting-github-actions-for-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Disabling or limiting GitHub Actions for a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling or disabling GitHub Discussions for a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/disabling-project-boards-in-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Disabling project boards in a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/disabling-issues" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Disabling issues</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/managing-git-lfs-objects-in-archives-of-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing Git LFS objects in archives</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/managing-security-and-analysis-settings-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing security and analysis settings for your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/configuring-autolinks-to-reference-external-resources" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring autolinks to reference external resources</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/renaming-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Renaming a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/transferring-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Transferring a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/deleting-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Deleting a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-repository-settings/restoring-a-deleted-repository" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Restoring a deleted repository</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository" class="pl-4 pr-5 py-2 color-text-primary">Managing branches in your repository </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/viewing-branches-in-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing branches in your repository</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Renaming a branch</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/changing-the-default-branch" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Changing the default branch</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/deleting-and-restoring-branches-in-a-pull-request" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting and restoring branches in a pull request</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges" class="pl-4 pr-5 py-2 color-text-primary">Configuring pull request merges </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges/about-merge-methods-on-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About merge methods on GitHub</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring commit squashing for pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges/configuring-commit-rebasing-for-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring commit rebasing for pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing auto-merge for pull requests in your repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing the automatic deletion of branches</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests" class="pl-4 pr-5 py-2 color-text-primary">Defining the mergeability of pull requests </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About protected branches</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing a branch protection rule</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting required status checks</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/administering-a-repository/releasing-projects-on-github" class="pl-4 pr-5 py-2 color-text-primary">Releasing projects on GitHub </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/about-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About releases</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/managing-releases-in-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing releases in a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/viewing-your-repositorys-releases-and-tags" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing your repository's releases and tags</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/linking-to-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Linking to releases</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/comparing-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Comparing releases</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/releasing-projects-on-github/automation-for-release-forms-with-query-parameters" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Automation for release forms with query parameters</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository" class="pl-4 pr-5 py-2 color-text-primary">Finding information in a repository </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/filtering-issues-and-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Filtering issues and pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/filtering-issues-and-pull-requests-by-assignees" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Filtering issues and pull requests by assignees</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/filtering-issues-and-pull-requests-by-labels" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Filtering issues and pull requests by labels</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/filtering-pull-requests-by-review-status" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Filtering pull requests by review status</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/sorting-issues-and-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Sorting issues and pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/using-search-to-filter-issues-and-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Using search to filter issues and pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/github/administering-a-repository/finding-information-in-a-repository/sharing-filters" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Sharing filters</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/visualizing-repository-data-with-graphs" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Visualizing repository data with graphs</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/managing-files-in-a-repository" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing files in a repository</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/managing-large-files" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing large files</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/customizing-your-github-workflow" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Customizing your GitHub workflow</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/extending-github" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Extending GitHub</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/working-with-github-support" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with GitHub Support</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/understanding-how-github-uses-and-protects-your-data" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Understanding how GitHub uses and protects your data</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/github/site-policy" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Site policy</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub.com 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      color-text-link text-underline active"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub.com" href="/en/github" class="d-inline-block ">GitHub.com</a><a title="category: Administering a repository" href="/en/github/administering-a-repository" class="d-inline-block ">Administering a repository</a><a title="mapTopic: Managing branches in your repository" href="/en/github/administering-a-repository/managing-branches-in-your-repository" class="d-inline-block ">Managing branches in your repository</a><a title="article: Renaming a branch" href="/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-inline-block color-text-tertiary">Renaming a branch</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/github/administering-a-repository/managing-branches-in-your-repository/renaming-a-branch" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Renaming a branch</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can change the name of a branch in a repository.</p>
+       </div> 
+       <div class="permissions-statement">
+        <p>People with write permissions to a repository can rename a branch in the repository. People with admin permissions can rename the default branch.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-renaming-branches">About renaming branches</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#renaming-a-branch">Renaming a branch</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#updating-a-local-clone-after-a-branch-name-changes">Updating a local clone after a branch name changes</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-renaming-branches"><a href="#about-renaming-branches">About renaming branches</a></h3> 
+       <p>You can rename a branch in a repository on GitHub. For more information about branches, see "<a href="/en/github/collaborating-with-issues-and-pull-requests/about-branches">About branches</a>."</p> 
+       <p>When you rename a branch on GitHub, any URLs that contain the old branch name are automatically redirected to the equivalent URL for the renamed branch. Branch protection policies are also updated, as well as the base branch for open pull requests (including those for forks) and draft releases. After the rename is complete, GitHub provides instructions on the repository's home page directing contributors to update their local Git environments.</p> 
+       <p>Although file URLs are automatically redirected, raw file URLs are not redirected. Also, GitHub does not perform any redirects if users perform a <code>git pull</code> for the previous branch name.</p> 
+       <p>GitHub Actions workflows do not follow renames, so if your repository publishes an action, anyone using that action with <code>@{old-branch-name}</code> will break. You should consider adding a new branch with the original content plus an additional commit reporting that the branch name is deprecated and suggesting that users migrate to the new branch name.</p> 
+       <h3 id="renaming-a-branch"><a href="#renaming-a-branch">Renaming a branch</a></h3> 
+       <ol> 
+        <li>On GitHub, navigate to the main page of the repository.</li> 
+        <li>Above the list of files, click 
+         <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-git-branch" aria-label="The branch icon" role="img">
+          <path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 1

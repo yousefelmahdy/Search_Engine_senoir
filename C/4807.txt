@@ -1,0 +1,295 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab cloud native Helm Chart | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <meta name="docsearch:language" content="en"> 
+  <meta name="docsearch:version" content="13.10"> 
+  <meta http-equiv="content-security-policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'self'; connect-src 'self' https:; frame-src 'self' https:; img-src 'self' https: data:; manifest-src 'self'; media-src 'self'; worker-src 'none';"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/stylesheet-v104.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/highlight-v7.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/footer-v9.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/toc-v19.css"> 
+  <link rel="stylesheet" href="/13.10/assets/stylesheets/help-v2.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5"></script> 
+  <script src="/13.10/assets/javascripts/google_tagmanager-v1.js"></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <meta name="google-site-verification" content="xAUTWp3CDg-tU1LVVwsM9OrVhLR7L3SmiyKzkOuPNos"> 
+  <meta name="google-site-verification" content="F0zzwaMpiyWFcPQ1Lqu18qN3EnuQsqFXbySl_29yvHs"> 
+  <meta name="google-site-verification" content="nwo1bVaU0t9TZxZyM-aOI6-CofaH9GRL-uBPbdREWgc"> 
+  <script async src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js" integrity="sha256-idm3p7jl0XwymUpIccg6WI96tQmoDR/5DWEsnPnxYU4=" crossorigin="anonymous"></script> 
+  <script async src="/13.10/assets/javascripts/closest-polyfill-v.js"></script> 
+  <meta name="generator" content="Nanoc 4.12.0"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/13.10/assets/images/apple-touch-icon.png"> 
+  <link rel="manifest" href="/13.10/assets/manifests/site.webmanifest"> 
+  <meta name="msapplication-config" content="/13.10/assets/manifests/browserconfig.xml"> 
+  <meta name="msapplication-TileColor" content="#FC6D26"> 
+  <meta name="theme-color" content="#FC6D26"> 
+  <link rel="canonical" href="/13.10/charts/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90"> 
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0"> <a class="navbar-brand d-flex align-items-center justify-content-center" href="/"> <img src="/13.10/assets/images/gitlab-logo.svg" alt="GitLab logo" class="logo"> <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+    <ul class="navbar-nav mr-auto"> 
+     <li class="nav-item active"> 
+      <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/"> <span class="fa fa-search form-control-feedback position-absolute ml-2 text-muted"></span> 
+       <input class="form-control mr-sm-2 docsearch" name="query" type="search" placeholder="Search the docs..." aria-label="Search"> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+    </ul> 
+    <ul class="navbar-nav"> 
+     <li class="nav-item p-2 dropdown"> <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 13.10 </button> 
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/charts/index.html">GitLab.com (13.13-pre) <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/13.12/charts/index.html"> 13.12 </a> <a class="dropdown-item" href="/13.11/charts/index.html"> 13.11 </a> <a class="dropdown-item" href="/13.10/charts/index.html"> 13.10 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/12.10/charts/index.html"> 12.10 </a> <a class="dropdown-item" href="/11.11/charts/index.html"> 11.11 </a> 
+       <div class="dropdown-divider"></div> <a class="dropdown-item" href="/archives/">Archives</a> 
+      </div> </li>
+     <li class="nav-item p-2"> <a class="btn btn-danger text-white" href="https://about.gitlab.com/free-trial/" target="_blank" rel="noopener noreferrer" role="button"> Get free trial </a> </li>
+    </ul> 
+   </div> 
+  </nav> 
+  <section class="container-fluid pt-5"> 
+   <div class="row"> 
+    <div class="col-0 col-lg-2 pl-0"> 
+     <div class="nav-wrapper active"> 
+      <aside id="global-nav" class="global-nav"> 
+       <nav class="global-nav-content"> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0  active" href="/13.10/charts/"> GitLab Helm Charts Docs </a> 
+          <div class="section-title  active" data-toggle="collapse" aria-expanded="false" data-target="#sec_3fcab5cd-6dcc-47f6-9fd4-acb24d510382"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/charts/installation/"> Install </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_f9e98175-e9fb-46a5-8eef-0b673cd67638"></div> </span> 
+         <div class="collapse" id="sec_f9e98175-e9fb-46a5-8eef-0b673cd67638"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/tools.html"> Required tools </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_e99348a4-f323-4079-b221-45fcd87dc490"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/charts/installation/cloud/"> Cloud cluster preparation </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ae503d66-6bd5-4a2e-8ee4-57d6ff59437d"></div> </span> 
+          <div class="collapse" id="cat_ae503d66-6bd5-4a2e-8ee4-57d6ff59437d"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/installation/cloud/aks.html"> AKS </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/installation/cloud/eks.html"> EKS </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/installation/cloud/gke.html"> GKE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/installation/cloud/openshift.html"> OpenShift </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/deployment.html"> Deploy </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_2ddb99a9-f632-4d7e-ae76-7e6848bb672d"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/upgrade.html"> Upgrade </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_1d2cbbe0-c9e9-4109-9422-4e5e90054629"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/charts/backup-restore/"> Backup and Restore </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_1783c06e-8e6d-4c4d-8adc-d544a8c5caa7"></div> </span> 
+          <div class="collapse" id="cat_1783c06e-8e6d-4c4d-8adc-d544a8c5caa7"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/backup-restore/backup.html"> Backup </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/backup-restore/restore.html"> Restore </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/migration/"> Migrate from Omnibus </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b801ee1c-a2e3-41cd-bcdb-fb03ce5a4ab8"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/version_mappings.html"> Version mappings </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_94b14d25-a19b-4882-ad94-df68b9a1ef65"></div> </span> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/charts/charts/"> Configure </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_690badb6-254c-4aae-bd63-3df1775ee587"></div> </span> 
+         <div class="collapse" id="sec_690badb6-254c-4aae-bd63-3df1775ee587"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/charts/globals.html"> Globals </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_de521db5-8bea-4efb-89c5-f18d6d8432d3"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/charts/charts/gitlab/"> GitLab sub-charts </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_676c0e64-26fc-46ff-a1bf-2a5ad925c2a0"></div> </span> 
+          <div class="collapse" id="cat_676c0e64-26fc-46ff-a1bf-2a5ad925c2a0"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitaly/"> Gitaly chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitlab-exporter/"> GitLab Exporter chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitlab-grafana/"> GitLab Grafana chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitlab-pages/"> GitLab Pages chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitlab-runner/"> GitLab Runner chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/gitlab-shell/"> GitLab Shell chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/kas/"> KAS chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/migrations/"> Migrations chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/praefect/"> Praefect chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/sidekiq/"> Sidekiq chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/task-runner/"> Task Runner chart </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/charts/gitlab/webservice/"> Webservice chart </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/charts/minio/"> Minio chart </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_b7062382-cd12-43df-b7d3-e65866683615"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/charts/nginx/"> Nginx chart </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_844e5124-e1bc-410c-91bf-661f24c5ce56"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/deployment.html#redis"> Redis chart </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_95f2f916-62a8-4bb1-8544-2acc2320681e"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/installation/deployment.html#redis"> Redis HA chart </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_fcbac83d-78f5-4863-bc93-4f2419b459b6"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/charts/registry/"> Registry chart </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_2989399e-9a13-4393-906d-863b15b6e604"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/charts/advanced/"> Advanced </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_f7f356ba-14d4-4121-aba5-bf8e6c34e832"></div> </span> 
+          <div class="collapse" id="cat_f7f356ba-14d4-4121-aba5-bf8e6c34e832"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-db/"> External database </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-gitaly/"> External Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-mattermost/"> External Mattermost </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-nginx/"> External Nginx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-object-storage/"> External object storage </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/external-redis/"> External Redis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/advanced/persistent-volumes/"> Persistent volumes </a> </span> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/13.10/charts/troubleshooting/"> Troubleshoot </a> 
+          <div class="section-title  collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_b29190e3-a21a-46cb-86d2-7df6c5cfcc4c"></div> </span> 
+        </div> 
+        <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0 has-collapse" href="/13.10/charts/development/"> Contribute </a> 
+          <div class="section-title collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#sec_369862c5-4c5b-4d4e-835d-e43a0373b82b"></div> </span> 
+         <div class="collapse" id="sec_369862c5-4c5b-4d4e-835d-e43a0373b82b"> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1 has-collapse" href="/13.10/charts/architecture/"> Architecture of Cloud native GitLab Helm charts </a> 
+           <div class="collapse-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_d5591744-0d7e-4640-99ea-bdb3eb2eb7ed"></div> </span> 
+          <div class="collapse" id="cat_d5591744-0d7e-4640-99ea-bdb3eb2eb7ed"> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/architecture/backup-restore.html"> Backup and Restore </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/architecture/goals.html"> Goals </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/architecture/architecture.html"> Architecture </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/architecture/decisions.html"> Design Decisions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/13.10/charts/architecture/resource-usage.html"> Resource Usage </a> </span> 
+          </div> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/development/environment_setup.html"> Environment setup </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_ba46395e-6fa8-45b8-a600-4e03b689a27b"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/development/style_guide.html"> Style guide </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_77bdd8ed-feb1-4717-b478-dc8bf730107e"></div> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/13.10/charts/development/release.html"> Versioning and release </a> 
+           <div class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#cat_baa15497-6296-47f7-b73a-588d1a436e4d"></div> </span> 
+         </div> 
+        </div> 
+       </nav> 
+      </aside> 
+      <div id="js-nav-toggle"></div> 
+     </div> 
+    </div> 
+    <div class="main wrapper js-main-wrapper col-12 col-lg-7"> 
+     <div class="row"> 
+      <div class="col"> 
+       <div id="js-version-banner" data-is-outdated data-latest-version-url="/charts/index.html" data-archives-url="/archives/"></div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col"> 
+       <div class="my-3 my-lg-0"> <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a> 
+        <div class="gl-breadcrumbs d-flex w-100"> 
+         <img src="https://assets.gitlab-static.net/uploads/-/system/group/avatar/9970/logo-extra-whitespace.png?width=15" class="gl-breadcrumb-avatar-tile" width="15" height="15"> 
+         <ol class="breadcrumb gl-breadcrumb-list ml-1"> 
+          <li class="gl-breadcrumb-item">GitLab cloud native Helm Chart </li>
+         </ol> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row d-lg-none"> 
+      <div class="col"> 
+       <div class="doc-nav"></div> 
+      </div> 
+     </div> 
+     <main> 
+      <div class="row"> 
+       <div class="col"> 
+        <div class="article-metadata"> 
+        </div> 
+        <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+         <ul id="markdown-toc"> 
+          <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a> </li>
+          <li><a href="#gitlab-helm-chart-quick-start-guide" id="markdown-toc-gitlab-helm-chart-quick-start-guide">GitLab Helm chart quick start guide</a> </li>
+          <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> </li>
+          <li> <a href="#installation" id="markdown-toc-installation">Installation</a> 
+           <ul> 
+            <li><a href="#global-settings" id="markdown-toc-global-settings">Global settings</a> </li>
+            <li><a href="#complete-properties-list" id="markdown-toc-complete-properties-list">Complete properties list</a> </li>
+           </ul> </li>
+          <li><a href="#upgrading" id="markdown-toc-upgrading">Upgrading</a> </li>
+          <li><a href="#uninstall" id="markdown-toc-uninstall">Uninstall</a> </li>
+          <li> <a href="#advanced" id="markdown-toc-advanced">Advanced</a> 
+           <ul> 
+            <li><a href="#advanced-configuration" id="markdown-toc-advanced-configuration">Advanced Configuration</a> </li>
+            <li><a href="#migrate-from-omnibus-gitlab-to-kubernetes" id="markdown-toc-migrate-from-omnibus-gitlab-to-kubernetes">Migrate from Omnibus GitLab to Kubernetes</a> </li>
+           </ul> </li>
+          <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a> </li>
+          <li> <a href="#development" id="markdown-toc-development">Development</a> 
+           <ul> 
+            <li><a href="#gitlab-version-mappings" id="markdown-toc-gitlab-version-mappings">GitLab version mappings</a> </li>
+            <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a> </li>
+           </ul> </li>
+         </ul> 
+         <h1 id="gitlab-cloud-native-helm-chart">GitLab cloud native Helm Chart<a href="#gitlab-cloud-native-helm-chart" title="Permalink" class="anchor"></a> </h1> 
+         <p>This is the official, recommended, and supported method to install GitLab on a cloud native environment. </p>
+         <div class="admonition-wrapper note">
+          <div class="admonition alert alert-info"> 
+           <svg role="img" aria-label="note" class="gl-icon ml-1 mr-1 s16">
+            <use href="/13.10/assets/images/icons.svg#information-o" />
+            <title>note</title>
+           </svg>It is not necessary to have GitLab installed on Kubernetes in order to use the <a href="/13.10/ee/user/project/clusters/">GitLab Kubernetes integration</a>.
+          </div>
+         </div> 
+         <h2 id="introduction">Introduction<a href="#introduction" title="Permalink" class="anchor"></a> </h2> 
+         <p>The <code class="highlighter-rouge">gitlab/gitlab</code> chart is the best way to operate GitLab on Kubernetes. This chart contains all the required components to get started, and can scale to large deployments. </p>
+         <p>This chart includes all the components for a complete experience, but each part can be installed separately. </p>
+         <ul> 
+          <li>Core GitLab components: 
+           <ul> 
+            <li><a href="charts/nginx/index.html">NGINX Ingress</a> </li>
+            <li><a href="charts/registry/index.html">Registry</a> </li>
+            <li>GitLab/<a href="charts/gitlab/gitaly/index.html">Gitaly</a> </li>
+            <li>GitLab/<a href="charts/gitlab/gitlab-exporter/index.html">GitLab Exporter</a> </li>
+            <li>GitLab/<a href="charts/gitlab/gitlab-grafana/index.html">GitLab Grafana</a> </li>
+            <li>GitLab/<a href="charts/gitlab/gitlab-pages/index.html">GitLab Pages</a> </li>
+            <li>GitLab/<a href="charts/gitlab/gitlab-shell/index.html">GitLab Shell</a> </li>
+            <li>GitLab/<a href="charts/gitlab/mailroom/index.html">Mailroom</a> </li>
+            <li>GitLab/<a href="charts/gitlab/migrations/index.html">Migrations</a> </li>
+            <li>GitLab/<a href="charts/gitlab/sidekiq/index.html">Sidekiq</a> </li>
+            <li>GitLab/<a href="charts/gitlab/task-runner/index.html">Task Runner</a> </li>
+            <li>GitLab/<a href="charts/gitlab/webservice/index.html">Webservice</a> </li>
+           </ul> </li>
+          <li>Optional dependencies: 
+           <ul> 
+            <li><a href="https://artifacthub.io/packages/helm/bitnami/postgresql">PostgreSQL</a> </li>
+            <li><a href="https://artifacthub.io/packages/helm/bitnami/redis">Redis</a> </li>
+            <li><a href="charts/minio/index.html">MinIO</a> </li>
+           </ul> </li>
+          <li>Optional additions: 
+           <ul> 
+            <li><a href="https://artifacthub.io/packages/helm/prometheus-community/prometheus">Prometheus</a> </li>
+            <li><a href="https://artifacthub.io/packages/helm/grafana/grafana">Grafana</a> </li>
+            <li> <a href="/13.10/runner/install/kubernetes.html#running-docker-in-docker-containers-with-gitlab-runner"><em>Unprivileged</em></a> <a href="/13.10/runner/">GitLab Runner</a> using the Kubernetes executor </li>
+            <li>Automatically provisioned SSL via <a href="https://letsencrypt.org/">Let’s Encrypt</a>, using <a href="https://www.jetstack.io/">Jetstack</a>’s <a href="https://cert-manager.io/docs/">cert-manager</a> </li>
+            <li>GitLab/<a href="charts/gitlab/praefect/index.html">Praefect</a> </li>
+            <li>GitLab/<a href="charts/gitlab/kas/index.html">Kubernetes Agent Server (KAS)</a> </li>
+           </ul> </li>
+         </ul> 
+         <h2 id="gitlab-helm-chart-quick-start-guide">GitLab Helm chart quick start guide<a href="#gitlab-helm-chart-quick-start-guide" title="Permalink" class="anchor"></a> </h2> 
+         <p>For those looking to get up and running with these charts as fast as possible, in a <em>non-production</em> use case, we provide a <a href="quickstart/index.html">Quick Start Guide</a> for Proof of Concept (PoC) deployments. </p>
+         <p>This guide walks the user through deploying these charts with default values &amp; features, but <em>does not</em> meet production ready requirements. If you wish to deploy these charts into production under sustained load, you should follow the complete <a href="#installation">Installation guide</a> below. </p>
+         <h2 id="troubleshooting">Troubleshooting<a href="#troubleshooting" title="Permalink" class="anchor"></a> </h2> 
+         <p>We’ve done our best to make these charts as seamless as possible, but occasionally troubles do surface outside of our control. We’ve collected tips and tricks for troubleshooting common issues. Please examine these first before raising an <a href="https://gitlab.com/gitlab-org/charts/gitlab/-/issues">Issue</a>, and feel free to add to them by raising a <a href="https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests">Merge Request</a>! </p>
+         <p>See <a href="troubleshooting/index.html">Troubleshooting</a>. </p>
+         <h2 id="installation">Installation<a href="#installation" title="Permalink" class="anchor"></a> </h2> 
+         <p>The <code class="highlighter-rouge">gitlab/gitlab</code> chart contains all required dependencies. In production, you may want to enable optional features or <a href="#advanced-configuration">advanced configuration</a>. This guide walks all of the options and features of these charts in great depth. </p>
+         <p>If you are just looking to deploy a Proof of Concept for testing, we strongly suggest you follow our <a href="#gitlab-helm-chart-quick-start-guide">Quick Start</a> for your first iteration. </p>
+         <ol> 
+          <li><a href="installation/index.html">Preparation</a> </li>
+          <li><a href="installation/deployment.html">Deployment</a> </li>
+         </ol> 
+         <h3 id="global-settings">Global settings<a href="#global-settings" title="Permalink" class="anchor"></a> </h3> 
+         <p>The complexity of these charts lends themselves to the use of global properties. There are many common global settings that apply to multiple charts. See the <a href="charts/globals.html">Globals documentation</a> for details on the different global configuration values and their application. </p>
+         <h3 id="complete-properties-list">Complete properties list<a href="#complete-properties-list" title="Permalink" class="anchor"></a> </h3> 
+         <p>We’re often asked to put a table of all possible properties directly into this index. These charts are <em>massive</em> in scale, and as such the number of properties exceeds the amount of context we’re comfortable placing here. Please see our (nearly) <a href="installation/command-line-options.html">comprehensive list of properties and defaults</a>. </p>
+         <h2 id="upgrading">Upgrading<a href="#upgrading" title="Permalink" class="anchor"></a> </h2> 
+         <p>Once your GitLab Chart is installed, configuration changes and chart updates should be done using <code class="highlighter-rouge">helm upgrade</code>: </p>
+         <div class="language-shell highlighter-rouge">
+          <div class="highlight">
+           <pre class="highlight"><code>helm repo add gitlab https://charts.gitlab.io/
+helm repo update
+helm get values gitlab <span class="o">&gt;</span> gitlab.yaml
+helm upgrade gitlab gitlab/gitlab <span class="nt">-f</span> gitlab.yaml
+</code></pre>
+          </div>
+         </div> 
+         <p>For more detailed information see <a href="installation/upgrade.html">Upgrading</a>. </p>
+         <div class="admonition-wrapper note">
+          <div class="admonition alert alert-info"> 
+           <svg role="img" aria-label="note" class="gl-icon ml-1 mr-1 s16">
+            <use href="/13.10/assets/images/icons.svg#information-o" />
+            <title>note</title>
+           </svg><strong>Zero-downtime upgrades</strong> are not available with the GitLab charts. Ongoing work to support this feature can be tracked via <a href="https://gitlab.com/groups/gitlab-org/-/epics/3444">GitLab Epic 3444</a>.
+          </div>
+         </div> 
+         <h2 id="uninstall">Uninstall<a href="#uninstall" title="Permalink" class="anchor"></a> </h2> 
+         <p>To uninstall the GitLab Chart, run the following: </p>
+         <div class="language-shell highlighter-rouge">
+          <div class="highlight">
+           <pre class="highlight"><code>helm uninstall gitlab
+</code></pre>
+          </div>
+         </div> 
+         <div class="admonition-wrapper note">
+          <div class="admonition alert alert-info"> 
+           <svg role="img" aria-label="note" class="gl-icon ml-1 mr-1 s16">
+            <use href="/13.10/assets/images/icons.svg#information-o" />
+            <title>note</title>
+           </svg>With Helm v2, you need to use the command <code class="highlighter-rouge">helm delete --purge gitlab</code>.
+          </div>
+         </div> 
+         <p>For the purposes of continuity, these charts have some Kubernetes objects that are not removed when performing <code class="highlighter-rouge">helm uninstall</code>. These are items we require you to <em>consciously</em> remove them, as they affect re-deployment should you choose to. </p>
+         <ul> 
+          <li>PVCs for stateful data, which you must <em>consciously</em> remove 
+           <ul> 
+            <li>Gitaly: This is your repository data. </li>
+            <li>PostgreSQL (if internal): This is your metadata. </li>
+            <li>Redis (if internal): This is cache &amp; job queues, which can be safely removed. </li>
+           </ul> </li>
+          <li>Secrets, if generated by our shared-secrets Job. These charts are designed to never generate Kubernetes Secrets via Helm directly. As such, Helm can’t remove them. They contain passwords, encryption secrets, and so on. They should not be callously destroyed. </li>
+          <li>ConfigMaps 
+           <ul> 
+            <li> <code class="highlighter-rouge">ingress-controller-leader-RELEASE-nginx</code>: This is generated by the NGINX Ingress controller itself, and is outside the control of our chart. It can be safely removed. </li>
+           </ul> </li>
+         </ul> 
+         <p>The PVCs and Secrets have the <code class="highlighter-rouge">release</code> label set, so you can find these with: </p>
+         <div class="language-shell highlighter-rouge">
+          <div class="highlight">
+           <pre class="highlight"><code>kubectl get pvc,secret <span class="nt">-lrelease</span><span class="o">=</span>gitlab
+</code></pre>
+          </div>
+         </div> 
+         <h2 id="advanced">Advanced<a href="#advanced" title="Permalink" class="anchor"></a> </h2> 
+         <p>Beyond the basic deployments of GitLab in cloud native environments, more complex configuration is possible. This section serve

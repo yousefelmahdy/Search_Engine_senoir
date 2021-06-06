@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Troubleshooting Dependabot errors - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="Sometimes Dependabot is unable to raise a pull request to update your dependencies. You can review the error and unblock Dependabot."> 
+  <meta name="keywords" content="Dependabot,Security updates,Version updates,Repositories,Pull requests,Troubleshooting,Errors,Dependencies"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="rYH4uIWm-bpU-lOqFb-FAywRWnMRGKN-YnH4"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/code-security" class="pl-4 pr-5 pb-1 f4 color-text-primary">Code security</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/getting-started" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting started</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/github-security-features" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub security features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your repository</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/adding-a-security-policy-to-your-repository" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Adding a security policy to your repository</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secret-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secret security</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/about-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/configuring-secret-scanning-for-your-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring secret scanning for your repositories</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/defining-custom-patterns-for-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Defining custom patterns</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/managing-alerts-from-secret-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing alerts from secret scanning</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secure-coding" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secure coding</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors" class="pl-4 pr-5 py-2 color-text-primary">Scanning automatically </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/triaging-code-scanning-alerts-in-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Triaging alerts in pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/managing-code-scanning-alerts-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing alerts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-the-codeql-workflow-for-compiled-languages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring for compiled languages</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/troubleshooting-the-codeql-workflow" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting CodeQL</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/running-codeql-code-scanning-in-a-container" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Code scanning in a container</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning" class="pl-4 pr-5 py-2 color-text-primary">Integration </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/about-integration-with-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About integration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/uploading-a-sarif-file-to-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Uploading a SARIF file</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">SARIF support</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system" class="pl-4 pr-5 py-2 color-text-primary">CodeQL CI system support </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/about-codeql-code-scanning-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Code scanning in your CI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL CLI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/troubleshooting-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting CodeQL runner</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-advisories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security advisories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/supply-chain-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Supply chain security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain" class="pl-4 pr-5 py-2 color-text-primary">Understanding your software supply chain </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About the dependency graph</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Exploring the dependencies of a repository</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About the dependency graph</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About dependency review</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Exploring the dependencies of a repository</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically" class="pl-4 pr-5 py-2 color-text-primary">Keeping your dependencies updated automatically </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About Dependabot version updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/upgrading-from-dependabotcom-to-github-native-dependabot" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Upgrading from Dependabot.com to GitHub-native Dependabot</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-version-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling and disabling version updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/listing-dependencies-configured-for-version-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Listing dependencies configured for version updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/managing-pull-requests-for-dependency-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing pull requests for dependency updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/managing-encrypted-secrets-for-dependabot" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing encrypted secrets for Dependabot</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/customizing-dependency-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Customizing dependency updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuration options for dependency updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/keeping-your-actions-up-to-date-with-dependabot" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Keeping your actions up to date with Dependabot</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies" class="pl-4 pr-5 py-2 color-text-primary">Managing vulnerabilities in your project's dependencies </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-managing-vulnerable-dependencies" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About managing vulnerable dependencies</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/browsing-security-vulnerabilities-in-the-github-advisory-database" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Browsing the Advisory Database</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-alerts-for-vulnerable-dependencies" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About alerts for vulnerable dependencies</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/configuring-notifications-for-vulnerable-dependencies" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring notifications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-dependabot-security-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About Dependabot security updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/configuring-dependabot-security-updates" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring Dependabot security updates</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/viewing-and-updating-vulnerable-dependencies-in-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing and updating vulnerable dependencies</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-the-detection-of-vulnerable-dependencies" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting detection</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting errors</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security overview</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Code security 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      color-text-link text-underline active"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Code security" href="/en/code-security" class="d-inline-block ">Code security</a><a title="category: Supply chain security" href="/en/code-security/supply-chain-security" class="d-inline-block ">Supply chain security</a><a title="mapTopic: Managing vulnerabilities in your project's dependencies" href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies" class="d-inline-block ">Managing vulnerabilities in your project's dependencies</a><a title="article: Troubleshooting errors" href="/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/troubleshooting-dependabot-errors" class="d-inline-block color-text-tertiary">Troubleshooting errors</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Troubleshooting Dependabot errors</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>Sometimes Dependabot is unable to raise a pull request to update your dependencies. You can review the error and unblock Dependabot.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-dependabot-errors">About Dependabot errors</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#investigating-errors-with-dependabot-security-updates">Investigating errors with Dependabot security updates</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#investigating-errors-with-dependabot-version-updates">Investigating errors with Dependabot version updates</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#understanding-dependabot-errors">Understanding Dependabot errors</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#triggering-a-dependabot-pull-request-manually">Triggering a Dependabot pull request manually</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-dependabot-errors"><a href="#about-dependabot-errors">About Dependabot errors</a></h3> 
+       <p>Dependabot raises pull requests to update dependencies. Depending on how your repository is configured, Dependabot may raise pull requests for version updates and/or for security updates. You manage these pull requests in the same way as any other pull request, but there are also some extra commands available. For information about enabling Dependabot dependency updates, see "<a href="/en/github/managing-security-vulnerabilities/configuring-dependabot-security-updates">Configuring Dependabot security updates</a>" and "<a href="/en/github/administering-a-repository/enabling-and-disabling-version-updates">Enabling and disabling version updates</a>."</p> 
+       <p>If anything prevents Dependabot from raising a pull request, this is reported as an error.</p> 
+       <h3 id="investigating-errors-with-dependabot-security-updates"><a href="#investigating-errors-with-dependabot-security-updates">Investigating errors with Dependabot security updates</a></h3> 
+       <p>When Dependabot is blocked from creating a pull request to fix a Dependabot alert, it posts the error message on the alert. The Dependabot alerts view shows a list of any alerts that have not been resolved yet. To access the alerts view, click <strong>Dependabot alerts</strong> on the <strong>Security</strong> tab for the repository. Where a pull request that will fix the vulnerable dependency has been generated, the alert includes a link to that pull request.</p> 
+       <p><img src="/assets/images/help/dependabot/dependabot-alert-pr-link.png" alt="Dependabot alerts view showing a pull request link"></p> 
+       <p>There are three reasons why an alert may have no pull request link:</p> 
+       <ol> 
+        <li>Dependabot security updates are not enabled for the repository.</li> 
+        <li>The alert is for an indirect or transitive dependency that is not explicitly defined in a lock file.</li> 
+        <li>An error blocked Dependabot from creating a pull request.</li> 
+       </ol> 
+       <p>If an error blocked Dependabot from creating a pull request, you can display details of the error by clicking the alert.</p> 
+       <p><img src="/assets/images/help/dependabot/dependabot-security-update-error.png" alt="Dependabot alert showing the error that blocked the creation of a pull request"></p> 
+       <h3 id="investigating-errors-with-dependabot-version-updates"><a href="#investigating-errors-with-dependabot-version-updates">Investigating errors with Dependabot version updates</a></h3> 
+       <p>When Dependabot is blocked from creating a pull request to update a dependency in an ecosystem, it posts the error icon on the manifest file. The manifest files that are managed by Dependabot are listed on the Dependabot tab. To access this tab, on the <strong>Insights</strong> tab for the repository click <strong>Dependency graph</strong>, and then click the <strong>Dependabot</strong> tab.</p> 
+       <p><img src="/assets/images/help/dependabot/dependabot-tab-view-error-beta.png" alt="Dependabot view showing an error"></p> 
+       <p>To see the log file for any manifest file, click the <strong>Last checked TIME ago</strong> link. When you display the log file for a manifest that's shown with an error symbol (for example, Maven in the screenshot above), any errors are also displayed.</p> 
+       <p><img src="/assets/images/help/dependabot/dependabot-version-update-error-beta.png" alt="Dependabot version update error and log "></p> 
+       <h3 id="understanding-dependabot-errors"><a href="#understanding-dependabot-errors">Understanding Dependabot errors</a></h3> 
+       <p>Pull requests for security updates act to upgrade a vulnerable dependency to the minimum version that includes a fix for the vulnerability. In contrast, pull requests for version updates act to upgrade a dependency to the latest version allowed by the package manifest and Dependabot configuration files. Consequently, some errors are specific to one type of update.</p> 
+       <h4 id="dependabot-cannot-update-dependency-to-a-non-vulnerable-version"><a href="#dependabot-cannot-update-dependency-to-a-non-vulnerable-version">Dependabot cannot update DEPENDENCY to a non-vulnerable version</a></h4> 
+       <p><strong>Security updates only.</strong> Dependabot cannot create a pull request to update the vulnerable dependency to a secure version without breaking other dependencies in the dependency graph for this repository.</p> 
+       <p>Every application that has dependencies has a dependency graph, that is, a directed acyclic graph of every package version that the application directly or indirectly depends on. Every time a dependency is updated, this graph must resolve otherwise the application won't build. When an ecosystem has a deep and complex dependency graph, for example, npm and RubyGems, it is often impossible to upgrade a single dependency without upgrading the whole ecosystem.</p> 
+       <p>The best way to avoid this problem is to stay up to date with the most recently released versions, for example, by enabling version updates. This increases the likelihood that a vulnerability in one dependency can be resolved by a simple upgrade that doesn't break the dependency graph. For more information, see "<a href="/en/github/administering-a-repository/enabling-and-disabling-version-updates">Enabling and disabling version updates</a>."</p> 
+       <h4 id="dependabot-cannot-update-to-the-required-version-as-there-is-already-an-open-pull-request-for-the-latest-version"><a href="#dependabot-cannot-update-to-the-required-version-as-there-is-already-an-open-pull-request-for-the-latest-version">Dependabot cannot update to the required version as there is already an open pull request for the latest version</a></h4> 
+       <p><strong>Security updates only.</strong> Dependabot will not create a pull request to update the vulnerable dependency to a secure version because there is already an open pull request to update this dependency. You will see this error when a vulnerability is detected in a single dependency and there's already an open pull request to update the dependency to the latest version.</p> 
+       <p>There are two options: you can review the open pull request and merge it as soon as you are confident that the change is safe, or close that pull request and trigger a new security update pull request. For more information, see "<a href="#triggering-a-dependabot-pull-request-manually">Triggering a Dependabot pull request manually</a>."</p> 
+       <h4 id="dependabot-timed-out-during-its-update"><a href="#dependabot-timed-out-during-its-update">Dependabot timed out during its update</a></h4> 
+       <p>Dependabot took longer than the maximum time allowed to assess the update required and prepare a pull request. This error is usually seen only for large repositories with many manifest files, for example, npm or yarn monorepo projects with hundreds of <em>package.json</em> files. Updates to the Composer ecosystem also take longer to assess and may time out.</p> 
+       <p>This error is difficult to address. If a version update times out, you could specify the most important dependencies to update using the <code>allow</code> parameter or, alternatively, use the <code>ignore</code> parameter to exclude some dependencies from updates. Updating your configuration might allow Dependabot to review the version update and generate the pull request in the time available.</p> 
+       <p>If a security update times out, you can reduce the chances of this happening by keeping the dependencies updated, for example, by enabling version updates. For more information, see "<a href="/en/github/administering-a-repository/enabling-and-disabling-version-updates">Enabling and disabling version updates</a>."</p> 
+       <h4 id="dependabot-cannot-open-any-more-pull-requests"><a href="#dependabot-cannot-open-any-more-pull-requests">Dependabot cannot open any more pull requests</a></h4> 
+       <p>There's a limit on the number of open pull requests Dependabot will generate. When this limit is reached, no new pull requests are opened and this error is reported. The best way to resolve this error is to review and merge some of the open pull requests.</p> 
+       <p>There are separate limits for security and version update pull requests, so that open version update pull requests cannot block the creation of a security update pull request. The limit for security update pull requests is 10. By default, the limit for version updates is 5 but you can change this using the <code>open-pull-requests-limit</code> parameter in the configuration file. For more information, see "<a href="/en/github/administering-a-repository/configuration-options-for-dependency-updates#open-pull-requests-limit">Configuration options for dependency updates</a>."</p> 
+       <p>The best way to resolve this error is to merge or close some of the existing pull requests and trigger a new pull request manually. For more information, see "<a href="#triggering-a-dependabot-pull-request-manually">Triggering a Dependabot pull request manually</a>."</p> 
+       <h4 id="dependabot-cant-resolve-or-access-your-dependencies"><a href="#dependabot-cant-resolve-or-access-your-dependencies">Dependabot can't resolve or access your dependencies</a></h4> 
+       <p>If Dependabot attempts to check whether dependency references need to be updated in a repository, but can't access one or more of the referenced files, the operation will fail with the error message "Dependabot can't resolve your LANGUAGE dependency files." The API error type is <code>git_dependencies_not_reachable</code>.</p> 
+       <p>Similarly, if Dependabot can't access a private package registry in which a dependency is located, one of the following errors is generated:</p> 
+       <ul> 
+        <li>"Dependabot can't reach a dependency in a private package registry"<br> (API error type: <code>private_source_not_reachable</code>)</li> 
+        <li>"Dependabot can't authenticate to a private package registry"<br> (API error type:<code>private_source_authentication_failure</code>)</li> 
+        <li>"Dependabot timed out while waiting for a private package registry"<br> (API error type:<code>private_source_timed_out</code>)</li> 
+        <li>"Dependabot couldn't validate the certificate for a private package registry"<br> (API error type:<code>private_source_certificate_failure</code>)</li> 
+       </ul> 
+       <p>To allow Dependabot to update the dependency references successfully, make sure that all of the referenced dependencies are hosted at accessible locations. </p> 
+       <p><strong>Version updates only.</strong> When running security or version updates, some ecosystems must be able to resolve all dependencies from their source to verify that updates have been successful. If your manifest or lock files contain any private dependencies, Dependabot must be able to access the location at which those dependencies are hosted. Organization owners can grant Dependabot access to private repositories containing dependencies for a project within the same organization. For more information, see "<a href="/en/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization#allowing-dependabot-to-access-private-dependencies">Managing security and analysis settings for your organization</a>." You can configure access to private registries in a repository's <em>dependabot.yml</em> configuration file. For more information, see "<a href="/en/github/administering-a-repository/configuration-options-for-dependency-updates#configuration-options-for-private-registries">Configuration options for dependency updates</a>." Additionally, Dependabot doesn't support private GitHub dependencies for all package managers. For more information, see "<a href="/en/github/administering-a-repository/about-dependabot-version-updates#supported-repositories-and-ecosystems">About Dependabot version updates</a>."</p> 
+       <h3 id="triggering-a-dependabot-pull-request-manually"><a href="#triggering-a-dependabot-pull-request-manually">Triggering a Dependabo

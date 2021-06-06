@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="de-de" itemscope itemtype="http://schema.org/Article"> 
+ <head>
+  <script async src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script>
+  <script>window.redwood={"consentGroups":{"C0001":true,"C0002":true,"C0003":true,"C0004":true},"country":"EG","colo":"MRS","user":null,"locale":"de-DE"}</script> 
+  <script type="text/javascript">
+      var OneTrust={"geolocationResponse":{"stateCode":"C","countryCode":"EG"}}
+    </script> 
+  <script>
+     const acceptedLocales = [
+      'en-au',
+      'en-ca',
+      'en-gb',
+      'en-in',
+      'en-us',
+      'de-de',
+      'es-es',
+      'es-la',
+      'fr-fr',
+      'it-it',
+      'ja-jp',
+      'ko-kr',
+      'pt-br',
+      'zh-tw',
+      'zh-cn',
+    ];
+    const orphanLocales = [
+      'ru-ru',
+      'sv-se',
+      'nl-nl',
+      'vi-vn',
+      'th-th',
+      'id-id',
+    ];
+    const ignoreList = [
+      'apps',
+      'docs',
+      'rate-limit-test',
+      'rss',
+    ]
+    function getPathFromLocale(locale, code, pathString) {
+      if ( locale === code || !acceptedLocales.includes(code) || acceptedLocales.includes(locale) || orphanLocales.includes(locale) ) {
+        return null;
+      } else {
+        return [code, locale ? locale : '', pathString].filter(part => part !== '').join('/');
+      }
+    };
+    if (localStorage.getItem('langPreference')) {
+      if (localStorage.getItem('langPreference').toLowerCase() != 'en-us') {
+          const langPreference = localStorage.getItem('langPreference').toLowerCase();
+          const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+          const currentLang = splitPath[0];
+          if (!acceptedLocales.includes(currentLang) && !orphanLocales.includes(currentLang) && !ignoreList.includes(splitPath[0])) {
+            splitPath.splice(0, 0, langPreference.toLowerCase());
+            const newUrl = 'https://' + window.location.hostname + '/' + splitPath.join('/') + '/' + window.location.search;
+            window.location.replace(newUrl);   
+          }
+        }
+    } else if (!window.navigator.userAgent.toLowerCase().includes('googlebot')) {
+        const requestedLang = window.navigator.language;
+        const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+        const maybeLocale = splitPath.shift();
+        const splitPathString = splitPath.join('/');
+
+        if (requestedLang && requestedLang.toLowerCase() != "en-us") {
+          const requestedLangCode = requestedLang
+            .toLowerCase()
+            .replace('_', '-');
+          const redirectPath = getPathFromLocale(maybeLocale, requestedLangCode, splitPathString);
+          if (redirectPath && !ignoreList.includes(maybeLocale)) {
+            window.location.replace('https://' + window.location.hostname + '/' + redirectPath + '/' + window.location.search);
+          }
+        }
+      }
+    </script> 
+  <meta charset="UTF-8"> 
+  <title>  SSL for SaaS Providers | Cloudflare | Cloudflare </title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="canonical" href="https://www.cloudflare.com/de-de/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="zh-CN" href="https://www.cloudflare.com/zh-cn/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="zh-Hans-CN" href="https://www.cloudflare.com/zh-cn/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="zh-tw" href="https://www.cloudflare.com/zh-tw/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="fr-fr" href="https://www.cloudflare.com/fr-fr/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="de-de" href="https://www.cloudflare.com/de-de/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="it-it" href="https://www.cloudflare.com/it-it/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="ja-jp" href="https://www.cloudflare.com/ja-jp/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="ko-kr" href="https://www.cloudflare.com/ko-kr/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="pt-br" href="https://www.cloudflare.com/pt-br/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="es-la" href="https://www.cloudflare.com/es-la/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="es" href="https://www.cloudflare.com/es-es/ssl-for-saas-providers/"> 
+  <link rel="alternate" hreflang="es-es" href="https://www.cloudflare.com/es-es/ssl-for-saas-providers/"> 
+  <meta itemprop="name" content="  SSL for SaaS Providers | Cloudflare | Cloudflare "> 
+  <meta itemprop="description" content="    SSL for SaaS von Cloudflare ermöglicht den Endkunden eines SaaS-Unternehmens, ihre benutzerdefinierte Vanity-Domain weiterzuverwenden, während die Kommunikation über SSL gesichert wird.
+"> 
+  <meta itemprop="image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="  SSL for SaaS Providers | Cloudflare | Cloudflare "> 
+  <meta name="twitter:description" content="    SSL for SaaS von Cloudflare ermöglicht den Endkunden eines SaaS-Unternehmens, ihre benutzerdefinierte Vanity-Domain weiterzuverwenden, während die Kommunikation über SSL gesichert wird.
+"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <meta name="twitter:creator" content="@cloudflare"> 
+  <meta name="twitter:image" content="https://www.cloudflare.com/img/cf-twitter-card.png"> 
+  <meta property="og:title" content="  SSL for SaaS Providers | Cloudflare | Cloudflare "> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.cloudflare.com/de-de/ssl-for-saas-providers/"> 
+  <meta property="og:image" content="https://www.cloudflare.com/img/cf-facebook-card.png"> 
+  <meta property="og:description" content="    SSL for SaaS von Cloudflare ermöglicht den Endkunden eines SaaS-Unternehmens, ihre benutzerdefinierte Vanity-Domain weiterzuverwenden, während die Kommunikation über SSL gesichert wird.
+"> 
+  <meta property="og:site_name" content="Cloudflare"> 
+  <meta class="swiftype" name="language" data-type="string" content="de-de"> 
+  <meta class="swiftype" name="title" data-type="string" content="  SSL for SaaS Providers | Cloudflare"> 
+  <meta class="swiftype" name="description" data-type="string" content="    SSL for SaaS von Cloudflare ermöglicht den Endkunden eines SaaS-Unternehmens, ihre benutzerdefinierte Vanity-Domain weiterzuverwenden, während die Kommunikation über SSL gesichert wird.
+"> 
+  <meta class="swiftype" name="url" data-type="enum" content="https://www.cloudflare.com/de-de/ssl-for-saas-providers/"> 
+  <meta name="baidu-site-verification" content="N0CNJSCAk5"> 
+  <meta name="baidu-site-verification" content="Kj9FQ1BEWh"> 
+  <meta name="baidu-site-verification" content="OEDgbws38Y"> 
+  <meta name="baidu-site-verification" content="code-LHd7bZjChM"> 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png"> 
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196"> 
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> 
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> 
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> 
+  <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128"> 
+  <meta name="application-name" content="Cloudflare"> 
+  <meta name="msapplication-TileColor" content="#FFFFFF"> 
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png"> 
+  <meta name="msapplication-square70x70logo" content="/mstile-70x70.png"> 
+  <meta name="msapplication-square150x150logo" content="/mstile-150x150.png"> 
+  <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png"> 
+  <meta name="msapplication-square310x310logo" content="/mstile-310x310.png"> 
+  <noscript>
+   <style>.nojs-hide{display: none;}</style>
+  </noscript> 
+  <style>.async-hide {opacity: 0 !important}</style> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/application-ee0728fba2.min.css"> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/page-cms-be909f44b9.min.css"> 
+  <script nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c">
+  window.CFJS = {
+    config: {
+      rumEnabled: true,
+      env: '/marketing-api',
+      availableLanguages: 'en,en-in,en-gb,en-au,en-ca,de-de,es-es,es-la,fr-fr,it-it,ja-jp,ko-kr,pt-br,zh-cn,zh-tw'.split(','),
+      excludeMarketo: false,
+      marketoEnabled: true,
+      bizibleEnabled: true,
+      excludeHeapAnalytics: false,
+      asyncHide: false,
+      remarketingEnabled: false,
+      sentryDSN: 'https://bd9df81d859641f39ce626ce2a2cc90d@sentry.io/229513',
+      serverLang: "de-de",
+      isEnglish: false,
+      isLocalized: true,
+      intlTelInputUtils: '/js/chunk-d060ffec04635cca1500.js',
+      cookieDomain: "cloudflare.com",
+      techtargetEnabled: true,
+      googleOptimizeEnabled: true,
+        marketoFormEmbedTranslations: "{\"no\":\"Nein\",\"all\":\"Alle\",\"cdn\":\"CDN\",\"dns\":\"DNS\",\"ssl\":\"SSL\",\"yes\":\"Ja\",\"back\":\"Zurück\",\"blog\":\"Blog\",\"both\":\"Sowohl als auch\",\"bots\":\"Bots\",\"ddos\":\"DDoS\",\"date\":\"Datum\",\"past\":\"Vergangen\",\"plan\":\"Tarif\",\"rsvp\":\"Um Antwort wird gebeten\",\"send\":\"Senden\",\"time\":\"Zeit\",\"year\":\"Jahr\",\"asn\":\"ASN*\",\"apply\":\"Anwenden\",\"cloud\":\"Cloud\",\"ebook\":\"E-Book\",\"level\":\"Stufe\",\"other\":\"Andere\",\"phone\":\"Telefon: *\",\"sales\":\"Vertrieb\",\"video\":\"Video\",\"watch\":\"Ansehen\",\"plans\":{\"pro\":{\"id\":\"pro\",\"displayName\":\"Pro Plan\"},\"free\":{\"id\":\"free\",\"displayName\":\"Free Plan\"},\"business\":{\"id\":\"business\",\"displayName\":\"Business Plan\"}},\"agenda\":\"Tagesordnung\",\"filter\":\"Filter\",\"length\":\"Länge\",\"submit\":\"Absenden\",\"archive\":\"Archiv\",\"company\":\"Firma: *\",\"country\":\"Land: *\",\"email\":\"E-Mail-Adresse*\",\"peering\":\"Peering\",\"privacy\":\"Datenschutz\",\"sign up\":\"Registrieren\",\"support\":\"Support\",\"webinar\":\"Webinar\",\"website\":\"Website: *\",\"air date\":\"Sendedatum\",\"archives\":\"Archive\",\"comments\":\"Anmerkungen: *\",\"download\":\"Herunterladen\",\"featured\":\"Empfohlen\",\"get help\":\"Unterstützung anfordern\",\"industry\":\"Branche\",\"language\":\"Sprache\",\"location\":\"Standort\",\"our team\":\"Unser Team\",\"password\":\"Passwort\",\"register\":\"Registrieren\",\"security\":\"Sicherheit\",\"speakers\":\"Sprecher\",\"upcoming\":\"Demnächst\",\"webinars\":\"Webinare\",\"job title\":\"Berufsbezeichnung: *\",\"last name\":\"Nachname: *\",\"load more\":\"Mehr laden\",\"our board\":\"Unser Vorstand\",\"plan type\":\"Tariftyp\",\"select\":\"Auswählen ...\",\"show more\":\"Mehr anzeigen\",\"sponsored\":\"Gesponsert\",\"subscribe\":\"Abonnieren\",\"thank you\":\"Danke\",\"watch now\":\"Jetzt ansehen\",\"your api\":\"Ihre API.\",\"your app\":\"Ihre App.\",\"cache node\":\"Cache-Knoten\",\"click here\":\"Hier klicken\",\"contact me\":\"Mich kontaktieren\",\"contact us\":\"Kontakt\",\"first name\":\"Vorname: *\",\"it - staff\":\"IT – Belegschaft\",\"interests\":\"Interessen:\",\"learn more\":\"Mehr erfahren\",\"press page\":\"Presseseite\",\"serverless\":\"Serverless\",\"whitepaper\":\"Whitepaper\",\"work email\":\"Geschäfts-E-Mail: *\",\"yc batch\":\"YC-Batch*\",\"full name\":\"Vollständiger Name*\",\"get started\":\"Erste Schritte\",\"key results\":\"Wichtigste Ergebnisse\",\"link copied\":\"Link kopiert\",\"most recent\":\"Neueste\",\"performance\":\"Performance\",\"please wait\":\"Bitte warten\",\"press/media\":\"Presse/Medien\",\"select plan\":\"Tarif auswählen\",\"set up your\":\"Set-up für den\",\"watch video\":\"Video ansehen\",\"website url\":\"Website-URL\",\"all features\":\"Alle Features\",\"batch year\":\"Batch-Jahr*\",\"close window\":\"Fenster schließen\",\"download pdf\":\"PDF herunterladen\",\"get in touch\":\"Kontakt aufnehmen\",\"it - c-level\":\"IT – Geschäftsleitung\",\"it - manager\":\"IT – Manager\",\"infographics\":\"Infografiken\",\"request demo\":\"Demo beantragen\",\"form.privacy\":\"Durch Absenden dieses Formulars stimmen Sie zu, von Cloudflare Informationen zu seinen Produkten, Veranstaltungen und Sonderangeboten zu erhalten. Sie können diese Nachrichten jederzeit wieder abbestellen. Wir werden Ihre Daten niemals verkaufen und respektieren Ihre Datenschutzentscheidungen. Weitere Informationen finden Sie in unseren <a href='%{PRIVACY_POLICY_URL}' target='_blank'>Datenschutzrichtlinien</a>.\",\"call sales at\":\"Kontaktieren Sie uns unter:\",\"contact sales\":\"Kontaktieren Sie uns\",\"email address\":\"E-Mail-Adresse\",\"network layer\":\"Netzwerk-Layer\",\"register now\":\"Jetzt registrieren!\",\"webinars type\":\"Webinar-Typ\",\"your network\":\"Ihr Netzwerk.\",\"your website\":\"Ihre Website.\",\"cloudflare inc\":\"Cloudflare, Inc.\",\"download image\":\"Bild herunterladen\",\"featured count\":\"Empfohlene Anzahl\",\"must be a url\":\"Muss eine URL sein.\",\"organization\":\"Organisation *\",\"press releases\":\"Pressemeldungen\",\"student/intern\":\"Student/Praktikant\",\"have questions\":\"Haben Sie Fragen?\",\"interested in\":\"Interessiert an:*\",\"learning center\":\"Lernzentrum\",\"link from video\":\"Link aus Video\",\"previous events\":\"Vorherige Events\",\"related content\":\"Ähnliche Inhalte\",\"resource center\":\"Ressourcen-Center\",\"upcoming events\":\"Kommende Events\",\"video streaming\":\"Video-Streaming\",\"date_with_colon\":\"Datum:\",\"contact us today\":\"Kontakt\",\"featured webinar\":\"Empfohlenes Webinar\",\"it - vp/director\":\"IT – VP/Director\",\"keynote speakers\":\"Hauptredner\",\"preferred city\":\"Bevorzugte Stadt*\",\"related products\":\"Verwandte Produkte\",\"related blogpost\":\"Weiterführender Blog-Beitrag\",\"security - staff\":\"Sicherheit – Belegschaft\",\"support response\":\"Support-Antwort\",\"sales_with_colon\":\"Vertrieb:\",\"access management\":\"Zugriffsverwaltung\",\"copy article link\":\"Link zum Artikel kopieren\",\"must be a number\":\"Muss eine Zahl sein.\",\"preferred country\":\"Bevorzugtes Land *\",\"schema validation\":\"Schemavalidierung\",\"talk to an expert\":\"Sprechen Sie mit einem Experten\",\"url for peeringdb\":\"URL für PeeringDB\",\"view in dashboard\":\"Ansicht im Dashboard\",\"webinar slidedeck\":\"Webinar-Präsentationsfolien\",\"form.privacy.gdpr\":\"Für die Informationen, die Sie Cloudflare zur Verfügung stellen, gelten die Bestimmungen unserer <a href='%{PRIVACY_POLICY_URL}' target='_blank'>Datenschutzrichtlinie</a>.\",\"eng/devops - staff\":\"Eng/DevOps – Belegschaft\",\"organization url\":\"URL der Organisation *\",\"security - c-level\":\"Sicherheit – Geschäftsleitung\",\"security - manager\":\"Sicherheit – Manager\",\"submitting form\":\"Formular wird gesendet …\",\"durationbadgelevels\":{\"pro\":{\"time\":\"25 min\",\"level\":\"Anfänger\"},\"free\":{\"time\":\"20 min\",\"level\":\"Anfänger\"},\"business\":{\"time\":\"35 min\",\"level\":\"Anfänger\"}},\"in partnership with\":\"In Zusammenarbeit mit\",\"learning objectives\":\"Lernziele\",\"preferred address\":\"Bevorzugte Adresse*\",\"read the case study\":\"Fallstudie lesen\",\"want to learn more\":\"Möchten Sie mehr erfahren?\",\"you are registered\":\"Sie sind registriert.\",\"additionaltermstext\":\"* Es können zusätzliche Nutzungsbedingungen gelten.\",\"data loss prevention\":\"Schutz vor Datenverlust\",\"dietary restrictions\":\"Ernährungsbeschränkungen\",\"email recommendation\":\"E-Mail-Empfehlung\",\"eng/devops - c-level\":\"Eng/DevOps – Geschäftsleitung\",\"eng/devops - manager\":\"Eng/DevOps – Manager\",\"looking for support\":\"Sie wünschen Support?\",\"must be valid email\":\"Muss eine gültige E-Mail sein.\",\"related case studies\":\"Verwandte Fallstudien\",\"set up your pro plan\":\"Ihren Pro Plan einrichten\",\"form.privacy.partner\":\"Durch Absenden des Formulars fordern Sie Informationen über Cloudflare- und %{PARTNER}-Produkte, Veranstaltungen und Sonderangebote an und erklären sich mit der Verarbeitung Ihrer persönlichen Daten durch Cloudflare gemäß der <a href='%{PRIVACY_POLICY_URL}' target='_blank'>Cloudflare-Datenschutzrichtlinie</a> und durch %{PARTNER} gemäß der %{PARTNER}-Datenschutzrichtlinie einverstanden. Gleichzeitig ermächtigen Sie Cloudflare, Ihre persönlichen Daten mit %{PARTNER} zu teilen.\",\"accelerator program\":\"Accelerator-Programm*\",\"must be a valid date\":\"Muss ein gültiges Datum sein.\",\"no credit card needed\":\"Keine Kreditkarte erforderlich\",\"set up your free plan\":\"Ihren Free Plan einrichten\",\"view all case studies\":\"Alle Fallstudien\",\"current ddos vendor\":\"Aktueller DDoS-Schutz-Anbieter ...\",\"security - vp/director\":\"Sicherheit – VP/Director\",\"select your country\":\"Wählen Sie Ihr Land aus …\",\"a server error occured\":\"Ein Serverfehler ist aufgetreten.\",\"ddos protection hotline\":\"DDoS-Schutz-Hotline\",\"must be a phone number\":\"Muss eine Telefonnummer sein.\",\"preferred postal code\":\"Bevorzugte Postleitzahl*\",\"this field is required\":\"Dies ist ein Pflichtfeld.\",\"eng/devops - vp/director\":\"Eng/DevOps – VP/Director\",\"example \\\"cloudflare.com\":\"Beispiel „cloudflare.com“\",\"infrastructure - c-level\":\"Infrastruktur – Geschäftsleitung\",\"infrastructure - manager\":\"Infrastruktur – Manager\",\"please select an option\":\"Bitte eine Option auswählen.\",\"after_reading_with_colon\":\"Nach Lektüre dieses Artikels können Sie Folgendes:\",\"supportresponsetitletext\":\"Support-Antwort:\",\"product - product manager\":\"Produkt – Product Manager\",\"sales/marketing - c-level\":\"Verkauf/Marketing – Geschäftsleitung\",\"set up your business plan\":\"Ihren Business Plan einrichten\",\"solution & product guides\":\"Lösungs- und Produktleitfäden\",\"marketo_blocked_countries\":\"Wir können derzeit keine Unternehmen oder Organisationen in Ihrem ausgewählten Land bedienen. Wenn Sie weitere Hilfe benötigen, senden Sie uns gerne eine E-Mail an legal@cloudflare.com.\",\"infrastructure - architect\":\"Infrastruktur – Architekt\",\"learn how cloudflare works\":\"Erfahren Sie, wie Cloudflare funktioniert\",\"finance/procurement - staff\":\"Finanzen/Einkauf – Belegschaft\",\"infrastructure - vp/director\":\"Infrastruktur – VP/Director\",\"finance/procurement - c-level\":\"Finanzen/Einkauf – Geschäftsleitung\",\"finance/procurement - manager\":\"Finanzen/Einkauf – Manager\",\"please refresh and try again\":\"Aktualisieren Sie die Seite und versuchen Sie es erneut.\",\"sales/marketing - vp/director\":\"Verkauf/Marketing – VP/Director\",\"must be an amount of currency\":\"Muss ein Währungsbetrag sein.\",\"no results. try removing filters\":\"Keine Ergebnisse. Versuchen Sie, Filter zu entfernen.\",\"your privacy is important to us\":\"Der Schutz Ihrer Daten ist uns wichtig.\",\"welcome_center_recommended_steps\":\"Mit den empfohlenen Schritten in diesem Leitfaden können Sie Ihr Konto einrichten und Ihre Website mit Cloudflare aktivieren. Wenn Sie bereits ein Cloudflare-Konto haben, melden Sie sich an und folgen Sie den einzelnen Schritten in Ihrem Dashboard. Sie haben noch kein Cloudflare-Konto?\",\"finance/procurement - vp/director\":\"Finanzen/Einkauf – VP/Director\",\"incorrect email. please try again\":\"Falsche E-Mail-Adresse. Versuchen Sie es erneut.\",\"which events will you be attending\":\"An welchen Events möchten Sie teilnehmen?\",\"title required. please enter a title\":\"Titel erforderlich. Geben Sie einen Titel ein.\",\"are you a covid-19 vaccine distributor\":\"Sind Sie Distributor eines COVID-19-Impfstoffs?*\",\"full name is required. please enter a name\":\"Vollständiger Name ist erforderlich. Geben Sie einen Namen ein.\",\"last name is required. please enter a name\":\"Nachname ist erforderlich. Geben Sie einen Namen ein.\",\"first name is required. please enter a name\":\"Vorname ist erforderlich. Geben Sie einen Namen ein.\",\"after reading this article you will be able to\":\"Nach Lektüre dieses Artikels können Sie Folgendes:\",\"if your guide does not download, enable pop-ups\":\"Wird der Leitfaden nicht heruntergeladen, aktivieren Sie Pop-ups.\",\"brief description on your role in covid-19 relief\":\"Kurze Beschreibung Ihrer Rolle bei der Covid-19-Hilfe*\",\"company name required. please enter a company name\":\"Firmenname erforderlich. Geben Sie einen Firmennamen ein.\",\"phone number required. please enter a phone number\":\"Telefonnummer ist erforderlich. Geben Sie eine Telefonnummer ein.\",\"get started in just 5 minutes. join cloudflare today\":\"Legen Sie in nur 5 Minuten los. Treten Sie Cloudflare noch heute bei.\",\"unable to submit form. check field input and try again\":\"Das Formular kann nicht gesendet werden. Feldeingabe überprüfen und erneut versuchen.\",\"someone from cloudflare will be in touch with you shortly\":\"Ein Mitarbeiter von Cloudflare wird sich in Kürze bei Ihnen melden.\",\"must be a phone number. <span class='mktoerrordetail'>503-555-1212</span\":\"Muss eine Telefonnummer sein. <span class='mktoErrorDetail'>503-555-1212</span>\",\"website url required. please enter a website similar to http://www.example.com\":\"Website-URL erforderlich. Geben Sie eine Website-URL wie http://www.beispiel.com ein.\",\"must be valid email. <span class='mktoerrordetail'>example@yourdomain.com</span\":\"Muss eine gültige E-Mail-Adresse sein. <span class='mktoErrorDetail'>Beispiel@IhreDomain.com</span>\",\"the information you provide to cloudflare is governed by the terms of our privacy policy\":\"Die Informationen, die Sie Cloudflare zur Verfügung stellen, unterliegen den Bestimmungen unserer Datenschutzrichtlinie.\",\"please complete this form to send our personalized cloudflare product recommendation to your inbox\":\"Bitte füllen Sie dieses Formular aus, dann senden wir unsere personalisierten Cloudflare-Produktempfehlungen in Ihren Posteingang.\",\"asn required. your as number uniquely identifies your network and helps us identify the validity of your request\":\"ASN erforderlich. Ihre AS-Nummer identifiziert Ihr Netzwerk eindeutig und hilft uns bei der Identifizierung der Gültigkeit Ihrer Anfrage.\",\"please enter a url similar to https://www.peeringdb.com/asn/13335. this will speed up validation of your account\":\"Bitte geben Sie eine URL wie https://www.peeringdb.com/asn/13335 ein. Dadurch wird die Überprüfung Ihres Kontos beschleunigt.\",\"yes - i want to stay in touch with cloudflare to receive valuable content such as product news, blog updates, and more\":\"Ja, ich möchte News zu Produkten, Blog-Updates und weitere interessante Informationen von Cloudflare erhalten.\",\"yes - i want to stay in touch with cloudflare to receive other valuable content such as product news, blog updates, and more\":\"Ja, ich möchte News zu Produkten, Blog-Updates und weitere interessante Informationen von Cloudflare erhalten.\",\"we host a variety of webinars that showcase how to use cloudflare and how our customers get the most of our services and products\":\"Wir bieten eine Vielzahl von Webinaren an, die zeigen, wie man Cloudflare einsetzt und wie Kunden das Beste aus unseren Services und Produkten machen können.\",\"by clicking 'get started', i agree to <a class='blue-alternate-link' target='_blank' href='/website-terms/'>cloudflare's terms and conditions</a> and <a class='blue-alternate-link' href='/privacypolicy/' target='_blank'>privacy policy</a\":\"Durch Anklicken von „Erste Schritte“ stimme ich <a class='blue-alternate-link' target='_blank' href='/website-terms/'>Cloudflares allgemeinen Geschäftsbedingungen</a> und <a class='blue-alternate-link' href='/privacypolicy/' target='_blank'>Datenschutzrichtlinie zu</a>.\",\"in submitting this form, you agree to receive information from cloudflare related to our products, events, and special offers. you can unsubscribe from such messages at any time. we never sell your data, and we value your privacy choices. please see our privacy policy for information\":\"Durch Einreichen dieses Formulars erklären Sie sich einverstanden, im Zusammenhang mit unseren Produkten, Veranstaltungen und Sonderangeboten Informationen von Cloudflare zu erhalten. Sie können diese Nachrichten jederzeit wieder abbestellen. Wir werden Ihre Daten niemals verkaufen und legen Wert auf Ihre Datenschutzentscheidungen. Weitere Informationen zu unseren Datenschutzrichtlinien finden Sie hier.\",\"by submitting the form, you request to receive information about cloudflare and %{partner} products, events, and special offers, and you agree to the processing of your personal data by cloudflare as described in the cloudflare privacy policy, and by %{partner} as described in the %{partner}privacy policy. you also authorize cloudflare to share your personal data with %{partner\":\"Durch Einreichen des Formulars fordern Sie Informationen über Cloudflare- und %{PARTNER}-Produkte, Ereignisse und Sonderangebote an und erklären sich mit der Verarbeitung Ihrer persönlichen Daten durch Cloudflare entsprechend der Cloudflare-Datenschutzrichtlinie und durch %{PARTNER} entsprechend der %{PARTNER}-Datenschutzrichtlinie einverstanden. Gleichzeitig ermächtigen Sie Cloudflare, Ihre persönlichen Daten mit %{PARTNER} zu teilen.\"}",
+        marketo1346dropdownData: "{\"infrastructure - c-level\":\"Infrastruktur – Geschäftsleitung\",\"infrastructure - vp/director\":\"Infrastruktur – VP/Director\",\"infrastructure - manager\":\"Infrastruktur – Manager\",\"infrastructure - architect\":\"Infrastruktur – Architekt\",\"eng/devops - c-level\":\"Eng/DevOps – Geschäftsleitung\",\"eng/devops - vp/director\":\"Eng/DevOps – VP/Director\",\"eng/devops - manager\":\"Eng/DevOps – Manager\",\"eng/devops - staff\":\"Eng/DevOps – Belegschaft\",\"it - c-level\":\"IT – Geschäftsleitung\",\"it - vp/director\":\"IT – VP/Director\",\"it - manager\":\"IT – Manager\",\"it - staff\":\"IT – Belegschaft\",\"security - c-level\":\"Sicherheit – Geschäftsleitung\",\"security - vp/director\":\"Sicherheit – VP/Director\",\"security - manager\":\"Sicherheit – Manager\",\"security - staff\":\"Sicherheit – Belegschaft\",\"finance/procurement - c-level\":\"Finanzen/Einkauf – Geschäftsleitung\",\"finance/procurement - vp/director\":\"Finanzen/Einkauf – VP/Director\",\"finance/procurement - manager\":\"Finanzen/Einkauf – Manager\",\"finance/procurement - staff\":\"Finanzen/Einkauf – Belegschaft\",\"sales/marketing - c-level\":\"Verkauf/Marketing – Geschäftsleitung\",\"sales/marketing - vp/director\":\"Verkauf/Marketing – VP/Director\",\"product - product manager\":\"Produkt – Product Manager\",\"press/media\":\"Presse/Medien\",\"student/intern\":\"Student/Praktikant\",\"other\":\"Andere\"}",
+      gtm: {
+        containerId: "GTM-PKQFGQB",
+        disabled: false,
+        uaCookieDomain: ".cloudflare.com",
+        uaCodeMarketing_29: "UA-10218544-29",
+        optimize: "GTM-N4JSZJ8",
+        uaCodeAdWords: "AW-819572718",
+        uaCodeAdWordsBI: "DC-8921596",
+        adWordsConversionCode: "AW-972248548",
+        adWordsConversionCodeForm: "AW-836330296",
+        adWordsConversionLabel: "caqvCO3e32EQ5KvNzwM",
+        adWordsConversionLabelForm: "-l5JCJnczYgBELjG5Y4D",
+      }
+    }
+  }
+</script> 
+  <script src="https://assets.www.cloudflare.com/js/runtime-6a16446847617098e330.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-232ffa51e57f882f0534.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-55ad6e1817237ece29a0.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-e06d79a8c06c0d46865a.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-27eef9fa207b28718df2.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-06380521ff19239efe05.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-cd8895b507ee9e702e17.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://www.cloudflare.com/vendor/onetrust/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="e34df59b-4a48-4bf9-b2b5-7a4bb09cd231"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class="marketing-nojs page-cms"> 
+  <header style="display:none" class="flash-banner flash-banner--gray flash-banner--not-localized" data-name="not-localized"> 
+   <section class="tile tile--mini-banner hide-mobile"> 
+    <div class="tile__content--1200px"> 
+     <div class="grid--center grid--vertical-center"> 
+      <h4 class="text--white">Dieser Inhalt ist derzeit nur in englischer Sprache verfügbar. Wir arbeiten kontinuierlich daran, weitere Inhalte auf Deutsch bereitzustellen. Vielen Dank für Ihre Geduld.</h4> 
+     </div> 
+     <div class="flash-banner__close_x js-accept-top-nav-mini-flash-banner"></div> 
+    </div> 
+   </section> 
+  </header> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-01f71c423e068664057e.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <script src="https://assets.www.cloudflare.com/js/chunk-1560bda32b9d6d231e95.js" nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c"></script> 
+  <header class="cms-topnav topnav top-nav js-top-nav "> 
+   <nav class="top-nav__upper-bar top-nav__items test-utility-menu"> 
+    <div class="top-nav__item-list top-nav__item-list--right"> <span> <a href="/de-de/plans/enterprise/contact/">Vertrieb:</a> </span> <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a> 
+     <noscript> <a href="tel:+16503198930">+1 650 319 8930</a> 
+     </noscript> <span class="header-section-divider">|</span> <a class="header-language-picker js-header-support-picker bold" role="link"> Support <span> 
+       <svg width="8" height="6" viewbox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8 1.15819L6.84183 2.21065e-05L4.00053 2.84207L1.15816 0L0 1.1576L4.00053 5.15783L8 1.15819Z" fill="#747474" /> 
+       </svg> </span> </a> 
+     <div id="js-header-support-picker-dropdown" class="js-header-support-picker-dropdown" style="display: none;"> 
+      <ul class="marketing-ul marketing-ul--no-bullets marketing-ul--no-margins-li header-language-picker-dropdown"> 
+       <li> <a href="https://dash.cloudflare.com/?to=/:account/support" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Support kontaktieren</a> </li> 
+       <li> <a href="https://support.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Hilfe-Center</a> </li> 
+       <li> <a href="https://community.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Cloudflare Community</a> </li> 
+      </ul> 
+     </div> <span class="header-section-divider">|</span> <a class="header-language-picker js-header-account-picker bold"> My Account <span> 
+       <svg width="8" height="6" viewbox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8 1.15819L6.84183 2.21065e-05L4.00053 2.84207L1.15816 0L0 1.1576L4.00053 5.15783L8 1.15819Z" fill="#747474" /> 
+       </svg> </span> </a> 
+     <div id="js-header-account-picker-dropdown" class="js-header-account-picker-dropdown" style="display: none;"> 
+      <ul class="marketing-ul marketing-ul--no-bullets marketing-ul--no-margins-li header-language-picker-dropdown"> 
+       <li> <a href="https://dash.cloudflare.com/login" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Log In</a> </li> 
+       <li> <a href="https://dash.cloudflare.com/profile" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Mein Profil</a> </li> 
+       <li> <a href="https://dash.cloudflare.com/?to=/:account/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Konto-Startseite</a> </li> 
+       <li> <a href="https://dash.cloudflare.com/?to=/:account/billing" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Abrechnung</a> </li> 
+       <li class="merchandise"> <a href="/teams/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="">Schützen Sie Remote-Mitarbeiter mit Cloudflare</a> </li> 
+      </ul> 
+     </div> <span class="header-section-divider">|</span> <a class="header-language-picker js-header-language-picker"> <span class="header-language-picker__globe-icon"></span>Deutsch 
+      <svg width="8" height="6" viewbox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8 1.15819L6.84183 2.21065e-05L4.00053 2.84207L1.15816 0L0 1.1576L4.00053 5.15783L8 1.15819Z" fill="#747474" /> 
+      </svg> </a>
+     <div id="js-header-language-picker-dropdown" class="js-header-language-picker-dropdown" style="display: none;">
+      <a class="header-language-picker js-header-language-picker"> 
+       <ul class="marketing-ul marketing-ul--no-bullets marketing-ul--no-margins-li header-language-picker-dropdown"> 
+        <li> <a href="https://www.cloudflare.com/en-us/ssl-for-saas-providers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="en-us">English</a> </li> 
+        <li> <a href="https://www.cloudflare.com/en-gb/ssl-for-saas-providers/">English (United Kingdom)</a> </li> 
+        <li> <a href="https://www.cloudflare.com/en-ca/ssl-for-saas-providers/">English (Canada)</a> </li> 
+        <li> <a href="https://www.cloudflare.com/en-au/ssl-for-saas-providers/">English (Australia)</a> </li> 
+        <li> <a href="https://www.cloudflare.com/en-in/ssl-for-saas-providers/">English (India)</a> </li> 
+        <li class="header-language-picker-dropdown__active"> <a href="https://www.cloudflare.com/de-de/ssl-for-saas-providers/">Deutsch</a> </li> 
+        <li> <a href="https://www.cloudflare.com/es-es/ssl-for-saas-providers/">Español (España)</a> </li> 
+        <li> <a href="https://www.cloudflare.com/es-la/ssl-for-saas-providers/">Español (Latinoamérica)</a> </li> 
+        <li> <a href="https://www.cloudflare.com/fr-fr/ssl-for-saas-providers/">Français</a> </li> 
+        <li> <a href="https://www.cloudflare.com/it-it/ssl-for-saas-providers/">Italiano</a> </li> 
+        <li> <a href="https://www.cloudflare.com/ja-jp/ssl-for-saas-providers/">???</a> </li> 
+        <li> <a href="https://www.cloudflare.com/ko-kr/ssl-for-saas-providers/">???</a> </li> 
+        <li> <a href="https://www.cloudflare.com/pt-br/ssl-for-saas-providers/">Português</a> </li> 
+        <li> <a href="https://www.cloudflare.com/zh-tw/ssl-for-saas-providers/">????</a> </li> 
+        <li> <a href="https://www.cloudflare.com/zh-cn/ssl-for-saas-providers/">????</a> </li> 
+       </ul></a> 
+     </div> 
+    </div>
+   </nav> 
+   <nav class="top-nav__upper-bar top-nav__items ab-test"> 
+    <div class="top-nav__item-list top-nav__item-list--right"> <span> <a class="bold" href="https://support.cloudflare.com/" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Support">Support</a> </span> <span class="header-section-divider">|</span> <span> <a href="/de-de/plans/enterprise/contact/">Vertrieb:</a> </span> <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a> 
+     <noscript> <a href="tel:+16503198930">+1 650 319 8930</a> 
+     </noscript> <span class="header-section-divider">|</span> <a class="header-language-picker js-header-language-picker"> <span class="header-language-picker__globe-icon"></span>Deutsch <span class="header-language-picker__caret-icon">?</span> <span class="header-language-picker__caret-icon hidden-element">?</span></a> 
+     <div id="js-header-language-picker-dropdown" class="js-header-language-picker-dropdown" style="display: none;"> 
+      <ul class="marketing-ul marketing-ul--no-bullets marketing-ul--no-margins-li header-language-picker-dropdown"> 
+       <li> <a href="https://www.cloudflare.com/en-us/ssl-for-saas-providers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="en-us">English</a> </li> 
+       <li> <a href="https://www.cloudflare.com/en-gb/ssl-for-saas-providers/">English (United Kingdom)</a> </li> 
+       <li> <a href="https://www.cloudflare.com/en-ca/ssl-for-saas-providers/">English (Canada)</a> </li> 
+       <li> <a href="https://www.cloudflare.com/en-au/ssl-for-saas-providers/">English (Australia)</a> </li> 
+       <li> <a href="https://www.cloudflare.com/en-in/ssl-for-saas-providers/">English (India)</a> </li> 
+       <li class="header-language-picker-dropdown__active"> <a href="https://www.cloudflare.com/de-de/ssl-for-saas-providers/">Deutsch</a> </li> 
+       <li> <a href="https://www.cloudflare.com/es-es/ssl-for-saas-providers/">Español (España)</a> </li> 
+       <li> <a href="https://www.cloudflare.com/es-la/ssl-for-saas-providers/">Español (Latinoamérica)</a> </li> 
+       <li> <a href="https://www.cloudflare.com/fr-fr/ssl-for-saas-providers/">Français</a> </li> 
+       <li> <a href="https://www.cloudflare.com/it-it/ssl-for-saas-providers/">Italiano</a> </li> 
+       <li> <a href="https://www.cloudflare.com/ja-jp/ssl-for-saas-providers/">???</a> </li> 
+       <li> <a href="https://www.cloudflare.com/ko-kr/ssl-for-saas-providers/">???</a> </li> 
+       <li> <a href="https://www.cloudflare.com/pt-br/ssl-for-saas-providers/">Português</a> </li> 
+       <li> <a href="https://www.cloudflare.com/zh-tw/ssl-for-saas-providers/">????</a> </li> 
+       <li> <a href="https://www.cloudflare.com/zh-cn/ssl-for-saas-providers/">????</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <nav class="top-nav__items top-nav__items--align-content "> <a href="/de-de/"> <img style="" class="top-nav__logo top-nav__logo--dark top-nav__logo--localized " src="/img/logo-cloudflare-dark.svg" alt="Cloudflare"> <img class="top-nav__logo top-nav__logo--light top-nav__logo--localized " src="/img/logo-cloudflare.svg" alt="Cloudflare"> </a> 
+    <ul class="top-nav__item-list top-nav__item-list--left"> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Lösungen" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Lösungen" tabindex="0"> Lösungen </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Produkte" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Produkte" tabindex="0"> Produkte </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Dokumentation" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Dokumentation" tabindex="0"> Dokumentation </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Ressourcen" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Ressourcen" tabindex="0"> Ressourcen </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Partner" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Partner" tabindex="0"> Partner </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop"> <a href="/de-de/enterprise/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="for-enterprise" tabindex="0"> Für Unternehmen </a> </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop nojs-hide" data-submenu="Preise" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Preise" tabindex="0"> Preise </li> 
+    </ul> 
+    <ul class="top-nav__item-list top-nav__item-list--right"> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop"> <a href="https://dash.cloudflare.com/login" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="login" tabindex="0"> Anmelden </a> </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop"> <a href="https://dash.cloudflare.com/sign-up" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="signup" tabindex="0"> Registrieren </a> </li> 
+     <li class="top-nav__item-list__link top-nav__item-list__link--localized top-nav__items__desktop top-nav__item-list__link--no-ul"> <a class="button button--new-orange js-under-attack-button under-attack-button button--localized-content" href="#" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="under_attack" tabindex="0">Sie werden angegriffen?</a> </li> 
+    </ul> <button class="js-mobilenav-toggle toggle"> <span class="icon"></span> </button> 
+   </nav> 
+   <div class="desktop-nav top-nav-container nav-dropdown"> 
+    <div class="desktop-nav__Lösungen desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        LÖSUNGEN
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Überragende Online-Erfahrung bereitstellen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos">DDoS-Angriffe bekämpfen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="malicious-bot-abuse">Bösartigen Missbrauch von Bots stoppen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/performance/accelerate-internet-applications/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-internet-applications">Internetanwendungen beschleunigen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/performance/ensure-application-availability/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ensure-application-availability">Anwendungsverfügbarkeit sicherstellen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/website-optimization/">Die Web-Erfahrung optimieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-stream/">Stream (Videos On-Demand)</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Mitarbeiter-Anwendungen und -Geräte sichern
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/teams-access/">Zero-Trust-Zugang für Anwendungen bereitstellen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-sase/">Implementierung von Secure Access Service Edge (SASE)</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-gateway/">Benutzer beim Zugriff auf das Internet schützen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/">Unternehmensnetzwerke schützen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/third-party-access/">Sicheren Zugriff von Auftragnehmern verwalten</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/vpn-replacement/">Virtuelle Private Netzwerke (VPNs) ersetzen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/remote-workforces/">Schützen Sie Ihre externe Belegschaft</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/browser-isolation/">Zero-Day-Angriffe mit Browser-Isolation stoppen</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header">
+        &nbsp;
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Netzwerke schützen und beschleunigen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/magic-transit/">L3-DDoS-Angriffe bekämpfen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect/">Netzwerkinfrastruktur mit Cloudflare verbinden</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/cloudflare-one/">Unternehmensnetzwerke umgestalten</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Code am Netzwerkrand
+       </div> <span class="nav-dropdown-link"> <a href="https://workers.cloudflare.com">Serverlose Apps erstellen</a> </span> <span class="nav-dropdown-link"> <a href="https://workers.cloudflare.com/sites">Statische Website bereitstellen</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tutorials/configure-your-cdn">Ein CDN konfigurieren</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/templates/pages/conditional_response/">Bedingtes Anforderungsrouting definieren</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Eine sichere Cloud verwalten
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/multi-cloud/">Sichere Hybrid-, Cloud-, und SaaS-Plattformen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl-for-saas-providers/">„SSL for SaaS“-Anwendungen aktivieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/bandwidth-alliance/">Cloud-Datenübertragungskosten reduzieren</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Eine Website registrieren
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/">Eine Website registrieren oder übertragen</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        BRANCHEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ecommerce/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_ecommerce">E-Commerce</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/financial-services/">Finanzdienstleistungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/gaming/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_gaming">Gaming</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/healthcare/">Gesundheitswesen und Biowissenschaften</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/media-and-entertainment/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_media-and-entertainment">Medien und Entertainment</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/public-sector/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicsector">Öffentlicher Sektor</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_saas">SaaS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/education/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="education - /education">Education</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        ÖFFENTLICHES INTERESSE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/campaigns/">Wahlkampagnen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/athenian/">Projekt Athenian</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/galileo/">Projekt Galileo</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/fair-shot/">Projekt „Fair Shot“</a> </span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="desktop-nav__Produkte desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR INFRASTRUKTUR
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Anwendungs- und Netzwerksicherheit
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos">DDoS-Schutz</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/waf/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="waf">WAF</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="bot_management">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/magic-transit/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="magic-transit">Magic Transit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/magic-wan/">Magic WAN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/rate-limiting/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="rate_limiting">Rate Limiting</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ssl">SSL/TLS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl-for-saas-providers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="SSL/TLS for SaaS Providers">SSL/TLS für SaaS-Anbieter</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-spectrum/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="spectrum">Cloudflare Spectrum</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="network-interconnect">Netzwerk-Interconnect</a> </span> 
+       <div class="nav-dropdown-header">
+        Performance und Zuverlässigkeit
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dns">DNS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/argo-smart-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_smart_routing">Argo&nbsp;Smart&nbsp;Routing</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/load-balancing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="load_balancing">Lastverteilung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/stream-delivery/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="stream-delivery-homepage">Stream Delivery</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china">China-Netzwerk</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/waiting-room/">Warteraum</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR TEAMS
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/teams-home/">Cloudflare for Teams</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-access/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-access">Access</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-gateway/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-gateway">Gateway</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/browser-isolation/">Browser-Isolation</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR ENTWICKLER
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Serverlose Anwendungen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-workers">Cloudflare Workers</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/workers-kv/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-kv">Cloudflare Workers KV</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Domainregistrierung
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="registrar">Cloudflare Registrar</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Website-Entwicklung
+       </div> <span class="nav-dropdown-link"> <a href="https://pages.cloudflare.com/">Cloudflare-Seiten</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-stream/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-stream">Cloudflare Stream</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        SaaS-Entwickler
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="saas">Cloudflare für SaaS</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR ALLE
+       </div> <span class="nav-dropdown-link"> <a href="https://1.1.1.1" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="1111-homepage">1.1.1.1</a> </span> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com/1111-warp-better-vpn/">1.1.1.1 mit WARP (App)</a> </span> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com/introducing-1-1-1-1-for-families/">1.1.1.1 für Familien</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        ERKENNTNISSE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="analytics">Analytics</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-logs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare_logs">Cloudflare-Protokolle</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/web-analytics/">Web Analytics</a> </span> <span class="nav-dropdown-link"> <a href="https://radar.cloudflare.com/">Cloudflare Radar</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        Datenschutz
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/data-localization/">Datenlokalisierung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/privacy-and-compliance/">Compliance</a> </span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="desktop-nav__Dokumentation desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR INFRASTRUKTUR
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Erweiterte Sicherheit
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/bots/">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/firewall/">Firewall-Regeln</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/magic-transit/">Magic Transit</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/spectrum/">Spectrum (TCP/UDP)</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/ssl/">SSL</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/waf/">WAF</a> </span> 
+       <div class="nav-dropdown-header">
+        Performance und Zuverlässigkeit
+       </div> <span class="nav-dropdown-link"> <a href="https://support.cloudflare.com/hc/en-us/articles/200172516-Understanding-Cloudflare-s-CDN" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn-documentation">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/dns/">DNS</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/images/">Image Resizing</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/load-balancing">Lastverteilung</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/stream/">Stream (Video)</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header">
+        &nbsp;
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Erkenntnisse
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/analytics/">Analytics</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/logs/"></a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Domainregistrierung
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/registrar/">Registrar</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR SERVERLOSE ANWENDUNGEN
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/quickstart">Workers-Schnelleinstieg</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/pages/">Cloudflare-Seiten</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/templates/">Beispiel eines Workers-Projekts</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tutorials">Workers-Tutorial</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tooling/wrangler">Befehlszeile (Wrangler)</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/reference/apis">Laufzeit</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR TEAMS
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/cloudflare-one/">Cloudflare for Teams</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        MEHR ÜBER CLOUDFLARE API ERFAHREN
+       </div> <span class="nav-dropdown-link"> <a href="https://api.cloudflare.com/">Cloudflare API</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/api/">API-Authentifizierung</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        DOKUMENTATIONS-HUB
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/">Dokumentations-Hub für Entwickler</a> </span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="desktop-nav__Ressourcen desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        RESSOURCEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/">Ressourcen-Hub</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/?resourcetype=Whitepaper">Studien</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/webinars/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_webinars">Webinare</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/?resourcetype=Solution+%26+Product+Guides">Lösungen und Produktanleitungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/case-studies/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_case_studies">Fallstudien</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/analysts/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_analysts">Analysten</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        KENNENLERNEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/whats-new/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="whats_new">Was gibt's Neues?</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_network_map">Netzwerkkarte</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china">Cloudflare in China</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/gdpr/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > GDPR">DSGVO</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        ERSTE SCHRITTE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/">Ihre Website registrieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/welcome-center/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_welcome_center">Welcome Center</a> </span> <span class="nav-dropdown-link"> <a href="https://support.cloudflare.com">Hilfe holen</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        LERNEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/learning/">Lernzentrum</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/security/what-is-web-application-security/">Sicherheit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/ddos/what-is-a-ddos-attack/">DDoS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/bots/what-is-a-bot/">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/ssl/what-is-ssl/">SSL</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/access-management/what-is-identity-and-access-management/">Identitäts- und Zugriffsverwaltung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/performance/why-site-speed-matters/">Performance</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/cdn/what-is-a-cdn/">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/dns/what-is-dns/">DNS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/cloud/what-is-the-cloud/">Cloud</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/serverless/what-is-serverless/">Serverless</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/network-layer/what-is-the-network-layer/">Netzwerk-Layer</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        VERBINDEN
+       </div> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="blog">Blog</a> </span> <span class="nav-dropdown-link"> <a href="https://community.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="community">Community</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        VERTRAUEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Trust Hub">Trust Hub</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/privacy-and-data-protection/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust  > Privacy &amp; Data Protection">Datenschutz</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/compliance-resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Certifications">Zertifizierungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/trust-and-safety/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Trust &amp; Safety">Vertrauen und Sicherheit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/gdpr/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > GDPR">DSGVO</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/privacypolicy/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Legal Documentation">Rechtliche Dokumentation</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        KONTAKT
+       </div> <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="desktop-nav__Partner desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        CHANNEL- UND ALLIANZ-PARTNER
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/partners/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships">Partner-Netzwerk</a> </span> <span class="nav-dropdown-link"> <a href="https://portal.cloudflarepartners.com">Partner-Portal</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        TECHNOLOGIEPARTNER
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/partners/technology-partners/">Überblick</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/partners/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partners-analytics">Analytics-Partner</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/bandwidth-alliance/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_bandwidth_alliance">Bandwidth Alliance</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/endpoint-partners/">Endpoint Security Partnerships</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect-partnerships/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="network-interconnect-partnerships">Interconnect-Partnerschaften</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-onramp-partners/">Network On-ramp Partnerships</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/partners/peering-portal/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_peering_portal">Peering Portal</a> </span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="desktop-nav__Preise desktop-nav__container"> 
+     <div class="nav-dropdown-container"> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        PREISE NACH TARIF
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/plans/">Free</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/pro/">Pro</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/business/">Business</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/enterprise/">Enterprise</a> </span> 
+      </div> 
+      <div class="dropdown-column"> 
+       <div class="nav-dropdown-header header-orange">
+        VERGLEICHEN UND ENTDECKEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/about-your-website/">Brauchen Sie Hilfe bei der Auswahl eines Tarifs?</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/#addons">Add-ons</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/">Alle Tarife vergleichen</a> </span> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="mobile-nav nav-dropdown"> 
+    <ul class="mobile-nav__list"> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Lösungen"> <span class="mobile-sub-nav__title__text">Lösungen</span> <span class="icon icon-plus icon-plus-Lösungen"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Lösungen mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        LÖSUNGEN
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Überragende Online-Erfahrung bereitstellen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos">DDoS-Angriffe bekämpfen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="malicious-bot-abuse">Bösartigen Missbrauch von Bots stoppen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/performance/accelerate-internet-applications/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-internet-applications">Internetanwendungen beschleunigen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/performance/ensure-application-availability/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ensure-application-availability">Anwendungsverfügbarkeit sicherstellen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/website-optimization/">Die Web-Erfahrung optimieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-stream/">Stream (Videos On-Demand)</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Mitarbeiter-Anwendungen und -Geräte sichern
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/teams-access/">Zero-Trust-Zugang für Anwendungen bereitstellen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-sase/">Implementierung von Secure Access Service Edge (SASE)</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-gateway/">Benutzer beim Zugriff auf das Internet schützen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/">Unternehmensnetzwerke schützen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/third-party-access/">Sicheren Zugriff von Auftragnehmern verwalten</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/vpn-replacement/">Virtuelle Private Netzwerke (VPNs) ersetzen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/remote-workforces/">Schützen Sie Ihre externe Belegschaft</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/browser-isolation/">Zero-Day-Angriffe mit Browser-Isolation stoppen</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header">
+        &nbsp;
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Netzwerke schützen und beschleunigen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/magic-transit/">L3-DDoS-Angriffe bekämpfen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect/">Netzwerkinfrastruktur mit Cloudflare verbinden</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/cloudflare-one/">Unternehmensnetzwerke umgestalten</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Code am Netzwerkrand
+       </div> <span class="nav-dropdown-link"> <a href="https://workers.cloudflare.com">Serverlose Apps erstellen</a> </span> <span class="nav-dropdown-link"> <a href="https://workers.cloudflare.com/sites">Statische Website bereitstellen</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tutorials/configure-your-cdn">Ein CDN konfigurieren</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/templates/pages/conditional_response/">Bedingtes Anforderungsrouting definieren</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Eine sichere Cloud verwalten
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/multi-cloud/">Sichere Hybrid-, Cloud-, und SaaS-Plattformen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl-for-saas-providers/">„SSL for SaaS“-Anwendungen aktivieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/bandwidth-alliance/">Cloud-Datenübertragungskosten reduzieren</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Eine Website registrieren
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/">Eine Website registrieren oder übertragen</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        BRANCHEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ecommerce/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_ecommerce">E-Commerce</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/financial-services/">Finanzdienstleistungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/gaming/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_gaming">Gaming</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/healthcare/">Gesundheitswesen und Biowissenschaften</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/media-and-entertainment/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_media-and-entertainment">Medien und Entertainment</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/public-sector/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicsector">Öffentlicher Sektor</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_saas">SaaS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/education/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="education - /education">Education</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        ÖFFENTLICHES INTERESSE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/campaigns/">Wahlkampagnen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/athenian/">Projekt Athenian</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/galileo/">Projekt Galileo</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/fair-shot/">Projekt „Fair Shot“</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Produkte"> <span class="mobile-sub-nav__title__text">Produkte</span> <span class="icon icon-plus icon-plus-Produkte"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Produkte mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR INFRASTRUKTUR
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Anwendungs- und Netzwerksicherheit
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos">DDoS-Schutz</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/waf/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="waf">WAF</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="bot_management">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/magic-transit/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="magic-transit">Magic Transit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/magic-wan/">Magic WAN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/rate-limiting/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="rate_limiting">Rate Limiting</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ssl">SSL/TLS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/ssl-for-saas-providers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="SSL/TLS for SaaS Providers">SSL/TLS für SaaS-Anbieter</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-spectrum/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="spectrum">Cloudflare Spectrum</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="network-interconnect">Netzwerk-Interconnect</a> </span> 
+       <div class="nav-dropdown-header">
+        Performance und Zuverlässigkeit
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dns">DNS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/argo-smart-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_smart_routing">Argo&nbsp;Smart&nbsp;Routing</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/load-balancing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="load_balancing">Lastverteilung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/stream-delivery/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="stream-delivery-homepage">Stream Delivery</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china">China-Netzwerk</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/waiting-room/">Warteraum</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR TEAMS
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/teams-home/">Cloudflare for Teams</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-access/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-access">Access</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams-gateway/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-gateway">Gateway</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/browser-isolation/">Browser-Isolation</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR ENTWICKLER
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Serverlose Anwendungen
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-workers">Cloudflare Workers</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/workers-kv/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-kv">Cloudflare Workers KV</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Domainregistrierung
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="registrar">Cloudflare Registrar</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Website-Entwicklung
+       </div> <span class="nav-dropdown-link"> <a href="https://pages.cloudflare.com/">Cloudflare-Seiten</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-stream/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-stream">Cloudflare Stream</a> </span> 
+       <div class="nav-dropdown-header header-black">
+        SaaS-Entwickler
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="saas">Cloudflare für SaaS</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR ALLE
+       </div> <span class="nav-dropdown-link"> <a href="https://1.1.1.1" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="1111-homepage">1.1.1.1</a> </span> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com/1111-warp-better-vpn/">1.1.1.1 mit WARP (App)</a> </span> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com/introducing-1-1-1-1-for-families/">1.1.1.1 für Familien</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        ERKENNTNISSE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="analytics">Analytics</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/products/cloudflare-logs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare_logs">Cloudflare-Protokolle</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/web-analytics/">Web Analytics</a> </span> <span class="nav-dropdown-link"> <a href="https://radar.cloudflare.com/">Cloudflare Radar</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        Datenschutz
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/data-localization/">Datenlokalisierung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/privacy-and-compliance/">Compliance</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Dokumentation"> <span class="mobile-sub-nav__title__text">Dokumentation</span> <span class="icon icon-plus icon-plus-Dokumentation"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Dokumentation mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR INFRASTRUKTUR
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Erweiterte Sicherheit
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/bots/">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/firewall/">Firewall-Regeln</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/magic-transit/">Magic Transit</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/spectrum/">Spectrum (TCP/UDP)</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/ssl/">SSL</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/waf/">WAF</a> </span> 
+       <div class="nav-dropdown-header">
+        Performance und Zuverlässigkeit
+       </div> <span class="nav-dropdown-link"> <a href="https://support.cloudflare.com/hc/en-us/articles/200172516-Understanding-Cloudflare-s-CDN" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn-documentation">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/dns/">DNS</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/images/">Image Resizing</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/load-balancing">Lastverteilung</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/stream/">Stream (Video)</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header">
+        &nbsp;
+       </div> 
+       <div class="nav-dropdown-header header-black">
+        Erkenntnisse
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/analytics/">Analytics</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/logs/"></a> </span> 
+       <div class="nav-dropdown-header header-black">
+        Domainregistrierung
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/registrar/">Registrar</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR SERVERLOSE ANWENDUNGEN
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/quickstart">Workers-Schnelleinstieg</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/pages/">Cloudflare-Seiten</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/templates/">Beispiel eines Workers-Projekts</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tutorials">Workers-Tutorial</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/tooling/wrangler">Befehlszeile (Wrangler)</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/workers/reference/apis">Laufzeit</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        FÜR TEAMS
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/cloudflare-one/">Cloudflare for Teams</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        MEHR ÜBER CLOUDFLARE API ERFAHREN
+       </div> <span class="nav-dropdown-link"> <a href="https://api.cloudflare.com/">Cloudflare API</a> </span> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/api/">API-Authentifizierung</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        DOKUMENTATIONS-HUB
+       </div> <span class="nav-dropdown-link"> <a href="https://developers.cloudflare.com/">Dokumentations-Hub für Entwickler</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Ressourcen"> <span class="mobile-sub-nav__title__text">Ressourcen</span> <span class="icon icon-plus icon-plus-Ressourcen"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Ressourcen mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        RESSOURCEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/">Ressourcen-Hub</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/?resourcetype=Whitepaper">Studien</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/webinars/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_webinars">Webinare</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/resource-hub/?resourcetype=Solution+%26+Product+Guides">Lösungen und Produktanleitungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/case-studies/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_case_studies">Fallstudien</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/analysts/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_analysts">Analysten</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        KENNENLERNEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/whats-new/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="whats_new">Was gibt's Neues?</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_network_map">Netzwerkkarte</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china">Cloudflare in China</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/gdpr/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > GDPR">DSGVO</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        ERSTE SCHRITTE
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/products/registrar/">Ihre Website registrieren</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/welcome-center/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_welcome_center">Welcome Center</a> </span> <span class="nav-dropdown-link"> <a href="https://support.cloudflare.com">Hilfe holen</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        LERNEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/learning/">Lernzentrum</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/security/what-is-web-application-security/">Sicherheit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/ddos/what-is-a-ddos-attack/">DDoS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/bots/what-is-a-bot/">Bot-Management</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/ssl/what-is-ssl/">SSL</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/access-management/what-is-identity-and-access-management/">Identitäts- und Zugriffsverwaltung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/performance/why-site-speed-matters/">Performance</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/cdn/what-is-a-cdn/">CDN</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/dns/what-is-dns/">DNS</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/cloud/what-is-the-cloud/">Cloud</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/serverless/what-is-serverless/">Serverless</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/learning/network-layer/what-is-the-network-layer/">Netzwerk-Layer</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        VERBINDEN
+       </div> <span class="nav-dropdown-link"> <a href="https://blog.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="blog">Blog</a> </span> <span class="nav-dropdown-link"> <a href="https://community.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="community">Community</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        VERTRAUEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Trust Hub">Trust Hub</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/privacy-and-data-protection/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust  > Privacy &amp; Data Protection">Datenschutz</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/compliance-resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Certifications">Zertifizierungen</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/trust-and-safety/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Trust &amp; Safety">Vertrauen und Sicherheit</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/trust-hub/gdpr/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > GDPR">DSGVO</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/privacypolicy/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Resources > Trust > Legal Documentation">Rechtliche Dokumentation</a> </span> 
+       <div class="nav-dropdown-header header-orange">
+        KONTAKT
+       </div> <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Partner"> <span class="mobile-sub-nav__title__text">Partner</span> <span class="icon icon-plus icon-plus-Partner"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Partner mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        CHANNEL- UND ALLIANZ-PARTNER
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/partners/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships">Partner-Netzwerk</a> </span> <span class="nav-dropdown-link"> <a href="https://portal.cloudflarepartners.com">Partner-Portal</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        TECHNOLOGIEPARTNER
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/partners/technology-partners/">Überblick</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/partners/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partners-analytics">Analytics-Partner</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/bandwidth-alliance/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_bandwidth_alliance">Bandwidth Alliance</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/endpoint-partners/">Endpoint Security Partnerships</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-interconnect-partnerships/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="network-interconnect-partnerships">Interconnect-Partnerschaften</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/network-onramp-partners/">Network On-ramp Partnerships</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/partners/peering-portal/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_peering_portal">Peering Portal</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item"> <span class="nav-dropdown-link"> <a href="/de-de/enterprise/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="for-enterprise">Für Unternehmen</a> </span> </li> 
+     <li class="mobile-nav__list__item"> 
+      <div class="mobile-sub-nav__title" data-submenu="Preise"> <span class="mobile-sub-nav__title__text">Preise</span> <span class="icon icon-plus icon-plus-Preise"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Preise mobile-sub"> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        PREISE NACH TARIF
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/plans/">Free</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/pro/">Pro</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/business/">Business</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/enterprise/">Enterprise</a> </span> 
+      </div> 
+      <div class="mobile-sub-nav"> 
+       <div class="nav-dropdown-header header-orange">
+        VERGLEICHEN UND ENTDECKEN
+       </div> <span class="nav-dropdown-link"> <a href="/de-de/about-your-website/">Brauchen Sie Hilfe bei der Auswahl eines Tarifs?</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/#addons">Add-ons</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/plans/">Alle Tarife vergleichen</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item test-utility-menu"> 
+      <div class="mobile-sub-nav__title" data-submenu="Support"> <span class="mobile-sub-nav__title__text">Support</span> <span class="icon icon-plus icon-plus-Support"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-Support mobile-sub"> 
+      <div class="mobile-sub-nav"> <span class="nav-dropdown-link"> <a href="https://dash.cloudflare.com/?to=/:account/support">Support kontaktieren</a> </span> <span class="nav-dropdown-link"> <a href="https://support.cloudflare.com/">Hilfe-Center</a> </span> <span class="nav-dropdown-link"> <a href="https://community.cloudflare.com/">Cloudflare Community</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item test-utility-menu"> 
+      <div class="mobile-sub-nav__title" data-submenu="My_Account"> <span class="mobile-sub-nav__title__text">My Account</span> <span class="icon icon-plus icon-plus-My Account"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-My_Account mobile-sub"> 
+      <div class="mobile-sub-nav"> <span class="nav-dropdown-link"> <a href="https://dash.cloudflare.com/login" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="utliity_nav-log_in">Log In</a> </span> <span class="nav-dropdown-link"> <a href="https://dash.cloudflare.com/profile" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="utililty-tab-profile">Mein Profil</a> </span> <span class="nav-dropdown-link"> <a href="https://dash.cloudflare.com/?to=/:account/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="Merchandise">Konto-Startseite</a> </span> <span class="nav-dropdown-link"> <a href="https://dash.cloudflare.com/?to=/:account/billing">Abrechnung</a> </span> <span class="nav-dropdown-link"> <a href="/de-de/teams/">Schützen Sie Remote-Mitarbeiter mit Cloudflare</a> </span> 
+      </div> 
+     </div> 
+     <li class="mobile-nav__list__item mobile-language-picker"> 
+      <div class="mobile-sub-nav__title" data-submenu="languageMobile"> <span class="mobile-sub-nav__title__text"> Deutsch </span> <span class="icon icon-plus icon-plus-languageMobile"></span> 
+      </div> </li> 
+     <div class="mobile-submenu-languageMobile mobile-sub"> 
+      <ul class="mobile-sub-nav"> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/en-us/"> English </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/en-gb/"> English (United Kingdom) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/en-ca/"> English (Canada) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/en-au/"> English (Australia) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/en-in/"> English (India) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/es-es/"> Español (España) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/es-la/"> Español (Latinoamérica) </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/fr-fr/"> Français </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/it-it/"> Italiano </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/ja-jp/"> ??? </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/ko-kr/"> ??? </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/pt-br/"> Português </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/zh-tw/"> ???? </a> </li> 
+       <li class="desktop-nav__sub-menu__list__item"> <a href="https://www.cloudflare.com/zh-cn/"> ???? </a> </li> 
+      </ul> 
+     </div> 
+    </ul> 
+   </div> 
+   <div class="desktop-nav top-nav-container nav-dropdown"> 
+   </div> 
+  </header> 
+  <div id="react-modal" data-form-id="js-under-attack-form-modal"></div> 
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/marketo-form-46fafe6175.min.css"> 
+  <script nonce="17ab06f0-eeba-43b0-9fcc-16decf90582c" src="//info.cloudflare.com/js/forms2/js/forms2.min.js"></script> 
+  <script nonce="">
+  (function() {
+    if (!window.CFJS.loadedMarketoForms) {
+      window.CFJS.loadedMarketoForms = {};
+    }
+    function load() {
+      if (window.CFJS.loadedMarketoForms["1649"]) {
+        if (window.location.host.match(/^stg\.mrk\.cfdata\.org$/) || window.location.host.match(/^localhost/)) {
+          window.alert('This page has the same form embedded twice which is not supported');
+        }
+        return;
+      }
+
+      window.CFJS.loadedMarketoForms["1649"] = true;
+      var counter = 0;
+
+      var loadMarketoFormJS = setInterval(function() {
+        counter++;
+        if (counter >= 50) { // 10000ms / 200ms = 50
+          clearInterval(loadMarketoFormJS);
+        }
+
+        if ('MktoForms2' in window && window.CFJS.marketoFormEmbed) {
+          MktoForms2.setOptions({
+            formXDPath: "/rs/713-XSC-918/images/marketo-xdframe-relative.html",
+          });
+          MktoForms2.loadForm("//info.cloudflare.com", "713-XSC-918", "1649", window.CFJS.marketoFormEmbed)
+          clearInterval(loadMarketoFormJS);
+        }
+      }, 200);
+    }
+      load()
+  })();
+</script> 
+  <div id="js-under-attack-form-modal" class="modal-react under-attack-form-modal" style="display: none;"> 
+   <div class="tile__content"> 
+    <div class="under-attack-modal__form-modal__content"> 
+     <div class="under-attack-modal__form-modal__tabbed-content"> 
+      <div class="single-form-modal-marketo-embed"> 
+       <div class="mkto-form-embed"> 
+        <div class="mkto-form-embed__header"> 
+         <h2 class="mkto-form-embed__header__text">DDoS-Schutz-Hotline</h2> 
+        </div> 
+        <form id="mktoForm_1649" class="mkto-form-embed__form form--hidecountry" data-embedmarketoid="1649" data-leadsource="Inbound - Under Attack Web Form" data-leadsourcedetail="Under Attack Hotline Landing Page" data-submitbuttontext="" data-submitbuttoncolor="" data-successmessage="Ein Mitarbeiter von Cloudflare wird sich in Kürze bei Ihnen melden." data-thankyou="Danke" data-assetdownload="" data-assetdownloadtext="Herunterladen" data-defaultcomment="" data-formsuccessurl=""></form> 
+        <div class="mktoForm__success mktoForm__success--hidden"> 
+         <img class="responsive-image responsive-image--65px-height" title="success logo" alt="success logo" src="/img/icon_check-white.svg"> 
+         <h3 class="mktoForm__success__h3">Danke</h3> <span class="mktoForm__success__message">Ein Mitarbeiter von Cloudflare wird sich in Kürze bei Ihnen melden.</span> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="compact-nav-dropdown js-compact-nav-dropdown"> 
+   <ul class="marketing-list"> 
+    <li class="desktop-nav__sub-menu__list__item">Contact Us</li> 
+    <li class="desktop-nav__sub-menu__list__item"><a href="/under-attack-hotline/">Help! I'm Under Attack!</a></li> 
+    <li class="desktop-nav__sub-menu__list__item"><a href="/plans/enterprise/contact/">Email Sales</a></li> 
+    <li class="desktop-nav__sub-menu__list__item"><a href="https://support.cloudflare.com/">Support</a></li> 
+    <li class="desktop-nav__sub-menu__list__item"><a href="tel:18889935273">1-888-993-5273</a></li> 
+   </ul> 
+  </div> 
+  <div class="site-content  "> 
+   <section id="hero-blade" class="tile tile__background--white text--black"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item grid__item--two-fifths--40pct-tablet grid__item--no-bottom-margin"> 
+       <h1 class="marketing-product-h1">SSL for SaaS </h1> 
+       <p class="text--bolder">Protect customers’ data with strong encryption</p> 
+       <p>Protecting customer data is not only a security best practice but also what your customers and auditors expect. </p> 
+       <p>Cloudflare partners with SaaS Providers to make encryption easy so your customers will have more confidence than ever in your service, knowing their data is safe. </p> 
+       <div class="argo-tunnel__button-container button-container button-container--no-bottom-margin"> 
+        <div data-lis-show="0" class="hidden-element"> <a href="https://developers.cloudflare.com/ssl/ssl-for-saas" class="button button--orange button--inline button--margin-right button--stack-mobile">Get Started</a> <a href="https://blog.cloudflare.com/cloudflare-for-saas/" class="button button--orange button--inline button--stack-mobile">Learn More</a> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--three-fifths grid__item--no-bottom-margin"> 
+       <img class="responsive-image" title="ssl tls hero illustration" alt="ssl tls hero illustration" src="/resources/images/slt3lc6tev37/1IZQzh5K91PQUTzDTq4nhn/760be7e1bff2dd8b49dbfa7dee76e224/ssl-tls-hero-illustration.svg"> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section id="quote" class="tile tile__background--mint text--white"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="page-cms__quote-section--single"> 
+       <div class="customer-quote__quotemark"> 
+        <img src="/img/icons/white/quote-left.svg" class="icon-width-70px icon-owl-carousel" alt="large quotation marks" aria-hidden="true"> 
+       </div> 
+       <div class="customer-quote__quote">
+        Cloudflare has been leading the way when it comes to SSL technology.
+       </div> 
+       <div class="customer-quote__by"> 
+        <div class="customer-quote__logo"> 
+         <img class="responsive-image" title="hubspotlogo web white" alt="hubspotlogo web white" src="/resources/images/slt3lc6tev37/5hbMx7qCohSEzFBD5GvEvt/2b03b3edc51d6a282209f29cc92de1cb/hubspotlogo-web-white.png"> 
+        </div> 
+        <div class="customer-quote__name">
+          Kerry Munz
+         <br>Director of Engineering – Platform Infrastructure 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section id="what-s-new-with-ssl-for-saas" class="tile three-features-blade tile--no-bottom-padding-desktop tile__background--white text--black"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <h2 class="page-cms__icon-with-text-bot__header">What's New with SSL for SaaS</h2> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="location pin" alt="location pin" src="/resources/images/slt3lc6tev37/6TXVyxQpn8JDy6JnItQqnk/ff07c29879c4f5f8bafee04230a2d363/location-pin.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Apex Proxy Flexibility</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Allow your customers to proxy their apex to your application, regardless of their DNS provider. Either bring your own IP or we’ll supply a set for your end customer, so they can point to your application with an A record. </p> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="internet globe" alt="internet globe" src="/resources/images/slt3lc6tev37/5b3ukfoY9BpcbnxK1cEvJs/f15643db8fbc0130c2c5c08cea58ceb6/internet-globe.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Bring your own IP</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Bring your own IP range to announce at Cloudflare’s edge. With BYOIP + SSL for SaaS solution you are able to manage the IP assignments of your customers. </p> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="cerificate" alt="cerificate" src="/resources/images/slt3lc6tev37/jxNhWkuSuUabzGMRfJ5B4/4e0404ec5dd10ed3697979b7f572c7b5/cerificate.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Custom SSL Certification Support</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Upload your customer’s certificate whenever necessary. For your security-conscious customers, we offer CSR support, meaning their private keys stay on Cloudflare, while they use the CA of their choice.</p> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile three-features-blade tile--no-bottom-padding-desktop tile__background--white text--black"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="cloudflare browser" alt="cloudflare browser" src="/resources/images/slt3lc6tev37/6mhkGGaI0VAsbd7xLNXzqW/66133e3fcc28be1aea2a4a61de30abed/cloudflare-browser.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Wildcard Custom Hostnames</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Extend encryption, performance, and security to any customer subdomain with wildcard custom hostnames. </p> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="performance routing" alt="performance routing" src="/resources/images/slt3lc6tev37/74ytBs0tigVcRYRWNWOQxJ/3008b604f882bf1d13a52673bbeb7325/performance-routing.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Custom Origins</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Route customers to your origin of choice as your company scales.</p> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--third page-cms__icon-with-text-bot__detail flex flex-column page-cms__icon-with-text-bot__detail--center"> 
+       <div> 
+        <img class="image--three-feature-icon" title="edit" alt="edit" src="/resources/images/slt3lc6tev37/6v0V9auYB51k3bGacGFcFU/8c55b8314231cef97da96e83338265fd/edit.png"> 
+       </div> 
+       <h3 class="page-cms__icon-with-text-bot__detail__header">Customizable Domain Configurations</h3> 
+       <div class="page-cms__icon-with-text-bot__detail__copy"> 
+        <p>Add specific rules to customer domains for maximum customization.</p> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile tile__background--mint text--white"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="grid__item"> 
+      </div> 
+      <div class="grid__item grid__item--half"> 
+       <h2 class="marketing-product-h1">Sign up for the beta</h2> 
+       <div class="button-container button-container--no-bottom-margin"> 
+       </div> 
+      </div> 
+      <div class="grid__item grid__item--half"> 
+       <h3 id="are-you-ready-to-extend-cloudflare-benefits-to-your-customers--sign-up-for-our-beta-here">Are you ready to extend Cloudflare benefits to your customers? Sign up for our beta <a href="https://forms.gle/vK4VNxBU3H92MaxD8">here</a>.</h3> 
+       <div class="button-container button-container--no-bottom-margin"> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile image-text-horizontal-blade  tile__background--white text--black tile--no-top-bottom-padding"> 
+    <section class="tile__content tile__content--1200px"> 
+     <h2 class="marketing-product-h1 text--center text--extra-margin-bottom">Bei der Erfüllung von SSL-Anforderungen von Endkunden gibt es für SaaS-Provider drei Szenarien:</h2> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item grid__item--half-desktop page-cms__image-with-text__image-grid page-cms__image-with-text__image-grid--left"> 
+       <img class="responsive-image" title="ssl for saas scenario 1" alt="ssl for saas scenario 1" src="/resources/images/slt3lc6tev37/hVoJCNtQ5eFVi3oVbFlXk/e1caff25783ccaf57b78cd8b1ee20014/ssl-for-saas-scenario-1.png"> 
+      </div> 
+      <div class="grid__item grid__item--half-desktop"> 
+       <h2 class="page-cms__image-with-text__header">Unverschlüsselte aber markenbezogene Vanity-Domain</h2> 
+       <p>Bei Vanity-Domains von Kunden ohne SSL fehlen die Performance-Vorteile von SSL und die sichere Datenübertragung. Dadurch werden die Domains anfälliger für die Ausspähung oder Veränderung von Inhalten, bevor diese Inhalte die Besucher erreichen.</p> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile image-text-horizontal-blade  tile__background--white text--black tile--no-top-bottom-padding"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item grid__item--half-desktop page-cms__image-with-text__image-grid page-cms__image-with-text__image-grid--left"> 
+       <img class="responsive-image" title="ssl for saas scenario 2" alt="ssl for saas scenario 2" src="/resources/images/slt3lc6tev37/7rFwULIN5y3ATRwuN9Hovh/c8ba420ef7461293bbd323f3eb66d5a4/ssl-for-saas-scenario-2.png"> 
+      </div> 
+      <div class="grid__item grid__item--half-desktop"> 
+       <h2 class="page-cms__image-with-text__header">Verschlüsselte aber nicht markenbezogene Domain</h2> 
+       <p>Domains, bei denen SSL von einem SaaS-Provider aktiviert wurde, verfügen nicht über eine individuelle Vanity-Domain. Dadurch wird die Marke abgewertet und die SEO-Rankings verschlechtern sich.</p> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile image-text-horizontal-blade  tile__background--white text--black tile--no-top-bottom-padding"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid grid--vertical-center"> 
+      <div class="grid__item grid__item--half-desktop page-cms__image-with-text__image-grid page-cms__image-with-text__image-grid--left"> 
+       <img class="responsive-image" title="ssl for saas scenario 3" alt="ssl for saas scenario 3" src="/resources/images/slt3lc6tev37/UUK2XCIraEsolkFu5wJFu/6059bfa7224fdf069c52f7485bda29c5/ssl-for-saas-scenario-3.png"> 
+      </div> 
+      <div class="grid__item grid__item--half-desktop"> 
+       <h2 class="page-cms__image-with-text__header">Komplexer interner Ansatz</h2> 
+       <p>SaaS-Provider, die verschlüsselte markenbezogene Vanity-Domains verwenden möchten, können die SSL-Lebenszyklen entweder manuell verwalten – was zu langen Bereitstellungszeiten und zusätzlichen Betriebskosten führt – oder eine komplexe automatisierte Lösung aufbauen.</p> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section class="tile tile__background--light-gray text--black"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="grid__item grid__item--no-bottom-margin"> 
+       <h1 class="marketing-product-h1 marketing-h1--no-bottom-margin text--center">Benefits of SSL for SaaS</h1> 
+      </div> 
+      <div class="grid__item grid__item--no-bottom-margin"> 
+      </div> 
+     </div> 
+     <div class="page-cms__icons-data__icon-descriptions--wrapper"> 
+      <div class="page-cms__icons-data__icon-description"> 
+       <img class="page-cms__icons-data__icon-description__icon" title="Branded visitor experiences" alt="Branded visitor experiences" src="/resources/images/slt3lc6tev37/7K1m9K98pgvEKT4yabpZLV/e2efc047eff1c1db52b4ab5cb08f66c4/cloudflare-registrar-301x300-a4acd96.png"> 
+       <div class="page-cms__icons-data__icon-description__content"> 
+        <p class="page-cms__icons-data__icon-description__header">Branded visitor experiences</p> 
+        <p class="page-cms__icons-data__icon-description__copy"> </p>
+        <p>You can offer branded domains to your customers, all while enjoying the added benefits of a fully managed SSL certificate. Branded domains offer end customers higher SEO rankings and improved visitor trust.</p> 
+        <p></p> 
+       </div> 
+      </div> 
+      <div class="page-cms__icons-data__icon-description"> 
+       <img class="page-cms__icons-data__icon-description__icon" title="Secure and performant customer assets" alt="Secure and performant customer assets" src="/resources/images/slt3lc6tev37/5YZDquysdwv0IC1kV0hC6n/0ca13d39ddb052bad7706174e1e9286d/security-lock-226x301-cfb9db4.png"> 
+       <div class="page-cms__icons-data__icon-description__content"> 
+        <p class="page-cms__icons-data__icon-description__header">Secure and performant customer assets</p> 
+        <p class="page-cms__icons-data__icon-description__copy"> </p>
+        <p>With SSL/TLS certificates, protect your end customers’ domains from on-path attackers and network snooping. Additionally, the HTTP/2 protocol becomes available for even greater speed improvements.</p> 
+        <p></p> 
+       </div> 
+      </div> 
+      <div class="page-cms__icons-data__icon-description"> 
+       <img class="page-cms__icons-data__icon-description__icon" title="Automated SSL lifecycle management" alt="Automated SSL lifecycle management" src="/resources/images/slt3lc6tev37/LaRddEaKEWlYXXx8Y2UST/a942b2ee9585bfc8c44a43c6bd830489/security-shield-protection-230x301-664b7d5.png"> 
+       <div class="page-cms__icons-data__icon-description__content"> 
+        <p class="page-cms__icons-data__icon-description__header">Automated SSL lifecycle management</p> 
+        <p class="page-cms__icons-data__icon-description__copy"> </p>
+        <p>You don’t have to worry about any part of the SSL lifecycle. Cloudflare manages the entire process, from private key creation and protection through domain validation, issuance, renewal, and reissuance.</p> 
+        <p></p> 
+       </div> 
+      </div> 
+      <div class="page-cms__icons-data__icon-description"> 
+       <img class="page-cms__icons-data__icon-description__icon" title="Rapid global SSL deployments" alt="Rapid global SSL deployments" src="/resources/images/slt3lc6tev37/7oSAE8BQTzD1sgQCgrArww/00cce8a62578b553a1073c43eaf177d9/share.png"> 
+       <div class="page-cms__icons-data__icon-description__content"> 
+        <p class="page-cms__icons-data__icon-description__header">Rapid global SSL deployments</p> 
+        <p class="page-cms__icons-data__icon-description__copy"> </p>
+        <p>During the SSL issuance process, Cloudflare deploys new certificates across its global network of data centers in 200 cities, bringing HTTPS online within minutes.</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+   <section id="quote" class="tile tile__background--white text--black tile--no-top-padding"> 
+    <section class="tile__content tile__content--1200px"> 
+     <div class="grid"> 
+      <div class="page-cms__quote-section--single"> 
+       <div class="customer-quote__quotemark"> 
+        <img src="/img/icons/black/quote-left.svg" class="icon-width-70px icon-owl-carousel" alt="large quotation marks" aria-hidden="true"> 
+       </div> 
+       <div class="customer-quote__quote">
+        With SSL for SaaS we have implemented a simpler flow because Cloudflare’s API handles the provisioning, serving, automated renewal and maintenance of our customers’ SSL certificates. Plus, end-to-end HTTPS now means we have bolstered privacy and performance for our customers, and can leverage browser features, like Local Storage, that we couldn’t use before.
+       </div> 
+       <div class="customer-quote__by"> 
+        <div class="customer-quote__logo"> 
+         <img class="responsive-image" title="olologo" alt="olologo" src="/resources/images/slt3lc6tev37/3i6fxeTuXs2uZL01ZEnhQK/d8671958b195fa79e94f970ca3818972/olologo.png"> 
+        </div> 
+        <div class="customer-quote__name">
+          Andrew Murray
+         <br>CTO of Olo 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </section> 
+  </div> 
+  <footer class="cms-mainfooter main-footer"> 
+   <div class="main-footer__container"> 
+    <div class="main-footer__row"> 
+     <div class="main-footer__menu-group"> 
+      <ul id="vertrieb-menu"> 
+       <li data-submenu="vertrieb-menu" class="main-footer__menu-group__header js-toggle-footer-group"> Vertrieb <img src="/img/icons/gray/caret-down.svg" class="icon" alt="grey arrow pointing down" aria-hidden="true"> </li> 
+       <li> <a href="/de-de/plans/enterprise/contact/"> Enterprise Sales </a> </li> 
+       <li> <a

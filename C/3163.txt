@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en"> 
+ <head class="sans-serif"> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="baidu-site-verification" content="KeThzeyMOr"> 
+  <meta name="baidu-site-verification" content="code-NIlrS7gNhx"> 
+  <title>Free, Privacy-First Analytics for a Better Web</title> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.4.1/themes/light.css"> 
+  <link rel="stylesheet" type="text/css" href="/assets/built/index.css?v=20d6e21a3c"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0.16/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0.16/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0.16/favicon-16x16.png"> 
+  <link rel="mask-icon" href="/favicon_package_v0.16/safari-pinned-tab.svg" color="#f78100"> 
+  <meta name="msapplication-TileColor" content="#da532c"> 
+  <meta name="theme-color" content="#ffffff"> 
+  <script type="text/javascript" src="/assets/built/index.js?v=20d6e21a3c"></script> 
+  <script src="/assets/js/check-for-tex.js" defer></script> 
+  <meta name="description" content="We’re announcing a brand new, privacy-first analytics service that’s open to everyone — even if they're not already a Cloudflare customer."> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+  <link rel="canonical" href="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web/"> 
+  <meta name="referrer" content="no-referrer-when-downgrade"> 
+  <meta property="og:site_name" content="The Cloudflare Blog"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Free, Privacy-First Analytics for a Better Web"> 
+  <meta property="og:description" content="We’re announcing a brand new, privacy-first analytics service that’s open to everyone — even if they're not already a Cloudflare customer. And if you're a Cloudflare customer, we've enhanced our analytics to make them even more powerful than before."> 
+  <meta property="og:url" content="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web/"> 
+  <meta property="og:image" content="https://blog-cloudflare-com-assets.storage.googleapis.com/2020/09/facebook-link-image-2.png"> 
+  <meta property="article:published_time" content="2020-09-29T13:02:00.000Z"> 
+  <meta property="article:modified_time" content="2020-09-29T14:15:36.000Z"> 
+  <meta property="article:tag" content="Birthday Week"> 
+  <meta property="article:tag" content="Product News"> 
+  <meta property="article:tag" content="Analytics"> 
+  <meta property="article:tag" content="Privacy"> 
+  <meta property="article:publisher" content="https://www.facebook.com/cloudflare"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Free, Privacy-First Analytics for a Better Web"> 
+  <meta name="twitter:description" content="We’re announcing a brand new, privacy-first analytics service that’s open to everyone — even if they're not already a Cloudflare customer. And if you're a Cloudflare customer, we've enhanced our analytics to make them even more powerful than before."> 
+  <meta name="twitter:url" content="https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web/"> 
+  <meta name="twitter:image" content="https://blog-cloudflare-com-assets.storage.googleapis.com/2020/09/twitter-shared-link-5.png"> 
+  <meta name="twitter:label1" content="Written by"> 
+  <meta name="twitter:data1" content="Jon Levine"> 
+  <meta name="twitter:label2" content="Filed under"> 
+  <meta name="twitter:data2" content="Birthday Week, Product News, Analytics, Privacy"> 
+  <meta name="twitter:site" content="@cloudflare"> 
+  <meta name="twitter:creator" content="@jplevine"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="628"> 
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "The Cloudflare Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg",
+            "width": 109,
+            "height": 40.5
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jon Levine",
+        "image": "https://blog.cloudflare.com/content/images/2018/04/prof-crop.jpg",
+        "url": "https://blog.cloudflare.com/author/jpl/",
+        "sameAs": [
+            "https://twitter.com/jplevine"
+        ]
+    },
+    "headline": "Free, Privacy-First Analytics for a Better Web",
+    "url": "https://blog.cloudflare.com/free-privacy-first-analytics-for-a-better-web/",
+    "datePublished": "2020-09-29T13:02:00.000Z",
+    "dateModified": "2020-09-29T14:15:36.000Z",
+    "image": "https://blog.cloudflare.com/content/images/2020/09/Cloudflare-Web-Analytics.png",
+    "keywords": "Birthday Week, Product News, Analytics, Privacy",
+    "description": "We’re announcing a brand new, privacy-first analytics service that’s open to everyone — even if they&#x27;re not already a Cloudflare customer. And if you&#x27;re a Cloudflare customer, we&#x27;ve enhanced our analytics to make them even more powerful than before.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.cloudflare.com/"
+    }
+}
+    </script> 
+  <meta name="generator" content="Ghost 3.5"> 
+  <link rel="alternate" type="application/rss+xml" title="The Cloudflare Blog" href="https://blog.cloudflare.com/rss/"> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','cfDataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> <!-- Google Optimize --> 
+  <script src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script> 
+  <meta name="msvalidate.01" content="CF295E1604697F9CAD18B5A232E871F6"> 
+  <meta class="swiftype" name="language" data-type="string" content="en"> <!--<script src="/assets/js/index.js"></script>--> 
+  <script type="text/javascript" src="//cdn.bizible.com/scripts/bizible.js" async></script> 
+  <script>
+var trackRecruitingLink = function(role, url) {
+   ga('send', 'event', 'recruiting', 'jobscore-click', role, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script> 
+  <script type="text/javascript">
+	(function() {
+		var didInit = false;
+		function initMunchkin() {
+			if(didInit === false) {
+				didInit = true;
+				Munchkin.init('713-XSC-918');
+			}
+		}
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = '//munchkin.marketo.net/munchkin.js';
+		s.onreadystatechange = function() {
+			if (this.readyState == 'complete' || this.readyState == 'loaded') {
+				initMunchkin();
+			}
+		};
+		s.onload = initMunchkin;
+		document.getElementsByTagName('head')[0].appendChild(s);
+		})();
+</script> 
+  <script>
+var HTMLAttrToAdd = document.querySelector("html");
+HTMLAttrToAdd.setAttribute("lang", "en");
+</script> 
+  <style>
+    table {
+        background-color: transparent;
+    }
+    td {
+		padding: 5px 1em;
+    }
+    pre {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+</style> <!-- Cloudflare Web Analytics --> 
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;f446eacb44504e50864bad7c47ffa9e8&quot;}"></script> <!-- End Cloudflare Web Analytics --> 
+ </head> 
+ <body id="main-body" class="post-template tag-birthday-week tag-product-news tag-analytics tag-privacy sans-serif"> 
+  <div class="site-wrapper"> 
+   <header class="flex flex-row flex-wrap justify-between items-end mw8 center mv3 pl3 pr2"> 
+    <div class="w-100 flex items-end justify-between justify-start-l"> 
+     <div class="w-100 tr"> <span class="dn di-l"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" class="f1 gray4 no-underline underline-hover">Contact Sales: </a> <a href="tel:+18889935273" class="f1 gray4 no-underline underline-hover">+1 (888) 274-3482</a> </span> 
+     </div> 
+    </div> 
+    <div class="w-100 w-50-l flex items-end justify-between justify-start-l"> <a href="https://blog.cloudflare.com" class="header-logo mr4"> <img src="https://blog-cloudflare-com-assets.storage.googleapis.com/2019/06/logo-cloudflare-dark-1.svg" alt="The Cloudflare Blog" class="header-logo"> </a> 
+     <h2 class="mt0 mb1"> <a href="/" class="fw5 f5 gray3 no-underline"> <span class="dn di-l">The Cloudflare Blog</span> </a> </h2> 
+    </div> 
+    <div class="w-100 w-50-l dn db-l"> 
+     <div class="w-100 tr mkto-sub-message"> 
+      <p class="f2">Thanks for being here, come back soon. Get notified of new posts:</p> 
+     </div> 
+     <div class="w-100 tr"> 
+      <script src="//app-ab13.marketo.com/js/forms2/js/forms2.min.js"></script> 
+      <div class="marketo-form-container"> 
+       <form id="mktoForm_1653"></form> 
+      </div> 
+      <script>
+                MktoForms2.loadForm("//app-ab13.marketo.com", "713-XSC-918", 1653, function(form) {
+                    document.querySelectorAll('#mktoForm_1653 .mktoEmailField')[0].placeholder = "Email Address";
+
+                    form.onSuccess(function(vals, thanksURL){
+                        // Hide form and show success msg
+                        document.getElementById("mktoForm_1653").style.display = "none";
+                        document.getElementsByClassName("mkto-sub-message")[0].style.display = "none";
+
+                        document.getElementsByClassName("js-form-success-msg")[0].style.display = "block";
+                        return false;
+                    });
+                });
+            </script> 
+     </div> 
+     <div class="w-100 tr dn js-form-success-msg"> 
+      <p class="f2">Subscription confirmed. Thank you for subscribing!</p> 
+     </div> 
+    </div> 
+   </header> 
+   <nav id="nav" class="w-100 bb b--black-10 z-1"> 
+    <div id="desktop-nav-items-container" class="flex flex-row flex-wrap justify-between items-center mw8 center mv3 mv0-l"> 
+     <div class="nav-item nav-item-desktop ml3 mr2 dn db-l pv3" data-tag="product-news"> <a href="/tag/product-news/" class="no-underline gray1 f2 fw5 pv3">Product News</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="speed-and-reliability"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f2 fw5 pv3">Speed &amp; Reliability</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="security"> <a href="/tag/security/" class="no-underline gray1 f2 fw5 pv3">Security</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="serverless"> <a href="/tag/serverless/" class="no-underline gray1 f2 fw5 pv3">Serverless</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="zero-trust"> <a href="/tag/zero-trust/" class="no-underline gray1 f2 fw5 pv3">Zero Trust</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="developers"> <a href="/tag/developers/" class="no-underline gray1 f2 fw5 pv3">Developers</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop mh2 dn db-l pv3" data-tag="deep-dive"> <a href="/tag/deep-dive/" class="no-underline gray1 f2 fw5 pv3">Deep Dive</a> 
+     </div> 
+     <div class="nav-item nav-item-desktop ml2 mr3 dn db-l pv3" data-tag="life-at-cloudflare"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f2 fw5 pv3">Life @Cloudflare</a> 
+     </div> <a href="/search/"><img src="/assets/images/magnifier.svg?v=20d6e21a3c" class="js-search-box-trigger mw2 pointer ph3 ph2-l"> </a> 
+     <img src="/assets/images/hamburger.svg?v=20d6e21a3c" class="w2 pointer js-mobile-nav-trigger ph3 db dn-l"> 
+    </div> 
+    <div class="js-mobile-nav-container dn"> 
+     <div class="flex flex-column flex-wrap bg-gray9 o-95 absolute w-100 ph3 z-1"> 
+      <div class="pv3 ph2"> <a href="/tag/product-news/" class="no-underline gray1 f4 fw7">Product News</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/speed-and-reliability/" class="no-underline gray1 f4 fw7">Speed &amp; Reliability</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/security/" class="no-underline gray1 f4 fw7">Security</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/serverless/" class="no-underline gray1 f4 fw7">Serverless</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/zero-trust/" class="no-underline gray1 f4 fw7">Zero Trust</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/developers/" class="no-underline gray1 f4 fw7">Developers</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/deep-dive/" class="no-underline gray1 f4 fw7">Deep Dive</a> 
+      </div> 
+      <div class="pv3 ph2"> <a href="/tag/life-at-cloudflare/" class="no-underline gray1 f4 fw7">Life @Cloudflare</a> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+   <main id="post" class="flex flex-row flex-wrap items-center justify-center pt2 pt4-l"> 
+    <article class="post-full mw-100 ph3 ph0-l fs-20px post tag-birthday-week tag-product-news tag-analytics tag-privacy "> 
+     <h1 class="f6 f7-l fw4 gray1 pt1 pt3-l mb1">Free, Privacy-First Analytics for a Better Web</h1> 
+     <p class="f3 fw5 gray5 db di-l mt2" localize datetime="2020-09-29T14:02:00+01:00">Loading...</p> 
+     <noscript> 
+      <p class="f3 fw5 gray5 db di-l mt2">September 29, 2020 2:02PM</p> 
+     </noscript> 
+     <ul class="flex flex-wrap pl0 mt4"> 
+      <li class="list flex items-center ml0 pl0 pb1"> <a href="/author/jpl/" class="static-avatar pr1"> <img class="author-profile-image h2 w2 br-100 mr2" src="/content/images/2018/04/prof-crop.jpg" alt="Jon Levine"> </a> 
+       <div class="author-name-tooltip"> <a href="/author/jpl" class="fw5 f3 no-underline black mr3">Jon Levine</a> 
+       </div> </li> 
+     </ul> 
+     <section class="post-full-content"> 
+      <div class="post-content lh-copy gray1"> 
+       <p>Everyone with a website needs to know some basic facts about their website: what pages are people visiting? Where in the world are they? What other sites sent traffic to <em>my</em> website?</p>
+       <p>There are “free” analytics tools out there, but they come at a cost: not money, but your users’ privacy. Today we’re announcing a brand new, privacy-first analytics service that’s open to everyone — even if they're not already a Cloudflare customer. And if you're a Cloudflare customer, we've enhanced our analytics to make them even more powerful than before.</p>
+       <h3 id="the-most-important-analytics-feature-privacy">The most important analytics feature: Privacy</h3>
+       <p>The most popular analytics services available were built to help ad-supported sites sell more ads. But, a lot of websites don’t have ads. So if you use those services, you're giving up the privacy of your users in order to understand how what you've put online is performing.</p>
+       <p>Cloudflare's business has never been built around tracking users or selling advertising. We don’t want to know what you do on the Internet — it’s not our business. So we wanted to build an analytics service that gets back to what really matters for web creators, not necessarily marketers, and to give web creators the information they need in a simple, clean way that doesn't sacrifice their visitors' privacy. And giving web creators these analytics shouldn’t depend on their use of Cloudflare’s infrastructure for performance and security. (More on that in a bit.)</p>
+       <p>What does it mean for us to make our analytics “privacy-first”? Most importantly, it means we don’t need to track individual users over time for the purposes of serving analytics. We don’t use any client-side state, like cookies or localStorage, for the purposes of tracking users. And we don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics. (We consider fingerprinting even more intrusive than cookies, because users have no way to opt out.)</p>
+       <h3 id="counting-visits-without-tracking-users">Counting visits without tracking users</h3>
+       <p>One of the most essential stats about any website is: “how many people went there”? Analytics tools frequently show counts of “unique” visitors, which requires tracking individual users by a cookie or IP address.</p>
+       <p>We use the concept of a <em>visit</em>: a privacy-friendly measure of how people have interacted with your website. A visit is defined simply as a successful page view that has an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer">HTTP referer</a> that doesn’t match the hostname of the request. This tells you how many times people came to your website and clicked around before navigating away, but doesn’t require tracking individuals.</p>
+       <figure class="kg-card kg-image-card">
+        <img src="https://blog.cloudflare.com/content/images/2020/09/image1-25.png" class="kg-image">
+       </figure>
+       <p>A visit has slightly different semantics from a “unique”, and you should expect this number to differ from other analytics tools.</p>
+       <h3 id="all-of-the-details-none-of-the-bots">All of the details, none of the bots</h3>
+       <p>Our analytics deliver the most important metrics about your website, like page views and visits. But we know that an essential analytics feature is <em>flexibility: </em>the ability to add arbitrary filters, and slice-and-dice data as you see fit. Our analytics can show you the top hostnames, URLs, countries, and other critical metrics like status codes. You can filter on any of these metrics with a click and see the whole dashboard update.</p>
+       <p>I’m especially excited about two features in our time series charts: the ability to drag-to-zoom into a narrower time range, and the ability to “group by” different dimensions to see data in a different way. This is a super powerful way to drill into an anomaly in traffic and quickly see what’s going on. For example, you might notice a spike in traffic, zoom into that spike, and then try different groupings to see what contributed the extra clicks. A GIF is worth a thousand words:</p><!--kg-card-begin: html-->
+       <div style="position: relative; padding-top: 72.43133265513734%;">
+        <iframe src="https://iframe.videodelivery.net/a922327eb87d7bedbe067367828cee89?preload=true&amp;loop=true&amp;autoplay=true" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+       </div> 
+       <br><!--kg-card-end: html-->
+       <p>And for customers of our <a href="https://www.cloudflare.com/products/bot-management/">Bot Management product</a>, we’re working on the ability to detect (and remove) automated traffic. Coming very soon, you’ll be able to see which bots are reaching your website -- with just a click, <a href="https://developers.cloudflare.com/firewall/cf-dashboard/create-edit-delete-rules/">block them by using Firewall Rules</a>.</p>
+       <p>This is all possible thanks to our ABR analytics technology, which enables us to serve analytics very quickly for websites large and small. Check out our <a href="https://blog.cloudflare.com/explaining-cloudflares-abr-analytics">blog post</a> to learn more about how this works.</p>
+       <h3 id="edge-or-browser-analytics-why-not-both">Edge or Browser analytics? Why not both?</h3>
+       <p>There are two ways to collect web analytics data: at the edge (or on an origin server), or in the client using a JavaScript beacon.</p>
+       <p>Historically, Cloudflare has collected analytics data at our <em>edge</em>. This has some nice benefits over traditional, client-side analytics approaches:</p>
+       <ul>
+        <li>It’s more accurate because you don’t miss users who block third-party scripts, or JavaScript altogether</li>
+        <li>You can see all of the traffic back to your origin server, even if an HTML page doesn’t load</li>
+        <li>We can detect (and block) bots, apply Firewall rules, and generally scrub traffic of unwanted noise</li>
+        <li>You can measure the performance of your origin server</li>
+       </ul>
+       <p>More commonly, most web analytics providers use client-side measurement. This has some benefits as well:</p>
+       <ul>
+        <li>You can understand performance as your <em>users</em> see it -- e.g. how long did the page actually take to render</li>
+        <li>You can detect errors in client-side JavaScript execution</li>
+        <li>You can define custom event types emitted by JavaScript frameworks</li>
+       </ul>
+       <p>Ultimately, we want our customers to have the best of both worlds. We think it’s really powerful to get web traffic numbers directly from the edge. We also <a href="https://blog.cloudflare.com/introducing-browser-insights/">launched Browser Insights</a> a year ago to augment our existing edge analytics with more performance information, and today Browser Insights are taking a big step forward by <a href="https://blog.cloudflare.com/start-measuring-web-vitals-with-browser-insights">incorporating Web Vitals metrics</a>.</p>
+       <p>But, we know not everyone can modify their DNS to take advantage of Cloudflare’s edge services. That’s why today we’re announcing a free, standalone analytics product for everyone.</p>
+       <h3 id="how-do-i-get-it">How do I get it?</h3>
+       <p>For existing Cloudflare customers on our Pro, Biz, and Enterprise plans, just go to your Analytics tab! Starting today, you’ll see a banner to opt-in to the new analytics experience. (We plan to make this the default in a few weeks.)</p>
+       <p>But when building privacy-first analytics, we realized it’s important to make this accessible even to folks who don’t use Cloudflare today. You’ll be able to use Cloudflare’s web analytics even if you can’t change your DNS servers -- just add our JavaScript, and you’re good to go.</p>
+       <p>We’re still putting on the finishing touches on our JavaScript-based analytics, but you can <a href="https://www.cloudflare.com/web-analytics">sign up here</a> and we’ll let you know when it’s ready.</p>
+       <h3 id="the-evolution-of-analytics-at-cloudflare">The evolution of analytics at Cloudflare</h3>
+       <p>Just over a year ago, Cloudflare’s analytics consisted of a simple set of metrics: cached vs uncached data transfer, or how many requests were blocked by the Firewall. Today we provide flexible, powerful analytics across all our products, including <a href="https://blog.cloudflare.com/updates-to-firewall-analytics/">Firewall</a>, <a href="https://blog.cloudflare.com/introducing-cache-analytics/">Cache</a>, <a href="https://blog.cloudflare.com/introducing-load-balancing-analytics/">Load Balancing</a> and <a href="https://blog.cloudflare.com/announcing-network-analytics/">Network traffic</a>.</p>
+       <p>While we’ve been focused on building analytics <em>about</em> our products, we realized that our analytics are also powerful as a <em>standalone</em> product. Today is just the first step on that journey. We have so much more planned: from real-time analytics, to ever-more performance analysis, and even allowing customers to add custom events.</p>
+       <p>We want to hear what you want most out of analytics — drop a note in the comments to let us know what you want to see next.</p> 
+      </div> 
+     </section> <a href="/tag/birthday-week/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Birthday Week</a> <a href="/tag/product-news/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Product News</a> <a href="/tag/analytics/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Analytics</a> <a href="/tag/privacy/" class="dib pl2 pr2 pt1 pb1 mb2 bg-gray8 no-underline blue3 f2">Privacy</a> 
+    </article> 
+   </main> 
+   <div class="ph3 pv3"> 
+    <div class=" flex flex-row flex-wrap mw7 center"> 
+     <div class="w-100 bt b--gray8"> 
+      <p class="black fw5 f4 mt4">Follow on Twitter</p> 
+     </div> 
+     <div class="w-100 pb2"> <span>Jon Levine</span> <span class="ph1">|</span><a href="https://twitter.com/@jplevine" class="no-underline">@jplevine </a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="pv4 ph3 mw7 center" id="social-buttons"> 
+    <h2>Comments</h2> 
+    <div class="mt5-l mt4 flex flex-row-ns flex-column flex-wrap"> <a id="social-button-twitter" title="Discuss on Twitter" href="https://twitter.com/Cloudflare" target="_blank" class="mr2-ns mb0-l white link b pv3 ph3 mb3 dn" style="background-color:#0055DC;"> <span>Discuss on Twitter</span> </a> <a id="social-button-hn" title="Discuss on Hacker News" href="https://hn.algolia.com/?dateRange=all&amp;page=0&amp;prefix=false&amp;query=blog.cloudflare.com&amp;sort=byDate&amp;type=story" target="_blank" class="mr2-ns mb0-l white link b pv3 ph3 mb3 dn" style="background-color:#0055DC;"> <span>Discuss on Hacker News</span> </a> <a id="social-button-reddit" title="Discuss on Reddit" href="https://www.reddit.com/r/CloudFlare/" target="_blank" class="mr2-ns mb0-l white link b pv3 ph3 mb3 dn" style="background-color:#0055DC;"> <span>Discuss on Reddit</span> </a> 
+    </div> 
+   </div> 
+   <div class="pv4 flex flex-row flex-wrap mw7 center"> 
+    <div class="w-100 ph3 bt b--gray8"> 
+     <p class="orange fw5 f4 mt4 ttu">Related Posts</p> 
+    </div> 
+    <article class="w-100 w-100-m w-50-l ph3 mb4"> 
+     <p class="f3 fw5 gray5" data-iso-date="2018-09-28T20:40:13+01:00">September 28, 2018 8:40PM</p> <a href="/birthday-week-2018-wrap-up/" class="no-underline gray1 f4 fw5"> <h2 class="gray1 f4 fw5 mt2">Birthday Week Wrap-Up: Every day is launch day at Cloudflare</h2> </a> 
+     <p class="gray1 lh-copy">Our customers are accustomed to us launching new services, features, and functionality at a feverish pace, but recently, we’ve been especially active. This week we celebrated our 8th Birthday Week by announcing new offerings that benefit our customers and the global Internet community....</p> 
+     <ul class="flex pl0 fw6 f2"> <span>By&nbsp;</span> 
+      <li class="list flex items-center"> 
+       <div class="author-name-tooltip"> <a href="/author/jake-anderson/" class="fw5 f2 black no-underline">Jake Anderson</a> 
+       </div> </li> 
+     </ul> 
+     <div class="flex flex-row flex-wrap"> <a href="/tag/birthday-week/" class="no-underline f1 fw2 blue3 underline-hover">Birthday Week</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/product-news/" class="no-underline f1 fw2 blue3 underline-hover">Product News</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/registrar/" class="no-underline f1 fw2 blue3 underline-hover">Registrar</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/workers/" class="no-underline f1 fw2 blue3 underline-hover">Cloudflare Workers</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/workers-kv/" class="no-underline f1 fw2 blue3 underline-hover">Cloudflare Workers KV</a> 
+     </div> 
+    </article> 
+    <article class="w-100 w-100-m w-50-l ph3 mb4"> 
+     <p class="f3 fw5 gray5" data-iso-date="2021-04-20T14:00:00+01:00">April 20, 2021 2:00PM</p> <a href="/build-your-own-private-network-on-cloudflare/" class="no-underline gray1 f4 fw5"> <h2 class="gray1 f4 fw5 mt2">Start building your own private network on Cloudflare today</h2> </a> 
+     <p class="gray1 lh-copy">Starting today, your team can build a private network on Cloudflare’s network....</p> 
+     <ul class="flex pl0 fw6 f2"> <span>By&nbsp;</span> 
+      <li class="list flex items-center"> 
+       <div class="author-name-tooltip"> <a href="/author/sam/" class="fw5 f2 black no-underline">Sam Rhea</a> 
+       </div> </li> 
+     </ul> 
+     <div class="flex flex-row flex-wrap"> <a href="/tag/developer-week/" class="no-underline f1 fw2 blue3 underline-hover">Developer Week</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/developers/" class="no-underline f1 fw2 blue3 underline-hover">Developers</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/access/" class="no-underline f1 fw2 blue3 underline-hover">Cloudflare Access</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/zero-trust/" class="no-underline f1 fw2 blue3 underline-hover">Zero Trust</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/vpn/" class="no-underline f1 fw2 blue3 underline-hover">VPN</a> 
+     </div> 
+    </article> 
+    <article class="w-100 w-100-m w-50-l ph3 mb4"> 
+     <p class="f3 fw5 gray5" data-iso-date="2021-04-16T14:00:00+01:00">April 16, 2021 2:00PM</p> <a href="/workers-new-custom-builds-and-improved-logging/" class="no-underline gray1 f4 fw5"> <h2 class="gray1 f4 fw5 mt2">Introducing workers.new, custom builds, and improved logging for Workers</h2> </a> 
+     <p class="gray1 lh-copy">In the spirit of quickly solving problems, we’re excited to launch three new improvements to the Workers experience, so you can take your next idea and ship it even faster....</p> 
+     <ul class="flex pl0 fw6 f2"> <span>By&nbsp;</span> 
+      <li class="list flex items-center"> 
+       <div class="author-name-tooltip"> <a href="/author/ashcon/" class="fw5 f2 black no-underline">Ashcon Partovi</a> 
+       </div> </li> 
+     </ul> 
+     <div class="flex flex-row flex-wrap"> <a href="/tag/developer-week/" class="no-underline f1 fw2 blue3 underline-hover">Developer Week</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/developers/" class="no-underline f1 fw2 blue3 underline-hover">Developers</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/workers/" class="no-underline f1 fw2 blue3 underline-hover">Cloudflare Workers</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/wrangler/" class="no-underline f1 fw2 blue3 underline-hover">Wrangler</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/logging/" class="no-underline f1 fw2 blue3 underline-hover">Logging</a> 
+     </div> 
+    </article> 
+    <article class="w-100 w-100-m w-50-l ph3 mb4"> 
+     <p class="f3 fw5 gray5" data-iso-date="2019-09-27T20:00:00+01:00">September 27, 2019 8:00PM</p> <a href="/birthday-week-2019-wrap-up/" class="no-underline gray1 f4 fw5"> <h2 class="gray1 f4 fw5 mt2">Birthday Week 2019 Wrap-up</h2> </a> 
+     <p class="gray1 lh-copy">This week we celebrated Cloudflare’s 9th birthday by launching a variety of new offerings that support our mission: to help build a better Internet. Below is a summary recap of how we celebrated Birthday Week 2019....</p> 
+     <ul class="flex pl0 fw6 f2"> <span>By&nbsp;</span> 
+      <li class="list flex items-center"> 
+       <div class="author-name-tooltip"> <a href="/author/jake-anderson/" class="fw5 f2 black no-underline">Jake Anderson</a> 
+       </div> </li> 
+     </ul> 
+     <div class="flex flex-row flex-wrap"> <a href="/tag/birthday-week/" class="no-underline f1 fw2 blue3 underline-hover">Birthday Week</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/product-news/" class="no-underline f1 fw2 blue3 underline-hover">Product News</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/security/" class="no-underline f1 fw2 blue3 underline-hover">Security</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/analytics/" class="no-underline f1 fw2 blue3 underline-hover">Analytics</a> <span class="f1 fw2 blue3 no-underline underline-hover">,&nbsp;</span> <a href="/tag/1-1-1-1/" class="no-underline f1 fw2 blue3 underline-hover">1.1.1.1</a> 
+     </div> 
+    </article> 
+   </div> 
+   <footer class="pt4 pb4 pl1 pr1 main-footer"> 
+    <div class="mw8 center dn db-l ph3"> 
+     <div class="flex flex-row justify-between"> 
+      <div class="main-footer__menu-group"> 
+       <ul id="sales-menu" class="list pl0"

@@ -1,0 +1,564 @@
+<!doctype html>
+<html dir="ltr" lang="ko"> 
+ <head> 
+  <meta charset="utf-8"> <!-- v19745 --> 
+  <title>Cloudflare ??? ??</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="hc:meta:server:0WWenF87DvjSLMwxyJUQVBgfFjUCx3skykVs1doG82OAUYjYwDLPQLN2Wura1MZjlZibwGNt-mNKvq31g64BZA"> 
+  <link rel="canonical" href="https://support.cloudflare.com/hc/ko"> 
+  <link rel="alternate" hreflang="de" href="https://support.cloudflare.com/hc/de"> 
+  <link rel="alternate" hreflang="en" href="https://support.cloudflare.com/hc/en-us"> 
+  <link rel="alternate" hreflang="es" href="https://support.cloudflare.com/hc/es-es"> 
+  <link rel="alternate" hreflang="fr" href="https://support.cloudflare.com/hc/fr-fr"> 
+  <link rel="alternate" hreflang="ja" href="https://support.cloudflare.com/hc/ja"> 
+  <link rel="alternate" hreflang="ko" href="https://support.cloudflare.com/hc/ko"> 
+  <link rel="alternate" hreflang="pt" href="https://support.cloudflare.com/hc/pt-br"> 
+  <link rel="alternate" hreflang="zh" href="https://support.cloudflare.com/hc/zh-cn"> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-79172500fb4dbec2484043d570946543.css" id="stylesheet"> <!-- Entypo pictograms by Daniel Bruce — www.entypo.com --> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-cf937686d5b6669242017892da7bad78.css"> 
+  <link rel="stylesheet" type="text/css" href="//p13.zdassets.com/hc/theming_assets/184946/475874/style.css?digest=4402414509325"> 
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/184946/2dec4705e9ab399efdc6eef36e079aa31d1df8d9.ico"> 
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script> <!--
+  Template Name: Sagma
+  Version: 3.1.9
+  Author: Allies Interactive
+  Website: http://www.diziana.com/
+  Corporate Website : http://www.diziana.com
+  Contact: support@diziana.com
+  Follow: https://www.twitter.com/dizianaEngage
+  Like: https://www.facebook.com/diziana.engage
+  Purchase: Diziana.com
+  License: You must have a valid license purchased only from
+  diziana.com in order to legally use the theme for your project.
+  Copyright: © 2020 Allies Interactive Services Pvt. Ltd. All Rights Reserved
+--> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.0/URI.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/2a515632e0fd8ffdeb8d94cb25e44cf287feb32f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/a62d9ce6c78c259d7167495b85f03f38c8a6635f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/ef493f5fc3711bd1e6f7b876f3bfddeccbe99d36.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/d0608d7794a77e0c9fbdc1b0e5b4ecdfe79f2c37.js"></script> 
+  <script>
+  /**
+  * Icon for home category/section blocks
+  *
+  * Upload icon (ID.png) to assets for default block Icon
+  * Upload icon (hover_ID.png) to assets for hover block Icon
+  * Replace ID with category/section ID
+  * For font-icon, open the icon page and copy the class name attached in the tag as: <!--<i class="fas fa-pencil-alt"></i>-->
+  *
+  * Once asset is uploaded, click on it so details is shown in right pane
+  * Copy the text written under script tag and paste it below
+  *
+  * Your code should look like the below lines -
+  *  var assets360000004673 = "";
+  *  var assetsHover360000004673 = "";
+  *  var assets360000004673 = "fas fa-pencil-alt";
+  **/
+
+  // Paste copied code here
+  var assets200275228 = "fas fa-fire"; // Firewall category
+  var assets200276257 = "fas fa-file"; // Page Rules category
+  var assets200275248 = "fas fa-server"; // Caching category
+  var assets200276267 = "fas fa-chart-pie"; // Analytics category
+  var assets200275278 = "fas fa-user"; // Third-party software category
+  var assets200275298 = "fas fa-cog"; // Cloudflare client API category
+  var assets200276277 = "fas fa-hands-helping"; // Partners category
+  var assets200276287 = "fas fa-plus-circle"; // Cloudflare apps category
+
+</script> 
+  <script>
+  var systemStatusText = "All Systems Operational";
+  /* var systemStatusText = "" */
+  
+  var tocHeadingText = "? ????";
+  /* var tocHeadingText = "" */
+
+  /**
+  * Returns URL of image
+  *
+  **/
+
+  function getAssetURLById(id) {
+    return {
+      blockIcon: window["assets" + id],
+      blockHoverIcon: window["assetsHover" + id]
+    }
+  }
+
+  /**
+  * sets the image url from assets id
+  *
+  **/
+  function setIcon(id) {
+    var icon = getAssetURLById(id);
+
+    if ( icon.blockIcon != undefined ) {
+      var blockIcon = $("."+ id + '-block-icon');
+      var blockHoverIcon = $("."+ id + '-block-hover-icon');
+      var blockFontIcon = $("."+ id + '-block-font-icon');
+
+      if ( icon.blockIcon.indexOf('fa') == 0 ) {
+        blockFontIcon.addClass(icon.blockIcon);
+        blockFontIcon.parent().removeClass('hide');
+        blockFontIcon.show();
+        blockIcon.hide();
+        blockHoverIcon.hide();
+      } else {
+        blockIcon.attr('src', icon.blockIcon);
+        blockHoverIcon.attr('src', icon.blockHoverIcon);
+        blockIcon.parent().removeClass('hide');
+        blockFontIcon.hide();
+      }
+    }
+  }
+</script> 
+  <style type="text/css">
+
+.search-box .search input[type="submit"] {
+  background-image: url('//theme.zdassets.com/theme_assets/184946/d784142ca13b85d3a5d7918637c1e4d77dfef300.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-category-list .accordion-toggle.collapsed:after, .home-category-list .accordion-toggle:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/e36baa2f259318b4e14f9a14bd17f8a567456e98.png") no-repeat center center;
+}
+
+.home-category-list .accordion-toggle.open:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/7fb2bfa79c7022b7c88692589f4a1e2e97b95150.png") no-repeat center center;
+}
+
+.user-nav li + li a:before {
+  background: url("//theme.zdassets.com/theme_assets/184946/3126fee5fe913e135dcd1bed4b5fc0e80f82ce5c.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+  
+.banner div { 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   background-color: #00517F; 
+   width: 100%;
+   z-index: 100;
+ }
+.banner-content div { 
+   margin: 0 auto; 
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+ }
+.banner-content a {
+   color: #fff; 
+ }
+
+</style> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> 
+  <script type="text/javascript" src="//p13.zdassets.com/hc/theming_assets/184946/475874/script.js?digest=4402414509325"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class=""> 
+  <header class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo"> <a href="https://support.cloudflare.com/hc/" alt="Cloudflare Help Center" title="Cloudflare Help Center"> <img src="//theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png" alt="??"> </a> 
+    </div> 
+    <div class="nav-wrapper"> <span class="icon-menu"></span> <i class="fas system-status-icon"></i> 
+     <nav class="user-nav" id="user-nav"> <a href="https://www.cloudflarestatus.com"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> <a href="https://community.cloudflare.com/" title="????? ????"> ????? ???? </a> 
+     </nav> 
+     <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/ko?return_to=%2Fhc%2Fko" data-name="???"> ??? </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/de?return_to=%2Fhc%2Fde" dir="ltr" rel="nofollow" role="menuitem"> Deutsch </a> <a href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us" dir="ltr" rel="nofollow" role="menuitem"> English (US) </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br" dir="ltr" rel="nofollow" role="menuitem"> Português do Brasil </a> <a href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn" dir="ltr" rel="nofollow" role="menuitem"> ???? </a> </span> 
+     </div> <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="?? ??? ???." href="/hc/ko/signin?return_to=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fko&amp;locale=ko">???</a> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="hero"> 
+   <div class="hero-inner"> 
+    <h1 class="welcome-message-title welcome-message hide">Cloudflare ??? ??</h1> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/ko/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="??" autocomplete="off" aria-label="??"> 
+     <input type="submit" name="commit" value="??">
+    </form> <span id="search_placeholder_template" data-value="Cloudflare ?? ?? ????? ?????" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>?? ???:</li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=??+???&amp;utf8=%E2%9C%93'">?? ???</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=???+??&amp;utf8=%E2%9C%93">??? ??</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=?? ???&amp;utf8=%E2%9C%93">?? ???</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </div> 
+  </section> <!-- Modal --> 
+  <div class="modal" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-body"> <i class="fa fa-times close-modal"></i> <a href="https://www.cloudflarestatus.com" title="All Systems Operational"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> 
+    </div> 
+   </div> 
+  </div> <!-- /Modal --> 
+  <main role="main"> 
+   <script>
+  var templateName = 'homepage';
+  $('.welcome-message-title').removeClass('hide');
+</script> 
+   <section class="knowledge-base categories blocks"> 
+    <section class="container"> 
+     <ul class="blocks-list"> 
+      <li class="blocks-item custom"> <a href="/hc/categories/200275218" class="blocks-item-link" title="????"> <img src="//theme.zdassets.com/theme_assets/184946/5f80cc96c3472e1670549addd4c939262ff77abd.png" alt="????" class="block-icon"> <h3 class="blocks-item-title"> ???? </h3> <p class="blocks-item-description"> Cloudflare? ??? ??? ???? ???? ??? ?? ?? </p> </a> </li> 
+      <li class="blocks-item custom"> <a href="/hc/categories/200276237" class="blocks-item-link" title="DNS"> <img src="//theme.zdassets.com/theme_assets/184946/661cd2820e110c7843201d14a1544e04b22b3974.png" alt="DNS" class="block-icon"> <h3 class="blocks-item-title"> DNS </h3> <p class="blocks-item-description"> ??? ???? ???? ??? ? ??? Cloudflare DNS ?? </p> </a> </li> 
+      <li class="blocks-item custom"> <a href="/hc/categories/200276247" class="blocks-item-link" title="SSL/TLS"> <img src="//theme.zdassets.com/theme_assets/184946/88a9515cd09d13da10bbb55b1cdd3b7d6e0b5428.png" alt="SSL/TLS" class="block-icon"> <h3 class="blocks-item-title"> SSL/TLS </h3> <p class="blocks-item-description"> ??? ???? ????? ????? ??? ?? </p> </a> </li> 
+      <li class="blocks-item custom"> <a href="/hc/categories/200276227" class="blocks-item-link" title="?? ?? ? ??"> <img src="//theme.zdassets.com/theme_assets/184946/26c7a8f0a462adf1bcb8163546e9d0f99e27d826.png" alt="?? ?? ? ??" class="block-icon"> <h3 class="blocks-item-title"> ?? ?? ? ?? </h3> <p class="blocks-item-description"> ?? ??, ?? ?? ?? ? ??? ?? </p> </a> </li> 
+      <li class="blocks-item custom"> <a href="/hc/categories/200276217" class="blocks-item-link" title="?? ??"> <img src="//theme.zdassets.com/theme_assets/184946/0a74b4b2d61ea3a593a009dd2168c3c2d602eb8f.png" alt="?? ??" class="block-icon"> <h3 class="blocks-item-title"> ?? ?? </h3> <p class="blocks-item-description"> ?? ??, ?? ???? HTTP ?? ?? ? Cloudflare ??? ?? </p> </a> </li> 
+      <li class="blocks-item custom"> <a href="https://community.cloudflare.com/" class="blocks-item-link" title="????" target="_blank"> <img src="//theme.zdassets.com/theme_assets/184946/56a131cce6079661425e58eb670c4f3577d1655c.png" alt="????" class="block-icon"> <h3 class="blocks-item-title"> ???? </h3> <p class="blocks-item-description"> Cloudflare ???? ???? ??? ??? ??, Cloudflare ?? ????? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i> </p> </a> </li> 
+      <li class="blocks-item all-category"> <h2 class="blocks-item-title"> ?? ?? </h2> </li> 
+     </ul> 
+    </section> 
+   </section> 
+   <section class="container custom-block-wrapper section"> 
+    <h2>?? ??</h2> 
+    <section class="articles"> 
+     <h3>?? ?</h3> 
+     <ul class="article-list promoted-articles"> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/360023792171-Cloudflare-SSL-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" title="Cloudflare SSL ????"> Cloudflare SSL ???? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/360037345072-Cloudflare-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%99%EC%98%81%EC%83%81-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC" title="Cloudflare ????: ??? ????"> Cloudflare ????: ??? ???? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/201720164-Cloudflare-%EA%B3%84%EC%A0%95-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%B0%8F-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%B6%94%EA%B0%80" title="Cloudflare ?? ??? ? ???? ??"> Cloudflare ?? ??? ? ???? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/200172516-Cloudflare%EC%9D%98-CDN-%EC%9D%B4%ED%95%B4" title="Cloudflare? CDN ??"> Cloudflare? CDN ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/360034558071-Cloudflare-%EC%9A%A9%EC%96%B4%EC%A7%91-%EA%B3%84%EC%A0%95-%EB%B0%8F-%EC%9A%94%EA%B8%88-%EC%B2%AD%EA%B5%AC" title="Cloudflare ???: ?? ? ?? ??"> Cloudflare ???: ?? ? ?? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/203471284-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%8F-%EA%B3%84%EC%A0%95-%EA%B4%80%EB%A0%A8-%EB%AC%B8%EC%A0%9C" title="??? ? ?? ?? ??"> ??? ? ?? ?? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/200167906-2FA-2%EB%8B%A8%EA%B3%84-%EC%9D%B8%EC%A6%9D-%EB%A5%BC-%ED%86%B5%ED%95%9C-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%95%A1%EC%84%B8%EC%8A%A4-%EB%B3%B4%ED%98%B8" title="2FA(2?? ??)? ?? ??? ??? ??"> 2FA(2?? ??)? ?? ??? ??? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/200167836-API-%ED%86%A0%ED%81%B0-%EB%B0%8F-%ED%82%A4-%EA%B4%80%EB%A6%AC" title="API ?? ? ? ??"> API ?? ? ? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/360025829831-Cloudflare-%EC%9A%94%EA%B8%88-%EC%B2%AD%EA%B5%AC-%EC%A0%95%EC%B1%85" title="Cloudflare ?? ?? ??"> Cloudflare ?? ?? ?? </a> </li> 
+      <li class="promoted-articles-item"> <a href="/hc/ko/articles/205610698-Cloudflare-%EC%B2%AD%EA%B5%AC%EC%84%9C-%EC%9D%B4%ED%95%B4" title="Cloudflare ??? ??"> Cloudflare ??? ?? </a> </li> 
+     </ul> 
+    </section> 
+    <section class="recent-articles"> 
+     <h3 class="articles">?? ?</h3> 
+     <ul class="article-list"></ul> 
+    </section> 
+   </section> 
+   <section class="container custom-block-wrapper section" id="all-categories"> 
+    <h2>Cloudflare Dashboard ?</h2> 
+    <script>
+    var currentLocale = $("html").attr("lang").toLowerCase();
+    var currentLocaleName = currentLocale;
+    if (currentLocale != "en-us") {
+    	switch(currentLocale) {
+    		case 'de':
+    			currentLocaleName = "Deutsch";
+    			break;
+  			case 'es-es':
+    			currentLocaleName = "español";
+    			break;
+  			case 'fr-fr':
+    			currentLocaleName = "français";
+    			break;
+    		case 'pt-br':
+    			currentLocaleName = "português do Brasil";
+    			break;
+    		case 'zh-cn':
+    			currentLocaleName = "????";
+    			break;;
+    		case 'ja':
+    			currentLocaleName = "???";
+    			break;
+    	}
+    	document.write("<p class='language-warning'>???? ??? ??: " + currentLocaleName + "</p>")
+    }
+  </script> 
+    <ul class="category-list"> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200276267-Analytics" title="Analytics" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/b1811d0958bc2e9e4e052635a174d96a7b35016a.png">
+        </div> 
+        <div> 
+         <h3>Analytics</h3> 
+         <p> <script>
+                    if ($("html").attr("lang").toLowerCase() != "en-us") {
+                      document.write("[Analytics]")
+                    }
+                  </script> ??, ??, ???? ?? ????? ??? ? ?? ????? ?????. </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200275248-%EC%BA%90%EC%8B%B1" title="Caching" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/63e1d9fec279abaeca523f38e23a1118a817bbb1.png">
+        </div> 
+        <div> 
+         <h3>??</h3> 
+         <p> <script>
+                  if ($("html").attr("lang").toLowerCase() != "en-us") {
+                  	document.write("[Caching]")
+                  }
+                </script> ???? ???? ??? ??? ???? ????? ?? ??? ?? ???? ??? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200276237-DNS" title="DNS" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/265555bb720ad23add192828788503b11ffa46dc.png">
+        </div> 
+        <div> 
+         <h3>DNS</h3> 
+         <p> Cloudflare? ?? ???? ????? ??? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200275228-%EB%B0%A9%ED%99%94%EB%B2%BD" title="Firewall" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/f09a7d6692abdae52cd26af4fcf8f9703f8a8a60.png">
+        </div> 
+        <div> 
+         <h3>???</h3> 
+         <p> ??? ???, ?????? ???? ??? ????, ?? ?? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/360002612832-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" title="Network" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/945774384eba819305330faecf8e3182a30b97d6.png">
+        </div> 
+        <div> 
+         <h3>????</h3> 
+         <p> ???? ? ????? ?? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200276257-Page-Rules" title="Page Rules" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/a44554ec3f42d3b9c6cdf17cc6673a3a4adcb035.png">
+        </div> 
+        <div> 
+         <h3>Page Rules</h3> 
+         <p> <script>
+                  if ($("html").attr("lang").toLowerCase() != "en-us") {
+                  	document.write("[Page Rules]")
+                  }
+                </script> ?? URL? ??? Cloudflare ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200275238-%EC%86%8D%EB%8F%84" title="Speed" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/31f5fcc37574269a4d6cb7e4df1313d78a22c2db.png">
+        </div> 
+        <div> 
+         <h3>??</h3> 
+         <p> <script>
+                  if ($("html").attr("lang").toLowerCase() != "en-us") {
+                  	document.write("[Speed]")
+                  }
+                </script> ??, ??, ??? ???? ?? ??? ?? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/200276247-SSL-TLS" title="SSL/TLS" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/5b53f803bb6f666a9a005a7a489f8420c1ac834c.png">
+        </div> 
+        <div> 
+         <h3>SSL/TLS</h3> 
+         <p> ? ??? ???, ???? ????? ?? ? ???? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/ko/categories/360001969392-%EB%8D%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EC%95%B1" title="More Dashboard Apps" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/d1b9c6d2bdb9221bd72b39534b758e5806b5e726.png">
+        </div> 
+        <div> 
+         <h3>? ??? ???? ?</h3> 
+         <p> Access, Apps, Custom Pages, Registrar, Scrape Shield, Stream, Workers ? ?? Cloudflare ???? ? </p> 
+        </div> 
+       </div> </a> </li> 
+    </ul> 
+    <script>
+    var currentLocale = $("html").attr("lang").toLowerCase();
+    var currentLocaleName = currentLocale;
+    if (currentLocale != "en-us") {
+    	document.write("<p class='language-warning'>???? ???? ???</p>")
+    }
+  </script> 
+    <ul class="category-list"> 
+     <li class="category-list-item"> <a href="/hc/en-us/categories/200276267" title="Analytics" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/b1811d0958bc2e9e4e052635a174d96a7b35016a.png">
+        </div> 
+        <div> 
+         <h3>Analytics</h3> 
+         <p> ??, ??, ???? ?? ????? ??? ? ?? ????? ?????. </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/en-us/categories/360002612832" title="Network" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/945774384eba819305330faecf8e3182a30b97d6.png">
+        </div> 
+        <div> 
+         <h3>Network</h3> 
+         <p> ???? ? ????? ?? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/en-us/categories/200275238" title="Speed" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/31f5fcc37574269a4d6cb7e4df1313d78a22c2db.png">
+        </div> 
+        <div> 
+         <h3>Speed</h3> 
+         <p> ??, ??, ??? ???? ?? ??? ?? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/en-us/categories/360001862932" title="Traffic" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/e8af2c986564094b474819e07587c7432f100ee3.png">
+        </div> 
+        <div> 
+         <h3>Traffic</h3> 
+         <p> ??? ??? ??? ??? ??? ?? ?? </p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="/hc/en-us/categories/360001969392" title="More Dashboard Apps" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/d1b9c6d2bdb9221bd72b39534b758e5806b5e726.png">
+        </div> 
+        <div> 
+         <h3>More Dashboard Apps</h3> 
+         <p> Access, Apps, Custom Pages, Registrar, Scrape Shield, Stream, Workers ? ?? Cloudflare ???? ? </p> 
+        </div> 
+       </div> </a> </li> 
+    </ul> 
+    <div style=" font-size:16px; padding-bottom: 10px;"> <span style="font-weight:bold;">?? ?? ?? (?? ??):</span> <a href="/hc/en-us/categories/200275298">Cloudflare ????? API</a>, <a href="/hc/en-us/categories/200276277">???</a>, <a href="/hc/en-us/categories/200275278">?? ?????</a> 
+    </div> 
+   </section> 
+   <section class="container custom-block-wrapper section" id="all-categories"> 
+    <h2>Cloudflare ??</h2> 
+    <script>
+    var currentLocale = $("html").attr("lang").toLowerCase();
+    var currentLocaleName = currentLocale;
+    if (currentLocale != "en-us") {
+    	document.write("<p class='language-warning'>???? ???? ???</p>")
+    }
+  </script> 
+    <ul class="category-list"> 
+     <li class="category-list-item"> <a href="https://api.cloudflare.com/" target="_blank" title="Cloudflare ????? API" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/e71832d01d0517ca1e5037f09c64bb5d77e17a9a.png">
+        </div> 
+        <div> 
+         <h3>Cloudflare ????? API</h3> 
+         <p>Cloudflare ????? ?? ??? ?? ??? ??? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="https://developers.cloudflare.com/" target="_blank" title="Cloudflare Developers" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/c275ec67186d1fb48fa795cefd107f32f91b3e21.png">
+        </div> 
+        <div> 
+         <h3>Cloudflare Developers</h3> 
+         <p>Cloudflare ?? ? ??? ?? ?? ?? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="https://developers.cloudflare.com/workers/" target="_blank" title="Cloudflare Workers" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/e9e971f0cdd9409d3ffb62b85264a25db6716870.png">
+        </div> 
+        <div> 
+         <h3>Workers</h3> 
+         <p>Cloudflare? ?? ??? ???? ???? ???? ?? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="https://developers.cloudflare.com/access/about/" target="_blank" title="Cloudflare Access" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/636181a3dfc45744a57a76ca1653914abebbbd31.png">
+        </div> 
+        <div> 
+         <h3>Access</h3> 
+         <p>VPN ?? ?? ?????? ??? ????? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="https://developers.cloudflare.com/registrar/about/" target="_blank" title="Cloudflare Registrar" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/d02829ba11f48e30d9bf6881e6ef900f77d9d9df.png">
+        </div> 
+        <div> 
+         <h3>Registrar</h3> 
+         <p>??? ?? ??? ?? Cloudflare? ???? ??? ?? ??? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+     <li class="category-list-item"> <a href="https://developers.cloudflare.com/load-balancing" target="_blank" title="Cloudflare Load Balancing" class="category-list-link"> 
+       <div class="two-col"> 
+        <div>
+         <img class="dash-icon" src="//theme.zdassets.com/theme_assets/184946/12e4170c50d5656244a68ae00ba689c56cd63fc0.png">
+        </div> 
+        <div> 
+         <h3>Load Balancing</h3> 
+         <p>?? ?? ??? ??, ?? ?? ??, ?? ? ?? ?? ?? ??, ??? ?? <i class="fas fa-external-link-alt" style="color: rgba(243, 127, 32, 1); font-size: 15px;"></i></p> 
+        </div> 
+       </div> </a> </li> 
+    </ul> 
+   </section> 
+  </main> 
+  <section class="footer-search-wrapper"> 
+   <section class="container"> 
+    <section class="content-wrapper"> 
+     <section> 
+      <h1>??? ??? ?? ??????</h1> 
+      <p>??? ?? ??? ??? ?? ?? 95% ?? ? ????. ?? ??? ?? ?? ?????.</p> 
+     </section> 
+     <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="????? ????"> ????? ???? </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="?? ??"> ?? ?? </a> 
+     </section> 
+    </section> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/ko/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="??" autocomplete="off" aria-label="??"> 
+     <input type="submit" name="commit" value="??">
+    </form> <span id="search_placeholder_template" data-value="Cloudflare ?? ?? ????? ?????" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>?? ???:</li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=??+???&amp;utf8=%E2%9C%93'">?? ???</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=???+??&amp;utf8=%E2%9C%93">??? ??</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=?? ???&amp;utf8=%E2%9C%93">?? ???</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/ko/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </section> 
+  </section> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-inner"> 
+     <div class="footer-links"> 
+      <h3 title="Sales">??</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" title="Enterprise Sales">?? ??</a> </li> 
+       <li class="footer-link

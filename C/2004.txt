@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Audited actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can search the audit log for a wide variety of actions."> 
+  <meta name="keywords" content="Auditing,Enterprise,Security"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="FtdVHkNd-TFrVVwJvg8cw5xEtjUhsziKYHRE"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/enterprise-server@3.1/admin" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Enterprise</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Overview</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-enterprise-accounts" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise accounts</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-your-github-enterprise-license" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing your GitHub Enterprise license</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/managing-billing-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing billing for your enterprise</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-upgrades-to-new-releases" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About upgrades</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/system-overview" class="pl-6 pl-4 pr-5 py-1 color-text-primary">System overview</a> </li> 
+          <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/overview/about-the-github-enterprise-api" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About the GitHub Enterprise API</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/installation" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Installing</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance" class="pl-4 pr-5 py-2 color-text-primary">Setting up a GitHub Enterprise Server instance </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-aws" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on AWS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Azure</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-google-cloud-platform" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Google Cloud Platform</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-hyper-v" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on Hyper-V</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-openstack-kvm" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on OpenStack KVM</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-vmware" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on VMware</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-xenserver" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing GitHub Enterprise Server on XenServer</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/installation/setting-up-a-github-enterprise-server-instance/setting-up-a-staging-instance" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Setting up a staging instance</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/configuration" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Configuring GitHub Enterprise</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Configuring your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/about-enterprise-configuration" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About enterprise configuration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-management-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the management console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/accessing-the-administrative-shell-ssh" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Accessing the administrative shell (SSH)</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-and-scheduling-maintenance-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling and scheduling maintenance mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-backups-on-your-appliance" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring backups</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/site-admin-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Site admin dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/enabling-private-mode" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling private mode</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/managing-github-for-mobile-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing GitHub for mobile for your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-email-for-notifications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring email for notifications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-rate-limits" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring rate limits</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-applications" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring applications</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/troubleshooting-ssl-errors" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting SSL errors</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-time-synchronization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring time synchronization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/command-line-utilities" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Command-line utilities</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-your-enterprise/configuring-github-pages-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Configuring GitHub Pages for your enterprise</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings" class="pl-4 pr-5 py-2 color-text-primary">Configuring network settings </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-the-ip-address-using-the-virtual-machine-console" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring the IP address using the virtual machine console</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-dns-nameservers" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring DNS nameservers</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-a-hostname" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a hostname</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/validating-your-domain-settings" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Validating your domain settings</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-tls" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring TLS</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/enabling-subdomain-isolation" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling subdomain isolation</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-an-outbound-web-proxy-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring an outbound web proxy server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/configuring-built-in-firewall-rules" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring built-in firewall rules</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/network-ports" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Network ports</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/configuring-network-settings/using-github-enterprise-server-with-a-load-balancer" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Using GitHub Enterprise Server with a load balancer</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-4 pr-5 py-2 color-text-primary">Managing connections between GitHub Enterprise Server and GitHub Enterprise Cloud </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/connecting-github-enterprise-server-to-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Connecting GitHub Enterprise Server to GitHub Enterprise Cloud</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-search-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified search between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-unified-contributions-between-github-enterprise-server-and-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling unified contributions between GitHub Enterprise Server and GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-alerts-for-vulnerable-dependencies-on-github-enterprise-server" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling alerts for vulnerable dependencies on GitHub Enterprise Server</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/configuration/managing-connections-between-github-enterprise-server-and-github-enterprise-cloud/enabling-automatic-user-license-sync-between-github-enterprise-server-and-github-enterprise-cloud" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Enabling automatic user license sync between GitHub Enterprise Server and GitHub Enterprise Cloud</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/authentication" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Authentication</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/user-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing users, organizations, and repositories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Managing users in your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/promoting-or-demoting-a-site-administrator" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Promoting or demoting a site administrator</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/best-practices-for-user-security" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Best practices for user security</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/auditing-users-across-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Auditing users across your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/managing-dormant-users" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing dormant users</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/suspending-and-unsuspending-users" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Suspending and unsuspending users</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/placing-a-legal-hold-on-a-user-or-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Placing a legal hold on a user or organization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/auditing-ssh-keys" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Auditing SSH keys</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/customizing-user-messages-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Customizing user messages</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/rebuilding-contributions-data" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Rebuilding contributions data</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-users-in-your-enterprise/managing-global-webhooks" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing global webhooks</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Managing organizations in your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/configuring-visibility-for-organization-membership" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring visibility for organization membership</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/preventing-users-from-creating-organizations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Preventing users from creating organizations</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/requiring-two-factor-authentication-for-an-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Requiring two-factor authentication for an organization</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/creating-teams" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Creating teams</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/adding-people-to-teams" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Adding people to teams</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/removing-users-from-teams-and-organizations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Removing users from teams and organizations</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/managing-projects-using-jira" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing projects using Jira</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-organizations-in-your-enterprise/continuous-integration-using-jenkins" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Continuous integration using Jenkins</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-repositories-in-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Managing repositories in your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-repositories-in-your-enterprise/configuring-git-large-file-storage-for-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring Git Large File Storage for your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-repositories-in-your-enterprise/migrating-to-internal-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating to internal repositories</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-repositories-in-your-enterprise/disabling-git-ssh-access-on-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Disabling Git SSH access on your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/managing-repositories-in-your-enterprise/troubleshooting-service-hooks" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting service hooks</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Monitoring activity in your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/activity-dashboard" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Activity dashboard</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audit-logging" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Audit logging</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/searching-the-audit-log" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Searching the audit log</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Audited actions</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/viewing-push-logs" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing push logs</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/log-forwarding" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Log forwarding</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise" class="pl-4 pr-5 py-2 color-text-primary">Migrating data to and from your enterprise </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/about-migrations" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About migrations</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/exporting-migration-data-from-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Exporting migration data from your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/exporting-migration-data-from-githubcom" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Exporting migration data from GitHub.com</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/preparing-to-migrate-data-to-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Preparing to migrate data to your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/migrating-data-to-your-enterprise" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Migrating data to your enterprise</a> </li> 
+            <li class="sidebar-article "> <a href="/en/enterprise-server@3.1/admin/user-management/migrating-data-to-and-from-your-enterprise/importing-data-from-third-party-version-control-systems" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Importing data from third-party version control systems</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/policies" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Setting policies for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-management" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Monitoring, managing, and updating your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/github-actions" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Actions for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/packages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Packages for your enterprise</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/enterprise-support" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with GitHub Support</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/enterprise-server@3.1/admin/advanced-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub Advanced Security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/guides" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Guides</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/release-notes" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Release notes</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/enterprise-server@3.1/admin/all-releases" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">GitHub Enterprise Server releases</a> <!-- some categories have maptopics with child articles -->  </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Enterprise 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Enterprise" href="/en/enterprise-server@3.1/admin" class="d-inline-block ">GitHub Enterprise</a><a title="category: Managing users, organizations, and repositories" href="/en/enterprise-server@3.1/admin/user-management" class="d-inline-block ">Managing users, organizations, and repositories</a><a title="mapTopic: Monitoring activity in your enterprise" href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise" class="d-inline-block ">Monitoring activity in your enterprise</a><a title="article: Audited actions" href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-inline-block color-text-tertiary">Audited actions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> Enterprise Server 3.1 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/enterprise-server@3.1/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 link-blue active"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/enterprise-server@2.21/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.21</a> <a href="/en/github-ae@latest/admin/user-management/monitoring-activity-in-your-enterprise/audited-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Audited actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can search the audit log for a wide variety of actions.</p>
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#authentication">Authentication</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#github-actions">GitHub Actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#hooks">Hooks</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#enterprise-configuration-settings">Enterprise configuration settings</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#issues-and-pull-requests">Issues and pull requests</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#organizations">Organizations</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#protected-branches">Protected branches</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#repositories">Repositories</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#site-admin-tools">Site admin tools</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#teams">Teams</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#users">Users</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="authentication"><a href="#authentication">Authentication</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>oauth_access.create</code></td>
+          <td>An <a href="/en/enterprise-server@3.1/developers/apps/authorizing-oauth-apps">OAuth access token</a> was <a href="/en/enterprise-server@3.1/articles/creating-an-access-token-for-command-line-use">generated</a> for a user account.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_access.destroy</code></td>
+          <td>An <a href="/en/enterprise-server@3.1/developers/apps/authorizing-oauth-apps">OAuth access token</a> was deleted from a user account.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_application.destroy</code></td>
+          <td>An <a href="/en/enterprise-server@3.1/guides/basics-of-authentication/#registering-your-app">OAuth application</a> was deleted from a user or organization account.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_application.reset_secret</code></td>
+          <td>An <a href="/en/enterprise-server@3.1/guides/basics-of-authentication/#registering-your-app">OAuth application</a>'s secret key was reset.</td>
+         </tr>
+         <tr>
+          <td><code>oauth_application.transfer</code></td>
+          <td>An <a href="/en/enterprise-server@3.1/guides/basics-of-authentication/#registering-your-app">OAuth application</a> was transferred from one user or organization account to another.</td>
+         </tr>
+         <tr>
+          <td><code>public_key.create</code></td>
+          <td>An SSH key was <a href="/en/enterprise-server@3.1/articles/adding-a-new-ssh-key-to-your-github-account">added</a> to a user account or a <a href="/en/enterprise-server@3.1/guides/managing-deploy-keys/#deploy-keys">deploy key</a> was added to a repository.</td>
+         </tr>
+         <tr>
+          <td><code>public_key.delete</code></td>
+          <td>An SSH key was removed from a user account or a <a href="/en/enterprise-server@3.1/guides/managing-deploy-keys/#deploy-keys">deploy key</a> was removed from a repository.</td>
+         </tr>
+         <tr>
+          <td><code>public_key.update</code></td>
+          <td>A user account's SSH key or a repository's <a href="/en/enterprise-server@3.1/guides/managing-deploy-keys/#deploy-keys">deploy key</a> was updated.</td>
+         </tr>
+         <tr>
+          <td><code>two_factor_authentication.enabled</code></td>
+          <td><a href="/en/enterprise-server@3.1/articles/about-two-factor-authentication">Two-factor authentication</a> was enabled for a user account.</td>
+         </tr>
+         <tr>
+          <td><code>two_factor_authentication.disabled</code></td>
+          <td><a href="/en/enterprise-server@3.1/articles/about-two-factor-authentication">Two-factor authentication</a> was disabled for a user account.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="github-actions"><a href="#github-actions">GitHub Actions</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>remove_self_hosted_runner</code></td>
+          <td>Triggered when a self-hosted runner is removed.</td>
+         </tr>
+         <tr>
+          <td><code>register_self_hosted_runner</code></td>
+          <td>Triggered when a new self-hosted runner is registered. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/adding-self-hosted-runners">Adding self-hosted runners</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_created</code></td>
+          <td>Triggered when a self-hosted runner group is created. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#about-self-hosted-runner-groups">About self-hosted runner groups</a>.</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_removed</code></td>
+          <td>Triggered when a self-hosted runner group is removed. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#removing-a-self-hosted-runner-group">Removing a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runner_removed</code></td>
+          <td>Triggered when the REST API is used to remove a self-hosted runner from a group.</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_added</code></td>
+          <td>Triggered when a self-hosted runner is added to a group. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group">Moving a self-hosted runner to a group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_runners_updated</code></td>
+          <td>Triggered when a runner group's list of members is updated. For more information, see "<a href="/en/enterprise-server@3.1/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization">Set self-hosted runners in a group for an organization</a>."</td>
+         </tr>
+         <tr>
+          <td><code>runner_group_updated</code></td>
+          <td>Triggered when the configuration of a self-hosted runner group is changed. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group">Changing the access policy of a self-hosted runner group</a>."</td>
+         </tr>
+         <tr>
+          <td><code>self_hosted_runner_updated</code></td>
+          <td>Triggered when the runner application is updated. Can be viewed using the REST API and the UI; not visible in the JSON/CSV export. For more information, see "<a href="/en/enterprise-server@3.1/actions/hosting-your-own-runners/about-self-hosted-runners#about-self-hosted-runners">About self-hosted runners</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="hooks"><a href="#hooks">Hooks</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>hook.create</code></td>
+          <td>A new hook was added to a repository.</td>
+         </tr>
+         <tr>
+          <td><code>hook.config_changed</code></td>
+          <td>A hook's configuration was changed.</td>
+         </tr>
+         <tr>
+          <td><code>hook.destroy</code></td>
+          <td>A hook was deleted.</td>
+         </tr>
+         <tr>
+          <td><code>hook.events_changed</code></td>
+          <td>A hook's configured events were changed.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="enterprise-configuration-settings"><a href="#enterprise-configuration-settings">Enterprise configuration settings</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>business.advanced_security_policy_update</code></td>
+          <td>A site admin creates, updates, or removes a policy for GitHub Advanced Security. For more information, see "<a href="/en/enterprise-server@3.1/admin/policies/enforcing-policies-for-advanced-security-in-your-enterprise">Enforcing policies for Advanced Security in your enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>business.clear_members_can_create_repos</code></td>
+          <td>A site admin clears a restriction on repository creation in organizations in the enterprise. For more information, see "<a href="/en/enterprise-server@3.1/admin/policies/enforcing-repository-management-policies-in-your-enterprise#setting-a-policy-for-repository-creation">Enforcing repository management policies in your enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>business.update_member_repository_creation_permission</code></td>
+          <td>A site admin restricts repository creation in organizations in the enterprise. For more information, see "<a href="/en/enterprise-server@3.1/admin/policies/enforcing-repository-management-policies-in-your-enterprise#setting-a-policy-for-repository-creation">Enforcing repository management policies in your enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.config.lock_anonymous_git_access</code></td>
+          <td>A site admin locks anonymous Git read access to prevent repository admins from changing existing anonymous Git read access settings for repositories in the enterprise. For more information, see "<a href="/en/enterprise-server@3.1/admin/policies/enforcing-repository-management-policies-in-your-enterprise#configuring-anonymous-git-read-access">Enforcing repository management policies in your enterprise</a>."</td>
+         </tr>
+         <tr>
+          <td><code>enterprise.config.unlock_anonymous_git_access</code></td>
+          <td>A site admin unlocks anonymous Git read access to allow repository admins to change existing anonymous Git read access settings for repositories in the enterprise. For more information, see "<a href="/en/enterprise-server@3.1/admin/policies/enforcing-repository-management-policies-in-your-enterprise#configuring-anonymous-git-read-access">Enforcing repository management policies in your enterprise</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="issues-and-pull-requests"><a href="#issues-and-pull-requests">Issues and pull requests</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>issue.update</code></td>
+          <td>An issue's body text (initial comment) changed.</td>
+         </tr>
+         <tr>
+          <td><code>issue_comment.update</code></td>
+          <td>A comment on an issue (other than the initial one) changed.</td>
+         </tr>
+         <tr>
+          <td><code>pull_request_review_comment.delete</code></td>
+          <td>A comment on a pull request was deleted.</td>
+         </tr>
+         <tr>
+          <td><code>issue.destroy</code></td>
+          <td>An issue was deleted from the repository. For more information, see "<a href="/en/enterprise-server@3.1/github/managing-your-work-on-github/deleting-an-issue">Deleting an issue</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="organizations"><a href="#organizations">Organizations</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>org.async_delete</code></td>
+          <td>A user initiated a background job to delete an organization.</td>
+         </tr>
+         <tr>
+          <td><code>org.delete</code></td>
+          <td>An organization was deleted by a user-initiated background job.</td>
+         </tr>
+         <tr>
+          <td><code>org.transform</code></td>
+          <td>A user account was converted into an organization. For more information, see "<a href="/en/enterprise-server@3.1/github/setting-up-and-managing-your-github-user-account/converting-a-user-into-an-organization">Converting a user into an organization</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="protected-branches"><a href="#protected-branches">Protected branches</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>protected_branch.create </code></td>
+          <td>Branch protection is enabled on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.destroy</code></td>
+          <td>Branch protection is disabled on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.update_admin_enforced </code></td>
+          <td>Branch protection is enforced for repository administrators.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.update_require_code_owner_review </code></td>
+          <td>Enforcement of required code owner review is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.dismiss_stale_reviews </code></td>
+          <td>Enforcement of dismissing stale pull requests is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.update_signature_requirement_enforcement_level </code></td>
+          <td>Enforcement of required commit signing is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.update_pull_request_reviews_enforcement_level </code></td>
+          <td>Enforcement of required pull request reviews is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.update_required_status_checks_enforcement_level </code></td>
+          <td>Enforcement of required status checks is updated on a branch.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.rejected_ref_update </code></td>
+          <td>A branch update attempt is rejected.</td>
+         </tr>
+         <tr>
+          <td><code>protected_branch.policy_override </code></td>
+          <td>A branch protection requirement is overridden by a repository administrator.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="repositories"><a href="#repositories">Repositories</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>repo.access</code></td>
+          <td>The visibility of a repository changed to private, public, or internal.</td>
+         </tr>
+         <tr>
+          <td><code>repo.archived</code></td>
+          <td>A repository was archived. For more information, see "<a href="/en/enterprise-server@3.1/github/creating-cloning-and-archiving-repositories/archiving-a-github-repository">Archiving a GitHub repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.add_member</code></td>
+          <td>A collaborator was added to a repository.</td>
+         </tr>
+         <tr>
+          <td><code>repo.config</code></td>
+          <td>A site admin blocked force pushes. For more information, see <a href="/en/enterprise-server@3.1/admin/guides/developer-workflow/blocking-force-pushes-to-a-repository">Blocking force pushes to a repository</a> to a repository.</td>
+         </tr>
+         <tr>
+          <td><code>repo.create</code></td>
+          <td>A repository was created.</td>
+         </tr>
+         <tr>
+          <td><code>repo.destroy</code></td>
+          <td>A repository was deleted.</td>
+         </tr>
+         <tr>
+          <td><code>repo.remove_member</code></td>
+          <td>A collaborator was removed from a repository.</td>
+         </tr>
+         <tr>
+          <td><code>repo.rename</code></td>
+          <td>A repository was renamed.</td>
+         </tr>
+         <tr>
+          <td><code>repo.transfer</code></td>
+          <td>A user accepted a request to receive a transferred repository.</td>
+         </tr>
+         <tr>
+          <td><code>repo.transfer_start</code></td>
+          <td>A user sent a request to transfer a repository to another user or organization.</td>
+         </tr>
+         <tr>
+          <td><code>repo.unarchived</code></td>
+          <td>A repository was unarchived. For more information, see "<a href="/en/enterprise-server@3.1/github/creating-cloning-and-archiving-repositories/archiving-a-github-repository">Archiving a GitHub repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.config.disable_anonymous_git_access</code></td>
+          <td>Anonymous Git read access is disabled for a repository. For more information, see "<a href="/en/enterprise-server@3.1/articles/enabling-anonymous-git-read-access-for-a-repository">Enabling anonymous Git read access for a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.config.enable_anonymous_git_access</code></td>
+          <td>Anonymous Git read access is enabled for a repository. For more information, see "<a href="/en/enterprise-server@3.1/articles/enabling-anonymous-git-read-access-for-a-repository">Enabling anonymous Git read access for a repository</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.config.lock_anonymous_git_access</code></td>
+          <td>A repository's anonymous Git read access setting is locked, preventing repository administrators from changing (enabling or disabling) this setting. For more information, see "<a href="/en/enterprise-server@3.1/admin/guides/user-management/preventing-users-from-changing-anonymous-git-read-access">Preventing users from changing anonymous Git read access</a>."</td>
+         </tr>
+         <tr>
+          <td><code>repo.config.unlock_anonymous_git_access</code></td>
+          <td>A repository's anonymous Git read access setting is unlocked, allowing repository administrators to change (enable or disable) this setting. For more information, see "<a href="/en/enterprise-server@3.1/admin/guides/user-management/preventing-users-from-changing-anonymous-git-read-access">Preventing users from changing anonymous Git read access</a>."</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="site-admin-tools"><a href="#site-admin-tools">Site admin tools</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>staff.disable_repo</code></td>
+          <td>A site admin disabled access to a repository and all of its forks.</td>
+         </tr>
+         <tr>
+          <td><code>staff.enable_repo</code></td>
+          <td>A site admin re-enabled access to a repository and all of its forks.</td>
+         </tr>
+         <tr>
+          <td><code>staff.fake_login</code></td>
+          <td>A site admin signed into GitHub Enterprise Server as another user.</td>
+         </tr>
+         <tr>
+          <td><code>staff.repo_unlock</code></td>
+          <td>A site admin unlocked (temporarily gained full access to) one of a user's private repositories.</td>
+         </tr>
+         <tr>
+          <td><code>staff.unlock</code></td>
+          <td>A site admin unlocked (temporarily gained full access to) all of a user's private repositories.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="teams"><a href="#teams">Teams</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>team.create</code></td>
+          <td>A user account or repository was added to a team.</td>
+         </tr>
+         <tr>
+          <td><code>team.delete</code></td>
+          <td>A user account or repository was removed from a team.</td>
+         </tr>
+         <tr>
+          <td><code>team.demote_maintainer</code></td>
+          <td>A user was demoted from a team maintainer to a team member.</td>
+         </tr>
+         <tr>
+          <td><code>team.destroy</code></td>
+          <td>A team was deleted.</td>
+         </tr>
+         <tr>
+          <td><code>team.promote_maintainer</code></td>
+          <td>A user was promoted from a team member to a team maintainer.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <h3 id="users"><a href="#users">Users</a></h3> 
+       <table>
+        <thead>
+         <tr>
+          <th>Action</th>
+          <th>Description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>user.add_email</code></td>
+          <td>An email address was added to a user account.</td>
+         </tr>
+ 

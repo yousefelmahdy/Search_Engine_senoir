@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <script async src="https://www.googleoptimize.com/optimize.js?id=GTM-N4JSZJ8"></script>
+  <script>window.redwood={"consentGroups":{"C0001":true,"C0002":true,"C0003":true,"C0004":true},"country":"EG","colo":"MRS","user":null,"locale":"zh-CN"}</script> 
+  <script type="text/javascript">
+      var OneTrust={"geolocationResponse":{"stateCode":"C","countryCode":"EG"}}
+    </script> 
+  <script>
+     const acceptedLocales = [
+      'en-au',
+      'en-ca',
+      'en-gb',
+      'en-in',
+      'en-us',
+      'de-de',
+      'es-es',
+      'es-la',
+      'fr-fr',
+      'it-it',
+      'ja-jp',
+      'ko-kr',
+      'pt-br',
+      'zh-tw',
+      'zh-cn',
+    ];
+    const orphanLocales = [
+      'ru-ru',
+      'sv-se',
+      'nl-nl',
+      'vi-vn',
+      'th-th',
+      'id-id',
+    ];
+    const ignoreList = [
+      'apps',
+      'docs',
+      'rate-limit-test',
+      'rss',
+    ]
+    function getPathFromLocale(locale, code, pathString) {
+      if ( locale === code || !acceptedLocales.includes(code) || acceptedLocales.includes(locale) || orphanLocales.includes(locale) ) {
+        return null;
+      } else {
+        return [code, locale ? locale : '', pathString].filter(part => part !== '').join('/');
+      }
+    };
+    if (localStorage.getItem('langPreference')) {
+      if (localStorage.getItem('langPreference').toLowerCase() != 'en-us') {
+          const langPreference = localStorage.getItem('langPreference').toLowerCase();
+          const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+          const currentLang = splitPath[0];
+          if (!acceptedLocales.includes(currentLang) && !orphanLocales.includes(currentLang) && !ignoreList.includes(splitPath[0])) {
+            splitPath.splice(0, 0, langPreference.toLowerCase());
+            const newUrl = 'https://' + window.location.hostname + '/' + splitPath.join('/') + '/' + window.location.search;
+            window.location.replace(newUrl);   
+          }
+        }
+    } else if (!window.navigator.userAgent.toLowerCase().includes('googlebot')) {
+        const requestedLang = window.navigator.language;
+        const splitPath = window.location.pathname.split('/').filter(part => part !== '');
+        const maybeLocale = splitPath.shift();
+        const splitPathString = splitPath.join('/');
+
+        if (requestedLang && requestedLang.toLowerCase() != "en-us") {
+          const requestedLangCode = requestedLang
+            .toLowerCase()
+            .replace('_', '-');
+          const redirectPath = getPathFromLocale(maybeLocale, requestedLangCode, splitPathString);
+          if (redirectPath && !ignoreList.includes(maybeLocale)) {
+            window.location.replace('https://' + window.location.hostname + '/' + redirectPath + '/' + window.location.search);
+          }
+        }
+      }
+    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/styles.8bcc18507689ee6c7180.css">
+  <title data-react-helmet="true">Cloudflare for Campaigns | Cloudflare</title>
+  <link data-react-helmet="true" rel="alternate" hreflang="en-us" href="https://www.cloudflare.com/campaigns/">
+  <link data-react-helmet="true" rel="canonical" href="https://www.cloudflare.com/campaigns/">
+  <link data-react-helmet="true" rel="preload" as="image" href="https://www.cloudflare.com/static/671049cd917e2a707947edb47f70cbdd/HeroImages-General.png">
+  <link data-react-helmet="true" rel="preload" as="image" href="https://www.cloudflare.com/static/18dece2fde3769f872509f31b4bece06/HeroImages-USA.png">
+  <link data-react-helmet="true" rel="preload" as="image" href="https://www.cloudflare.com/static/1e61a3a21c6180a556f45dd05dcfd670/SecurityGuide-Cover-img.png">
+  <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1">
+  <meta data-react-helmet="true" name="twitter:creator" content="@cloudflare">
+  <meta data-react-helmet="true" name="twitter:site" content="@cloudflare">
+  <meta data-react-helmet="true" property="og:site_name" content="Cloudflare">
+  <meta data-react-helmet="true" name="title" content="Cloudflare for Campaigns | Cloudflare">
+  <meta data-react-helmet="true" name="description" content="Cloudflare for Campaigns is a free service that protects political campaigns from cyber attacks. Keep your candidate's website secure from malicious attacks.">
+  <meta data-react-helmet="true" name="image" content="/static/ed617baf40919c4937323ecaefbcfbc3/CloudflareforCampaigns_Social_-_1200x627.png">
+  <meta data-react-helmet="true" name="twitter:card" content="summary_large_image">
+  <meta data-react-helmet="true" name="twitter:title" content="Cloudflare for Campaigns | Cloudflare">
+  <meta data-react-helmet="true" name="twitter:image" content="https://www.cloudflare.com/static/ed617baf40919c4937323ecaefbcfbc3/CloudflareforCampaigns_Social_-_1200x627.png">
+  <meta data-react-helmet="true" name="twitter:description" content="Cloudflare for Campaigns is a free service that protects political campaigns from cyber attacks. Keep your candidate's website secure from malicious attacks.">
+  <meta data-react-helmet="true" property="og:title" content="Cloudflare for Campaigns">
+  <meta data-react-helmet="true" property="og:description" content="Cloudflare for Campaigns is a free service that protects political campaigns from cyber attacks. Keep your candidate's website secure from malicious attacks.">
+  <meta data-react-helmet="true" property="og:image" content="https://www.cloudflare.com/static/ed617baf40919c4937323ecaefbcfbc3/CloudflareforCampaigns_Social_-_1200x627.png">
+  <script data-react-helmet="true" async src="https://www.cloudflare.com/vendor/onetrust/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" data-domain-script="e34df59b-4a48-4bf9-b2b5-7a4bb09cd231"></script>
+  <link as="script" rel="preload" href="/webpack-runtime-f9a860303ff5f353b22c.js">
+  <link as="script" rel="preload" href="/framework-36280a020cc703a268b3.js">
+  <link as="script" rel="preload" href="/app-db39e0f9f56276e3c952.js">
+  <link as="script" rel="preload" href="/styles-fdc0735c32d9b5c60b20.js">
+  <link as="script" rel="preload" href="/8eaff4a1-0f0d0335cebc120af0fd.js">
+  <link as="script" rel="preload" href="/commons-dd96cef033c90fecaa1c.js">
+  <link as="script" rel="preload" href="/5e009dc030717571c643fcc1a1f8adeaa5c9aea9-5d490356d50100c887a1.js">
+  <link as="script" rel="preload" href="/0d625897b26b36d368c45fce14325a7ae0ab1d92-a57847f1d12b4b9c26be.js">
+  <link as="script" rel="preload" href="/4b2a42a93029629026b3b5bf51209ba1171ffdfd-b90f5b89e492b39f4032.js">
+  <link as="script" rel="preload" href="/1c5e1e1e37532e5d3e12606c412d346b1e41bfcd-ce6b482ecf4b7f975b67.js">
+  <link as="script" rel="preload" href="/afce47c9ba5426869dbc5a926461a546e054f2e1-b83a9062e879e952eb93.js">
+  <link as="script" rel="preload" href="/ac9eeed4e6d0e0162060928fa2fbb56350368406-1e11b1ea7d787323d9b0.js">
+  <link as="script" rel="preload" href="/78ea267daafe81328bdca4e600e3c86b21c254f4-61a4c27618eed71724c4.js">
+  <link as="script" rel="preload" href="/component---src-components-page-page-template-tsx-03200c5fda4d8df7e4fe.js">
+  <link as="fetch" rel="preload" href="/page-data/zh-cn/campaigns/page-data.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/1416742018.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/1416742018.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/2473198873.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/3499283715.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/3670313338.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/3670313338.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/sq/d/671510884.json" crossorigin="anonymous">
+  <link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous">
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head>
+ <body>
+  <div id="___gatsby">
+   <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+    <div class="flex flex-column w-100">
+     <header class="sticky cms-topnav topnav top-nav js-top-nav">
+      <nav class="top-nav__upper-bar top-nav__items">
+       <div class="top-nav__item-list top-nav__item-list--right">
+        <span><a class="bold" href="https://support.cloudflare.com/" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Support">??</a></span><span class="header-section-divider">|</span><span><a class="" href="/plans/enterprise/contact/">???<!-- --> </a></span><a data-i18n-phonenumber="" href="tel:+18889935273">+1 (888) 99 FLARE</a>
+        <noscript>
+         <a href="tel:+18889935273"> <!-- -->+1 (888) 99 FLARE</a>
+        </noscript><span class="header-section-divider">|</span>
+        <div class="relative flex">
+         <a class="header-language-picker js-header-language-picker" data-tooltipped=""><span class="header-language-picker__globe-icon"></span>English<!-- --> <span class="header-language-picker__caret-icon">?</span></a>
+        </div>
+       </div>
+      </nav>
+      <nav class="top-nav__items top-nav__items--align-content">
+       <a target="" href="/" class=""><img class="top-nav__logo top-nav__logo--dark " src="data:image/svg+xml,%3Csvg id='Layer_2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 109 40.5'%3E%3Cstyle%3E.st0%7Bfill:%23fff%7D.st1%7Bfill:%23f48120%7D.st2%7Bfill:%23faad3f%7D.st3%7Bfill:%23404041%7D%3C/style%3E%3Cpath class='st0' d='M98.6 14.2L93 12.9l-1-.4-25.7.2v12.4l32.3.1z'/%3E%3Cpath class='st1' d='M88.1 24c.3-1 .2-2-.3-2.6-.5-.6-1.2-1-2.1-1.1l-17.4-.2c-.1 0-.2-.1-.3-.1-.1-.1-.1-.2 0-.3.1-.2.2-.3.4-.3l17.5-.2c2.1-.1 4.3-1.8 5.1-3.8l1-2.6c0-.1.1-.2 0-.3-1.1-5.1-5.7-8.9-11.1-8.9-5 0-9.3 3.2-10.8 7.7-1-.7-2.2-1.1-3.6-1-2.4.2-4.3 2.2-4.6 4.6-.1.6 0 1.2.1 1.8-3.9.1-7.1 3.3-7.1 7.3 0 .4 0 .7.1 1.1 0 .2.2.3.3.3h32.1c.2 0 .4-.1.4-.3l.3-1.1z'/%3E%3Cpath class='st2' d='M93.6 12.8h-.5c-.1 0-.2.1-.3.2l-.7 2.4c-.3 1-.2 2 .3 2.6.5.6 1.2 1 2.1 1.1l3.7.2c.1 0 .2.1.3.1.1.1.1.2 0 .3-.1.2-.2.3-.4.3l-3.8.2c-2.1.1-4.3 1.8-5.1 3.8l-.2.9c-.1.1 0 .3.2.3h13.2c.2 0 .3-.1.3-.3.2-.8.4-1.7.4-2.6 0-5.2-4.3-9.5-9.5-9.5'/%3E%3Cpath class='st3' d='M104.4 30.8c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9m0-1.6c-.4 0-.7.3-.7.7 0 .4.3.7.7.7.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7m.4 1.2h-.2l-.2-.3h-.2v.3h-.2v-.9h.5c.2 0 .3.1.3.3 0 .1-.1.2-.2.3l.2.3zm-.3-.5c.1 0 .1 0 .1-.1s-.1-.1-.1-.1h-.3v.3h.3zM14.8 29H17v6h3.8v1.9h-6zm8.3 3.9c0-2.3 1.8-4.1 4.3-4.1s4.2 1.8 4.2 4.1-1.8 4.1-4.3 4.1c-2.4 0-4.2-1.8-4.2-4.1m6.3 0c0-1.2-.8-2.2-2-2.2s-2 1-2 2.1.8 2.1 2 2.1c1.2.2 2-.8 2-2m4.9.5V29h2.2v4.4c0 1.1.6 1.7 1.5 1.7s1.5-.5 1.5-1.6V29h2.2v4.4c0 2.6-1.5 3.7-3.7 3.7-2.3-.1-3.7-1.2-3.7-3.7M45 29h3.1c2.8 0 4.5 1.6 4.5 3.9s-1.7 4-4.5 4h-3V29zm3.1 5.9c1.3 0 2.2-.7 2.2-2s-.9-2-2.2-2h-.9v4h.9zm7.6-5.9H62v1.9h-4.1v1.3h3.7V34h-3.7v2.9h-2.2zm9.4 0h2.2v6h3.8v1.9h-6zm11.7-.1H79l3.4 8H80l-.6-1.4h-3.1l-.6 1.4h-2.3l3.4-8zm2 4.9l-.9-2.2-.9 2.2h1.8zm6.4-4.8h3.7c1.2 0 2 .3 2.6.9.5.5.7 1.1.7 1.8 0 1.2-.6 2-1.6 2.4l1.9 2.8H90l-1.6-2.4h-1v2.4h-2.2V29zm3.6 3.8c.7 0 1.2-.4 1.2-.9 0-.6-.5-.9-1.2-.9h-1.4v1.9h1.4zm6.5-3.8h6.4v1.8h-4.2V32h3.8v1.8h-3.8V35h4.3v1.9h-6.5zM10 33.9c-.3.7-1 1.2-1.8 1.2-1.2 0-2-1-2-2.1s.8-2.1 2-2.1c.9 0 1.6.6 1.9 1.3h2.3c-.4-1.9-2-3.3-4.2-3.3-2.4 0-4.3 1.8-4.3 4.1s1.8 4.1 4.2 4.1c2.1 0 3.7-1.4 4.2-3.2H10z'/%3E%3C/svg%3E" alt="Cloudflare"></a>
+       <ul class="top-nav__item-list top-nav__item-list--left">
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Solutions</li>
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Products</li>
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Documentation</li>
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Resources</li>
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Partners</li>
+        <li class="top-nav__item-list__link top-nav__items__desktop "><a target="" href="/enterprise" class="" data-tracking-category="topnav" data-tracking-action="click" tabindex="0">For Enterprise</a></li>
+        <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide  " data-tracking-category="mainnav" data-tracking-action="click" tabindex="0">Pricing</li>
+       </ul>
+       <ul class="top-nav__item-list top-nav__item-list--right">
+        <li class="top-nav__item-list__link top-nav__items__desktop top-nav__item-list__link--localized"><a target="" href="https://dash.cloudflare.com/login/" class="" data-tracking-category="topnav" data-tracking-action="click" tabindex="0">Log In</a></li>
+        <li class="top-nav__item-list__link top-nav__items__desktop top-nav__item-list__link--localized"><a target="" href="https://dash.cloudflare.com/sign-up/" class="" data-tracking-category="topnav" data-tracking-action="click" tabindex="0">Sign Up</a></li>
+        <li class="flex items-center top-nav__item-list__link top-nav__items__desktop top-nav__item-list__link--no-ul"><a target="" href="/under-attack-hotline/" class=" mw-100 flex justify-center items-center button-under-attack bg-orange0 white js-under-attack-button under-attack-button button--localized-content" style="height:32px" data-tracking-category="topnav" data-tracking-action="click" tabindex="0">Under Attack?</a></li>
+       </ul>
+      </nav>
+      <div class="desktop-nav MRK-9222-top-nav nav-dropdown">
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           SOLUTIONS
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Deliver Superior Online Experiences
+          </div><span class="nav-dropdown-link"><a target="" href="/ddos" class="">Mitigate DDoS Attacks</a></span><span class="nav-dropdown-link"><a target="" href="/products/bot-management" class="">Stop Malicious Bot Abuse</a></span><span class="nav-dropdown-link"><a target="" href="/performance/accelerate-internet-applications" class="">Accelerate Internet Applications</a></span><span class="nav-dropdown-link"><a target="" href="/performance/ensure-application-availability" class="">Ensure Application Availability</a></span><span class="nav-dropdown-link"><a target="" href="/website-optimization" class="">Optimize Web Experiences</a></span><span class="nav-dropdown-link"><a target="" href="/products/cloudflare-stream" class="">Stream Videos On-Demand</a></span>
+          <div class="nav-dropdown-header header-black">
+           Secure Employee Applications and Devices
+          </div><span class="nav-dropdown-link"><a target="" href="/teams-access" class="">Deliver Zero Trust Access to Applications</a></span><span class="nav-dropdown-link"><a target="" href="/teams-sase" class="">Implement Secure Access Service Edge (SASE)</a></span><span class="nav-dropdown-link"><a target="" href="/teams-gateway" class="">Protect Users Accessing the Internet</a></span><span class="nav-dropdown-link"><a target="" href="/teams/" class="">Protect Corporate Networks</a></span><span class="nav-dropdown-link"><a target="" href="/teams/third-party-access" class="">Manage Secure Contractor Access</a></span><span class="nav-dropdown-link"><a target="" href="/teams/vpn-replacement" class="">Replace Virtual Private Networks (VPNs)</a></span><span class="nav-dropdown-link"><a target="" href="/teams/remote-workforces" class="">Secure Your Remote Workforce</a></span><span class="nav-dropdown-link"><a target="" href="/teams/browser-isolation/" class="">Stop Zero Day Attacks with Browser Isolation</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-black">
+           &nbsp;
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Protect and Accelerate Networks
+          </div><span class="nav-dropdown-link"><a target="" href="/magic-transit" class="">Mitigate L3 DDoS Attacks</a></span><span class="nav-dropdown-link"><a target="" href="/network-interconnect" class="">Connect network infrastructure with Cloudflare</a></span><span class="nav-dropdown-link"><a target="" href="/cloudflare-one/" class="">Transform Corporate Networks</a></span>
+          <div class="nav-dropdown-header header-black">
+           Code on the Network Edge
+          </div><span class="nav-dropdown-link"><a target="" href="https://workers.cloudflare.com" class="">Build a Serverless Application</a></span><span class="nav-dropdown-link"><a target="" href="https://workers.cloudflare.com/sites/" class="">Deploy a Static Website</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/tutorials/configure-your-cdn/" class="">Configure a CDN</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/templates/pages/conditional_response/" class="">Define Conditional Request Routing</a></span>
+          <div class="nav-dropdown-header header-black">
+           Manage a Secure Cloud
+          </div><span class="nav-dropdown-link"><a target="" href="/multi-cloud" class="">Secure Hybrid, Cloud, &amp; SaaS Platforms</a></span><span class="nav-dropdown-link"><a target="" href="/ssl-for-saas-providers" class="">Enable SSL for SaaS Applications</a></span><span class="nav-dropdown-link"><a target="" href="/bandwidth-alliance" class="">Reduce Cloud Data Transfer Costs</a></span>
+          <div class="nav-dropdown-header header-black">
+           Register a Website
+          </div><span class="nav-dropdown-link"><a target="" href="/products/registrar" class="">Register or Transfer a Website</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           INDUSTRIES
+          </div><span class="nav-dropdown-link"><a target="" href="/ecommerce" class="">eCommerce</a></span><span class="nav-dropdown-link"><a target="" href="/financial-services/" class="">Financial Services</a></span><span class="nav-dropdown-link"><a target="" href="/gaming" class="">Gaming</a></span><span class="nav-dropdown-link"><a target="" href="/healthcare/" class="">Healthcare and Life Sciences</a></span><span class="nav-dropdown-link"><a target="" href="/media-and-entertainment" class="">Media and Entertainment</a></span><span class="nav-dropdown-link"><a target="" href="/public-sector" class="">Public Sector</a></span><span class="nav-dropdown-link"><a target="" href="/saas" class="">SaaS</a></span><span class="nav-dropdown-link"><a target="" href="/education/" class="">Education</a></span>
+          <div class="nav-dropdown-header header-orange">
+           PUBLIC INTEREST
+          </div><span class="nav-dropdown-link"><a target="" href="/campaigns" class="">Election Campaigns</a></span><span class="nav-dropdown-link"><a target="" href="/athenian" class="">Athenian Project</a></span><span class="nav-dropdown-link"><a target="" href="/galileo" class="">Project Galileo</a></span><span class="nav-dropdown-link"><a target="" href="/fair-shot/" class="">Project Fair Shot</a></span>
+         </div>
+        </div>
+       </div>
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           FOR INFRASTRUCTURE
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Application &amp; Network Security
+          </div><span class="nav-dropdown-link"><a target="" href="/ddos" class="">DDoS Protection</a></span><span class="nav-dropdown-link"><a target="" href="/waf" class="">WAF</a></span><span class="nav-dropdown-link"><a target="" href="/products/bot-management" class="">Bot Management</a></span><span class="nav-dropdown-link"><a target="" href="/magic-transit/" class="">Magic Transit</a></span><span class="nav-dropdown-link"><a target="" href="/magic-wan/" class="">Magic WAN</a></span><span class="nav-dropdown-link"><a target="" href="/rate-limiting" class="">Rate Limiting</a></span><span class="nav-dropdown-link"><a target="" href="/ssl" class="">SSL / TLS</a></span><span class="nav-dropdown-link"><a target="" href="/ssl-for-saas-providers/" class="">SSL/TLS for SaaS Providers</a></span><span class="nav-dropdown-link"><a target="" href="/products/cloudflare-spectrum" class="">Cloudflare Spectrum</a></span><span class="nav-dropdown-link"><a target="" href="/network-interconnect" class="">Network Interconnect</a></span><span class="nav-dropdown-link"><a target="" href="/cdn" class="">CDN</a></span><span class="nav-dropdown-link"><a target="" href="/dns" class="">DNS</a></span><span class="nav-dropdown-link"><a target="" href="/products/argo-smart-routing" class="">Argo Smart Routing</a></span><span class="nav-dropdown-link"><a target="" href="/load-balancing" class="">Load Balancing</a></span><span class="nav-dropdown-link"><a target="" href="/products/stream-delivery" class="">Stream Delivery</a></span><span class="nav-dropdown-link"><a target="" href="/network/china" class="">China Network</a></span><span class="nav-dropdown-link"><a target="" href="/waiting-room/" class="">Waiting Room</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           FOR TEAMS
+          </div><span class="nav-dropdown-link"><a target="" href="/teams-home" class="">Cloudflare for Teams</a></span><span class="nav-dropdown-link"><a target="" href="/teams-access" class="">Access</a></span><span class="nav-dropdown-link"><a target="" href="/teams-gateway" class="">Gateway</a></span><span class="nav-dropdown-link"><a target="" href="/teams/browser-isolation/" class="">Browser Isolation</a></span>
+          <div class="nav-dropdown-header header-orange">
+           FOR DEVELOPERS
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Serverless Applications
+          </div><span class="nav-dropdown-link"><a target="" href="/products/cloudflare-workers" class="">Cloudflare Workers</a></span><span class="nav-dropdown-link"><a target="" href="/products/workers-kv" class="">Cloudflare Workers KV</a></span>
+          <div class="nav-dropdown-header header-black">
+           Domain Registration
+          </div><span class="nav-dropdown-link"><a target="" href="/products/registrar" class="">Cloudflare Registrar</a></span>
+          <div class="nav-dropdown-header header-black">
+           Website Development
+          </div><span class="nav-dropdown-link"><a target="" href="https://pages.cloudflare.com/" class="">Cloudflare Pages</a></span><span class="nav-dropdown-link"><a target="" href="/products/cloudflare-stream" class="">Cloudflare Stream</a></span>
+          <div class="nav-dropdown-header header-black">
+           SaaS Developers
+          </div><span class="nav-dropdown-link"><a target="" href="/saas/" class="">Cloudflare for SaaS</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           FOR EVERYONE
+          </div><span class="nav-dropdown-link"><a target="" href="https://1.1.1.1" class="">1.1.1.1</a></span><span class="nav-dropdown-link"><a target="" href="https://blog.cloudflare.com/1111-warp-better-vpn/" class="">1.1.1.1 with WARP (App)</a></span><span class="nav-dropdown-link"><a target="" href="https://blog.cloudflare.com/introducing-1-1-1-1-for-families/" class="">1.1.1.1 for Families</a></span>
+          <div class="nav-dropdown-header header-orange">
+           INSIGHTS
+          </div><span class="nav-dropdown-link"><a target="" href="/analytics" class="">Analytics</a></span><span class="nav-dropdown-link"><a target="" href="/products/cloudflare-logs" class="">Cloudflare Logs</a></span><span class="nav-dropdown-link"><a target="" href="/web-analytics/" class="">Web Analytics</a></span><span class="nav-dropdown-link"><a target="" href="https://radar.cloudflare.com/" class="">Cloudflare Radar</a></span>
+          <div class="nav-dropdown-header header-orange">
+           PRIVACY
+          </div><span class="nav-dropdown-link"><a target="" href="/data-localization/" class="">Data Localization</a></span><span class="nav-dropdown-link"><a target="" href="/privacy-and-compliance/" class="">Compliance</a></span>
+         </div>
+        </div>
+       </div>
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           FOR INFRASTRUCTURE
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Advanced Security
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/bots/" class="">Bot Management</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/firewall/" class="">Firewall rules</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/magic-transit/" class="">Magic Transit</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/spectrum/" class="">Spectrum (TCP/UDP)</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/ssl/" class="">SSL</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/waf/" class="">WAF</a></span><span class="nav-dropdown-link"><a target="" href="https://support.cloudflare.com/hc/en-us/articles/200172516-Understanding-Cloudflare-s-CDN/" class="">CDN</a></span><span class="nav-dropdown-link"><a target="" href="/dns" class="">DNS</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/images/" class="">Image Resizing</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/load-balancing/" class="">Load Balancing</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/stream/" class="">Stream (Video)</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-black">
+           &nbsp;
+          </div>
+          <div class="nav-dropdown-header header-black">
+           Insights
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/analytics/" class="">Analytics</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/logs/" class=""></a></span>
+          <div class="nav-dropdown-header header-black">
+           Domain Registration
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/registrar/" class="">Registrar</a></span>
+          <div class="nav-dropdown-header header-orange">
+           FOR SERVERLESS APPLICATIONS
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/quickstart/" class="">Workers Quick Start</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/pages/" class="">Cloudflare Pages</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/templates/" class="">Sample Workers Projects</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/tutorials/" class="">Workers Tutorials</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/tooling/wrangler/" class="">Command-line (Wrangler)</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/workers/reference/apis/" class="">Runtime</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           FOR TEAMS
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/cloudflare-one/" class="">Cloudflare for Teams</a></span>
+          <div class="nav-dropdown-header header-orange">
+           EXPLORE CLOUDFLARE API
+          </div><span class="nav-dropdown-link"><a target="" href="https://api.cloudflare.com/" class="">Cloudflare API</a></span><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/api/" class="">API Authentication</a></span>
+          <div class="nav-dropdown-header header-orange">
+           DOCUMENTATION HUB
+          </div><span class="nav-dropdown-link"><a target="" href="https://developers.cloudflare.com/" class="">Dev Documentation Hub</a></span>
+         </div>
+        </div>
+       </div>
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           RESOURCES
+          </div><span class="nav-dropdown-link"><a target="" href="/resource-hub" class="">Resource Hub</a></span><span class="nav-dropdown-link"><a target="" href="/resource-hub?resourcetype=Whitepaper" class="">Whitepapers</a></span><span class="nav-dropdown-link"><a target="" href="/webinars" class="">Webinars</a></span><span class="nav-dropdown-link"><a target="" href="/resource-hub?resourcetype=Solution+%26+Product+Guides" class="">Solutions &amp; Product Guides</a></span><span class="nav-dropdown-link"><a target="" href="/case-studies" class="">Case Studies</a></span><span class="nav-dropdown-link"><a target="" href="/analysts" class="">Analysts</a></span>
+          <div class="nav-dropdown-header header-orange">
+           EXPLORE
+          </div><span class="nav-dropdown-link"><a target="" href="/whats-new" class="">What's New?</a></span><span class="nav-dropdown-link"><a target="" href="/network" class="">Network Map</a></span><span class="nav-dropdown-link"><a target="" href="/network/china" class="">Cloudflare in China</a></span><span class="nav-dropdown-link"><a target="" href="/trust-hub/gdpr/" class="">GDPR</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           GET STARTED
+          </div><span class="nav-dropdown-link"><a target="" href="/products/registrar" class="">Register Your Website</a></span><span class="nav-dropdown-link"><a target="" href="/welcome-center" class="">Welcome Center</a></span><span class="nav-dropdown-link"><a target="" href="https://support.cloudflare.com" class="">Get Help</a></span>
+          <div class="nav-dropdown-header header-orange">
+           LEARN
+          </div><span class="nav-dropdown-link"><a target="" href="/learning" class="">Learning Center</a></span><span class="nav-dropdown-link"><a target="" href="/learning/security/what-is-web-application-security" class="">Security</a></span><span class="nav-dropdown-link"><a target="" href="/learning/ddos/what-is-a-ddos-attack" class="">DDoS</a></span><span class="nav-dropdown-link"><a target="" href="/learning/bots/what-is-a-bot" class="">Bot Management</a></span><span class="nav-dropdown-link"><a target="" href="/learning/ssl/what-is-ssl" class="">SSL</a></span><span class="nav-dropdown-link"><a target="" href="/learning/access-management/what-is-identity-and-access-management" class="">Identity and Access Management</a></span><span class="nav-dropdown-link"><a target="" href="/learning/performance/why-site-speed-matters" class="">Performance</a></span><span class="nav-dropdown-link"><a target="" href="/learning/cdn/what-is-a-cdn" class="">CDN</a></span><span class="nav-dropdown-link"><a target="" href="/learning/dns/what-is-dns" class="">DNS</a></span><span class="nav-dropdown-link"><a target="" href="/learning/cloud/what-is-the-cloud" class="">Cloud</a></span><span class="nav-dropdown-link"><a target="" href="/learning/serverless/what-is-serverless" class="">Serverless</a></span><span class="nav-dropdown-link"><a target="" href="/learning/network-layer/what-is-the-network-layer" class="">Network Layer</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           CONNECT
+          </div><span class="nav-dropdown-link"><a target="" href="https://blog.cloudflare.com" class="">Blog</a></span><span class="nav-dropdown-link"><a target="" href="https://community.cloudflare.com" class="">Community</a></span>
+          <div class="nav-dropdown-header header-orange">
+           TRUST
+          </div><span class="nav-dropdown-link"><a target="" href="/trust-hub/" class="">Trust Hub</a></span><span class="nav-dropdown-link"><a target="" href="/trust-hub/privacy-and-data-protection/" class="">Privacy &amp; Data Protection</a></span><span class="nav-dropdown-link"><a target="" href="/trust-hub/compliance-resources/" class="">Certifications</a></span><span class="nav-dropdown-link"><a target="" href="/trust-hub/trust-and-safety/" class="">Trust &amp; Safety</a></span><span class="nav-dropdown-link"><a target="" href="/trust-hub/gdpr/" class="">GDPR</a></span><span class="nav-dropdown-link"><a target="" href="/privacypolicy/" class="">Legal Documentation</a></span>
+          <div class="nav-dropdown-header header-orange">
+           CONTACT
+          </div><a data-i18n-phonenumber="true" href="tel:+16503198930">+1 650 319 8930</a>
+         </div>
+        </div>
+       </div>
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           CHANNEL &amp; ALLIANCE PARTNERS
+          </div><span class="nav-dropdown-link"><a target="" href="/partners" class="">Partner Network</a></span><span class="nav-dropdown-link"><a target="" href="https://portal.cloudflarepartners.com" class="">Partner Portal</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           TECHNOLOGY PARTNERS
+          </div><span class="nav-dropdown-link"><a target="" href="/partners/technology-partners" class="">Overview</a></span><span class="nav-dropdown-link"><a target="" href="/partners/analytics" class="">Analytics Partners</a></span><span class="nav-dropdown-link"><a target="" href="/bandwidth-alliance" class="">Bandwidth Alliance</a></span><span class="nav-dropdown-link"><a target="" href="https://www.cloudflare.com/endpoint-partners/" class="">Endpoint Security Partnerships</a></span><span class="nav-dropdown-link"><a target="" href="/network-interconnect-partnerships/" class="">Interconnect Partnerships</a></span><span class="nav-dropdown-link"><a target="" href="/network-onramp-partners/" class="">Network On-ramp Partnerships</a></span><span class="nav-dropdown-link"><a target="" href="/partners/peering-portal" class="">Peering Portal</a></span>
+         </div>
+        </div>
+       </div>
+       <div class="desktop-nav__container ">
+        <div class="nav-dropdown-container">
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           PRICING BY PLAN
+          </div><span class="nav-dropdown-link"><a target="" href="/plans/" class="">Free</a></span><span class="nav-dropdown-link"><a target="" href="/plans/pro/" class="">Pro</a></span><span class="nav-dropdown-link"><a target="" href="/plans/business" class="">Business</a></span><span class="nav-dropdown-link"><a target="" href="/plans/enterprise" class="">Enterprise</a></span>
+         </div>
+         <div class="dropdown-column ">
+          <div class="nav-dropdown-header header-orange">
+           COMPARE AND EXPLORE
+          </div><span class="nav-dropdown-link"><a target="" href="/about-your-website/" class="">Need Help Choosing a Plan?</a></span><span class="nav-dropdown-link"><a target="" href="/plans#addons/" class="">Add Ons</a></span><span class="nav-dropdown-link"><a target="" href="/plans" class="">Compare All Plans</a></span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <div class="site-content">
+      <div class="bg-blue5 pt4 pt9-ns pb7 pb10-ns">
+       <div class="container">
+        <div class="items-start row">
+         <div class="col-lg-5 col-12">
+          <div class="mb2">
+           <h1 class="headline-1 mb4 mb3-ns">Cloudflare for Campaigns</h1>
+           <h5 class="headline-5 f3 mb0">Secure your candidate's election website — and your team.</h5>
+          </div>
+          <div class="markdown-block mb6 mb7-ns">
+           <p class="mb4 body-1">Voters routinely turn to the Internet to learn more about and connect with political candidates around the world. Protecting your campaign’s website from hostile attacks and ensuring it stays accessible 24/7 is as challenging as it is essential.</p>
+           <p class="mb4 body-1">Cloudflare offers a suite of products tailor-made to assist campaigns in protecting, accelerating, and ensuring the reliability of their websites — with additional solutions designed to keep internal teams and data secure.</p>
+          </div>
+          <div class="flex flex-row flex-wrap">
+           <a tabindex="0" target="" role="button" href="#campaign-form" class="button-cta f2 ls2 fw7 pv2 ph3 tc bw2 bg-blue1 white auto-btn  mr4-l mb2  mb2-l" data-tracking-category="newhome-acquisition-blade" data-tracking-action="click" data-tracking-label="sign_up-[#campaign-form]">Talk to an Expert</a><a tabindex="0" target="" role="button" href="https://cloudflare.com/campaigns/usa/" class="button-cta f2 ls2 fw7 pv2 ph3 tc bw2 bg-blue1 white auto-btn  mr4-l" data-tracking-category="newhome-acquisition-blade" data-tracking-action="click" data-tracking-label="sign_up-[https://cloudflare.com/campaigns/usa/]">Special offer for US Candidates</a>
+          </div>
+         </div>
+         <div class="col-lg-5 offset-lg-1">
+          <div class="dn dn-ns dn-m db-l">
+           <noscript>
+            <img alt="CF for Campaigns Hero - General" class="mw-100" src="https://www.cloudflare.com/static/671049cd917e2a707947edb47f70cbdd/HeroImages-General.png">
+           </noscript>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-blue4 pt7 pt11-ns pb7 pb10-ns pb7">
+       <div class="container">
+        <div class="row">
+         <div tabindex="-1" class="carousel-quote col-lg-8 col-12 offset-lg-2">
+          <p class="mt0 fw4 lh-4 f5 f6-ns">Political campaigns, like any organization, need a comprehensive approach to cybersecurity. Securing a candidate's website, their critical public facing presence, and hardening access to key internal applications can vastly improve cybersecurity.</p>
+          <div class=" mt4 mt9-l flex-l flex-column flex-row-l items-end-l">
+           <div class=" mr9-l flex flex-column">
+            <p class=" body-1 mv0 black">Michael Kaiser</p>
+            <p class="mt0 mb2 black mv0-l fw7">President &amp; CEO, Defending Digital Campaigns</p>
+           </div>
+           <noscript>
+            <img alt="DDC logo - black" class="db dib-l carousel-image" src="https://www.cloudflare.com/static/eeab57b1ab643b34a51b3e49872c1047/ddc_logo_black.png">
+           </noscript>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class=" bg-blue5">
+       <div class="container">
+        <div class="pt4 pt9-ns">
+         <div class="center ph0-l row">
+          <div class="col-lg-6 col-12">
+           <h3 class="headline-3 mb2 mb2-ns mb2-m mb1-l">Give Your Candidate The Foundation They Need</h3>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5 col-12">
+           <div class="pb4">
+            <div class="markdown-block ">
+             <p class="mb4 body-1">Cloudflare's suite of products encompass a comprehensive solution for safeguarding your candidate's website — and your team's most important data.</p>
+             <p class="mb4 body-1">Leverage the collective intelligence of Cloudflare's global network of approximately 25 million Internet properties — automatically deploying countermeasures to thwart the latest Internet threats as they emerge.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-blue5">
+       <div class="container">
+        <div class="pt4 pt9-ns pb7 pb10-ns">
+         <div class="row">
+          <div class="col-12"></div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <noscript>
+             <img alt="Teams - icon security-lock blue 80px btm lft svg" class="icon-1" src="https://www.cloudflare.com/static/576796641c4fac80ee740be449732d6d/security-lock.svg">
+            </noscript>
+            <h5 class="headline-5 mt2 mb0">Block Malicious Attacks</h5>
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2">Prevent attackers and nation-state actors from bringing your site down, with the same protection leveraged by many of the world's biggest companies.</p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <noscript>
+             <img alt="" class="icon-1" src="https://www.cloudflare.com/static/4b39f12c05140c199c0a97d48c11fb63/analytics-data.svg">
+            </noscript>
+            <h5 class="headline-5 mt2 mb0">Stay Online During Peak Traffic Periods</h5>
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2">Web traffic often varies during a campaign. Be ready for your candidate's moments in the spotlight.</p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <noscript>
+             <img alt="Teams icon security-shield-protection blue 80px btm-lft svg" class="icon-1" src="https://www.cloudflare.com/static/c91cc09d8c42b53cdc2a382f3b15fdd3/security-shield-protection.svg">
+            </noscript>
+            <h5 class="headline-5 mt2 mb0">Secure Your Team's Most Important Data</h5>
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2">Leverage <em>Cloudflare for Teams</em>, a unique set of products designed to safeguard your internal systems from intruders — and to ensure your data doesn't leave your network.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white pt4 pt9-ns pb7 pb10-ns">
+       <div class="container">
+        <div class="items-start row">
+         <div class="col-lg-5 col-12">
+          <div class="mb2">
+           <h1 class="headline-1 mb4 mb3-ns">United States of America</h1>
+           <h5 class="headline-5 f3 mb0">Be prepared for 2020</h5>
+          </div>
+          <div class="markdown-block mb6 mb7-ns">
+           <p class="mb4 body-1">Qualified federal campaigns are eligible to receive a package of products free of charge, proudly provided by Cloudflare in partnership with the non-profit Defending Digital Campaigns.</p>
+          </div>
+          <div class="flex flex-row flex-wrap">
+           <a tabindex="0" target="" role="button" href="https://cloudflare.com/campaigns/usa/" class="button-cta f2 ls2 fw7 pv2 ph3 tc bw2 bg-blue1 white auto-btn  mr4-l mb0" data-tracking-category="newhome-acquisition-blade" data-tracking-action="click" data-tracking-label="sign_up-[https://cloudflare.com/campaigns/usa/]">Learn More</a>
+          </div>
+         </div>
+         <div class="col-lg-5 offset-lg-1">
+          <div class="dn dn-ns dn-m db-l">
+           <noscript>
+            <img alt="CF for Campaigns Hero - USA" class="mw-100" src="https://www.cloudflare.com/static/18dece2fde3769f872509f31b4bece06/HeroImages-USA.png">
+           </noscript>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class=" bg-blue5">
+       <div class="container">
+        <div class="pt4 pt9-ns">
+         <div class="center ph0-l row">
+          <div class="col-lg-6 col-12">
+           <h3 class="headline-3 mb2 mb2-ns mb2-m mb1-l">Solutions Tailor-Made for Your Campaign</h3>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5 col-12">
+           <div class="pb4">
+            <div class="markdown-block ">
+             <p class="mb4 body-1">Protect your website against hostile attacks, leverage load balancing and Always Online to ensure reliability, and protect your team's vital internal data with Cloudflare for Teams — all from the same intuitive dashboard.</p>
+             <p class="mb4 body-1">Available solutions include:</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-blue5">
+       <div class="container">
+        <div class="pt4 pt9-ns pb7 pb10-ns">
+         <div class="row">
+          <div class="col-12"></div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2">24/7/365 uptime support Including unmetered DDoS Mitigation and a dedicated support contact.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Web Application Firewall</strong> Including OWASP and proprietary Cloudflare rulesets, and support for custom WAF and Firewall Rules.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Custom Traffic Blocking</strong> Block specified user agents and regions where problematic traffic is detected.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Rate Limiting</strong> Protect against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">I'm Under Attack™ mode</strong> Instantly deploy protections against a concerted attack, plus Enterprise-level 'I Am Under Attack' Support.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Bot Protection</strong> Thwart automated bots and trigger Captcha Challenges to ensure only genuine traffic reaches your site.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Subdomain Support</strong> Cloudflare Subdomain Support simplifies the management of Cloudflare performance and security for subdomains.</p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2"><strong class="fw7">Global CDN</strong> Leverage Cloudflare's global network, spanning 200 cities in over 100 countries to deliver millisecond-response times.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Load Balancing</strong> Dynamically route traffic to different servers and clouds.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Image and Mobile Optimizations</strong> Automatically optimize images with Cloudflare Polish. Deliver mobile-friendly images with Cloudflare Mirage.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Page Rules</strong> Apply custom redirects, WAF rules, and more to any individual URL on your site.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Audit Logs</strong> Including account-level actions like Login and Logout, as well as configuration changes made through the Cloudflare Dash.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">And more...</strong> Custom SSL Certificate Upload PCI Compliance Regular Expression Blocking Spam and Comment Protection</p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xl-4 col-12">
+           <div class="h-100 flex flex-column flex-auto pb6 pb0-ns pb6-m pb0-l">
+            <div class="markdown-block mb4 flex-grow-2">
+             <p class="mb4 body-2 mt2"><strong class="fw7">Multi-User Organization</strong> Manage your Cloudflare account with multiple accounts, each with granular permissions.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Cloudflare Access</strong> Allows a campaign to secure, authenticate, and monitor user access to any domain, application, or path on Cloudflare, without using a VPN.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Cloudflare Gateway DNS Filtering</strong> Protect users as they navigate the Internet by keeping malicious content off your network from multiple locations.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Reliability and Security Guide</strong> Best practices on how to keep a campaign site and donation page secure and online.</p>
+             <p class="mb4 body-2 mt2"><strong class="fw7">Election Security Contact</strong> This election security-specific contact will get routed to our support team, with an escalation path to the security team.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white">
+       <div class="container">
+        <div class="pt4 pt9-ns pb7 pb10-ns">
+         <div class="row">
+          <div class="col-lg-4 col-sm-12">
+           <h2 class="headline-2 pb7">Best Practices to Protect your Website</h2>
+          </div>
+          <div class="col-lg-8">
+           <div class="row">
+            <div class="col-lg-6 col-12">
+             <div class="flex flex-column flex-auto mb6 mb9-ns">
+              <h3 class="headline-3 mb0">1. Protect your account with 2 Factor Authentication (2FA).</h3>
+              <div class="markdown-block  flex-grow-2">
+               <p class="mb4 body-2">Adopting a strong security posture is critical and it starts with account security. Two-factor authentication (2FA) improves account security by requiring a second piece of information to validate your identity when logging in.</p>
+               <p class="mb4 body-2">Using 2FA prevents unauthorized users from accessing sensitive data on your account. We recommend enabling 2FA on your Cloudflare account to safeguard your account information.</p>
+              </div><a class=" learn-more" href="https://support.cloudflare.com/hc/en-us/articles/200167906-Securing-user-access-with-two-factor-authentication-2FA-" data-tracking-category="newhome-features-blade" data-tracking-action="click" data-tracking-label="features_learn_more-[https://support.cloudflare.com/hc/en-us/articles/200167906-Securing-user-access-with-two-factor-authentication-2FA-]">Enable 2FA</a>
+             </div>
+            </div>
+            <div class="col-lg-6 col-12">
+             <div class="flex flex-column flex-auto mb6 mb9-ns">
+              <h3 class="headline-3 mb0">2. Orange Cloud your DNS records on Cloudflare.</h3>
+              <div class="markdown-block  flex-grow-2">
+               <p class="mb4 body-2">Cloudflare provides fast and secure managed DNS as a built-in service on our network. To provide many of Cloudflare security products including DDoS mitigation, WAF, and CDN, we recommend enabling the orange cloud next to the DNS record in the DNS control panel.</p>
+               <p class="mb4 body-2">When you orange cloud a DNS record, Cloudflare acts as a proxy for your domain. Instead of advertising your IP address or CNAME record we instead advertise the IP address of our edge and proxy the requests to your origin server. This ultimately shields your origin web server from unexpected spikes in traffic or malicious cyber attacks looking to take down your website.</p>
+              </div><a class=" learn-more" href="https://support.cloudflare.com/hc/en-us/articles/205177068-How-does-Cloudflare-work-" data-tracking-category="newhome-features-blade" data-tracking-action="click" data-tracking-label="features_learn_more-[https://support.cloudflare.com/hc/en-us/articles/205177068-How-does-Cloudflare-work-]">Enable orange cloud</a>
+             </div>
+            </div>
+            <div class="col-lg-6 col-12">
+             <div class="flex flex-column flex-auto mb6 mb6-ns mb6-m mb0-l">
+              <h3 class="headline-3 mb0">3. Use SSL encryption to protect your internal data.</h3>
+              <div class="markdown-block  flex-grow-2">
+               <p class="mb4 body-2">SSL (Secure Socket Layer) is the standard security technology for establishing an encrypted link between a web server and a browser. When you visit a website, a lock icon is displayed in the web browser, indicating that all data transferred remains private and secure, keeping it safe from monitoring and tampering. Manually configuring SSL requires several steps, and a misconfiguration can prevent users from getting to your website.</p>
+               <p class="mb4 body-2">At Cloudflare, we offer SSL encryption that allows any Internet property to become HTTPS-enabled with the click of a button. We recommend enabling either Full or Full (strict) as one of the two settings in order to ensure data confidentiality on your website.</p>
+              </div><a class=" learn-more" href="https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options" data-tracking-category="newhome-features-blade" data-tracking-action="click" data-tracking-label="features_learn_more-[https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options]">Learn more about Cloudflare SSL</a>
+             </div>
+            </div>
+            <div class="col-lg-6 col-12">
+             <div class="flex flex-column flex-auto mb6 mb6-ns mb6-m mb0-l">
+              <h3 class="headline-3 mb0">4. Turn your Web Application Firewall ON. </h3>
+              <div class="markdown-block  flex-grow-2">
+               <p class="mb4 body-2">A firewall is a security system that monitors and controls network traffic based on a set of security rules. By deploying a Web Application Firewall (WAF) in front of a web application, a shield is placed between the web application and the Internet, giving you the ability to decide whether to allow incoming and outgoing traffic to pass through.</p>
+               <p class="mb4 body-2">Cloudflare provides a web application firewall to protect against malicious attacks that aim to exploit common vulnerabilities such as SQL injection attacks, cross-site scripting, and cross-site forgery. We recommend turning ON the WAF and enabling Cloudflare Specials, to automatically protect against new and zero-day vulnerabilities, to provide fast and seamless protection against the latest attack vectors.</p>
+              </div><a class=" learn-more" href="https://support.cloudflare.com/hc/en-us/articles/200172016-Understanding-the-Cloudflare-Web-Application-Firewall-WAF-" data-tracking-category="newhome-features-blade" data-tracking-action="click" data-tracking-label="features_learn_more-[https://support.cloudflare.com/hc/en-us/articles/200172016-Understanding-the-Cloudflare-Web-Application-Firewall-WAF-]">Enable Cloudflare Specials</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white pt4 pt9-ns pb7 pb10-ns">
+       <div class="container">
+        <div class="items-start row">
+         <div class="col-lg-5 col-12">
+          <div class="mb2">
+           <h1 class="headline-1 mb4 mb3-ns">Download the Security &amp; Performance Guide</h1>
+           <h5 class="headline-5 f3 mb0">Common risks for campaign sites, and how to avoid them</h5>
+          </div>
+          <div class="markdown-block mb6 mb7-ns">
+           <p class="mb4 body-1">Your campaign's website is a critical communications tool. In this guide, you'll learn cybersecurity and performance strategies for:</p>
+           <ul class="markdown-feature-list">
+            <li class="pl3 relative markdown-feature-listitem body-1 db">Keeping your site online during cyberattacks</li>
+            <li class="pl3 relative markdown-feature-listitem body-1 db">Protecting donor and supporter data</li>
+            <li class="pl3 relative markdown-feature-listitem body-1 db">Maintaining smooth performance during sudden surges of interested voters.</li>
+           </ul>
+          </div>
+          <div class="flex flex-row flex-wrap">
+           <a tabindex="0" target="" role="button" href="https://www.cloudflare.com/resources/assets/slt3lc6tev37/3HWObubm6fybC0FWUdFYAJ/5d5e3b0a4d9c5a7619984ed6076f01fe/Cloudflare_for_Campaigns_Security_Guide.pdf" class="button-cta f2 ls2 fw7 pv2 ph3 tc bw2 bg-blue1 white auto-btn  mr4-l mb0" data-tracking-category="newhome-acquisition-blade" data-tracking-action="click" data-tracking-label="sign_up-[https://www.cloudflare.com/resources/assets/slt3lc6tev37/3HWObubm6fybC0FWUdFYAJ/5d5e3b0a4d9c5a7619984ed6076f01fe/Cloudflare_for_Campaigns_Security_Guide.pdf]">Download Guide</a>
+          </div>
+         </div>
+         <div class="col-lg-5 offset-lg-1">
+          <div class="dn dn-ns dn-m db-l">
+           <noscript>
+            <img alt="CF for Campaigns Security Guide Cover IMG" class="mw-100" src="https://www.cloudflare.com/static/1e61a3a21c6180a556f45dd05dcfd670/SecurityGuide-Cover-img.png">
+           </noscript>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-blue5 pt4 pt4-ns pt4-m pt9-l pb7 pb7-ns pb7-m pb10-l">
+       <div class="container">
+        <div class="flex mb6 mb6-ns mb6-m mb0-l row">
+         <div class="mb6 mb6-ns mb6-m mb0-l col-lg-5">
+          <div class="black f6 f6-ns f6-m f8-l fw6 lh-2 mb3">
+           Solutions for Every Campaign
+          </div>
+          <div class="markdown-block ">
+           <div class="black f3 fw4 lh-6 mb2">
+            <em>Cloudflare for Campaigns</em> is designed to meet the needs of any campaign — from securing your candidate's web presence to safeguarding your internal network and data. Available services include:
+           </div>
+           <ul class="ma0 pa0 mt3 list">
+            <li class="mb4 orange0"><span class="flex items-center black"><span class="self-start inline-flex">
+               <svg width="32" height="32" viewbox="0 0 64 64" fill="none" class="inline-flex" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.91 38.1101L20.01 29.8601L17.12 32.6301L27.86 43.8501L46.85 24.6501L44.01 21.8401L27.91 38.1101Z" fill="#FF6633"></path>
+               </svg></span><span class="black f3 fw4 lh-6">
+               <div class="black f3 fw4 lh-6 mb2">
+                Protect your website from hostile actors with Cloudflare's Web Application Firewall, DDoS Mitigation, and custom blocking rules.
+               </div></span></span></li>
+            <li class="mb4 orange0"><span class="flex items-center black"><span class="self-start inline-flex">
+               <svg width="32" height="32" viewbox="0 0 64 64" fill="none" class="inline-flex" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.91 38.1101L20.01 29.8601L17.12 32.6301L27.86 43.8501L46.85 24.6501L44.01 21.8401L27.91 38.1101Z" fill="#FF6633"></path>
+               </svg></span><span class="black f3 fw4 lh-6">
+               <div class="black f3 fw4 lh-6 mb2">
+                Ensure site speed and reliability by leveraging Cloudflare's global network, spanning 200 cities in over 90 countries.
+               </div></span></span></li>
+            <li class="mb4 orange0"><span class="flex items-center black"><span class="self-start inline-flex">
+               <svg width="32" height="32" viewbox="0 0 64 64" fill="none" class="inline-flex" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.91 38.1101L20.01 29.8601L17.12 32.6301L27.86 43.8501L46.85 24.6501L44.01 21.8401L27.91 38.1101Z" fill="#FF6633"></path>
+               </svg></span><span class="black f3 fw4 lh-6">
+               <div class="black f3 fw4 lh-6 mb2">
+                Monitor all traffic passing through your network, and secure internal applications with <em>Cloudflare for Teams</em>.
+               </div></span></span></li>
+           </ul>
+           <div class="black f3 fw4 lh-6 mb2">
+            Talk to a Cloudflare representative today to learn more.
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 offset-lg-2">
+          <div class="">
+           <section>
+            <form novalidate>
+             <div class="mb6">
+              <h2 class="headline-2 lh-title mb2">Sign up for Cloudflare for Campaigns</h2>
+             </div><button class="lh-copy fw7 f3 w-100 bg-orange1 white bn pv2 mt4 mb0 pointer dim" type="submit"></button>
+             <div class="">
+              <div class="markdown-block ">
+               <p class="fw4 lh-copy f1 mb0">???????????????? Cloudflare ???????????????????????????????????????????????????<a href="https://www.cloudflare.com/privacypolicy/" target="_blank">????</a>????????</p>
+              </div>
+             </div>
+            </form>
+           </section>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="white bg-black">
+      <div class="container">
+       <div class="pt3 pt3-ns pt3-m pt7-l pb0 pb0-ns pb0-m pb5-l">
+        <div class="row">
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f3 f3-ns f3-m f3-l">Sales<button class="dn dn-ns dn-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="db db-ns db-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="blue2 f2 fw4" href="/plans/enterprise/contact/">Enterprise Sales</a></li>
+            <li class="mt1 lh-6"><a class="blue2 f2 fw4" href="/partners/">Become a Partner</a></li>
+            <li class=""><span class="f2 fw4 blue2">Contact Sales:</span></li>
+            <li class=""><a class="f2 fw4 blue2" href="tel:18889935273">+1 (888) 99 FLARE</a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f2 f2-ns f2-m f3-l">Getting Started<button class="dib dib-ns dib-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="dn dn-ns dn-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/analysts/">Industry Analysts</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/plans/">Pricing</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/case-studies/">Case Studies</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/resources/">White Papers</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/webinars/">Webinars</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/learning/">Learning Center</a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f2 f2-ns f2-m f3-l">Community<button class="dib dib-ns dib-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="dn dn-ns dn-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://community.cloudflare.com">Community Hub</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://blog.cloudflare.com">Blog</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/galileo/">Project Galileo</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/athenian/">Athenian Project</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/campaigns/">Cloudflare for Campaigns</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://cloudflare.tv/">Cloudflare TV</a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f2 f2-ns f2-m f3-l">Developers<button class="dib dib-ns dib-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="dn dn-ns dn-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://developers.cloudflare.com">Developer Hub</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/products/cloudflare-workers/">Cloudflare Workers</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/integrations/">Integrations</a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f2 f2-ns f2-m f3-l">Support<button class="dib dib-ns dib-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="dn dn-ns dn-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://support.cloudflare.com">Help Center</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://www.cloudflarestatus.com">Cloudflare Status</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/compliance/">Compliance</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/gdpr/introduction/">GDPR</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/abuse/">Trust &amp; Safety</a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="col-lg-2">
+          <div class="bb bb-ns bb-m bn-l b--white pv2 pv2-ns pv2-m pv0-l">
+           <p class="fw6 mt0 flex justify-between mb0 mb0-ns mb0-m mb1-l lh-copy f2 f2-ns f2-m f3-l">Company<button class="dib dib-ns dib-m dn-l bn bg-transparent rotate-90">
+             <svg width="16" height="16" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.96 58.0141L17.132 55.1861L40.318 32.0001L17.132 8.81408L19.96 5.98608L45.975 32.0001L19.96 58.0141Z" fill="#FFF"></path>
+             </svg></button></p>
+           <ul class="dn dn-ns dn-m db-l ma0 pa0 mt2 mt2-ns mt2-m mt0-l list">
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/about-overview/">About Cloudflare</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="https://cloudflare.net">Investor Relations</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/people/">Our Team</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/press/">Press</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/careers/">Careers</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/connect">Cloudflare Connect</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/logo/">Logo</a></li>
+            <li class="mt1 lh-6"><a class="white f2 fw4" href="/network/">Network Map</a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="pv5">
+        <div class="flex flex-wrap justify-start justify-start-ns justify-start-m justify-between-l">
+         <div class="mb3 mb3-ns mb3-m mb0-l lh-1">
+          <a class="lh-1 dib mr2" title="Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/cloudflare">
+           <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="white"></path><path d="M10.2965 16.7999H12.9405V27.6799C12.9405 27.786 12.9826 27.8877 13.0576 27.9628C13.1327 28.0378 13.2344 28.0799 13.3405 28.0799H17.8205C17.9266 28.0799 18.0283 28.0378 18.1033 27.9628C18.1783 27.8877 18.2205 27.786 18.2205 27.6799V16.8359H21.2605C21.3575 16.8369 21.4516 16.8025 21.5252 16.7392C21.5988 16.6759 21.6469 16.588 21.6605 16.4919L22.1205 12.4919C22.1255 12.4364 22.1189 12.3805 22.101 12.3278C22.0832 12.275 22.0545 12.2265 22.0169 12.1855C21.9792 12.1445 21.9334 12.1117 21.8824 12.0894C21.8313 12.0671 21.7762 12.0557 21.7205 12.0559H18.2005V9.53992C18.2005 8.78392 18.6005 8.39992 19.4005 8.39992H21.6925C21.7986 8.39992 21.9003 8.35778 21.9753 8.28276C22.0503 8.20775 22.0925 8.10601 22.0925 7.99992V4.31992C22.0925 4.21384 22.0503 4.11209 21.9753 4.03708C21.9003 3.96206 21.7986 3.91992 21.6925 3.91992H18.4005C16.9464 3.92501 15.5431 4.45481 14.4485 5.41192C13.9315 5.8638 13.5348 6.43694 13.294 7.07992C13.0531 7.7229 12.9756 8.41561 13.0685 9.09592V12.0319H10.2965C10.1904 12.0319 10.0887 12.0741 10.0136 12.1491C9.93863 12.2241 9.89648 12.3258 9.89648 12.4319V16.3999C9.89648 16.506 9.93863 16.6077 10.0136 16.6828C10.0887 16.7578 10.1904 16.7999 10.2965 16.7999Z" fill="#222222"></path>
+           </svg></a><a class="lh-1 dib mr2" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/cloudflare">
+           <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="white"></path><path d="M23.917 10.7759C23.6572 10.8922 23.3899 10.9911 23.117 11.0719C23.4414 10.7016 23.6865 10.2687 23.837 9.79988C23.8553 9.74704 23.8566 9.68979 23.8407 9.63616C23.8249 9.58253 23.7927 9.53519 23.7486 9.5008C23.7045 9.4664 23.6507 9.44666 23.5948 9.44435C23.539 9.44203 23.4838 9.45725 23.437 9.48788C22.867 9.82828 22.2476 10.0779 21.601 10.2279C21.0705 9.71367 20.3936 9.37678 19.6635 9.26372C18.9335 9.15065 18.1863 9.26699 17.5252 9.59667C16.8641 9.92635 16.3216 10.4531 15.9726 11.1043C15.6236 11.7554 15.4854 12.4988 15.577 13.2319C14.3655 13.1234 13.188 12.7738 12.1137 12.2037C11.0393 11.6335 10.0898 10.8543 9.32096 9.91188C9.29299 9.87906 9.25762 9.85336 9.21777 9.83689C9.17792 9.82043 9.13472 9.81368 9.09174 9.81719C9.04876 9.82071 9.00724 9.8344 8.97059 9.85712C8.93394 9.87984 8.90322 9.91095 8.88096 9.94788C8.56783 10.4919 8.40236 11.1082 8.40096 11.7359C8.39878 12.5818 8.69961 13.4006 9.24896 14.0439C9.0844 13.9873 8.92512 13.9163 8.77296 13.8319C8.73235 13.8102 8.68701 13.7988 8.64096 13.7988C8.59491 13.7988 8.54957 13.8102 8.50896 13.8319C8.46844 13.8548 8.43459 13.8879 8.41075 13.9279C8.3869 13.9678 8.37388 14.0133 8.37296 14.0599V14.1079C8.37409 14.7252 8.53538 15.3317 8.84107 15.8681C9.14676 16.4044 9.58638 16.8523 10.117 17.1679C10.0255 17.1604 9.93467 17.1471 9.84496 17.1279C9.79894 17.12 9.75169 17.124 9.70761 17.1394C9.66354 17.1548 9.62409 17.1811 9.59296 17.2159C9.56317 17.2506 9.54276 17.2923 9.53366 17.3371C9.52456 17.3819 9.52707 17.4283 9.54096 17.4719C9.72712 18.0654 10.0661 18.5996 10.5238 19.0209C10.9816 19.4421 11.542 19.7356 12.149 19.8719C11.1397 20.504 9.97183 20.8368 8.78096 20.8319C8.52009 20.8284 8.25965 20.8097 8.00096 20.7759C7.940

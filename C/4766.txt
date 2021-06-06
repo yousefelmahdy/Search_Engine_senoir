@@ -1,0 +1,247 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-us" prefix="og: http://ogp.me/ns#"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>GitLab Runner | GitLab</title> 
+  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner."> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+  <meta name="robots" content="noindex nofollow"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/stylesheet-v60.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/highlight-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/footer-v3.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/toc-v6.css"> 
+  <link rel="stylesheet" href="/11.11/assets/stylesheets/comments-v4.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZCXKT5');</script> 
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" async></script> 
+  <meta name="google-site-verification" content="6eFQOFLxYAer08ROqc3I-SAi44F9NmvH7PrUUBR3oCI"> 
+  <script async src="/11.11/assets/javascripts/classlist-polyfill-v1.js"></script> 
+  <meta name="generator" content="Nanoc 4.11.5"> 
+  <link href="/opensearch.xml" rel="search" title="Search through GitLab Docs" type="application/opensearchdescription+xml"> 
+  <link rel="canonical" href="/11.11/runner/"> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="200"> 
+  <div class="header"> 
+   <div class="flex-container align-center"> <a class="header-link logo-container flex-container justify-center align-center" href="/"> <img src="/11.11/assets/images/gitlab-logo.svg" class="logo"> <p>GitLab <strong>Docs</strong></p> </a> 
+    <form id="search-form" action="/search/"> 
+     <input name="q" class="docsearch" placeholder="Search" required> 
+     <input type="submit" style="visibility:hidden;position:absolute"> 
+    </form> 
+    <div class="choose-version">
+      Choose version 
+    </div> 
+    <div class="dropdown"> <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 11.11 <span class="caret"></span> </a> 
+     <ul class="dropdown-menu versions-menu" aria-labelledby="versions"> 
+      <li> <a href="/runner/index.html" class="versions-tooltip">GitLab.com <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i> </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li class="active"> <a href="/11.11/runner/index.html"> 11.11 </a> </li>
+      <li> <a href="/10.8/runner/index.html"> 10.8 </a> </li>
+      <li role="separator" class="divider"> </li>
+      <li><a href="/archives/">Archives</a> </li>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="nav-container"> <a class="nav-toggle" id="docs-nav-toggle"> <i class="fa fa-bars" aria-hidden="true"></i> </a> 
+    <ul class="nav"> 
+     <li class="nav-item"> 
+      <form id="mobile-search-form" action="/search/"> 
+       <input name="q" class="docsearch docsearch-mobile" placeholder="Search" required> 
+       <input type="submit" style="visibility:hidden;position:absolute"> 
+      </form> </li>
+     <li class="nav-item"> <a href="/11.11/ee/README.html"> GitLab </a> </li>
+     <li class="nav-item"> <a href="/11.11/omnibus/README.html"> Omnibus </a> </li>
+     <li class="nav-item"> <a href="/11.11/runner/"> Runner </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="wrapper"> 
+   <aside id="global-nav" class="global-nav"> 
+    <nav class="global-nav-content"> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/README.html"> GitLab </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/user/"> User </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/group/"> Groups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/subgroups/"> Subgroups </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/epics/"> Epics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/group/roadmap/"> Roadmaps </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/"> Projects </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/settings/"> Settings </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/members/"> Members </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/security_dashboard.html"> Security Dashboard </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/cycle_analytics.html"> Cycle Analytics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/wiki/"> Wikis </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/snippets.html"> Snippets </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/discussions/"> Discussions </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/repository/"> Repositories </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/branches/"> Branches </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/gpg_signed_commits/"> Signed Commits </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/repository/web_editor.html"> Web Editor </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/web_ide/"> Web IDE </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/file_lock.html"> Locked files </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/issues/"> Issues </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/issue_board.html"> Issue Boards </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/milestones/"> Milestones </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/service_desk.html"> Service Desk </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/merge_requests/"> Merge Requests </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/ci/README.html"> GitLab CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/introduction/"> Introduction </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/quick_start/README.html"> Getting Started </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/examples/README.html"> Examples </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/pipelines.html"> Pipelines </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pipelines/schedules.html"> Schedules </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/review_apps/"> Review Apps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/autodevops/"> Auto DevOps </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/yaml/README.html"> .gitlab-ci.yml Reference </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/operations/"> Operations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/prometheus_library/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/tracing.html"> Tracing </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/environments.html"> Environments </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/clusters/"> Kubernetes </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/operations/feature_flags.html"> Feature Flags </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/project/container_registry.html"> Container Registry </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/profile/"> Account </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/permissions.html"> Permissions </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/markdown.html"> Markdown </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/topics/authentication/"> General </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/authentication/"> Authentication </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ssh/README.html"> SSH </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/api/README.html"> API </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/integration/README.html"> Integrations </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/topics/git/"> Git </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/administration/"> Administrator </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/install/README.html"> Install </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/update/README.html"> Update </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/user/admin_area/settings/"> Configure </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/customization/"> Appearance </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/continuous_integration.html"> CI/CD </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/email.html"> Email </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/gitaly/"> Gitaly </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/pages/"> GitLab Pages </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/monitoring/health_check.html"> Health Check </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/labels.html"> Labels </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/logs.html"> Log system </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/auth/README.html"> OAuth applications </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/integration/plantuml.html"> PlantUML Integration </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_checks.html"> Repository checks </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/repository_storage_paths.html"> Repository path </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/account_and_limit_settings.html"> Repository size </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/ci/runners/README.html"> Runner </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/project/integrations/services_templates.html"> Service templates </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/system_hooks/system_hooks.html"> System Hooks </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/administration/monitoring/"> Metrics </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/influxdb_configuration.html"> Influx </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/prometheus/"> Prometheus </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/administration/monitoring/performance/performance_bar.html"> Performance bar </a> </span> <span class="nav-link"> <a class="global-nav-link level-2" href="/11.11/ee/user/admin_area/settings/usage_statistics.html"> Usage statistics </a> </span> 
+     </div> 
+     <div class="global-nav-section"> <span class="global-nav-block-top nav-link"> <a class="global-nav-link level-0" href="/11.11/ee/development/README.html"> Contributor </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/architecture.html#components"> Architecture </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/documentation/"> Documentation </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="https://design.gitlab.com" target="_blank"> GitLab Design System </a> </span> <span class="global-nav-cat nav-link"> <a class="global-nav-link level-1" href="/11.11/ee/development/i18n/"> Translate GitLab </a> </span> 
+     </div> 
+    </nav> 
+   </aside> 
+   <div class="main class js-main-wrapper"> 
+    <div id="doc-nav" class="doc-nav toc-no-breadcrumbs"> <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a> 
+    </div> 
+    <h1 class="article-title" itemprop="name"> GitLab Runner </h1> 
+    <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage"> 
+     <ul id="markdown-toc"> 
+      <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a> </li>
+      <li><a href="#features" id="markdown-toc-features">Features</a> </li>
+      <li><a href="#compatibility-chart" id="markdown-toc-compatibility-chart">Compatibility chart</a> </li>
+      <li><a href="#install-gitlab-runner" id="markdown-toc-install-gitlab-runner">Install GitLab Runner</a> </li>
+      <li><a href="#register-gitlab-runner" id="markdown-toc-register-gitlab-runner">Register GitLab Runner</a> </li>
+      <li><a href="#using-gitlab-runner" id="markdown-toc-using-gitlab-runner">Using GitLab Runner</a> </li>
+      <li><a href="#selecting-the-executor" id="markdown-toc-selecting-the-executor">Selecting the executor</a> </li>
+      <li><a href="#configuring-gitlab-runner" id="markdown-toc-configuring-gitlab-runner">Configuring GitLab Runner</a> </li>
+      <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> </li>
+      <li><a href="#release-process" id="markdown-toc-release-process">Release process</a> </li>
+      <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a> </li>
+      <li><a href="#development" id="markdown-toc-development">Development</a> </li>
+      <li><a href="#changelog" id="markdown-toc-changelog">Changelog</a> </li>
+      <li><a href="#license" id="markdown-toc-license">License</a> </li>
+     </ul> 
+     <h1 id="gitlab-runner">GitLab Runner<a href="#gitlab-runner" title="Permalink" class="anchor"></a> </h1> 
+     <p>GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with <a href="https://about.gitlab.com/product/continuous-integration/">GitLab CI</a>, the open-source continuous integration service included with GitLab that coordinates the jobs. </p>
+     <h2 id="requirements">Requirements<a href="#requirements" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab Runner is written in <a href="https://golang.org">Go</a> and can be run as a single binary, no language specific requirements are needed. </p>
+     <p>It is designed to run on the GNU/Linux, macOS, and Windows operating systems. Other operating systems will probably work as long as you can compile a Go binary on them. </p>
+     <p>If you want to use Docker make sure that you have version <code class="highlighter-rouge">v1.5.0</code> at least installed. </p>
+     <h2 id="features">Features<a href="#features" title="Permalink" class="anchor"></a> </h2> 
+     <ul> 
+      <li>Allows to run: 
+       <ul> 
+        <li>Multiple jobs concurrently. </li>
+        <li>Use multiple tokens with multiple server (even per-project). </li>
+        <li>Limit number of concurrent jobs per-token. </li>
+       </ul> </li>
+      <li>Jobs can be run: 
+       <ul> 
+        <li>Locally. </li>
+        <li>Using Docker containers. </li>
+        <li>Using Docker containers and executing job over SSH. </li>
+        <li>Using Docker containers with autoscaling on different clouds and virtualization hypervisors. </li>
+        <li>Connecting to remote SSH server. </li>
+       </ul> </li>
+      <li>Is written in Go and distributed as single binary without any other requirements. </li>
+      <li>Supports Bash, Windows Batch, and Windows PowerShell. </li>
+      <li>Works on GNU/Linux, macOS, and Windows (pretty much anywhere you can run Docker). </li>
+      <li>Allows customization of the job running environment. </li>
+      <li>Automatic configuration reload without restart. </li>
+      <li>Easy to use setup with support for Docker, Docker-SSH, Parallels, or SSH running environments. </li>
+      <li>Enables caching of Docker containers. </li>
+      <li>Easy installation as a service for GNU/Linux, macOS, and Windows. </li>
+      <li>Embedded Prometheus metrics HTTP server. </li>
+     </ul> 
+     <h2 id="compatibility-chart">Compatibility chart<a href="#compatibility-chart" title="Permalink" class="anchor"></a> </h2> 
+     <p>The GitLab Runner version should be in sync with the GitLab version. While older Runners may still work with newer GitLab versions, and vice versa, in some cases, features may be not available or work properly if there’s a version difference. </p>
+     <p>Backward incompatibility is allowed only for major version updates. </p>
+     <h2 id="install-gitlab-runner">Install GitLab Runner<a href="#install-gitlab-runner" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab Runner can be <a href="install/index.html">installed</a> and used on GNU/Linux, macOS, FreeBSD, and Windows. You can install it using Docker, download the binary manually or use the repository for rpm/deb packages that GitLab offers. Below you can find information on the different installation methods: </p>
+     <ul> 
+      <li> <a href="install/linux-repository.html">Install using GitLab’s repository for Debian/Ubuntu/CentOS/RedHat (preferred)</a>. </li>
+      <li> <a href="install/linux-manually.html">Install on GNU/Linux manually (advanced)</a>. </li>
+      <li> <a href="install/osx.html">Install on macOS</a>. </li>
+      <li> <a href="install/windows.html">Install on Windows</a>. </li>
+      <li> <a href="install/docker.html">Install as a Docker service</a>. </li>
+      <li> <a href="executors/docker_machine.html">Install in autoscaling mode using Docker machine</a>. </li>
+      <li> <a href="install/freebsd.html">Install on FreeBSD</a>. </li>
+      <li> <a href="install/kubernetes.html">Install on Kubernetes</a>. </li>
+      <li> <a href="install/bleeding-edge.html">Install the nightly binary manually (development)</a>. </li>
+     </ul> 
+     <h2 id="register-gitlab-runner">Register GitLab Runner<a href="#register-gitlab-runner" title="Permalink" class="anchor"></a> </h2> 
+     <p>Once GitLab Runner is installed, you need to register it with GitLab. </p>
+     <p>Learn how to <a href="register/index.html">register a GitLab Runner</a>. </p>
+     <h2 id="using-gitlab-runner">Using GitLab Runner<a href="#using-gitlab-runner" title="Permalink" class="anchor"></a> </h2> 
+     <ul> 
+      <li>See the <a href="commands/README.html">commands documentation</a>. </li>
+     </ul> 
+     <h2 id="selecting-the-executor">Selecting the executor<a href="#selecting-the-executor" title="Permalink" class="anchor"></a> </h2> 
+     <p>GitLab Runner implements a number of <a href="executors/README.html">executors</a> that can be used to run your builds in different scenarios. If you are not sure what to select, read the <a href="executors/README.html#i-am-not-sure">I am not sure</a> section. Visit the <a href="executors/README.html#compatibility-chart">compatibility chart</a> to find out what features each executor supports and what not. </p>
+     <p>To jump into the specific documentation of each executor, see: </p>
+     <ul> 
+      <li> <a href="executors/shell.html">Shell</a>. </li>
+      <li> <a href="executors/docker.html">Docker</a>. </li>
+      <li> <a href="executors/docker_machine.html">Docker Machine and Docker Machine SSH (autoscaling)</a>. </li>
+      <li> <a href="executors/parallels.html">Parallels</a>. </li>
+      <li> <a href="executors/virtualbox.html">VirtualBox</a>. </li>
+      <li> <a href="executors/ssh.html">SSH</a>. </li>
+      <li> <a href="executors/kubernetes.html">Kubernetes</a>. </li>
+     </ul> 
+     <h2 id="configuring-gitlab-runner">Configuring GitLab Runner<a href="#configuring-gitlab-runner" title="Permalink" class="anchor"></a> </h2> 
+     <p>See information on <a href="configuration/index.html">configuring GitLab Runner</a>, and: </p>
+     <ul> 
+      <li> <a href="configuration/advanced-configuration.html">Advanced configuration options</a>: Learn how to use the <a href="https://github.com/toml-lang/toml">TOML</a> configuration file that GitLab Runner uses. </li>
+      <li> <a href="configuration/tls-self-signed.html">Use self-signed certificates</a>: Configure certificates that are used to verify TLS peer when connecting to the GitLab server. </li>
+      <li> <a href="configuration/autoscale.html">Autoscaling using Docker machine</a>: Execute jobs on machines that are created on demand using Docker machine. </li>
+      <li><a href="configuration/runner_autoscale_aws/index.html">Autoscaling GitLab Runner on AWS</a> </li>
+      <li> <a href="configuration/init.html">The init system of GitLab Runner</a>: Learn how the Runner installs its init service files based on your operating system. </li>
+      <li> <a href="shells/index.html">Supported shells</a>: Learn what shell script generators are supported that allow to execute builds on different systems. </li>
+      <li> <a href="security/index.html">Security considerations</a>: Be aware of potential security implications when running your jobs with GitLab Runner. </li>
+      <li> <a href="monitoring/README.html">Runner monitoring</a>: Learn how to monitor the Runner’s behavior. </li>
+      <li> <a href="https://gitlab.com/gitlab-org/gitlab-runner-docker-cleanup">Cleanup the Docker images automatically</a>: A simple Docker application that automatically garbage collects the GitLab Runner caches and images when running low on disk space. </li>
+      <li> <a href="configuration/proxy.html">Configure GitLab Runner to run behind a proxy</a>: Learn how to set up a Linux proxy and configure GitLab Runner. Especially useful for the Docker executor. </li>
+      <li> <a href="configuration/feature-flags.html">Feature Flags</a>: Learn how to use feature flags to get access to features in beta stage or to enable breaking changes before the full deprecation and replacement is handled. </li>
+      <li> <a href="configuration/advanced-configuration.html#the-session_server-section">Configure Session Server</a>: Learn how to configure a session server for interacting with jobs the Runner is responsible for. </li>
+     </ul> 
+     <h2 id="troubleshooting">Troubleshooting<a href="#troubleshooting" title="Permalink" class="anchor"></a> </h2> 
+     <p>Read the <a href="faq/README.html">FAQ</a> for troubleshooting common issues. </p>
+     <h2 id="release-process">Release process<a href="#release-process" title="Permalink" class="anchor"></a> </h2> 
+     <p>The description of release process of the GitLab Runner project can be found in the <a href="release_process/README.html">release documentation</a>. </p>
+     <h2 id="contributing">Contributing<a href="#contributing" title="Permalink" class="anchor"></a> </h2> 
+     <p>Contributions are welcome, see <a href="https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CONTRIBUTING.md"><code class="highlighter-rouge">CONTRIBUTING.md</code></a> for more details. </p>
+     <h2 id="development">Development<a href="#development" title="Permalink" class="anchor"></a> </h2> 
+     <p>See the <a href="development/README.html">development documentation</a> to hack on GitLab Runner. </p>
+     <p>If you’re a reviewer of GitLab Runner project, then please take a moment to read the <a href="development/reviewing-gitlab-runner.html">Reviewing GitLab Runner</a> document. </p>
+     <h2 id="changelog">Changelog<a href="#changelog" title="Permalink" class="anchor"></a> </h2> 
+     <p>See the <a href="https://gitlab.com/gitlab-org/gitlab-runner/blob/master/CHANGELOG.md">CHANGELOG</a> to view recent changes. </p>
+     <h2 id="license">License<a href="#license" title="Permalink" class="anchor"></a> </h2> 
+     <p>This code is distributed under the MIT license, see the <a href="https://gitlab.com/gitlab-org/gitlab-runner/blob/master/LICENSE">LICENSE</a> file. </p>
+    </div> 
+    <hr> 
+    <p class="last-updated"> <em>Last updated 2019-01-17</em> </p>
+    <div class="comments"> 
+     <div class="comments-filter"> 
+      <h2 id="help-and-feedback"> <i class="fa fa-star-half-o" aria-hidden="true"></i> Help and feedback <a class="anchor" href="#help-and-feedback"></a> </h2> 
+      <div> 
+       <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab"> <i class="fa fa-file-text-o" aria-hidden="true"></i> <strong>DOCS</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab"> <i class="fa fa-gitlab" aria-hidden="true"></i> <strong>PRODUCT</strong> FEEDBACK</a> </li>
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab"> <i class="fa fa-question-circle" aria-hidden="true"></i> GET <strong>HELP</strong></a> </li>
+        <li role="presentation"><a href="#get-more-features" aria-controls="get-more-features" role="tab" data-toggle="tab"> <i class="fa fa-line-chart" aria-hidden="true"></i> GET MORE <strong>FEATURES</strong></a> </li>
+       </ul> 
+       <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane" id="product-feedback"> 
+         <div class="row" id="issue-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&amp;issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20" target="_blank"> <i class="fa fa-info-circle" aria-hidden="true"></i> CREATE AN ISSUE </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To propose <strong>functionality that GitLab does not yet offer</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&amp;issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank"> <i class="fa fa-plus-circle" aria-hidden="true"></i> SUBMIT FEATURE PROPOSAL </a> 
+          </div> 
+         </div> 
+         <div class="row" id="feature-proposal-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>To further <strong>help GitLab in shaping new features</strong> <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/community/gitlab-first-look/" target="_blank"> <i class="fa fa-check-circle" aria-hidden="true"></i> JOIN BETA TESTING </a> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="get-help"> 
+         <div class="row" id="search-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>didn't find</strong> what you were looking for <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> SEARCH THE DOCS </a> 
+          </div> 
+         </div> 
+         <div class="row" id="forum-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you want help with something very <strong>specific to your use case</strong>, and can use some community support <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank"> <i class="fa fa-users" aria-hidden="true"></i> POST ON GITLAB FORUM </a> </p>
+          </div> 
+         </div> 
+         <div class="row" id="support-row"> 
+          <div class="col-md-8 col-sm-12"> 
+           <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription) <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i> </p>
+          </div> 
+          <div class="col-md-4 col-sm-12"> 
+           <p> <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> R

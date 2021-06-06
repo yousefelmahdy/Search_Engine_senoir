@@ -1,0 +1,547 @@
+<!doctype html>
+<html dir="ltr" lang="en-US"> 
+ <head> 
+  <meta charset="utf-8"> <!-- v19745 --> 
+  <title>What is Email Address Obfuscation? – Cloudflare Help Center</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="hc:meta:server:6PMg2WjoGxsYqTQZrbxxXESYqteDhLk7_ZH5xwsJXlspk_nC1o0VS9SOaHOKWuZ5MTINAmW-57i0I_I4zITokw"> 
+  <meta name="description" content="Cloudflare Email Address Obfuscation helps in spam prevention by hiding email addresses appearing in your pages from email harvesters and...">
+  <meta property="og:image" content="https://theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Cloudflare Help Center"> 
+  <meta property="og:title" content="What is Email Address Obfuscation?"> 
+  <meta property="og:description" content="Cloudflare Email Address Obfuscation helps in spam prevention by hiding email addresses appearing in your pages from email harvesters and other bots, while remaining visible to your site visitors.O..."> 
+  <meta property="og:url" content="https://support.cloudflare.com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-"> 
+  <link rel="canonical" href="https://support.cloudflare.com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-"> 
+  <link rel="alternate" hreflang="de" href="https://support.cloudflare.com/hc/de/articles/200170016-Was-ist-E-Mail-Adressverschleierung-"> 
+  <link rel="alternate" hreflang="en" href="https://support.cloudflare.com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-"> 
+  <link rel="alternate" hreflang="es" href="https://support.cloudflare.com/hc/es-es/articles/200170016--En-qu%C3%A9-consiste-la-ofuscaci%C3%B3n-de-direcci%C3%B3n-de-correo-electr%C3%B3nico-"> 
+  <link rel="alternate" hreflang="fr" href="https://support.cloudflare.com/hc/fr-fr/articles/200170016-Email-Address-Obfuscation-qu-est-ce-que-c-est-"> 
+  <link rel="alternate" hreflang="ja" href="https://support.cloudflare.com/hc/ja/articles/200170016-%E3%83%A1%E3%83%BC%E3%83%AB-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%A8%E3%81%AF-"> 
+  <link rel="alternate" hreflang="ko" href="https://support.cloudflare.com/hc/ko/articles/200170016-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EC%A3%BC%EC%86%8C-%EB%82%9C%EB%8F%85%ED%99%94%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-"> 
+  <link rel="alternate" hreflang="pt" href="https://support.cloudflare.com/hc/pt-br/articles/200170016-O-que-%C3%A9-Ofusca%C3%A7%C3%A3o-de-Endere%C3%A7o-de-E-mail-"> 
+  <link rel="alternate" hreflang="zh" href="https://support.cloudflare.com/hc/zh-cn/articles/200170016-%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%9C%B0%E5%9D%80%E6%B7%B7%E6%B7%86-"> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-79172500fb4dbec2484043d570946543.css" id="stylesheet"> <!-- Entypo pictograms by Daniel Bruce — www.entypo.com --> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-cf937686d5b6669242017892da7bad78.css"> 
+  <link rel="stylesheet" type="text/css" href="//p13.zdassets.com/hc/theming_assets/184946/475874/style.css?digest=4402414509325"> 
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/184946/2dec4705e9ab399efdc6eef36e079aa31d1df8d9.ico"> 
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script> <!--
+  Template Name: Sagma
+  Version: 3.1.9
+  Author: Allies Interactive
+  Website: http://www.diziana.com/
+  Corporate Website : http://www.diziana.com
+  Contact: support@diziana.com
+  Follow: https://www.twitter.com/dizianaEngage
+  Like: https://www.facebook.com/diziana.engage
+  Purchase: Diziana.com
+  License: You must have a valid license purchased only from
+  diziana.com in order to legally use the theme for your project.
+  Copyright: © 2020 Allies Interactive Services Pvt. Ltd. All Rights Reserved
+--> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.0/URI.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/2a515632e0fd8ffdeb8d94cb25e44cf287feb32f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/a62d9ce6c78c259d7167495b85f03f38c8a6635f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/ef493f5fc3711bd1e6f7b876f3bfddeccbe99d36.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/d0608d7794a77e0c9fbdc1b0e5b4ecdfe79f2c37.js"></script> 
+  <script>
+  /**
+  * Icon for home category/section blocks
+  *
+  * Upload icon (ID.png) to assets for default block Icon
+  * Upload icon (hover_ID.png) to assets for hover block Icon
+  * Replace ID with category/section ID
+  * For font-icon, open the icon page and copy the class name attached in the tag as: <!--<i class="fas fa-pencil-alt"></i>-->
+  *
+  * Once asset is uploaded, click on it so details is shown in right pane
+  * Copy the text written under script tag and paste it below
+  *
+  * Your code should look like the below lines -
+  *  var assets360000004673 = "";
+  *  var assetsHover360000004673 = "";
+  *  var assets360000004673 = "fas fa-pencil-alt";
+  **/
+
+  // Paste copied code here
+  var assets200275228 = "fas fa-fire"; // Firewall category
+  var assets200276257 = "fas fa-file"; // Page Rules category
+  var assets200275248 = "fas fa-server"; // Caching category
+  var assets200276267 = "fas fa-chart-pie"; // Analytics category
+  var assets200275278 = "fas fa-user"; // Third-party software category
+  var assets200275298 = "fas fa-cog"; // Cloudflare client API category
+  var assets200276277 = "fas fa-hands-helping"; // Partners category
+  var assets200276287 = "fas fa-plus-circle"; // Cloudflare apps category
+
+</script> 
+  <script>
+  var systemStatusText = "All Systems Operational";
+  /* var systemStatusText = "" */
+  
+  var tocHeadingText = "In this article";
+  /* var tocHeadingText = "" */
+
+  /**
+  * Returns URL of image
+  *
+  **/
+
+  function getAssetURLById(id) {
+    return {
+      blockIcon: window["assets" + id],
+      blockHoverIcon: window["assetsHover" + id]
+    }
+  }
+
+  /**
+  * sets the image url from assets id
+  *
+  **/
+  function setIcon(id) {
+    var icon = getAssetURLById(id);
+
+    if ( icon.blockIcon != undefined ) {
+      var blockIcon = $("."+ id + '-block-icon');
+      var blockHoverIcon = $("."+ id + '-block-hover-icon');
+      var blockFontIcon = $("."+ id + '-block-font-icon');
+
+      if ( icon.blockIcon.indexOf('fa') == 0 ) {
+        blockFontIcon.addClass(icon.blockIcon);
+        blockFontIcon.parent().removeClass('hide');
+        blockFontIcon.show();
+        blockIcon.hide();
+        blockHoverIcon.hide();
+      } else {
+        blockIcon.attr('src', icon.blockIcon);
+        blockHoverIcon.attr('src', icon.blockHoverIcon);
+        blockIcon.parent().removeClass('hide');
+        blockFontIcon.hide();
+      }
+    }
+  }
+</script> 
+  <style type="text/css">
+
+.search-box .search input[type="submit"] {
+  background-image: url('//theme.zdassets.com/theme_assets/184946/d784142ca13b85d3a5d7918637c1e4d77dfef300.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-category-list .accordion-toggle.collapsed:after, .home-category-list .accordion-toggle:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/e36baa2f259318b4e14f9a14bd17f8a567456e98.png") no-repeat center center;
+}
+
+.home-category-list .accordion-toggle.open:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/7fb2bfa79c7022b7c88692589f4a1e2e97b95150.png") no-repeat center center;
+}
+
+.user-nav li + li a:before {
+  background: url("//theme.zdassets.com/theme_assets/184946/3126fee5fe913e135dcd1bed4b5fc0e80f82ce5c.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+  
+.banner div { 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   background-color: #00517F; 
+   width: 100%;
+   z-index: 100;
+ }
+.banner-content div { 
+   margin: 0 auto; 
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+ }
+.banner-content a {
+   color: #fff; 
+ }
+
+</style> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> 
+  <script type="text/javascript" src="//p13.zdassets.com/hc/theming_assets/184946/475874/script.js?digest=4402414509325"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class=""> 
+  <header class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo"> <a href="https://support.cloudflare.com/hc/" alt="Cloudflare Help Center" title="Cloudflare Help Center"> <img src="//theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png" alt="Logo"> </a> 
+    </div> 
+    <div class="nav-wrapper"> <span class="icon-menu"></span> <i class="fas system-status-icon"></i> 
+     <nav class="user-nav" id="user-nav"> <a href="https://www.cloudflarestatus.com"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> <a href="https://community.cloudflare.com/" title="Ask the Community"> Ask the Community </a> 
+     </nav> 
+     <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-" data-name="English (US)"> English (US) </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/de?return_to=%2Fhc%2Fde%2Farticles%2F200170016-Was-ist-E-Mail-Adressverschleierung-" dir="ltr" rel="nofollow" role="menuitem"> Deutsch </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es%2Farticles%2F200170016--En-qu%25C3%25A9-consiste-la-ofuscaci%25C3%25B3n-de-direcci%25C3%25B3n-de-correo-electr%25C3%25B3nico-" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr%2Farticles%2F200170016-Email-Address-Obfuscation-qu-est-ce-que-c-est-" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja%2Farticles%2F200170016-%25E3%2583%25A1%25E3%2583%25BC%25E3%2583%25AB-%25E3%2582%25A2%25E3%2583%2589%25E3%2583%25AC%25E3%2582%25B9%25E6%259A%2597%25E5%258F%25B7%25E5%258C%2596%25E3%2581%25A8%25E3%2581%25AF-" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/ko?return_to=%2Fhc%2Fko%2Farticles%2F200170016-%25EC%259D%25B4%25EB%25A9%2594%25EC%259D%25BC-%25EC%25A3%25BC%25EC%2586%258C-%25EB%2582%259C%25EB%258F%2585%25ED%2599%2594%25EB%259E%2580-%25EB%25AC%25B4%25EC%2597%2587%25EC%259D%25B8%25EA%25B0%2580-" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br%2Farticles%2F200170016-O-que-%25C3%25A9-Ofusca%25C3%25A7%25C3%25A3o-de-Endere%25C3%25A7o-de-E-mail-" dir="ltr" rel="nofollow" role="menuitem"> Português do Brasil </a> <a href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F200170016-%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AF%25E7%2594%25B5%25E5%25AD%2590%25E9%2582%25AE%25E4%25BB%25B6%25E5%259C%25B0%25E5%259D%2580%25E6%25B7%25B7%25E6%25B7%2586-" dir="ltr" rel="nofollow" role="menuitem"> ???? </a> </span> 
+     </div> <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="Opens a dialog" href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-&amp;locale=en-us">Sign in</a> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="hero"> 
+   <div class="hero-inner"> 
+    <h1 class="welcome-message-title welcome-message hide">Cloudflare Help Center</h1> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+     <input type="submit" name="commit" value="Search">
+    </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Popular searches:</li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </div> 
+  </section> <!-- Modal --> 
+  <div class="modal" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-body"> <i class="fa fa-times close-modal"></i> <a href="https://www.cloudflarestatus.com" title="All Systems Operational"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> 
+    </div> 
+   </div> 
+  </div> <!-- /Modal --> 
+  <main role="main"> 
+   <script>
+  var templateName = 'articles';
+  $('.header-wrapper').addClass('fluid');
+</script> 
+   <style>
+  .footer-search-wrapper {display: none;}
+  @media (min-width: 1024px) {
+  	.hero {display: none;}
+  }
+</style> 
+   <div class="article-wrapper"> 
+    <section class="article-sidebar"> 
+     <form role="search" class="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search">
+     </form> 
+     <div class="system-status"> <i class="fas system-status-icon"></i> 
+      <div> 
+       <h3 class="system-status-text"></h3> <a href="https://www.cloudflarestatus.com" title="Detailed system status"> Detailed system status &gt; </a> 
+      </div> 
+     </div> 
+     <section class="section-articles collapsible-sidebar"> 
+      <h3 class="collapsible-sidebar-title sidenav-title">Articles in this section</h3> 
+      <ul> 
+       <li> <a href="/hc/en-us/articles/200171036-What-does-Scrape-Shield-do-" class="sidenav-item " title="What does Scrape Shield do?">What does Scrape Shield do?</a> </li> 
+       <li> <a href="/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-" class="sidenav-item current-article" title="What is Email Address Obfuscation?">What is Email Address Obfuscation?</a> </li> 
+       <li> <a href="/hc/en-us/articles/200170026-Understanding-Cloudflare-Hotlink-Protection" class="sidenav-item " title="Understanding Cloudflare Hotlink Protection">Understanding Cloudflare Hotlink Protection</a> </li> 
+       <li> <a href="/hc/en-us/articles/200169316-Why-doesn-t-my-RSS-feed-show-images-" class="sidenav-item " title="Why doesn't my RSS feed show images?">Why doesn't my RSS feed show images?</a> </li> 
+       <li> <a href="/hc/en-us/articles/200170036-What-does-Server-Side-Excludes-SSE-do-" class="sidenav-item " title="What does Server Side Excludes (SSE) do?">What does Server Side Excludes (SSE) do?</a> </li> 
+      </ul> 
+     </section> <!--
+    <section class="community-block">
+      <div>
+        <i class="fas fa-users"></i>
+        <div>
+          
+          <h3>Connect with the Cloudflare Community</h3>
+          <a href="https://community.cloudflare.com/" class="button button-large">Get answers</a>
+          
+        </div>
+      </div>
+      <p>
+        
+        More on this topic: <a href="#">Discussions</a> and <a href="#">Tips</a>
+        
+      </p>
+    </section>
+   --> 
+     <section class="community-block"> 
+      <div> 
+       <img class="community-icon" src="//theme.zdassets.com/theme_assets/184946/513a9e8b35eaed0a35fce9cc22f9972e37872a33.png"> 
+       <div> 
+        <h4>Connect with the Cloudflare Community</h4> <a id="submit-request" class="button button-large" href="https://community.cloudflare.com/" onclick="trackOutboundLink('https://community.cloudflare.com/'); return false;" target="_new">Get answers</a> 
+       </div> 
+      </div> 
+     </section> 
+    </section> 
+    <div class="article-container section" id="article-container"> 
+     <nav class="sub-nav"> 
+      <ol class="breadcrumbs"> 
+       <li title="Cloudflare Help Center"> <a href="/hc/en-us">Cloudflare Help Center</a> </li> 
+       <li title="More Dashboard Apps"> <a href="/hc/en-us/categories/360001969392-More-Dashboard-Apps">More Dashboard Apps</a> </li> 
+       <li title="Cloudflare Scrape Shield"> <a href="/hc/en-us/sections/360003786152-Cloudflare-Scrape-Shield">Cloudflare Scrape Shield</a> </li> 
+      </ol> 
+      <script>
+        var categoryid = $('.breadcrumbs li:nth-child(2) a').attr('href').match(/[0-9]+/)[0];
+      </script> 
+     </nav> 
+     <div class="article-side-main-block  "> 
+      <article class="article"> 
+       <header class="article-header meta-hidden"> 
+        <h1 title="What is Email Address Obfuscation?" class="article-title"> <span> What is Email Address Obfuscation? </span> 
+         <div> <a class="article-subscribe" title="Opens a sign-in dialog" rel="nofollow" role="button" data-auth-action="signin" aria-selected="false" href="/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-/subscription.html">Follow</a> 
+         </div> <script>
+              $('header .language-selector').clone().prependTo('.article-title > div');
+    					$('article .language-selector').removeClass('hide').addClass('button');
+              var articleId = 200170016;
+              var nodes = $(".language-selector a[href^='/hc/change_language/']");
+              nodes.each(function() {
+                var ele = $(this);
+                var href =  ele.attr("href");
+                var returnToValue = href.split("return_to")[1];
+                if(returnToValue.indexOf(articleId) < 0) {
+                  ele.remove();
+                }
+              });
+            </script> </h1> 
+        <div class="block-wrapper"> 
+         <div class="article-author"> 
+          <div class="article-meta"> 
+           <ul class="meta-group"> 
+            <li class="meta-data">Updated</li> 
+            <li class="meta-data"><time datetime="2020-12-12T01:43:52Z" title="2020-12-12T01:43:52Z" data-datetime="relative">December 12, 2020 01:43</time></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </header> 
+       <section class="article-info"> 
+        <div class="article-content"> 
+         <div class="article-body">
+          <p><i>Cloudflare Email Address Obfuscation helps in spam prevention by hiding email addresses appearing in your pages from email harvesters and other bots, while remaining visible to your site visitors.</i></p>
+          <hr>
+          <h2 id="h_3XK4DJrvPkFZPJC1T4Vbxz">Overview</h2>
+          <p>Email harvesters and other bots roam the Internet looking for email addresses to add to lists that target recipients for spam. This trend results in an increasing amount of unwanted email.</p>
+          <p>Web administrators have come up with clever ways to protect against this by writing out email addresses (i.e., help [at] cloudflare [dot] com) or by using embedded images of the email address. However, you lose the convenience of clicking on the email address to automatically send an email. By enabling Cloudflare Email Address Obfuscation, email addresses on your web page will be obfuscated (hidden) from bots, while keeping them visible to humans. In fact, there are no visible changes to your website for visitors.</p>
+          <p>&nbsp;For email address obfuscation to work in Cloudflare, a page must have a MIME type (Content-Type) of "text/html" or "application/xhtml+xml".&nbsp;</p>
+          <hr>
+          <h2 id="h_3um438tniR85q8uNx5D9xT">Verify email address obfuscation</h2>
+          <p>Cloudflare enables email address obfuscation automatically when you sign up.&nbsp;</p>
+          <p>To verify email address obfuscation in the Cloudflare dashboard:</p>
+          <ol>
+           <li>Log in to the Cloudflare dashboard.</li>
+           <li>Ensure the website you want to verify is selected.</li>
+           <li>Click the&nbsp;<b>Scrape Shield</b>&nbsp;app.</li>
+           <li>Under&nbsp;<b>Email Address Obfuscation</b>, check that the toggle is set to&nbsp;<i>On</i>.</li>
+          </ol>
+          <p>Alternatively, you can retrieve the page source from an HTTP client&nbsp;such as CURL, an HTTP library, or browser's view-source option. Then, review the source HTML to confirm that the address is no longer present.&nbsp;</p>
+          <hr>
+          <h2 id="h_46fCNWiQ8GevRZiBqgSOFm">Troubleshoot email obfuscation</h2>
+          <p>To prevent unexpected website behavior, email addresses are not obfuscated when they appear in:</p>
+          <ul>
+           <li>Any HTML tag attribute, except for the <i>href </i>attribute of the <i>a </i>tag.</li>
+           <li>Other HTML tags:
+            <ul>
+             <li><i>script</i>&nbsp;tags: &lt;script&gt;&lt;/script&gt;</li>
+             <li><i>noscript</i>&nbsp;tags: &lt;noscript&gt;&lt;/noscript&gt;</li>
+             <li><i>textarea</i>&nbsp;tags: &lt;textarea&gt;&lt;/textarea&gt;</li>
+             <li><i>xmp</i>&nbsp;tags: &lt;xmp&gt;&lt;/xmp&gt;</li>
+             <li><i>head</i>&nbsp;tags: &lt;head&gt;&lt;/head&gt;</li>
+            </ul></li>
+           <li>Any page that does not have a MIME type of "text/html" or "application/xhtml+xml"</li>
+          </ul>
+          <p></p>
+          <hr>
+          <h2 id="h_6D5blTCs6UTZ7szEyi0YcC">Prevent Cloudflare from obfuscating email</h2>
+          <p>To prevent Cloudflare from obfuscating emails, you can:</p>
+          <ul>
+           <li>Add the following comment in the page HTML code:&nbsp; <code>&lt;!--email_off--&gt;</code><code><i>your</i></code><code>&nbsp;</code><code><i>email addresses go here</i></code><code>&lt;!--/email_off--&gt;</code></li>
+          </ul>
+          <ul>
+           <li>Return email addresses in JSON format for AJAX calls, making sure your web server returns a content type of "application/json".</li>
+          </ul>
+          <p></p>
+         </div> 
+        </div> 
+       </section> 
+       <footer> 
+        <div class="article-footer"> 
+         <div class="article-share"> 
+          <ul class="share"> 
+           <li><a href="https://www.facebook.com/share.php?title=What+is+Email+Address+Obfuscation%3F&amp;u=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-" class="share-facebook">Facebook</a></li> 
+           <li><a href="https://twitter.com/share?lang=en&amp;text=What+is+Email+Address+Obfuscation%3F&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-" class="share-twitter">Twitter</a></li> 
+           <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;source=Cloudflare&amp;title=What+is+Email+Address+Obfuscation%3F&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-" class="share-linkedin">LinkedIn</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="article-votes"> 
+         <div> <span class="article-votes-question">Was this article helpful?</span> <small class="article-votes-count"> <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="200170016" data-upvote-count="2343" data-vote-count="3364" data-vote-sum="1322" data-vote-url="/hc/en-us/articles/200170016/vote" data-value="null" data-label="2343 out of 3364 found this helpful">2343 out of 3364 found this helpful</span> </small> 
+         </div> 
+         <div class="article-votes-controls" role="radiogroup"> <a class="button article-vote article-vote-up" data-helper="vote" data-item="article" data-type="up" data-id="200170016" data-upvote-count="2343" data-vote-count="3364" data-vote-sum="1322" data-vote-url="/hc/en-us/articles/200170016/vote" data-value="null" data-label="2343 out of 3364 found this helpful" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Yes" href="#"></a> <a class="button article-vote article-vote-down" data-helper="vote" data-item="article" data-type="down" data-id="200170016" data-upvote-count="2343" data-vote-count="3364" data-vote-sum="1322" data-vote-url="/hc/en-us/articles/200170016/vote" data-value="null" data-label="2343 out of 3364 found this helpful" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="No" href="#"></a> 
+         </div> 
+        </div> 
+        <div class="article-return-to-top"> <a href="#article-container">Return to top <span class="icon-arrow-up"></span> </a> 
+        </div> 
+       </footer> 
+      </article> 
+     </div> 
+    </div> 
+   </div> 
+   <section class="article-footer-search-wrapper footer-search-wrapper"> 
+    <section class="container"> 
+     <section class="content-wrapper"> 
+      <section> 
+       <h1>Not finding what you need?</h1> 
+       <p>Searching can help answer 95% of support questions. This is the quickest way to get answers.</p> 
+      </section> 
+      <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Ask the Community"> Ask the Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Submit a request"> Submit a request </a> 
+      </section> 
+     </section> 
+     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+      <input type="submit" name="commit" value="Search">
+     </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+     <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+     <ul class="promoted-articles"> 
+      <li>Popular searches:</li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=ddos&amp;utf8=%E2%9C%93">DDoS</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=cdn&amp;utf8=%E2%9C%93">CDN</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2fa&amp;utf8=%E2%9C%93">2FA</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=cname&amp;utf8=%E2%9C%93">cname</a></li> 
+      <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     </ul> 
+    </section> 
+   </section> 
+   <section class="container"> 
+    <section class="article-relatives"> 
+     <div data-recent-articles></div> 
+     <section class="related-articles"> 
+      <h3 class="related-articles-title">Related articles</h3> 
+      <ul> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEOGXuCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEIFruCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJLL2hjL2VuLXVzL2FydGljbGVzLzIwMDE3Mjg1Ni1Ucm91Ymxlc2hvb3RpbmctYW5kLW9wdGltaXppbmctc2l0ZS1zcGVlZAY7CFQ6CXJhbmtpBg%3D%3D--3458f6f4c327df749dcb77dc679055dc67f99668" rel="nofollow">Troubleshooting and optimizing site speed</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEIl3uCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEIFruCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJAL2hjL2VuLXVzL2FydGljbGVzLzIwMDE3MDc4Ni1SZXN0b3Jpbmctb3JpZ2luYWwtdmlzaXRvci1JUHMGOwhUOglyYW5raQc%3D--af78f111ad0932bec75ba70c7669eef34b2a7124" rel="nofollow">Restoring original visitor IPs</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEamXuCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEIFruCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJRL2hjL2VuLXVzL2FydGljbGVzLzIwMDE3MjkwNi1Ucm91Ymxlc2hvb3Rpbmctc3VyZ2VzLW9yLXNwaWtlcy1pbi13ZWItdHJhZmZpYwY7CFQ6CXJhbmtpCA%3D%3D--9a8103c92c4a2aae7acc14befc5cdd2d0f2c3a1e" rel="nofollow">Troubleshooting surges or spikes in web traffic</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEo7EEDToYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEIFruCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJqL2hjL2VuLXVzL2FydGljbGVzLzIxODQxMTQyNy1VbmRlcnN0YW5kaW5nLWFuZC1Db25maWd1cmluZy1DbG91ZGZsYXJlLVBhZ2UtUnVsZXMtUGFnZS1SdWxlcy1UdXRvcmlhbC0GOwhUOglyYW5raQk%3D--67e8f099f5edee15433a9f689209821f5a7e5d1d" rel="nofollow">Understanding and Configuring Cloudflare Page Rules (Page Rules Tutorial)</a> </li> 
+       <li> <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkErFXuCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGkEIFruCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJLL2hjL2VuLXVzL2FydGljbGVzLzIwMDE2ODg3Ni1FbWFpbC11bmRlbGl2ZXJhYmxlLXdoZW4tdXNpbmctQ2xvdWRmbGFyZQY7CFQ6CXJhbmtpCg%3D%3D--b9e6768ed7d74d5f2bbff40843349b9a9cf765e4" rel="nofollow">Email undeliverable when using Cloudflare</a> </li> 
+      </ul> 
+     </section> 
+    </section> 
+   </section> 
+  </main> 
+  <section class="footer-search-wrapper"> 
+   <section class="container"> 
+    <section class="content-wrapper"> 
+     <section> 
+      <h1>Not finding what you need?</h1> 
+      <p>Searching can help answer 95% of support questions. This is the quickest way to get answers.</p> 
+     </section> 
+     <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Ask the Community"> Ask the Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Submit a request"> Submit a request </a> 
+     </section> 
+    </section> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"> 
+     <input type="submit" name="commit" value="Search">
+    </form> <span id="search_placeholder_template" data-value="Search the Cloudflare Support knowledge base" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Popular searches:</li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=slow+site&amp;utf8=%E2%9C%93'">slow site</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=traffic+spike&amp;utf8=%E2%9C%93">traffic spike</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=subdomain&amp;utf8=%E2%9C%93">subdomain</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/en-us/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </section> 
+  </section> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-inner"> 
+     <div class="footer-links"> 
+      <h3 title="Sales">Sales</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" title="Enterprise Sales">Enterprise Sales</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/partners/" title="Become a Partner">Become a Partner</a> </li> 
+       <br> 
+       <li class="footer-link-item"> <a href="tel:+18889935273" title="Contact Sales: +1 (888) 99 FLARE  ">Contact Sales: <br> +1 (888) 99 FLARE</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Getting Started">Getting Started</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/analysts/" title="Industry Analysts">Industry Analysts</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/" title=" Pricing"> Pricing</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/case-studies/" title="Case Studies">Case Studies</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/resources/" title="White Papers">White Papers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/webinars/" title="Webinars">Webinars</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/learning/" title="Learning Center">Learning Center</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Community">Community</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://community.cloudflare.com" title="Community Hub">Community Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://blog.cloudflare.com" title="Blog">Blog</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/galileo/" title="Project Galileo">Project Galileo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/athenian/" title="Athenian Project">Athenian Project</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Developers">Developers</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://developers.cloudflare.com" title="Developers Hub">Developers Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/products/cloudflare-workers/" title="Cloudflare Workers">Cloudflare Workers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/integrations/" title="Integrations">Integrations</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Support">Support</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://support.cloudflare.com" title="Help Center">Help Center</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflarestatus.com" title="Cloudflare Status">Cloudflare Status</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/compliance/" title="Compliance">Compliance</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/gdpr/introduction/" title="GDPR">GDPR</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Company">Company</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/about-overview/" title="About Cloudflare">About Cloudflare</a> </li> 
+       <li class="footer-link-item"> <a href="https://cloudflare.net" title="Investor relations">Investor relations</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/people/" title="Our team">Our team</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/press/" title="Press">Press</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/careers/" title="Careers">Careers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/internetsummit/" title="Internet Summit">Internet Summit</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/logo/" title="Logo">Logo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/network/" title="Network Map">Network Map</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer-bottom"> 
+    <div class="footer-inner"> 
+     <div class="footer-content"> 
+      <ul class="share"> 
+       <li> <a title="Like us on facebook" class="facebook" href="https://www.facebook.com/Cloudflare/"> <i class="fab fa-facebook-f"></i> </a> </li> 
+       <li> <a title="Follow us on twitter" class="twitter" href="https://twitter.com/Cloudflare"> <i class="fab fa-twitter"></i> </a> </li> 
+       <li> <a title="Connect with us linkedin" class="linkedin" href="https://www.linkedin.com/company/cloudflare-inc-"> <i class="fab fa-linkedin-in"></i> </a> </li> 
+       <li> <a title="Subscribe our channel on youtube" class="youtube" href="https://www.youtube.com/cloudflare"> <i class="fab fa-youtube"></i> </a> </li> 
+       <li> <a title="Follow us on instagram" class="instagram" href="https://www.instagram.com/cloudflare"> <i class="fab fa-instagram"></i> </a> </li> 
+      </ul> 
+      <div class="footer-language-selector"> 
+       <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us%2Farticles%2F200170016-What-is-Email-Address-Obfuscation-" data-name="English (US)"> English (US) </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/de?return_to=%2Fhc%2Fde%2Farticles%2F200170016-Was-ist-E-Mail-Adressverschleierung-" dir="ltr" rel="nofollow" role="menuitem"> Deutsch </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es%2Farticles%2F200170016--En-qu%25C3%25A9-consiste-la-ofuscaci%25C3%25B3n-de-direcci%25C3%25B3n-de-correo-electr%25C3%25B3nico-" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr%2Farticles%2F200170016-Email-Address-Obfuscation-qu-est-ce-que-c-est-" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja%2Farticles%2F200170016-%25E3%2583%25A1%25E3%2583%25BC%25E3%2583%25AB-%25E3%2582%25A2%25E3%2583%2589%25E3%2583%25AC%25E3%2582%25B9%25E6%259A%2597%25E5%258F%25B7%25E5%258C%2596%25E3%2581%25A8%25E3%2581%25AF-" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/ko?return_to=%2F

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="client-nojs"> 
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"4c203d12f7",applicationID:"149389314"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script> 
+  <title>Matrix - MozillaWiki</title> 
+  <script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script> 
+  <script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Matrix","wgTitle":"Matrix","wgCurRevisionId":1234639,"wgRevisionId":1234639,"wgArticleId":258456,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Matrix","wgRelevantArticleId":258456,"wgRequestId":"8150f2cad67ed1289e2f51f2","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"srfFilteredConfig":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":false},"wgPageFormsAutocompleteValues":[],"wgPageFormsAutocompleteOnAllChars":false,"wgPageFormsFieldProperties":[],"wgPageFormsCargoFields":[],"wgPageFormsDependentFields":[],"wgPageFormsGridValues":[],"wgPageFormsGridParams":[],"wgPageFormsShowOnSelect":[],"wgPageFormsScriptPath":"/extensions/PageForms","edgValues":null,"wgPageFormsEDSettings":null,"wgPreferredVariant":"en"});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.Bugzilla","skins.vector.js"]);});</script> 
+  <link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.Sandstone.main%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"> 
+  <link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=vector"> 
+  <meta name="ResourceLoaderDynamicStyles" content=""> 
+  <link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector"> 
+  <script async src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script> 
+  <meta name="generator" content="MediaWiki 1.27.4"> 
+  <link rel="alternate" media="only screen and (max-width: 720px)" href="https://m.wiki.mozilla.org/Matrix"> 
+  <link rel="alternate" type="application/rdf+xml" title="Matrix" href="/index.php?title=Special:ExportRDF/Matrix&amp;xmlmime=rdf"> 
+  <link rel="shortcut icon" href="/skins/common/favicon.ico"> 
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="MozillaWiki (en)"> 
+  <link rel="EditURI" type="application/rsd+xml" href="https://wiki.mozilla.org/api.php?action=rsd"> 
+ </head> 
+ <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Matrix rootpage-Matrix skin-vector action-view"> 
+  <div id="mw-page-base" class="noprint"></div> 
+  <div id="mw-head-base" class="noprint"></div> 
+  <div id="content" class="mw-body" role="main"> <a id="top"></a> 
+   <div class="mw-indicators"> 
+   </div> 
+   <h1 id="firstHeading" class="firstHeading" lang="en">Matrix</h1> 
+   <div id="bodyContent" class="mw-body-content"> 
+    <div id="siteSub">
+     From MozillaWiki
+    </div> 
+    <div id="contentSub"></div> 
+    <div id="jump-to-nav" class="mw-jump">
+      Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a> 
+    </div> 
+    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+     <div id="toc" class="toc">
+      <div id="toctitle">
+       <h2>Contents</h2>
+      </div> 
+      <ul> 
+       <li class="toclevel-1 tocsection-1"><a href="#.22What_is_the_Matrix.3F.22"><span class="tocnumber">1</span> <span class="toctext">"What is the Matrix?"</span></a></li> 
+       <li class="toclevel-1 tocsection-2"><a href="#Community_Participation_at_Mozilla"><span class="tocnumber">2</span> <span class="toctext">Community Participation at Mozilla</span></a></li> 
+       <li class="toclevel-1 tocsection-3"><a href="#Getting_Started"><span class="tocnumber">3</span> <span class="toctext">Getting Started</span></a> 
+        <ul> 
+         <li class="toclevel-2 tocsection-4"><a href="#New_to_Matrix.2C_new_to_Mozilla.3F"><span class="tocnumber">3.1</span> <span class="toctext">New to Matrix, new to Mozilla?</span></a></li> 
+         <li class="toclevel-2 tocsection-5"><a href="#New_to_Matrix.2C_already_part_of_Mozilla.3F"><span class="tocnumber">3.2</span> <span class="toctext">New to Matrix, already part of Mozilla?</span></a></li> 
+         <li class="toclevel-2 tocsection-6"><a href="#Already_using_Matrix.3F"><span class="tocnumber">3.3</span> <span class="toctext">Already using Matrix?</span></a></li> 
+         <li class="toclevel-2 tocsection-7"><a href="#Community_Participation_Guidelines"><span class="tocnumber">3.4</span> <span class="toctext">Community Participation Guidelines</span></a></li> 
+         <li class="toclevel-2 tocsection-8"><a href="#Changing_Accounts"><span class="tocnumber">3.5</span> <span class="toctext">Changing Accounts</span></a></li> 
+        </ul> </li> 
+       <li class="toclevel-1 tocsection-9"><a href="#Connect_to_Matrix"><span class="tocnumber">4</span> <span class="toctext">Connect to Matrix</span></a> 
+        <ul> 
+         <li class="toclevel-2 tocsection-10"><a href="#Register_a_username"><span class="tocnumber">4.1</span> <span class="toctext">Register a username</span></a></li> 
+         <li class="toclevel-2 tocsection-11"><a href="#Clients"><span class="tocnumber">4.2</span> <span class="toctext">Clients</span></a> 
+          <ul> 
+           <li class="toclevel-3 tocsection-12"><a href="#Connection_parameters"><span class="tocnumber">4.2.1</span> <span class="toctext">Connection parameters</span></a></li> 
+          </ul> </li> 
+         <li class="toclevel-2 tocsection-13"><a href="#Joining_a_room"><span class="tocnumber">4.3</span> <span class="toctext">Joining a room</span></a> 
+          <ul> 
+           <li class="toclevel-3 tocsection-14"><a href="#Viewing_Room_Members"><span class="tocnumber">4.3.1</span> <span class="toctext">Viewing Room Members</span></a></li> 
+          </ul> </li> 
+         <li class="toclevel-2 tocsection-15"><a href="#Creating_a_new_room"><span class="tocnumber">4.4</span> <span class="toctext">Creating a new room</span></a></li> 
+        </ul> </li> 
+       <li class="toclevel-1 tocsection-16"><a href="#Commonly_used_rooms"><span class="tocnumber">5</span> <span class="toctext">Commonly used rooms</span></a> 
+        <ul> 
+         <li class="toclevel-2 tocsection-17"><a href="#General_discussion"><span class="tocnumber">5.1</span> <span class="toctext">General discussion</span></a></li> 
+         <li class="toclevel-2 tocsection-18"><a href="#Software_Development"><span class="tocnumber">5.2</span> <span class="toctext">Software Development</span></a></li> 
+         <li class="toclevel-2 tocsection-19"><a href="#Specific_areas"><span class="tocnumber">5.3</span> <span class="toctext">Specific areas</span></a></li> 
+         <li class="toclevel-2 tocsection-20"><a href="#Specific_locations"><span class="tocnumber">5.4</span> <span class="toctext">Specific locations</span></a> 
+          <ul> 
+           <li class="toclevel-3 tocsection-21"><a href="#Mozilla_offices"><span class="tocnumber">5.4.1</span> <span class="toctext">Mozilla offices</span></a></li> 
+           <li class="toclevel-3 tocsection-22"><a href="#Local_communities"><span class="tocnumber">5.4.2</span> <span class="toctext">Local communities</span></a></li> 
+          </ul> </li> 
+         <li class="toclevel-2 tocsection-23"><a href="#Rooms_in_other_languages"><span class="tocnumber">5.5</span> <span class="toctext">Rooms in other languages</span></a> 
+          <ul> 
+           <li class="toclevel-3 tocsection-24"><a href="#French"><span class="tocnumber">5.5.1</span> <span class="toctext">French</span></a></li> 
+           <li class="toclevel-3 tocsection-25"><a href="#German"><span class="tocnumber">5.5.2</span> <span class="toctext">German</span></a></li> 
+           <li class="toclevel-3 tocsection-26"><a href="#Lithuanian"><span class="tocnumber">5.5.3</span> <span class="toctext">Lithuanian</span></a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="toclevel-1 tocsection-27"><a href="#Feedback"><span class="tocnumber">6</span> <span class="toctext">Feedback</span></a></li> 
+       <li class="toclevel-1 tocsection-28"><a href="#History"><span class="tocnumber">7</span> <span class="toctext">History</span></a></li> 
+      </ul> 
+     </div> 
+     <h2><span class="mw-headline" id=".22What_is_the_Matrix.3F.22">"What is the Matrix?"</span></h2> 
+     <p><a rel="nofollow" class="external text" href="https://matrix.org/">Matrix</a> is an open, lightweight protocol for decentralized, real-time communication, and Mozilla's preferred open discussion platform. </p> 
+     <h2><span class="mw-headline" id="Community_Participation_at_Mozilla">Community Participation at Mozilla</span></h2> 
+     <p>The heart of Mozilla is people. We put people first and do our best to recognize, appreciate and respect the diversity of our global contributors. The Mozilla Project welcomes the participation of everyone who shares our goals and wants to contribute in a healthy and constructive manner within our communities. To that end, as with all Mozilla spaces and events we expect participants in our Matrix forums to support and uphold the Mozilla <a rel="nofollow" class="external text" href="https://www.mozilla.org/en-US/about/governance/policies/participation/">Community Participation Guidelines</a> as a condition of participation. </p>
+     <p>Please note that the great majority of the rooms on our Matrix instance, like Bugzilla and Discourse, are public-facing forums that can be read anonymously, and should be considered a public place. Your participation in public rooms like Mozilla-General will be publicly visible. Some people create alternative accounts or log in with alternative email addresses for this reason. See <a rel="nofollow" class="external text" href="https://www.mozilla.org/privacy/websites/">Mozilla's Websites, Communications &amp; Cookies Privacy Notice</a> for more information on our privacy policies. </p> 
+     <h2><span class="mw-headline" id="Getting_Started">Getting Started</span></h2> 
+     <h3><span class="mw-headline" id="New_to_Matrix.2C_new_to_Mozilla.3F">New to Matrix, new to Mozilla?</span></h3> 
+     <p>Start with the <a rel="nofollow" class="external text" href="https://app.element.io/#/welcome">Element webapp</a> and create an account. Once you're signed in, clicking these links will let you join the <a rel="nofollow" class="external text" href="https://app.element.io/#/room/#general:mozilla.org">#general:mozilla.org</a> channel for general questions or <a rel="nofollow" class="external text" href="https://app.element.io/#/room/#introduction:mozilla.org">#introduction:mozilla.org</a> if you're interested in getting involved with the Mozilla development process. There are lots more channels to choose from - there's a list of some of them below - and we'll have more as soon as we get them sorted out. </p>
+     <p>For more details, scroll down to <a rel="nofollow" class="external text" href="https://wiki.mozilla.org/Matrix#Connect_to_Matrix">Connect to Matrix </a> below. </p> 
+     <h3><span class="mw-headline" id="New_to_Matrix.2C_already_part_of_Mozilla.3F">New to Matrix, already part of Mozilla?</span></h3> 
+     <p><a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/login">Mozilla's Matrix server</a> is configured to use Mozilla IAM, and supports the following accounts: </p> 
+     <ul>
+      <li> Mozilla LDAP</li> 
+      <li> <a rel="nofollow" class="external text" href="https://www.mozilla.org/firefox/accounts/">Firefox Accounts</a></li> 
+      <li> <a rel="nofollow" class="external text" href="https://github.com/">Github</a></li> 
+      <li> <a rel="nofollow" class="external text" href="https://myaccount.google.com/">Google</a></li>
+     </ul> 
+     <p>Any of those will work if you go through the <a rel="nofollow" class="external text" href="https://chat.mozilla.org/">web interface</a>; the details are in the <a rel="nofollow" class="external text" href="https://wiki.mozilla.org/Matrix#Connect_to_Matrix">Connect to Matrix </a> section below. </p> 
+     <h3><span class="mw-headline" id="Already_using_Matrix.3F">Already using Matrix?</span></h3> 
+     <p>If you're already using Matrix, you can join the Mozilla conversation by joining the <a rel="nofollow" class="external text" href="https://app.element.io/#/room/#general:mozilla.org">#general:mozilla.org</a> room for general topics and <a rel="nofollow" class="external text" href="https://app.element.io/#/room/#introduction:mozilla.org">#introduction:mozilla.org</a> if you're interested in getting involved with the Mozilla development process. The whole Mozilla list of rooms isn't settled out and synchronizing across the Matrix ecosystem yet; although many are <a rel="nofollow" class="external text" href="https://wiki.mozilla.org/Matrix#Commonly_used_rooms">linked below</a>. In the meantime, those are friendly channels and the people there will be able to help you find your way around. </p>
+     <p>You can join our rooms using Matrix via the <a rel="nofollow" class="external text" href="https://app.element.io">Element web app</a>, the <a rel="nofollow" class="external text" href="https://element.io">Element native mobile app for your platform</a>, or any other Matrix client. </p>
+     <p>Using Element Web or Desktop you can view our room directory using the following steps: </p> 
+     <ol>
+      <li> Click on the Explore button</li>
+     </ol> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:269px;">
+       <a href="/File:Element_Explore_button.png" class="image"><img alt="" src="/images/0/0e/Element_Explore_button.png" width="267" height="224" class="thumbimage"></a> 
+       <div class="thumbcaption">
+        Element Explore button location
+       </div>
+      </div>
+     </div> 
+     <ol>
+      <li> Click on the dropdown that says "Matrix rooms (yourserver.com)"</li>
+     </ol> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:902px;">
+       <a href="/File:Matrix_rooms_dropdown.png" class="image"><img alt="Matrix rooms dropdown.png" src="/images/0/09/Matrix_rooms_dropdown.png" width="900" height="501" class="thumbimage"></a> 
+       <div class="thumbcaption"></div>
+      </div>
+     </div> 
+     <ol>
+      <li> Click Add a new server</li> 
+      <li> Type in <code>mozilla.org</code> and click Add</li>
+     </ol> 
+     <p>Now you can view the Mozilla server's room directory and join a room. </p> 
+     <h3><span class="mw-headline" id="Community_Participation_Guidelines">Community Participation Guidelines</span></h3> 
+     <p>The heart of Mozilla is people. We put people first and do our best to recognize, appreciate and respect the diversity of our global contributors. The Mozilla Project welcomes contributions from everyone who shares our goals and wants to contribute in a healthy and constructive manner within our community </p>
+     <p>Despite our very best efforts, occasionally people do experience behaviors on Matrix that are not inline with our <a rel="nofollow" class="external text" href="https://www.mozilla.org/en-US/about/governance/policies/participation/">Community Participation Guidelines</a>. If happens to you, please reach out to the room moderator or use our <a rel="nofollow" class="external text" href="https://events.mozilla.org/communityparticipationhotline">reporting hotline</a>. </p> 
+     <h3><span class="mw-headline" id="Changing_Accounts">Changing Accounts</span></h3> 
+     <p>While you can change your "display name" in Matrix, because of low-level design decisions in the Matrix protocol, accounts cannot be renamed nor can accounts names be re-used, and deactivating them is permanent. For most Matrix users this is not an issue, but accounts tied to SSO such as Mozilla's cannot be reassigned to new owners. Changing the address associated with an SSO-bound Matrix account cannot be done, so you'll need to create a new account for yourself and deactivate the old one if that's what intend. </p>
+     <p>In order to maintain continuity in conversations, you will need to export your encryption keys from the old account and import them into the new account. The options to do this are under your account settings, in Security And Privacy, under Cryptography near the bottom of that window. </p> 
+     <h2><span class="mw-headline" id="Connect_to_Matrix">Connect to Matrix</span></h2> 
+     <h3><span class="mw-headline" id="Register_a_username">Register a username</span></h3> 
+     <p>The quickest way to register a username on Mozilla Matrix is through the web interface. </p> 
+     <ul>
+      <li> Open <a rel="nofollow" class="external free" href="https://chat.mozilla.org/">https://chat.mozilla.org/</a></li>
+     </ul> 
+     <ul>
+      <li> Review the CPG and privacy notices and press the Sign In button</li>
+     </ul> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:522px;">
+       <a href="/File:Chatmo-welcome-screen.png" class="image"><img alt="Welcome screen on chat.mozilla.org" src="/images/6/67/Chatmo-welcome-screen.png" width="520" height="433" class="thumbimage"></a> 
+       <div class="thumbcaption"></div>
+      </div>
+     </div> 
+     <ul>
+      <li> On the sign in page, proceed to Sign in with single sign-on</li>
+     </ul> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:708px;">
+       <a href="/File:Chatmo-signin-page.png" class="image"><img alt="Sign in page on chat.mozilla.org" src="/images/a/a4/Chatmo-signin-page.png" width="706" height="248" class="thumbimage"></a> 
+       <div class="thumbcaption"></div>
+      </div>
+     </div> 
+     <ul>
+      <li> Pick your choice of services to authenticate from</li>
+     </ul> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:418px;">
+       <a href="/File:Am-screen.png" class="image"><img alt="Mozilla IAM sign in page" src="/images/a/a8/Am-screen.png" width="416" height="499" class="thumbimage"></a> 
+       <div class="thumbcaption"></div>
+      </div>
+     </div> 
+     <ul>
+      <li> Pick your username!</li>
+     </ul> 
+     <div class="thumb tnone">
+      <div class="thumbinner" style="width:418px;">
+       <a href="/File:Chatmo-pick-username.png" class="image"><img alt="Pick your username on chat.mozilla.org" src="/images/7/70/Chatmo-pick-username.png" width="416" height="183" class="thumbimage"></a> 
+       <div class="thumbcaption"></div>
+      </div>
+     </div> 
+     <h3><span class="mw-headline" id="Clients">Clients</span></h3> 
+     <p>Matrix supports a variety of clients on web, desktop, and mobile. You can readily connect to the web client from <a rel="nofollow" class="external free" href="https://chat.mozilla.org/">https://chat.mozilla.org/</a>. Matrix maintains a list of clients on <a rel="nofollow" class="external text" href="https://matrix.org/clients/">their website</a>. </p>
+     <p>The Mozilla Matrix server requires Single Sign-On. Clients which currently support Single Sign-On include: </p> 
+     <ul>
+      <li> Element, the software behind <a rel="nofollow" class="external text" href="https://chat.mozilla.org">chat.mozilla.org</a> 
+       <ul>
+        <li> this is also available as a desktop client: <a rel="nofollow" class="external text" href="https://element.io/get-started">download here</a></li>
+       </ul></li> 
+      <li> <a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=im.vector.app">Element Android</a> (also <a rel="nofollow" class="external text" href="https://f-droid.org/en/packages/im.vector.alpha/">available on F-Droid</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://apps.apple.com/app/vector/id1083446067">Element iOS</a></li> 
+      <li> weechat, using the <a rel="nofollow" class="external text" href="https://github.com/poljar/weechat-matrix/">weechat-matrix protocol script</a>. Note the <a rel="nofollow" class="external text" href="https://github.com/poljar/weechat-matrix/#single-sign-on">Single Sign-On instructions</a>.</li> 
+      <li> <a rel="nofollow" class="external text" href="https://github.com/tulir/gomuks">gomuks</a> a terminal client for Matrix</li> 
+      <li> <a rel="nofollow" class="external text" href="https://github.com/quotient-im/Quaternion">Quaternion</a> a Qt5-based client for Windows, Linux, and macOS</li>
+     </ul> 
+     <h4><span class="mw-headline" id="Connection_parameters">Connection parameters</span></h4> 
+     <p>While the default parameters in most clients will work just fine, if you're already part of the Mozilla community or want to connect directly to the Mozilla Matrix instance. To do that, you'll need to change the following settings: </p> 
+     <table> 
+      <tbody>
+       <tr> 
+        <td> <b>Homeserver</b> </td> 
+        <td> https://mozilla.modular.im </td>
+       </tr> 
+       <tr> 
+        <td> <b>Identity server</b> </td> 
+        <td> https://vector.im </td>
+       </tr>
+      </tbody>
+     </table> 
+     <p>These details will be autofilled for you in most clients if you enter your full username (e.g. @susan:mozilla.org rather than susan) into the username field. In general it is preferable to do that rather than trying to remember what the homeserver URL is. </p> 
+     <h3><span class="mw-headline" id="Joining_a_room">Joining a room</span></h3> 
+     <p>When connected to the Mozilla Matrix server you can join Mozilla rooms and also rooms on other Matrix servers. </p>
+     <p>There are several different ways to join a room: </p> 
+     <ul>
+      <li> You can follow an external link. (For example, see the links to commonly used rooms lower on this page.)</li> 
+      <li> You can follow links from inside a discussion on Matrix.</li> 
+      <li> You can receive an invitation from another Matrix member.</li> 
+      <li> There are also platform specific methods: 
+       <ul>
+        <li> On <a rel="nofollow" class="external free" href="https://chat.mozilla.org/">https://chat.mozilla.org/</a> you can click the compass icon "Explore rooms" in the upper left next to the search-bar and search the known rooms to see information about the rooms and then preview or join the rooms. On the left side you can select or enter another Matrix server and search for non-Mozilla rooms.</li> 
+        <li> Other platforms: TBA</li>
+       </ul></li>
+     </ul> 
+     <p>When you follow a link you you may be given a choice to preview the contents of the room or to join. If the room doesn't allow preview you may be asked if you want to join it without a preview first. </p>
+     <p>But it is also easy to leave a room. On <a rel="nofollow" class="external free" href="https://chat.mozilla.org/">https://chat.mozilla.org/</a> find the room name (or icon) in the room list on the left and click the three vertical dots to the left of the name. There are several options on how you want to read the room. plus the option to leave. </p> 
+     <h4><span class="mw-headline" id="Viewing_Room_Members">Viewing Room Members</span></h4> 
+     <p>Once you have joined a room you can view the room members by clicking on the person icon in the top right. You may notice (depending on your client) that all members appear "offline" or greyed out, this is intentional as "presence" is not enabled for the Mozilla homeserver. </p>
+     <p>See the field "enable_presence_by_hs_url" in the configuration file <a rel="nofollow" class="external free" href="https://chat.mozilla.org/config.json">https://chat.mozilla.org/config.json</a> </p> 
+     <h3><span class="mw-headline" id="Creating_a_new_room">Creating a new room</span></h3> 
+     <p>How you create a new room depends on your client (<a rel="nofollow" class="external text" href="https://element.io/help#rooms">Element help</a>). </p>
+     <p>On creation, you can make the decision of whether or not your room should be publicly discoverable or use end-to-end ("E2E") encryption; for public rooms intended to involve community participation, we recommend *not* enabling E2E, as that enables new participants to see scrollback. A public room is one where anyone can join without an invite. I.e. the "<i>only people who have been invited</i>" option has not been enabled. </p>
+     <p>Any public room on the server should also invite the moderator account, and provide it the <code>admin</code> role. This will help you administer the room in compliance with the <a rel="nofollow" class="external text" href="https://www.mozilla.org/en-US/about/governance/policies/participation/">CPG</a> and let site moderators support you in the process. </p>
+     <p>Providing access to the moderator account is a two step process: </p> 
+     <ol>
+      <li> Issue the invitation: <code>/invite @moderator:mozilla.org</code></li> 
+      <li> After <code>@moderator:mozilla.org</code> joins the room, grant them the admin role.</li>
+     </ol> 
+     <p>While the Moderator account with only "mod" privileges lets us protect channels against individual bad actors, it does not give that account the access needed to change channel-wide access control lists. You need to grant the Moderator "admin" privileges to be able to take advantage of the collective defense options Matrix provides. </p> 
+     <h2><span class="mw-headline" id="Commonly_used_rooms">Commonly used rooms</span></h2> 
+     <h3><span class="mw-headline" id="General_discussion">General discussion</span></h3> 
+     <ul>
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#general:mozilla.org">#general:mozilla.org </a> - General discussions about Mozilla</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#synchronicity:mozilla.org">#synchronicity:mozilla.org</a> - Sorting out bugs and papercuts in the migration from IRC to Matrix</li>
+     </ul> 
+     <h3><span class="mw-headline" id="Software_Development">Software Development</span></h3> 
+     <ul>
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#introduction:mozilla.org">#introduction:mozilla.org</a> - Help with basics of developing for Mozilla</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#developers:mozilla.org">#developers:mozilla.org</a> - General Firefox and Gecko development discussion</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#devtools:mozilla.org">#devtools:mozilla.org</a> - Firefox Developer Tools discussion</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#basket:mozilla.org">#basket:mozilla.org</a> - Development of basket.mozilla.org (<a rel="nofollow" class="external text" href="https://github.com/mozmeao/basket">basket</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#fxa:mozilla.org">#fxa:mozilla.org</a> - Development of Firefox Accounts (<a rel="nofollow" class="external text" href="https://github.com/mozilla/fxa">fxa</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#pontoon:mozilla.org">#pontoon:mozilla.org</a> - Development of pontoon.mozilla.org (<a rel="nofollow" class="external text" href="https://github.com/mozilla/pontoon">Pontoon</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#www:mozilla.org">#www:mozilla.org</a> - Development of www.mozilla.org (<a rel="nofollow" class="external text" href="https://github.com/mozilla/bedrock">bedrock</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#maildev:mozilla.org">#maildev:mozilla.org</a> - Development of Thunderbird (<a rel="nofollow" class="external text" href="https://www.thunderbird.net/">thunderbird</a>)</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#seamonkey:mozilla.org">#seamonkey:mozilla.org</a> - Development of SeaMonkey (<a rel="nofollow" class="external text" href="https://www.seamonkey-project.org/">SeaMonkey</a>)</li>
+     </ul> 
+     <h3><span class="mw-headline" id="Specific_areas">Specific areas</span></h3> 
+     <ul>
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#fx-desktop-community:mozilla.org">#fx-desktop-community:mozilla.org</a> - Discussion about Firefox Desktop</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#fx-android-community:mozilla.org">#fx-android-community:mozilla.org</a> - Discussion about Firefox for Android</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#l10n-community:mozilla.org">#l10n-community:mozilla.org</a> - Discussion about localization (l10n) of Mozilla applications</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#accessibility:mozilla.org">#accessibility:mozilla.org</a> Discussion of the accessibility (a11y) of Mozilla applications and services</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#addons:mozilla.org">#addons:mozilla.org</a> Discussion about Firefox add-ons</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#nightly:mozilla.org">#nightly:mozilla.org</a> Discussion about Firefox Nightly</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#SUMO:mozilla.org">#SUMO:mozilla.org</a> Discussion about Mozilla Support</li>
+     </ul> 
+     <h3><span class="mw-headline" id="Specific_locations">Specific locations</span></h3> 
+     <h4><span class="mw-headline" id="Mozilla_offices">Mozilla offices</span></h4> 
+     <ul>
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#berlin:mozilla.org">#berlin:mozilla.org</a> - General chat for people in the Berlin office</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#taipei:mozilla.org">#taipei:mozilla.org</a> - General chat for people in the Taipei office</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#toronto:mozilla.org">#toronto:mozilla.org</a> - General chat for people in the Toronto office</li> 
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#vancouver:mozilla.org">#vancouver:mozilla.org</a> - General chat for people in the Vancouver office</li>
+     </ul> 
+     <h4><span class="mw-headline" id="Local_communities">Local communities</span></h4> 
+     <ul>
+      <li> <a rel="nofollow" class="external text" href="https://chat.mozilla.org/#/room/#atlanta:mozilla.org">#atlanta:moz

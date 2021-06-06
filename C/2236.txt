@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Running CodeQL CLI in your CI system - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can use the CodeQL CLI to perform CodeQL code scanning in a third-party continuous integration system."> 
+  <meta name="keywords" content="Advanced Security,Code scanning,CodeQL,Repositories,Pull requests,Integration,CI,SARIF"> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="lWyQJGEF-Tcx3_GB0LxgbgF9OVkVc5k2C5lE"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/code-security" class="pl-4 pr-5 pb-1 f4 color-text-primary">Code security</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/getting-started" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Getting started</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/github-security-features" class="pl-6 pl-4 pr-5 py-1 color-text-primary">GitHub security features</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your repository</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/securing-your-organization" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Securing your organization</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/getting-started/adding-a-security-policy-to-your-repository" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Adding a security policy to your repository</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secret-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secret security</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/about-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About secret scanning</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/configuring-secret-scanning-for-your-repositories" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring secret scanning for your repositories</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/defining-custom-patterns-for-secret-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Defining custom patterns</a> </li> 
+          <li class="sidebar-article "> <a href="/en/code-security/secret-security/managing-alerts-from-secret-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Managing alerts from secret scanning</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/secure-coding" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Secure coding</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-topics list-style-none position-relative"> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors" class="pl-4 pr-5 py-2 color-text-primary">Scanning automatically </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/triaging-code-scanning-alerts-in-pull-requests" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Triaging alerts in pull requests</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Setting up code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/managing-code-scanning-alerts-for-your-repository" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Managing alerts</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring code scanning</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-the-codeql-workflow-for-compiled-languages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring for compiled languages</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/troubleshooting-the-codeql-workflow" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Troubleshooting CodeQL</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors/running-codeql-code-scanning-in-a-container" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Code scanning in a container</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning" class="pl-4 pr-5 py-2 color-text-primary">Integration </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/about-integration-with-code-scanning" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About integration</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/uploading-a-sarif-file-to-github" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Uploading a SARIF file</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/integrating-with-code-scanning/sarif-support-for-code-scanning" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">SARIF support</a> </li> 
+           </ul> </li> 
+          <li class="sidebar-maptopic active "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system" class="pl-4 pr-5 py-2 color-text-primary">CodeQL CI system support </a> 
+           <ul class="sidebar-articles my-2"> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/about-codeql-code-scanning-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Code scanning in your CI</a> </li> 
+            <li class="sidebar-article active is-current-page"> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL CLI</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Running CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring CodeQL runner</a> </li> 
+            <li class="sidebar-article "> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/troubleshooting-codeql-runner-in-your-ci-system" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Troubleshooting CodeQL runner</a> </li> 
+           </ul> </li> 
+         </ul> <!-- some categories have no maptopics, only articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-advisories" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security advisories</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/supply-chain-security" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Supply chain security</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset"> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/code-security/security-overview" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Security overview</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> Code security 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      color-text-link text-underline active"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: Code security" href="/en/code-security" class="d-inline-block ">Code security</a><a title="category: Secure coding" href="/en/code-security/secure-coding" class="d-inline-block ">Secure coding</a><a title="mapTopic: CodeQL CI system support" href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system" class="d-inline-block ">CodeQL CI system support</a><a title="article: Running CodeQL CLI" href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-inline-block color-text-tertiary">Running CodeQL CLI</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/code-security/secure-coding/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-cli-in-your-ci-system" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Running CodeQL CLI in your CI system</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can use the CodeQL CLI to perform CodeQL code scanning in a third-party continuous integration system.</p>
+       </div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>Code scanning is available for all public repositories, and for private repositories owned by organizations where GitHub Advanced Security is enabled. For more information, see "<a href="/en/github/getting-started-with-github/about-github-advanced-security">About GitHub Advanced Security</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-the-codeql-cli">About the CodeQL CLI</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#downloading-the-codeql-cli">Downloading the CodeQL CLI</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#setting-up-the-codeql-cli-in-your-ci-system">Setting up the CodeQL CLI in your CI system</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#testing-the-codeql-cli-set-up">Testing the CodeQL CLI set up</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#generating-a-token-for-authentication-with-github">Generating a token for authentication with GitHub</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#using-the-codeql-cli-to-generate-data-and-upload-it-to-github">Using the CodeQL CLI to generate data and upload it to GitHub</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#creating-a-codeql-database-to-analyze">Creating a CodeQL database to analyze</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#analyzing-a-codeql-database">Analyzing a CodeQL database</a></li> 
+         <li class="ml-3  mb-2 lh-condensed"><a href="#uploading-results-to-github">Uploading results to GitHub</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#further-reading">Further reading</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-the-codeql-cli"><a href="#about-the-codeql-cli">About the CodeQL CLI</a></h3> 
+       <p>You can use the CodeQL CLI to run code scanning on code that you're processing in a third-party continuous integration (CI) system. Code scanning is a feature that you use to analyze the code in a GitHub repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are shown in GitHub. For information, see "<a href="/en/code-security/secure-coding/about-code-scanning">About code scanning</a>."</p> 
+       <p>The CodeQL CLI is a standalone product that you can use to analyze code. Its main purpose is to generate a database representation of a codebase, a CodeQL database. Once the database is ready, you can query it interactively, or run a suite of queries to generate a set of results in SARIF format and upload the results to GitHub.</p> 
+       <p>Alternatively, you can use CodeQL runner in your CI system, or GitHub Actions to run code scanning within GitHub. For an overview of the options for CI systems, see "<a href="/en/code-security/secure-coding/about-codeql-code-scanning-in-your-ci-system">About CodeQL code scanning in your CI system</a>". For information about code scanning using actions, see "<a href="/en/code-security/secure-coding/setting-up-code-scanning-for-a-repository">Setting up code scanning for a repository</a>."</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> The CodeQL CLI is free to use on public repositories that are maintained on GitHub.com, and available to use on private repositories that are owned by customers with an Advanced Security license. For information, see "<a href="https://securitylab.github.com/tools/codeql/license">GitHub CodeQL Terms and Conditions</a>" and "<a href="https://codeql.github.com/docs/codeql-cli/">CodeQL CLI</a>."</p> 
+       </div> 
+       <h3 id="downloading-the-codeql-cli"><a href="#downloading-the-codeql-cli">Downloading the CodeQL CLI</a></h3> 
+       <p>You should download the CodeQL bundle from <a href="https://github.com/github/codeql-action/releases">https://github.com/github/codeql-action/releases</a>. The bundle contains:</p> 
+       <ul> 
+        <li>CodeQL CLI product</li> 
+        <li>A compatible version of the queries and libraries from <a href="https://github.com/github/codeql">https://github.com/github/codeql</a></li> 
+        <li>Precompiled versions of all the queries included in the bundle</li> 
+       </ul> 
+       <p>You should always use the CodeQL bundle as this ensures compatibility and also gives much better performance than a separate download of the CodeQL CLI and checkout of the CodeQL queries. If you will only be running the CLI on one specific platform, download the appropriate <code>codeql-bundle-PLATFORM.tar.gz</code> file. Alternatively, you can download <code>codeql-bundle.tar.gz</code>, which contains the CLI for all supported platforms.</p> 
+       <h3 id="setting-up-the-codeql-cli-in-your-ci-system"><a href="#setting-up-the-codeql-cli-in-your-ci-system">Setting up the CodeQL CLI in your CI system</a></h3> 
+       <p>You need to make the full contents of the CodeQL CLI bundle available to every CI server that you want to run CodeQL code scanning analysis on. For example, you might configure each server to copy the bundle from a central, internal location and extract it. Alternatively, you could use the REST API to get the bundle directly from GitHub, ensuring that you benefit from the latest improvements to queries. Updates to the CodeQL CLI are released every 2-3 weeks. For example:</p> 
+       <pre><code class="hljs language-shell">$ wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz
+$ tar -xvzf ../codeql-bundle-linux64.tar.gz</code></pre> 
+       <p>After you extract the CodeQL CLI bundle, you can run the <code>codeql</code> executable on the server:</p> 
+       <ul> 
+        <li>By executing <code>/extraction-root/codeql/codeql</code>, where <code>&lt;extraction-root&gt;</code> is the folder where you extracted the CodeQL CLI bundle.</li> 
+        <li>By adding <code>/extraction-root/codeql</code> to your <code>PATH</code>, so that you can run the executable as just <code>codeql</code>.</li> 
+       </ul> 
+       <h3 id="testing-the-codeql-cli-set-up"><a href="#testing-the-codeql-cli-set-up">Testing the CodeQL CLI set up</a></h3> 
+       <p>After you extract the CodeQL CLI bundle, you can run the following command to verify that the CLI is correctly set up to create and analyze databases.</p> 
+       <ul> 
+        <li><code>codeql resolve languages</code> if <code>/extraction-root/codeql</code> is on the <code>PATH</code>.</li> 
+        <li><code>/extraction-root/codeql/codeql resolve languages</code> otherwise.</li> 
+       </ul> 
+       <p><strong>Example of successful output:</strong></p> 
+       <pre><code>cpp (/extraction-root/codeql/cpp)
+csharp (/extraction-root/codeql/csharp)
+csv (/extraction-root/codeql/csv)
+go (/extraction-root/codeql/go)
+html (/extraction-root/codeql/html)
+java (/extraction-root/codeql/java)
+javascript (/extraction-root/codeql/javascript)
+properties (/extraction-root/codeql/properties)
+python (/extraction-root/codeql/python)
+xml (/extraction-root/codeql/xml)
+</code></pre> 
+       <p>If the CodeQL CLI is unable to resolve the expected languages, check that you downloaded the CodeQL bundle and not a standalone copy of the CodeQL CLI.</p> 
+       <h3 id="generating-a-token-for-authentication-with-github"><a href="#generating-a-token-for-authentication-with-github">Generating a token for authentication with GitHub</a></h3> 
+       <p>Each CI server needs a GitHub App or personal access token for the CodeQL CLI to use to upload results to GitHub. You must use an access token or a GitHub App with the <code>security_events</code> write permission. If CI servers already use a token with this scope to checkout repositories from GitHub, you could potentially allow the CodeQL CLI to use the same token. Otherwise, you should create a new token with the <code>security_events</code> write permission and add this to the CI system's secret store. For information, see "<a href="/en/developers/apps/building-github-apps">Building GitHub Apps</a>" and "<a href="/en/github/authenticating-to-github/creating-a-personal-access-token">Creating a personal access token</a>."</p> 
+       <h3 id="using-the-codeql-cli-to-generate-data-and-upload-it-to-github"><a href="#using-the-codeql-cli-to-generate-data-and-upload-it-to-github">Using the CodeQL CLI to generate data and upload it to GitHub</a></h3> 
+       <p>You call the CodeQL CLI to analyze the codebase in three steps:</p> 
+       <ol> 
+        <li>Create a CodeQL database to represent a single programming language in the repository using: <code>codeql database create</code></li> 
+        <li>Run queries to analyze the CodeQL database and summarize the results in a SARIF file using: <code>codeql database analyze</code></li> 
+        <li>Upload the SARIF file to GitHub where the results are matched to a branch or pull request and displayed as code scanning alerts using: <code>codeql github upload-results</code></li> 
+       </ol> 
+       <p>Each command has a few mandatory options with additional options that you can use to modify the behavior of the command. You can display the command-line help for any command using the <nobr>
+         <code>--help</code>
+        </nobr> option.</p> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Uploading SARIF data to display as code scanning results in GitHub is supported for organization-owned repositories with GitHub Advanced Security enabled, and public repositories on GitHub.com. For more information, see "<a href="/en/github/administering-a-repository/managing-security-and-analysis-settings-for-your-repository">Managing security and analysis settings for your repository</a>."</p> 
+       </div> 
+       <h4 id="creating-a-codeql-database-to-analyze"><a href="#creating-a-codeql-database-to-analyze">Creating a CodeQL database to analyze</a></h4> 
+       <ol> 
+        <li> <p>Check out the code that you want to analyze:</p> 
+         <ul> 
+          <li>For a branch checkout the head of the branch that you want to analyze.</li> 
+          <li>For a pull request checkout either the head commit of the pull request, or check out a GitHub-generated merge commit of the pull request.</li> 
+         </ul> </li> 
+        <li> <p>Set up the environment for the codebase, making sure that any dependencies are available. For more information, see <a href="https://codeql.github.com/docs/codeql-cli/creating-codeql-databases/#creating-databases-for-non-compiled-languages">Creating databases for non-compiled languages</a> and <a href="https://codeql.github.com/docs/codeql-cli/creating-codeql-databases/#creating-databases-for-compiled-languages">Creating databases for compiled languages</a> in the documentation for the CodeQL CLI.</p> </li> 
+        <li> <p>Run <code>codeql database create</code> from the checkout root of your repository.</p> <pre><code class="hljs language-shell">codeql database create &lt;database&gt; --language=&lt;language-identifier&gt;</code></pre> 
+         <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+          <p><strong>Note:</strong> If you use a containerized build, you need to run the CodeQL CLI inside the container where your build task takes place.</p> 
+         </div> </li> 
+       </ol> 
+       <table>
+        <thead>
+         <tr>
+          <th>Option</th>
+          <th align="center">Required</th>
+          <th>Usage</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>&lt;database&gt;</code></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the name and location of a directory to create for the CodeQL database. The command will fail if you try to overwrite an existing directory.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--language</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the identifier for the language to create a database for, one of: <code>cpp`, `csharp`, `go`, `java`, `javascript`, and `python</code> (use <code>javascript</code> to analyze TypeScript code).</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--source-root</code>
+           </nobr></td>
+          <td align="center"></td>
+          <td>Optional. Use if you run the CLI outside the checkout root of the repository. By default, the <code>database create</code> command assumes that the current directory is the root directory for the source files, use this option to specify a different location.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--command</code>
+           </nobr></td>
+          <td align="center"></td>
+          <td>Optional for compiled languages. Use if you want to override the CLI's automatic build system detection and compilation. Specify the build command or script that invokes the compiler. Commands are run from the current folder or, where it is defined, from <nobr>
+            <code>--source-root</code>
+           </nobr>. Do not use this option for Python and JavaScript/TypeScript analysis.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>For more information, see <a href="https://codeql.github.com/docs/codeql-cli/creating-codeql-databases/">Creating CodeQL databases</a> in the documentation for the CodeQL CLI.</p> 
+       <h5 id="basic-example"><a href="#basic-example">Basic example</a></h5> 
+       <pre><code>$ codeql database create /codeql-dbs/example-repo --language=javascript \
+    --source-root /checkouts/example-repo
+
+&gt; Initializing database at /codeql-dbs/example-repo.
+&gt; Running command [/codeql-home/codeql/javascript/tools/autobuild.cmd]
+    in /checkouts/example-repo.
+&gt; [build-stdout] Single-threaded extraction.
+&gt; [build-stdout] Extracting
+... 
+&gt; Finalizing database at /codeql-dbs/example-repo.
+&gt; Successfully created database at /codeql-dbs/example-repo.
+</code></pre> 
+       <p>For more information and examples, see <a href="https://codeql.github.com/docs/codeql-cli/creating-codeql-databases">Creating CodeQL databases </a> in the documentation for the CodeQL CLI.</p> 
+       <h4 id="analyzing-a-codeql-database"><a href="#analyzing-a-codeql-database">Analyzing a CodeQL database</a></h4> 
+       <ol> 
+        <li>Create a CodeQL database (see above).</li> 
+        <li>Run <code>codeql database analyze</code> on the database and specify which queries to use.<pre><code class="hljs language-shell">codeql database analyze &lt;database&gt; --format=&lt;format&gt; \
+    --output=&lt;output&gt;  &lt;queries&gt; </code></pre></li> 
+       </ol> 
+       <table>
+        <thead>
+         <tr>
+          <th>Option</th>
+          <th align="center">Required</th>
+          <th>Usage</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td><code>&lt;database&gt;</code></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the path for the directory that contains the CodeQL database to analyze.</td>
+         </tr>
+         <tr>
+          <td><code>&lt;queries&gt;</code></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the queries to run. To run the standard queries used for code scanning, use: <code>&lt;language&gt;-code-scanning.qls</code> where <code>&lt;language&gt;</code> is the short code for the language of the database. To see the other query suites included in the CodeQL CLI bundle look in <code>/extraction-root/codeql/qlpacks/codeql-&lt;language&gt;/codeql-suites</code>. For information about creating your own query suite, see <a href="https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/">Creating CodeQL query suites</a> in the documentation for the CodeQL CLI.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--format</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the format for the results file generated by the command. For upload to GitHub this should be: <code>sarif-latest</code>. For more information, see "<a href="/en/code-security/secure-coding/sarif-support-for-code-scanning">SARIF support for code scanning</a>."</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--output</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify where to save the SARIF results file.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--sarif-category</code>
+           </nobr><nobr></nobr></td>
+          <td align="center"></td>
+          <td>Optional. Specify a category to include in the SARIF results file for this analysis. A category can be used to distinguish multiple analyses for the same tool and commit, but performed on different languages or different parts of the code. This value will appear in the <code>&lt;run&gt;.automationId</code> property in SARIF v1, the <code>&lt;run&gt;.automationLogicalId</code> property in SARIF v2, and the <code>&lt;run&gt;.automationDetails.id</code> property in SARIF v2.1.0.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--threads</code>
+           </nobr></td>
+          <td align="center"></td>
+          <td>Optional. Use if you want to use more than one thread to run queries. The default value is <code>1</code>. You can specify more threads to speed up query execution. To set the number of threads to the number of logical processors, specify <code>0</code>.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>For more information, see <a href="https://codeql.github.com/docs/codeql-cli/analyzing-databases-with-the-codeql-cli/">Analyzing databases with the CodeQL CLI</a> in the documentation for the CodeQL CLI.</p> 
+       <h5 id="basic-example-1"><a href="#basic-example-1">Basic example</a></h5> 
+       <pre><code>$ codeql database analyze /codeql-dbs/example-repo  \
+    javascript-code-scanning.qls --format=sarif-latest \
+    --output=/temp/example-repo-js.sarif
+
+&gt; Running queries.
+&gt; Compiling query plan for /codeql-home/codeql/qlpacks/
+    codeql-javascript/AngularJS/DisablingSce.ql.
+... 
+&gt; Shutting down query evaluator.
+&gt; Interpreting results.
+</code></pre> 
+       <h4 id="uploading-results-to-github"><a href="#uploading-results-to-github">Uploading results to GitHub</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> SARIF upload supports a maximum of 5000 results per upload. Any results over this limit are ignored. If a tool generates too many results, you should update the configuration to focus on results for the most important rules or queries.</p> 
+       </div> 
+       <p>Before you can upload results to GitHub, you must determine the best way to pass the GitHub App or personal access token you created earlier to the CodeQL CLI (see <a href="#generating-a-token-for-authentication-with-github">Generating a token for authentication with GitHub</a> above). We recommend that you review your CI system's guidance on the secure use of the secret store. The CodeQL CLI supports:</p> 
+       <ul> 
+        <li>Passing the token to the CLI via standard input using the <code>--github-auth-stdin</code> option (recommended).</li> 
+        <li>Saving the secret in the environment variable <code>GITHUB_TOKEN</code> and running the CLI without including the <code>--github-auth-stdin</code> option.</li> 
+       </ul> 
+       <p>When you have decided on the most secure and reliable method for your CI server, run <code>codeql github upload-results</code> on the SARIF results file and include <code>--github-auth-stdin</code> unless the token is available in the environment variable <code>GITHUB_TOKEN</code>.</p> 
+       <pre><code class="hljs language-shell">echo "$UPLOAD_TOKEN" | codeql github upload-results --repository=&lt;repository-name&gt; \
+      --ref=&lt;ref&gt; --commit=&lt;commit&gt; --sarif=&lt;file&gt; \
+      --github-auth-stdin</code></pre> 
+       <table>
+        <thead>
+         <tr>
+          <th>Option</th>
+          <th align="center">Required</th>
+          <th>Usage</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>
+           <nobr>
+            <code>--repository</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the <em>OWNER/NAME</em> of the repository to upload data to. The owner must be an organization within an enterprise that has a license for GitHub Advanced Security and GitHub Advanced Security must be enabled for the repository, unless the repository is public. For more information, see "<a href="/en/github/administering-a-repository/managing-security-and-analysis-settings-for-your-repository">Managing security and analysis settings for your repository</a>."</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--ref</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the name of the <code>ref</code> you checked out and analyzed so that the results can be matched to the correct code. For a branch use: <code>refs/heads/BRANCH-NAME</code>, for the head commit of a pull request use <code>refs/pulls/NUMBER/head</code>, or for the GitHub-generated merge commit of a pull request use <code>refs/pulls/NUMBER/merge</code>.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--commit</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the full SHA of the commit you analyzed.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--sarif</code>
+           </nobr></td>
+          <td align="center">
+           <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-check-circle-fill" aria-label="Required" role="img">
+            <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z" />
+           </svg></td>
+          <td>Specify the SARIF file to load.</td>
+         </tr>
+         <tr>
+          <td>
+           <nobr>
+            <code>--github-auth-stdin</code>
+           </nobr></td>
+          <td align="center"></td>
+          <td>Optional. Use to pass the CLI the GitHub App or personal access token created for authentication with GitHub's REST API via standard input. This is not needed if the command has access to a <code>GITHUB_TOKEN</code> environment variable set with this token.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>For more information, see <a href="https://codeql.github.com/docs/codeql-cli/manual/github-upload-results/">github upload-results</a> in the documentation for the CodeQL CLI.</p> 
+       <h5 id="basic-example-2"><a href="#basic-example-2">Basic example</a></h5> 
+       <pre><code>$ echo $UPLOAD_TOKEN |

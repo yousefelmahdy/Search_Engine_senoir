@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <meta name="csrf-token" content="aUIdNj8q-sD_FItoCQEgeLxi2YgFTOV81NMo"> 
+  <title>GitHub Actions: Continuous Delivery with Azure | GitHub Learning Lab</title> 
+  <link rel="shortcut icon" href="/public/favicon.png"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="GitHub Learning Lab"> 
+  <meta property="og:type" content="website"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@github"> 
+  <meta property="twitter:creator" content="@github"> 
+  <link rel="canonical" href="https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure"> 
+  <meta property="og:url" content="https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure"> 
+  <meta property="og:title" content="GitHub Actions: Continuous Delivery with Azure | GitHub Learning Lab"> 
+  <meta property="twitter:title" content="GitHub Actions: Continuous Delivery with Azure | GitHub Learning Lab"> 
+  <meta name="description" content="Create two deployment workflows using GitHub Actions and Microsoft Azure."> 
+  <meta property="og:description" content="Create two deployment workflows using GitHub Actions and Microsoft Azure."> 
+  <meta property="twitter:description" content="Create two deployment workflows using GitHub Actions and Microsoft Azure."> 
+  <meta property="twitter:card" content="summary_large_image"> 
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/247808107/d6de8f80-684a-11ea-97d2-5705e8595f0d"> 
+  <meta property="og:image:url" content="https://repository-images.githubusercontent.com/247808107/d6de8f80-684a-11ea-97d2-5705e8595f0d"> 
+  <meta property="twitter:image" content="https://repository-images.githubusercontent.com/247808107/d6de8f80-684a-11ea-97d2-5705e8595f0d"> 
+  <meta property="twitter:image:alt" content="Create two deployment workflows using GitHub Actions and Microsoft Azure."> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1280"> 
+  <meta property="og:image:height" content="640"> 
+  <link href="/public/main.eab00014cc2c5b4468da.css" rel="stylesheet">
+ </head> 
+ <body class=" height-full "> 
+  <header class="py-2 bg-gray Site-header "> 
+   <div class="container-lg p-responsive py-2 d-flex flex-items-start flex-md-items-center flex-justify-between"> 
+    <div class="d-md-flex flex-items-center"> <a href="/" class="text-gray-dark d-flex flex-items-center text-bold" data-click="GitHub Learning Lab, click, header logo">
+      <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+       <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+      </svg><span class="ml-2">Learning Lab</span></a> 
+     <div class="d-flex flex-items-baseline mt-2 mt-md-0"> <a href="/organizations" class="ml-md-4 link-gray text-small" data-click="GitHub Learning Lab, click, header business">For Organizations</a> 
+     </div> 
+    </div> <a href="/login/github" data-click="GitHub Learning Lab, click, header sign in" class="btn btn-outline">Sign in</a> 
+   </div> 
+  </header> 
+  <div class="flash-wrapper"> 
+  </div> 
+  <div class="Site-content "> 
+   <div itemscope itemtype="https://schema.org/Course"> 
+    <meta itemprop="url" content="https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure"> 
+    <meta itemprop="courseCode" content="629"> 
+    <meta itemprop="inLanguage" content="en"> 
+    <header class="bg-gray py-6"> 
+     <div class="container-lg mx-auto clearfix p-responsive"> 
+      <div class="gutter-md"> 
+       <div class="col-sm-12 col-md-7 col-lg-8 float-left"> 
+        <h1 class="text-normal f00-light  lh-condensed-ultra" itemprop="name"> GitHub Actions: Continuous Delivery with Azure </h1> 
+        <p class="f4 " itemprop="author" itemscope itemtype="https://schema.org/EducationalOrganization"> <a class="muted-link" rel="author" itemprop="url" href="/githubtraining"> <img src="https://avatars3.githubusercontent.com/u/2036237?v=4" height="20" class="rounded-1 v-align-middle" itemprop="image" alt="avatar"> <span itemprop="name"> The GitHub Training Team</span> </a> </p> 
+        <p class="f4 text-gray mb-4" style="max-width:520px" itemprop="description"> Create two deployment workflows using GitHub Actions and Microsoft Azure. </p> 
+        <p> <a href="/login/github?overlay=register-box-overlay" class="btn btn-primary btn-large f4" data-click="GitHub Learning Lab, click, course hero login button github-actions:-continuous-delivery-with-azure">Start free course</a> <em class="ml-2 text-gray">Join 2517 others!</em> </p> 
+       </div> 
+       <div class="col-sm-12 col-md-5 col-lg-4 float-left"> 
+        <img class="rounded-2" src="https://repository-images.githubusercontent.com/247808107/d6de8f80-684a-11ea-97d2-5705e8595f0d" width="305" itemprop="image" alt="social preview"> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+    <div class="container-lg mx-auto clearfix p-responsive py-6"> 
+     <div class="gutter-md"> 
+      <div class="col-sm-12 col-md-8 float-left"> 
+       <div class="course-details markdown-body mb-6" itemprop="text"> 
+        <p>This course is about continuous delivery, or CD, with GitHub Actions. CD is a crucial part of modern software development, and it can have a monumental impact on development projects. </p> 
+        <p>Continuous Delivery is the practice of delivering software faster and with higher quality. Doing so successfully requires many different practices, behaviors, and technologies. GitHub Actions makes implementing CD easier, faster, and more reliable.</p> 
+        <p>In this course, we focus on using workflows in GitHub Actions to deploy pull requests automatically to a staging environment, and to deploy all merged commits to production using Microsoft Azure.</p> 
+        <p><strong>Please note</strong>: You may need a credit card to create an account with Azure. If you're a student, you may also be able to take advantage of the <a href="https://education.github.com/pack">Student Developer Pack</a> for access to Azure. If you'd like to continue with the course without an Azure account, Learning Lab will still respond, but none of the deployments will work.</p> 
+        <h2 id="what-youll-learn">What you'll learn</h2> 
+        <p>We'll answer common questions like:</p> 
+        <ul> 
+         <li>What is Continuous Delivery?</li> 
+         <li>What is a workflow file and how are workflows used with GitHub Actions?</li> 
+         <li>What are deployment triggers and how are they used with deployments?</li> 
+         <li>How can secrets store tokens?</li> 
+        </ul> 
+        <p>And when you're done you'll be able to:</p> 
+        <ul> 
+         <li>Use GitHub Actions and create workflow files</li> 
+         <li>Use secrets to store tokens</li> 
+         <li>Deploy to staging and production using GitHub Actions to implement CD</li> 
+        </ul> 
+        <h2 id="what-youll-build">What you'll build</h2> 
+        <p>In this course, we'll be walking through a CD deployment using GitHub Actions, and creating a Tic Tac Toe game!</p> 
+        <p><img src="https://user-images.githubusercontent.com/16547949/75822607-4003d480-5d6e-11ea-99e5-fc0cb5ca8054.gif" alt="deployed app"></p> 
+        <h2 id="prerequisites">Prerequisites</h2> 
+        <p>Before you start, you should be familiar with GitHub and Continuous Integration. We recommend taking the following three Learning Labs prior to this course:</p> 
+        <ul> 
+         <li><a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a></li> 
+         <li><a href="https://lab.github.com/github/hello-github-actions!">Hello GitHub Actions!</a></li> 
+         <li><a href="https://lab.github.com/githubtraining/github-actions:-continuous-integration">Continuous Integration with GitHub Actions</a></li> 
+        </ul> 
+        <h2 id="projects-used">Projects used</h2> 
+        <p>This course makes use of the following technologies:</p> 
+        <ul> 
+         <li><a href="https://github.com/Azure/actions">Azure/actions</a>: Automate your GitHub workflows using Azure Actions</li> 
+         <li><a href="https://github.com/Azure/login">Azure/login</a>: Connect to Azure</li> 
+         <li><a href="https://github.com/Azure/docker-login">Azure/docker-login</a>: Enable GitHub developers to deploy to Kubernetes service using GitHub Actions</li> 
+         <li><a href="https://github.com/Azure/webapps-container-deploy">Azure/webapps-container-deploy</a>: Enable GitHub developers to deploy to Azure WebApp for containers using GitHub Actions</li> 
+         <li><a href="https://github.com/actions/checkout">actions/checkout</a>: Action for checking out a repo</li> 
+         <li><a href="https://github.com/actions/upload-artifact">actions/upload-artifact</a>: Upload artifacts from GitHub's built-in artifact storage.</li> 
+         <li><a href="https://github.com/actions/download-artifact">actions/download-artifact</a>: Download artifacts from GitHub's built-in artifact storage.</li> 
+         <li><a href="https://github.com/mattdavis0351/actions/tree/main/docker-gpr">mattdavis0351/actions/docker-gpr</a>: A GitHub Action to upload Docker images to the GitHub Package Registry.</li> 
+        </ul> 
+        <h2 id="audience">Audience</h2> 
+        <p>Developers, DevOps Engineers, students, teams</p> 
+       </div> 
+       <details class="Box mb-6"> <summary class="Box-header Box-title border-bottom-0"> Steps to complete this course <span class="Counter">11</span> </summary> 
+        <ol class="steps-list border-top"> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="configure-a-trigger-based-on-labels" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="1"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Configure a trigger based on labels</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Configure the workflow trigger based on a label being added</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="trigger-a-job-on-specific-labels" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="2"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Trigger a job on specific labels</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Use a conditional to trigger a job on a specific label</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="set-up-the-environment-for-your-app" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="3"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Set up the environment for your app</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Store your credentials in GitHub secrets and finish setting up your workflow</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="merge-the-staging-workflow" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="4"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Merge the staging workflow</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Merge this staging workflow pull request</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="spin-up-configure-and-destroy-azure-resources" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="5"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Spin up, configure, and destroy Azure resources</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Use your workflow file to configure your cloud resources</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="configuring-your-azure-environment" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="6"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Configuring your Azure environment</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Approve pull request adding the necessary configuration files</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="test-the-github-actions-workflows" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="7"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Test the GitHub Actions workflows</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Test the new action to deploy labeled pull requests to staging</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="write-the-production-deployment-trigger" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="8"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Write the production deployment trigger</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Write the production deployment trigger on merge to main</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="complete-the-deployment-to-production-workflow" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="9"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Complete the deployment to production workflow</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Add jobs to a production deployment workflow</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="merge-the-production-workflow" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="10"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Merge the production workflow</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Merge the production deployment pull request</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="Box-row d-flex step js-course-step
+  
+  " data-step="clean-up-your-environment" itemprop="hasPart" itemscope itemtype="https://schema.org/Chapter"> 
+          <meta itemprop="position" content="11"> <span class="mr-2 step-check">
+           <svg version="1.1" width="20" height="20" viewbox="0 0 12 16" class="octicon octicon-check" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+           </svg></span> 
+          <div class="width-full"> 
+           <div class="d-flex flex-items-baseline flex-justify-between"> 
+            <div class="flex-column"> 
+             <h4 class="lh-condensed-ultra step-title" itemprop="name">Clean up your environment</h4> 
+             <div class="ml-5 mt-1 mb-0 step-description text-gray" itemprop="description">
+              <p>Destroy any running resources so you don't incur charges.</p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> </li> 
+        </ol> 
+       </details> 
+      </div> 
+      <div class="col-sm-12 col-md-4 float-left text-gray"> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">Tags</h5> 
+        <div class="d-flex flex-wrap"> 
+         <div class="d-flex flex-items-center mr-2"> <span class="mr-1 " style="color: #da6ce0">
+           <svg version="1.1" width="9" height="18" viewbox="0 0 8 16" class="octicon octicon-primitive-dot" aria-hidden="true">
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+           </svg></span> <span class="text-gray">GitHub Actions</span> 
+         </div> 
+         <div class="d-flex flex-items-center mr-2"> <span class="mr-1 " style="color: #6ce087">
+           <svg version="1.1" width="9" height="18" viewbox="0 0 8 16" class="octicon octicon-primitive-dot" aria-hidden="true">
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+           </svg></span> <span class="text-gray">Microsoft Azure</span> 
+         </div> 
+         <div class="d-flex flex-items-center mr-2"> <span class="mr-1 " style="color: #2dbcd2">
+           <svg version="1.1" width="9" height="18" viewbox="0 0 8 16" class="octicon octicon-primitive-dot" aria-hidden="true">
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+           </svg></span> <span class="text-gray">Workflows</span> 
+         </div> 
+         <div class="d-flex flex-items-center mr-2"> <span class="mr-1 " style="color: #d22d96">
+           <svg version="1.1" width="9" height="18" viewbox="0 0 8 16" class="octicon octicon-primitive-dot" aria-hidden="true">
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+           </svg></span> <span class="text-gray">CD</span> 
+         </div> 
+         <div class="d-flex flex-items-center mr-2"> <span class="mr-1 " style="color: #e06c87">
+           <svg version="1.1" width="9" height="18" viewbox="0 0 8 16" class="octicon octicon-primitive-dot" aria-hidden="true">
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+           </svg></span> <span class="text-gray">Deployment</span> 
+         </div> 
+        </div> 
+        <meta itemprop="keywords" content="GitHub Actions, Microsoft Azure, Workflows, CD, Deployment"> 
+       </div> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">Share this course </h5> <a class="muted-link mr-3" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flab.github.com%2Fgithubtraining%2Fgithub-actions%3A-continuous-delivery-with-azure" data-click="GitHub Learning Lab, click, share course facebook 629"> 
+         <svg class="octicon" title="Facebook" height="20" viewbox="0 0 15.3 15.4">
+          <path d="M14.5 0H.8a.88.88 0 0 0-.8.9v13.6a.88.88 0 0 0 .8.9h7.3v-6h-2V7.1h2V5.4a2.87 2.87 0 0 1 2.5-3.1h.5a10.87 10.87 0 0 1 1.8.1v2.1h-1.3c-1 0-1.1.5-1.1 1.1v1.5h2.3l-.3 2.3h-2v5.9h3.9a.88.88 0 0 0 .9-.8V.8a.86.86 0 0 0-.8-.8z" />
+         </svg> </a> <a class="muted-link mr-3" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flab.github.com%2Fgithubtraining%2Fgithub-actions%3A-continuous-delivery-with-azure&amp;text=GitHub%20Actions%3A%20Continuous%20Delivery%20with%20Azure%20-%20Create%20two%20deployment%20workflows%20using%20GitHub%20Actions%20and%20Microsoft%20Azure." data-click="GitHub Learning Lab, click, share course twitter 629"> 
+         <svg class="octicon" title="Twitter" height="18" viewbox="0 0 273.5 222.3">
+          <path d="M273.5 26.3a109.77 109.77 0 0 1-32.2 8.8 56.07 56.07 0 0 0 24.7-31 113.39 113.39 0 0 1-35.7 13.6 56.1 56.1 0 0 0-97 38.4 54 54 0 0 0 1.5 12.8A159.68 159.68 0 0 1 19.1 10.3a56.12 56.12 0 0 0 17.4 74.9 56.06 56.06 0 0 1-25.4-7v.7a56.11 56.11 0 0 0 45 55 55.65 55.65 0 0 1-14.8 2 62.39 62.39 0 0 1-10.6-1 56.24 56.24 0 0 0 52.4 39 112.87 112.87 0 0 1-69.7 24 119 119 0 0 1-13.4-.8 158.83 158.83 0 0 0 86 25.2c103.2 0 159.6-85.5 159.6-159.6 0-2.4-.1-4.9-.2-7.3a114.25 114.25 0 0 0 28.1-29.1" />
+         </svg> </a> <a class="muted-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Flab.github.com%2Fgithubtraining%2Fgithub-actions%3A-continuous-delivery-with-azure&amp;title=GitHub%20Actions%3A%20Continuous%20Delivery%20with%20Azure&amp;summary=Create%20two%20deployment%20workflows%20using%20GitHub%20Actions%20and%20Microsoft%20Azure.&amp;source=" data-click="GitHub Learning Lab, click, share course linkedin 629"> 
+         <svg class="octicon" title="LinkedIn" height="20" viewbox="0 0 19 18">
+          <path d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z" />
+         </svg> </a> 
+       </div> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">Average time to complete</h5> 
+        <p>73 minutes</p> 
+        <meta itemprop="timeRequired" content="73M"> 
+       </div> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">Free</h5> 
+        <p>All public courses on Learning Lab are <em>free</em>.</p> 
+        <meta itemprop="isAccessibleForFree" content="true"> 
+       </div> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">
+         <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-comment-discussion mr-1" aria-hidden="true">
+          <path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z" />
+         </svg> Get help</h5> 
+        <p><a href="https://github.community/c/education/github-learning-lab/34/l/latest" data-click="GitHub Learning Lab, click, get help" itemprop="discussionUrl">Post on the GitHub Community Forum</a></p> 
+       </div> 
+       <div class="mb-4"> 
+        <h5 class="mb-1">Latest release</h5> 
+        <p><time datetime="2020-12-21T11:25:37.318Z" itemprop="dateModified">December 21, 2020</time></p> 
+        <meta itemprop="dateCreated" content="2020-03-16T20:58:05.941Z"> 
+       </div> 
+      </div> 
+      <div class="col-12 mb-6 float-left"> 
+       <h4 class="mb-3">Learning Paths that include this course</h4> 
+       <div class="position-relative overflow-hidden mr-n3 mr-sm-n5 mr-xl-n5 ml-n3 ml-sm-n5 ml-lg-m3 ml-xl-n5 mt-3"> 
+        <ul class="list-style-none d-flex flex-nowrap gutter-condensed overflow-auto px-4 px-sm-6 px-lg-6"> 
+         <li class="flex-shrink-0 mr-3" style="width: 30%; min-width: 300px"> 
+          <div class="Box rounded-2 d-flex flex-column height-full"> 
+           <div class="no-underline height-full"> 
+            <div class="p-3 flex-grow-2 d-flex flex-column height-full"> 
+             <h4 class="lh-condensed"> <span class="v-align-middle text-gray-light mr-1"> 
+               <svg version="1.1" width="14" height="16" viewbox="0 0 14 16" class="octicon octicon-milestone" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 2H6V0h2v2zm4 5H2c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h10l2 2-2 2zM8 4H6v2h2V4zM6 16h2V8H6v8z" />
+               </svg> </span> <a href="/githubtraining/prepare-to-use-github" data-click="GitHub Learning Lab, click, go to course prepare-to-use-github"> Prepare to use GitHub </a> </h4> 
+             <p class="text-small text-gray-light mt-1"> by <a href="/githubtraining">The GitHub Training Team</a> </p> 
+             <p class="text-small text-gray mt-1 overflow-hidden ">Prepare to use GitHub with this learning path. </p> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="flex-shrink-0 mr-3" style="width: 30%; min-width: 300px"> 
+          <div class="Box rounded-2 d-flex flex-column height-full"> 
+           <div class="no-underline height-full"> 
+            <div class="p-3 flex-grow-2 d-flex flex-column height-full"> 
+             <h4 class="lh-condensed"> <span class="v-align-middle text-gray-light mr-1"> 
+               <svg version="1.1" width="14" height="16" viewbox="0 0 14 16" class="octicon octicon-milestone" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 2H6V0h2v2zm4 5H2c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h10l2 2-2 2zM8 4H6v2h2V4zM6 16h2V8H6v8z" />
+               </svg> </span> <a href="/MSUSDEV/build-end-to-end-cicd-capabilities-directly-in-github" data-click="GitHub Learning Lab, click, go to course build-end-to-end-cicd-capabilities-directly-in-github"> Build end-to-end CI/CD capabilities directly in GitHub </a> </h4> 
+             <p class="text-small text-gray-light mt-1"> by <a href="/MSUSDEV">MSUSDEV</a> </p> 
+             <p class="text-small text-gray mt-1 overflow-hidden ">With GitHub Actions, you can create and set up workflows in your repository to build, test, and...</p> 
+            </div> 
+           </div> 
+          </div> </li> 
+         <li class="flex-shrink-0 mr-3" style="width: 30%; min-width: 300px"> 
+          <div class="Box rounded-2 d-flex flex-column height-full"> 
+           <div class="no-underline height-full"> 
+            <div class="p-3 flex-grow-2 d-flex flex-column height-full"> 
+             <h4 class="lh-condensed"> <span class="v-align-middle text-gray-light mr-1"> 
+               <svg version="1.1" width="14" height="16" viewbox="0 0 14 16" class="octicon octicon-milestone" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 2H6V0h2v2zm4 5H2c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h10l2 2-2 2zM8 4H6v2h2V4zM6 16h2V8H6v8z" />
+               </svg> </span> <a href="/githubtraining/devops-with-github-actions" data-click="GitHub Learning Lab, click, go to course devops-with-github-actions"> DevOps with GitHub Actions </a> </h4> 
+             <p class="text-small text-gray-light mt-1"> by <a href="/githubtraining">The GitHub Training Team</a> </p> 
+             <p class="text-small text-gray mt-1 overflow-hidden ">Learn how to do DevOps on GitHub with the power of GitHub Actions! This path will guide you through...</p> 
+            </div> 
+           </div> 
+          </div> </li> 
+        </ul> 
+        <div class="position-absolute top-0 right-0 bottom-0 px-2 px-sm-3 px-lg-2 px-xl-3" style="background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));"></div> 
+        <div class="position-absolute top-0 left-0 bottom-0 px-2 px-sm-3 px-lg-2 px-xl-3" style="background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));"></div> 
+       </div> 
+      </div> 
+      <div class="col-12 float-left mb-6"> 
+       <h4 class="mb-3">Users who took this course also took</h4> 
+       <div class="position-relative overflow-hidden mr-n3 mr-sm-n5 mr-xl-n5 ml-n3 ml-sm-n5 ml-lg-m3 ml-xl-n5 mt-3"> 
+        <ul class="list-style-none d-flex flex-nowrap gutter-condensed overflow-auto px-4 px-sm-6 px-lg-6"> 
+         <li class="flex-shrink-0 mr-3" style="width: 30%; min-width: 300px"> 
+          <div class="Box rounded-2 d-flex flex-column height-full"> 
+           <div class="no-underline height-full"> 
+            <div class="p-3 flex-grow-2 d-flex flex-column height-full"> 
+             <h4 class="lh-condensed"> <span class="v-align-middle text-gray-light mr-1"> 
+               <svg versi

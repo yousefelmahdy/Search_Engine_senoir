@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Publishing and installing a package with GitHub Actions - GitHub Docs</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="alternate icon" type="image/png" href="/assets/images/site/favicon.png"> 
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg"> 
+  <link rel="stylesheet" href="/dist/index.css?hash=bc6adbf212ea3e62f9ab6992ce340717"> 
+  <meta name="description" content="You can configure a workflow in GitHub Actions to automatically publish or install a package from GitHub Packages."> 
+  <link rel="alternate" hreflang="en" href="https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.github.com/cn/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <link rel="alternate" hreflang="ja" href="https://docs.github.com/ja/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <link rel="alternate" hreflang="es" href="https://docs.github.com/es/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <link rel="alternate" hreflang="pt" href="https://docs.github.com/pt/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <link rel="alternate" hreflang="de" href="https://docs.github.com/de/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions"> 
+  <meta name="google-site-verification" content="OgdQc0GZfjDI52wDv1bkMT-SLpBUo_h5nn9mI9L22xQ"> 
+  <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY"> 
+  <meta name="csrf-token" content="YUtac7mD-l_JOgeZFVRtuskL4VIM77Izhkhg"> 
+  <meta name="site.data.ui.search.placeholder" content="Search topics, products..."> 
+ </head> 
+ <body class="d-lg-flex"> <!-- product > category > maptopic > article --> 
+  <div class="sidebar d-none d-lg-block color-bg-tertiary"> 
+   <div class="d-flex flex-items-center p-4 position-sticky top-0 color-bg-tertiary" style="z-index: 3;" id="github-logo" role="banner"> <a href="/en" class="color-text-primary" aria-hidden="true" tabindex="-1"> 
+     <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+     </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2 flex-auto">GitHub Docs</a> 
+   </div> 
+   <nav> 
+    <ul class="sidebar-products"> <!--
+  Styling note:
+
+  Categories, Maptopics, and Articles list items get a class of `active` when they correspond to content
+  hierarchy of the current page. If an item's URL is also the same as the current URL, the item
+  also gets an `is-current-page` class.
+ --> 
+     <li title="Home"> <a href="/en" class="f6 pl-4 pr-5 ml-n1 pb-1 color-text-primary"> 
+       <svg xmlns="http://www.w3.org/2000/svg" class="octicon" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.78033 12.5303C7.48744 12.8232 7.01256 12.8232 6.71967 12.5303L2.46967 8.28033C2.17678 7.98744 2.17678 7.51256 2.46967 7.21967L6.71967 2.96967C7.01256 2.67678 7.48744 2.67678 7.78033 2.96967C8.07322 3.26256 8.07322 3.73744 7.78033 4.03033L4.81066 7L12.25 7C12.6642 7 13 7.33579 13 7.75C13 8.16421 12.6642 8.5 12.25 8.5L4.81066 8.5L7.78033 11.4697C8.07322 11.7626 8.07322 12.2374 7.78033 12.5303Z"></path>
+       </svg> All products </a> </li> 
+     <li title="" class="sidebar-product mb-2"> <a href="/en/packages" class="pl-4 pr-5 pb-1 f4 color-text-primary">GitHub Packages</a> </li> 
+     <li> 
+      <ul class="sidebar-categories list-style-none"> 
+       <li class="sidebar-category py-1 standalone-category"> <a href="/en/packages/quickstart" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Quickstart for GitHub Packages</a> <!-- some categories have maptopics with child articles -->  </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/packages/learn-github-packages" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Learn GitHub Packages</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/introduction-to-github-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Introduction to GitHub Packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/about-permissions-for-github-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">About permissions for GitHub Packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Configuring a package's access control and visibility</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/connecting-a-repository-to-a-package" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Connecting a repository to a package</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/publishing-a-package" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing a package</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/viewing-packages" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Viewing packages</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/installing-a-package" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Installing a package</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/learn-github-packages/deleting-and-restoring-a-package" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Deleting and restoring a package</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/packages/working-with-a-github-packages-registry" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Working with a GitHub Packages registry</a> 
+           <svg xmlns="http://www.w3.org/2000/svg" class="octicon flex-shrink-0 arrow mr-3" style="margin-top:7px" viewbox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path>
+           </svg> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the npm registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the RubyGems registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the Apache Maven registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the Gradle registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the NuGet registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-docker-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the Docker registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Working with the Container registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/enabling-improved-container-support-with-the-container-registry" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Enabling improved container support with the Container registry</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/working-with-a-github-packages-registry/migrating-to-the-container-registry-from-the-docker-registry" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">Migrating to the Container registry from the Docker registry</a> </li> 
+         </ul> 
+        </details> </li> 
+       <li class="sidebar-category py-1 active "> 
+        <details class="dropdown-withArrow details details-reset" open> <summary> 
+          <div class="d-flex flex-justify-between"> <a href="/en/packages/managing-github-packages-using-github-actions-workflows" class="pl-4 pr-2 py-2 f6 text-uppercase d-block flex-auto mr-3 color-text-primary">Managing GitHub packages with workflows</a> 
+          </div> </summary> <!-- some categories have maptopics with child articles --> 
+         <ul class="sidebar-articles list-style-none"> 
+          <li class="sidebar-article active is-current-page"> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Publishing and installing a package with GitHub Actions</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/example-workflows-for-publishing-a-package" class="pl-6 pl-4 pr-5 py-1 color-text-primary">Example workflows for publishing a package</a> </li> 
+          <li class="sidebar-article "> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/about-github-packages-and-github-actions" class="pl-6 pl-4 pr-5 py-1 pb-2 color-text-primary">About GitHub Packages and GitHub Actions</a> </li> 
+         </ul> 
+        </details> </li> 
+      </ul> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <main class="width-full"> 
+   <div class="border-bottom color-border-secondary no-print"> <!-- START TRANSLATIONS NOTICES --> <!-- END TRANSLATIONS NOTICES --> <!-- START RELEASE NOTICES --> <!-- Custom GitHub AE notice --> <!-- END RELEASE NOTICES --> <!-- ONEOFF EARLY ACCESS NOTICE --> <!-- END ONEOFF EARLY ACCESS NOTICE --> 
+    <header class="container-xl px-3 px-md-6 pt-3 pb-2 position-relative d-flex flex-justify-between width-full "> 
+     <div class="d-flex flex-items-center d-lg-none" style="z-index: 3;" id="github-logo-mobile" role="banner"> <a href="/en" aria-hidden="true" tabindex="-1"> 
+       <svg version="1.1" width="32" height="32" viewbox="0 0 16 16" class="octicon octicon-mark-github color-icon-primary" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+       </svg> </a> <a href="/en" class="h4-mktg color-text-primary no-underline no-wrap pl-2">GitHub Docs</a> 
+     </div> 
+     <div class="width-full"> 
+      <div class="d-inline-block width-full d-md-flex" style="z-index: 1;"> <button class="nav-mobile-burgerIcon float-right mt-1 border-0 d-md-none" type="button" aria-label="Toggle navigation"> <!-- Hamburger icon added with css --> </button> 
+       <div style="z-index: 2;" class="nav-mobile-dropdown width-full"> 
+        <div class="d-md-flex flex-justify-between flex-items-center"> 
+         <div class="py-2 py-md-0 d-md-inline-block"> 
+          <h4 class="text-mono f5 text-normal color-text-secondary d-md-none">Explore by product</h4> 
+          <details class="dropdown-withArrow position-relative details details-reset d-md-none close-when-clicked-outside"> <summary class="nav-desktop-productDropdownButton color-text-link py-2" role="button" aria-label="Toggle products list"> 
+            <div id="current-product" class="d-flex flex-items-center flex-justify-between" style="padding-top: 2px;"> <!-- Product switcher - GitHub.com, Enterprise Server, etc --> <!-- 404 and 500 error layouts are not real pages so we need to hardcode the name for those --> GitHub Packages 
+             <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+              <path d="M1,1l6.2,6L13,1"></path>
+             </svg> 
+            </div> </summary> <!-- Mobile-only product dropdown --> 
+           <div id="homepages" class="position-md-absolute nav-desktop-productDropdown p-md-4 left-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/github" class="d-block py-2
+                      Link--primary no-underline"> GitHub.com </a> <a href="/en/enterprise-server@3.1/admin" class="d-block py-2
+                      Link--primary no-underline"> GitHub Enterprise </a> <a href="/en/billing" class="d-block py-2
+                      Link--primary no-underline"> Billing and payments </a> <a href="/en/organizations" class="d-block py-2
+                      Link--primary no-underline"> Organizations </a> <a href="/en/code-security" class="d-block py-2
+                      Link--primary no-underline"> Code security </a> <a href="/en/actions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Actions </a> <a href="/en/packages" class="d-block py-2
+                      color-text-link text-underline active"> GitHub Packages </a> <a href="/en/developers" class="d-block py-2
+                      Link--primary no-underline"> Developers </a> <a href="/en/rest" class="d-block py-2
+                      Link--primary no-underline"> REST API </a> <a href="/en/graphql" class="d-block py-2
+                      Link--primary no-underline"> GraphQL API </a> <a href="/en/enterprise-server@3.1/insights" class="d-block py-2
+                      Link--primary no-underline"> GitHub Insights </a> <a href="/en/issues" class="d-block py-2
+                      Link--primary no-underline"> Issues and projects </a> <a href="/en/discussions" class="d-block py-2
+                      Link--primary no-underline"> GitHub Discussions </a> <a href="/en/codespaces" class="d-block py-2
+                      Link--primary no-underline"> GitHub Codespaces </a> <a href="/en/sponsors" class="d-block py-2
+                      Link--primary no-underline"> GitHub Sponsors </a> <a href="/en/communities" class="d-block py-2
+                      Link--primary no-underline"> Building communities </a> <a href="/en/pages" class="d-block py-2
+                      Link--primary no-underline"> GitHub Pages </a> <a href="/en/education" class="d-block py-2
+                      Link--primary no-underline"> Education </a> <a href="/en/desktop" class="d-block py-2
+                      Link--primary no-underline"> GitHub Desktop </a> <a href="https://cli.github.com/manual" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> GitHub CLI <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://atom.io/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Atom <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://electronjs.org/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> Electron <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> <a href="https://codeql.github.com/docs" target="_blank" class="d-block py-2
+                      Link--primary no-underline"> CodeQL <span class="ml-1">
+              <svg width="9" height="10" viewbox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" d="M.646 8.789l8-8M8.5 9V1M1 .643h8" />
+              </svg></span> </a> 
+           </div> 
+          </details> 
+         </div> <!-- Versions picker that only appears in the header on landing pages --> <!-- Versions picker that only appears in the header on homepage or product landing --> 
+         <div class="d-md-inline-block"> <!-- Language picker - 'English', 'Japanese', etc --> 
+          <div class="border-top border-md-top-0 py-2 py-md-0 d-md-inline-block"> 
+           <details class="dropdown-withArrow position-relative details details-reset mr-md-3 close-when-clicked-outside"> <summary class="py-2 color-text-primary" role="button" aria-label="Toggle languages list"> 
+             <div class="d-flex flex-items-center flex-justify-between">
+               English 
+              <svg class="arrow ml-md-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+               <path d="M1,1l6.2,6L13,1"></path>
+              </svg> 
+             </div> </summary> 
+            <div id="languages-selector" class="position-md-absolute nav-desktop-langDropdown p-md-4 right-md-n4 top-md-6" style="z-index: 6;"> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 no-underline active " style="white-space: nowrap"> English </a> <a href="/cn/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ???? (Simplified Chinese) </a> <a href="/ja/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> ??? (Japanese) </a> <a href="/es/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Español (Spanish) </a> <a href="/pt/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 no-underline Link--primary" style="white-space: nowrap"> Português do Brasil (Portuguese) </a> 
+            </div> 
+           </details> 
+          </div> <!-- GitHub.com homepage and 404 page has a stylized search; Enterprise homepages do not --> 
+          <div class="pt-3 pt-md-0 d-md-inline-block ml-md-3 border-top border-md-top-0"> <!--
+  This form is used in two places:
+
+  - On the homepage, front and center
+  - On all other pages, in the header
+ --> 
+           <div id="search-input-container" aria-hidden="true"> <!-- will add a search input here --> 
+           </div> 
+           <div id="search-results-container"></div> 
+           <div class="search-overlay-desktop"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+   </div> 
+   <div class="container-xl px-3 px-md-6 my-4 my-lg-4 d-xl-flex"> 
+    <article class="markdown-body width-full"> 
+     <div class="d-lg-flex flex-justify-between"> 
+      <div class="d-block d-lg-none"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+      <div class="d-flex flex-items-center breadcrumbs-wrapper"> 
+       <nav class="breadcrumbs f5" aria-label="Breadcrumb">
+        <a title="product: GitHub Packages" href="/en/packages" class="d-inline-block ">GitHub Packages</a><a title="category: Managing GitHub packages with workflows" href="/en/packages/managing-github-packages-using-github-actions-workflows" class="d-inline-block ">Managing GitHub packages with workflows</a><a title="article: Publishing and installing a package with GitHub Actions" href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-inline-block color-text-tertiary">Publishing and installing a package with GitHub Actions</a>
+       </nav> 
+      </div> 
+      <div class="d-none d-lg-block"> 
+       <details class="dropdown-withArrow d-inline-block details details-reset mb-1 position-relative close-when-clicked-outside article-versions"> <summary class="f4 h5-mktg btn-outline-mktg btn-mktg p-2"> <!-- GitHub.com, Enterprise Server 2.16, etc --> <span class="d-md-none d-xl-inline-block">Article version:</span> GitHub.com 
+         <svg class="arrow ml-1" width="14px" height="8px" viewbox="0 0 14 8" xml:space="preserve" fill="none" stroke="currentColor">
+          <path d="M1,1l6.2,6L13,1"></path>
+         </svg> </summary> 
+        <div class="nav-dropdown position-absolute color-bg-primary rounded-1 px-4 py-3 top-7 color-shadow-large" style="z-index: 6; width: 210px;"> <a href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 link-blue active"> GitHub.com</a> <a href="/en/enterprise-server@3.1/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.1</a> <a href="/en/enterprise-server@3.0/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 3.0</a> <a href="/en/enterprise-server@2.22/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> Enterprise Server 2.22</a> <a href="/en/github-ae@latest/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions" class="d-block py-2 Link--primary no-underline"> GitHub AE</a> <a class="f6 no-underline color-text-tertiary pt-1" href="/en/enterprise-server@3.1/admin/all-releases">See all Enterprise releases</a> 
+        </div> 
+       </details> 
+      </div> 
+     </div> 
+     <div class="mt-2 article-grid-container"> 
+      <div class="article-grid-head"> 
+       <div class="d-flex flex-items-baseline flex-justify-between mt-3"> 
+        <h1 class="border-bottom-0">Publishing and installing a package with GitHub Actions</h1> 
+        <div class="d-none d-lg-block ml-2"> <button class="btn-link Link--secondary js-print tooltipped tooltipped-n" aria-label="Print this article"> <!-- From https://heroicons.dev/ --> 
+          <svg fill="none" height="18" width="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
+           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg> </button> 
+        </div> 
+       </div> 
+       <div class="lead-mktg">
+        <p>You can configure a workflow in GitHub Actions to automatically publish or install a package from GitHub Packages.</p>
+       </div> 
+       <div class="product-callout border rounded-1 mb-4 p-3 color-border-success color-bg-success"> 
+        <p>GitHub Packages is available with GitHub Free, GitHub Pro, GitHub Free for organizations, GitHub Team, GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub AE.</p> 
+        <p><br>GitHub Packages is not available for private repositories owned by accounts using legacy per-repository plans. Also, accounts using legacy per-repository plans cannot access the Container registry since these accounts are billed by repository. For more information, see "<a href="/en/articles/github-s-products">GitHub's products</a>."</p> 
+       </div> 
+      </div> 
+      <div class="article-grid-toc border-bottom border-xl-0 pb-4 mb-5 pb-xl-0 mb-xl-0"> 
+       <div class="article-grid-toc-content"> 
+        <h2 id="in-this-article" class="f5 mb-2"><a class="Link--primary" href="#in-this-article">In this article</a></h2> 
+        <ul class="list-style-none pl-0 f5 mb-0"> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-github-packages-with-github-actions">About GitHub Packages with GitHub Actions</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-permissions-and-package-access-for-repository-owned-packages">About permissions and package access for repository-owned packages</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#about-permissions-and-package-access-for-container-registry">About permissions and package access for Container registry</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#default-permissions-and-access-settings-for-containers-modified-through-workflows">Default permissions and access settings for containers modified through workflows</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#publishing-a-package-using-an-action">Publishing a package using an action</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#installing-a-package-using-an-action">Installing a package using an action</a></li> 
+         <li class="ml-0  mb-2 lh-condensed"><a href="#upgrading-a-workflow-that-accesses-ghcrio">Upgrading a workflow that accesses <code>ghcr.io</code></a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="article-contents" class="article-grid-body"> 
+       <h3 id="about-github-packages-with-github-actions"><a href="#about-github-packages-with-github-actions">About GitHub Packages with GitHub Actions</a></h3> 
+       <p>GitHub Actions help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues. You can write individual tasks, called actions, and combine them to create a custom workflow. With GitHub Actions you can build end-to-end continuous integration (CI) and continuous deployment (CD) capabilities directly in your repository. For more information, see "<a href="/en/github/automating-your-workflow-with-github-actions/about-github-actions">About GitHub Actions</a>."</p> 
+       <p>You can extend the CI and CD capabilities of your repository by publishing or installing packages as part of your workflow.</p> 
+       <h4 id="authenticating-to-the-container-registry"><a href="#authenticating-to-the-container-registry">Authenticating to the Container registry</a></h4> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> The Container registry is currently in public beta and subject to change. During the beta, storage and bandwidth are free. To use the Container registry, you must enable the feature preview. For more information, see "<a href="/en/packages/learn-github-packages/introduction-to-github-packages">Introduction to GitHub Packages</a>" and "<a href="/en/packages/working-with-a-github-packages-registry/enabling-improved-container-support-with-the-container-registry">Enabling improved container support with the Container registry</a>."</p> 
+       </div> 
+       <p>PATs can grant broad access to your account. You should select only the necessary <code>read:packages</code>, <code>write:packages</code>, or <code>delete:packages</code> scope when creating a PAT to authenticate to the Container registry.</p> 
+       <p>To authenticate to the Container registry within a GitHub Actions workflow, use the <code>GITHUB_TOKEN</code> for the best security and experience.</p> 
+       <p>For guidance on updating your workflows that authenticate to <code>ghcr.io</code> with a personal access token, see "<a href="/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#upgrading-a-workflow-that-accesses-ghcrio">Upgrading a workflow that accesses <code>ghcr.io</code></a>."</p> 
+       <p>The Container registry now supports <code>GITHUB_TOKEN</code> for easy and secure authentication in your workflows. If your workflow is using a personal access token (PAT) to authenticate to <code>ghcr.io</code>, then we highly recommend you update your workflow to use <code>GITHUB_TOKEN</code>.</p> 
+       <p>For more information about <code>GITHUB_TOKEN</code>, see "<a href="/en/actions/reference/authentication-in-a-workflow#using-the-github_token-in-a-workflow">Authentication in a workflow</a>."</p> 
+       <p>If you'd like to use the Container registry in actions during the beta, follow our security best practices for PAT use at "<a href="/en/actions/getting-started-with-github-actions/security-hardening-for-github-actions#considering-cross-repository-access">Security hardening for GitHub Actions</a>."</p> 
+       <p>For an authentication example, see "<a href="/en/packages/getting-started-with-github-container-registry/migrating-to-github-container-registry-for-docker-images#authenticating-with-the-container-registry">Authenticating with the Container registry</a>."</p> 
+       <h4 id="authenticating-to-package-registries-on-github"><a href="#authenticating-to-package-registries-on-github">Authenticating to package registries on GitHub</a></h4> 
+       <p>If you want your workflow to authenticate to GitHub Packages to access a package registry other than the Container registry on GitHub, then we recommend using the <code>GITHUB_TOKEN</code> that GitHub automatically creates for your repository when you enable GitHub Actions instead of a personal access token for authentication. You should set the permissions for this access token in the workflow file to grant read access for the <code>contents</code> scope and write access for the <code>packages</code> scope. For forks, the <code>GITHUB_TOKEN</code> is granted read access for the parent repository. For more information, see "<a href="/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token">Authenticating with the GITHUB_TOKEN</a>."</p> 
+       <p>You can reference the <code>GITHUB_TOKEN</code> in your workflow file using the <code>{{secrets.GITHUB_TOKEN}}</code> context. For more information, see "<a href="/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token">Authenticating with the GITHUB_TOKEN</a>."</p> 
+       <h3 id="about-permissions-and-package-access-for-repository-owned-packages"><a href="#about-permissions-and-package-access-for-repository-owned-packages">About permissions and package access for repository-owned packages</a></h3> 
+       <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+        <p><strong>Note:</strong> Repository-owned packages include RubyGems, npm, Apache Maven, NuGet, Gradle, and Docker packages that use the package namespace <code>docker.pkg.github.com</code>.</p> 
+       </div> 
+       <p>When you enable GitHub Actions, GitHub installs a GitHub App on your repository. The <code>GITHUB_TOKEN</code> secret is a GitHub App installation access token. You can use the installation access token to authenticate on behalf of the GitHub App installed on your repository. The token's permissions are limited to the repository that contains your workflow. For more information, see "<a href="/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret">Permissions for the GITHUB_TOKEN</a>."</p> 
+       <p>GitHub Packages allows you to push and pull packages through the <code>GITHUB_TOKEN</code> available to a GitHub Actions workflow.</p> 
+       <h3 id="about-permissions-and-package-access-for-container-registry"><a href="#about-permissions-and-package-access-for-container-registry">About permissions and package access for Container registry</a></h3> 
+       <p>The Container registry (<code>ghcr.io</code>) allows users to create and administer containers as free-standing resources at the organization level. Containers can be owned by an organization or personal user account and you can customize access to each of your containers separately from repository permissions.</p> 
+       <p>All workflows accessing the Container registry should use the <code>GITHUB_TOKEN</code> instead of a personal access token. For more information about security best practices, see "<a href="/en/actions/learn-github-actions/security-hardening-for-github-actions#using-secrets">Security hardening for GitHub Actions</a>."</p> 
+       <h3 id="default-permissions-and-access-settings-for-containers-modified-through-workflows"><a href="#default-permissions-and-access-settings-for-containers-modified-through-workflows">Default permissions and access settings for containers modified through workflows</a></h3> 
+       <p>When you create, install, modify, or delete a container through a workflow, there are some default permission and access settings used to ensure admins have access to the workflow. You can adjust these access settings as well.</p> 
+       <p>For example, by default if a workflow creates a container using the <code>GITHUB_TOKEN</code>, then:</p> 
+       <ul> 
+        <li>The container inherits the visibility and permissions model of the repository where the workflow is run.</li> 
+        <li>Repository admins where the workflow is run become the admins of the container once the container is created.</li> 
+       </ul> 
+       <p>These are more examples of how default permissions work for workflows that manage packages.</p> 
+       <table>
+        <thead>
+         <tr>
+          <th>GitHub Actions workflow task</th>
+          <th>Default permissions and access</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>Download an existing container</td>
+          <td>- If the container is public, any workflow running in any repository can download the container. <br> - If the container is internal, then all workflows running in any repository owned by the Enterprise account can download the container. For enterprise-owned organizations, you can read any repository in the enterprise <br> - If the container is private, only workflows running in repositories that are given read permission on that container can download the container. <br></td>
+         </tr>
+         <tr>
+          <td>Upload a new version to an existing container</td>
+          <td>- If the container is private, internal, or public, only workflows running in repositories that are given write permission on that container can upload new versions to the container.</td>
+         </tr>
+         <tr>
+          <td>Delete a container or versions of a container</td>
+          <td>- If the container is private, internal, or public, only workflows running in repositories that are given delete permission can delete existing versions of the container.</td>
+         </tr>
+        </tbody>
+       </table> 
+       <p>You can also adjust access to containers in a more granular way or adjust some of the default permissions behavior. For more information, see "<a href="/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility">Configuring a package’s access control and visibility</a>."</p> 
+       <h3 id="publishing-a-package-using-an-action"><a href="#publishing-a-package-using-an-action">Publishing a package using an action</a></h3> 
+       <p>You can use GitHub Actions to automatically publish packages as part of your continuous integration (CI) flow. This approach to continuous deployment (CD) allows you to automate the creation of new package versions, if the code meets your quality standards. For example, you could create a workflow that runs CI tests every time a developer pushes code to a particular branch. If the tests pass, the workflow can publish a new package version to GitHub Packages.</p> 
+       <p>Configuration steps vary by package client. For general information about configuring a workflow for GitHub Actions, see "<a href="/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow">Configuring a workflow</a>."</p> 
+       <p>The following example demonstrates how you can use GitHub Actions to build and test your app, and then automatically create a Docker image and publish it to GitHub Packages:</p> 
+       <ul> 
+        <li> <p>Create a new workflow file in your repository (such as <code>.github/workflows/deploy-image.yml</code>), and add the following YAML:</p> 
+         <div class="code-extra">
+          <header class="d-flex flex-items-center flex-justify-between p-2 text-small rounded-top-1 border">
+           <span>YAML</span><button class="js-btn-copy btn btn-sm tooltipped tooltipped-nw" data-clipboard-text="name: Create and publish a package
+on:
+  push:
+    branches: ['release']
+jobs:
+  run-npm-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: npm install and build webpack
+        run: |
+          npm install
+          npm run build
+      - uses: actions/upload-artifact@main
+        with:
+          name: webpack artifacts
+          path: public/
+
+  run-npm-test:
+    runs-on: ubuntu-latest
+    needs: run-npm-build
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [12.x, 14.x]
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/download-artifact@main
+        with:
+          name: webpack artifacts
+          path: public
+      - name: npm install, and test
+        run: |
+          npm install
+          npm test
+        env:
+          CI: true
+
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    needs: run-npm-test 
+    permissions: 
+      contents: read
+      packages: write 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Log in to GitHub Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build container image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            docker.pkg.github.com/${{ github.repository }}/octo-image:${{ github.sha }}
+            docker.pkg.github.com/${{ github.repository }}/octo-image:${{ github.ref }}" aria-label="Copy code to clipboard">
+            <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-clippy" aria-hidden="true">
+             <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z" />
+            </svg></button>
+          </header>
+          <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Create</span> <span class="hljs-string">and</span> <span class="hljs-string">publish</span> <span class="hljs-string">a</span> <span class="hljs-string">package</span>
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> [<span class="hljs-string">'release'</span>]
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">run-npm-build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">and</span> <span class="hljs-string">build</span> <span class="hljs-string">webpack</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">|
+          npm install
+          npm run build
+</span>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/upload-artifact@main</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">webpack</span> <span class="hljs-string">artifacts</span>
+          <span class="hljs-attr">path:</span> <span class="hljs-string">public/</span>
+
+  <span class="hljs-attr">run-npm-test:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">needs:</span> <span class="hljs-string">run-npm-build</span>
+    <span class="hljs-attr">strategy:</span>
+      <span class="hljs-attr">matrix:</span>
+        <span class="hljs-attr">os:</span> [<span class="hljs-string">ubuntu-latest</span>]
+        <span class="hljs-attr">node-version:</span> [<span class="hljs-number">12.</span><span class="hljs-string">x</span>, <span class="hljs-number">14.</span><span class="hljs-string">x</span>]
+    <span class="hljs-attr">steps:</span> 
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">}}</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">node-version:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/download-artifact@main</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">webpack</span> <span class="hljs-string">artifacts</span>
+          <span class="hljs-attr">path:</span> <span class="hljs-string">public</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install,</span> <span class="hljs-string">and</span> <span class="hljs-string">test</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">|
+          npm install
+          npm test
+</span>        <span class="hljs-attr">env:</span>
+          <span class="hljs-attr">CI:</span> <span class="hljs-literal">true</span>
+
+  <span class="hljs-attr">build-and-push-image:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">needs:</span> <span class="hljs-string">run-npm-test</span> 
+    <span class="hljs-attr">permissions:</span> 
+      <span class="hljs-attr">contents:</span> <span class="hljs-string">read</span>
+      <span class="hljs-attr">packages:</span> <span class="hljs-string">write</span> 
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Log</span> <span class="hljs-string">in</span> <span class="hljs-string">to</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Docker</span> <span class="hljs-string">Registry</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">docker/login-action@v1</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">registry:</span> <span class="hljs-string">docker.pkg.github.com</span>
+          <span class="hljs-attr">username:</span> <span class="hljs-string">${{</span> <span class="hljs-string">github.actor</span> <span class="hljs-string">}}</span>
+          <span class="hljs-attr">password:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">container</span> <span class="hljs-string">image</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">docker/build-push-action@v2</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">push:</span> <span class="hljs-literal">true</span>
+          <span class="hljs-attr">tags:</span> <span class="hljs-string">|
+            docker.pkg.github.com/${{ github.repository }}/octo-image:${{ github.sha }}
+            docker.pkg.github.com/${{ github.repository }}/octo-image:${{ github.ref }}</span></code></pre>
+         </div> <p>The relevant settings are explained in the following table:</p> 
+         <table> 
+          <tbody>
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> [<span class="hljs-string">'release'</span>]</code></pre> </td> 
+            <td> Configures the <code>Create and publish a package</code> workflow to run every time a change is pushed to the branch called <code>release</code>. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">run-npm-build:</span>
+  <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+  <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">and</span> <span class="hljs-string">build</span> <span class="hljs-string">webpack</span>
+      <span class="hljs-attr">run:</span> <span class="hljs-string">|
+        npm install
+        npm run build
+</span>    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/upload-artifact@main</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">webpack</span> <span class="hljs-string">artifacts</span>
+        <span class="hljs-attr">path:</span> <span class="hljs-string">public/</span></code></pre> </td> 
+            <td> This job installs NPM and uses it to build the app. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">run-npm-test:</span>
+  <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+  <span class="hljs-attr">needs:</span> <span class="hljs-string">run-npm-build</span>
+  <span class="hljs-attr">strategy:</span>
+    <span class="hljs-attr">matrix:</span>
+      <span class="hljs-attr">os:</span> [<span class="hljs-string">ubuntu-latest</span>]
+      <span class="hljs-attr">node-version:</span> [<span class="hljs-number">14.</span><span class="hljs-string">x</span>]
+  <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">}}</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">node-version:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">}}</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/download-artifact@main</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">webpack</span> <span class="hljs-string">artifacts</span>
+        <span class="hljs-attr">path:</span> <span class="hljs-string">public</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install,</span> <span class="hljs-string">and</span> <span class="hljs-string">test</span>
+      <span class="hljs-attr">run:</span> <span class="hljs-string">|
+        npm install
+        npm test
+</span>      <span class="hljs-attr">env:</span>
+        <span class="hljs-attr">CI:</span> <span class="hljs-literal">true</span></code></pre> </td> 
+            <td> This job uses <code>npm test</code> to test the code. The <code>needs: run-npm-build</code> command makes this job dependent on the <code>run-npm-build</code> job. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml">  <span class="hljs-attr">build-and-push-image:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">needs:</span> <span class="hljs-string">run-npm-test</span></code></pre> </td> 
+            <td> This job publishes the package. The <code>needs: run-npm-test</code> command makes this job dependent on the <code>run-npm-test</code> job. </td> 
+           </tr>
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">permissions:</span> 
+  <span class="hljs-attr">contents:</span> <span class="hljs-string">read</span>
+  <span class="hljs-attr">packages:</span> <span class="hljs-string">write</span> </code></pre> </td> 
+            <td> Sets the permissions granted to the <code>GITHUB_TOKEN</code> for the actions in this job. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Log</span> <span class="hljs-string">in</span> <span class="hljs-string">to</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Docker</span> <span class="hljs-string">Registry</span>
+  <span class="hljs-attr">uses:</span> <span class="hljs-string">docker/login-action@v1</span>
+  <span class="hljs-attr">with:</span>
+    <span class="hljs-attr">registry:</span> <span class="hljs-string">docker.pkg.github.com</span>
+    <span class="hljs-attr">username:</span> <span class="hljs-string">${{</span> <span class="hljs-string">github.actor</span> <span class="hljs-string">}}</span>
+    <span class="hljs-attr">password:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">}}</span></code></pre> </td> 
+            <td> Creates a new step called <code>Log in to GitHub Docker Registry</code>, which logs in to the registry using the account and password that will publish the packages. Once published, the packages are owned by the account defined here. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">container</span> <span class="hljs-string">image</span></code></pre> </td> 
+            <td> Creates a new step called <code>Build container image</code>. This step runs as part of the <code>build-and-push-image</code> job. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">uses:</span> <span class="hljs-string">docker/build-push-action@v2</span></code></pre> </td> 
+            <td> Uses the Docker <code>build-push-action</code> action to build the image, based on your repository's <code>Dockerfile</code>. If the build succeeds, it pushes the image to GitHub Packages. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">with:</span></code></pre> </td> 
+            <td> Sends the required parameters to the <code>build-push-action</code> action. This are defined in the subsequent lines. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">push:</span> <span class="hljs-literal">true</span></code></pre> </td> 
+            <td> Push this image to the registry if it is built successfully. </td> 
+           </tr> 
+           <tr> 
+            <td> <pre><code class="hljs language-yaml"><span class="hljs-attr">tags:</span> <span class="hljs-string">|</span>
+<span class="hljs-string">docker.pkg.github.com/${{</span> <span class="hljs-string">github.repository</span> <span class="hljs-string">}}/octo-image:${{</span> <span class="hljs-string">github.sha</span> <span class="hljs-string">}}</span>
+<span class="hljs-string">docker.pkg.github.com/${{</span> <span class="hljs-string">github.repository</span> <span class="hljs-string">}}/octo-image:${{</span> <span class="hljs-string">github.ref</span> <span class="hljs-string">}}</span></code></pre> </td> 
+            <td> Tags the published package with the git ref (for example, the name of the branch used to create the package) as well as the commit SHA. </td> 
+           </tr> 
+          </tbody>
+         </table> 
+         <ul> 
+          <li>This new workflow will run automatically every time you push a change to a branch named <code>release</code> in the repository. You can view the progress in the <strong>Actions</strong> tab.</li> 
+          <li>A few minutes after the workflow has completed, the new package will visible in your repository. To find your available packages, see "<a href="/en/packages/publishing-and-managing-packages/viewing-packages#viewing-a-repositorys-packages">Viewing a repository's packages</a>."</li> 
+         </ul> <h3 id="installing-a-package-using-an-action"><a href="#installing-a-package-using-an-action">Installing a package using an action</a></h3> <p>You can install packages as part of your CI flow using GitHub Actions. For example, you could configure a workflow so that anytime a developer pushes code to a pull request, the workflow resolves dependencies by downloading and installing packages hosted by GitHub Packages. Then, the workflow can run CI tests that require the dependencies.</p> <p>Installing packages hosted by GitHub Packages through GitHub Actions requires minimal configuration or additional authentication when you use the <code>GITHUB_TOKEN</code>. Data transfer is also free when an action installs a package. For more information, see "<a href="/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages">About billing for GitHub Packages</a>."</p> <p>Configuration steps vary by package client. For general information about configuring a workflow for GitHub Actions, see "<a href="/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow">Configuring a workflow</a>."</p> <h3 id="upgrading-a-workflow-that-accesses-ghcrio"><a href="#upgrading-a-workflow-that-accesses-ghcrio">Upgrading a workflow that accesses <code>ghcr.io</code></a></h3> <p>The Container registry now supports <code>GITHUB_TOKEN</code> for easy and secure authentication in your workflows. If your workflow is using a personal access token (PAT) to authenticate to <code>ghcr.io</code>, then we highly recommend you update your workflow to use <code>GITHUB_TOKEN</code>.</p> <p>For more information about <code>GITHUB_TOKEN</code>, see "<a href="/en/actions/reference/authentication-in-a-workflow#using-the-github_token-in-a-workflow">Authentication in a workflow</a>."</p> <p>Using the <code>GITHUB_TOKEN</code> instead of a PAT, which includes the <code>repo</code> scope, increases the security of your repository as you don't need to use a long-lived PAT that offers unnecessary access to the repository where your workflow is run. For more information about security best practices, see "<a href="/en/actions/learn-github-actions/security-hardening-for-github-actions#using-secrets">Security hardening for GitHub Actions</a>."</p> 
+         <ol> 
+          <li> <p>Navigate to your package landing page.</p> </li> 
+          <li> <p>In the left sidebar, click <strong>Actions access</strong>. <span class="procedural-image-wrapper"><img src="/assets/images/help/package-registry/organization-repo-access-for-a-package.png" alt="&quot;Actions access&quot; option in left menu"></span></p> </li> 
+          <li> <p>To ensure your container package has access to your workflow, you must add the repository where the workflow is stored to your container. Click <strong>Add repository</strong> and search for the repository you want to add. <span class="procedural-image-wrapper"><img src="/assets/images/help/package-registry/add-repository-button.png" alt="&quot;Add repository&quot; button"></span></p> 
+           <div class="extended-markdown note border rounded-1 mb-4 p-3 color-border-info color-bg-info f5"> 
+            <p><strong>Note:</strong> Adding a repository to your container through the <strong>Actions access</strong> menu option is different than connecting your container to a repository. For more information, see "<a href="/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#ensuring-workflow-access-to-your-package">Ensuring workflow access to your package</a>" and "<a href="/en/packages/learn-github-packages/connecting-a-repository-to-a-package">Connecting a repository to a package</a>."</p> 
+           </div> </li> 
+          <li> <p>Optionally, using the "role" drop-down menu, select the default access level that you'd like the repository to have to your container image. <span class="procedural-image-wrapper"><img src="/assets/images/help/package-registry/repository-permission-options-for-package-access-through-actions.png" alt="Permission access levels to give to repositories"></span></p> </li> 
+          <li> <p>Open your workflow file. On the line where you login to <code>ghcr.io</code>, replace your PAT with <code>${{ secrets.GITHUB_TOKEN }}</code>.</p> </li> 
+         </ol> <p>For example, this workflow publishes a Docker container using <code>${{ secrets.GITHUB_TOKEN }}</code> to authenticate.</p> 
+         <div class="code-extra">
+          <header class="d-flex flex-items-center flex-justify-between p-2 text-small rounded-top-1 border">
+           <span>YAML</span><button class="js-btn-copy btn btn-sm tooltipped tooltipped-nw" data-clipboard-text="name: Demo Push
+
+on:   
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - master
+      - seed
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+  # Run tests for any PRs.
+  pull_request:
+
+env:
+  IMAGE_NAME: ghtoken_product_demo
+
+jobs:
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label &quot;runnumber=${GITHUB_RUN_ID}&quot;
+
+      - name: Log into registry
+        # This is where you will update the PAT to GITHUB_TOKEN
+        run: echo &quot;${{ secrets.GITHUB_TOKEN }}&quot; | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Push image
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # Strip git ref prefix from version
+          VERSION=$(echo &quot;${{ github.ref }}&quot; | sed -e 's,.*/\(.*\),\1,')
+          # Strip &quot;v&quot; prefix from tag name
+          [[ &quot;${{ github.ref }}&quot; == &quot;refs/tags/&quot;* ]] &amp;&amp; VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention
+          [ &quot;$VERSION&quot; == &quot;master&quot; ] &amp;&amp; VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION" aria-label="Copy code to clipboard">
+            <svg version="1.1" width="16" height="16" viewbox="0 0 16 16" class="octicon octicon-clippy" aria-hidden="true">
+             <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z" />
+            </svg></button>
+          </header>
+          <pre><code class="hljs language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Demo</span> <span class="hljs-string">Push</span>
+
+<span class="hljs-attr">on:</span>   
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-comment"># Publish `master` as Docker `latest` image.</span>
+    <span class="hljs-attr">branches:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">master</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">seed</span>
+
+    <span class="hljs-comment"># Publish `v1.2.3` tags as releases.</span>
+    <span class="hljs-attr">tags:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">v*</span>
+
+  <span class="hljs-comment"># Run tests for any PRs.</span>
+  <span class="hljs-attr">pull_request:</span>
+
+<span class="hljs-attr">env:</span>
+  <span class="hljs-attr">IMAGE_NAME:</span> <span class="hljs-string">ghtoken_product_demo</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-comment"># Push image to GitHub Packages.</span>
+  <span class="hljs-comment"># See also https://docs.docker.com/docker-hub/builds/</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">permissions:</span>
+      <span class="hljs-attr">packages:</span> <span class="hljs-string">write</span>
+      <span class="hljs-attr">contents:</span> <span class="hljs-string">read</span>
+
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">image</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">docker</span> <span class="hljs-string">build</span> <span class="hljs-string">.</span> <span class="hljs-string">--file</span> <span class="hljs-string">Dockerfile</span> <span class="hljs-string">--tag</span> <span class="hljs-string">$IMAGE_NAME</span> <span class="hljs-string">--label</span> <span class="hljs-string">"runnumber=${GITHUB_RUN_ID}"</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Log</span> <span class="hljs-string">into</span> <span class="hljs-string">registry</span>
+        <span class="hljs-comment"># This is where you will update the PAT to GITHUB_TOKEN</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">echo</span> <span class="hljs-string">"$<span class="hljs-template-variable">{{ secrets.GITHUB_TOKEN }}</span>"</span> <span class="hljs-string">|</span> <span class="hljs-string">docker</span> <span class="hljs-string">login</span> <span class="hljs-string">ghcr.io</span> <span class="hljs-string">-u</span> <span class="hljs-string">${{</span> <span class="hljs-string">github.actor</span> <span class="hljs-string">}}</span> <span class="hljs-string">--password-stdin</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Push</span> <span class="hljs-string">image</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">|
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+</span>
+          <span class="hljs-comment"># Change all uppercase to lowercase</span>
+          <span class="hljs-string">IMAGE_ID=$(echo</span> <span class="hljs-string">$IMAGE_ID</span> <span class="hljs-string">|</span> <span class="hljs-string">tr</span> <span class="hljs-string">'[A-Z]'</span> <span class="hljs-string">'[a-z]'</span><span class="hljs-string">)</span>
+          <span class="hljs-comment"># Strip git ref prefix from version</span>
+          <span class="hljs-string">VERSION=$(echo</span> <span class="hljs-string">"$<span class="hljs-template-variable">{{ github.ref }}</span>"</span> <span class="hljs-string">|</span> <span class="hljs-string">sed</span> <span class="hljs-string">-e</span> <span class="hljs-string">'s,.*/\(.*\),\1,'</span><span class="hljs-string">)</span>
+          <span class="hljs-comment"># Strip "v" prefix from tag name</span>
+          [[ <span class="hljs-string">"$<span class="hljs-template-variable">{{ github.ref }}</span>"</span> <span class="hljs-string">==</span> <span class="hljs-string">"refs/tags/"</span><span class="hljs-string">*</span> ]] <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">VERSION=$(echo</span> <span class="hljs-string">$VERSION</span> <span class="hljs-string">|</span> <span class="hljs-string">sed</span> <span class="hljs-string">-e</span> <span class="hljs-string">'s/^v//'</span><span class="hljs-string">)</span>
+          <span class="hljs-comment"># Use Docker `latest` tag convention</span>
+          [ <span class="hljs-string">"$VERSION"</span> <span class="hljs-string">==</span> <span class="hljs-string">"master"</span> ] <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">VERSION=latest</span>
+          <span class="hljs-string">echo</span> <span class="hljs-string">IMAGE_ID=$IMAGE_ID</span>
+          <span class="hljs-string">echo</span> <span class="hljs-string">VERSION=$VERSION</span>
+          <span class="hljs-string">docker</span> <span class="hljs-string">tag</span> <span class="hljs-string">$IMAGE_NAME</span> <span class="hljs-string">$IMAGE_ID:$VERSION</span>
+          <span class="hljs-string">docker</span> <span class="hljs-string">push</span> <span class="hljs-string">$IMAGE_ID:$VERSION</span></code></pre>
+         </div></li>
+       </ul> 
+      </div> 
+     </div> 
+     <div class="d-block mt-4 markdown-body"> 
+     </div> 
+    </article> 
+   </div> 
+   <section class="mt-lg-9 py-7 px-3 px-md-6 no-print color-bg-tertiary"> 
+    <div class="container-xl gutter-lg-spacious d-flex flex-wrap"> 
+     <div class="col-12 col-lg-6 col-xl-4 mb-6 mb-xl-0"> 
+      <form class="js-survey f5"> 
+       <h2 data-help-start data-help-yes data-help-no class="mb-1 f4"> Did this doc help you? </h2> 
+       <p class="f6"> <a href="/github/site-policy/github-privacy-statement">Privacy policy</a> </p> 
+       <p class="radio-group" data-help-start data-help-yes data-help-no> <input hidden id="survey-yes" type="radio" name="survey-vote" value="Yes" aria-label="Yes"> <label class="btn x-radio-label" for="survey-yes"> 
+         <svg version="1.1" width="24" height="24" viewbox="0 0 24 24" class="octicon octicon-thumbsup" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.596 2.043c-1.301-.092-2.303.986-2.303 2.206v1.053c0 2.666-1.813 3.785-2.774 4.2a1.866 1.866 0 01-.523.131A1.75 1.75 0 005.25 8h-1.5A1.75 1.75 0 002 9.75v10.5c0 .967.784 1.75 1.75 1.75h1.5a1.75 1.75 0 001.742-1.58c.838.06 1.667.296 2.69.586l.602.17c1.464.406 3.213.824 5.544.824 2.188 0 3.693-.204 4.583-1.372.422-.554.65-1.255.816-2.05.148-.708.262-1.57.396-2.58l.051-.39c.319-2.386.328-4.18-.223-5.394-.293-.644-.743-1.125-1.355-1.431-.59-.296-1.284-.

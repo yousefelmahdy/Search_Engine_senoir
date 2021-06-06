@@ -1,0 +1,551 @@
+<!doctype html>
+<html dir="ltr" lang="de"> 
+ <head> 
+  <meta charset="utf-8"> <!-- v19745 --> 
+  <title>Erste Schritte mit Cloudflare – Cloudflare Hilfe-Center</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="hc:meta:server:9kqDxydnqrLhiYajslLnnsJxTPoKL3gArE0lshGcCkzi3dDsbgj2FibIpE1aJNT9sTyDiu44eb3Sy26vflKgjA"> 
+  <meta name="description" content="Hier erfahren Sie, wie Sie Ihr Cloudflare-Konto schnell einrichten und Ihre Domain aktivieren. Außerdem lernen Sie bewährte...">
+  <meta property="og:image" content="https://theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="Cloudflare Hilfe-Center"> 
+  <meta property="og:title" content="Erste Schritte mit Cloudflare"> 
+  <meta property="og:description" content="Hier erfahren Sie, wie Sie Ihr Cloudflare-Konto schnell einrichten und Ihre Domain aktivieren. Außerdem lernen Sie bewährte Vorgehensweisen für Domains kennen, die über Cloudflare-Proxyserver anges..."> 
+  <meta property="og:url" content="https://support.cloudflare.com/hc/de/articles/360027989951-Erste-Schritte-mit-Cloudflare"> 
+  <link rel="canonical" href="https://support.cloudflare.com/hc/de/articles/360027989951-Erste-Schritte-mit-Cloudflare"> 
+  <link rel="alternate" hreflang="de" href="https://support.cloudflare.com/hc/de/articles/360027989951-Erste-Schritte-mit-Cloudflare"> 
+  <link rel="alternate" hreflang="en" href="https://support.cloudflare.com/hc/en-us/articles/360027989951-Getting-Started-with-Cloudflare"> 
+  <link rel="alternate" hreflang="es" href="https://support.cloudflare.com/hc/es-es/articles/360027989951-Introducci%C3%B3n-a-Cloudflare"> 
+  <link rel="alternate" hreflang="fr" href="https://support.cloudflare.com/hc/fr-fr/articles/360027989951-D%C3%A9marrer-avec-Cloudflare"> 
+  <link rel="alternate" hreflang="ja" href="https://support.cloudflare.com/hc/ja/articles/360027989951-Cloudflare-SSL%E3%82%92%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B"> 
+  <link rel="alternate" hreflang="ko" href="https://support.cloudflare.com/hc/ko/articles/360027989951-Cloudflare-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0"> 
+  <link rel="alternate" hreflang="pt" href="https://support.cloudflare.com/hc/pt-br/articles/360027989951-Primeiros-passos-com-a-Cloudflare"> 
+  <link rel="alternate" hreflang="zh" href="https://support.cloudflare.com/hc/zh-cn/articles/360027989951-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8-Cloudflare"> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-79172500fb4dbec2484043d570946543.css" id="stylesheet"> <!-- Entypo pictograms by Daniel Bruce — www.entypo.com --> 
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-cf937686d5b6669242017892da7bad78.css"> 
+  <link rel="stylesheet" type="text/css" href="//p13.zdassets.com/hc/theming_assets/184946/475874/style.css?digest=4402414509325"> 
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/184946/2dec4705e9ab399efdc6eef36e079aa31d1df8d9.ico"> 
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script> <!--
+  Template Name: Sagma
+  Version: 3.1.9
+  Author: Allies Interactive
+  Website: http://www.diziana.com/
+  Corporate Website : http://www.diziana.com
+  Contact: support@diziana.com
+  Follow: https://www.twitter.com/dizianaEngage
+  Like: https://www.facebook.com/diziana.engage
+  Purchase: Diziana.com
+  License: You must have a valid license purchased only from
+  diziana.com in order to legally use the theme for your project.
+  Copyright: © 2020 Allies Interactive Services Pvt. Ltd. All Rights Reserved
+--> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.0/URI.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/2a515632e0fd8ffdeb8d94cb25e44cf287feb32f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/a62d9ce6c78c259d7167495b85f03f38c8a6635f.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/ef493f5fc3711bd1e6f7b876f3bfddeccbe99d36.js"></script> 
+  <script src="//theme.zdassets.com/theme_assets/184946/d0608d7794a77e0c9fbdc1b0e5b4ecdfe79f2c37.js"></script> 
+  <script>
+  /**
+  * Icon for home category/section blocks
+  *
+  * Upload icon (ID.png) to assets for default block Icon
+  * Upload icon (hover_ID.png) to assets for hover block Icon
+  * Replace ID with category/section ID
+  * For font-icon, open the icon page and copy the class name attached in the tag as: <!--<i class="fas fa-pencil-alt"></i>-->
+  *
+  * Once asset is uploaded, click on it so details is shown in right pane
+  * Copy the text written under script tag and paste it below
+  *
+  * Your code should look like the below lines -
+  *  var assets360000004673 = "";
+  *  var assetsHover360000004673 = "";
+  *  var assets360000004673 = "fas fa-pencil-alt";
+  **/
+
+  // Paste copied code here
+  var assets200275228 = "fas fa-fire"; // Firewall category
+  var assets200276257 = "fas fa-file"; // Page Rules category
+  var assets200275248 = "fas fa-server"; // Caching category
+  var assets200276267 = "fas fa-chart-pie"; // Analytics category
+  var assets200275278 = "fas fa-user"; // Third-party software category
+  var assets200275298 = "fas fa-cog"; // Cloudflare client API category
+  var assets200276277 = "fas fa-hands-helping"; // Partners category
+  var assets200276287 = "fas fa-plus-circle"; // Cloudflare apps category
+
+</script> 
+  <script>
+  var systemStatusText = "All Systems Operational";
+  /* var systemStatusText = "" */
+  
+  var tocHeadingText = "In diesem Artikel";
+  /* var tocHeadingText = "" */
+
+  /**
+  * Returns URL of image
+  *
+  **/
+
+  function getAssetURLById(id) {
+    return {
+      blockIcon: window["assets" + id],
+      blockHoverIcon: window["assetsHover" + id]
+    }
+  }
+
+  /**
+  * sets the image url from assets id
+  *
+  **/
+  function setIcon(id) {
+    var icon = getAssetURLById(id);
+
+    if ( icon.blockIcon != undefined ) {
+      var blockIcon = $("."+ id + '-block-icon');
+      var blockHoverIcon = $("."+ id + '-block-hover-icon');
+      var blockFontIcon = $("."+ id + '-block-font-icon');
+
+      if ( icon.blockIcon.indexOf('fa') == 0 ) {
+        blockFontIcon.addClass(icon.blockIcon);
+        blockFontIcon.parent().removeClass('hide');
+        blockFontIcon.show();
+        blockIcon.hide();
+        blockHoverIcon.hide();
+      } else {
+        blockIcon.attr('src', icon.blockIcon);
+        blockHoverIcon.attr('src', icon.blockHoverIcon);
+        blockIcon.parent().removeClass('hide');
+        blockFontIcon.hide();
+      }
+    }
+  }
+</script> 
+  <style type="text/css">
+
+.search-box .search input[type="submit"] {
+  background-image: url('//theme.zdassets.com/theme_assets/184946/d784142ca13b85d3a5d7918637c1e4d77dfef300.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.home-category-list .accordion-toggle.collapsed:after, .home-category-list .accordion-toggle:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/e36baa2f259318b4e14f9a14bd17f8a567456e98.png") no-repeat center center;
+}
+
+.home-category-list .accordion-toggle.open:after {
+  background: url("//theme.zdassets.com/theme_assets/184946/7fb2bfa79c7022b7c88692589f4a1e2e97b95150.png") no-repeat center center;
+}
+
+.user-nav li + li a:before {
+  background: url("//theme.zdassets.com/theme_assets/184946/3126fee5fe913e135dcd1bed4b5fc0e80f82ce5c.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+  
+.banner div { 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   background-color: #00517F; 
+   width: 100%;
+   z-index: 100;
+ }
+.banner-content div { 
+   margin: 0 auto; 
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+ }
+.banner-content a {
+   color: #fff; 
+ }
+
+</style> <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://tr.www.cloudflare.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKQFGQB');</script> <!-- End Google Tag Manager --> 
+  <script type="text/javascript" src="//p13.zdassets.com/hc/theming_assets/184946/475874/script.js?digest=4402414509325"></script> 
+  <script async src="/cdn-cgi/bm/cv/669835187/api.js"></script>
+ </head> 
+ <body class=""> 
+  <header class="header-wrapper"> 
+   <div class="header"> 
+    <div class="logo"> <a href="https://support.cloudflare.com/hc/" alt="Cloudflare Help Center" title="Cloudflare Help Center"> <img src="//theme.zdassets.com/theme_assets/184946/714cba5e835ceb090dd94c29eb1d177c002a93b6.png" alt="Logo"> </a> 
+    </div> 
+    <div class="nav-wrapper"> <span class="icon-menu"></span> <i class="fas system-status-icon"></i> 
+     <nav class="user-nav" id="user-nav"> <a href="https://www.cloudflarestatus.com"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> <a href="https://community.cloudflare.com/" title="Fragen Sie die Community"> Fragen Sie die Community </a> 
+     </nav> 
+     <div class="dropdown language-selector" aria-haspopup="true"> <a class="dropdown-toggle current_locale" data-href="/hc/change_language/de?return_to=%2Fhc%2Fde%2Farticles%2F360027989951-Erste-Schritte-mit-Cloudflare" data-name="Deutsch"> Deutsch </a> <span class="dropdown-menu dropdown-menu-end" role="menu"> <a href="/hc/change_language/en-us?return_to=%2Fhc%2Fen-us%2Farticles%2F360027989951-Getting-Started-with-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> English (US) </a> <a href="/hc/change_language/es-es?return_to=%2Fhc%2Fes-es%2Farticles%2F360027989951-Introducci%25C3%25B3n-a-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Español (España) </a> <a href="/hc/change_language/fr-fr?return_to=%2Fhc%2Ffr-fr%2Farticles%2F360027989951-D%25C3%25A9marrer-avec-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Français (France) </a> <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja%2Farticles%2F360027989951-Cloudflare-SSL%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%2584%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258B" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/ko?return_to=%2Fhc%2Fko%2Farticles%2F360027989951-Cloudflare-%25EC%258B%259C%25EC%259E%2591%25ED%2595%2598%25EA%25B8%25B0" dir="ltr" rel="nofollow" role="menuitem"> ??? </a> <a href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br%2Farticles%2F360027989951-Primeiros-passos-com-a-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> Português do Brasil </a> <a href="/hc/change_language/zh-cn?return_to=%2Fhc%2Fzh-cn%2Farticles%2F360027989951-%25E5%25BC%2580%25E5%25A7%258B%25E4%25BD%25BF%25E7%2594%25A8-Cloudflare" dir="ltr" rel="nofollow" role="menuitem"> ???? </a> </span> 
+     </div> <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="Öffnet ein Dialogfeld" href="/hc/de/signin?return_to=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fde%2Farticles%2F360027989951-Erste-Schritte-mit-Cloudflare&amp;locale=de">Anmelden</a> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="hero"> 
+   <div class="hero-inner"> 
+    <h1 class="welcome-message-title welcome-message hide">Cloudflare Hilfe-Center</h1> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/de/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Suchen" autocomplete="off" aria-label="Suchen"> 
+     <input type="submit" name="commit" value="Suchen">
+    </form> <span id="search_placeholder_template" data-value="Die Knowledge Base des Cloudflare-Supports durchsuchen" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Beliebte Suchanfragen:</li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=langsame+Website&amp;utf8=%E2%9C%93'">langsame Website</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Traffic+Spitze&amp;utf8=%E2%9C%93">Traffic-Spitze</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Subdomain&amp;utf8=%E2%9C%93">Subdomain</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </div> 
+  </section> <!-- Modal --> 
+  <div class="modal" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-body"> <i class="fa fa-times close-modal"></i> <a href="https://www.cloudflarestatus.com" title="All Systems Operational"> <i class="fas system-status-icon"></i> <span class="system-status-text">All Systems Operational</span> </a> 
+    </div> 
+   </div> 
+  </div> <!-- /Modal --> 
+  <main role="main"> 
+   <script>
+  var templateName = 'articles';
+  $('.header-wrapper').addClass('fluid');
+</script> 
+   <style>
+  .footer-search-wrapper {display: none;}
+  @media (min-width: 1024px) {
+  	.hero {display: none;}
+  }
+</style> 
+   <div class="article-wrapper"> 
+    <section class="article-sidebar"> 
+     <form role="search" class="search" data-search="" data-instant="true" autocomplete="off" action="/hc/de/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Suchen" autocomplete="off" aria-label="Suchen">
+     </form> 
+     <div class="system-status"> <i class="fas system-status-icon"></i> 
+      <div> 
+       <h3 class="system-status-text"></h3> <a href="https://www.cloudflarestatus.com" title="Detailed system status"> Detailed system status &gt; </a> 
+      </div> 
+     </div> 
+     <section class="section-articles collapsible-sidebar"> 
+      <h3 class="collapsible-sidebar-title sidenav-title">Beiträge in diesem Abschnitt</h3> 
+      <ul> 
+       <li> <a href="/hc/de/articles/360037345072-Erste-Schritte-mit-Cloudflare-Video-Tutorials" class="sidenav-item " title="Erste Schritte mit Cloudflare: Video-Tutorials">Erste Schritte mit Cloudflare: Video-Tutorials</a> </li> 
+       <li> <a href="/hc/de/articles/201720164-Ein-Cloudflare-Konto-erstellen-und-eine-Website-hinzuf%C3%BCgen" class="sidenav-item " title="Ein Cloudflare-Konto erstellen und eine Website hinzufügen">Ein Cloudflare-Konto erstellen und eine Website hinzufügen</a> </li> 
+       <li> <a href="/hc/de/articles/360027989951-Erste-Schritte-mit-Cloudflare" class="sidenav-item current-article" title="Erste Schritte mit Cloudflare">Erste Schritte mit Cloudflare</a> </li> 
+       <li> <a href="/hc/de/articles/205195708-Umstellung-Ihrer-Domain-Nameserver-auf-Cloudflare" class="sidenav-item " title="Umstellung Ihrer Domain-Nameserver auf Cloudflare">Umstellung Ihrer Domain-Nameserver auf Cloudflare</a> </li> 
+       <li> <a href="/hc/de/articles/205075117-Das-Cloudflare-Dashboard-verstehen" class="sidenav-item " title="Das Cloudflare Dashboard verstehen">Das Cloudflare Dashboard verstehen</a> </li> 
+       <li> <a href="/hc/de/articles/360027710672-FAQs-zur-Fehlerbehebung-f%C3%BCr-neue-Cloudflare-Kunden" class="sidenav-item " title="FAQs zur Fehlerbehebung für neue Cloudflare-Kunden">FAQs zur Fehlerbehebung für neue Cloudflare-Kunden</a> </li> 
+      </ul> 
+     </section> <!--
+    <section class="community-block">
+      <div>
+        <i class="fas fa-users"></i>
+        <div>
+          
+          <h3>Connect with the Cloudflare Community</h3>
+          <a href="https://community.cloudflare.com/" class="button button-large">Get answers</a>
+          
+        </div>
+      </div>
+      <p>
+        
+        More on this topic: <a href="#">Discussions</a> and <a href="#">Tips</a>
+        
+      </p>
+    </section>
+   --> 
+     <section class="community-block"> 
+      <div> 
+       <img class="community-icon" src="//theme.zdassets.com/theme_assets/184946/513a9e8b35eaed0a35fce9cc22f9972e37872a33.png"> 
+       <div> 
+        <h4>Treffen Sie die Cloudflare-Community</h4> <a id="submit-request" class="button button-large" href="https://community.cloudflare.com/" onclick="trackOutboundLink('https://community.cloudflare.com/'); return false;" target="_new">Antworten erhalten</a> 
+       </div> 
+      </div> 
+      <p>Weitere Informationen zu diesem Thema: <a class="link" href="https://community.cloudflare.com/tags/dash-getting-started/l/latest" onclick="trackOutboundLink('https://community.cloudflare.com/tags/dash-getting-started/l/latest'); return false;" target="_new">Diskussionen</a> sowie <a class="link" href="https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started" onclick="trackOutboundLink('https://community.cloudflare.com/search?q=tags%3ACommunityTip%20%23dash-getting-started'); return false;" target="_new">Tipps</a> </p> 
+     </section> 
+    </section> 
+    <div class="article-container section" id="article-container"> 
+     <nav class="sub-nav"> 
+      <ol class="breadcrumbs"> 
+       <li title="Cloudflare Hilfe-Center"> <a href="/hc/de">Cloudflare Hilfe-Center</a> </li> 
+       <li title="Über Cloudflare"> <a href="/hc/de/categories/200275218-%C3%9Cber-Cloudflare">Über Cloudflare</a> </li> 
+       <li title="Erste Schritte"> <a href="/hc/de/sections/200820158-Erste-Schritte">Erste Schritte</a> </li> 
+      </ol> 
+      <script>
+        var categoryid = $('.breadcrumbs li:nth-child(2) a').attr('href').match(/[0-9]+/)[0];
+      </script> 
+     </nav> 
+     <div class="article-side-main-block  "> 
+      <article class="article"> 
+       <header class="article-header meta-hidden"> 
+        <h1 title="Erste Schritte mit Cloudflare" class="article-title"> <span> Erste Schritte mit Cloudflare </span> 
+         <div> <a class="article-subscribe" title="Öffnet ein Dialogfenster zum Anmelden" rel="nofollow" role="button" data-auth-action="signin" aria-selected="false" href="/hc/de/articles/360027989951-Erste-Schritte-mit-Cloudflare/subscription.html">Folgen</a> 
+         </div> <script>
+              $('header .language-selector').clone().prependTo('.article-title > div');
+    					$('article .language-selector').removeClass('hide').addClass('button');
+              var articleId = 360027989951;
+              var nodes = $(".language-selector a[href^='/hc/change_language/']");
+              nodes.each(function() {
+                var ele = $(this);
+                var href =  ele.attr("href");
+                var returnToValue = href.split("return_to")[1];
+                if(returnToValue.indexOf(articleId) < 0) {
+                  ele.remove();
+                }
+              });
+            </script> </h1> 
+        <div class="block-wrapper"> 
+         <div class="article-author"> 
+          <div class="article-meta"> 
+           <ul class="meta-group"> 
+            <li class="meta-data">Aktualisiert</li> 
+            <li class="meta-data"><time datetime="2019-12-13T19:20:54Z" title="2019-12-13T19:20:54Z" data-datetime="relative">13. Dezember 2019 19:20</time></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </header> 
+       <section class="article-info"> 
+        <div class="article-content"> 
+         <div class="article-body">
+          <div id="body_360027989951" name="body">
+           <p><em>Hier erfahren Sie, wie Sie Ihr Cloudflare-Konto schnell einrichten und Ihre Domain aktivieren. Außerdem lernen Sie bewährte Vorgehensweisen für Domains kennen, die über Cloudflare-Proxyserver angesteuert werden.</em></p>
+           <p><em>Dieser Artikel erschien zuvor unter dem Titel <strong>Schritt 1: Wie funktioniert Cloudflare?</strong></em></p>
+           <hr>
+           <h2>Übersicht</h2>
+           <p>Das globale Cloudflare-Netzwerk macht Websites sicherer und leistungsfähiger. Weitere Details dazu finden Sie in unserem Artikel <a href="https://support.cloudflare.com/hc/articles/205177068">So funktioniert Cloudflare</a>.</p>
+           <p>In diesen beiden Schritten aktivieren Sie Ihre Domain auf Cloudflare:</p>
+           <ol start="1">
+            <li><a href="https://support.cloudflare.com/hc/articles/201720164">Cloudflare-Konto erstellen und Website hinzufügen</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/205195708">Cloudflare-Nameserver bei Ihrem Domain-Registrar angeben</a></li>
+           </ol>
+           <div class="cf-sidebar-2 cf-note">
+            Bei Business- und Enterprise-Domains auf <a href="https://support.cloudflare.com/hc/en-us/articles/360020348832">CNAME Setups</a> kann Schritt 2 entfallen.
+           </div>
+           <p>Für frisch aktivierte Domains empfiehlt Cloudflare außerdem einige <a href="#h_87dac948-9e12-47e0-a32c-2144aadd0a2a" target="_self">bewährte Vorgehensweisen</a>.&nbsp; <span>Wenn Sie bei der Einrichtung Ihrer ersten Cloudflare-Domain auf Probleme stoßen, sehen Sie bitte in unseren </span><a href="https://support.cloudflare.com/hc/articles/360027710672" target="_self">FAQs zur Fehlerbehebung für neue Cloudflare-Kunden</a> nach.</p>
+           <hr>
+           <h2 id="h_87dac948-9e12-47e0-a32c-2144aadd0a2a">Bewährte Vorgehensweisen für aktive Cloudflare-Domains</h2>
+           <p>Cloudflare empfiehlt bei jeder neu in Cloudflare aufgenommenen Domain folgende Maßnahmen und Verbesserungen:</p>
+           <h3><strong>Empfohlene Maßnahmen</strong></h3>
+           <p>Stellen Sie eine erfolgreiche Interaktion zwischen Ihrem Ursprungswebserver, Diensten von Drittanbietern und Cloudflare sicher.</p>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/201897700" target="_self">Setzen Sie die Cloudflare-IP-Adressen auf die Whitelist</a> Ihres Ursprungswebservers, und</li>
+            <li><a href="https://support.cloudflare.com/hc/articles/217074967">Setzen Sie Dienste von Drittanbietern auf die Whitelist</a>, wenn Ihre Website diese Dienste nutzt. Dies können Sie bei den <a href="https://support.cloudflare.com/hc/articles/217074967" target="_self">Cloudflare <strong>IP Access Rules</strong></a> tun.</li>
+           </ul>
+           <div class="cf-sidebar-2 cf-note">
+            Die IPs Ihres Ursprungsservers werden für Ihre Domain automatisch auf die Whitelist gesetzt, wenn die Domain in Cloudflare aufgenommen wird.
+           </div>
+           <h3><strong>Empfohlene Verbesserungen</strong></h3>
+           <p>Informieren Sie sich darüber, welche Cloudflare-Features die Geschwindigkeit Ihrer Website verbessern und die Sicherheit optimieren:</p>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/200172856#h_c2f90417-ee71-4b65-b6c7-3636ee2b3c63">Websiteperformance verbessern</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/115002059131">Sicherheit optimieren</a></li>
+           </ul>
+           <h3><strong>Empfohlene Lektüre</strong></h3>
+           <p>Sichern Sie den Traffic sowohl für Website-Besucher als auch zwischen Cloudflare und Ihrem Ursprungswebserver mit HTTPS ab.</p>
+           <ul>
+            <li><a href="https://support.cloudflare.com/hc/articles/360024787372">End-to-End-HTTPS mit Cloudflare</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/360027710672">FAQs zur Fehlerbehebung für neue Cloudflare-Kunden</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200172476" target="_self">Kontaktaufnahme mit dem Cloudflare-Support</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200172676">Cloudflares DDoS-Schutz</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/200170166" target="_self">Bewährte Vorgehensweisen: DDoS-Vorbeugemaßnahmen</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/360021801151">Erste Schritte mit DNS</a></li>
+            <li><a href="https://support.cloudflare.com/hc/articles/360023792171">Erste Schritte mit Cloudflare-SSL</a></li>
+           </ul>
+          </div>
+         </div> 
+        </div> 
+       </section> 
+       <footer> 
+        <div class="article-footer"> 
+         <div class="article-share"> 
+          <ul class="share"> 
+           <li><a href="https://www.facebook.com/share.php?title=Erste+Schritte+mit+Cloudflare&amp;u=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fde%2Farticles%2F360027989951-Erste-Schritte-mit-Cloudflare" class="share-facebook">Facebook</a></li> 
+           <li><a href="https://twitter.com/share?lang=de&amp;text=Erste+Schritte+mit+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fde%2Farticles%2F360027989951-Erste-Schritte-mit-Cloudflare" class="share-twitter">Twitter</a></li> 
+           <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;source=Cloudflare&amp;title=Erste+Schritte+mit+Cloudflare&amp;url=https%3A%2F%2Fsupport.cloudflare.com%2Fhc%2Fde%2Farticles%2F360027989951-Erste-Schritte-mit-Cloudflare" class="share-linkedin">LinkedIn</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="article-votes"> 
+         <div> <span class="article-votes-question">War dieser Beitrag hilfreich?</span> <small class="article-votes-count"> <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="360027989951" data-upvote-count="186" data-vote-count="252" data-vote-sum="120" data-vote-url="/hc/de/articles/360027989951/vote" data-value="null" data-label="186 von 252 fanden dies hilfreich">186 von 252 fanden dies hilfreich</span> </small> 
+         </div> 
+         <div class="article-votes-controls" role="radiogroup"> <a class="button article-vote article-vote-up" data-helper="vote" data-item="article" data-type="up" data-id="360027989951" data-upvote-count="186" data-vote-count="252" data-vote-sum="120" data-vote-url="/hc/de/articles/360027989951/vote" data-value="null" data-label="186 von 252 fanden dies hilfreich" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Ja" href="#"></a> <a class="button article-vote article-vote-down" data-helper="vote" data-item="article" data-type="down" data-id="360027989951" data-upvote-count="186" data-vote-count="252" data-vote-sum="120" data-vote-url="/hc/de/articles/360027989951/vote" data-value="null" data-label="186 von 252 fanden dies hilfreich" data-selected-class="null" aria-selected="false" role="radio" rel="nofollow" title="Nein" href="#"></a> 
+         </div> 
+        </div> 
+        <div class="article-return-to-top"> <a href="#article-container">Zurück an den Anfang <span class="icon-arrow-up"></span> </a> 
+        </div> 
+       </footer> 
+      </article> 
+     </div> 
+    </div> 
+   </div> 
+   <section class="article-footer-search-wrapper footer-search-wrapper"> 
+    <section class="container"> 
+     <section class="content-wrapper"> 
+      <section> 
+       <h1>Sie haben nicht gefunden, wonach Sie suchen?</h1> 
+       <p>Die Suche beantwortet 95 % aller Supportfragen. So bekommen Sie am schnellsten Ihre Antwort.</p> 
+      </section> 
+      <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Fragen Sie die Community"> Fragen Sie die Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Anfrage einreichen"> Anfrage einreichen </a> 
+      </section> 
+     </section> 
+     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/de/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="?">
+      <input type="search" name="query" id="query" placeholder="Suchen" autocomplete="off" aria-label="Suchen"> 
+      <input type="submit" name="commit" value="Suchen">
+     </form> <span id="search_placeholder_template" data-value="Die Knowledge Base des Cloudflare-Supports durchsuchen" style="display:none"></span> 
+     <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+     <ul class="promoted-articles"> 
+      <li>Beliebte Suchanfragen:</li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=ddos&amp;utf8=%E2%9C%93">DDoS</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=cdn&amp;utf8=%E2%9C%93">CDN</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=2fa&amp;utf8=%E2%9C%93">2FA</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=langsame+Website&amp;utf8=%E2%9C%93'">langsame Website</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Traffic+Spitze&amp;utf8=%E2%9C%93">Traffic-Spitze</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Subdomain&amp;utf8=%E2%9C%93">Subdomain</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=cname&amp;utf8=%E2%9C%93">cname</a></li> 
+      <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     </ul> 
+    </section> 
+   </section> 
+   <section class="container"> 
+    <section class="article-relatives"> 
+     <div data-recent-articles></div> 
+     <section class="related-articles"> 
+      <h3 class="related-articles-title">Verwandte Beiträge</h3> 
+      <ul> 
+       <li> <a href="/hc/de/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEvAk7DDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCL8nV9NTADoLbG9jYWxlSSIHZGUGOgZFVDoIdXJsSSJQL2hjL2RlL2FydGljbGVzLzIwNTE5NTcwOC1VbXN0ZWxsdW5nLUlocmVyLURvbWFpbi1OYW1lc2VydmVyLWF1Zi1DbG91ZGZsYXJlBjsIVDoJcmFua2kG--fec32a92714ed83ae4bb430c44e53540f849fdaf" rel="nofollow">Umstellung Ihrer Domain-Nameserver auf Cloudflare</a> </li> 
+       <li> <a href="/hc/de/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEZAEGDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCL8nV9NTADoLbG9jYWxlSSIHZGUGOgZFVDoIdXJsSSJeL2hjL2RlL2FydGljbGVzLzIwMTcyMDE2NC1FaW4tQ2xvdWRmbGFyZS1Lb250by1lcnN0ZWxsZW4tdW5kLWVpbmUtV2Vic2l0ZS1oaW56dWYlQzMlQkNnZW4GOwhUOglyYW5raQc%3D--fcfc897a805dca0ca1272fc80c52a64f51aead8f" rel="nofollow">Ein Cloudflare-Konto erstellen und eine Website hinzufügen</a> </li> 
+       <li> <a href="/hc/de/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE7MA6DDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCL8nV9NTADoLbG9jYWxlSSIHZGUGOgZFVDoIdXJsSSI7L2hjL2RlL2FydGljbGVzLzIwNTE3NzA2OC1XaWUtZnVua3Rpb25pZXJ0LUNsb3VkZmxhcmUtBjsIVDoJcmFua2kI--641d9c02932bf9b9a90213d024e6b6df8cb4cf06" rel="nofollow">Wie funktioniert Cloudflare?</a> </li> 
+       <li> <a href="/hc/de/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkE5LYIDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCL8nV9NTADoLbG9jYWxlSSIHZGUGOgZFVDoIdXJsSSJFL2hjL2RlL2FydGljbGVzLzIwMTg5NzcwMC1HZW5laG1pZ3VuZy12b24tQ2xvdWRmbGFyZS1JUC1BZHJlc3NlbgY7CFQ6CXJhbmtpCQ%3D%3D--993b2f32781828a87e3e6a713409bd97253466a5" rel="nofollow">Genehmigung von Cloudflare-IP-Adressen</a> </li> 
+       <li> <a href="/hc/de/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCL%2B4%2BNJTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCL8nV9NTADoLbG9jYWxlSSIHZGUGOgZFVDoIdXJsSSJDL2hjL2RlL2FydGljbGVzLzM2MDAyMTgwMTE1MS1FcnN0ZS1TY2hyaXR0ZS1taXQtQ2xvdWRmbGFyZS1ETlMGOwhUOglyYW5raQo%3D--8465866590a79965f1d49422a2012232f684cf2c" rel="nofollow">Erste Schritte mit Cloudflare-DNS</a> </li> 
+      </ul> 
+     </section> 
+    </section> 
+   </section> 
+  </main> 
+  <section class="footer-search-wrapper"> 
+   <section class="container"> 
+    <section class="content-wrapper"> 
+     <section> 
+      <h1>Sie haben nicht gefunden, wonach Sie suchen?</h1> 
+      <p>Die Suche beantwortet 95 % aller Supportfragen. So bekommen Sie am schnellsten Ihre Antwort.</p> 
+     </section> 
+     <section class="button-wrapper"> <a href="https://community.cloudflare.com/" class="button button-large" title="Fragen Sie die Community"> Fragen Sie die Community </a> <a href="https://dash.cloudflare.com/redirect?account=support" class="button button-large" title="Anfrage senden"> Anfrage senden </a> 
+     </section> 
+    </section> 
+    <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/de/search" accept-charset="UTF-8" method="get">
+     <input name="utf8" type="hidden" value="?">
+     <input type="search" name="query" id="query" placeholder="Suchen" autocomplete="off" aria-label="Suchen"> 
+     <input type="submit" name="commit" value="Suchen">
+    </form> <span id="search_placeholder_template" data-value="Die Knowledge Base des Cloudflare-Supports durchsuchen" style="display:none"></span> 
+    <script>
+        var searchPlaceholder = $("span#search_placeholder_template").data('value');
+        $('#query').attr('placeholder', searchPlaceholder);
+      </script> 
+    <ul class="promoted-articles"> 
+     <li>Beliebte Suchanfragen:</li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=DDoS&amp;utf8=%E2%9C%93">DDoS</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=CDN&amp;utf8=%E2%9C%93">CDN</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=2FA&amp;utf8=%E2%9C%93">2FA</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=5xx&amp;utf8=%E2%9C%93">error 5xx</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=langsame+Website&amp;utf8=%E2%9C%93'">langsame Website</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Traffic+Spitze&amp;utf8=%E2%9C%93">Traffic-Spitze</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=Subdomain&amp;utf8=%E2%9C%93">Subdomain</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=CName&amp;utf8=%E2%9C%93">CName</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=522&amp;utf8=%E2%9C%93">522</a></li> 
+     <li><a href="/hc/de/search?filter_by=knowledge_base&amp;query=502&amp;utf8=%E2%9C%93">502</a></li> 
+    </ul> 
+   </section> 
+  </section> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-inner"> 
+     <div class="footer-links"> 
+      <h3 title="Sales">Vertrieb</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/enterprise/contact/" title="Enterprise Sales">Vertrieb für Unternehmen</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/partners/" title="Become a Partner"> Partner werden</a> </li> 
+       <br> 
+       <li class="footer-link-item"> <a href="tel:+18889935273" title="Contact Sales: +1 (888) 99 FLARE  ">Vertrieb kontaktieren: <br> +1 (888) 99 FLARE</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Getting Started">Erste Schritte</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/analysts/" title="Industry Analysts">Branchenanalysten</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/plans/" title=" Pricing"> Preis</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/case-studies/" title="Case Studies">Fallstudie</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/resources/" title="White Papers">Studien</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/webinars/" title="Webinars">Webinare</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/learning/" title="Learning Center">Lernzentrum</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Community">Community</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://community.cloudflare.com" title="Community Hub">Community-Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://blog.cloudflare.com" title="Blog">Blog</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/galileo/" title="Project Galileo">Project Galileo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/athenian/" title="Athenian Project">Athenian Project</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Developers">Entwickler</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://developers.cloudflare.com" title="Developers Hub">Entwickler-Hub</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/products/cloudflare-workers/" title="Cloudflare Workers">Cloudflare Workers</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/integrations/" title="Integrations">Integrationen</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Support">Support</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://support.cloudflare.com" title="Help Center">Hilfe-Zentrum</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflarestatus.com" title="Cloudflare Status">Cloudflare-Status</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/compliance/" title="Compliance">Compliance</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/gdpr/introduction/" title="GDPR">DSGVO</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links"> 
+      <h3 title="Company">Unternehmen</h3> 
+      <ul class="footer-links-list"> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/about-overview/" title="About Cloudflare">Über Cloudflare</a> </li> 
+       <li class="footer-link-item"> <a href="https://cloudflare.net" title="Investor relations">Anlegerbeziehungen</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/people/" title="Our team">Unser Team</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/press/" title="Press">Presse</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/careers/" title="Careers">Karriere</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/internetsummit/" title="Internet Summit">Internet Summit</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/logo/" title="Logo">Logo</a> </li> 
+       <li class="footer-link-item"> <a href="https://www.cloudflare.com/network/" title="Network Map">Netzwerkkarte</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer-bottom"> 
+    <div class="footer-inner"> 
+     <div class="footer-content"> 
+      <ul class="share"> 
+       <li> <a title="Like us on facebook" class="facebook" href="https://www.facebook.com/Cloudflare/"> <i class="fab fa-facebook-f"></i> </a> </li> 
+       <li> <a title="Follow us on twitter" class="twitter" href="https://twitter.com/Cloudflare"> <i class="fab fa-twitter"></i> </a> </li> 
+       <li> <a title="Connect with us linkedin" class="linkedin" href="https://www.linkedin.com/company/cloudflare-inc-"> <i class="fab fa-linkedin-in"></i> </a> </li> 
+       <li> <a title="Subscribe our channel on youtube" class="youtube" href="https://www.youtube.com/cloudflare"> <i class="fab fa-youtube"></i> </a> </li> 
+       <li> <a title="Follow us on instagram" class="instagram" href="https://www.instagram.com/cloudflare"> <i class="fab fa-instagram"></i> </a> </li> 
+      </ul> 
+      <div class="footer-language-selector"> 
+       <div class="dropdown language-sele

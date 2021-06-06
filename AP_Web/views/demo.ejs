@@ -1,0 +1,23 @@
+
+<%- include('layouts/header')%>
+    <header>
+        <section>
+            <label for="uq">Results for </label>
+            <input class="result" type="text" name="uq" id="uq" value="<%=uq%>">
+        </section>
+    </header>
+
+    <div class="container">
+    <%list.forEach(element => {%>
+        <div class="ele">
+        <a href="<%=element.URL %>"><%=element.title %></a><br>
+        <p><%=element.descriptions %></p>    
+       </div>     
+    <%console.log(element.URL)});%>          
+       
+</div>
+</body>
+
+
+</html>
+

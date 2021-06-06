@@ -12,4 +12,3 @@ let suggestions = [
     "slaaaaaaaaaaaaaam",
 ];
 
-let Submitted_Links = [];
